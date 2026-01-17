@@ -1,0 +1,52 @@
+---
+title: Drawer
+description: A drawer component for creating sidebars or modal dialogs that slide in from
+  the edge of the screen.
+---
+
+import { Drawer } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Drawer } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="drawer" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.drawer {
+  @apply bg-background fixed z-50 flex;
+}
+
+.drawer__backdrop {
+  @apply fixed inset-0 z-50 bg-black/80;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `drawer__backdrop`: The class for the backdrop slot.
+- `drawer__close`: The class for the close slot.
+- `drawer__description`: The class for the description slot.
+- `drawer__popup`: The class for the popup slot.
+- `drawer__portal`: The class for the portal slot.
+- `drawer`: The class for the root slot.
+- `drawer__title`: The class for the title slot.
+- `drawer__trigger`: The class for the trigger slot.
+- `drawer__viewport`: The class for the viewport slot.
+
+### Position Modifiers
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Drawer component.

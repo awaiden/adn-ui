@@ -1,0 +1,67 @@
+---
+title: Combobox
+description: Autocomplete input and command palette with a list of suggestions.
+---
+
+import { Combobox } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Combobox } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="combobox" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.combobox {
+  @apply flex w-full flex-col gap-2;
+}
+
+.combobox__input {
+  @apply border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.combobox__popup {
+  @apply bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border shadow-md;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `combobox`: The class for the root slot.
+- `combobox__input`: The class for the input slot.
+- `combobox__trigger`: The class for the trigger slot.
+- `combobox__icon`: The class for the icon slot.
+- `combobox__clear`: The class for the clear slot.
+- `combobox__value`: The class for the value slot.
+- `combobox__chips`: The class for the chips slot.
+- `combobox__chip`: The class for the chip slot.
+- `combobox__chip-remove`: The class for the chipRemove slot.
+- `combobox__portal`: The class for the portal slot.
+- `combobox__backdrop`: The class for the backdrop slot.
+- `combobox__positioner`: The class for the positioner slot.
+- `combobox__popup`: The class for the popup slot.
+- `combobox__arrow`: The class for the arrow slot.
+- `combobox__status`: The class for the status slot.
+- `combobox__empty`: The class for the empty slot.
+- `combobox__list`: The class for the list slot.
+- `combobox__row`: The class for the row slot.
+- `combobox__item`: The class for the item slot.
+- `combobox__item-indicator`: The class for the itemIndicator slot.
+- `combobox__separator`: The class for the separator slot.
+- `combobox__group`: The class for the group slot.
+- `combobox__group-label`: The class for the groupLabel slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Combobox component.

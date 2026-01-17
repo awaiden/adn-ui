@@ -1,0 +1,54 @@
+{
+  "name": "@adn-ui/styles",
+  "version": "0.0.0",
+  "description": "FeaUI Styles - Tailwind CSS styles for FeaUI components",
+  "keywords": [
+    "adn-ui",
+    "components",
+    "design-system",
+    "react",
+    "styles",
+    "tailwind",
+    "ui"
+  ],
+  "homepage": "https://ui.aydinthefirst.com",
+  "bugs": {
+    "url": "https://github.com/aydinthefirst/adn-ui/issues"
+  },
+  "license": "MIT",
+  "author": "Halil Aydın <aydinhalil980@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AydinTheFirst/adn-ui.git",
+    "directory": "packages/styles"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "style": "./src/styles.css",
+      "default": "./src/styles.css"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:css": "bunx @tailwindcss/cli -i src/styles.css -o dist/index.css --minify",
+    "format": "oxfmt",
+    "gen:exports": "bun run scripts/gen-exports.mjs",
+    "lint": "oxlint"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.5",
+    "oxfmt": "^0.24.0",
+    "oxlint": "^1.39.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=4.0.0"
+  }
+}

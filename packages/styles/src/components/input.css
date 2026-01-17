@@ -1,0 +1,35 @@
+.input,
+.textarea {
+  @apply bg-input text-input-foreground rounded-sm border;
+  @apply w-full px-3 py-2;
+
+  @apply transition-[brightness] motion-reduce:transition-none;
+
+  &::placeholder {
+    @apply text-muted-foreground;
+  }
+
+  &[data-focused] {
+    @apply status-focused;
+  }
+
+  &:disabled {
+    @apply status-disabled;
+  }
+
+  &[data-invalid] {
+    @apply border-danger;
+  }
+}
+
+.input--sm {
+  @apply h-8 text-sm;
+}
+
+.input--md {
+  @apply h-10;
+}
+
+.input--lg {
+  @apply h-12;
+}

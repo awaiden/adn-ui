@@ -1,0 +1,72 @@
+/** Base Styling */
+.progress {
+  @apply grid grid-cols-2 items-center gap-1;
+}
+
+.progress__label {
+  @apply font-medium;
+}
+
+.progress__value {
+  @apply col-start-2 m-0 text-right text-sm leading-5;
+}
+
+.progress__track {
+  @apply col-span-2 block w-48 overflow-hidden rounded shadow-inner;
+}
+
+.progress__indicator {
+  @apply block rounded;
+
+  @apply transition-[width] motion-reduce:transition-none;
+}
+
+/** Variants */
+.progress--primary .progress__track {
+  @apply bg-primary/10;
+}
+
+.progress--primary .progress__indicator {
+  @apply bg-primary;
+}
+
+.progress--secondary .progress__track {
+  @apply bg-secondary/10;
+}
+
+.progress--secondary .progress__indicator {
+  @apply bg-secondary;
+}
+
+.progress--success .progress__track {
+  @apply bg-success/10;
+}
+
+.progress--success .progress__indicator {
+  @apply bg-success;
+}
+
+.progress--danger .progress__track {
+  @apply bg-danger/10;
+}
+
+.progress--danger .progress__indicator {
+  @apply bg-danger;
+}
+
+/** Sizes */
+.progress--sm .progress__track {
+  @apply h-2;
+}
+
+.progress--sm .progress__label {
+  @apply text-sm;
+}
+
+.progress--md .progress__track {
+  @apply h-3;
+}
+
+.progress--lg .progress__track {
+  @apply h-4;
+}

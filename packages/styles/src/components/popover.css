@@ -1,0 +1,51 @@
+.popover__positioner {
+  width: var(--positioner-width);
+  max-width: var(--available-width);
+  height: var(--positioner-height);
+}
+
+.popover__popup {
+  @apply relative rounded px-3 py-2;
+
+  @apply bg-overlay text-overlay-foreground shadow;
+
+  @apply transition-[transform,scale] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-90 opacity-0;
+  }
+}
+
+.popover__arrow {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  @apply bg-overlay border-border absolute z-50 size-4;
+
+  &[data-side="top"] {
+    @apply -bottom-2 rotate-180;
+  }
+
+  &[data-side="right"] {
+    @apply -start-3 rotate-90;
+  }
+
+  &[data-side="bottom"] {
+    @apply -top-2;
+  }
+
+  &[data-side="left"] {
+    @apply -end-3 -rotate-90;
+  }
+}
+
+.popover__title {
+  @apply font-medium;
+}
+
+.popover__description {
+  @apply text-muted-foreground text-sm;
+}
+
+.popover__close {
+  @apply absolute end-0 top-0 m-1;
+}

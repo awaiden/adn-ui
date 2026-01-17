@@ -1,0 +1,12 @@
+/** Base Styling */
+.separator {
+  @apply border;
+}
+
+.separator--horizontal {
+  @apply my-2 h-px w-full;
+}
+
+.separator--vertical {
+  @apply mx-2 h-full w-px;
+}

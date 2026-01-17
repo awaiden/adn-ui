@@ -1,0 +1,36 @@
+/** Base Styling */
+.navbar {
+  @apply bg-surface/50 border-border relative z-50 flex h-(--navbar-height) w-full items-center justify-between border-b px-4 py-2;
+}
+
+.navbar__container {
+  @apply mx-auto flex w-full max-w-7xl items-center justify-between;
+}
+
+.navbar__content {
+  @apply flex items-center gap-2;
+}
+
+.navbar__toggle {
+  @apply md:hidden;
+
+  svg {
+    @apply me-2 size-5;
+  }
+}
+
+.navbar__list {
+  @apply flex items-center gap-4;
+}
+
+.navbar__list-item {
+  @apply list-none;
+}
+
+.navbar__menu {
+  @apply flex flex-col gap-1;
+}
+
+.navbar__menu-item {
+  @apply w-full list-none px-4 py-2;
+}

@@ -1,0 +1,63 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task, typically
+  displayed as a progress bar.
+---
+
+import { Progress } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Progress } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="progress" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.progress {
+  @apply w-full;
+}
+
+.progress__track {
+  @apply bg-secondary relative h-2 w-full overflow-hidden rounded-full;
+}
+
+.progress__indicator {
+  @apply bg-primary h-full w-full flex-1 transition-all;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `progress__indicator`: The class for the indicator slot.
+- `progress__label`: The class for the label slot.
+- `progress`: The class for the root slot.
+- `progress__track`: The class for the track slot.
+- `progress__value`: The class for the value slot.
+
+### Size Modifiers
+
+- `progress--lg`: Size lg modifier.
+- `progress--md`: Size md modifier.
+- `progress--sm`: Size sm modifier.
+
+### Variant Modifiers
+
+- `progress--danger`: Variant danger modifier.
+- `progress--primary`: Variant primary modifier.
+- `progress--secondary`: Variant secondary modifier.
+- `progress--success`: Variant success modifier.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Progress component.

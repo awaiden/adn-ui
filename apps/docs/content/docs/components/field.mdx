@@ -1,0 +1,54 @@
+---
+title: Field
+description: A component that wraps a form control and provides label, description, and
+  error message.
+---
+
+import { Field } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Field } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="field" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.field {
+  @apply flex w-full flex-col gap-1.5;
+}
+
+.field__label {
+  @apply text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+}
+
+.field__description {
+  @apply text-muted-foreground text-sm;
+}
+
+.field__error {
+  @apply text-destructive text-sm font-medium;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `input field__control`: The class for the control slot.
+- `field__description`: The class for the description slot.
+- `field__error`: The class for the error slot.
+- `label field__label`: The class for the label slot.
+- `field`: The class for the root slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Field component.

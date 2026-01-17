@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "@adn-ui/styles";
+
+@custom-variant dark (&:is(.dark *));
+
+.center {
+  @apply flex h-screen items-center justify-center;
+}

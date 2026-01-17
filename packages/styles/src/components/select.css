@@ -1,0 +1,82 @@
+.select__trigger {
+  @apply cursor-pointer;
+  @apply bg-input text-input-foreground hover-safe:bg-input/80;
+  @apply border-border rounded border;
+
+  @apply flex items-center justify-between gap-2;
+  @apply h-10 w-fit min-w-56 px-3 py-2;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}
+
+.select__icon {
+  @apply flex;
+
+  & svg {
+    @apply text-muted-foreground size-4;
+  }
+}
+
+.select__positioner {
+  @apply z-10 outline-none select-none;
+}
+
+.select__popup {
+  min-width: var(--anchor-width);
+  transform-origin: var(--transform-origin);
+
+  @apply bg-surface text-surface-foreground border-border rounded shadow;
+
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-3;
+
+  @apply transition-[scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-95 opacity-0;
+  }
+}
+
+.select__list {
+  @apply max-h-56 scroll-pb-6 overflow-y-auto;
+}
+
+.select__item {
+  @apply flex items-center gap-2 outline-0;
+  @apply cursor-pointer select-none;
+
+  @apply rounded px-2 py-1;
+  @apply hover-safe:bg-primary hover-safe:text-primary-foreground;
+}
+
+.select__item-indicator {
+  & svg {
+    @apply block size-4;
+  }
+}
+
+.select__value {
+  @apply flex-1 overflow-hidden text-left text-ellipsis whitespace-nowrap;
+}
+
+.select__group {
+  @apply overflow-hidden;
+}
+
+.select__group-label {
+  @apply text-muted-foreground px-2 py-1 text-sm font-medium;
+}
+
+.autocomplete__separator {
+  @apply bg-border my-2 h-px;
+}
+
+.select__backdrop {
+  @apply fixed inset-0 z-0;
+}
+
+.select__arrow {
+  @apply hidden;
+}

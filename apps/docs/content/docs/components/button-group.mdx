@@ -1,0 +1,37 @@
+---
+title: Button Group
+description: A set of buttons grouped together.
+---
+
+import { ButtonGroup } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { ButtonGroup } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="button-group" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.button-group {
+  @apply flex items-center [&>button]:rounded-none [&>button:first-child]:rounded-l-md [&>button:last-child]:rounded-r-md [&>button:not(:last-child)]:border-r-0;
+}
+```
+
+## CSS Classes
+
+### Base Class
+
+- `button-group`: The base class for the component.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Button Group component.

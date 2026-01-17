@@ -1,0 +1,9 @@
+.fieldset {
+  @apply flex w-full max-w-md flex-col gap-1;
+}
+
+.fieldset__legend {
+  @apply border-b pb-4;
+
+  @apply text-lg font-semibold;
+}

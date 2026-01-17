@@ -1,0 +1,40 @@
+/** Base Styling */
+.chip {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-2 font-medium text-nowrap;
+}
+
+.chip--sm {
+  @apply h-4 text-sm;
+}
+
+.chip--md {
+  @apply h-6;
+}
+
+.chip--lg {
+  @apply h-8;
+}
+
+.chip--primary {
+  @apply bg-primary text-primary-foreground;
+}
+
+.chip--secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
+
+.chip--outline {
+  @apply bg-transparent;
+}
+
+.chip--danger {
+  @apply bg-danger text-danger-foreground;
+}
+
+.chip--ghost {
+  @apply border-none bg-transparent;
+}
+
+.chip--success {
+  @apply bg-success text-success-foreground;
+}

@@ -1,0 +1,8 @@
+{
+  "ignorePatterns": [],
+  "experimentalTailwindcss": {},
+  "experimentalSortImports": {},
+  "experimentalSortPackageJson": {
+    "sortScripts": true
+  }
+}

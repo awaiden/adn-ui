@@ -1,0 +1,12 @@
+/** Base Styling */
+.field {
+  @apply flex flex-col gap-1;
+}
+
+.field__description {
+  @apply text-sm text-gray-500;
+}
+
+.field__error {
+  @apply text-sm text-red-600;
+}

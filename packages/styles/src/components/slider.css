@@ -1,0 +1,25 @@
+.slider__control {
+  @apply flex w-full touch-none items-center py-3 select-none;
+}
+
+.slider__track {
+  @apply bg-secondary shadow-secondary relative h-1 w-full rounded shadow-inner select-none;
+}
+
+.slider__indicator {
+  @apply bg-primary absolute rounded select-none;
+}
+
+.slider__thumb {
+  @apply bg-primary outline-border size-4 rounded-full outline select-none;
+
+  @apply transition-[box-shadow,transform,outline] motion-reduce:transition-none;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &:active {
+    @apply scale-90;
+  }
+}

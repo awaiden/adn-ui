@@ -1,0 +1,9 @@
+/** Base Styling */
+.label {
+  @apply inline-flex items-center gap-2;
+  @apply text-foreground leading-none font-medium;
+}
+
+[data-required="true"] .label {
+  @apply after:text-danger after:ml-0.5 after:content-['*'];
+}

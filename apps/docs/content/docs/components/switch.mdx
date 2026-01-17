@@ -1,0 +1,48 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+---
+
+import { Switch } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Switch } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="switch" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.switch {
+  @apply peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.switch__thumb {
+  @apply bg-background pointer-events-none block h-5 w-5 rounded-full shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `switch`: The class for the root slot.
+- `switch__thumb`: The class for the thumb slot.
+
+### Size Modifiers
+
+- `switch--lg`: Size lg modifier.
+- `switch--md`: Size md modifier.
+- `switch--sm`: Size sm modifier.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Switch component.

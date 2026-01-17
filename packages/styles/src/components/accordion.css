@@ -1,0 +1,49 @@
+.accordion {
+  @apply flex w-full max-w-md flex-col justify-center;
+  @apply bg-surface/10 shadow;
+}
+
+.accordion__trigger {
+  @apply cursor-pointer;
+
+  @apply bg-surface border-b px-3 py-2 text-left font-medium;
+
+  @apply flex w-full items-center justify-between;
+
+  @apply transition-colors motion-reduce:transition-none;
+
+  &:hover {
+    @apply bg-primary/10;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+.accordion__trigger-icon {
+  @apply text-muted-foreground size-5;
+
+  @apply transition-transform duration-300 motion-reduce:transition-none;
+
+  [data-panel-open] > & {
+    @apply rotate-180;
+  }
+}
+
+.accordion__panel {
+  height: var(--accordion-panel-height);
+
+  @apply overflow-hidden;
+
+  @apply transition-[height] motion-reduce:transition-none;
+
+  &[data-ending-style],
+  &[data-starting-style] {
+    @apply h-0;
+  }
+}
+
+.accordion__content {
+  @apply p-4;
+}

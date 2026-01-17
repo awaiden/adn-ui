@@ -1,0 +1,48 @@
+.menu__positioner {
+  @apply outline-0;
+}
+
+.menu__popup {
+  @apply rounded p-3;
+
+  @apply bg-overlay text-overlay-foreground shadow;
+
+  @apply transition-[transform,scale] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-90 opacity-0;
+  }
+}
+
+.menu__arrow {
+  @apply text-overlay flex size-6;
+
+  &[data-side="top"] {
+    @apply -bottom-3 rotate-180;
+  }
+
+  &[data-side="right"] {
+    @apply -start-3 rotate-90;
+  }
+
+  &[data-side="bottom"] {
+    @apply -top-3;
+  }
+
+  &[data-side="left"] {
+    @apply -end-3 -rotate-90;
+  }
+}
+
+.menu__item {
+  @apply relative flex cursor-pointer items-center rounded px-3 py-2 text-sm leading-none select-none;
+
+  &:focus {
+    @apply bg-secondary text-secondary-foreground outline-none;
+  }
+}
+
+.autocomplete__separator {
+  @apply bg-border my-2 h-px;
+}

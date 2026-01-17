@@ -1,0 +1,54 @@
+.combobox__input {
+  @apply bg-input text-input-foreground hover-safe:bg-input/80 rounded border shadow;
+  @apply h-10 w-fit px-3 py-2;
+
+  &::placeholder {
+    @apply text-muted-foreground;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}
+
+.combobox__positioner {
+  @apply outline-0;
+}
+
+.combobox__popup {
+  width: var(--anchor-width);
+  max-width: var(--available-width);
+
+  @apply bg-surface text-surface-foreground rounded border shadow;
+
+  @apply px-3 py-2;
+
+  @apply transition-[scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-95 opacity-0;
+  }
+}
+
+.combobox__list {
+  @apply max-h-56 scroll-p-2 overflow-y-auto overscroll-contain;
+}
+
+.combobox__item {
+  @apply cursor-pointer;
+
+  @apply flex items-center gap-2;
+
+  @apply hover-safe:bg-primary hover-safe:text-primary-foreground;
+
+  @apply rounded px-2 py-1;
+}
+
+.combobox__separator {
+  @apply bg-border my-2 h-px;
+}
+
+.autocomplete__empty {
+  @apply text-muted-foreground px-2 py-1 text-sm;
+}

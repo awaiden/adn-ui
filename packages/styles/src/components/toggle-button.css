@@ -1,0 +1,8 @@
+/** Base Styling */
+.toggle-button {
+  @apply brightness-50;
+
+  &[data-pressed] {
+    @apply brightness-100;
+  }
+}

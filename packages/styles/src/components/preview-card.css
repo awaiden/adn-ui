@@ -1,0 +1,16 @@
+.preview-card__positioner {
+  @apply outline-0;
+}
+
+.preview-card__popup {
+  @apply bg-surface text-surface-foreground rounded border shadow;
+
+  @apply px-3 py-2;
+
+  @apply transition-[transform,scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-90 opacity-0;
+  }
+}

@@ -1,0 +1,41 @@
+.tooltip__positioner {
+  z-index: 50;
+  width: var(--positioner-width);
+  max-width: var(--available-width);
+  height: var(--positioner-height);
+  pointer-events: none;
+}
+
+.tooltip__popup {
+  @apply rounded px-2 py-1 text-xs leading-none font-medium;
+
+  @apply bg-overlay-foreground text-overlay;
+
+  @apply transition-[transform,scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-90 opacity-0;
+  }
+}
+
+.tooltip__arrow {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  @apply bg-overlay-foreground absolute z-50 size-2;
+
+  &[data-side="top"] {
+    @apply -bottom-1 rotate-180;
+  }
+
+  &[data-side="right"] {
+    @apply -start-1.5 rotate-90;
+  }
+
+  &[data-side="bottom"] {
+    @apply -top-1;
+  }
+
+  &[data-side="left"] {
+    @apply -end-1.5 -rotate-90;
+  }
+}

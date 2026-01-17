@@ -1,0 +1,63 @@
+---
+title: Autocomplete
+description: An input field that suggests items based on the user's input.
+---
+
+import { Autocomplete } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Autocomplete } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="autocomplete" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.autocomplete {
+  @apply flex w-full flex-col gap-2;
+}
+
+.autocomplete__input {
+  @apply border-input placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.autocomplete__popup {
+  @apply bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border shadow-md;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `autcomplete`: The class for the root slot.
+- `autocomplete__input`: The class for the input slot.
+- `autocomplete__trigger`: The class for the trigger slot.
+- `autocomplete__icon`: The class for the icon slot.
+- `autocomplete__clear`: The class for the clear slot.
+- `autocomplete__value`: The class for the value slot.
+- `autocomplete__portal`: The class for the portal slot.
+- `autocomplete__backdrop`: The class for the backdrop slot.
+- `autocomplete__positioner`: The class for the positioner slot.
+- `autocomplete__popup`: The class for the popup slot.
+- `autocomplete__arrow`: The class for the arrow slot.
+- `autocomplete__status`: The class for the status slot.
+- `autocomplete__empty`: The class for the empty slot.
+- `autocomplete__list`: The class for the list slot.
+- `autocomplete__row`: The class for the row slot.
+- `autocomplete__item`: The class for the item slot.
+- `autocomplete__separator`: The class for the separator slot.
+- `autocomplete__group`: The class for the group slot.
+- `autocomplete__group-label`: The class for the groupLabel slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Autocomplete component.

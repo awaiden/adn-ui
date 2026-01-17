@@ -1,0 +1,71 @@
+---
+title: Table
+description: A responsive table component.
+---
+
+import { Table } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Table } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="table" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.table {
+  @apply w-full caption-bottom text-sm;
+}
+
+.table__header {
+  @apply [&_tr]:border-b;
+}
+
+.table__body {
+  @apply [&_tr:last-child]:border-0;
+}
+
+.table__footer {
+  @apply bg-muted/50 border-t font-medium [&>tr]:last:border-b-0;
+}
+
+.table__row {
+  @apply hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors;
+}
+
+.table__column-header {
+  @apply text-muted-foreground h-12 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0;
+}
+
+.table__cell {
+  @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
+}
+
+.table__caption {
+  @apply text-muted-foreground mt-4 text-sm;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `table`: The class for the root slot.
+- `table__tbody`: The class for the tbody slot.
+- `table__td`: The class for the td slot.
+- `table__tfoot`: The class for the tfoot slot.
+- `table__th`: The class for the th slot.
+- `table__thead`: The class for the thead slot.
+- `table__tr`: The class for the tr slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Table component.

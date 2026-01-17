@@ -1,0 +1,72 @@
+/** Base Styling */
+.meter {
+  @apply grid grid-cols-2 items-center gap-1;
+}
+
+.meter__label {
+  @apply font-medium;
+}
+
+.meter__value {
+  @apply col-start-2 m-0 text-right text-sm leading-5;
+}
+
+.meter__track {
+  @apply col-span-2 block w-48 overflow-hidden rounded shadow-inner;
+}
+
+.meter__indicator {
+  @apply block rounded;
+
+  @apply transition-[width] motion-reduce:transition-none;
+}
+
+/** Variants */
+.meter--primary .meter__track {
+  @apply bg-primary/10;
+}
+
+.meter--primary .meter__indicator {
+  @apply bg-primary;
+}
+
+.meter--secondary .meter__track {
+  @apply bg-secondary/10;
+}
+
+.meter--secondary .meter__indicator {
+  @apply bg-secondary;
+}
+
+.meter--success .meter__track {
+  @apply bg-success/10;
+}
+
+.meter--success .meter__indicator {
+  @apply bg-success;
+}
+
+.meter--danger .meter__track {
+  @apply bg-danger/10;
+}
+
+.meter--danger .meter__indicator {
+  @apply bg-danger;
+}
+
+/** Sizes */
+.meter--sm .meter__track {
+  @apply h-2;
+}
+
+.meter--sm .meter__label {
+  @apply text-sm;
+}
+
+.meter--md .meter__track {
+  @apply h-3;
+}
+
+.meter--lg .meter__track {
+  @apply h-4;
+}

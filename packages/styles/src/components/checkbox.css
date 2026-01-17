@@ -1,0 +1,32 @@
+/** Base Styling */
+.checkbox {
+  @apply flex items-center justify-center rounded border;
+
+  @apply size-6 outline-none;
+
+  @apply transition-[visibility] motion-reduce:transition-none;
+
+  &[data-unchecked] {
+    @apply bg-input/50;
+  }
+
+  &[data-checked] {
+    @apply bg-input;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}
+
+.checkbox__indicator {
+  @apply text-input-foreground flex;
+
+  &[data-unchecked] {
+    @apply hidden;
+  }
+
+  & svg {
+    @apply size-4;
+  }
+}

@@ -1,0 +1,84 @@
+.drawer__backdrop {
+  @apply fixed inset-0 bg-black/50 opacity-50;
+
+  @apply transition-opacity motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply opacity-0;
+  }
+}
+
+.drawer__popup {
+  @apply fixed z-50 p-3;
+
+  @apply bg-surface text-surface-foreground shadow;
+
+  @apply transition-[translate] motion-reduce:transition-none;
+}
+
+.drawer__title {
+  @apply text-lg font-medium;
+}
+
+.drawer__description {
+  @apply text-muted-foreground text-sm;
+}
+
+.drawer__close {
+  @apply cursor-pointer;
+
+  @apply absolute end-0 top-0 m-3 rounded-full;
+
+  @apply text-muted-foreground;
+
+  @apply transition-colors motion-reduce:transition-none;
+
+  &:hover {
+    @apply bg-secondary/10;
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+/**
+ * Variants
+ */
+
+.drawer--right.drawer__popup {
+  @apply end-0 top-0 h-full w-96 max-w-[calc(100vw-2rem)] rounded-l;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply translate-x-full;
+  }
+}
+
+.drawer--left.drawer__popup {
+  @apply start-0 top-0 h-full w-96 max-w-[calc(100vw-2rem)] rounded-r;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply -translate-x-full;
+  }
+}
+
+.drawer--top.drawer__popup {
+  @apply start-0 top-0 h-96 w-full rounded-b;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply -translate-y-full;
+  }
+}
+
+.drawer--bottom.drawer__popup {
+  @apply start-0 bottom-0 h-96 w-full rounded-t;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply translate-y-full;
+  }
+}

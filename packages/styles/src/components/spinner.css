@@ -1,0 +1,38 @@
+.spinner {
+  @apply animate-spin;
+}
+
+/**
+ * Sizes
+ */
+
+.spinner--sm {
+  @apply size-4;
+}
+
+.spinner--md {
+  @apply size-6;
+}
+
+.spinner--lg {
+  @apply size-8;
+}
+
+.spinner--xl {
+  @apply size-10;
+}
+
+/**
+ * Variants
+ */
+.spinner--primary {
+  @apply text-primary;
+}
+
+.spinner--success {
+  @apply text-success;
+}
+
+.spinner--danger {
+  @apply text-danger;
+}

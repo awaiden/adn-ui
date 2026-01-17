@@ -1,0 +1,42 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+---
+
+import { Checkbox } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Checkbox } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="checkbox" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.checkbox {
+  @apply peer border-primary ring-offset-background focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.checkbox__indicator {
+  @apply flex items-center justify-center text-current;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `checkbox__indicator`: The class for the indicator slot.
+- `checkbox`: The class for the root slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Checkbox component.

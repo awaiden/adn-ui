@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "./components/index.css" layer(components);
+
+:root {
+  --navbar-height: 4rem;
+  --radius: 0.625rem;
+
+  --white: oklch(0.985 0 0);
+  --black: oklch(0.145 0 0);
+
+  --background: var(--white);
+  --foreground: var(--black);
+
+  --surface: oklch(1 0 0);
+  --surface-foreground: oklch(0.145 0 0);
+  --overlay: oklch(1 0 0 / 90%);
+  --overlay-foreground: oklch(0.145 0 0);
+  --input: oklch(0.922 0 0);
+  --input-foreground: oklch(0.205 0 0);
+
+  --primary: var(--black);
+  --primary-foreground: var(--white);
+  --primary-hover: oklch(0.85 0.1 250);
+  --secondary: oklch(0.91 0.0013 286.37);
+  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-hover: oklch(0.8 0.1 286.37);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --danger: oklch(0.577 0.245 27.325);
+  --danger-foreground: oklch(0.985 0 0);
+  --success: oklch(0.623 0.17 145);
+  --success-foreground: oklch(0.985 0 0);
+
+  --border: oklch(0.922 0 0);
+  --ring: oklch(62% 0.18 250);
+}
+
+.dark {
+  --background: var(--black);
+  --foreground: var(--white);
+
+  --surface: oklch(0.205 0 0);
+  --surface-foreground: oklch(0.985 0 0);
+  --overlay: oklch(0.205 0 0);
+  --overlay-foreground: oklch(0.985 0 0);
+  --input: oklch(1 0 0 / 15%);
+  --input-foreground: oklch(0.985 0 0);
+
+  --primary: var(--white);
+  --primary-foreground: var(--black);
+  --secondary: oklch(0.3023 0.0053 286.08);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --danger: oklch(0.704 0.191 22.216);
+  --danger-foreground: oklch(0.985 0 0);
+  --success: oklch(0.7017 0.3225 145);
+  --success-foreground: oklch(0.205 0 0);
+
+  --border: oklch(1 0 0 / 10%);
+  --ring: oklch(62% 0.18 250);
+}
+
+@theme inline {
+  --radius: var(--radius);
+
+  --color-white: var(--white);
+  --color-black: var(--black);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-overlay: var(--overlay);
+  --color-overlay-foreground: var(--overlay-foreground);
+  --color-input: var(--input);
+  --color-input-foreground: var(--input-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@utility status-focused {
+  @apply ring-offset-background ring-2 ring-offset-2 outline-none;
+}
+
+@utility status-disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+@utility status-pending {
+  @apply cursor-wait opacity-75;
+}
+
+@custom-variant hover-safe {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      @slot;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground relative;
+  }
+
+  .root {
+    @apply isolate antialiased;
+  }
+
+  .container {
+    @apply mx-auto px-4;
+  }
+}

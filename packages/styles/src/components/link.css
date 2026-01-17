@@ -1,0 +1,18 @@
+/** Base Styling */
+.link {
+  @apply text-muted-foreground hover-safe:text-primary;
+  @apply inline-flex items-center gap-1;
+  @apply transition-colors motion-reduce:transition-none;
+
+  &svg {
+    @apply size-4;
+  }
+}
+
+.link--underline {
+  @apply underline;
+}
+
+.link--no-underline {
+  @apply no-underline;
+}

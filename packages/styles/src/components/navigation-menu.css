@@ -1,0 +1,45 @@
+.navigation-menu {
+  @apply min-w-max;
+}
+
+.navigation-menu__list {
+  @apply flex items-center gap-4;
+}
+
+.navigation-menu__trigger {
+  @apply cursor-pointer;
+
+  @apply text-muted-foreground hover-safe:text-primary;
+  @apply flex items-center justify-center gap-1;
+}
+
+.navigation-menu__icon {
+  @apply transition-transform motion-reduce:transition-none;
+
+  &[data-popup-open] {
+    @apply rotate-180;
+  }
+
+  & svg {
+    @apply size-4;
+  }
+}
+
+.navigation-menu__popup {
+  @apply bg-surface text-surface-foreground rounded border p-6 shadow;
+
+  @apply w-fit max-w-[calc(100vw-1rem)];
+
+  @apply transition-[scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-95 opacity-0;
+  }
+}
+
+.navigation-menu__arrow {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  @apply bg-surface;
+  @apply relative -top-3 z-50 size-4;
+}

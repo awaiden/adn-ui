@@ -1,0 +1,34 @@
+.context-menu__trigger {
+  @apply select-none;
+}
+
+.context-menu__positioner {
+  @apply outline-0;
+}
+
+.context-menu__popup {
+  transform-origin: var(--transform-origin);
+
+  @apply bg-surface text-surface-foreground rounded border p-3 shadow;
+
+  @apply transition-[transform,scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-90 opacity-0;
+  }
+}
+
+.context-menu__item {
+  @apply cursor-pointer;
+
+  @apply flex items-center gap-2;
+
+  @apply hover-safe:bg-primary hover-safe:text-primary-foreground;
+
+  @apply rounded px-2 py-1;
+}
+
+.context-menu__separator {
+  @apply bg-border my-2 h-px;
+}

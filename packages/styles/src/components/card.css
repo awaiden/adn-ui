@@ -1,0 +1,31 @@
+/** Base Styling */
+.card {
+  @apply w-full max-w-md rounded shadow;
+  @apply flex flex-col gap-4 p-5;
+}
+
+/** Slots */
+.card__header {
+  @apply flex flex-col gap-1;
+}
+
+.card__title {
+  @apply text-xl font-bold;
+}
+
+.card__description {
+  @apply text-muted-foreground text-base;
+}
+
+.card__content {
+  @apply flex flex-1 flex-col gap-3;
+}
+
+/** Variants */
+.card--default {
+  @apply bg-surface text-surface-foreground;
+}
+
+.card--transparent {
+  @apply bg-transparent;
+}

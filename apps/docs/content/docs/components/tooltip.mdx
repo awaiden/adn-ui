@@ -1,0 +1,43 @@
+---
+title: Tooltip
+description: A popup that displays information related to an element when the element
+  receives keyboard focus or the mouse hovers over it.
+---
+
+import { Tooltip } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Tooltip } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="tooltip" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.tooltip__popup {
+  @apply bg-primary text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `tooltip__arrow`: The class for the arrow slot.
+- `tooltip__popup`: The class for the popup slot.
+- `tooltip__portal`: The class for the portal slot.
+- `tooltip__positioner`: The class for the positioner slot.
+- `tooltip`: The class for the root slot.
+- `tooltip__trigger`: The class for the trigger slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Tooltip component.

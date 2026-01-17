@@ -1,0 +1,54 @@
+---
+title: Context Menu
+description: Displays a menu to the user - such as a set of actions or functions -
+  triggered by a button.
+---
+
+import { ContextMenu } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { ContextMenu } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="context-menu" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.context-menu__popup {
+  @apply bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md transition-all;
+}
+
+.context-menu__item {
+  @apply data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `context-menu`: The class for the root slot.
+- `context-menu__trigger`: The class for the trigger slot.
+- `context-menu__portal`: The class for the portal slot.
+- `context-menu__backdrop`: The class for the backdrop slot.
+- `context-menu__positioner`: The class for the positioner slot.
+- `context-menu__popup`: The class for the popup slot.
+- `context-menu__arrow`: The class for the arrow slot.
+- `context-menu__item`: The class for the item slot.
+- `context-menu__separator`: The class for the separator slot.
+- `context-menu__group`: The class for the group slot.
+- `context-menu__group-label`: The class for the groupLabel slot.
+- `context-menu__submenu`: The class for the submenu slot.
+- `context-menu__submenu-trigger`: The class for the submenuTrigger slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Context Menu component.

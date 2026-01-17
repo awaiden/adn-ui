@@ -1,0 +1,48 @@
+---
+title: Radio
+description: A set of checkable buttons—known as radio buttons—where no more than one of
+  the buttons can be checked at a time.
+---
+
+import { Radio } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Radio } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="radio" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.radio {
+  @apply border-primary text-primary focus-visible:ring-ring aspect-square h-4 w-4 rounded-full border shadow focus:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.radio__indicator {
+  @apply flex items-center justify-center;
+}
+
+.radio__indicator::after {
+  content: "";
+  @apply block h-2.5 w-2.5 rounded-full bg-current;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `radio__indicator`: The class for the indicator slot.
+- `radio`: The class for the root slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Radio component.

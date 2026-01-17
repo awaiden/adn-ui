@@ -1,0 +1,54 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed
+  one at a time.
+---
+
+import { Tabs } from "@adn-ui/react";
+
+## Import
+
+```tsx
+import { Tabs } from "@adn-ui/react";
+```
+
+### Default
+
+<ComponentPreview name="tabs" />
+
+## Styling
+
+### Customizing the component classes
+
+```css
+.tabs {
+  @apply w-full;
+}
+
+.tabs__list {
+  @apply bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1;
+}
+
+.tabs__trigger {
+  @apply ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow;
+}
+
+.tabs__panel {
+  @apply ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none;
+}
+```
+
+## CSS Classes
+
+### Slots
+
+- `tabs__indicator`: The class for the indicator slot.
+- `tabs__list`: The class for the list slot.
+- `tabs__panel`: The class for the panel slot.
+- `tabs`: The class for the root slot.
+- `tabs__tab`: The class for the tab slot.
+
+## API Reference
+
+Please visit [Base UI](https://base-ui.com/) for the complete API reference of
+the Tabs component.

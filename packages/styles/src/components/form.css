@@ -1,0 +1,4 @@
+/** Base Styling */
+.form {
+  @apply flex w-full flex-col gap-4;
+}

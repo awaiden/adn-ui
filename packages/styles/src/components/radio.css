@@ -1,0 +1,31 @@
+.radio__group {
+  @apply flex flex-col gap-4;
+}
+
+.radio {
+  @apply flex size-5 items-center justify-center rounded-full;
+
+  &[data-unchecked] {
+    @apply border-border bg-secondary;
+  }
+
+  &[data-checked] {
+    @apply border-primary bg-primary;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}
+
+.radio__indicator {
+  @apply flex items-center justify-center;
+
+  &[data-unchecked] {
+    @apply hidden;
+  }
+
+  &::before {
+    @apply bg-background block size-2 rounded-full content-[''];
+  }
+}

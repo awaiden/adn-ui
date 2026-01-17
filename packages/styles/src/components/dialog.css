@@ -1,0 +1,53 @@
+/** Base Styling */
+
+.dialog__backdrop {
+  @apply fixed inset-0 bg-black/50 opacity-20 backdrop-blur-sm;
+
+  @apply transition-opacity motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply opacity-0;
+  }
+}
+
+.dialog__popup {
+  @apply w-full max-w-lg px-2;
+
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+
+  @apply transition-[scale,opacity] motion-reduce:transition-none;
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    @apply scale-95 opacity-0;
+  }
+}
+
+.dialog__content {
+  @apply bg-surface text-surface-foreground rounded border p-4 shadow;
+}
+
+.dialog__title {
+  @apply text-lg font-semibold;
+}
+
+.dialog__description {
+  @apply text-muted-foreground text-sm;
+}
+
+.dialog__close {
+  @apply cursor-pointer;
+
+  @apply absolute top-3 right-5;
+
+  svg {
+    @apply text-muted-foreground size-5;
+
+    @apply transition-colors motion-reduce:transition-none;
+
+    &:hover {
+      @apply text-foreground;
+    }
+  }
+}

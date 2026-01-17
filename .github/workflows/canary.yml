@@ -1,0 +1,41 @@
+name: Canary Release (Bun Monorepo)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build packages
+        run: bun run build
+
+      - name: Create and Publish Canary
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: |
+          # 1. Configure npm auth
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+
+          # 2. Version and Publish
+          bun x changeset version --snapshot canary
+          bun x changeset publish --tag canary

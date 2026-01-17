@@ -1,0 +1,46 @@
+.number-field {
+  @apply flex flex-col items-start gap-1;
+}
+
+.number-field__scrub-area {
+  cursor: ew-resize;
+  @apply font-bold select-none;
+}
+
+.number-field__scrub-area-cursor {
+  filter: drop-shadow(0 1px 1px var(--color-primary));
+}
+
+.number-field__group {
+  @apply flex;
+}
+
+.number-field__input {
+  @apply bg-input text-input-foreground hover-safe:bg-input/80 border-y shadow;
+  @apply h-10 w-fit px-3 py-2;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}
+
+.number-field__increment,
+.number-field__decrement {
+  @apply cursor-pointer;
+
+  @apply bg-secondary text-secondary-foreground hover-safe:bg-secondary/80 border shadow;
+  @apply flex items-center justify-center;
+  @apply size-10 p-2;
+
+  &:first-of-type {
+    @apply rounded-l;
+  }
+
+  &:last-of-type {
+    @apply rounded-r;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+}

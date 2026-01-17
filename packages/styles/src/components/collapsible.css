@@ -1,0 +1,36 @@
+.collapsible {
+  @apply w-full max-w-md;
+}
+
+.collapsible__trigger {
+  @apply cursor-pointer;
+
+  @apply flex items-center gap-1;
+}
+
+.collapsible__trigger-icon {
+  @apply text-muted-foreground size-5;
+
+  @apply transition-transform motion-reduce:transition-none;
+
+  .collapsible__trigger[data-panel-open] & {
+    @apply rotate-90;
+  }
+}
+
+.collapsible__panel {
+  height: var(--collapsible-panel-height);
+
+  @apply overflow-hidden;
+
+  @apply transition-[height] motion-reduce:transition-none;
+
+  &[hidden]:not([hidden="until-found"]) {
+    @apply hidden;
+  }
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    height: 0;
+  }
+}

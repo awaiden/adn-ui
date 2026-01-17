@@ -1,0 +1,24 @@
+/** Base Styling */
+.avatar {
+  @apply bg-secondary text-secondary-foreground inline-flex items-center justify-center overflow-hidden rounded-full align-middle select-none;
+}
+
+.avatar--sm {
+  @apply size-10;
+}
+
+.avatar--md {
+  @apply size-12;
+}
+
+.avatar--lg {
+  @apply size-14;
+}
+
+.avatar__image {
+  @apply h-full w-full object-cover;
+}
+
+.avatar__fallback {
+  @apply flex h-full w-full items-center justify-center;
+}

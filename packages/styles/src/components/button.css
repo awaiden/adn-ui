@@ -1,0 +1,78 @@
+/** Base Styling */
+.button {
+  @apply cursor-pointer;
+
+  @apply border-border inline-flex items-center justify-center gap-2 rounded font-medium text-nowrap;
+
+  @apply w-fit px-3 py-2;
+
+  @apply transition-[scale,background-color] motion-reduce:transition-none;
+
+  &[data-focused] {
+    @apply status-focused;
+  }
+
+  &:active {
+    @apply scale-95;
+  }
+
+  &[data-disabled] {
+    @apply status-disabled;
+  }
+
+  &[data-pending] {
+    @apply status-pending;
+  }
+
+  svg {
+    @apply size-5 shrink-0;
+  }
+}
+
+.button--sm {
+  @apply h-8 text-sm;
+
+  svg {
+    @apply size-4;
+  }
+}
+
+.button--md {
+  @apply h-10;
+}
+
+.button--lg {
+  @apply h-12;
+}
+
+.button--primary {
+  @apply bg-primary text-primary-foreground hover-safe:bg-primary/90;
+}
+
+.button--secondary {
+  @apply bg-secondary text-secondary-foreground hover-safe:bg-secondary/80;
+}
+
+.button--outline {
+  @apply bg-background text-foreground hover-safe:bg-secondary;
+}
+
+.button--danger {
+  @apply bg-danger text-danger-foreground hover-safe:bg-danger/90;
+}
+
+.button--ghost {
+  @apply text-foreground hover-safe:bg-secondary border-0 bg-transparent;
+}
+
+.button--icon-only {
+  @apply size-10;
+}
+
+.button--icon-only.button--sm {
+  @apply size-8;
+}
+
+.button--icon-only.button--lg {
+  @apply size-12;
+}

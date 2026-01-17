@@ -1,0 +1,46 @@
+.alert {
+  @apply bg-surface/10 flex items-start justify-between rounded border p-5 shadow;
+
+  @apply w-full;
+}
+
+.alert__indicator {
+  @apply mt-1 mr-4 shrink-0;
+
+  svg {
+    @apply size-5;
+  }
+}
+
+.alert__content {
+  @apply flex flex-1 flex-col gap-1;
+}
+
+.alert__title {
+  @apply font-medium;
+}
+
+.alert__description {
+  @apply text-muted-foreground text-sm;
+}
+
+/* Variants */
+.alert--primary {
+  @apply text-primary;
+}
+
+.alert--danger {
+  @apply text-red-500;
+}
+
+.alert--success {
+  @apply text-green-500;
+}
+
+.alert--warning {
+  @apply text-yellow-500;
+}
+
+.alert--info {
+  @apply text-blue-500;
+}

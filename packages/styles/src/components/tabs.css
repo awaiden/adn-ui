@@ -1,0 +1,45 @@
+.tabs {
+  @apply flex flex-col gap-4;
+}
+
+.tabs__list {
+  @apply flex items-center;
+}
+
+.tabs__tab {
+  @apply cursor-pointer;
+
+  @apply bg-secondary text-secondary-foreground hover-safe:bg-secondary/80;
+  @apply inline-flex items-center justify-center;
+  @apply h-10 w-fit px-3 py-2;
+
+  @apply transition-colors motion-reduce:transition-none;
+
+  &[data-active] {
+    @apply bg-primary text-primary-foreground hover-safe:bg-primary/90;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &:first-of-type {
+    @apply rounded-l;
+  }
+
+  &:last-of-type {
+    @apply rounded-r;
+  }
+}
+
+.tabs__panel {
+  @apply flex;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &[hidden] {
+    @apply hidden;
+  }
+}
