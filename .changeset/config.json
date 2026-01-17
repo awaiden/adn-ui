@@ -5,7 +5,7 @@
   "changelog": false,
   "commit": true,
   "fixed": [["@adn-ui/react", "@adn-ui/styles"]],
-  "ignore": ["@adn-ui/docs", "@adn-ui/storybook"],
+  "ignore": ["@adn-ui/storybook"],
   "linked": [],
   "updateInternalDependencies": "patch"
 }
