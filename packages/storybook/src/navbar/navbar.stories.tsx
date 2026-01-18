@@ -22,17 +22,15 @@ export const Default: Story = {
           Navbar Content
         </Navbar.Content>
         <Navbar.Content className="hidden justify-center md:flex">
-          <Navbar.List>
-            <Navbar.ListItem>
-              <Link href="#">Home</Link>
-            </Navbar.ListItem>
-            <Navbar.ListItem>
-              <Link href="#">About</Link>
-            </Navbar.ListItem>
-            <Navbar.ListItem>
-              <Link href="#">Contact</Link>
-            </Navbar.ListItem>
-          </Navbar.List>
+          <Navbar.Item>
+            <Link href="#">Home</Link>
+          </Navbar.Item>
+          <Navbar.Item>
+            <Link href="#">About</Link>
+          </Navbar.Item>
+          <Navbar.Item>
+            <Link href="#">Contact</Link>
+          </Navbar.Item>
         </Navbar.Content>
         <Navbar.Content className="justify-end">
           <Button variant="secondary">Log In</Button>
@@ -41,7 +39,7 @@ export const Default: Story = {
           </Button>
         </Navbar.Content>
       </Navbar.Container>
-      <Navbar.Menu header="Navbar Content">
+      <Navbar.Menu>
         <Navbar.MenuItem>
           <Link href="#">Home</Link>
         </Navbar.MenuItem>
@@ -50,16 +48,6 @@ export const Default: Story = {
         </Navbar.MenuItem>
         <Navbar.MenuItem>
           <Link href="#">Contact</Link>
-        </Navbar.MenuItem>
-        <Navbar.MenuItem>
-          <Button className="w-full" variant="secondary">
-            Log In
-          </Button>
-        </Navbar.MenuItem>
-        <Navbar.MenuItem>
-          <Button className="w-full" variant="primary">
-            Sign Up
-          </Button>
         </Navbar.MenuItem>
       </Navbar.Menu>
     </Navbar>

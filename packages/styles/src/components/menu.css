@@ -3,9 +3,11 @@
 }
 
 .menu__popup {
-  @apply rounded p-3;
+  @apply rounded p-1;
 
-  @apply bg-overlay text-overlay-foreground shadow;
+  @apply w-56;
+
+  @apply bg-overlay text-overlay-foreground border shadow;
 
   @apply transition-[transform,scale] motion-reduce:transition-none;
 
@@ -16,33 +18,42 @@
 }
 
 .menu__arrow {
-  @apply text-overlay flex size-6;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+  @apply bg-overlay size-2 border;
 
   &[data-side="top"] {
-    @apply -bottom-3 rotate-180;
+    @apply -bottom-2 rotate-180;
   }
 
   &[data-side="right"] {
-    @apply -start-3 rotate-90;
+    @apply -start-2 rotate-90;
   }
 
   &[data-side="bottom"] {
-    @apply -top-3;
+    @apply -top-2;
   }
 
   &[data-side="left"] {
-    @apply -end-3 -rotate-90;
+    @apply -end-2 -rotate-90;
   }
 }
 
-.menu__item {
-  @apply relative flex cursor-pointer items-center rounded px-3 py-2 text-sm leading-none select-none;
+.menu__item,
+.menu__submenu__trigger {
+  @apply cursor-pointer;
 
-  &:focus {
-    @apply bg-secondary text-secondary-foreground outline-none;
-  }
+  @apply bg-overlay hover-safe:bg-secondary hover-safe:text-secondary-foreground rounded shadow;
+
+  @apply flex items-center gap-2 px-2 py-1;
+
+  @apply transition-colors motion-reduce:transition-none;
 }
 
-.autocomplete__separator {
-  @apply bg-border my-2 h-px;
+.menu__group {
+  @apply mt-2 mb-1 px-1;
+}
+
+.menu__group-label {
+  @apply text-muted-foreground;
 }

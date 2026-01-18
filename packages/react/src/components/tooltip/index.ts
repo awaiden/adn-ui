@@ -4,6 +4,8 @@ import {
   TooltipPortal,
   TooltipPositioner,
   TooltipRoot,
+  TooltipTitle,
+  TooltipDescription,
   TooltipTrigger,
 } from "./tooltip";
 
@@ -14,6 +16,8 @@ export const Tooltip = Object.assign(TooltipRoot, {
   Positioner: TooltipPositioner,
   Root: TooltipRoot,
   Trigger: TooltipTrigger,
+  Title: TooltipTitle,
+  Description: TooltipDescription,
 });
 
 export * from "./tooltip";

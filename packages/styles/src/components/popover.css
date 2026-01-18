@@ -7,7 +7,7 @@
 .popover__popup {
   @apply relative rounded px-3 py-2;
 
-  @apply bg-overlay text-overlay-foreground shadow;
+  @apply bg-overlay text-overlay-foreground border shadow;
 
   @apply transition-[transform,scale] motion-reduce:transition-none;
 

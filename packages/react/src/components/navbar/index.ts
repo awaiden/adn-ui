@@ -1,8 +1,7 @@
 import {
   NavbarContainer,
   NavbarContent,
-  NavbarList,
-  NavbarListItem,
+  NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
   NavbarRoot,
@@ -12,8 +11,7 @@ import {
 export const Navbar = Object.assign(NavbarRoot, {
   Container: NavbarContainer,
   Content: NavbarContent,
-  List: NavbarList,
-  ListItem: NavbarListItem,
+  Item: NavbarItem,
   Menu: NavbarMenu,
   MenuItem: NavbarMenuItem,
   Root: NavbarRoot,

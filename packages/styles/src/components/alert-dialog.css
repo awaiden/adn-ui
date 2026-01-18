@@ -19,12 +19,12 @@
 
   &[data-starting-style],
   &[data-ending-style] {
-    @apply scale-95 opacity-0;
+    @apply scale-90 opacity-0;
   }
 }
 
 .alert-dialog__content {
-  @apply bg-surface text-surface-foreground rounded border p-4 shadow;
+  @apply bg-surface text-surface-foreground relative rounded border p-4 shadow;
 }
 
 .alert-dialog__title {
@@ -38,7 +38,7 @@
 .alert-dialog__close {
   @apply cursor-pointer;
 
-  @apply absolute top-3 right-5;
+  @apply absolute top-0 right-0 m-3;
 
   svg {
     @apply text-muted-foreground size-5;

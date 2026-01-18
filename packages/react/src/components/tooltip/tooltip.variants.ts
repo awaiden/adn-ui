@@ -8,6 +8,8 @@ export const tooltipVariants = tv({
     positioner: "tooltip__positioner",
     root: "tooltip",
     trigger: "tooltip__trigger",
+    title: "tooltip__title",
+    description: "tooltip__description",
   },
 });
 

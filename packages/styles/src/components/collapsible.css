@@ -34,3 +34,7 @@
     height: 0;
   }
 }
+
+.collapsible__content {
+  @apply ms-3 px-3 py-2;
+}

@@ -4,8 +4,6 @@ import { LucideMenu, LucideX } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 import { cn } from "tailwind-variants";
 
-import { Drawer } from "../drawer";
-import { Separator } from "../separator";
 import { NavbarContext } from "./navbar.context";
 import { type NavbarVariants, navbarVariants } from "./navbar.variants";
 import { useNavbar } from "./use-navbar";
@@ -40,7 +38,7 @@ export const NavbarRoot = ({ className, isOpen, onOpenChange, ...props }: Navbar
         slots,
       }}
     >
-      <header className={cn(slots.root(), className)} {...props} />
+      <header data-open={open} className={cn(slots.root(), className)} {...props} />
     </NavbarContext.Provider>
   );
 };
@@ -53,24 +51,17 @@ export const NavbarContainer = ({ className, ...props }: NavbarContainerProps) =
   return <nav className={cn(slots.container(), className)} {...props} />;
 };
 
-export interface NavbarContentProps extends React.ComponentProps<"div"> {}
+export interface NavbarContentProps extends React.ComponentProps<"ul"> {}
 
 export const NavbarContent = ({ className, ...props }: NavbarContentProps) => {
   const { slots } = useNavbar();
 
-  return <div className={cn(slots.content(), className)} {...props} />;
+  return <ul className={cn(slots.content(), className)} {...props} />;
 };
 
-export interface NavbarListProps extends React.ComponentProps<"ul"> {}
+export interface NavbarItemProps extends React.ComponentProps<"li"> {}
 
-export const NavbarList = ({ className, ...props }: NavbarListProps) => {
-  const { slots } = useNavbar();
-  return <ul className={cn(slots.list(), className)} {...props} />;
-};
-
-export interface NavbarListItemProps extends React.ComponentProps<"li"> {}
-
-export const NavbarListItem = ({ className, ...props }: NavbarListItemProps) => {
+export const NavbarItem = ({ className, ...props }: NavbarItemProps) => {
   const { slots } = useNavbar();
   return <li className={cn(slots.listItem(), className)} {...props} />;
 };
@@ -94,28 +85,12 @@ export const NavbarToggle = ({ className, ...props }: NavbarToggleProps) => {
 };
 
 // Menu
-export interface NavbarMenuProps extends React.ComponentProps<"ul"> {
-  header: React.ReactNode;
-}
+export interface NavbarMenuProps extends React.ComponentProps<"ul"> {}
 
-export const NavbarMenu = ({ className, header, ...props }: NavbarMenuProps) => {
-  const { slots, isOpen, onOpenChange } = useNavbar();
+export const NavbarMenu = ({ className, ...props }: NavbarMenuProps) => {
+  const { slots } = useNavbar();
 
-  return (
-    <Drawer onOpenChange={onOpenChange} open={isOpen}>
-      <Drawer.Portal>
-        <Drawer.Backdrop />
-        <Drawer.Viewport>
-          <Drawer.Popup>
-            {header}
-            <Drawer.Close />
-            <Separator />
-            <ul className={cn(slots.menu(), className)} {...props} />
-          </Drawer.Popup>
-        </Drawer.Viewport>
-      </Drawer.Portal>
-    </Drawer>
-  );
+  return <ul className={cn(slots.menu(), className)} {...props} />;
 };
 
 export interface NavbarMenuItemProps extends React.ComponentProps<"li"> {}

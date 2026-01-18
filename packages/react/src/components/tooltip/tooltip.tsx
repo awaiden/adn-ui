@@ -61,10 +61,20 @@ export const TooltipArrow = ({ className, ...props }: TooltipArrowProps) => {
   return <BaseTooltip.Arrow className={cn(className, slots.arrow())} {...props} />;
 };
 
-// Provider
-// Tooltip.Provider is just a wrapper, Base UI might just use Tooltip.Provider
-// But looking at Base UI docs, <Tooltip.Provider> is the top level if global config is needed.
-// However, standard anatomy shows Tooltip.Provider wrapping Tooltip.Root.
-// But in Base UI v1, Tooltip.Root seems to be the main container per instance.
-// Let's re-read Anatomy: "Provider > Root > Trigger..."
-// So we should export Provider as well.
+// Title
+export interface TooltipTitleProps extends React.ComponentProps<"h4"> {}
+
+export const TooltipTitle = ({ className, ...props }: TooltipTitleProps) => {
+  const { slots } = useTooltip();
+
+  return <h4 className={cn(className, slots.title())} {...props} />;
+};
+
+// Description
+export interface TooltipDescriptionProps extends React.ComponentProps<"p"> {}
+
+export const TooltipDescription = ({ className, ...props }: TooltipDescriptionProps) => {
+  const { slots } = useTooltip();
+
+  return <p className={cn(className, slots.description())} {...props} />;
+};

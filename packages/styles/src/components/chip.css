@@ -1,18 +1,18 @@
 /** Base Styling */
 .chip {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border px-2 font-medium text-nowrap;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-3 font-medium text-nowrap;
 }
 
 .chip--sm {
-  @apply h-4 text-sm;
+  @apply h-6 text-sm;
 }
 
 .chip--md {
-  @apply h-6;
+  @apply h-8;
 }
 
 .chip--lg {
-  @apply h-8;
+  @apply h-10 text-lg;
 }
 
 .chip--primary {

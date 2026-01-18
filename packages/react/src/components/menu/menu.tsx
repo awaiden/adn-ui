@@ -1,7 +1,6 @@
 "use client";
 
 import { Menu as BaseMenu } from "@base-ui/react";
-import { LucideChevronUp } from "lucide-react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";
 
@@ -66,13 +65,9 @@ export const MenuPopup = ({ className, ...props }: MenuPopupProps) => {
 // Arrow
 export interface MenuArrowProps extends MenuVariants, BaseMenu.Arrow.Props {}
 
-export const MenuArrow = ({ className, children, ...props }: MenuArrowProps) => {
+export const MenuArrow = ({ className, ...props }: MenuArrowProps) => {
   const { slots } = useMenu();
-  return (
-    <BaseMenu.Arrow className={cn(slots.arrow(), className)} {...props}>
-      {children ?? <LucideChevronUp />}
-    </BaseMenu.Arrow>
-  );
+  return <BaseMenu.Arrow className={cn(slots.arrow(), className)} {...props} />;
 };
 
 // Item

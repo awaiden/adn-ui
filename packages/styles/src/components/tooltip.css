@@ -7,11 +7,11 @@
 }
 
 .tooltip__popup {
-  @apply rounded px-2 py-1 text-xs leading-none font-medium;
+  @apply px-3 py-2 text-sm leading-none font-medium;
 
-  @apply bg-overlay-foreground text-overlay;
+  @apply bg-surface text-surface-foreground rounded border shadow;
 
-  @apply transition-[transform,scale,opacity] motion-reduce:transition-none;
+  @apply transition-[scale,opacity] motion-reduce:transition-none;
 
   &[data-starting-style],
   &[data-ending-style] {
@@ -21,7 +21,7 @@
 
 .tooltip__arrow {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  @apply bg-overlay-foreground absolute z-50 size-2;
+  @apply bg-surface absolute z-50 size-2;
 
   &[data-side="top"] {
     @apply -bottom-1 rotate-180;
@@ -38,4 +38,12 @@
   &[data-side="left"] {
     @apply -end-1.5 -rotate-90;
   }
+}
+
+.tooltip__title {
+  @apply font-medium;
+}
+
+.tooltip__description {
+  @apply text-muted-foreground text-sm;
 }
