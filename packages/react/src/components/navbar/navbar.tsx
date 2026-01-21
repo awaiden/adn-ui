@@ -11,24 +11,24 @@ import { type NavbarVariants, navbarVariants } from "./navbar.variants";
 import { useNavbar } from "./use-navbar";
 
 export interface NavbarProps extends NavbarVariants, React.ComponentProps<"header"> {
-  isOpen?: boolean;
-  defaultIsOpen?: boolean;
-  setIsOpen?: (open: boolean) => void;
+  open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 export const NavbarRoot = ({
   className,
-  isOpen: _isOpen,
-  defaultIsOpen,
-  setIsOpen: _setIsOpen,
+  open,
+  defaultOpen,
+  onOpenChange,
   ...props
 }: NavbarProps) => {
   const slots = useMemo(() => navbarVariants({}), []);
 
   const [isOpen, setIsOpen] = useControllableState({
-    prop: _isOpen,
-    defaultProp: Boolean(defaultIsOpen),
-    onChange: _setIsOpen,
+    prop: open,
+    defaultProp: Boolean(defaultOpen),
+    onChange: onOpenChange,
   });
 
   return (
