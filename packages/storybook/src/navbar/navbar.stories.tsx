@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button, Link, Navbar } from "@adn-ui/react";
+import { useState } from "react";
 
 const meta: Meta<typeof Navbar> = {
   args: {
@@ -22,15 +23,11 @@ export const Default: Story = {
           Navbar Content
         </Navbar.Content>
         <Navbar.Content className='hidden justify-center md:flex'>
-          <Navbar.Item>
-            <Link href='#'>Home</Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Link href='#'>About</Link>
-          </Navbar.Item>
-          <Navbar.Item>
-            <Link href='#'>Contact</Link>
-          </Navbar.Item>
+          {items.map((item) => (
+            <Navbar.Item key={item}>
+              <Link href='#'>{item}</Link>
+            </Navbar.Item>
+          ))}
         </Navbar.Content>
         <Navbar.Content className='justify-end'>
           <Button variant='secondary'>Log In</Button>
@@ -48,47 +45,57 @@ export const Default: Story = {
             <span className='text-lg font-semibold'>Menu</span>
           </div>
           <ul>
-            <li>
-              <Link
-                className='block w-full px-3 py-2'
-                href='#'
+            {items.map((item) => (
+              <li
+                key={item}
+                className='border-t px-3 py-2'
               >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                className='block w-full px-3 py-2'
-                href='#'
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                className='block w-full px-3 py-2'
-                href='#'
-              >
-                Contact
-              </Link>
-            </li>
-            <li className='flex items-center'>
-              <Button
-                className='w-full'
-                variant='secondary'
-              >
-                Log In
-              </Button>
-              <Button
-                className='ml-2 w-full'
-                variant='primary'
-              >
-                Sign Up
-              </Button>
-            </li>
+                <Link href='#'>{item}</Link>
+              </li>
+            ))}
           </ul>
         </Navbar.MenuContent>
       </Navbar.Menu>
     </Navbar>
   ),
 };
+
+export const Controlled: Story = {
+  render: (args) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <Navbar
+        {...args}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      >
+        <Navbar.Container>
+          <Navbar.Content className='justify-start'>
+            <Navbar.Toggle />
+            Navbar Content
+          </Navbar.Content>
+        </Navbar.Container>
+        <Navbar.Menu position='bottom'>
+          <Navbar.MenuContent>
+            <div className='flex items-center justify-between px-3 py-2'>
+              <span className='text-lg font-semibold'>Menu</span>
+            </div>
+            <ul>
+              {items.map((item) => (
+                <li
+                  key={item}
+                  className='border-t px-3 py-2'
+                >
+                  <Link href='#'>{item}</Link>
+                </li>
+              ))}
+            </ul>
+          </Navbar.MenuContent>
+        </Navbar.Menu>
+      </Navbar>
+    );
+  },
+};
+
+const items = ["Home", "About", "Contact"];

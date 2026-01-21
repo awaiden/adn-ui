@@ -1,19 +1,35 @@
 "use client";
 
+import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { LucideMenu, LucideX } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { cn } from "tailwind-variants";
 
 import { Drawer } from "../drawer";
 import { NavbarContext } from "./navbar.context";
 import { type NavbarVariants, navbarVariants } from "./navbar.variants";
 import { useNavbar } from "./use-navbar";
-export interface NavbarProps extends NavbarVariants, React.ComponentProps<"header"> {}
 
-export const NavbarRoot = ({ className, ...props }: NavbarProps) => {
+export interface NavbarProps extends NavbarVariants, React.ComponentProps<"header"> {
+  isOpen?: boolean;
+  defaultIsOpen?: boolean;
+  setIsOpen?: (open: boolean) => void;
+}
+
+export const NavbarRoot = ({
+  className,
+  isOpen: _isOpen,
+  defaultIsOpen,
+  setIsOpen: _setIsOpen,
+  ...props
+}: NavbarProps) => {
   const slots = useMemo(() => navbarVariants({}), []);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useControllableState({
+    prop: _isOpen,
+    defaultProp: Boolean(defaultIsOpen),
+    onChange: _setIsOpen,
+  });
 
   return (
     <NavbarContext.Provider
