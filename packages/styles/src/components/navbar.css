@@ -9,7 +9,7 @@
 }
 
 .navbar__content {
-  @apply flex items-center gap-4;
+  @apply flex flex-1 items-center gap-4;
 }
 
 .navbar__toggle {

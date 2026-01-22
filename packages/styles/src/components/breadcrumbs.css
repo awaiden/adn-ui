@@ -1,0 +1,23 @@
+.breadcrumbs {
+  @apply w-full px-2;
+}
+
+.breadcrumbs__list {
+  @apply flex flex-wrap items-center gap-2 text-sm;
+}
+
+.breadcrumbs__item {
+  @apply text-muted-foreground leading-none;
+
+  &:last-child {
+    @apply text-primary font-medium;
+  }
+}
+
+.breadcrumbs__separator {
+  @apply text-muted-foreground;
+
+  & svg {
+    @apply size-4;
+  }
+}

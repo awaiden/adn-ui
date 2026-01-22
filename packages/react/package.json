@@ -39,10 +39,7 @@
   "scripts": {
     "add:component": "bun scripts/add-component.mjs",
     "build": "tsdown",
-    "dev": "tsdown --watch",
     "gen:exports": "bun scripts/generate-exports.mjs",
-    "postadd:component": "bun run gen:exports",
-    "postgen:exports": "bun run check",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

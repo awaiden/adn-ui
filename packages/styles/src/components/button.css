@@ -4,7 +4,7 @@
 
   @apply inline-flex items-center justify-center gap-2 rounded border font-medium text-nowrap;
 
-  @apply w-fit px-3;
+  @apply w-fit px-4;
 
   @apply transition-[scale,background-color] motion-reduce:transition-none;
 
