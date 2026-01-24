@@ -1,0 +1,24 @@
+.label {
+  @apply text-foreground cursor-pointer text-sm font-medium select-none;
+  @apply transition-colors motion-reduce:transition-none;
+
+  &[data-required="true"] {
+    &::after {
+      content: "*";
+      @apply text-danger ml-0.5;
+    }
+  }
+
+  &:has(input[type="checkbox"]),
+  &:has(input[type="radio"]) {
+    @apply flex cursor-pointer items-center gap-2;
+  }
+
+  &:has(input:disabled) {
+    @apply status-disabled;
+  }
+}
+
+.label[data-invalid] {
+  @apply text-danger;
+}

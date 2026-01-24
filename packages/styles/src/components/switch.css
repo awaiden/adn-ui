@@ -1,0 +1,40 @@
+/** Base Styling */
+.switch {
+  @apply cursor-pointer;
+
+  @apply bg-primary/10 relative flex cursor-pointer rounded-full border-2;
+
+  &[data-checked] {
+    @apply bg-primary/30;
+  }
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &[data-disabled] {
+    @apply status-disabled;
+  }
+}
+
+.switch__thumb {
+  @apply bg-primary aspect-square h-full rounded-full shadow;
+
+  @apply transition-[translate] motion-reduce:transition-none;
+
+  &[data-checked] {
+    @apply translate-x-full;
+  }
+}
+
+.switch--sm {
+  @apply h-4 w-7;
+}
+
+.switch--md {
+  @apply h-6 w-10;
+}
+
+.switch--lg {
+  @apply h-8 w-14;
+}

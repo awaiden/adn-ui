@@ -36,7 +36,6 @@
     "start": "turbo run start",
     "type-check": "oxlint --type-check ."
   },
-  "dependencies": {},
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
     "@commitlint/cli": "^20.2.0",

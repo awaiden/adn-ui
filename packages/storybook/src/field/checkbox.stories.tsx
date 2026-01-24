@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Button, Field, Form } from "@adn-ui/react";
 import { useForm } from "react-hook-form";

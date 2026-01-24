@@ -1,0 +1,13 @@
+.select {
+  @apply cursor-pointer;
+  @apply bg-size-[16px_16px] bg-position-[right_0.75rem_center] bg-no-repeat;
+  @apply pr-10;
+
+  & option {
+    @apply bg-background text-foreground;
+  }
+
+  & optgroup {
+    @apply bg-surface text-surface-foreground font-medium;
+  }
+}

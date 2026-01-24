@@ -1,0 +1,23 @@
+.radio {
+  @apply border-border size-5 rounded-full border;
+  @apply bg-input text-input-foreground;
+  @apply shrink-0 cursor-pointer;
+  @apply transition-all motion-reduce:transition-none;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &:checked {
+    @apply bg-primary border-primary;
+    @apply shadow-[inset_0_0_0_3px_var(--color-input)];
+  }
+
+  &:disabled {
+    @apply status-disabled;
+  }
+
+  &[data-invalid] {
+    @apply border-danger;
+  }
+}

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Container, iconButtonVariants, Popover } from "@adn-ui/react";
 import { LucideBell } from "lucide-react";

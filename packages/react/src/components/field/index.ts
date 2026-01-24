@@ -1,39 +1,33 @@
-import { FieldCheckbox } from "./field-checkbox";
-import { FieldCheckboxGroup } from "./field-checkbox-group";
-import { FieldErrorMessage } from "./field-error-message";
-import { FieldHelperText } from "./field-helper-text";
-import { FieldInput } from "./field-input";
-import { FieldLabel } from "./field-label";
-import { FieldRadio } from "./field-radio";
-import { FieldRadioGroup } from "./field-radio-group";
-import { FieldRoot } from "./field-root";
-import { FieldSelect } from "./field-select";
-import { FieldTextArea } from "./field-textarea";
+import { Checkbox } from "./checkbox";
+import { CheckboxGroup } from "./checkbox-group";
+import { ErrorMessage } from "./error-message";
+import { HelperText } from "./helper-text";
+import { Input } from "./input";
+import { Label } from "./label";
+import { Radio } from "./radio";
+import { RadioGroup } from "./radio-group";
+import { Root } from "./root";
+import { Select } from "./select";
+import { Switch } from "./switch";
+import { TextArea } from "./textarea";
 
-export { FieldCheckbox, type FieldCheckboxProps } from "./field-checkbox";
-export { FieldCheckboxGroup, type FieldCheckboxGroupProps } from "./field-checkbox-group";
-export { FieldErrorMessage, type FieldErrorMessageProps } from "./field-error-message";
-export { FieldHelperText, type FieldHelperTextProps } from "./field-helper-text";
-export { FieldInput, type FieldInputProps } from "./field-input";
-export { FieldLabel, type FieldLabelProps } from "./field-label";
-export { FieldRadio, type FieldRadioProps } from "./field-radio";
-export { FieldRadioGroup, type FieldRadioGroupProps } from "./field-radio-group";
-export { FieldRoot, type FieldRootProps } from "./field-root";
-export { FieldSelect, type FieldSelectProps } from "./field-select";
-export { FieldTextArea, type FieldTextAreaProps } from "./field-textarea";
+// Subcomponents are attached to Field object, not exported directly to avoid collision with standalone components
+export { Root } from "./root"; // Export Root as it's the base for Field (or maybe unnecessary if Field is Root)
 
-export const Field = Object.assign(FieldRoot, {
-  Checkbox: FieldCheckbox,
-  CheckboxGroup: FieldCheckboxGroup,
-  ErrorMessage: FieldErrorMessage,
-  HelperText: FieldHelperText,
-  Input: FieldInput,
-  Label: FieldLabel,
-  Radio: FieldRadio,
-  RadioGroup: FieldRadioGroup,
-  Root: FieldRoot,
-  Select: FieldSelect,
-  TextArea: FieldTextArea,
+export * from "./use-field";
+export * from "./context";
+
+export const Field = Object.assign(Root, {
+  Checkbox,
+  CheckboxGroup,
+  ErrorMessage,
+  HelperText,
+  Input,
+  Label,
+  Radio,
+  RadioGroup,
+  Root,
+  Select,
+  Switch,
+  TextArea,
 });
-
-export { useFieldVariants, type FieldVariants } from "./field.variants";

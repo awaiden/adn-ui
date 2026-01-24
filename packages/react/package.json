@@ -39,6 +39,7 @@
   "scripts": {
     "add:component": "bun scripts/add-component.mjs",
     "build": "tsdown",
+    "dev": "tsdown --watch --no-clean",
     "gen:exports": "bun scripts/generate-exports.mjs"
   },
   "dependencies": {

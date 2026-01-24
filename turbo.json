@@ -6,7 +6,6 @@
     },
     "dev": {
       "cache": false,
-      "dependsOn": ["^build"],
       "persistent": true
     },
     "start": {

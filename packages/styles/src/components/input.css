@@ -1,0 +1,23 @@
+.input,
+.textarea,
+.select {
+  @apply bg-input text-input-foreground border-border rounded-lg border;
+  @apply w-full px-3 py-2;
+  @apply transition-all motion-reduce:transition-none;
+
+  &:focus-visible {
+    @apply status-focused;
+  }
+
+  &::placeholder {
+    @apply text-muted-foreground;
+  }
+
+  &:disabled {
+    @apply status-disabled;
+  }
+
+  &[data-invalid="true"] {
+    @apply border-danger focus:ring-danger;
+  }
+}
