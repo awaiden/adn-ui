@@ -29,3 +29,8 @@
     @apply size-5;
   }
 }
+
+.field__prefix,
+.field__suffix {
+  @apply flex items-center;
+}

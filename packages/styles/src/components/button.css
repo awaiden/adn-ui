@@ -25,7 +25,7 @@
   }
 
   & svg {
-    @apply size-5;
+    @apply size-5 shrink-0;
   }
 }
 
@@ -79,24 +79,12 @@
 
 .button--icon-only {
   @apply size-10;
-
-  & svg {
-    @apply size-5;
-  }
 }
 
 .button--icon-only.button--sm {
   @apply size-8;
-
-  & svg {
-    @apply size-4;
-  }
 }
 
 .button--icon-only.button--lg {
   @apply size-12;
-
-  & svg {
-    @apply size-6;
-  }
 }
