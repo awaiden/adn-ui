@@ -1,5 +1,5 @@
 .spinner {
-  @apply animate-spin;
+  @apply shrink-0 animate-spin;
 }
 
 /**

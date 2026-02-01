@@ -88,3 +88,10 @@ export const FullWidth: Story = {
     className: "w-full",
   },
 };
+
+export const Pending: Story = {
+  args: {
+    isPending: true,
+    disabled: false,
+  },
+};
