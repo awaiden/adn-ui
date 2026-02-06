@@ -6,6 +6,4 @@ export const Switch = Object.assign(SwitchRoot, {
 });
 
 export * from "./switch";
-export type * from "./switch";
-
-export { switchVariants, type SwitchVariants } from "./switch.variants";
+export * from "./switch.variants";

@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { {{Pascal}}Context } from "./{{kebab}}.context";
 
-export const use{{Pascal}} = () => {
+export const use{{Pascal}}Variants = () => {
     const context = useContext({{Pascal}}Context);
 
     if (!context) {

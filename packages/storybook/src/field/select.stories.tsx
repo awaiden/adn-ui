@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Field, Form } from "@adn-ui/react";
+import { Field, Form, Select } from "@adn-ui/react";
 import { useForm } from "react-hook-form";
 
-const meta: Meta<typeof Field.Select> = {
-  component: Field.Select,
+const meta: Meta<typeof Select> = {
+  component: Select,
   title: "Form/Field/Select",
 };
 
@@ -27,20 +27,20 @@ export const Default: Story = {
           onSubmit={console.log}
           className='w-full max-w-md'
         >
-          <Field
+          <Field.Root
             name='country'
             isRequired
           >
             <Field.Label>Country</Field.Label>
-            <Field.Select>
+            <Select>
               <option value=''>Select a country</option>
               <option value='us'>United States</option>
               <option value='uk'>United Kingdom</option>
               <option value='ca'>Canada</option>
               <option value='tr'>Turkey</option>
-            </Field.Select>
+            </Select>
             <Field.ErrorMessage />
-          </Field>
+          </Field.Root>
         </Form>
       </Container>
     );
@@ -57,9 +57,9 @@ export const WithGroups: Story = {
           onSubmit={console.log}
           className='w-full max-w-md'
         >
-          <Field name='timezone'>
+          <Field.Root name='timezone'>
             <Field.Label>Timezone</Field.Label>
-            <Field.Select>
+            <Select>
               <option value=''>Select timezone</option>
               <optgroup label='North America'>
                 <option value='est'>Eastern Time</option>
@@ -72,9 +72,9 @@ export const WithGroups: Story = {
                 <option value='cet'>Central European Time</option>
                 <option value='eet'>Eastern European Time</option>
               </optgroup>
-            </Field.Select>
+            </Select>
             <Field.ErrorMessage />
-          </Field>
+          </Field.Root>
         </Form>
       </Container>
     );
@@ -91,14 +91,14 @@ export const Disabled: Story = {
           onSubmit={console.log}
           className='w-full max-w-md'
         >
-          <Field name='role'>
+          <Field.Root name='role'>
             <Field.Label>Role</Field.Label>
-            <Field.Select disabled>
+            <Select disabled>
               <option value='user'>User</option>
               <option value='admin'>Admin</option>
-            </Field.Select>
+            </Select>
             <Field.Description>This field is disabled.</Field.Description>
-          </Field>
+          </Field.Root>
         </Form>
       </Container>
     );

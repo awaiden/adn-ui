@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button, Field, Form } from "@adn-ui/react";
+import { Button, Checkbox, Field, Form } from "@adn-ui/react";
 import { useForm } from "react-hook-form";
 
-const meta: Meta<typeof Field.Checkbox> = {
-  component: Field.Checkbox,
+const meta: Meta<typeof Checkbox> = {
+  component: Checkbox,
   title: "Form/Field/Checkbox",
 };
 
@@ -27,13 +27,13 @@ export const Single: Story = {
           onSubmit={console.log}
           className='w-full max-w-md'
         >
-          <Field name='terms'>
+          <Field.Root name='terms'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox></Checkbox>
               <span>I agree to the terms and conditions</span>
             </Field.Label>
             <Field.ErrorMessage />
-          </Field>
+          </Field.Root>
         </Form>
       </Container>
     );
@@ -63,21 +63,27 @@ export const Multiple: Story = {
 
           <Field name='newsletter'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>Newsletter</span>
             </Field.Label>
           </Field>
 
           <Field name='updates'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>Product Updates</span>
             </Field.Label>
           </Field>
 
           <Field name='marketing'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>Marketing Emails</span>
             </Field.Label>
           </Field>
@@ -106,7 +112,9 @@ export const Disabled: Story = {
         >
           <Field name='verified'>
             <Field.Label className='flex cursor-not-allowed items-center gap-2 opacity-50'>
-              <Field.Checkbox disabled />
+              <Checkbox.Root disabled>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>Email verified</span>
             </Field.Label>
             <Field.Description>This field is disabled.</Field.Description>

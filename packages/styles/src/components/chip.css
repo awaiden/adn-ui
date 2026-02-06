@@ -4,15 +4,15 @@
 }
 
 .chip--sm {
-  @apply h-6 text-sm;
+  @apply h-5 text-xs;
 }
 
 .chip--md {
-  @apply h-8;
+  @apply h-6 text-sm;
 }
 
 .chip--lg {
-  @apply h-10 text-lg;
+  @apply h-7 text-base;
 }
 
 .chip--primary {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useMemo } from "react";
-import { useFormContext } from "react-hook-form";
+import { useFormContext, useFormState } from "react-hook-form";
 import { cn } from "tailwind-variants";
 
 import {
@@ -83,10 +83,8 @@ export interface FieldErrorMessageProps extends PureErrorMessageProps {}
 export const FieldErrorMessage = ({ className, ...props }: FieldErrorMessageProps) => {
   const { name, isRequired } = useField();
   const styles = fieldVariants();
-  const {
-    formState: { errors },
-  } = useFormContext();
-
+  const { control } = useFormContext();
+  const { errors } = useFormState({ control, name });
   return (
     <PureErrorMessage
       className={cn(styles.error(), className)}
@@ -94,7 +92,7 @@ export const FieldErrorMessage = ({ className, ...props }: FieldErrorMessageProp
       data-required={isRequired}
       {...props}
     >
-      {errors[name] && (errors[name]?.message as React.ReactNode)}
+      {errors[name] && (errors[name].message as React.ReactNode)}
     </PureErrorMessage>
   );
 };

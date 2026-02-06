@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button, Field, Form } from "@adn-ui/react";
+import {
+  Button,
+  Checkbox,
+  Field,
+  Form,
+  Input,
+  Radio,
+  RadioGroup,
+  Select,
+  Textarea,
+} from "@adn-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -38,7 +48,7 @@ export const BasicForm: Story = {
             isRequired
           >
             <Field.Label>Email</Field.Label>
-            <Field.Input
+            <Input
               type='email'
               placeholder='Enter your email'
             />
@@ -51,7 +61,7 @@ export const BasicForm: Story = {
             isRequired
           >
             <Field.Label>Password</Field.Label>
-            <Field.Input
+            <Input
               type='password'
               placeholder='Enter your password'
             />
@@ -104,7 +114,7 @@ export const WithValidation: Story = {
             isRequired
           >
             <Field.Label>Email</Field.Label>
-            <Field.Input
+            <Input
               type='email'
               placeholder='john@example.com'
             />
@@ -116,7 +126,7 @@ export const WithValidation: Story = {
             isRequired
           >
             <Field.Label>Password</Field.Label>
-            <Field.Input
+            <Input
               type='password'
               placeholder='••••••••'
             />
@@ -128,7 +138,9 @@ export const WithValidation: Story = {
             isRequired
           >
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>I agree to the terms and conditions</span>
             </Field.Label>
             <Field.ErrorMessage />
@@ -136,7 +148,9 @@ export const WithValidation: Story = {
 
           <Field name='remember'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>Remember me</span>
             </Field.Label>
           </Field>
@@ -189,20 +203,20 @@ export const CompleteForm: Story = {
           <div className='grid grid-cols-2 gap-4'>
             <Field name='firstName'>
               <Field.Label>First Name</Field.Label>
-              <Field.Input placeholder='John' />
+              <Input placeholder='John' />
               <Field.ErrorMessage />
             </Field>
 
             <Field name='lastName'>
               <Field.Label>Last Name</Field.Label>
-              <Field.Input placeholder='Doe' />
+              <Input placeholder='Doe' />
               <Field.ErrorMessage />
             </Field>
           </div>
 
           <Field name='email'>
             <Field.Label>Email Address</Field.Label>
-            <Field.Input
+            <Input
               type='email'
               placeholder='john.doe@example.com'
             />
@@ -211,7 +225,7 @@ export const CompleteForm: Story = {
 
           <Field name='bio'>
             <Field.Label>Bio</Field.Label>
-            <Field.TextArea
+            <Textarea
               placeholder='Tell us about yourself...'
               rows={4}
             />
@@ -221,7 +235,7 @@ export const CompleteForm: Story = {
 
           <Field name='country'>
             <Field.Label>Country</Field.Label>
-            <Field.Select>
+            <Select>
               <option value=''>Select a country</option>
               <option value='us'>United States</option>
               <option value='uk'>United Kingdom</option>
@@ -229,30 +243,30 @@ export const CompleteForm: Story = {
               <option value='tr'>Turkey</option>
               <option value='de'>Germany</option>
               <option value='fr'>France</option>
-            </Field.Select>
+            </Select>
             <Field.ErrorMessage />
           </Field>
 
           <Field name='notifications'>
             <Field.Label>Email Notifications</Field.Label>
-            <Field.RadioGroup
+            <RadioGroup
               orientation='vertical'
               className='space-y-2'
               defaultValue={"all"}
             >
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='all' />
+                <Radio value='all' />
                 <span>All notifications</span>
               </Field.Label>
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='important' />
+                <Radio value='important' />
                 <span>Important only</span>
               </Field.Label>
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='none' />
+                <Radio value='none' />
                 <span>No notifications</span>
               </Field.Label>
-            </Field.RadioGroup>
+            </RadioGroup>
             <Field.ErrorMessage />
           </Field>
 

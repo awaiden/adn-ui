@@ -1,4 +1,4 @@
-import { RadioIndicator, RadioRoot } from "./radio";
+import { RadioRoot, RadioIndicator } from "./radio";
 
 export const Radio = Object.assign(RadioRoot, {
   Root: RadioRoot,
@@ -6,6 +6,4 @@ export const Radio = Object.assign(RadioRoot, {
 });
 
 export * from "./radio";
-export type * from "./radio";
-
-export { radioVariants, type RadioVariants } from "./radio.variants";
+export * from "./radio.variants";

@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button, Field, Form } from "@adn-ui/react";
+import {
+  Button,
+  Checkbox,
+  Field,
+  Form,
+  Input,
+  RadioGroup,
+  Radio,
+  Select,
+  Textarea,
+} from "@adn-ui/react";
 import { LucideUser } from "lucide-react";
 import { useForm } from "react-hook-form";
 
@@ -18,7 +28,7 @@ function Container({ children }: React.PropsWithChildren) {
   );
 }
 
-export const Input: Story = {
+export const FieldInput: Story = {
   render: () => {
     const form = useForm({
       defaultValues: {
@@ -38,7 +48,7 @@ export const Input: Story = {
             isRequired
           >
             <Field.Label>Email Address</Field.Label>
-            <Field.Input
+            <Input
               type='email'
               placeholder='Enter your email'
             />
@@ -76,7 +86,7 @@ export const WithGroup: Story = {
               <Field.Prefix className='text-muted-foreground'>
                 <LucideUser />
               </Field.Prefix>
-              <Field.Input placeholder='Enter your username' />
+              <Input />
               <Field.Suffix>@</Field.Suffix>
             </Field.Group>
             <Field.ErrorMessage />
@@ -87,7 +97,7 @@ export const WithGroup: Story = {
   },
 };
 
-export const TextArea: Story = {
+export const FieldTextArea: Story = {
   render: () => {
     const form = useForm({
       defaultValues: {
@@ -104,7 +114,7 @@ export const TextArea: Story = {
         >
           <Field name='message'>
             <Field.Label>Message</Field.Label>
-            <Field.TextArea
+            <Textarea
               placeholder='Enter your message'
               rows={4}
             />
@@ -117,7 +127,7 @@ export const TextArea: Story = {
   },
 };
 
-export const Select: Story = {
+export const FieldSelect: Story = {
   render: () => {
     const form = useForm({
       defaultValues: {
@@ -134,13 +144,13 @@ export const Select: Story = {
         >
           <Field name='country'>
             <Field.Label>Country</Field.Label>
-            <Field.Select>
+            <Select>
               <option value=''>Select a country</option>
               <option value='us'>United States</option>
               <option value='uk'>United Kingdom</option>
               <option value='ca'>Canada</option>
               <option value='tr'>Turkey</option>
-            </Field.Select>
+            </Select>
             <Field.Description>Choose your country of residence.</Field.Description>
             <Field.ErrorMessage />
           </Field>
@@ -150,7 +160,7 @@ export const Select: Story = {
   },
 };
 
-export const Checkbox: Story = {
+export const FieldCheckbox: Story = {
   render: () => {
     const form = useForm({
       defaultValues: {
@@ -167,7 +177,9 @@ export const Checkbox: Story = {
         >
           <Field name='terms'>
             <Field.Label className='flex items-center gap-2'>
-              <Field.Checkbox />
+              <Checkbox.Root>
+                <Checkbox.Indicator />
+              </Checkbox.Root>
               <span>I agree to the terms and conditions</span>
             </Field.Label>
             <Field.Description>You must agree to continue.</Field.Description>
@@ -179,11 +191,11 @@ export const Checkbox: Story = {
   },
 };
 
-export const Radio: Story = {
+export const FieldRadio: Story = {
   render: () => {
     const form = useForm({
       defaultValues: {
-        plan: "free",
+        plan: "",
       },
     });
 
@@ -195,25 +207,30 @@ export const Radio: Story = {
           className='w-full max-w-md'
         >
           <Field name='plan'>
-            <Field.Label>Select Plan</Field.Label>
-            <Field.RadioGroup
-              orientation='vertical'
-              className='space-y-2'
-            >
+            <Field.Label>Choose a plan</Field.Label>
+            <RadioGroup>
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='free' />
-                <span>Free Plan - $0/month</span>
+                <Radio.Root value='basic'>
+                  <Radio.Indicator />
+                </Radio.Root>
+                <span>Basic Plan</span>
               </Field.Label>
+
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='pro' />
-                <span>Pro Plan - $10/month</span>
+                <Radio.Root value='pro'>
+                  <Radio.Indicator />
+                </Radio.Root>
+                <span>Pro Plan</span>
               </Field.Label>
+
               <Field.Label className='flex items-center gap-2'>
-                <Field.Radio value='enterprise' />
-                <span>Enterprise Plan - $50/month</span>
+                <Radio.Root value='enterprise'>
+                  <Radio.Indicator />
+                </Radio.Root>
+                <span>Enterprise Plan</span>
               </Field.Label>
-            </Field.RadioGroup>
-            <Field.Description>Choose the plan that fits your needs.</Field.Description>
+            </RadioGroup>
+            <Field.Description>Select the plan that best suits your needs.</Field.Description>
             <Field.ErrorMessage />
           </Field>
         </Form>
@@ -243,20 +260,20 @@ export const MultipleFields: Story = {
           <div className='grid grid-cols-2 gap-4'>
             <Field name='firstName'>
               <Field.Label>First Name</Field.Label>
-              <Field.Input placeholder='John' />
+              <Input />
               <Field.ErrorMessage />
             </Field>
 
             <Field name='lastName'>
               <Field.Label>Last Name</Field.Label>
-              <Field.Input placeholder='Doe' />
+              <Input />
               <Field.ErrorMessage />
             </Field>
           </div>
 
           <Field name='email'>
             <Field.Label>Email</Field.Label>
-            <Field.Input
+            <Input
               type='email'
               placeholder='john.doe@example.com'
             />
@@ -265,7 +282,7 @@ export const MultipleFields: Story = {
 
           <Field name='phone'>
             <Field.Label>Phone Number</Field.Label>
-            <Field.Input
+            <Input
               type='tel'
               placeholder='+1 (555) 000-0000'
             />
