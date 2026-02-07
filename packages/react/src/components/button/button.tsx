@@ -29,6 +29,9 @@ export const Button = ({
     <BaseButton
       className={cn(styles, className)}
       disabled={isDisabled}
+      data-disabled={isDisabled}
+      data-pending={isPending}
+      nativeButton={Boolean(props.render)}
       {...props}
     >
       {isPending && <Spinner />}
