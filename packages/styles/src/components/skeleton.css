@@ -1,0 +1,4 @@
+.skeleton {
+  @apply animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-700;
+  @apply h-4 w-full;
+}
