@@ -1,5 +1,3 @@
-"use client";
-
 import { Separator as BaseSeparator } from "@base-ui/react";
 import { cn } from "tailwind-variants";
 

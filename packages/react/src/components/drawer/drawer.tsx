@@ -1,5 +1,3 @@
-"use client";
-
 import { Dialog as BaseDrawer } from "@base-ui/react";
 import { LucideX } from "lucide-react";
 import { useMemo } from "react";

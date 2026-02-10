@@ -11,3 +11,9 @@ export const useField = () => {
 
   return context;
 };
+
+export const useFieldOptional = () => {
+  const context = use(FieldContext);
+
+  return context;
+};

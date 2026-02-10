@@ -34,3 +34,15 @@
 .field__suffix {
   @apply flex items-center;
 }
+
+.field__label {
+  @apply text-sm font-medium;
+}
+
+.field__description {
+  @apply text-muted-foreground text-sm;
+}
+
+.field__error {
+  @apply text-danger text-xs;
+}

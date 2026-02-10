@@ -1,23 +1,33 @@
-"use client";
-
 import { Switch as BaseSwitch } from "@base-ui/react";
 import { useMemo } from "react";
-import { Controller, useFormContext } from "react-hook-form";
 import { cn } from "tailwind-variants";
 
-import { useField } from "../field";
+import { useFieldOptional } from "../field";
 import { switchVariants, type SwitchVariants } from "./switch.variants";
 
 export interface SwitchRootProps extends BaseSwitch.Root.Props, SwitchVariants {}
 
-export const SwitchRoot = (props: SwitchRootProps) => {
-  const context = useFormContext();
+export const SwitchRoot = ({ ...props }: SwitchRootProps) => {
+  const field = useFieldOptional();
 
-  if (context) {
-    return <ControlledSwitchRoot {...props} />;
+  if (!field) {
+    return <PureSwitchRoot {...props} />;
   }
 
-  return <PureSwitchRoot {...props} />;
+  const { name, isRequired, error } = field;
+
+  return (
+    <PureSwitchRoot
+      id={props.id ?? name}
+      name={props.name ?? name}
+      aria-invalid={Boolean(error)}
+      aria-describedby={`${name}-error`}
+      data-invalid={Boolean(error)}
+      data-required={isRequired}
+      required={props.required ?? isRequired}
+      {...props}
+    />
+  );
 };
 
 export const PureSwitchRoot = ({ className, size, ...props }: SwitchRootProps) => {
@@ -27,30 +37,6 @@ export const PureSwitchRoot = ({ className, size, ...props }: SwitchRootProps) =
     <BaseSwitch.Root
       className={cn(slots.root(), className)}
       {...props}
-    />
-  );
-};
-
-export const ControlledSwitchRoot = (props: SwitchRootProps) => {
-  const { control } = useFormContext();
-  const { name, isRequired } = useField();
-
-  return (
-    <Controller
-      name={name}
-      control={control}
-      render={({ field: { value, onChange, ...field }, fieldState: { invalid, error } }) => (
-        <PureSwitchRoot
-          id={name}
-          {...props}
-          {...field}
-          checked={Boolean(value)}
-          onCheckedChange={onChange}
-          required={isRequired || props.required}
-          data-invalid={Boolean(invalid)}
-          data-error={Boolean(error)}
-        />
-      )}
     />
   );
 };

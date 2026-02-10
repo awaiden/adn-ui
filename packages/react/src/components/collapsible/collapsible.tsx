@@ -1,5 +1,3 @@
-"use client";
-
 import { Collapsible as BaseCollapsible } from "@base-ui/react";
 import { LucideChevronRight } from "lucide-react";
 import { useMemo } from "react";

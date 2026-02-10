@@ -1,5 +1,3 @@
-"use client";
-
 import { NavigationMenu as BaseNavigationMenu } from "@base-ui/react";
 import { ChevronDown } from "lucide-react";
 import { useMemo } from "react";

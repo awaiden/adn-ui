@@ -1,10 +1,9 @@
-"use client";
-
 import { Combobox as BaseCombobox } from "@base-ui/react";
 import { Check, ChevronDown, X } from "lucide-react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";
 
+import { useFieldOptional } from "../field";
 import { ComboboxContext } from "./combobox.context";
 import { type ComboboxVariants, comboboxVariants } from "./combobox.variants";
 import { useCombobox } from "./use-combobox";
@@ -13,6 +12,29 @@ import { useCombobox } from "./use-combobox";
 export interface ComboboxProps extends ComboboxVariants, BaseCombobox.Root.Props<unknown> {}
 
 export const ComboboxRoot = ({ ...props }: ComboboxProps) => {
+  const field = useFieldOptional();
+
+  if (!field) {
+    return <PureComboboxRoot {...props} />;
+  }
+
+  const { name, isRequired, error } = field;
+
+  return (
+    <PureComboboxRoot
+      id={props.id ?? name}
+      name={props.name ?? name}
+      aria-invalid={Boolean(error)}
+      aria-describedby={`${name}-error`}
+      data-invalid={Boolean(error)}
+      data-required={isRequired}
+      required={props.required ?? isRequired}
+      {...props}
+    />
+  );
+};
+
+export const PureComboboxRoot = ({ ...props }: ComboboxProps) => {
   const slots = useMemo(() => comboboxVariants(), []);
 
   return (

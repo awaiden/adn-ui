@@ -1,5 +1,3 @@
-"use client";
-
 import { LucidePanelLeftClose, LucidePanelLeftOpen } from "lucide-react";
 import React, { useMemo } from "react";
 import { cn } from "tailwind-variants";

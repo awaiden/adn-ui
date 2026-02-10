@@ -1,5 +1,3 @@
-"use client";
-
 import { Tabs as BaseTabs } from "@base-ui/react";
 import React, { useMemo } from "react";
 import { cn } from "tailwind-variants";

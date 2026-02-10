@@ -1,220 +1,215 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Field, Form } from "@adn-ui/react";
+import { FieldRoot, FieldLabel, FieldDescription, FieldErrorMessage, Input } from "@adn-ui/react";
 import { useForm } from "react-hook-form";
 
-const meta: Meta<typeof Field.Input> = {
-  component: Field.Input,
+const meta: Meta = {
   title: "Form/Field/Input",
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 function Container({ children }: React.PropsWithChildren) {
-  return (
-    <div className='flex min-h-screen flex-col items-center justify-center p-8'>{children}</div>
-  );
+  return <div className='w-full max-w-md rounded-lg border bg-white p-8 shadow-sm'>{children}</div>;
 }
 
+// ---------------------------------------------------------------------------
+// TEXT INPUT
+// ---------------------------------------------------------------------------
 export const Text: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { name: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { name: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
+        <form
+          onSubmit={handleSubmit(console.log)}
+          className='space-y-4'
         >
-          <Field
+          <FieldRoot
             name='name'
             isRequired
+            error={errors.name?.message}
           >
-            <Field.Label>Full Name</Field.Label>
-            <Field.Input
+            <FieldLabel>Full Name</FieldLabel>
+            <Input
               type='text'
               placeholder='John Doe'
+              {...register("name", { required: "Name is required" })}
             />
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// EMAIL INPUT
+// ---------------------------------------------------------------------------
 export const Email: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { email: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { email: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
             name='email'
             isRequired
+            error={errors.email?.message}
           >
-            <Field.Label>Email Address</Field.Label>
-            <Field.Input
+            <FieldLabel>Email Address</FieldLabel>
+            <Input
               type='email'
               placeholder='john@example.com'
+              {...register("email", {
+                required: "Email is required",
+                pattern: { value: /\S+@\S+\.\S+/, message: "Invalid email" },
+              })}
             />
-            <Field.Description>We'll never share your email.</Field.Description>
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldDescription>We'll never share your email.</FieldDescription>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// PASSWORD INPUT
+// ---------------------------------------------------------------------------
 export const Password: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { password: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { password: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
             name='password'
             isRequired
+            error={errors.password?.message}
           >
-            <Field.Label>Password</Field.Label>
-            <Field.Input
+            <FieldLabel>Password</FieldLabel>
+            <Input
               type='password'
               placeholder='••••••••'
+              {...register("password", { minLength: { value: 8, message: "Min 8 chars" } })}
             />
-            <Field.Description>Minimum 8 characters.</Field.Description>
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldDescription>Minimum 8 characters.</FieldDescription>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// NUMBER INPUT
+// ---------------------------------------------------------------------------
 export const Number: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { age: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { age: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='age'>
-            <Field.Label>Age</Field.Label>
-            <Field.Input
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
+            name='age'
+            error={errors.age?.message}
+          >
+            <FieldLabel>Age</FieldLabel>
+            <Input
               type='number'
               placeholder='25'
-              min='0'
-              max='120'
+              {...register("age", { min: 18, max: 120 })}
             />
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
-export const Tel: Story = {
-  render: () => {
-    const form = useForm({ defaultValues: { phone: "" } });
-    return (
-      <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='phone'>
-            <Field.Label>Phone Number</Field.Label>
-            <Field.Input
-              type='tel'
-              placeholder='+1 (555) 000-0000'
-            />
-            <Field.Description>Include country code.</Field.Description>
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
-      </Container>
-    );
-  },
-};
-
-export const URL: Story = {
-  render: () => {
-    const form = useForm({ defaultValues: { website: "" } });
-    return (
-      <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='website'>
-            <Field.Label>Website</Field.Label>
-            <Field.Input
-              type='url'
-              placeholder='https://example.com'
-            />
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
-      </Container>
-    );
-  },
-};
-
+// ---------------------------------------------------------------------------
+// DATE INPUT
+// ---------------------------------------------------------------------------
 export const Date: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { birthdate: "" } });
+    const { register, handleSubmit } = useForm({
+      defaultValues: { birthdate: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='birthdate'>
-            <Field.Label>Birth Date</Field.Label>
-            <Field.Input type='date' />
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot name='birthdate'>
+            <FieldLabel>Birth Date</FieldLabel>
+            <Input
+              type='date'
+              {...register("birthdate")}
+            />
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// DISABLED STATE
+// ---------------------------------------------------------------------------
 export const Disabled: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { username: "johndoe" } });
+    const { register } = useForm({
+      defaultValues: { username: "johndoe" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='username'>
-            <Field.Label>Username</Field.Label>
-            <Field.Input
-              disabled
-              placeholder='Cannot edit'
-            />
-            <Field.Description>This field is disabled.</Field.Description>
-          </Field>
-        </Form>
+        <FieldRoot name='username'>
+          <FieldLabel>Username</FieldLabel>
+          <Input
+            disabled
+            placeholder='Cannot edit'
+            {...register("username")}
+          />
+          <FieldDescription>This field is disabled.</FieldDescription>
+        </FieldRoot>
       </Container>
     );
   },

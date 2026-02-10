@@ -1,65 +1,97 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Field, Form, Select } from "@adn-ui/react";
+import {
+  FieldRoot,
+  FieldLabel,
+  FieldDescription,
+  FieldErrorMessage,
+  Select,
+  Button,
+} from "@adn-ui/react";
 import { useForm } from "react-hook-form";
 
-const meta: Meta<typeof Select> = {
-  component: Select,
+const meta: Meta = {
   title: "Form/Field/Select",
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 function Container({ children }: React.PropsWithChildren) {
-  return (
-    <div className='flex min-h-screen flex-col items-center justify-center p-8'>{children}</div>
-  );
+  return <div className='w-full max-w-md rounded-lg border bg-white p-8 shadow-sm'>{children}</div>;
 }
 
+// ---------------------------------------------------------------------------
+// DEFAULT SELECT
+// ---------------------------------------------------------------------------
 export const Default: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { country: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { country: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
+        <form
+          onSubmit={handleSubmit(console.log)}
+          className='space-y-4'
         >
-          <Field.Root
+          <FieldRoot
             name='country'
             isRequired
+            error={errors.country?.message}
           >
-            <Field.Label>Country</Field.Label>
-            <Select>
+            <FieldLabel>Country</FieldLabel>
+            <Select {...register("country", { required: "Please select a country" })}>
               <option value=''>Select a country</option>
               <option value='us'>United States</option>
               <option value='uk'>United Kingdom</option>
               <option value='ca'>Canada</option>
               <option value='tr'>Turkey</option>
             </Select>
-            <Field.ErrorMessage />
-          </Field.Root>
-        </Form>
+            <FieldErrorMessage />
+          </FieldRoot>
+          <Button
+            type='submit'
+            className='w-full'
+          >
+            Submit
+          </Button>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// WITH GROUPS (OPTGROUP)
+// ---------------------------------------------------------------------------
 export const WithGroups: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { timezone: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { timezone: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field.Root name='timezone'>
-            <Field.Label>Timezone</Field.Label>
-            <Select>
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
+            name='timezone'
+            error={errors.timezone?.message}
+          >
+            <FieldLabel>Timezone</FieldLabel>
+            <Select {...register("timezone")}>
               <option value=''>Select timezone</option>
               <optgroup label='North America'>
                 <option value='est'>Eastern Time</option>
@@ -73,33 +105,36 @@ export const WithGroups: Story = {
                 <option value='eet'>Eastern European Time</option>
               </optgroup>
             </Select>
-            <Field.ErrorMessage />
-          </Field.Root>
-        </Form>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// DISABLED STATE
+// ---------------------------------------------------------------------------
 export const Disabled: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { role: "user" } });
+    const { register } = useForm({
+      defaultValues: { role: "user" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field.Root name='role'>
-            <Field.Label>Role</Field.Label>
-            <Select disabled>
-              <option value='user'>User</option>
-              <option value='admin'>Admin</option>
-            </Select>
-            <Field.Description>This field is disabled.</Field.Description>
-          </Field.Root>
-        </Form>
+        <FieldRoot name='role'>
+          <FieldLabel>Role</FieldLabel>
+          <Select
+            disabled
+            {...register("role")}
+          >
+            <option value='user'>User</option>
+            <option value='admin'>Admin</option>
+          </Select>
+          <FieldDescription>This field is disabled.</FieldDescription>
+        </FieldRoot>
       </Container>
     );
   },

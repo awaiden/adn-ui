@@ -1,37 +1,25 @@
-"use client";
-
 import { useId, useMemo } from "react";
-import { useFormContext, useFormState } from "react-hook-form";
 import { cn } from "tailwind-variants";
 
-import {
-  Description as PureDescription,
-  type DescriptionProps as PureDescriptionProps,
-} from "../description";
-import {
-  ErrorMessage as PureErrorMessage,
-  type ErrorMessageProps as PureErrorMessageProps,
-} from "../error-message";
 import { Label as PureLabel, type LabelProps as PureLabelProps } from "../label";
-import { type FieldValue, FieldContext } from "./context";
+import { type FieldContextValue, FieldContext } from "./context";
 import { fieldVariants, type FieldVariants } from "./field.variants";
 import { useField } from "./use-field";
 
-export interface FieldRootProps extends React.ComponentProps<"div">, FieldVariants {
-  name?: string;
-  isRequired?: boolean;
-}
+export interface FieldRootProps
+  extends React.ComponentProps<"div">, FieldVariants, FieldContextValue {}
 
-export const FieldRoot = ({ className, name, isRequired, ...props }: FieldRootProps) => {
+export const FieldRoot = ({ className, name, isRequired, error, ...props }: FieldRootProps) => {
   const id = useId();
   const styles = fieldVariants();
 
-  const value = useMemo<FieldValue>(
+  const value = useMemo<FieldContextValue>(
     () => ({
       name: name ?? id,
       isRequired,
+      error,
     }),
-    [name, id, isRequired],
+    [name, id, isRequired, error],
   );
 
   return (
@@ -63,14 +51,14 @@ export const FieldLabel = ({ className, children, ...props }: FieldLabelProps) =
   );
 };
 
-export interface FieldDescriptionProps extends PureDescriptionProps {}
+export interface FieldDescriptionProps extends React.ComponentProps<"p"> {}
 
 export const FieldDescription = ({ className, ...props }: FieldDescriptionProps) => {
   const { isRequired } = useField();
   const styles = fieldVariants();
 
   return (
-    <PureDescription
+    <p
       className={cn(styles.description(), className)}
       data-required={isRequired}
       {...props}
@@ -78,22 +66,25 @@ export const FieldDescription = ({ className, ...props }: FieldDescriptionProps)
   );
 };
 
-export interface FieldErrorMessageProps extends PureErrorMessageProps {}
+export interface FieldErrorMessageProps extends React.ComponentProps<"p"> {}
 
-export const FieldErrorMessage = ({ className, ...props }: FieldErrorMessageProps) => {
-  const { name, isRequired } = useField();
+export const FieldErrorMessage = ({ className, children, ...props }: FieldErrorMessageProps) => {
+  const { name, isRequired, error } = useField();
   const styles = fieldVariants();
-  const { control } = useFormContext();
-  const { errors } = useFormState({ control, name });
+
+  if (!error) {
+    return null;
+  }
+
   return (
-    <PureErrorMessage
+    <p
       className={cn(styles.error(), className)}
       aria-describedby={`${name}-error`}
       data-required={isRequired}
       {...props}
     >
-      {errors[name] && (errors[name].message as React.ReactNode)}
-    </PureErrorMessage>
+      {(children ?? typeof error === "string") ? error : null}
+    </p>
   );
 };
 

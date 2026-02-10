@@ -1,5 +1,3 @@
-"use client";
-
 import { PreviewCard as BasePreviewCard } from "@base-ui/react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";

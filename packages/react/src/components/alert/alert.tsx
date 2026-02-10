@@ -1,5 +1,3 @@
-"use client";
-
 import { LucideAlertTriangle, LucideCheckCircle, LucideInfo, LucideXCircle } from "lucide-react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";

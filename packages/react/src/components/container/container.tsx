@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "tailwind-variants";
 
 import { type ContainerVariants, containerVariants } from "./container.variants";

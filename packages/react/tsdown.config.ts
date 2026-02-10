@@ -1,16 +1,15 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  banner: {
-    js: '"use client";',
-  },
-  dts: true,
   entry: ["src/index.ts"],
-  external: ["react", "react-dom", "react/jsx-runtime"],
   format: ["esm", "cjs"],
+  dts: true,
+  external: ["react", "react-dom", "react/jsx-runtime"],
   sourcemap: true,
-  unbundle: true,
   clean: true,
   target: "esnext",
   outDir: "dist",
+  unbundle: true,
+  minify: false,
+  treeshake: true,
 });

@@ -1,5 +1,3 @@
-"use client";
-
 import { Slider as BaseSlider } from "@base-ui/react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";

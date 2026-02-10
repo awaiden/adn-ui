@@ -1,5 +1,3 @@
-"use client";
-
 import { useControllableState } from "@radix-ui/react-use-controllable-state";
 import { LucideMenu, LucideX } from "lucide-react";
 import { useMemo } from "react";

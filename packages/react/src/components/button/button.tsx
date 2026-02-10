@@ -1,5 +1,3 @@
-"use client";
-
 import { Button as BaseButton } from "@base-ui/react";
 import { cn } from "tailwind-variants";
 

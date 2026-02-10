@@ -1,54 +1,41 @@
-"use client";
-
-import { Controller, useFormContext } from "react-hook-form";
+import { Input as BaseInput } from "@base-ui/react";
 import { cn } from "tailwind-variants";
 
-import { useField } from "../field";
+import { useFieldOptional } from "../field";
 import { inputVariants, type InputVariants } from "./input.variants";
 
-export interface InputProps extends React.ComponentProps<"input">, InputVariants {}
+export interface InputProps extends BaseInput.Props, InputVariants {}
 
-export const Input = (props: InputProps) => {
-  const context = useFormContext();
+export const Input = ({ ...props }: InputProps) => {
+  const field = useFieldOptional();
 
-  if (context) {
-    return <ControlledInput {...props} />;
+  if (!field) {
+    return <PureInput {...props} />;
   }
 
-  return <PureInput {...props} />;
-};
-
-const PureInput = ({ className, ...props }: InputProps) => {
-  const styles = inputVariants();
+  const { name, isRequired, error } = field;
 
   return (
-    <input
-      className={cn(styles, className)}
+    <PureInput
+      id={props.id ?? name}
+      name={props.name ?? name}
+      aria-invalid={Boolean(error)}
+      aria-describedby={`${name}-error`}
+      data-invalid={Boolean(error)}
+      data-required={isRequired}
+      required={props.required ?? isRequired}
       {...props}
     />
   );
 };
 
-const ControlledInput = ({ ...props }: InputProps) => {
-  const { control } = useFormContext();
-  const { name, isRequired } = useField();
-
-  const finalRequired = isRequired || props.required;
+export const PureInput = ({ className, ...props }: InputProps) => {
+  const styles = inputVariants();
 
   return (
-    <Controller
-      name={name}
-      control={control}
-      render={({ field, fieldState: { invalid, error } }) => (
-        <PureInput
-          id={name}
-          {...props}
-          {...field}
-          required={finalRequired}
-          data-invalid={Boolean(invalid)}
-          data-error={Boolean(error)}
-        />
-      )}
+    <BaseInput
+      className={cn(styles, className)}
+      {...props}
     />
   );
 };

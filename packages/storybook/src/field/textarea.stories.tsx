@@ -1,113 +1,163 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Field, Form } from "@adn-ui/react";
+import {
+  FieldRoot,
+  FieldLabel,
+  FieldDescription,
+  FieldErrorMessage,
+  Textarea,
+  Button,
+} from "@adn-ui/react";
 import { useForm } from "react-hook-form";
 
-const meta: Meta<typeof Field.TextArea> = {
-  component: Field.TextArea,
-  title: "Form/Field/TextArea",
+const meta: Meta = {
+  title: "Form/Field/Textarea",
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj;
 
 function Container({ children }: React.PropsWithChildren) {
-  return (
-    <div className='flex min-h-screen flex-col items-center justify-center p-8'>{children}</div>
-  );
+  return <div className='w-full max-w-md rounded-lg border bg-white p-8 shadow-sm'>{children}</div>;
 }
 
+// ---------------------------------------------------------------------------
+// DEFAULT TEXTAREA
+// ---------------------------------------------------------------------------
 export const Default: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { message: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { message: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
+        <form
+          onSubmit={handleSubmit(console.log)}
+          className='space-y-4'
         >
-          <Field name='message'>
-            <Field.Label>Message</Field.Label>
-            <Field.TextArea placeholder='Enter your message...' />
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+          <FieldRoot
+            name='message'
+            error={errors.message?.message}
+          >
+            <FieldLabel>Message</FieldLabel>
+            <Textarea
+              placeholder='Enter your message...'
+              {...register("message", { required: "Message is required" })}
+            />
+            <FieldErrorMessage />
+          </FieldRoot>
+          <Button
+            type='submit'
+            className='w-full'
+          >
+            Submit
+          </Button>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// WITH ROWS (Custom Height)
+// ---------------------------------------------------------------------------
 export const WithRows: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { bio: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { bio: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='bio'>
-            <Field.Label>Bio</Field.Label>
-            <Field.TextArea
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
+            name='bio'
+            error={errors.bio?.message}
+          >
+            <FieldLabel>Bio</FieldLabel>
+            <Textarea
               placeholder='Tell us about yourself...'
               rows={6}
+              {...register("bio", { maxLength: { value: 500, message: "Too long!" } })}
             />
-            <Field.Description>Maximum 500 characters.</Field.Description>
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldDescription>Maximum 500 characters.</FieldDescription>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// DISABLED
+// ---------------------------------------------------------------------------
 export const Disabled: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { notes: "This is read-only" } });
+    const { register } = useForm({
+      defaultValues: { notes: "This is read-only" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='notes'>
-            <Field.Label>Notes</Field.Label>
-            <Field.TextArea
-              disabled
-              rows={4}
-            />
-            <Field.Description>This field is disabled.</Field.Description>
-          </Field>
-        </Form>
+        <FieldRoot name='notes'>
+          <FieldLabel>Notes</FieldLabel>
+          <Textarea
+            disabled
+            rows={4}
+            {...register("notes")}
+          />
+          <FieldDescription>This field is disabled.</FieldDescription>
+        </FieldRoot>
       </Container>
     );
   },
 };
 
+// ---------------------------------------------------------------------------
+// WITH MAX LENGTH
+// ---------------------------------------------------------------------------
 export const WithMaxLength: Story = {
   render: () => {
-    const form = useForm({ defaultValues: { comment: "" } });
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm({
+      defaultValues: { comment: "" },
+    });
+
     return (
       <Container>
-        <Form
-          form={form}
-          onSubmit={console.log}
-          className='w-full max-w-md'
-        >
-          <Field name='comment'>
-            <Field.Label>Comment</Field.Label>
-            <Field.TextArea
+        <form onSubmit={handleSubmit(console.log)}>
+          <FieldRoot
+            name='comment'
+            error={errors.comment?.message}
+          >
+            <FieldLabel>Comment</FieldLabel>
+            <Textarea
               placeholder='Leave a comment...'
-              maxLength={200}
               rows={4}
+              {...register("comment", {
+                maxLength: { value: 200, message: "Comment cannot exceed 200 characters" },
+              })}
             />
-            <Field.Description>Maximum 200 characters.</Field.Description>
-            <Field.ErrorMessage />
-          </Field>
-        </Form>
+            <FieldDescription>Maximum 200 characters.</FieldDescription>
+            <FieldErrorMessage />
+          </FieldRoot>
+        </form>
       </Container>
     );
   },

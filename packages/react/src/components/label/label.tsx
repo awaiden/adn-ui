@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "tailwind-variants";
 
 import { labelVariants, type LabelVariants } from "./label.variants";

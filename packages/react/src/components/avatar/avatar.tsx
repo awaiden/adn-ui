@@ -1,5 +1,3 @@
-"use client";
-
 import { Avatar as BaseAvatar } from "@base-ui/react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";

@@ -1,4 +1,0 @@
-.error-message {
-  @apply text-danger text-xs font-medium;
-  @apply flex items-center gap-1;
-}

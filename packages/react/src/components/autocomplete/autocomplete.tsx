@@ -1,9 +1,8 @@
-"use client";
-
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";
 
+import { useFieldOptional } from "../field";
 import { AutocompleteContext } from "./autocomplete.context";
 import { type AutocompleteVariants, autocompleteVariants } from "./autocomplete.variants";
 import { useAutocomplete } from "./use-autocomplete";
@@ -13,6 +12,29 @@ export interface AutocompleteProps
   extends AutocompleteVariants, BaseAutocomplete.Root.Props<unknown> {}
 
 export const AutocompleteRoot = ({ ...props }: AutocompleteProps) => {
+  const field = useFieldOptional();
+
+  if (!field) {
+    return <PureAutocompleteRoot {...props} />;
+  }
+
+  const { name, isRequired, error } = field;
+
+  return (
+    <PureAutocompleteRoot
+      id={props.id ?? name}
+      name={props.name ?? name}
+      aria-invalid={Boolean(error)}
+      aria-describedby={`${name}-error`}
+      data-invalid={Boolean(error)}
+      data-required={isRequired}
+      required={props.required ?? isRequired}
+      {...props}
+    />
+  );
+};
+
+export const PureAutocompleteRoot = ({ ...props }: AutocompleteProps) => {
   const slots = useMemo(() => autocompleteVariants(), []);
 
   return (

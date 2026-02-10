@@ -1,5 +1,3 @@
-"use client";
-
 import { Accordion as BaseAccordion } from "@base-ui/react";
 import { LucideChevronDown } from "lucide-react";
 import { useMemo } from "react";

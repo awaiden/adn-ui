@@ -1,5 +1,3 @@
-"use client";
-
 import { cn } from "tailwind-variants";
 
 import { type ButtonGroupVariants, buttonGroupVariants } from "./button-group.variants";

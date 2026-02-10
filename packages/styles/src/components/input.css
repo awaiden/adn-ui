@@ -1,7 +1,7 @@
 .input,
 .textarea,
 .select {
-  @apply bg-input text-input-foreground border-border rounded-lg border;
+  @apply bg-input text-input-foreground border-border rounded-lg border text-sm;
   @apply w-full px-3 py-2;
   @apply transition-all motion-reduce:transition-none;
 

@@ -1,5 +1,3 @@
-"use client";
-
 import { Toggle as BaseToggle, type ToggleProps as BaseToggleProps } from "@base-ui/react";
 import { cn } from "tailwind-variants";
 

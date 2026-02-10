@@ -1,7 +1,5 @@
-/** Base Styling */
-
 .dialog__backdrop {
-  @apply fixed inset-0 bg-black/50 opacity-20 backdrop-blur-sm;
+  @apply fixed inset-0 bg-black/50 opacity-20 backdrop-blur;
 
   @apply transition-opacity motion-reduce:transition-none;
 
