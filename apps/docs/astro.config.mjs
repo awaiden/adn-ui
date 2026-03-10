@@ -12,7 +12,7 @@ export default defineConfig({
   site: process.env.SITE || "https://example.com",
   integrations: [
     starlight({
-      plugins: [starlightLlmsTxt()],
+      plugins: [starlightLlmsTxt({ rawContent: true })],
       title: "Adn UI",
       customCss: ["./src/styles/global.css"],
       social: [

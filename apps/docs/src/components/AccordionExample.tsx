@@ -1,5 +1,3 @@
-"use client";
-
 import { Accordion } from "@adn-ui/react";
 
 const Single = () => (

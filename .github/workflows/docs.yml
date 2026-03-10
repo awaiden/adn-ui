@@ -10,7 +10,7 @@ on:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -35,15 +35,18 @@ jobs:
         run: bun run --filter @adn-ui/react build
 
       - name: Build docs
-        run: bun run --filter docs build
+        working-directory: apps/docs
+        run: bun run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: apps/docs/dist
 
   deploy:
-    name: Deploy
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     environment:
