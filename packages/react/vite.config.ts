@@ -10,6 +10,7 @@ export default defineConfig({
 		react(),
 		dts({
 			tsconfigPath: "./tsconfig.app.json",
+			insertTypesEntry: true,
 		}),
 	],
 	build: {

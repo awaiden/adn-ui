@@ -25,6 +25,50 @@ You can toggle dark mode programmatically or with a user preference switch. For 
 document.documentElement.classList.toggle('dark');
 ```
 
+## Using @adn-ui/react-themes
+
+For React applications, we provide `@adn-ui/react-themes` to manage theme state, localStorage persistence, and system preference synchronization.
+
+### Installation
+
+```bash
+npm install @adn-ui/react-themes
+```
+
+### Setup
+
+Wrap your application with the `ThemeProvider`:
+
+```tsx
+import { ThemeProvider } from "@adn-ui/react-themes";
+
+function App({ children }) {
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+### useTheme Hook
+
+Use the `useTheme` hook to access and update the current theme:
+
+```tsx
+import { useTheme } from "@adn-ui/react-themes";
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      Switch to {theme === 'light' ? 'dark' : 'light'} mode
+    </button>
+  );
+}
+```
+
 ## Astro Starlight Integration
 
 Astro Starlight provides a built-in dark mode toggle and respects user system preferences. See the [Starlight dark mode guide](https://starlight.astro.build/guides/dark-mode/) for more details.

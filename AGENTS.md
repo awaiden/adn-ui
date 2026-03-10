@@ -20,10 +20,11 @@
 
 ## Architecture
 
-Monorepo with two workspaces:
+Monorepo with three workspaces:
 
 - `packages/react/` — Core UI library. Builds to `dist/` as ES + CJS via Vite. Exports `@adn-ui/react` (components) and `@adn-ui/react/styles` (CSS).
-- `apps/docs/` — Documentation site built with Astro Starlight. Consumes `@adn-ui/react` as a `workspace:*` dependency. MDX pages under `src/content/docs/`.
+- `packages/react-themes/` — Theme provider and utilities. Exports `@adn-ui/react-themes` (ThemeProvider, useTheme).
+- `apps/docs/` — Documentation site built with Astro Starlight. Consumes `@adn-ui/react` and `@adn-ui/react-themes` as `workspace:*` dependencies. MDX pages under `src/content/docs/`.
 
 ### Component Structure
 
@@ -75,7 +76,7 @@ Defined in `packages/react/src/styles/themes/default.css`:
 | --------------- | ----------------------------------------- |
 | `bun install`   | Install all dependencies                  |
 | `bun dev`       | Start dev mode for all workspaces (Turbo) |
-| `bun build`     | Build all workspaces for production       |
+| `bun run build`     | Build all workspaces for production       |
 | `bun check`     | Run Biome linting and formatting checks   |
 | `bun check:fix` | Auto-fix linting/formatting issues        |
 
@@ -88,6 +89,14 @@ Defined in `packages/react/src/styles/themes/default.css`:
 | `bun run test`            | Run Vitest browser tests                         |
 | `bun run storybook`       | Storybook dev server on port 6006                |
 | `bun run build-storybook` | Build static Storybook                           |
+
+### Package Commands (`packages/react-themes/`)
+
+| Command         | Description                               |
+| --------------- | ----------------------------------------- |
+| `bun run dev`   | `tsdown --watch` (build rebuild on change) |
+| `bun run build` | Production build                          |
+| `bun run test`  | Run Vitest unit tests                     |
 
 ### Docs Commands (`apps/docs/`)
 

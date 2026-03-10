@@ -33,10 +33,11 @@ function App() {
 
 ## Monorepo Structure
 
-| Workspace        | Description                                 |
-| ---------------- | ------------------------------------------- |
-| `packages/react` | Core UI component library (`@adn-ui/react`) |
-| `apps/docs`      | Documentation site (Astro Starlight)        |
+| Workspace                | Description                                     |
+| ------------------------ | ----------------------------------------------- |
+| `packages/react`         | Core UI component library (`@adn-ui/react`)     |
+| `packages/react-themes`  | Theme provider and utilities (`@adn-ui/react-themes`) |
+| `apps/docs`              | Documentation site (Astro Starlight)            |
 
 ## Development
 
@@ -48,7 +49,7 @@ bun install
 bun dev
 
 # Build all workspaces
-bun build
+bun run build
 
 # Lint & format
 bun check
