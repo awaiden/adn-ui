@@ -9,8 +9,7 @@ import starlightLlmsTxt from "starlight-llms-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://awaiden.github.io",
-  base: "/adn-ui",
+  site: "https://ui.awaiden.com",
   integrations: [
     starlight({
       plugins: [starlightLlmsTxt({ rawContent: true })],
