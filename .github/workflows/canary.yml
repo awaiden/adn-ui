@@ -33,7 +33,7 @@ jobs:
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
           SHORT_SHA="${GITHUB_SHA::7}"
           CANARY_VERSION="${CURRENT_VERSION}-canary.${TIMESTAMP}.${SHORT_SHA}"
-          npm version "${CANARY_VERSION}" --no-git-tag-version
-          npm publish --tag canary --access public
+          npm version "${CANARY_VERSION}" --no-git-tag-version --no-workspaces
+          npm publish --tag canary --access public --no-workspaces
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
