@@ -9,7 +9,8 @@ import starlightLlmsTxt from "starlight-llms-txt";
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE || "https://example.com",
+  site: process.env.SITE || "https://awaiden.github.io",
+  base: process.env.BASE || "/adn-ui",
   integrations: [
     starlight({
       plugins: [starlightLlmsTxt({ rawContent: true })],
