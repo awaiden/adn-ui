@@ -1,0 +1,104 @@
+---
+title: Installation
+description: How to install and configure @adn-ui/react in your project.
+---
+
+## Prerequisites
+
+- **React 19** — `@adn-ui/react` requires React 19 as a peer dependency.
+- **Tailwind CSS v4** — Required for theming and component styles.
+
+## Install the Package
+
+```bash
+# npm
+npm install @adn-ui/react
+
+# pnpm
+pnpm add @adn-ui/react
+
+# bun
+bun add @adn-ui/react
+```
+
+## Import Styles
+
+Import the component stylesheet in your app's entry point (e.g. `main.tsx`, `layout.tsx`, or your global CSS file):
+
+```tsx
+// In your entry file
+import "@adn-ui/react/styles";
+```
+
+Or from CSS:
+
+```css
+@import "@adn-ui/react/styles";
+```
+
+This single import includes all component styles and the default theme.
+
+## Tailwind CSS Setup
+
+Since the library uses Tailwind CSS v4, make sure your project has Tailwind configured. If you're starting fresh:
+
+```bash
+bun add tailwindcss @tailwindcss/vite
+```
+
+Add the Tailwind Vite plugin to your `vite.config.ts`:
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+});
+```
+
+Then in your root CSS file:
+
+```css
+@import "tailwindcss";
+@import "@adn-ui/react/styles";
+```
+
+## Use a Component
+
+```tsx
+import { Button } from "@adn-ui/react";
+
+export default function App() {
+  return (
+    <Button variant="primary" size="md">
+      Hello, adn-ui
+    </Button>
+  );
+}
+```
+
+## Dark Mode
+
+The library supports dark mode through the `.dark` class on a parent element (typically `<html>` or `<body>`):
+
+```html
+<html class="dark">
+  <!-- your app -->
+</html>
+```
+
+All design tokens automatically switch between light and dark palettes.
+
+## TypeScript
+
+The library ships with full TypeScript declarations. No additional `@types` packages are needed. All component props and variant types are exported:
+
+```tsx
+import type { ButtonVariants, ButtonRootProps } from "@adn-ui/react";
+```
+
+## Next Steps
+
+- [Styling](/guides/styling/) — Customize the theme and override styles
+- [Composition](/guides/composition/) — Learn compound component patterns

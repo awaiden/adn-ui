@@ -1,0 +1,159 @@
+---
+title: Styling
+description: Theming, design tokens, and customizing component styles in @adn-ui/react.
+---
+
+## How Styling Works
+
+`@adn-ui/react` uses a layered styling approach:
+
+1. **CSS Design Tokens** — Semantic CSS custom properties (e.g. `--primary`, `--muted`) defined in a theme file.
+2. **Component CSS** — BEM-style classes (`.button`, `.button--primary`) using Tailwind's `@apply` directive.
+3. **Tailwind Variants** — `tv()` maps variant props to the BEM classes at runtime.
+4. **className Override** — Every component accepts a `className` prop, merged with `tailwind-merge`.
+
+## Design Tokens
+
+The default theme is defined using CSS custom properties in OKLCH color space for perceptual uniformity:
+
+```css
+:root {
+  --primary: oklch(45% 0.2 260);
+  --primary-foreground: var(--white);
+  --primary-hover: oklch(38% 0.2 260);
+
+  --secondary: oklch(65% 0.05 260);
+  --destructive: oklch(55% 0.22 27);
+  --muted: oklch(93% 0.01 260);
+  --accent: oklch(55% 0.15 260);
+
+  --background: var(--white);
+  --foreground: var(--black);
+  --border: oklch(93% 0.01 260);
+
+  --radius: 4px;
+  --radius-button: calc(Infinity * 1px); /* pill shape */
+}
+```
+
+Each semantic color has three variants:
+
+- `--<name>` — Base color
+- `--<name>-foreground` — Text color on that background
+- `--<name>-hover` — Hover state
+
+## Dark Mode
+
+Dark mode tokens are scoped to the `.dark` class:
+
+```css
+.dark {
+  --primary: oklch(65% 0.2 260);
+  --primary-foreground: oklch(10% 0.02 260);
+  --background: oklch(15% 0.01 260);
+  --foreground: oklch(95% 0.01 260);
+  /* ... */
+}
+```
+
+Toggle dark mode by adding/removing the `dark` class on your `<html>` or `<body>` element.
+
+## Customizing the Theme
+
+Override any design token in your own CSS:
+
+```css
+@import "tailwindcss";
+@import "@adn-ui/react/styles";
+
+:root {
+  --primary: oklch(55% 0.25 150); /* green primary */
+  --primary-hover: oklch(48% 0.25 150);
+  --radius: 8px; /* rounder corners */
+  --radius-button: 8px; /* rectangular buttons */
+}
+```
+
+Tokens are mapped to Tailwind via `@theme inline`, so you can use them as Tailwind utilities:
+
+```html
+<div class="bg-primary text-primary-foreground">Themed box</div>
+```
+
+## Component CSS Architecture
+
+Each component's styles follow BEM conventions:
+
+```css
+/* button.css */
+.button {
+  @apply inline-flex items-center justify-center rounded-button font-medium gap-2;
+}
+
+.button--primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary-hover;
+}
+
+.button--sm {
+  @apply px-2 h-8 text-sm;
+}
+```
+
+These classes are mapped through `tv()` in the variants file:
+
+```ts
+// button.variants.ts
+export const buttonVariants = tv({
+  base: "button",
+  variants: {
+    variant: {
+      primary: "button--primary",
+      secondary: "button--secondary",
+    },
+    size: {
+      sm: "button--sm",
+      md: "button--md",
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
+});
+```
+
+## Overriding Component Styles
+
+### Via className
+
+Every component accepts a `className` prop. Classes are merged using `tailwind-merge`, so your overrides take precedence:
+
+```tsx
+<Button className="rounded-none px-8">Custom</Button>
+```
+
+### Via CSS
+
+Target BEM classes directly in your stylesheets:
+
+```css
+.button--primary {
+  @apply bg-green-600 hover:bg-green-700;
+}
+```
+
+## Available Token Categories
+
+| Category       | Tokens                                                                          |
+| -------------- | ------------------------------------------------------------------------------- |
+| **Colors**     | `--primary`, `--secondary`, `--destructive`, `--muted`, `--accent`, `--surface` |
+| **Foreground** | `--*-foreground` for each color                                                 |
+| **Hover**      | `--*-hover` for each color                                                      |
+| **Neutral**    | `--background`, `--foreground`, `--border`, `--ring`, `--shadow`                |
+| **Overlay**    | `--overlay`, `--overlay-foreground`                                             |
+| **Radii**      | `--radius`, `--radius-button`                                                   |
+
+## Next Steps
+
+- [Composition](/guides/composition/) — Learn about compound component APIs
+- [References](/guides/references/) — Links to Tailwind, Radix, and other technologies

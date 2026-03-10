@@ -1,0 +1,54 @@
+---
+title: Introduction
+description: A modern, accessible React UI library built with Radix UI, Tailwind CSS v4, and Tailwind Variants.
+---
+
+import { ComponentPreview } from "../../../components/ComponentPreview";
+import { ButtonExample } from "../../../components/ButtonExample";
+
+**@adn-ui/react** is a component library for React 19 that pairs [Radix UI](https://www.radix-ui.com/) primitives with a carefully designed visual layer built on [Tailwind CSS v4](https://tailwindcss.com) and [Tailwind Variants](https://www.tailwind-variants.org/).
+
+## Why adn-ui?
+
+- **Accessible by default** — Every interactive component is built on Radix UI primitives, ensuring WCAG compliance out of the box.
+- **Themeable** — A semantic design-token system using OKLCH colors with light and dark mode support.
+- **Composable** — Compound component APIs (e.g. `Accordion.Root`, `Accordion.Item`, `Accordion.Trigger`) give you full control over structure and layout.
+- **Type-safe** — All props are fully typed with `React.ComponentProps` and variant types from `tailwind-variants`.
+- **Tailwind-native** — Styles are written with Tailwind's `@apply` and managed through `tv()` variants, so you can extend and override with familiar Tailwind classes.
+
+## Quick Start
+
+```tsx
+import { Button } from "@adn-ui/react";
+import "@adn-ui/react/styles";
+
+function App() {
+  return (
+    <Button variant="primary" size="md">
+      Get Started
+    </Button>
+  );
+}
+```
+
+<ComponentPreview>
+  <ButtonExample.Variants client:load />
+</ComponentPreview>
+
+## What's Included
+
+The library ships with 30+ components across several categories:
+
+- **Layout** — Surface, Group, Separator, AspectRatio, ScrollArea
+- **Forms** — Button, Input, Textarea, Checkbox, RadioGroup, Select, Slider, Switch, Label, Field
+- **Feedback** — Alert, Badge, Progress, Skeleton, Tooltip
+- **Overlay** — Dialog, AlertDialog, Drawer, Popover, DropdownMenu, ContextMenu
+- **Navigation** — Accordion, Breadcrumb, Tabs, Collapsible
+- **Data Display** — Avatar, Card, Table, Toggle
+
+## Next Steps
+
+- [Installation](/guides/installation/) — Add `@adn-ui/react` to your project
+- [Styling](/guides/styling/) — Learn about theming and customization
+- [Composition](/guides/composition/) — Understand compound component patterns
+- [References](/guides/references/) — Links to underlying technologies

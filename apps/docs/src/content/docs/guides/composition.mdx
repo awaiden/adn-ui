@@ -1,0 +1,130 @@
+---
+title: Composition
+description: Understanding compound component patterns and how to compose @adn-ui/react components.
+---
+
+## Compound Components
+
+Most `@adn-ui/react` components use a **compound component** pattern where a parent component provides context to child sub-components. This gives you full control over the structure and layout of each part.
+
+```tsx
+import { Accordion } from "@adn-ui/react";
+
+<Accordion.Root type="single" collapsible>
+  <Accordion.Item value="item-1">
+    <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+    <Accordion.Content>Yes. It adheres to the WAI-ARIA design pattern.</Accordion.Content>
+  </Accordion.Item>
+</Accordion.Root>;
+```
+
+Each sub-component renders a specific DOM element and handles its own accessibility attributes. You control what goes between them.
+
+## Anatomy
+
+A typical compound component consists of:
+
+| Part                      | Role                                                               |
+| ------------------------- | ------------------------------------------------------------------ |
+| `<Component.Root>`        | Top-level wrapper. Manages state and context.                      |
+| `<Component.Trigger>`     | Interactive element that initiates an action (open, toggle, etc.). |
+| `<Component.Content>`     | The revealed content controlled by the trigger.                    |
+| `<Component.Title>`       | Heading or label within the component.                             |
+| `<Component.Description>` | Supplementary text.                                                |
+
+Not every component has all of these parts — simpler components like `Button` or `Badge` are just a single element.
+
+## Single-Element Components
+
+Some components are a single element with variant props:
+
+```tsx
+import { Button } from "@adn-ui/react";
+
+<Button variant="destructive" size="lg">
+  Delete Account
+</Button>;
+```
+
+These components accept all native HTML attributes for their underlying element, plus variant-specific props.
+
+## Composing Components Together
+
+Components are designed to nest naturally:
+
+```tsx
+import { Card, Button } from "@adn-ui/react";
+
+<Card.Root>
+  <Card.Header>
+    <Card.Title>Upgrade Plan</Card.Title>
+    <Card.Description>Switch to a premium plan for more features.</Card.Description>
+  </Card.Header>
+  <Card.Footer>
+    <Button variant="primary">Upgrade</Button>
+    <Button variant="outline">Cancel</Button>
+  </Card.Footer>
+</Card.Root>;
+```
+
+## Adding Custom Wrappers
+
+Because every sub-component renders a standard HTML element, you can insert your own elements between them:
+
+```tsx
+<Dialog.Root>
+  <Dialog.Trigger>
+    <Button variant="outline">Open Dialog</Button>
+  </Dialog.Trigger>
+  <Dialog.Content>
+    <div className="flex items-center gap-4 mb-4">
+      <Avatar.Root>
+        <Avatar.Image src="/avatar.png" />
+        <Avatar.Fallback>JD</Avatar.Fallback>
+      </Avatar.Root>
+      <Dialog.Title>John Doe</Dialog.Title>
+    </div>
+    <Dialog.Description>Manage your account settings.</Dialog.Description>
+  </Dialog.Content>
+</Dialog.Root>
+```
+
+## Extending with className
+
+Every component and sub-component accepts a `className` prop. Classes are merged using `tailwind-merge`, so your utilities take precedence over defaults:
+
+```tsx
+<Card.Root className="shadow-lg border-2 border-primary">
+  <Card.Header className="bg-muted">
+    <Card.Title>Custom Card</Card.Title>
+  </Card.Header>
+</Card.Root>
+```
+
+## Forwarded Props
+
+All components forward native HTML attributes and refs to their underlying DOM element:
+
+```tsx
+<Button
+  variant="primary"
+  onClick={() => console.log("clicked")}
+  aria-label="Submit form"
+  data-testid="submit-btn"
+>
+  Submit
+</Button>
+```
+
+## Components That Use Radix UI
+
+The following components are built on [Radix UI](https://www.radix-ui.com/) primitives and inherit their full API:
+
+- Accordion, AlertDialog, AspectRatio, Avatar, Checkbox, Collapsible, ContextMenu, Dialog, DropdownMenu, Label, Popover, Progress, RadioGroup, ScrollArea, Select, Separator, Slider, Switch, Tabs, Toggle, Tooltip
+
+Refer to the [Radix UI documentation](https://www.radix-ui.com/primitives/docs/overview/introduction) for the complete primitive API.
+
+## Next Steps
+
+- [Styling](/guides/styling/) — Customize themes and component styles
+- [References](/guides/references/) — Links to Radix UI, Tailwind, and other dependencies
