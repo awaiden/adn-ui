@@ -1,0 +1,52 @@
+{
+	"name": "@adn-ui/react-themes",
+	"version": "0.0.0",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.mts",
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"test": "vitest",
+		"test:ui": "vitest --ui"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"devDependencies": {
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
+		"@types/bun": "latest",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"jsdom": "^28.1.0",
+		"tsdown": "^0.21.1",
+		"typescript": "~5.9.3"
+	},
+	"peerDependencies": {
+		"typescript": "^5",
+		"react": "^19",
+		"react-dom": "^19"
+	},
+	"dependencies": {
+		"vitest": "^4.0.18"
+	},
+	"description": "Theme provider and utilities for React apps. Supports dark mode, system preference, and custom themes.",
+	"author": "awaiden (https://github.com/awaiden)",
+	"license": "MIT",
+	"homepage": "https://github.com/awaiden/adn-ui#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/awaiden/adn-ui.git",
+		"directory": "packages/react-themes"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

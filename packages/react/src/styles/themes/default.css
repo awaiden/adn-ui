@@ -1,75 +1,75 @@
 :root {
 	--radius: 4px;
-	--radius-button: calc(Infinity * 1px);
+	--radius-button: 9999px;
 
-	--white: oklch(100% 0 0);
-	--black: oklch(0% 0 0);
+	--white: oklch(99% 0 0);
+	--black: oklch(15% 0 0);
 
 	--background: var(--white);
 	--foreground: var(--black);
 
-	--accent: oklch(55% 0.15 260);
-	--accent-foreground: var(--white);
-	--accent-hover: oklch(48% 0.15 260);
-
-	--primary: oklch(45% 0.2 260);
+	--primary: oklch(25% 0 0);
 	--primary-foreground: var(--white);
-	--primary-hover: oklch(38% 0.2 260);
+	--primary-hover: oklch(35% 0 0);
 
-	--secondary: oklch(65% 0.05 260);
-	--secondary-foreground: oklch(20% 0.02 260);
-	--secondary-hover: oklch(58% 0.05 260);
+	--accent: oklch(35% 0 0);
+	--accent-foreground: var(--white);
+	--accent-hover: oklch(45% 0 0);
+
+	--secondary: oklch(92% 0 0);
+	--secondary-foreground: oklch(25% 0 0);
+	--secondary-hover: oklch(88% 0 0);
 
 	--destructive: oklch(55% 0.22 27);
 	--destructive-foreground: var(--white);
 	--destructive-hover: oklch(48% 0.22 27);
 
-	--muted: oklch(93% 0.01 260);
-	--muted-foreground: oklch(45% 0.03 260);
-	--muted-hover: oklch(88% 0.01 260);
+	--muted: oklch(95% 0 0);
+	--muted-foreground: oklch(45% 0 0);
+	--muted-hover: oklch(90% 0 0);
 
 	--surface: var(--white);
 	--surface-foreground: var(--black);
-	--overlay: oklch(0% 0 0 / 0.5);
+	--overlay: oklch(15% 0 0 / 0.5);
 	--overlay-foreground: var(--white);
 
-	--ring: oklch(100% 0.01 260);
-	--border: oklch(93% 0.01 260);
-	--shadow: oklch(0% 0 0 / 0.1);
+	--ring: oklch(70% 0 0);
+	--border: oklch(90% 0 0);
+	--shadow: oklch(0% 0 0 / 0.05);
 }
 
 .dark {
-	--background: oklch(15% 0.01 260);
-	--foreground: oklch(95% 0.01 260);
+	--background: oklch(18% 0 0);
+	--foreground: oklch(95% 0 0);
 
-	--accent: oklch(65% 0.15 260);
-	--accent-foreground: oklch(10% 0.02 260);
-	--accent-hover: oklch(72% 0.15 260);
+	--primary: oklch(90% 0 0);
+	--primary-foreground: oklch(15% 0 0);
+	--primary-hover: oklch(85% 0 0);
 
-	--primary: oklch(65% 0.2 260);
-	--primary-foreground: oklch(10% 0.02 260);
-	--primary-hover: oklch(72% 0.2 260);
+	--accent: oklch(80% 0 0);
+	--accent-foreground: oklch(15% 0 0);
+	--accent-hover: oklch(75% 0 0);
 
-	--secondary: oklch(30% 0.05 260);
-	--secondary-foreground: oklch(90% 0.02 260);
-	--secondary-hover: oklch(35% 0.05 260);
+	--secondary: oklch(30% 0 0);
+	--secondary-foreground: oklch(95% 0 0);
+	--secondary-hover: oklch(35% 0 0);
 
 	--destructive: oklch(60% 0.22 27);
 	--destructive-foreground: oklch(10% 0.02 27);
 	--destructive-hover: oklch(67% 0.22 27);
 
-	--muted: oklch(22% 0.01 260);
-	--muted-foreground: oklch(65% 0.03 260);
-	--muted-hover: oklch(27% 0.01 260);
+	--muted: oklch(25% 0 0);
+	--muted-foreground: oklch(70% 0 0);
+	--muted-hover: oklch(30% 0 0);
 
-	--surface: oklch(18% 0.01 260);
-	--surface-foreground: oklch(95% 0.01 260);
+	--surface: oklch(22% 0 0);
+	--surface-foreground: oklch(95% 0 0);
 	--overlay: oklch(0% 0 0 / 0.7);
 	--overlay-foreground: var(--white);
 
-	--ring: oklch(100% 0.01 260);
-	--border: oklch(22% 0.01 260);
-	--shadow: oklch(0% 0 0 / 0.5);
+	--ring: oklch(45% 0 0);
+	--border: oklch(28% 0 0);
+	--shadow: oklch(0% 0 0 / 0.4);
 }
 
 @theme inline {

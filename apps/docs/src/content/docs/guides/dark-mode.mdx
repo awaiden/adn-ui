@@ -1,0 +1,44 @@
+---
+title: Dark Mode
+description: How to enable and customize dark mode in @adn-ui/react and Astro Starlight.
+---
+
+# Dark Mode
+
+@adn-ui/react supports dark mode out of the box. The theme system uses CSS variables and the `.dark` class on `<html>` or `<body>` to switch between light and dark themes.
+
+## Enabling Dark Mode
+
+Add the `dark` class to your root element:
+
+```html
+<html class="dark">
+```
+
+All design tokens and component styles automatically adapt to dark mode.
+
+## Toggling Dark Mode
+
+You can toggle dark mode programmatically or with a user preference switch. For example, using JavaScript:
+
+```js
+document.documentElement.classList.toggle('dark');
+```
+
+## Astro Starlight Integration
+
+Astro Starlight provides a built-in dark mode toggle and respects user system preferences. See the [Starlight dark mode guide](https://starlight.astro.build/guides/dark-mode/) for more details.
+
+## Customizing Dark Theme
+
+Override any CSS variable in your theme file under the `.dark` selector to customize dark mode colors:
+
+```css
+.dark {
+  --primary: oklch(70% 0.15 260);
+  --background: oklch(20% 0.01 260);
+  /* ... */
+}
+```
+
+For more, see the [Theme System](../components/theme.mdx).

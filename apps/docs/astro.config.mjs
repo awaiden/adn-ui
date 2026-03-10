@@ -31,6 +31,8 @@ export default defineConfig({
 						{ label: "Styling", slug: "guides/styling" },
 						{ label: "Composition", slug: "guides/composition" },
 						{ label: "References", slug: "guides/references" },
+						{ label: "Dark Mode", slug: "guides/dark-mode" },
+						{ label: "LLMS.txt", slug: "guides/llms" },
 					],
 				},
 				{

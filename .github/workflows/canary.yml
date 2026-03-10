@@ -25,15 +25,21 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Publish Canary
+      - name: Publish Canary (all packages)
         run: |
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-          cd packages/react
-          CURRENT_VERSION=$(node -p "require('./package.json').version")
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
           SHORT_SHA="${GITHUB_SHA::7}"
-          CANARY_VERSION="${CURRENT_VERSION}-canary.${TIMESTAMP}.${SHORT_SHA}"
-          npm version "${CANARY_VERSION}" --no-git-tag-version --no-workspaces
-          npm publish --tag canary --access public --no-workspaces
+          for pkg in packages/*; do
+            if [ -f "$pkg/package.json" ]; then
+              cd "$pkg"
+              PKG_NAME=$(node -p "require('./package.json').name")
+              PKG_VERSION=$(node -p "require('./package.json').version")
+              CANARY_VERSION="${PKG_VERSION}-canary.${TIMESTAMP}.${SHORT_SHA}"
+              npm version "$CANARY_VERSION" --no-git-tag-version --no-workspaces
+              npm publish --tag canary --access public --no-workspaces || true
+              cd - >/dev/null
+            fi
+          done
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

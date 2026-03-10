@@ -44,19 +44,18 @@ Each semantic color has three variants:
 
 ## Dark Mode
 
-Dark mode tokens are scoped to the `.dark` class:
+@adn-ui/react supports dark mode out of the box. The theme system uses CSS variables and the `.dark` class on `<html>` or `<body>` to switch between light and dark themes.
 
-```css
-.dark {
-  --primary: oklch(65% 0.2 260);
-  --primary-foreground: oklch(10% 0.02 260);
-  --background: oklch(15% 0.01 260);
-  --foreground: oklch(95% 0.01 260);
-  /* ... */
-}
+- To enable dark mode, add the `dark` class to your root element:
+
+```html
+<html class="dark">
 ```
 
-Toggle dark mode by adding/removing the `dark` class on your `<html>` or `<body>` element.
+- All design tokens and component styles automatically adapt to dark mode.
+- You can toggle dark mode programmatically or with a user preference switch.
+
+For more, see the [Theme System](../components/theme.mdx) and [Astro Starlight dark mode docs](https://starlight.astro.build/guides/dark-mode/).
 
 ## Customizing the Theme
 
