@@ -5,7 +5,7 @@ export type ThemeProviderProps = {
 	children: React.ReactNode;
 };
 
-export type Theme = "light" | "dark";
+export type Theme = "light" | "dark" | "system" | string;
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 	const [theme, setThemeState] = useState<Theme>("light");
@@ -17,16 +17,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 			? "dark"
 			: "light";
 
-		if (storedTheme === "light" || storedTheme === "dark") {
-			setThemeState(storedTheme);
-		} else {
-			setThemeState(systemTheme);
-		}
+		setThemeState(storedTheme || systemTheme);
 	}, []);
 
 	useEffect(() => {
 		const root = window.document.documentElement;
-		root.classList.remove("light", "dark");
+		root.classList.remove("light", "dark", "system");
 		root.classList.add(theme);
 		root.setAttribute("data-theme", theme);
 	}, [theme]);

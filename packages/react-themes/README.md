@@ -1,54 +1,15 @@
-# @adn-ui/react-themes
+# react-themes
 
-[![npm](https://img.shields.io/npm/v/@adn-ui/react-themes)](https://www.npmjs.com/package/@adn-ui/react-themes)
-[![GitHub](https://img.shields.io/github/license/awaiden/adn-ui)](https://github.com/awaiden/adn-ui/blob/main/LICENSE)
-
-Theme provider and utilities for **adn-ui** — supports dark mode, system preference, and custom themes.
-
-## Installation
+To install dependencies:
 
 ```bash
-npm install @adn-ui/react-themes
-# or
-bun add @adn-ui/react-themes
+bun install
 ```
 
-## Usage
-
-```tsx
-import { ThemeProvider, useTheme } from "@adn-ui/react-themes";
-
-function App() {
-  return (
-    <ThemeProvider>
-      <ThemeToggle />
-    </ThemeProvider>
-  );
-}
-
-function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  return (
-    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-      Current theme: {theme}
-    </button>
-  );
-}
-```
-
-## Development
+To run:
 
 ```bash
-# Build (watch mode)
-bun run dev
-
-# Production build
-bun run build
-
-# Tests
-bun run test
+bun run index.ts
 ```
 
-## License
-
-[MIT](../../LICENSE)
+This project was created using `bun init` in bun v1.3.9. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
