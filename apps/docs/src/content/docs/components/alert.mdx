@@ -1,0 +1,93 @@
+---
+title: Alert
+description: Displays a callout for important information.
+---
+
+import { AlertExample } from "../../../components/AlertExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays a callout for important information.
+
+## Preview
+
+<ComponentPreview>
+  <AlertExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Alert } from "@adn-ui/react";
+import { Terminal } from "lucide-react";
+
+export default () => (
+  <Alert.Root>
+    <Terminal className="size-4" />
+    <Alert.Title>Heads up!</Alert.Title>
+    <Alert.Description>You can add components using the CLI.</Alert.Description>
+  </Alert.Root>
+);
+```
+
+## API Reference
+
+### Alert.Root
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">variant</td>
+      <td className="py-2 px-4 border-b">`"default" | "destructive"`</td>
+      <td className="py-2 px-4 border-b">`"default"`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+<ComponentPreview>
+  <AlertExample.Default client:load />
+</ComponentPreview>
+
+```tsx
+<Alert.Root>
+  <Terminal className="size-4" />
+  <Alert.Title>Heads up!</Alert.Title>
+  <Alert.Description>You can add components to your app using the CLI.</Alert.Description>
+</Alert.Root>
+```
+
+### Destructive
+Use the destructive variant to communicate errors or dangerous actions.
+<ComponentPreview>
+  <AlertExample.Destructive client:load />
+</ComponentPreview>
+
+```tsx
+<Alert.Root variant="destructive">
+  <AlertCircle className="size-4" />
+  <Alert.Title>Error</Alert.Title>
+  <Alert.Description>Your session has expired. Please log in again.</Alert.Description>
+</Alert.Root>
+```
+
+### With Icon
+<ComponentPreview>
+  <AlertExample.WithIcon client:load />
+</ComponentPreview>
+
+```tsx
+<Alert.Root>
+  <Info className="size-4" />
+  <Alert.Title>Information</Alert.Title>
+  <Alert.Description>This is an informational alert with an icon.</Alert.Description>
+</Alert.Root>
+```

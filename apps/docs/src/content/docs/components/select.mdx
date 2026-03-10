@@ -1,0 +1,92 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+---
+
+import { SelectExample } from "../../../components/SelectExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays a list of options for the user to pick from—triggered by a button.
+
+## Preview
+
+<ComponentPreview>
+  <SelectExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Select } from "@adn-ui/react";
+
+export default () => (
+  <Select.Root>
+    <Select.Trigger>
+      <Select.Value placeholder="Select a fruit" />
+    </Select.Trigger>
+    <Select.Content>
+      <Select.Item value="apple">Apple</Select.Item>
+      <Select.Item value="banana">Banana</Select.Item>
+    </Select.Content>
+  </Select.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the select.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultValue</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">disabled</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Trigger
+The button that toggles the select.
+
+### Value
+The value displayed in the trigger when an item is selected.
+
+### Content
+Contains the items to be displayed in the select.
+
+### Item
+A single option in the select.
+
+### Group
+Used to group multiple items together.
+
+### Label
+Used to render a label for a group.
+
+## Examples
+
+### Default
+A standard select with a few options.
+<ComponentPreview>
+  <SelectExample.Default client:load />
+</ComponentPreview>
+
+### Groups
+Group related options together with labels.
+<ComponentPreview>
+  <SelectExample.Groups client:load />
+</ComponentPreview>

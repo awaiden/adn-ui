@@ -1,0 +1,214 @@
+---
+title: Table
+description: A responsive table component.
+---
+
+import { TableExample } from "../../../components/TableExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A responsive table component.
+
+## Preview
+
+<ComponentPreview>
+  <TableExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Table } from "@adn-ui/react";
+
+export default () => (
+  <Table.Root>
+    <Table.Header>
+      <Table.Row>
+        <Table.Head>Name</Table.Head>
+        <Table.Head>Email</Table.Head>
+      </Table.Row>
+    </Table.Header>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Alice</Table.Cell>
+        <Table.Cell>alice@example.com</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table.Root>
+);
+```
+
+## API Reference
+
+### Root
+The table container.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Header
+The table header section.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Body
+The table body section.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Footer
+The table footer section.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Row
+A table row.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Head
+A table header cell.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Cell
+A table body cell.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Caption
+An optional caption for the table.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+A full-featured table with caption, header, body, and footer.
+<ComponentPreview>
+  <TableExample.Default client:load />
+</ComponentPreview>
+
+### Simple
+A simple table without footer or caption.
+<ComponentPreview>
+  <TableExample.Simple client:load />
+</ComponentPreview>

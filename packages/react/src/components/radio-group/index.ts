@@ -1,0 +1,22 @@
+import RadioGroupIndicator from "./radio-group-indicator";
+import RadioGroupItem from "./radio-group-item";
+import RadioGroupRoot from "./radio-group-root";
+
+export const RadioGroup = {
+	Root: RadioGroupRoot,
+	Item: RadioGroupItem,
+	Indicator: RadioGroupIndicator,
+};
+
+export { RadioGroupRoot, RadioGroupItem, RadioGroupIndicator };
+
+export type RadioGroupRootProps = React.ComponentProps<typeof RadioGroupRoot>;
+export type RadioGroupItemProps = React.ComponentProps<typeof RadioGroupItem>;
+export type RadioGroupIndicatorProps = React.ComponentProps<
+	typeof RadioGroupIndicator
+>;
+
+export {
+	type RadioGroupVariants,
+	radioGroupVariants,
+} from "./radio-group.variants";

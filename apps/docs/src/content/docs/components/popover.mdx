@@ -1,0 +1,87 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+---
+
+import { PopoverExample } from "../../../components/PopoverExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays rich content in a portal, triggered by a button.
+
+## Preview
+
+<ComponentPreview>
+  <PopoverExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Popover, Button } from "@adn-ui/react";
+
+export default () => (
+  <Popover.Root>
+    <Popover.Trigger asChild>
+      <Button variant="outline">Open popover</Button>
+    </Popover.Trigger>
+    <Popover.Content>
+      <p>Popover content goes here.</p>
+    </Popover.Content>
+  </Popover.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of a popover.
+
+### Trigger
+The button that toggles the popover.
+
+### Content
+The content that pops out when the popover is open.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">side</td>
+      <td className="py-2 px-4 border-b">`"top" | "right" | "bottom" | "left"`</td>
+      <td className="py-2 px-4 border-b">`"bottom"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">align</td>
+      <td className="py-2 px-4 border-b">`"start" | "center" | "end"`</td>
+      <td className="py-2 px-4 border-b">`"center"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">sideOffset</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`0`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Close
+An optional button that closes the popover.
+
+## Examples
+
+### Default
+Standard popover with custom content.
+<ComponentPreview>
+  <PopoverExample.Default client:load />
+</ComponentPreview>
+
+### Side Placement
+Control where the popover appears relative to the trigger.
+<ComponentPreview>
+  <PopoverExample.Placement client:load />
+</ComponentPreview>

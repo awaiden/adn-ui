@@ -1,0 +1,3 @@
+.aspect-ratio {
+	@apply overflow-hidden rounded-md;
+}

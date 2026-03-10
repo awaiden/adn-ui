@@ -1,0 +1,101 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+---
+
+import { SliderExample } from "../../../components/SliderExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+An input where the user selects a value from within a given range.
+
+## Preview
+
+<ComponentPreview>
+  <SliderExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Slider } from "@adn-ui/react";
+
+export default () => (
+  <Slider.Root defaultValue={[50]} max={100} step={1}>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb />
+  </Slider.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the slider.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultValue</td>
+      <td className="py-2 px-4 border-b">`number[]`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">max</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`100`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">min</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`0`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">step</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`1`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">orientation</td>
+      <td className="py-2 px-4 border-b">`"horizontal" | "vertical"`</td>
+      <td className="py-2 px-4 border-b">`"horizontal"`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Track
+The background track of the slider.
+
+### Range
+The active range part of the slider.
+
+### Thumb
+A draggable thumb. Render one for each value in `defaultValue` or `value`.
+
+## Examples
+
+### Default
+A simple slider with a single value.
+<ComponentPreview>
+  <SliderExample.Default client:load />
+</ComponentPreview>
+
+### Range
+A slider with multiple thumbs to select a range.
+<ComponentPreview>
+  <SliderExample.Range client:load />
+</ComponentPreview>
+
+### Vertical
+Orient the slider vertically.
+<ComponentPreview>
+  <SliderExample.Vertical client:load />
+</ComponentPreview>

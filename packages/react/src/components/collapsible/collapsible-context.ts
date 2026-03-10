@@ -1,0 +1,21 @@
+import { createContext, useContext } from "react";
+
+import type { collapsibleVariants } from "./collapsible.variants";
+
+interface CollapsibleContextValue {
+	slots: ReturnType<typeof collapsibleVariants>;
+}
+
+export const CollapsibleContext = createContext<CollapsibleContextValue | null>(
+	null,
+);
+
+export const useCollapsibleContext = () => {
+	const context = useContext(CollapsibleContext);
+	if (!context) {
+		throw new Error(
+			"useCollapsibleContext must be used within a CollapsibleRoot",
+		);
+	}
+	return context;
+};

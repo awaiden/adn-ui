@@ -1,0 +1,51 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one button can be checked at a time.
+---
+
+import { RadioGroupExample } from "../../../components/RadioGroupExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A set of checkable buttons—known as radio buttons—where no more than one button can be checked at a time.
+
+## Preview
+
+<ComponentPreview>
+  <RadioGroupExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { RadioGroup } from "@adn-ui/react";
+
+export default () => (
+  <RadioGroup.Root defaultValue="1">
+    <RadioGroup.Item value="1">
+      <RadioGroup.Indicator />
+    </RadioGroup.Item>
+    <RadioGroup.Item value="2">
+      <RadioGroup.Indicator />
+    </RadioGroup.Item>
+  </RadioGroup.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the radio group.
+
+### Item
+The checkable button.
+
+### Indicator
+Renders when the radio button is checked.
+
+## Examples
+
+### Default
+A simple radio group.
+<ComponentPreview>
+  <RadioGroupExample.Default client:load />
+</ComponentPreview>

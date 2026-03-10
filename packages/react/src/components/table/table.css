@@ -1,0 +1,47 @@
+.table__wrapper {
+	@apply relative w-full overflow-auto;
+}
+
+.table {
+	@apply w-full caption-bottom text-sm;
+}
+
+.table__header {
+	@apply [&_tr]:border-b;
+}
+
+.table__body {
+	@apply [&_tr:last-child]:border-0;
+}
+
+.table__footer {
+	@apply border-t bg-muted/50 font-medium [&_tr:last-child]:border-0;
+}
+
+.table__row {
+	@apply border-b transition-colors hover:bg-muted/50;
+
+	&[data-state="selected"] {
+		@apply bg-muted;
+	}
+}
+
+.table__head {
+	@apply h-10 px-3 text-left align-middle font-medium text-muted-foreground;
+
+	&[role="checkbox"] {
+		@apply pr-0;
+	}
+}
+
+.table__cell {
+	@apply p-3 align-middle;
+
+	&[role="checkbox"] {
+		@apply pr-0;
+	}
+}
+
+.table__caption {
+	@apply mt-4 text-sm text-muted-foreground;
+}

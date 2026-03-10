@@ -1,0 +1,82 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+---
+
+import { ToggleExample } from "../../../components/ToggleExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A two-state button that can be either on or off.
+
+## Preview
+
+<ComponentPreview>
+  <ToggleExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Toggle } from "@adn-ui/react";
+import { Bold } from "lucide-react";
+
+export default () => (
+  <Toggle aria-label="Toggle bold">
+    <Bold size={16} />
+  </Toggle>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">variant</td>
+      <td className="py-2 px-4 border-b">`"default" | "outline"`</td>
+      <td className="py-2 px-4 border-b">`"default"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">pressed</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">onPressedChange</td>
+      <td className="py-2 px-4 border-b">`(pressed: boolean) => void`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+The standard toggle style.
+<ComponentPreview>
+  <ToggleExample.Default client:load />
+</ComponentPreview>
+
+### Outline
+A toggle with a border.
+<ComponentPreview>
+  <ToggleExample.Outline client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <ToggleExample.Sizes client:load />
+</ComponentPreview>

@@ -1,0 +1,82 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+---
+
+import { TabsExample } from "../../../components/TabsExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A set of layered sections of content—known as tab panels—that are displayed one at a time.
+
+## Preview
+
+<ComponentPreview>
+  <TabsExample.Underline client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Tabs } from "@adn-ui/react";
+
+export default () => (
+  <Tabs.Root defaultValue="account">
+    <Tabs.List>
+      <Tabs.Trigger value="account">Account</Tabs.Trigger>
+      <Tabs.Trigger value="password">Password</Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="account">Account settings...</Tabs.Content>
+    <Tabs.Content value="password">Change password...</Tabs.Content>
+  </Tabs.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the tabs.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">variant</td>
+      <td className="py-2 px-4 border-b">`"underline" | "outline"`</td>
+      <td className="py-2 px-4 border-b">`"underline"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultValue</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### List
+Contains the tab triggers.
+
+### Trigger
+A button that activates its associated content.
+
+### Content
+Contains the content associated with a trigger.
+
+## Examples
+
+### Underline (Default)
+The default underline variant.
+<ComponentPreview>
+  <TabsExample.Underline client:load />
+</ComponentPreview>
+
+### Outline
+A boxed variant suitable for cards.
+<ComponentPreview>
+  <TabsExample.Outline client:load />
+</ComponentPreview>

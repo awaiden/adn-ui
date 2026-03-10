@@ -1,0 +1,76 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+import { AvatarExample } from "../../../components/AvatarExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+An image element with a fallback for representing the user.
+
+## Preview
+
+<ComponentPreview>
+  <AvatarExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from "@adn-ui/react";
+
+export default () => (
+  <Avatar>
+    <AvatarImage src="https://github.com/mdo.png" alt="@mdo" />
+    <AvatarFallback>M</AvatarFallback>
+  </Avatar>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of an avatar.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Image
+The image to render. By default it will only render when it has loaded.
+<ComponentPreview>
+  <AvatarExample.Default client:load />
+</ComponentPreview>
+
+### Fallback
+Element that renders when the image hasn't loaded. This can be used for initials, icons or any other placeholder.
+<ComponentPreview>
+  <AvatarExample.Fallback client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <AvatarExample.Sizes client:load />
+</ComponentPreview>
+
+```tsx
+<Avatar size="sm">...</Avatar>
+<Avatar size="md">...</Avatar>
+<Avatar size="lg">...</Avatar>
+```

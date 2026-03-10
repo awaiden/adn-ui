@@ -1,0 +1,76 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+---
+
+import { CheckboxExample } from "../../../components/CheckboxExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A control that allows the user to toggle between checked and not checked.
+
+## Preview
+
+<ComponentPreview>
+  <CheckboxExample.WithLabel client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Checkbox } from "@adn-ui/react";
+
+export default () => (
+  <Checkbox.Root>
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the checkbox.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">checked</td>
+      <td className="py-2 px-4 border-b">`boolean | "indeterminate"`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">onCheckedChange</td>
+      <td className="py-2 px-4 border-b">`(checked: boolean | "indeterminate") => void`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Indicator
+Renders when the checkbox is in a checked or indeterminate state.
+
+## Examples
+
+### With Label
+Combine with the Label component for an accessible checkbox.
+<ComponentPreview>
+  <CheckboxExample.WithLabel client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <CheckboxExample.Sizes client:load />
+</ComponentPreview>

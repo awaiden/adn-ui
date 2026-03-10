@@ -1,0 +1,109 @@
+---
+title: Field
+description: A form field wrapper that groups a label, input, description, and error message.
+---
+
+import { FieldExample } from "../../../components/FieldExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A form field wrapper that groups a label, input, description, and error message.
+
+## Preview
+
+<ComponentPreview>
+  <FieldExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Field, Input } from "@adn-ui/react";
+
+export default () => (
+  <Field.Root id="email">
+    <Field.Label>Email</Field.Label>
+    <Input id="email" type="email" placeholder="you@example.com" />
+  </Field.Root>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Component</th>
+      <th className="py-2 px-4 border-b">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">`Field.Root`</td>
+      <td className="py-2 px-4 border-b">Container for the field group. Accepts `id` and `orientation` (`"vertical" | "horizontal"`).</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Field.Label`</td>
+      <td className="py-2 px-4 border-b">The label associated with the input.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Field.Description`</td>
+      <td className="py-2 px-4 border-b">Helper text displayed below the input.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Field.Error`</td>
+      <td className="py-2 px-4 border-b">Validation error message.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+<ComponentPreview>
+  <FieldExample.Default client:load />
+</ComponentPreview>
+
+```tsx
+<Field.Root id="email">
+  <Field.Label>Email</Field.Label>
+  <Input id="email" type="email" placeholder="you@example.com" />
+</Field.Root>
+```
+
+### With Description
+<ComponentPreview>
+  <FieldExample.WithDescription client:load />
+</ComponentPreview>
+
+```tsx
+<Field.Root id="username">
+  <Field.Label>Username</Field.Label>
+  <Input id="username" placeholder="Enter your username" />
+  <Field.Description>This will be your public display name.</Field.Description>
+</Field.Root>
+```
+
+### With Error
+<ComponentPreview>
+  <FieldExample.WithError client:load />
+</ComponentPreview>
+
+```tsx
+<Field.Root id="required-email">
+  <Field.Label>Email</Field.Label>
+  <Input id="required-email" type="email" aria-invalid="true" placeholder="you@example.com" />
+  <Field.Error>Email is required.</Field.Error>
+</Field.Root>
+```
+
+### Horizontal Layout
+<ComponentPreview>
+  <FieldExample.Horizontal client:load />
+</ComponentPreview>
+
+```tsx
+<Field.Root id="horizontal-field" orientation="horizontal">
+  <Field.Label>Name</Field.Label>
+  <Input id="horizontal-field" placeholder="Enter your name" />
+</Field.Root>
+```

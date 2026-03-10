@@ -1,0 +1,36 @@
+---
+title: adn-ui
+description: A modern, accessible React UI library built with Radix UI, Tailwind CSS v4, and Tailwind Variants.
+template: splash
+hero:
+  tagline: Beautiful, accessible React components built on Radix UI and Tailwind CSS v4.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Get Started
+      link: /guides/introduction/
+      icon: right-arrow
+    - text: Components
+      link: /components/button/
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Next steps
+
+<CardGrid stagger>
+  <Card title="Introduction" icon="open-book">
+    Learn what `@adn-ui/react` provides and why — [read the introduction](/guides/introduction/).
+  </Card>
+  <Card title="Installation" icon="add-document">
+    Add the library to your project in minutes — [install now](/guides/installation/).
+  </Card>
+  <Card title="Styling & Theming" icon="pencil">
+    Customize colors, tokens, and component styles — [styling guide](/guides/styling/).
+  </Card>
+  <Card title="Composition" icon="setting">
+    Understand compound component patterns — [composition guide](/guides/composition/).
+  </Card>
+</CardGrid>

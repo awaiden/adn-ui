@@ -1,0 +1,143 @@
+---
+title: Card
+description: Displays a card with header, content, and footer.
+---
+
+import { CardExample } from "../../../components/CardExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays a card with header, content, and footer.
+
+## Preview
+
+<ComponentPreview>
+  <CardExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Card } from "@adn-ui/react";
+
+export default () => (
+  <Card.Root>
+    <Card.Header>
+      <Card.Title>Card Title</Card.Title>
+      <Card.Description>Card Description</Card.Description>
+    </Card.Header>
+    <Card.Content>
+      <p>Card Content</p>
+    </Card.Content>
+  </Card.Root>
+);
+```
+
+## API Reference
+
+### Root
+The container for the card.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Header
+Contains the title and description.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Title
+The main heading for the card.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Description
+A secondary heading providing more context.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Content
+The main body of the card.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+The standard card layout.
+<ComponentPreview>
+  <CardExample.Default client:load />
+</ComponentPreview>

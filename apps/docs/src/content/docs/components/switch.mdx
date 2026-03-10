@@ -1,0 +1,76 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+---
+
+import { SwitchExample } from "../../../components/SwitchExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A control that allows the user to toggle between checked and not checked.
+
+## Preview
+
+<ComponentPreview>
+  <SwitchExample.WithLabel client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Switch } from "@adn-ui/react";
+
+export default () => (
+  <Switch.Root>
+    <Switch.Thumb />
+  </Switch.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the switch.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">checked</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">onCheckedChange</td>
+      <td className="py-2 px-4 border-b">`(checked: boolean) => void`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Thumb
+The thumb that slides when the switch is toggled.
+
+## Examples
+
+### With Label
+Combine with the Label component for an accessible toggle.
+<ComponentPreview>
+  <SwitchExample.WithLabel client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <SwitchExample.Sizes client:load />
+</ComponentPreview>

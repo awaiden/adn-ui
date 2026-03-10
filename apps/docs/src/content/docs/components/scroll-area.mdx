@@ -1,0 +1,169 @@
+---
+title: Scroll Area
+description: Augments native scroll functionality for custom, cross-browser styling.
+---
+
+import { ScrollAreaExample } from "../../../components/ScrollAreaExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Augments native scroll functionality for custom, cross-browser styling.
+
+## Preview
+
+<ComponentPreview>
+  <ScrollAreaExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { ScrollArea } from "@adn-ui/react";
+
+export default () => (
+  <ScrollArea.Root className="h-72 w-48 rounded-md border">
+    <ScrollArea.Viewport>
+      <div className="p-4">Your scrollable content here</div>
+    </ScrollArea.Viewport>
+    <ScrollArea.Scrollbar orientation="vertical">
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+    <ScrollArea.Corner />
+  </ScrollArea.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of a scroll area.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">type</td>
+      <td className="py-2 px-4 border-b">`"auto" | "always" | "scroll" | "hover"`</td>
+      <td className="py-2 px-4 border-b">`"hover"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">scrollHideDelay</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`600`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Viewport
+The viewport area of the scroll area.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Scrollbar
+The scrollbar. Add a second `Scrollbar` with `orientation="horizontal"` for horizontal scrolling.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">orientation</td>
+      <td className="py-2 px-4 border-b">`"vertical" | "horizontal"`</td>
+      <td className="py-2 px-4 border-b">`"vertical"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">forceMount</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Thumb
+The draggable thumb inside the scrollbar.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Corner
+The corner where both vertical and horizontal scrollbars meet.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Vertical
+A scroll area with vertical scrolling for a long list of items.
+<ComponentPreview>
+  <ScrollAreaExample.Default client:load />
+</ComponentPreview>
+
+### Horizontal
+A scroll area with horizontal scrolling for wide content.
+<ComponentPreview>
+  <ScrollAreaExample.Horizontal client:load />
+</ComponentPreview>

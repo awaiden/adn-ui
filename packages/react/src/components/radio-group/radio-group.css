@@ -1,0 +1,21 @@
+.radio-group {
+	@apply grid gap-2;
+}
+
+.radio-group__item {
+	@apply aspect-square size-4 rounded-full border border-neutral-300 text-neutral-900 ring-offset-background;
+
+	@apply focus:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+
+	@apply disabled:cursor-not-allowed disabled:opacity-50;
+
+	@apply data-[state=checked]:border-neutral-900;
+}
+
+.radio-group__indicator {
+	@apply flex items-center justify-center;
+}
+
+.radio-group__indicator-dot {
+	@apply size-2.5 rounded-full bg-current;
+}

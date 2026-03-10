@@ -1,0 +1,62 @@
+---
+title: Textarea
+description: Displays a form textarea.
+---
+
+import { TextareaExample } from "../../../components/TextareaExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays a form textarea.
+
+## Preview
+
+<ComponentPreview>
+  <TextareaExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Textarea } from "@adn-ui/react";
+
+export default () => <Textarea placeholder="Type your message here." />;
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+Standard textarea.
+<ComponentPreview>
+  <TextareaExample.Default client:load />
+</ComponentPreview>
+
+### With Label
+Combined with a label.
+<ComponentPreview>
+  <TextareaExample.WithLabel client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <TextareaExample.Sizes client:load />
+</ComponentPreview>

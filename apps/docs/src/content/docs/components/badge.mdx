@@ -1,0 +1,57 @@
+---
+title: Badge
+description: Displays a small status descriptor for UI elements.
+---
+
+import { BadgeExample } from "../../../components/BadgeExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays a small status descriptor for UI elements.
+
+## Preview
+
+<ComponentPreview>
+  <BadgeExample.Variants client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Badge } from "@adn-ui/react";
+
+export default () => <Badge variant="primary">Badge</Badge>;
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">variant</td>
+      <td className="py-2 px-4 border-b">`"primary" | "secondary" | "destructive" | "outline"`</td>
+      <td className="py-2 px-4 border-b">`"primary"`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Variants
+Available variants include primary, secondary, destructive, and outline.
+<ComponentPreview>
+  <BadgeExample.Variants client:load />
+</ComponentPreview>
+
+```tsx
+<Badge variant="primary">Primary</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="destructive">Destructive</Badge>
+<Badge variant="outline">Outline</Badge>
+```

@@ -1,0 +1,42 @@
+{
+  "name": "adn-ui",
+  "private": true,
+  "description": "A modern, accessible React UI library built with Radix UI, Tailwind CSS v4, and Tailwind Variants.",
+  "homepage": "https://github.com/awaiden/adn-ui#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/adn-ui/issues"
+  },
+  "license": "MIT",
+  "author": "awaiden (https://github.com/awaiden)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awaiden/adn-ui.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "check": "biome check .",
+    "check:fix": "biome check . --write",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.2",
+    "turbo": "^2.8.14"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "biome check --write",
+      "git add"
+    ]
+  },
+  "packageManager": "bun@1.3.9",
+  "dependencies": {
+    "@changesets/cli": "^2.30.0"
+  }
+}

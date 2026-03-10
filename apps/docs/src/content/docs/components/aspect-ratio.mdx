@@ -1,0 +1,66 @@
+---
+title: Aspect Ratio
+description: Displays content within a desired ratio.
+---
+
+import { AspectRatioExample } from "../../../components/AspectRatioExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays content within a desired ratio.
+
+## Preview
+
+<ComponentPreview>
+  <AspectRatioExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@adn-ui/react";
+
+export default () => (
+  <div className="w-75">
+    <AspectRatio ratio={16 / 9}>
+      <img
+        src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
+        alt="Landscape"
+        className="h-full w-full object-cover"
+      />
+    </AspectRatio>
+  </div>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">ratio</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`1`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default (16:9)
+The most common aspect ratio for video.
+<ComponentPreview>
+  <AspectRatioExample.Default client:load />
+</ComponentPreview>
+
+### Square (1:1)
+Perfect for profile pictures.
+<ComponentPreview>
+  <AspectRatioExample.Square client:load />
+</ComponentPreview>

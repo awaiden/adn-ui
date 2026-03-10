@@ -1,0 +1,27 @@
+.scroll-area {
+  @apply relative overflow-hidden;
+}
+
+.scroll-area__viewport {
+  @apply h-full w-full rounded-[inherit];
+}
+
+.scroll-area__scrollbar {
+  @apply flex touch-none select-none transition-colors;
+
+  &[data-orientation="vertical"] {
+    @apply h-full w-2.5 border-l border-l-transparent p-px;
+  }
+
+  &[data-orientation="horizontal"] {
+    @apply h-2.5 flex-col border-t border-t-transparent p-px;
+  }
+}
+
+.scroll-area__thumb {
+  @apply relative flex-1 rounded-full bg-border;
+}
+
+.scroll-area__corner {
+  @apply bg-surface;
+}

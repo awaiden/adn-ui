@@ -1,0 +1,59 @@
+.accordion {
+	@apply w-full;
+}
+
+.accordion__item {
+	@apply border-b;
+}
+
+.accordion__header {
+	@apply flex;
+}
+
+.accordion__trigger {
+	@apply flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all;
+
+	@apply cursor-pointer;
+
+	&:hover {
+		@apply underline;
+	}
+
+	&[data-state="open"] > .accordion__chevron {
+		@apply rotate-180;
+	}
+}
+
+.accordion__chevron {
+	@apply size-4 shrink-0 text-muted-foreground transition-transform duration-200;
+}
+
+.accordion__content {
+	@apply overflow-hidden text-sm;
+
+	&[data-state="open"] {
+		animation: accordion-slide-down 200ms ease-out;
+	}
+
+	&[data-state="closed"] {
+		animation: accordion-slide-up 200ms ease-out;
+	}
+}
+
+@keyframes accordion-slide-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-slide-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}

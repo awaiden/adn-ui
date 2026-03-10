@@ -1,0 +1,11 @@
+.skeleton {
+  @apply animate-pulse bg-muted;
+}
+
+.skeleton--default {
+  @apply rounded-md;
+}
+
+.skeleton--circular {
+  @apply rounded-full;
+}

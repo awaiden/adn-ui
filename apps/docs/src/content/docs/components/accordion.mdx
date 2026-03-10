@@ -1,0 +1,109 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+---
+
+import { AccordionExample } from "../../../components/AccordionExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A vertically stacked set of interactive headings that each reveal a section of content.
+
+## Preview
+
+<ComponentPreview>
+  <AccordionExample.Single client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Accordion } from "@adn-ui/react";
+
+export default () => (
+  <Accordion.Root type="single" collapsible>
+    <Accordion.Item value="item-1">
+      <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+      <Accordion.Content>
+        Yes. It adheres to the WAI-ARIA design pattern.
+      </Accordion.Content>
+    </Accordion.Item>
+  </Accordion.Root>
+);
+```
+
+## API Reference
+
+### Root
+The foundational component for the accordion.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">type</td>
+      <td className="py-2 px-4 border-b">`"single" | "multiple"`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">collapsible</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultValue</td>
+      <td className="py-2 px-4 border-b">`string | string[]`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+### Item
+Contains all the parts of a single collapsible section.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">value</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">disabled</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Trigger
+Toggles the collapsed state of its associated item. It should be nested inside an `Accordion.Header`.
+
+### Content
+Contains the collapsible content for an item.
+
+## Examples
+
+### Single (Collapsible)
+Allow only one item to be open at a time.
+<ComponentPreview>
+  <AccordionExample.Single client:load />
+</ComponentPreview>
+
+### Multiple
+Allow multiple items to be open at the same time.
+<ComponentPreview>
+  <AccordionExample.Multiple client:load />
+</ComponentPreview>

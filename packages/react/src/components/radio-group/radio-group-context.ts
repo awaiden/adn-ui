@@ -1,0 +1,22 @@
+import { createContext, use } from "react";
+import type { radioGroupVariants } from "./radio-group.variants";
+
+type RadioGroupContextValue = {
+	slots: ReturnType<typeof radioGroupVariants>;
+};
+
+export const RadioGroupContext = createContext<RadioGroupContextValue | null>(
+	null,
+);
+
+export function useRadioGroupContext() {
+	const context = use(RadioGroupContext);
+
+	if (!context) {
+		throw new Error(
+			"useRadioGroupContext must be used within a RadioGroupProvider",
+		);
+	}
+
+	return context;
+}

@@ -1,0 +1,113 @@
+:root {
+	--radius: 4px;
+	--radius-button: calc(Infinity * 1px);
+
+	--white: oklch(100% 0 0);
+	--black: oklch(0% 0 0);
+
+	--background: var(--white);
+	--foreground: var(--black);
+
+	--accent: oklch(55% 0.15 260);
+	--accent-foreground: var(--white);
+	--accent-hover: oklch(48% 0.15 260);
+
+	--primary: oklch(45% 0.2 260);
+	--primary-foreground: var(--white);
+	--primary-hover: oklch(38% 0.2 260);
+
+	--secondary: oklch(65% 0.05 260);
+	--secondary-foreground: oklch(20% 0.02 260);
+	--secondary-hover: oklch(58% 0.05 260);
+
+	--destructive: oklch(55% 0.22 27);
+	--destructive-foreground: var(--white);
+	--destructive-hover: oklch(48% 0.22 27);
+
+	--muted: oklch(93% 0.01 260);
+	--muted-foreground: oklch(45% 0.03 260);
+	--muted-hover: oklch(88% 0.01 260);
+
+	--surface: var(--white);
+	--surface-foreground: var(--black);
+	--overlay: oklch(0% 0 0 / 0.5);
+	--overlay-foreground: var(--white);
+
+	--ring: oklch(100% 0.01 260);
+	--border: oklch(93% 0.01 260);
+	--shadow: oklch(0% 0 0 / 0.1);
+}
+
+.dark {
+	--background: oklch(15% 0.01 260);
+	--foreground: oklch(95% 0.01 260);
+
+	--accent: oklch(65% 0.15 260);
+	--accent-foreground: oklch(10% 0.02 260);
+	--accent-hover: oklch(72% 0.15 260);
+
+	--primary: oklch(65% 0.2 260);
+	--primary-foreground: oklch(10% 0.02 260);
+	--primary-hover: oklch(72% 0.2 260);
+
+	--secondary: oklch(30% 0.05 260);
+	--secondary-foreground: oklch(90% 0.02 260);
+	--secondary-hover: oklch(35% 0.05 260);
+
+	--destructive: oklch(60% 0.22 27);
+	--destructive-foreground: oklch(10% 0.02 27);
+	--destructive-hover: oklch(67% 0.22 27);
+
+	--muted: oklch(22% 0.01 260);
+	--muted-foreground: oklch(65% 0.03 260);
+	--muted-hover: oklch(27% 0.01 260);
+
+	--surface: oklch(18% 0.01 260);
+	--surface-foreground: oklch(95% 0.01 260);
+	--overlay: oklch(0% 0 0 / 0.7);
+	--overlay-foreground: var(--white);
+
+	--ring: oklch(100% 0.01 260);
+	--border: oklch(22% 0.01 260);
+	--shadow: oklch(0% 0 0 / 0.5);
+}
+
+@theme inline {
+	--radius: var(--radius);
+	--radius-button: var(--radius-button);
+
+	--color-white: var(--white);
+	--color-black: var(--black);
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent-hover: var(--accent-hover);
+
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary-hover: var(--primary-hover);
+
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary-hover: var(--secondary-hover);
+
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-destructive-hover: var(--destructive-hover);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted-hover: var(--muted-hover);
+
+	--color-surface: var(--surface);
+	--color-surface-foreground: var(--surface-foreground);
+	--color-overlay: var(--overlay);
+	--color-overlay-foreground: var(--overlay-foreground);
+
+	--color-ring: var(--ring);
+	--color-border: var(--border);
+	--color-shadow: var(--shadow);
+}

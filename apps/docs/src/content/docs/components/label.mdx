@@ -1,0 +1,66 @@
+---
+title: Label
+description: Renders an accessible label associated with controls.
+---
+
+import { LabelExample } from "../../../components/LabelExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Renders an accessible label associated with controls.
+
+## Preview
+
+<ComponentPreview>
+  <LabelExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Label } from "@adn-ui/react";
+
+export default () => (
+  <div>
+    <Label htmlFor="email">Email</Label>
+    <Input id="email" />
+  </div>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">htmlFor</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+A standard label associated with an input.
+<ComponentPreview>
+  <LabelExample.Default client:load />
+</ComponentPreview>
+
+### Sizes
+Available in small, medium, and large sizes.
+<ComponentPreview>
+  <LabelExample.Sizes client:load />
+</ComponentPreview>

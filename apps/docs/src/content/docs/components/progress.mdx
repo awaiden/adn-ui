@@ -1,0 +1,111 @@
+---
+title: Progress
+description: Displays an indicator showing the completion progress of a task.
+---
+
+import { ProgressExample } from "../../../components/ProgressExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays an indicator showing the completion progress of a task.
+
+## Preview
+
+<ComponentPreview>
+  <ProgressExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Progress } from "@adn-ui/react";
+
+export default () => (
+  <Progress.Root value={60} className="w-64">
+    <Progress.Indicator style={{ transform: `translateX(-${100 - 60}%)` }} />
+  </Progress.Root>
+);
+```
+
+## API Reference
+
+### Progress.Root
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">value</td>
+      <td className="py-2 px-4 border-b">`number | null`</td>
+      <td className="py-2 px-4 border-b">—</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">max</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`100`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">size</td>
+      <td className="py-2 px-4 border-b">`"sm" | "md" | "lg"`</td>
+      <td className="py-2 px-4 border-b">`"md"`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+<ComponentPreview>
+  <ProgressExample.Default client:load />
+</ComponentPreview>
+
+```tsx
+<Progress.Root value={60} className="w-64">
+  <Progress.Indicator style={{ transform: `translateX(-${100 - 60}%)` }} />
+</Progress.Root>
+```
+
+### Sizes
+<ComponentPreview>
+  <ProgressExample.Sizes client:load />
+</ComponentPreview>
+
+```tsx
+<Progress.Root size="sm" value={33}>
+  <Progress.Indicator style={{ transform: `translateX(-${100 - 33}%)` }} />
+</Progress.Root>
+<Progress.Root size="md" value={66}>
+  <Progress.Indicator style={{ transform: `translateX(-${100 - 66}%)` }} />
+</Progress.Root>
+<Progress.Root size="lg" value={100}>
+  <Progress.Indicator style={{ transform: "translateX(0%)" }} />
+</Progress.Root>
+```
+
+### Complete
+<ComponentPreview>
+  <ProgressExample.Complete client:load />
+</ComponentPreview>
+
+```tsx
+<Progress.Root value={100} className="w-64">
+  <Progress.Indicator style={{ transform: "translateX(0%)" }} />
+</Progress.Root>
+```
+
+### Indeterminate
+Pass `null` as the value to show an indeterminate state.
+<ComponentPreview>
+  <ProgressExample.Indeterminate client:load />
+</ComponentPreview>
+
+```tsx
+<Progress.Root value={null} className="w-64">
+  <Progress.Indicator />
+</Progress.Root>
+```

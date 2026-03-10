@@ -1,0 +1,19 @@
+.card {
+	@apply rounded-lg border bg-surface text-surface-foreground shadow-sm;
+}
+
+.card__header {
+	@apply mb-2 px-4 pt-4;
+}
+
+.card__title {
+	@apply text-lg font-semibold leading-none tracking-tight;
+}
+
+.card__description {
+	@apply text-sm text-muted-foreground;
+}
+
+.card__content {
+	@apply px-4 py-2;
+}

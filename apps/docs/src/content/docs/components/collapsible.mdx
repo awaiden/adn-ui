@@ -1,0 +1,87 @@
+---
+title: Collapsible
+description: An interactive component which expands/collapses a panel.
+---
+
+import { CollapsibleExample } from "../../../components/CollapsibleExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+An interactive component which expands/collapses a panel.
+
+## Preview
+
+<ComponentPreview>
+  <CollapsibleExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Collapsible } from "@adn-ui/react";
+
+export default () => (
+  <Collapsible.Root>
+    <Collapsible.Trigger>Toggle content</Collapsible.Trigger>
+    <Collapsible.Content>
+      This is the collapsible content.
+    </Collapsible.Content>
+  </Collapsible.Root>
+);
+```
+
+## API Reference
+
+### Root
+Contains all the parts of a collapsible.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultOpen</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">open</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">onOpenChange</td>
+      <td className="py-2 px-4 border-b">`(open: boolean) => void`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">disabled</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Trigger
+The button that toggles the collapsible.
+
+### Content
+The content that is revealed when the collapsible is open.
+
+## Examples
+
+### Default
+A simple collapsible section.
+<ComponentPreview>
+  <CollapsibleExample.Default client:load />
+</ComponentPreview>
+
+### Default Open
+A collapsible that starts in the open state.
+<ComponentPreview>
+  <CollapsibleExample.DefaultOpen client:load />
+</ComponentPreview>

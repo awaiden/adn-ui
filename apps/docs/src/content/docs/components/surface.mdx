@@ -1,0 +1,56 @@
+---
+title: Surface
+description: A base container with background and border styles.
+---
+
+import { SurfaceExample } from "../../../components/SurfaceExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A base container with background and border styles.
+
+## Preview
+
+<ComponentPreview>
+  <SurfaceExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Surface } from "@adn-ui/react";
+
+export default () => (
+  <Surface>
+    <p>Content inside a surface.</p>
+  </Surface>
+);
+```
+
+## API Reference
+
+Surface accepts all standard `div` props.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">className</td>
+      <td className="py-2 px-4 border-b">`string`</td>
+      <td className="py-2 px-4 border-b">-</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+A simple surface container.
+<ComponentPreview>
+  <SurfaceExample.Default client:load />
+</ComponentPreview>

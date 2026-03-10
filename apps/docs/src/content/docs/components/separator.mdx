@@ -1,0 +1,74 @@
+---
+title: Separator
+description: Visually or semantically separates content.
+---
+
+import { SeparatorExample } from "../../../components/SeparatorExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Visually or semantically separates content.
+
+## Preview
+
+<ComponentPreview>
+  <SeparatorExample.Horizontal client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Separator } from "@adn-ui/react";
+
+export default () => (
+  <div>
+    <div className="text-sm font-medium">ADN UI</div>
+    <p className="text-sm text-neutral-500">An open-source UI component library.</p>
+    <Separator className="my-4" />
+    <div className="flex h-5 items-center gap-4 text-sm">
+      <div>Blog</div>
+      <Separator orientation="vertical" />
+      <div>Docs</div>
+      <Separator orientation="vertical" />
+      <div>Source</div>
+    </div>
+  </div>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">orientation</td>
+      <td className="py-2 px-4 border-b">`"horizontal" | "vertical"`</td>
+      <td className="py-2 px-4 border-b">`"horizontal"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">decorative</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`true`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Horizontal
+The default orientation.
+<ComponentPreview>
+  <SeparatorExample.Horizontal client:load />
+</ComponentPreview>
+
+### Vertical
+Use the vertical orientation to separate inline elements.
+<ComponentPreview>
+  <SeparatorExample.Vertical client:load />
+</ComponentPreview>

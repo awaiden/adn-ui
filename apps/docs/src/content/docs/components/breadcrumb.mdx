@@ -1,0 +1,125 @@
+---
+title: Breadcrumb
+description: Displays the path to the current resource using a hierarchy of links.
+---
+
+import { BreadcrumbExample } from "../../../components/BreadcrumbExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+Displays the path to the current resource using a hierarchy of links.
+
+## Preview
+
+<ComponentPreview>
+  <BreadcrumbExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Breadcrumb } from "@adn-ui/react";
+
+export default () => (
+  <Breadcrumb.Root>
+    <Breadcrumb.List>
+      <Breadcrumb.Item>
+        <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+      </Breadcrumb.Item>
+      <Breadcrumb.Separator />
+      <Breadcrumb.Item>
+        <Breadcrumb.Page>Components</Breadcrumb.Page>
+      </Breadcrumb.Item>
+    </Breadcrumb.List>
+  </Breadcrumb.Root>
+);
+```
+
+## API Reference
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Component</th>
+      <th className="py-2 px-4 border-b">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Root`</td>
+      <td className="py-2 px-4 border-b">The root `<nav>` element.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.List`</td>
+      <td className="py-2 px-4 border-b">The ordered list of breadcrumb items.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Item`</td>
+      <td className="py-2 px-4 border-b">A single breadcrumb item.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Link`</td>
+      <td className="py-2 px-4 border-b">A navigable breadcrumb link.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Page`</td>
+      <td className="py-2 px-4 border-b">The current page (non-navigable).</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Separator`</td>
+      <td className="py-2 px-4 border-b">Visual separator between items.</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">`Breadcrumb.Ellipsis`</td>
+      <td className="py-2 px-4 border-b">Indicates collapsed items.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+<ComponentPreview>
+  <BreadcrumbExample.Default client:load />
+</ComponentPreview>
+
+```tsx
+<Breadcrumb.Root>
+  <Breadcrumb.List>
+    <Breadcrumb.Item>
+      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+    <Breadcrumb.Item>
+      <Breadcrumb.Link href="/docs">Documentation</Breadcrumb.Link>
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+    <Breadcrumb.Item>
+      <Breadcrumb.Page>Components</Breadcrumb.Page>
+    </Breadcrumb.Item>
+  </Breadcrumb.List>
+</Breadcrumb.Root>
+```
+
+### With Ellipsis
+Use `Breadcrumb.Ellipsis` to collapse middle segments of a long path.
+<ComponentPreview>
+  <BreadcrumbExample.WithEllipsis client:load />
+</ComponentPreview>
+
+```tsx
+<Breadcrumb.Root>
+  <Breadcrumb.List>
+    <Breadcrumb.Item>
+      <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+    <Breadcrumb.Item>
+      <Breadcrumb.Ellipsis />
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+    <Breadcrumb.Item>
+      <Breadcrumb.Page>Breadcrumb</Breadcrumb.Page>
+    </Breadcrumb.Item>
+  </Breadcrumb.List>
+</Breadcrumb.Root>
+```

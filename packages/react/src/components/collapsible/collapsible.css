@@ -1,0 +1,43 @@
+.collapsible {
+	@apply w-full;
+}
+
+.collapsible__trigger {
+	@apply flex items-center justify-between py-2 text-sm font-medium transition-all;
+
+	@apply cursor-pointer;
+
+	&[data-disabled] {
+		@apply cursor-not-allowed opacity-50;
+	}
+}
+
+.collapsible__content {
+	@apply overflow-hidden text-sm;
+
+	&[data-state="open"] {
+		animation: collapsible-slide-down 200ms ease-out;
+	}
+
+	&[data-state="closed"] {
+		animation: collapsible-slide-up 200ms ease-out;
+	}
+}
+
+@keyframes collapsible-slide-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-collapsible-content-height);
+	}
+}
+
+@keyframes collapsible-slide-up {
+	from {
+		height: var(--radix-collapsible-content-height);
+	}
+	to {
+		height: 0;
+	}
+}

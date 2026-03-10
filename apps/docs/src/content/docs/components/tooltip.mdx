@@ -1,0 +1,106 @@
+---
+title: Tooltip
+description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+---
+
+import { TooltipExample } from "../../../components/TooltipExample";
+import { ComponentPreview } from "../../../components/ComponentPreview";
+
+A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+
+## Preview
+
+<ComponentPreview>
+  <TooltipExample.Default client:load />
+</ComponentPreview>
+
+## Usage
+
+```tsx
+import { Tooltip, Button } from "@adn-ui/react";
+
+export default () => (
+  <Tooltip.Provider>
+    <Tooltip.Root>
+      <Tooltip.Trigger asChild>
+        <Button variant="outline">Hover me</Button>
+      </Tooltip.Trigger>
+      <Tooltip.Content>
+        <p>Add to library</p>
+      </Tooltip.Content>
+    </Tooltip.Root>
+  </Tooltip.Provider>
+);
+```
+
+## API Reference
+
+### Provider
+Wraps your app (or a specific section) to provide tooltip functionality.
+
+### Root
+Contains all the parts of an individual tooltip.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">delayDuration</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`700`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">defaultOpen</td>
+      <td className="py-2 px-4 border-b">`boolean`</td>
+      <td className="py-2 px-4 border-b">`false`</td>
+    </tr>
+  </tbody>
+</table>
+
+### Trigger
+The element that triggers the tooltip.
+
+### Content
+The content that appears when the tooltip is open.
+
+<table className="min-w-full text-left text-sm">
+  <thead>
+    <tr>
+      <th className="py-2 px-4 border-b">Prop</th>
+      <th className="py-2 px-4 border-b">Type</th>
+      <th className="py-2 px-4 border-b">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="py-2 px-4 border-b">side</td>
+      <td className="py-2 px-4 border-b">`"top" | "right" | "bottom" | "left"`</td>
+      <td className="py-2 px-4 border-b">`"top"`</td>
+    </tr>
+    <tr>
+      <td className="py-2 px-4 border-b">sideOffset</td>
+      <td className="py-2 px-4 border-b">`number`</td>
+      <td className="py-2 px-4 border-b">`0`</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Default
+Hover or focus the button to see the tooltip.
+<ComponentPreview>
+  <TooltipExample.Default client:load />
+</ComponentPreview>
+
+### Placement
+Control where the tooltip appears.
+<ComponentPreview>
+  <TooltipExample.Placement client:load />
+</ComponentPreview>
