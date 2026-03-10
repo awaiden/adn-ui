@@ -1,82 +1,79 @@
 {
-  "name": "@adn-ui/react",
-  "version": "0.0.0",
-  "description": "Accessible, themeable React UI components built on Radix UI and Tailwind CSS v4.",
-  "keywords": [
-    "accessible",
-    "components",
-    "design-system",
-    "radix-ui",
-    "react",
-    "tailwindcss",
-    "ui"
-  ],
-  "homepage": "https://github.com/awaiden/adn-ui#readme",
-  "bugs": {
-    "url": "https://github.com/awaiden/adn-ui/issues"
-  },
-  "license": "MIT",
-  "author": "awaiden (https://github.com/awaiden)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/awaiden/adn-ui.git",
-    "directory": "packages/react"
-  },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "main": "dist/react.cjs",
-  "module": "dist/react.js",
-  "types": "dist/react.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/react.d.ts",
-      "import": "./dist/react.js",
-      "require": "./dist/react.cjs"
-    },
-    "./styles": "./dist/react.css"
-  },
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
-    "test": "vitest",
-    "storybook": "BROWSER=none storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "dependencies": {
-    "lucide-react": "^0.577.0",
-    "radix-ui": "^1.4.3",
-    "tailwind-merge": "^3.5.0",
-    "tailwind-variants": "^3.2.2",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@storybook/addon-themes": "^10.2.16",
-    "@storybook/react-vite": "^10.2.16",
-    "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^25.4.0",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
-    "@vitest/browser-playwright": "^4.0.18",
-    "globals": "^16.5.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "storybook": "^10.2.16",
-    "tailwindcss": "^4.2.1",
-    "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-dts": "^4.5.4",
-    "vitest": "^4.0.18",
-    "vitest-browser-react": "^2.0.5"
-  },
-  "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.0"
-  },
-  "overrides": {
-    "vite": "^8.0.0-beta.13"
-  }
+	"name": "@adn-ui/react",
+	"version": "0.0.0",
+	"description": "Accessible, themeable React UI components built on Radix UI and Tailwind CSS v4.",
+	"keywords": [
+		"accessible",
+		"components",
+		"design-system",
+		"radix-ui",
+		"react",
+		"tailwindcss",
+		"ui"
+	],
+	"homepage": "https://github.com/awaiden/adn-ui#readme",
+	"bugs": {
+		"url": "https://github.com/awaiden/adn-ui/issues"
+	},
+	"license": "MIT",
+	"author": "awaiden (https://github.com/awaiden)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/awaiden/adn-ui.git",
+		"directory": "packages/react"
+	},
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"main": "dist/react.cjs",
+	"module": "dist/react.js",
+	"types": "dist/react.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/react.d.ts",
+			"import": "./dist/react.js",
+			"require": "./dist/react.cjs"
+		},
+		"./styles": "./dist/react.css"
+	},
+	"scripts": {
+		"dev": "vite build --watch",
+		"build": "vite build",
+		"test": "vitest",
+		"storybook": "BROWSER=none storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"dependencies": {
+		"lucide-react": "^0.577.0",
+		"radix-ui": "^1.4.3",
+		"tailwind-merge": "^3.5.0",
+		"tailwind-variants": "^3.2.2",
+		"tailwindcss-animate": "^1.0.7"
+	},
+	"devDependencies": {
+		"@storybook/addon-themes": "^10.2.16",
+		"@storybook/react-vite": "^10.2.16",
+		"@tailwindcss/vite": "^4.2.1",
+		"@types/node": "^25.4.0",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^5.1.4",
+		"@vitest/browser-playwright": "^4.0.18",
+		"globals": "^16.5.0",
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0",
+		"storybook": "^10.2.16",
+		"tailwindcss": "^4.2.1",
+		"typescript": "~5.9.3",
+		"vite": "^7.3.1",
+		"vite-plugin-dts": "^4.5.4",
+		"vitest": "^4.0.18",
+		"vitest-browser-react": "^2.0.5"
+	},
+	"peerDependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwindcss": "^4.0.0"
+	}
 }

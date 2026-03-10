@@ -16,7 +16,6 @@
     },
     "apps/docs": {
       "name": "@adn-ui/docs",
-      "version": "0.0.1",
       "dependencies": {
         "@adn-ui/react": "workspace:*",
         "@astrojs/react": "^4.4.2",

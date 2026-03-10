@@ -1,19 +1,19 @@
 .group {
-  @apply relative;
+	@apply relative;
 }
 
 .group__prefix {
-  @apply absolute left-0 top-1/2 -translate-y-1/2;
+	@apply absolute left-0 top-1/2 -translate-y-1/2;
 }
 
 .group__suffix {
-  @apply absolute right-0 top-1/2 -translate-y-1/2;
+	@apply absolute right-0 top-1/2 -translate-y-1/2;
 }
 
 .group:has([data-slot="prefix"]) [data-slot="input"] {
-  @apply pl-10;
+	@apply pl-10;
 }
 
 .group:has([data-slot="suffix"]) [data-slot="input"] {
-  @apply pr-10;
+	@apply pr-10;
 }

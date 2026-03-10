@@ -29,24 +29,46 @@ function renderAccordion({
 	disabledItems = [] as string[],
 }: RenderAccordionProps = {}) {
 	return render(
-		<Accordion.Root
-			type={type as any}
-			collapsible={collapsible}
-			defaultValue={defaultValue as any}
-		>
-			{items.map((item) => (
-				<Accordion.Item
-					key={item.value}
-					value={item.value}
-					disabled={disabledItems.includes(item.value)}
-				>
-					<Accordion.Trigger>{item.trigger}</Accordion.Trigger>
-					<Accordion.Content>
-						<div>{item.content}</div>
-					</Accordion.Content>
-				</Accordion.Item>
-			))}
-		</Accordion.Root>,
+		type === "single" ? (
+			<Accordion.Root
+				type="single"
+				collapsible={collapsible}
+				defaultValue={
+					typeof defaultValue === "string" ? defaultValue : undefined
+				}
+			>
+				{items.map((item) => (
+					<Accordion.Item
+						key={item.value}
+						value={item.value}
+						disabled={disabledItems.includes(item.value)}
+					>
+						<Accordion.Trigger>{item.trigger}</Accordion.Trigger>
+						<Accordion.Content>
+							<div>{item.content}</div>
+						</Accordion.Content>
+					</Accordion.Item>
+				))}
+			</Accordion.Root>
+		) : (
+			<Accordion.Root
+				type="multiple"
+				defaultValue={Array.isArray(defaultValue) ? defaultValue : undefined}
+			>
+				{items.map((item) => (
+					<Accordion.Item
+						key={item.value}
+						value={item.value}
+						disabled={disabledItems.includes(item.value)}
+					>
+						<Accordion.Trigger>{item.trigger}</Accordion.Trigger>
+						<Accordion.Content>
+							<div>{item.content}</div>
+						</Accordion.Content>
+					</Accordion.Item>
+				))}
+			</Accordion.Root>
+		),
 	);
 }
 
