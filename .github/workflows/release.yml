@@ -1,20 +1,19 @@
 name: Release
 
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   release:
-    name: Stable Release
+    name: Publish to npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,15 +26,12 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build
-        run: bun build
+        run: bun run build
 
-      - name: Create Release PR or Publish
-        uses: changesets/action@v1
-        with:
-          publish: bunx changeset publish
-          version: bunx changeset version
-          commit: "chore: release"
-          title: "chore: release"
+      - name: Publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          cd packages/react
+          npm publish --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
