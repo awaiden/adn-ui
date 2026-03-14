@@ -31,8 +31,8 @@ const Form = () => (
 );
 
 export const SkeletonExample = {
-	Default,
-	Circular,
 	Card,
+	Circular,
+	Default,
 	Form,
 };

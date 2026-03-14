@@ -1,34 +1,33 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { AspectRatio } from "./index";
 
 describe("AspectRatio", () => {
-	test("renders with base class", async () => {
-		const { getByTestId } = await render(
+	test("renders with base class", () => {
+		render(
 			<AspectRatio ratio={16 / 9} data-testid="aspect-ratio">
 				<div data-testid="child">Child</div>
 			</AspectRatio>,
 		);
-		const aspectRatio = getByTestId("aspect-ratio");
+		const aspectRatio = screen.getByTestId("aspect-ratio");
 
-		await expect.element(aspectRatio).toBeInTheDocument();
-		await expect.element(aspectRatio).toHaveClass("aspect-ratio");
+		expect(aspectRatio).toBeInTheDocument();
+		expect(aspectRatio).toHaveClass("aspect-ratio");
 	});
 
-	test("renders children", async () => {
-		const { getByTestId } = await render(
+	test("renders children", () => {
+		render(
 			<AspectRatio ratio={16 / 9}>
 				<div data-testid="child">Child Content</div>
 			</AspectRatio>,
 		);
-		await expect.element(getByTestId("child")).toBeInTheDocument();
-		await expect
-			.element(getByTestId("child"))
-			.toHaveTextContent("Child Content");
+		expect(screen.getByTestId("child")).toBeInTheDocument();
+		expect(screen.getByTestId("child")).toHaveTextContent("Child Content");
 	});
 
-	test("applies custom className alongside base class", async () => {
-		const { getByTestId } = await render(
+	test("applies custom className alongside base class", () => {
+		render(
 			<AspectRatio
 				ratio={16 / 9}
 				className="custom-class"
@@ -37,20 +36,21 @@ describe("AspectRatio", () => {
 				<div>Child</div>
 			</AspectRatio>,
 		);
-		const aspectRatio = getByTestId("aspect-ratio");
+		const aspectRatio = screen.getByTestId("aspect-ratio");
 
-		await expect.element(aspectRatio).toHaveClass("aspect-ratio");
-		await expect.element(aspectRatio).toHaveClass("custom-class");
+		expect(aspectRatio).toHaveClass("aspect-ratio");
+		expect(aspectRatio).toHaveClass("custom-class");
 	});
 
-	test("forwards data attributes", async () => {
-		const { getByTestId } = await render(
+	test("forwards data attributes", () => {
+		render(
 			<AspectRatio ratio={16 / 9} data-custom="true" data-testid="aspect-ratio">
 				<div>Child</div>
 			</AspectRatio>,
 		);
-		await expect
-			.element(getByTestId("aspect-ratio"))
-			.toHaveAttribute("data-custom", "true");
+		expect(screen.getByTestId("aspect-ratio")).toHaveAttribute(
+			"data-custom",
+			"true",
+		);
 	});
 });

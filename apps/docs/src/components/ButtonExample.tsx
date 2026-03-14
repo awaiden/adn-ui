@@ -28,7 +28,7 @@ const Disabled = () => (
 );
 
 export const ButtonExample = {
-	Variants,
-	Sizes,
 	Disabled,
+	Sizes,
+	Variants,
 };

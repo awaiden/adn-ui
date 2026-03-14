@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Accordion,
 	AccordionContent,
@@ -18,15 +19,15 @@ interface RenderAccordionProps {
 }
 
 function renderAccordion({
-	type = "single",
 	collapsible = true,
 	defaultValue,
-	items = [
-		{ value: "item-1", trigger: "Trigger 1", content: "Content 1" },
-		{ value: "item-2", trigger: "Trigger 2", content: "Content 2" },
-		{ value: "item-3", trigger: "Trigger 3", content: "Content 3" },
-	],
 	disabledItems = [] as string[],
+	items = [
+		{ content: "Content 1", trigger: "Trigger 1", value: "item-1" },
+		{ content: "Content 2", trigger: "Trigger 2", value: "item-2" },
+		{ content: "Content 3", trigger: "Trigger 3", value: "item-3" },
+	],
+	type = "single",
 }: RenderAccordionProps = {}) {
 	return render(
 		type === "single" ? (
@@ -74,48 +75,46 @@ function renderAccordion({
 
 describe("Accordion", () => {
 	describe("rendering", () => {
-		test("renders all items", async () => {
-			const { getByText } = await renderAccordion();
+		test("renders all items", () => {
+			renderAccordion();
 
-			await expect.element(getByText("Trigger 1")).toBeInTheDocument();
-			await expect.element(getByText("Trigger 2")).toBeInTheDocument();
-			await expect.element(getByText("Trigger 3")).toBeInTheDocument();
+			expect(screen.getByText("Trigger 1")).toBeInTheDocument();
+			expect(screen.getByText("Trigger 2")).toBeInTheDocument();
+			expect(screen.getByText("Trigger 3")).toBeInTheDocument();
 		});
 
-		test("applies data-slot attributes", async () => {
-			const { container } = await renderAccordion();
+		test("applies data-slot attributes", () => {
+			const { container } = renderAccordion();
 
 			const root = container.querySelector('[data-slot="accordion-root"]');
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root).toBeInTheDocument();
 
 			const item = container.querySelector('[data-slot="accordion-item"]');
-			await expect.element(item as HTMLElement).toBeInTheDocument();
+			expect(item).toBeInTheDocument();
 
 			const trigger = container.querySelector(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger).toBeInTheDocument();
 		});
 
-		test("applies base CSS classes", async () => {
-			const { container } = await renderAccordion();
+		test("applies base CSS classes", () => {
+			const { container } = renderAccordion();
 
 			const root = container.querySelector('[data-slot="accordion-root"]');
-			await expect.element(root as HTMLElement).toHaveClass("accordion");
+			expect(root).toHaveClass("accordion");
 
 			const item = container.querySelector('[data-slot="accordion-item"]');
-			await expect.element(item as HTMLElement).toHaveClass("accordion__item");
+			expect(item).toHaveClass("accordion__item");
 
 			const trigger = container.querySelector(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("accordion__trigger");
+			expect(trigger).toHaveClass("accordion__trigger");
 		});
 
-		test("applies custom className to root", async () => {
-			const { container } = await render(
+		test("applies custom className to root", () => {
+			const { container } = render(
 				<Accordion.Root type="single" collapsible className="custom-root">
 					<Accordion.Item value="item-1">
 						<Accordion.Trigger>Trigger</Accordion.Trigger>
@@ -125,41 +124,39 @@ describe("Accordion", () => {
 			);
 
 			const root = container.querySelector('[data-slot="accordion-root"]');
-			await expect.element(root as HTMLElement).toHaveClass("accordion");
-			await expect.element(root as HTMLElement).toHaveClass("custom-root");
+			expect(root).toHaveClass("accordion");
+			expect(root).toHaveClass("custom-root");
 		});
 	});
 
 	describe("single type", () => {
-		test("all items start closed by default", async () => {
-			const { container } = await renderAccordion();
+		test("all items start closed by default", () => {
+			const { container } = renderAccordion();
 
 			const triggers = Array.from(
 				container.querySelectorAll('[data-slot="accordion-trigger"]'),
 			);
 			for (const trigger of triggers) {
-				await expect
-					.element(trigger as HTMLElement)
-					.toHaveAttribute("data-state", "closed");
+				expect(trigger).toHaveAttribute("data-state", "closed");
 			}
 		});
 
 		test("expands item on trigger click", async () => {
-			const { getByText, container } = await renderAccordion();
+			const { container } = renderAccordion();
 
-			await getByText("Trigger 1").click();
+			fireEvent.click(screen.getByText("Trigger 1"));
 
 			const content = container.querySelector(
 				'[data-slot="accordion-content"][data-state="open"]',
 			);
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			expect(content).toBeInTheDocument();
 		});
 
 		test("collapses previously open item when another is clicked", async () => {
-			const { getByText, container } = await renderAccordion();
+			const { container } = renderAccordion();
 
-			await getByText("Trigger 1").click();
-			await getByText("Trigger 2").click();
+			fireEvent.click(screen.getByText("Trigger 1"));
+			fireEvent.click(screen.getByText("Trigger 2"));
 
 			const openContents = container.querySelectorAll(
 				'[data-slot="accordion-content"][data-state="open"]',
@@ -167,32 +164,26 @@ describe("Accordion", () => {
 			expect(openContents.length).toBe(1);
 		});
 
-		test("renders with defaultValue expanded", async () => {
-			const { container } = await renderAccordion({
+		test("renders with defaultValue expanded", () => {
+			const { container } = renderAccordion({
 				defaultValue: "item-2",
 			});
 
 			const triggers = container.querySelectorAll(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect
-				.element(triggers[0] as HTMLElement)
-				.toHaveAttribute("data-state", "closed");
-			await expect
-				.element(triggers[1] as HTMLElement)
-				.toHaveAttribute("data-state", "open");
-			await expect
-				.element(triggers[2] as HTMLElement)
-				.toHaveAttribute("data-state", "closed");
+			expect(triggers[0]).toHaveAttribute("data-state", "closed");
+			expect(triggers[1]).toHaveAttribute("data-state", "open");
+			expect(triggers[2]).toHaveAttribute("data-state", "closed");
 		});
 
 		test("collapsible allows closing the open item", async () => {
-			const { getByText, container } = await renderAccordion({
+			const { container } = renderAccordion({
 				collapsible: true,
 			});
 
-			await getByText("Trigger 1").click();
-			await getByText("Trigger 1").click();
+			fireEvent.click(screen.getByText("Trigger 1"));
+			fireEvent.click(screen.getByText("Trigger 1"));
 
 			const openContents = container.querySelectorAll(
 				'[data-slot="accordion-content"][data-state="open"]',
@@ -203,7 +194,7 @@ describe("Accordion", () => {
 
 	describe("multiple type", () => {
 		test("allows multiple items to be open", async () => {
-			const { getByText, container } = await render(
+			const { container } = render(
 				<Accordion.Root type="multiple">
 					<Accordion.Item value="item-1">
 						<Accordion.Trigger>Trigger 1</Accordion.Trigger>
@@ -216,8 +207,8 @@ describe("Accordion", () => {
 				</Accordion.Root>,
 			);
 
-			await getByText("Trigger 1").click();
-			await getByText("Trigger 2").click();
+			fireEvent.click(screen.getByText("Trigger 1"));
+			fireEvent.click(screen.getByText("Trigger 2"));
 
 			const openContents = container.querySelectorAll(
 				'[data-slot="accordion-content"][data-state="open"]',
@@ -225,8 +216,8 @@ describe("Accordion", () => {
 			expect(openContents.length).toBe(2);
 		});
 
-		test("renders with multiple defaultValues expanded", async () => {
-			const { container } = await render(
+		test("renders with multiple defaultValues expanded", () => {
+			const { container } = render(
 				<Accordion.Root type="multiple" defaultValue={["item-1", "item-3"]}>
 					<Accordion.Item value="item-1">
 						<Accordion.Trigger>Trigger 1</Accordion.Trigger>
@@ -246,36 +237,28 @@ describe("Accordion", () => {
 			const triggers = container.querySelectorAll(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect
-				.element(triggers[0] as HTMLElement)
-				.toHaveAttribute("data-state", "open");
-			await expect
-				.element(triggers[1] as HTMLElement)
-				.toHaveAttribute("data-state", "closed");
-			await expect
-				.element(triggers[2] as HTMLElement)
-				.toHaveAttribute("data-state", "open");
+			expect(triggers[0]).toHaveAttribute("data-state", "open");
+			expect(triggers[1]).toHaveAttribute("data-state", "closed");
+			expect(triggers[2]).toHaveAttribute("data-state", "open");
 		});
 	});
 
 	describe("disabled", () => {
-		test("disabled item trigger cannot be clicked", async () => {
-			const { container } = await renderAccordion({
+		test("disabled item trigger cannot be clicked", () => {
+			const { container } = renderAccordion({
 				disabledItems: ["item-2"],
 			});
 
 			const triggers = container.querySelectorAll(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect
-				.element(triggers[1] as HTMLElement)
-				.toHaveAttribute("data-disabled", "");
+			expect(triggers[1]).toHaveAttribute("data-disabled", "");
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("forwards custom className to item", async () => {
-			const { container } = await render(
+		test("forwards custom className to item", () => {
+			const { container } = render(
 				<Accordion.Root type="single" collapsible>
 					<Accordion.Item value="item-1" className="custom-item">
 						<Accordion.Trigger>Trigger</Accordion.Trigger>
@@ -285,12 +268,12 @@ describe("Accordion", () => {
 			);
 
 			const item = container.querySelector('[data-slot="accordion-item"]');
-			await expect.element(item as HTMLElement).toHaveClass("accordion__item");
-			await expect.element(item as HTMLElement).toHaveClass("custom-item");
+			expect(item).toHaveClass("accordion__item");
+			expect(item).toHaveClass("custom-item");
 		});
 
-		test("forwards custom className to trigger", async () => {
-			const { container } = await render(
+		test("forwards custom className to trigger", () => {
+			const { container } = render(
 				<Accordion.Root type="single" collapsible>
 					<Accordion.Item value="item-1">
 						<Accordion.Trigger className="custom-trigger">
@@ -304,16 +287,12 @@ describe("Accordion", () => {
 			const trigger = container.querySelector(
 				'[data-slot="accordion-trigger"]',
 			);
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("accordion__trigger");
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("custom-trigger");
+			expect(trigger).toHaveClass("accordion__trigger");
+			expect(trigger).toHaveClass("custom-trigger");
 		});
 
-		test("forwards custom className to content", async () => {
-			const { container } = await render(
+		test("forwards custom className to content", () => {
+			const { container } = render(
 				<Accordion.Root type="single" collapsible defaultValue="item-1">
 					<Accordion.Item value="item-1">
 						<Accordion.Trigger>Trigger</Accordion.Trigger>
@@ -327,21 +306,17 @@ describe("Accordion", () => {
 			const content = container.querySelector(
 				'[data-slot="accordion-content"]',
 			);
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("accordion__content");
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("custom-content");
+			expect(content).toHaveClass("accordion__content");
+			expect(content).toHaveClass("custom-content");
 		});
 	});
 
 	describe("chevron icon", () => {
-		test("renders chevron icon inside trigger", async () => {
-			const { container } = await renderAccordion();
+		test("renders chevron icon inside trigger", () => {
+			const { container } = renderAccordion();
 
 			const chevron = container.querySelector(".accordion__chevron");
-			await expect.element(chevron as HTMLElement).toBeInTheDocument();
+			expect(chevron).toBeInTheDocument();
 		});
 	});
 

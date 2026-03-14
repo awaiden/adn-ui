@@ -1,25 +1,25 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const progressVariants = tv({
+	defaultVariants: {
+		size: "md",
+	},
 	slots: {
-		root: "progress",
 		indicator: "progress__indicator",
+		root: "progress",
 	},
 	variants: {
 		size: {
-			sm: {
-				root: "progress--sm",
+			lg: {
+				root: "progress--lg",
 			},
 			md: {
 				root: "progress--md",
 			},
-			lg: {
-				root: "progress--lg",
+			sm: {
+				root: "progress--sm",
 			},
 		},
-	},
-	defaultVariants: {
-		size: "md",
 	},
 });
 

@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { Dialog } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDrawerContext } from "./drawer-context";
 import DrawerOverlay from "./drawer-overlay";
 import DrawerPortal from "./drawer-portal";
@@ -8,8 +9,8 @@ import DrawerPortal from "./drawer-portal";
 export type DrawerContentProps = React.ComponentProps<typeof Dialog.Content>;
 
 export default function DrawerContent({
-	className,
 	children,
+	className,
 	...props
 }: DrawerContentProps) {
 	const { slots } = useDrawerContext();

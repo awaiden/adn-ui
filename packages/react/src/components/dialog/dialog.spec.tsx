@@ -1,10 +1,11 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Dialog } from "./index";
 
 describe("Dialog", () => {
-	test("renders trigger and opens dialog on click", async () => {
-		const { getByText } = await render(
+	test("renders trigger and opens dialog on click", () => {
+		render(
 			<Dialog.Root>
 				<Dialog.Trigger>Open</Dialog.Trigger>
 				<Dialog.Content>
@@ -15,17 +16,17 @@ describe("Dialog", () => {
 			</Dialog.Root>,
 		);
 
-		const trigger = getByText("Open");
-		await expect.element(trigger).toBeInTheDocument();
+		const trigger = screen.getByText("Open");
+		expect(trigger).toBeInTheDocument();
 
-		await trigger.click();
+		fireEvent.click(trigger);
 
-		await expect.element(getByText("Dialog Title")).toBeInTheDocument();
-		await expect.element(getByText("Dialog Description")).toBeInTheDocument();
+		expect(screen.getByText("Dialog Title")).toBeInTheDocument();
+		expect(screen.getByText("Dialog Description")).toBeInTheDocument();
 	});
 
-	test("applies base CSS classes", async () => {
-		const { getByText } = await render(
+	test("applies base CSS classes", () => {
+		render(
 			<Dialog.Root open>
 				<Dialog.Content>
 					<Dialog.Header>
@@ -38,18 +39,18 @@ describe("Dialog", () => {
 		);
 
 		const content = document.body.querySelector('[data-slot="dialog-content"]');
-		await expect.element(content as HTMLElement).toBeInTheDocument();
-		await expect.element(content as HTMLElement).toHaveClass("dialog__content");
+		expect(content as HTMLElement).toBeInTheDocument();
+		expect(content as HTMLElement).toHaveClass("dialog__content");
 
-		const title = getByText("Title");
-		await expect.element(title).toHaveClass("dialog__title");
+		const title = screen.getByText("Title");
+		expect(title).toHaveClass("dialog__title");
 
-		const description = getByText("Description");
-		await expect.element(description).toHaveClass("dialog__description");
+		const description = screen.getByText("Description");
+		expect(description).toHaveClass("dialog__description");
 	});
 
 	test("closes dialog when close button is clicked", async () => {
-		const { getByText } = await render(
+		render(
 			<Dialog.Root defaultOpen>
 				<Dialog.Content>
 					<Dialog.Title>Title</Dialog.Title>
@@ -57,13 +58,13 @@ describe("Dialog", () => {
 			</Dialog.Root>,
 		);
 
-		await expect.element(getByText("Title")).toBeInTheDocument();
+		expect(screen.getByText("Title")).toBeInTheDocument();
 
 		const closeButton = document.body.querySelector(
 			'[data-slot="dialog-close"]',
 		);
-		await (closeButton as HTMLElement).click();
+		(closeButton as HTMLElement).click();
 
-		await expect.element(getByText("Title")).not.toBeInTheDocument();
+		expect(screen.queryByText("Title")).not.toBeInTheDocument();
 	});
 });

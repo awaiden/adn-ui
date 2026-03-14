@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Tooltip,
 	TooltipArrow,
@@ -25,21 +26,21 @@ function renderTooltip({ defaultOpen }: { defaultOpen?: boolean } = {}) {
 
 describe("Tooltip", () => {
 	describe("rendering", () => {
-		test("renders trigger", async () => {
-			const { getByText } = await renderTooltip();
+		test("renders trigger", () => {
+			renderTooltip();
 
-			await expect.element(getByText("Hover me")).toBeInTheDocument();
+			expect(screen.getByText("Hover me")).toBeInTheDocument();
 		});
 
-		test("applies data-slot to trigger", async () => {
-			const { container } = await renderTooltip();
+		test("applies data-slot to trigger", () => {
+			const { container } = renderTooltip();
 
 			const trigger = container.querySelector('[data-slot="tooltip-trigger"]');
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 
 		test("content is not visible by default", async () => {
-			await renderTooltip();
+			renderTooltip();
 
 			const content = document.querySelector('[data-slot="tooltip-content"]');
 			expect(content).toBeNull();
@@ -48,45 +49,54 @@ describe("Tooltip", () => {
 
 	describe("open/close behavior", () => {
 		test("renders content when defaultOpen is true", async () => {
-			await renderTooltip({ defaultOpen: true });
+			renderTooltip({ defaultOpen: true });
 
-			const content = document.querySelector('[data-slot="tooltip-content"]');
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			await waitFor(() => {
+				const content = document.querySelector('[data-slot="tooltip-content"]');
+				expect(content).toBeInTheDocument();
+			});
 		});
 
 		test("shows content text when open", async () => {
-			const { getByText } = await renderTooltip({ defaultOpen: true });
+			renderTooltip({ defaultOpen: true });
 
-			await expect.element(getByText("Tooltip text")).toBeInTheDocument();
+			await waitFor(() => {
+				const content = document.querySelector('[data-slot="tooltip-content"]');
+				expect(content).toHaveTextContent("Tooltip text");
+			});
 		});
 
 		test("applies CSS class to content", async () => {
-			await renderTooltip({ defaultOpen: true });
+			renderTooltip({ defaultOpen: true });
 
-			const content = document.querySelector('[data-slot="tooltip-content"]');
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("tooltip__content");
+			await waitFor(() => {
+				const content = document.querySelector('[data-slot="tooltip-content"]');
+				expect(content).toHaveClass("tooltip__content");
+			});
 		});
 
 		test("renders arrow inside content", async () => {
-			await renderTooltip({ defaultOpen: true });
+			renderTooltip({ defaultOpen: true });
 
-			const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
-			await expect.element(arrow as HTMLElement).toBeInTheDocument();
+			await waitFor(() => {
+				const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
+				expect(arrow).toBeInTheDocument();
+			});
 		});
 
 		test("applies CSS class to arrow", async () => {
-			await renderTooltip({ defaultOpen: true });
+			renderTooltip({ defaultOpen: true });
 
-			const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
-			await expect.element(arrow as HTMLElement).toHaveClass("tooltip__arrow");
+			await waitFor(() => {
+				const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
+				expect(arrow).toHaveClass("tooltip__arrow");
+			});
 		});
 	});
 
 	describe("props forwarding", () => {
 		test("applies custom className to content", async () => {
-			await render(
+			render(
 				<Tooltip.Provider>
 					<Tooltip.Root defaultOpen delayDuration={0}>
 						<Tooltip.Trigger>Trigger</Tooltip.Trigger>
@@ -97,17 +107,15 @@ describe("Tooltip", () => {
 				</Tooltip.Provider>,
 			);
 
-			const content = document.querySelector('[data-slot="tooltip-content"]');
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("tooltip__content");
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("custom-content");
+			await waitFor(() => {
+				const content = document.querySelector('[data-slot="tooltip-content"]');
+				expect(content).toHaveClass("tooltip__content");
+				expect(content).toHaveClass("custom-content");
+			});
 		});
 
 		test("applies custom className to arrow", async () => {
-			await render(
+			render(
 				<Tooltip.Provider>
 					<Tooltip.Root defaultOpen delayDuration={0}>
 						<Tooltip.Trigger>Trigger</Tooltip.Trigger>
@@ -119,9 +127,11 @@ describe("Tooltip", () => {
 				</Tooltip.Provider>,
 			);
 
-			const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
-			await expect.element(arrow as HTMLElement).toHaveClass("tooltip__arrow");
-			await expect.element(arrow as HTMLElement).toHaveClass("custom-arrow");
+			await waitFor(() => {
+				const arrow = document.querySelector('[data-slot="tooltip-arrow"]');
+				expect(arrow).toHaveClass("tooltip__arrow");
+				expect(arrow).toHaveClass("custom-arrow");
+			});
 		});
 	});
 

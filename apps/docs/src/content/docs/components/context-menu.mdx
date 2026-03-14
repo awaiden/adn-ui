@@ -41,22 +41,15 @@ export default () => {
           <ContextMenu.Shortcut>⌘]</ContextMenu.Shortcut>
         </ContextMenu.Item>
         <ContextMenu.Separator />
-        <ContextMenu.CheckboxItem
-          checked={showBookmarks}
-          onCheckedChange={setShowBookmarks}
-        >
+        <ContextMenu.CheckboxItem checked={showBookmarks} onCheckedChange={setShowBookmarks}>
           Show Bookmarks
           <ContextMenu.Shortcut>⌘B</ContextMenu.Shortcut>
         </ContextMenu.CheckboxItem>
         <ContextMenu.Separator />
         <ContextMenu.Label>People</ContextMenu.Label>
         <ContextMenu.RadioGroup value={person} onValueChange={setPerson}>
-          <ContextMenu.RadioItem value="pedro">
-            Pedro Duarte
-          </ContextMenu.RadioItem>
-          <ContextMenu.RadioItem value="colm">
-            Colm Tuite
-          </ContextMenu.RadioItem>
+          <ContextMenu.RadioItem value="pedro">Pedro Duarte</ContextMenu.RadioItem>
+          <ContextMenu.RadioItem value="colm">Colm Tuite</ContextMenu.RadioItem>
         </ContextMenu.RadioGroup>
       </ContextMenu.Content>
     </ContextMenu.Root>
@@ -67,6 +60,7 @@ export default () => {
 ## API Reference
 
 ### Root
+
 Contains all the parts of a context menu.
 
 <table className="min-w-full text-left text-sm">
@@ -92,6 +86,7 @@ Contains all the parts of a context menu.
 </table>
 
 ### Trigger
+
 The area that opens the context menu on right-click.
 
 <table className="min-w-full text-left text-sm">
@@ -117,6 +112,7 @@ The area that opens the context menu on right-click.
 </table>
 
 ### Content
+
 The component that pops out when the context menu is open.
 
 <table className="min-w-full text-left text-sm">
@@ -147,6 +143,7 @@ The component that pops out when the context menu is open.
 </table>
 
 ### Item
+
 The component that contains the context menu items.
 
 <table className="min-w-full text-left text-sm">
@@ -177,6 +174,7 @@ The component that contains the context menu items.
 </table>
 
 ### CheckboxItem
+
 An item that can be controlled and rendered like a checkbox.
 
 <table className="min-w-full text-left text-sm">
@@ -207,6 +205,7 @@ An item that can be controlled and rendered like a checkbox.
 </table>
 
 ### RadioGroup
+
 Used to group multiple radio items.
 
 <table className="min-w-full text-left text-sm">
@@ -232,6 +231,7 @@ Used to group multiple radio items.
 </table>
 
 ### RadioItem
+
 An item that can be controlled and rendered like a radio.
 
 <table className="min-w-full text-left text-sm">
@@ -257,6 +257,7 @@ An item that can be controlled and rendered like a radio.
 </table>
 
 ### Label
+
 Used to render a label. It won't be focusable using arrow keys.
 
 <table className="min-w-full text-left text-sm">
@@ -277,6 +278,7 @@ Used to render a label. It won't be focusable using arrow keys.
 </table>
 
 ### Separator
+
 Used to visually separate items in the context menu.
 
 <table className="min-w-full text-left text-sm">
@@ -297,6 +299,7 @@ Used to visually separate items in the context menu.
 </table>
 
 ### Group
+
 Used to group multiple items.
 
 <table className="min-w-full text-left text-sm">
@@ -317,6 +320,7 @@ Used to group multiple items.
 </table>
 
 ### Sub
+
 Contains all the parts of a submenu.
 
 <table className="min-w-full text-left text-sm">
@@ -347,6 +351,7 @@ Contains all the parts of a submenu.
 </table>
 
 ### SubTrigger
+
 An item that opens a submenu.
 
 <table className="min-w-full text-left text-sm">
@@ -372,6 +377,7 @@ An item that opens a submenu.
 </table>
 
 ### SubContent
+
 The component that pops out when a submenu is open.
 
 <table className="min-w-full text-left text-sm">
@@ -397,6 +403,7 @@ The component that pops out when a submenu is open.
 </table>
 
 ### Shortcut
+
 A helper to display keyboard shortcut text alongside an item.
 
 <table className="min-w-full text-left text-sm">
@@ -419,25 +426,33 @@ A helper to display keyboard shortcut text alongside an item.
 ## Examples
 
 ### Default
+
 A standard context menu triggered by right-clicking.
+
 <ComponentPreview>
   <ContextMenuExample.Default client:load />
 </ComponentPreview>
 
 ### With Checkbox Items
+
 Checkbox items that can be toggled on and off.
+
 <ComponentPreview>
   <ContextMenuExample.WithCheckbox client:load />
 </ComponentPreview>
 
 ### With Radio Items
+
 Radio items for selecting one option from a group.
+
 <ComponentPreview>
   <ContextMenuExample.WithRadio client:load />
 </ComponentPreview>
 
 ### With Submenu
+
 Nested submenus for organizing complex menu structures.
+
 <ComponentPreview>
   <ContextMenuExample.WithSubmenu client:load />
 </ComponentPreview>

@@ -1,13 +1,14 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Select } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useSelectContext } from "./select-context";
 
 export type SelectContentProps = React.ComponentProps<typeof Select.Content>;
 
 export default function SelectContent({
-	className,
 	children,
+	className,
 	position = "popper",
 	...props
 }: SelectContentProps) {

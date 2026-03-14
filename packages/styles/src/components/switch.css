@@ -1,39 +1,39 @@
 .switch {
-	@apply inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
-	@apply disabled:cursor-not-allowed disabled:opacity-50;
-	@apply data-[state=checked]:bg-neutral-900 data-[state=unchecked]:bg-neutral-200;
-	@apply ring-offset-background;
+  @apply inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors;
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+  @apply data-[state=checked]:bg-neutral-900 data-[state=unchecked]:bg-neutral-200;
+  @apply ring-offset-background;
 }
 
 .switch--sm {
-	@apply h-4 w-7;
+  @apply h-4 w-7;
 }
 
 .switch--md {
-	@apply h-5 w-9;
+  @apply h-5 w-9;
 }
 
 .switch--lg {
-	@apply h-6 w-11;
+  @apply h-6 w-11;
 }
 
 .switch__thumb {
-	@apply pointer-events-none block rounded-full bg-white ring-0 transition-transform;
-	@apply data-[state=unchecked]:translate-x-0;
+  @apply pointer-events-none block rounded-full bg-white ring-0 transition-transform;
+  @apply data-[state=unchecked]:translate-x-0;
 }
 
 .switch__thumb--sm {
-	@apply size-3;
-	@apply data-[state=checked]:translate-x-3;
+  @apply size-3;
+  @apply data-[state=checked]:translate-x-3;
 }
 
 .switch__thumb--md {
-	@apply size-4;
-	@apply data-[state=checked]:translate-x-4;
+  @apply size-4;
+  @apply data-[state=checked]:translate-x-4;
 }
 
 .switch__thumb--lg {
-	@apply size-5;
-	@apply data-[state=checked]:translate-x-5;
+  @apply size-5;
+  @apply data-[state=checked]:translate-x-5;
 }

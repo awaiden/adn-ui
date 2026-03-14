@@ -2,9 +2,9 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const radioGroupVariants = tv({
 	slots: {
-		root: "radio-group",
-		item: "radio-group__item",
 		indicator: "radio-group__indicator",
+		item: "radio-group__item",
+		root: "radio-group",
 	},
 });
 

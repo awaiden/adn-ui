@@ -1,70 +1,69 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Avatar, AvatarFallback, AvatarImage } from "./index";
 
 describe("Avatar", () => {
-	test("renders with base class", async () => {
-		const { getByTestId } = await render(
+	test("renders with base class", () => {
+		render(
 			<Avatar.Root data-testid="avatar">
 				<AvatarFallback>CN</AvatarFallback>
 			</Avatar.Root>,
 		);
-		const avatar = getByTestId("avatar");
+		const avatar = screen.getByTestId("avatar");
 
-		await expect.element(avatar).toBeInTheDocument();
-		await expect.element(avatar).toHaveClass("avatar");
+		expect(avatar).toBeInTheDocument();
+		expect(avatar).toHaveClass("avatar");
 	});
 
-	test("applies default md size class", async () => {
-		const { getByTestId } = await render(
+	test("applies default md size class", () => {
+		render(
 			<Avatar.Root data-testid="avatar">
 				<AvatarFallback>CN</AvatarFallback>
 			</Avatar.Root>,
 		);
-		await expect.element(getByTestId("avatar")).toHaveClass("avatar--md");
+		expect(screen.getByTestId("avatar")).toHaveClass("avatar--md");
 	});
 
 	describe("sizes", () => {
-		test("applies sm size", async () => {
-			const { getByTestId } = await render(
+		test("applies sm size", () => {
+			render(
 				<Avatar.Root size="sm" data-testid="avatar">
 					<AvatarFallback>CN</AvatarFallback>
 				</Avatar.Root>,
 			);
-			await expect.element(getByTestId("avatar")).toHaveClass("avatar--sm");
+			expect(screen.getByTestId("avatar")).toHaveClass("avatar--sm");
 		});
 
-		test("applies lg size", async () => {
-			const { getByTestId } = await render(
+		test("applies lg size", () => {
+			render(
 				<Avatar.Root size="lg" data-testid="avatar">
 					<AvatarFallback>CN</AvatarFallback>
 				</Avatar.Root>,
 			);
-			await expect.element(getByTestId("avatar")).toHaveClass("avatar--lg");
+			expect(screen.getByTestId("avatar")).toHaveClass("avatar--lg");
 		});
 	});
 
 	test("renders image when src is provided", async () => {
-		const { getByRole } = await render(
+		render(
 			<Avatar.Root>
 				<AvatarImage src="https://github.com/shadcn.png" alt="User" />
 				<AvatarFallback>CN</AvatarFallback>
 			</Avatar.Root>,
 		);
-		const image = getByRole("img");
-		await expect.element(image).toBeInTheDocument();
-		await expect
-			.element(image)
-			.toHaveAttribute("src", "https://github.com/shadcn.png");
+		const image = await screen.findByRole("img");
+		expect(image).toBeInTheDocument();
+		expect(image).toHaveAttribute("src", "https://github.com/shadcn.png");
 	});
 
-	test("renders fallback when image fails or is not provided", async () => {
-		const { getByText } = await render(
+	test("renders fallback when image fails or is not provided", () => {
+		render(
 			<Avatar.Root>
 				<AvatarFallback>JD</AvatarFallback>
 			</Avatar.Root>,
 		);
-		await expect.element(getByText("JD")).toBeInTheDocument();
-		await expect.element(getByText("JD")).toHaveClass("avatar__fallback");
+		expect(screen.getByText("JD")).toBeInTheDocument();
+		expect(screen.getByText("JD")).toHaveClass("avatar__fallback");
 	});
 });

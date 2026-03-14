@@ -6,20 +6,20 @@
 @plugin "tailwindcss-animate";
 
 @layer base {
-	button:not(:disabled),
-	[role="button"]:not(:disabled) {
-		@apply cursor-pointer;
-	}
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
 
-	* {
-		@apply border-border outline-ring/50;
-	}
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-	body {
-		@apply bg-background text-foreground;
-	}
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @utility status-disabled {
-	@apply cursor-not-allowed opacity-50;
+  @apply cursor-not-allowed opacity-50;
 }

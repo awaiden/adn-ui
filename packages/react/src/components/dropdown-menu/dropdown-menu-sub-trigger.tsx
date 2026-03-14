@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { DropdownMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 
 export type DropdownMenuSubTriggerProps = React.ComponentProps<
@@ -8,8 +9,8 @@ export type DropdownMenuSubTriggerProps = React.ComponentProps<
 >;
 
 export default function DropdownMenuSubTrigger({
-	className,
 	children,
+	className,
 	...props
 }: DropdownMenuSubTriggerProps) {
 	const { slots } = useDropdownMenuContext();

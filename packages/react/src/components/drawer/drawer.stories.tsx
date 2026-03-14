@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Button } from "../button";
 import { Drawer } from "./index";
 
 const meta: Meta = {
-	title: "Components/Drawer",
 	tags: ["autodocs"],
+	title: "Components/Drawer",
 };
 
 export default meta;

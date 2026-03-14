@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Card } from "./index";
 
 const meta: Meta<typeof Card> = {
-	title: "Components/Card",
 	tags: ["autodocs"],
+	title: "Components/Card",
 };
 
 export default meta;

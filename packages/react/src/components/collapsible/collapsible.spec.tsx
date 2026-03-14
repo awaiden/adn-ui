@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Collapsible,
 	CollapsibleContent,
@@ -15,10 +16,10 @@ interface RenderCollapsibleProps {
 }
 
 function renderCollapsible({
+	contentText = "Collapsible content",
 	defaultOpen,
 	disabled,
 	triggerText = "Toggle",
-	contentText = "Collapsible content",
 }: RenderCollapsibleProps = {}) {
 	return render(
 		<Collapsible.Root defaultOpen={defaultOpen} disabled={disabled}>
@@ -32,40 +33,38 @@ function renderCollapsible({
 
 describe("Collapsible", () => {
 	describe("rendering", () => {
-		test("renders trigger", async () => {
-			const { getByText } = await renderCollapsible();
+		test("renders trigger", () => {
+			renderCollapsible();
 
-			await expect.element(getByText("Toggle")).toBeInTheDocument();
+			expect(screen.getByText("Toggle")).toBeInTheDocument();
 		});
 
-		test("applies data-slot attributes", async () => {
-			const { container } = await renderCollapsible();
+		test("applies data-slot attributes", () => {
+			const { container } = renderCollapsible();
 
 			const root = container.querySelector('[data-slot="collapsible-root"]');
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root as HTMLElement).toBeInTheDocument();
 
 			const trigger = container.querySelector(
 				'[data-slot="collapsible-trigger"]',
 			);
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 
-		test("applies base CSS classes", async () => {
-			const { container } = await renderCollapsible();
+		test("applies base CSS classes", () => {
+			const { container } = renderCollapsible();
 
 			const root = container.querySelector('[data-slot="collapsible-root"]');
-			await expect.element(root as HTMLElement).toHaveClass("collapsible");
+			expect(root as HTMLElement).toHaveClass("collapsible");
 
 			const trigger = container.querySelector(
 				'[data-slot="collapsible-trigger"]',
 			);
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("collapsible__trigger");
+			expect(trigger as HTMLElement).toHaveClass("collapsible__trigger");
 		});
 
-		test("applies custom className to root", async () => {
-			const { container } = await render(
+		test("applies custom className to root", () => {
+			const { container } = render(
 				<Collapsible.Root className="custom-root">
 					<Collapsible.Trigger>Toggle</Collapsible.Trigger>
 					<Collapsible.Content>Content</Collapsible.Content>
@@ -73,42 +72,38 @@ describe("Collapsible", () => {
 			);
 
 			const root = container.querySelector('[data-slot="collapsible-root"]');
-			await expect.element(root as HTMLElement).toHaveClass("collapsible");
-			await expect.element(root as HTMLElement).toHaveClass("custom-root");
+			expect(root as HTMLElement).toHaveClass("collapsible");
+			expect(root as HTMLElement).toHaveClass("custom-root");
 		});
 	});
 
 	describe("open/close behavior", () => {
-		test("content is closed by default", async () => {
-			const { container } = await renderCollapsible();
+		test("content is closed by default", () => {
+			const { container } = renderCollapsible();
 
 			const content = container.querySelector(
 				'[data-slot="collapsible-content"]',
 			);
-			await expect
-				.element(content as HTMLElement)
-				.toHaveAttribute("data-state", "closed");
-			await expect
-				.element(content as HTMLElement)
-				.toHaveAttribute("hidden", "");
+			expect(content as HTMLElement).toHaveAttribute("data-state", "closed");
+			expect(content as HTMLElement).toHaveAttribute("hidden", "");
 		});
 
-		test("expands content on trigger click", async () => {
-			const { getByText, container } = await renderCollapsible();
+		test("expands content on trigger click", () => {
+			const { container } = renderCollapsible();
 
-			await getByText("Toggle").click();
+			fireEvent.click(screen.getByText("Toggle"));
 
 			const content = container.querySelector(
 				'[data-slot="collapsible-content"][data-state="open"]',
 			);
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			expect(content as HTMLElement).toBeInTheDocument();
 		});
 
-		test("collapses content on second trigger click", async () => {
-			const { getByText, container } = await renderCollapsible();
+		test("collapses content on second trigger click", () => {
+			const { container } = renderCollapsible();
 
-			await getByText("Toggle").click();
-			await getByText("Toggle").click();
+			fireEvent.click(screen.getByText("Toggle"));
+			fireEvent.click(screen.getByText("Toggle"));
 
 			const content = container.querySelector(
 				'[data-slot="collapsible-content"][data-state="open"]',
@@ -117,45 +112,39 @@ describe("Collapsible", () => {
 		});
 
 		test("renders open when defaultOpen is true", async () => {
-			const { container } = await renderCollapsible({
+			const { container } = renderCollapsible({
 				defaultOpen: true,
 			});
 
 			const content = container.querySelector(
 				'[data-slot="collapsible-content"]',
 			);
-			await expect.element(content as HTMLElement).toBeInTheDocument();
-			await expect
-				.element(content as HTMLElement)
-				.toHaveAttribute("data-state", "open");
+			expect(content as HTMLElement).toBeInTheDocument();
+			expect(content as HTMLElement).toHaveAttribute("data-state", "open");
 		});
 	});
 
 	describe("disabled", () => {
-		test("disabled trigger has data-disabled attribute", async () => {
-			const { container } = await renderCollapsible({ disabled: true });
+		test("disabled trigger has data-disabled attribute", () => {
+			const { container } = renderCollapsible({ disabled: true });
 
 			const trigger = container.querySelector(
 				'[data-slot="collapsible-trigger"]',
 			);
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveAttribute("data-disabled", "");
+			expect(trigger as HTMLElement).toHaveAttribute("data-disabled", "");
 		});
 
-		test("disabled root has data-disabled attribute", async () => {
-			const { container } = await renderCollapsible({ disabled: true });
+		test("disabled root has data-disabled attribute", () => {
+			const { container } = renderCollapsible({ disabled: true });
 
 			const root = container.querySelector('[data-slot="collapsible-root"]');
-			await expect
-				.element(root as HTMLElement)
-				.toHaveAttribute("data-disabled", "");
+			expect(root as HTMLElement).toHaveAttribute("data-disabled", "");
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("forwards custom className to trigger", async () => {
-			const { container } = await render(
+		test("forwards custom className to trigger", () => {
+			const { container } = render(
 				<Collapsible.Root>
 					<Collapsible.Trigger className="custom-trigger">
 						Toggle
@@ -167,16 +156,12 @@ describe("Collapsible", () => {
 			const trigger = container.querySelector(
 				'[data-slot="collapsible-trigger"]',
 			);
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("collapsible__trigger");
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("custom-trigger");
+			expect(trigger as HTMLElement).toHaveClass("collapsible__trigger");
+			expect(trigger as HTMLElement).toHaveClass("custom-trigger");
 		});
 
-		test("forwards custom className to content", async () => {
-			const { container } = await render(
+		test("forwards custom className to content", () => {
+			const { container } = render(
 				<Collapsible.Root defaultOpen>
 					<Collapsible.Trigger>Toggle</Collapsible.Trigger>
 					<Collapsible.Content className="custom-content">
@@ -188,12 +173,8 @@ describe("Collapsible", () => {
 			const content = container.querySelector(
 				'[data-slot="collapsible-content"]',
 			);
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("collapsible__content");
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("custom-content");
+			expect(content as HTMLElement).toHaveClass("collapsible__content");
+			expect(content as HTMLElement).toHaveClass("custom-content");
 		});
 	});
 

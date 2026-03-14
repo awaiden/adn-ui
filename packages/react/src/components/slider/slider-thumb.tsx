@@ -1,4 +1,5 @@
 import { Slider } from "radix-ui";
+
 import { useSliderContext } from "./slider-context";
 
 export type SliderThumbProps = React.ComponentProps<typeof Slider.Thumb>;

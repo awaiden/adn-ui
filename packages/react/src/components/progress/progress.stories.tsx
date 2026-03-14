@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Progress } from "./index";
 
 const meta: Meta<typeof Progress.Root> = {
-	title: "Components/Progress",
-	component: Progress.Root,
-	tags: ["autodocs"],
 	argTypes: {
 		size: {
 			control: "select",
 			options: ["sm", "md", "lg"],
 		},
 		value: {
-			control: { type: "range", min: 0, max: 100, step: 1 },
+			control: { max: 100, min: 0, step: 1, type: "range" },
 		},
 	},
+	component: Progress.Root,
+	tags: ["autodocs"],
+	title: "Components/Progress",
 };
 
 export default meta;

@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { Accordion } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useAccordionContext } from "./accordion-context";
 import AccordionHeader from "./accordion-header";
 
@@ -9,8 +10,8 @@ export type AccordionTriggerProps = React.ComponentProps<
 >;
 
 export default function AccordionTrigger({
-	className,
 	children,
+	className,
 	...props
 }: AccordionTriggerProps) {
 	const { slots } = useAccordionContext();

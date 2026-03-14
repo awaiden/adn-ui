@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { useState } from "react";
+
 import { Label } from "../label";
 import { Select } from "./index";
 
 const meta: Meta = {
-	title: "Components/Select",
 	tags: ["autodocs"],
+	title: "Components/Select",
 };
 
 export default meta;

@@ -1,86 +1,79 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import Skeleton from "./skeleton";
 
 describe("Skeleton", () => {
-	test("renders with default props", async () => {
-		const { container } = await render(<Skeleton />);
+	test("renders with default props", () => {
+		const { container } = render(<Skeleton />);
 		const skeleton = container.querySelector('[data-slot="skeleton"]');
 
-		await expect.element(skeleton as HTMLElement).toBeInTheDocument();
-		await expect.element(skeleton as HTMLElement).toHaveClass("skeleton");
-		await expect
-			.element(skeleton as HTMLElement)
-			.toHaveClass("skeleton--default");
+		expect(skeleton as HTMLElement).toBeInTheDocument();
+		expect(skeleton as HTMLElement).toHaveClass("skeleton");
+		expect(skeleton as HTMLElement).toHaveClass("skeleton--default");
 	});
 
-	test("applies data-slot attribute", async () => {
-		const { container } = await render(<Skeleton />);
+	test("applies data-slot attribute", () => {
+		const { container } = render(<Skeleton />);
 
 		const skeleton = container.querySelector('[data-slot="skeleton"]');
-		await expect.element(skeleton as HTMLElement).toBeInTheDocument();
+		expect(skeleton as HTMLElement).toBeInTheDocument();
 	});
 
 	describe("variants", () => {
-		test("applies default variant", async () => {
-			const { container } = await render(<Skeleton variant="default" />);
+		test("applies default variant", () => {
+			const { container } = render(<Skeleton variant="default" />);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
-			await expect
-				.element(skeleton as HTMLElement)
-				.toHaveClass("skeleton--default");
+			expect(skeleton as HTMLElement).toHaveClass("skeleton--default");
 		});
 
-		test("applies circular variant", async () => {
-			const { container } = await render(<Skeleton variant="circular" />);
+		test("applies circular variant", () => {
+			const { container } = render(<Skeleton variant="circular" />);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
-			await expect
-				.element(skeleton as HTMLElement)
-				.toHaveClass("skeleton--circular");
+			expect(skeleton as HTMLElement).toHaveClass("skeleton--circular");
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("applies custom className alongside variant classes", async () => {
-			const { container } = await render(<Skeleton className="h-4 w-48" />);
+		test("applies custom className alongside variant classes", () => {
+			const { container } = render(<Skeleton className="h-4 w-48" />);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
 
-			await expect.element(skeleton as HTMLElement).toHaveClass("skeleton");
-			await expect.element(skeleton as HTMLElement).toHaveClass("h-4");
-			await expect.element(skeleton as HTMLElement).toHaveClass("w-48");
+			expect(skeleton as HTMLElement).toHaveClass("skeleton");
+			expect(skeleton as HTMLElement).toHaveClass("h-4");
+			expect(skeleton as HTMLElement).toHaveClass("w-48");
 		});
 
-		test("forwards aria attributes", async () => {
-			const { container } = await render(
-				<Skeleton aria-label="Loading content" />,
-			);
+		test("forwards aria attributes", () => {
+			const { container } = render(<Skeleton aria-label="Loading content" />);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
-			await expect
-				.element(skeleton as HTMLElement)
-				.toHaveAttribute("aria-label", "Loading content");
+			expect(skeleton as HTMLElement).toHaveAttribute(
+				"aria-label",
+				"Loading content",
+			);
 		});
 
-		test("forwards data attributes", async () => {
-			const { container } = await render(
-				<Skeleton data-testid="my-skeleton" />,
-			);
+		test("forwards data attributes", () => {
+			const { container } = render(<Skeleton data-testid="my-skeleton" />);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
-			await expect
-				.element(skeleton as HTMLElement)
-				.toHaveAttribute("data-testid", "my-skeleton");
+			expect(skeleton as HTMLElement).toHaveAttribute(
+				"data-testid",
+				"my-skeleton",
+			);
 		});
 
-		test("applies inline style", async () => {
-			const { container } = await render(
-				<Skeleton style={{ width: "200px", height: "20px" }} />,
+		test("applies inline style", () => {
+			const { container } = render(
+				<Skeleton style={{ height: "20px", width: "200px" }} />,
 			);
 			const skeleton = container.querySelector('[data-slot="skeleton"]');
-			await expect.element(skeleton as HTMLElement).toBeInTheDocument();
+			expect(skeleton as HTMLElement).toBeInTheDocument();
 		});
 	});
 
-	test("renders as a div element", async () => {
-		const { container } = await render(<Skeleton />);
+	test("renders as a div element", () => {
+		const { container } = render(<Skeleton />);
 		const div = container.querySelector("div.skeleton");
-		await expect.element(div as HTMLElement).toBeInTheDocument();
+		expect(div as HTMLElement).toBeInTheDocument();
 	});
 });

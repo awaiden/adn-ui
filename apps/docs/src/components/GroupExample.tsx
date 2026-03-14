@@ -34,6 +34,6 @@ const WithPrefixAndSuffix = () => (
 
 export const GroupExample = {
 	WithPrefix,
-	WithSuffix,
 	WithPrefixAndSuffix,
+	WithSuffix,
 };

@@ -1,5 +1,6 @@
 import { type FieldVariants, fieldVariants } from "@adn-ui/core";
 import { useId } from "react";
+
 import { FieldContext } from "./field.context";
 
 export type FieldRootProps = React.HTMLAttributes<HTMLDivElement> &
@@ -16,7 +17,7 @@ export const FieldRoot = ({
 	const slots = fieldVariants({ orientation });
 
 	return (
-		<FieldContext.Provider value={{ slots, id: id || generatedId }}>
+		<FieldContext.Provider value={{ id: id || generatedId, slots }}>
 			<div className={slots.root({ class: className })} {...props} />
 		</FieldContext.Provider>
 	);

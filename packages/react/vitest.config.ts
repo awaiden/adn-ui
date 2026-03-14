@@ -1,16 +1,11 @@
 import react from "@vitejs/plugin-react";
-import { playwright } from "@vitest/browser-playwright";
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite-plus";
 
 export default defineConfig({
 	plugins: [react()],
 	test: {
-		browser: {
-			enabled: true,
-			// @ts-expect-error - Missing types for browser provider
-			provider: playwright(),
-			// https://vitest.dev/config/browser/playwright
-			instances: [{ browser: "chromium" }],
-		},
+		environment: "jsdom",
+		globals: true,
+		setupFiles: "./vitest.setup.ts",
 	},
 });

@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { ContextMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useContextMenuContext } from "./context-menu-context";
 
 export type ContextMenuCheckboxItemProps = React.ComponentProps<
@@ -8,9 +9,9 @@ export type ContextMenuCheckboxItemProps = React.ComponentProps<
 >;
 
 export default function ContextMenuCheckboxItem({
-	className,
-	children,
 	checked,
+	children,
+	className,
 	...props
 }: ContextMenuCheckboxItemProps) {
 	const { slots } = useContextMenuContext();

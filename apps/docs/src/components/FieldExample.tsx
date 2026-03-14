@@ -41,7 +41,7 @@ const Horizontal = () => (
 
 export const FieldExample = {
 	Default,
+	Horizontal,
 	WithDescription,
 	WithError,
-	Horizontal,
 };

@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Table,
 	TableBody,
@@ -47,15 +48,15 @@ function renderTable() {
 
 describe("Table", () => {
 	describe("rendering", () => {
-		test("renders the table", async () => {
-			const { container } = await renderTable();
+		test("renders the table", () => {
+			const { container } = renderTable();
 
 			const table = container.querySelector('[data-slot="table-root"]');
-			await expect.element(table as HTMLElement).toBeInTheDocument();
+			expect(table as HTMLElement).toBeInTheDocument();
 		});
 
-		test("applies data-slot attributes to all parts", async () => {
-			const { container } = await renderTable();
+		test("applies data-slot attributes to all parts", () => {
+			const { container } = renderTable();
 
 			for (const slot of [
 				"table-root",
@@ -68,58 +69,54 @@ describe("Table", () => {
 				"table-caption",
 			]) {
 				const el = container.querySelector(`[data-slot="${slot}"]`);
-				await expect.element(el as HTMLElement).toBeInTheDocument();
+				expect(el as HTMLElement).toBeInTheDocument();
 			}
 		});
 
-		test("applies base CSS classes", async () => {
-			const { container } = await renderTable();
+		test("applies base CSS classes", () => {
+			const { container } = renderTable();
 
 			const table = container.querySelector('[data-slot="table-root"]');
-			await expect.element(table as HTMLElement).toHaveClass("table");
+			expect(table as HTMLElement).toHaveClass("table");
 
 			const header = container.querySelector('[data-slot="table-header"]');
-			await expect.element(header as HTMLElement).toHaveClass("table__header");
+			expect(header as HTMLElement).toHaveClass("table__header");
 
 			const body = container.querySelector('[data-slot="table-body"]');
-			await expect.element(body as HTMLElement).toHaveClass("table__body");
+			expect(body as HTMLElement).toHaveClass("table__body");
 
 			const footer = container.querySelector('[data-slot="table-footer"]');
-			await expect.element(footer as HTMLElement).toHaveClass("table__footer");
+			expect(footer as HTMLElement).toHaveClass("table__footer");
 
 			const row = container.querySelector('[data-slot="table-row"]');
-			await expect.element(row as HTMLElement).toHaveClass("table__row");
+			expect(row as HTMLElement).toHaveClass("table__row");
 
 			const head = container.querySelector('[data-slot="table-head"]');
-			await expect.element(head as HTMLElement).toHaveClass("table__head");
+			expect(head as HTMLElement).toHaveClass("table__head");
 
 			const cell = container.querySelector('[data-slot="table-cell"]');
-			await expect.element(cell as HTMLElement).toHaveClass("table__cell");
+			expect(cell as HTMLElement).toHaveClass("table__cell");
 
 			const caption = container.querySelector('[data-slot="table-caption"]');
-			await expect
-				.element(caption as HTMLElement)
-				.toHaveClass("table__caption");
+			expect(caption as HTMLElement).toHaveClass("table__caption");
 		});
 
-		test("renders table content", async () => {
-			const { getByText, container } = await renderTable();
+		test("renders table content", () => {
+			const { container } = renderTable();
 
-			await expect
-				.element(getByText("A list of invoices."))
-				.toBeInTheDocument();
+			expect(screen.getByText("A list of invoices.")).toBeInTheDocument();
 
 			const invoiceHead = container.querySelector('[data-slot="table-head"]');
-			await expect.element(invoiceHead as HTMLElement).toBeInTheDocument();
+			expect(invoiceHead as HTMLElement).toBeInTheDocument();
 
-			await expect.element(getByText("INV001")).toBeInTheDocument();
-			await expect.element(getByText("$400.00")).toBeInTheDocument();
+			expect(screen.getByText("INV001")).toBeInTheDocument();
+			expect(screen.getByText("$400.00")).toBeInTheDocument();
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("applies custom className to root", async () => {
-			const { container } = await render(
+		test("applies custom className to root", () => {
+			const { container } = render(
 				<Table.Root className="custom-table">
 					<Table.Body>
 						<Table.Row>
@@ -130,12 +127,12 @@ describe("Table", () => {
 			);
 
 			const table = container.querySelector('[data-slot="table-root"]');
-			await expect.element(table as HTMLElement).toHaveClass("table");
-			await expect.element(table as HTMLElement).toHaveClass("custom-table");
+			expect(table as HTMLElement).toHaveClass("table");
+			expect(table as HTMLElement).toHaveClass("custom-table");
 		});
 
-		test("applies custom className to row", async () => {
-			const { container } = await render(
+		test("applies custom className to row", () => {
+			const { container } = render(
 				<Table.Root>
 					<Table.Body>
 						<Table.Row className="highlight">
@@ -146,12 +143,12 @@ describe("Table", () => {
 			);
 
 			const row = container.querySelector('[data-slot="table-row"]');
-			await expect.element(row as HTMLElement).toHaveClass("table__row");
-			await expect.element(row as HTMLElement).toHaveClass("highlight");
+			expect(row as HTMLElement).toHaveClass("table__row");
+			expect(row as HTMLElement).toHaveClass("highlight");
 		});
 
-		test("applies custom className to cell", async () => {
-			const { container } = await render(
+		test("applies custom className to cell", () => {
+			const { container } = render(
 				<Table.Root>
 					<Table.Body>
 						<Table.Row>
@@ -162,12 +159,12 @@ describe("Table", () => {
 			);
 
 			const cell = container.querySelector('[data-slot="table-cell"]');
-			await expect.element(cell as HTMLElement).toHaveClass("table__cell");
-			await expect.element(cell as HTMLElement).toHaveClass("wide");
+			expect(cell as HTMLElement).toHaveClass("table__cell");
+			expect(cell as HTMLElement).toHaveClass("wide");
 		});
 
-		test("forwards colSpan to cell", async () => {
-			const { container } = await render(
+		test("forwards colSpan to cell", () => {
+			const { container } = render(
 				<Table.Root>
 					<Table.Body>
 						<Table.Row>
@@ -178,7 +175,7 @@ describe("Table", () => {
 			);
 
 			const cell = container.querySelector('[data-slot="table-cell"]');
-			await expect.element(cell as HTMLElement).toHaveAttribute("colspan", "3");
+			expect(cell as HTMLElement).toHaveAttribute("colspan", "3");
 		});
 	});
 

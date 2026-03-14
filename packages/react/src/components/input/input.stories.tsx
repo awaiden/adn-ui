@@ -1,23 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Label } from "../label";
 import { Input } from "./index";
 
 const meta: Meta<typeof Input> = {
-	title: "Components/Input",
-	component: Input,
-	tags: ["autodocs"],
 	argTypes: {
-		size: {
-			control: "select",
-			options: ["sm", "md", "lg"],
-		},
 		disabled: {
 			control: "boolean",
 		},
 		placeholder: {
 			control: "text",
 		},
+		size: {
+			control: "select",
+			options: ["sm", "md", "lg"],
+		},
 	},
+	component: Input,
+	tags: ["autodocs"],
+	title: "Components/Input",
 };
 
 export default meta;
@@ -53,8 +54,8 @@ export const Large: Story = {
 
 export const Disabled: Story = {
 	args: {
-		placeholder: "Disabled input",
 		disabled: true,
+		placeholder: "Disabled input",
 	},
 };
 
@@ -82,7 +83,7 @@ export const Invalid: Story = {
 
 export const Password: Story = {
 	args: {
-		type: "password",
 		placeholder: "Enter password...",
+		type: "password",
 	},
 };

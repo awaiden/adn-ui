@@ -1,10 +1,11 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { RadioGroup } from "./index";
 
 describe("RadioGroup", () => {
-	test("renders and allows selection", async () => {
-		const { getByLabelText } = await render(
+	test("renders and allows selection", () => {
+		render(
 			<RadioGroup.Root defaultValue="1">
 				<div className="flex items-center gap-2">
 					<RadioGroup.Item value="1" id="r1">
@@ -21,20 +22,20 @@ describe("RadioGroup", () => {
 			</RadioGroup.Root>,
 		);
 
-		const option1 = getByLabelText("Option 1");
-		const option2 = getByLabelText("Option 2");
+		const option1 = screen.getByLabelText("Option 1");
+		const option2 = screen.getByLabelText("Option 2");
 
-		await expect.element(option1).toHaveAttribute("data-state", "checked");
-		await expect.element(option2).toHaveAttribute("data-state", "unchecked");
+		expect(option1).toHaveAttribute("data-state", "checked");
+		expect(option2).toHaveAttribute("data-state", "unchecked");
 
-		await option2.click();
+		fireEvent.click(option2);
 
-		await expect.element(option1).toHaveAttribute("data-state", "unchecked");
-		await expect.element(option2).toHaveAttribute("data-state", "checked");
+		expect(option1).toHaveAttribute("data-state", "unchecked");
+		expect(option2).toHaveAttribute("data-state", "checked");
 	});
 
-	test("handles disabled state", async () => {
-		const { getByLabelText } = await render(
+	test("handles disabled state", () => {
+		render(
 			<RadioGroup.Root disabled>
 				<RadioGroup.Item value="1" id="r1">
 					<RadioGroup.Indicator />
@@ -43,7 +44,7 @@ describe("RadioGroup", () => {
 			</RadioGroup.Root>,
 		);
 
-		const option1 = getByLabelText("Option 1");
-		await expect.element(option1).toBeDisabled();
+		const option1 = screen.getByLabelText("Option 1");
+		expect(option1).toBeDisabled();
 	});
 });

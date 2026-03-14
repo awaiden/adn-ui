@@ -35,6 +35,6 @@ const Sizes = () => (
 );
 
 export const CheckboxExample = {
-	WithLabel,
 	Sizes,
+	WithLabel,
 };

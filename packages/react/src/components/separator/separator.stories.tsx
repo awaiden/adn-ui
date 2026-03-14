@@ -1,19 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Separator } from "./index";
 
 const meta: Meta<typeof Separator> = {
-	title: "Components/Separator",
-	component: Separator,
-	tags: ["autodocs"],
 	argTypes: {
+		decorative: {
+			control: "boolean",
+		},
 		orientation: {
 			control: "select",
 			options: ["horizontal", "vertical"],
 		},
-		decorative: {
-			control: "boolean",
-		},
 	},
+	component: Separator,
+	tags: ["autodocs"],
+	title: "Components/Separator",
 };
 
 export default meta;

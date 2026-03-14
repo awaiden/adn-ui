@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Select,
 	SelectContent,
@@ -13,9 +14,9 @@ import {
 } from ".";
 
 function renderSelect({
-	placeholder = "Select an option",
 	defaultValue,
 	disabled,
+	placeholder = "Select an option",
 }: {
 	placeholder?: string;
 	defaultValue?: string;
@@ -37,30 +38,28 @@ function renderSelect({
 
 describe("Select", () => {
 	describe("rendering", () => {
-		test("renders trigger with placeholder", async () => {
-			const { getByText } = await renderSelect();
+		test("renders trigger with placeholder", () => {
+			renderSelect();
 
-			await expect.element(getByText("Select an option")).toBeInTheDocument();
+			expect(screen.getByText("Select an option")).toBeInTheDocument();
 		});
 
-		test("applies data-slot to trigger", async () => {
-			const { container } = await renderSelect();
+		test("applies data-slot to trigger", () => {
+			const { container } = renderSelect();
 
 			const trigger = container.querySelector('[data-slot="select-trigger"]');
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 
-		test("applies base CSS class to trigger", async () => {
-			const { container } = await renderSelect();
+		test("applies base CSS class to trigger", () => {
+			const { container } = renderSelect();
 
 			const trigger = container.querySelector('[data-slot="select-trigger"]');
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("select__trigger");
+			expect(trigger as HTMLElement).toHaveClass("select__trigger");
 		});
 
-		test("applies custom className to trigger", async () => {
-			const { container } = await render(
+		test("applies custom className to trigger", () => {
+			const { container } = render(
 				<Select.Root>
 					<Select.Trigger className="custom-trigger">
 						<Select.Value placeholder="Pick" />
@@ -72,74 +71,68 @@ describe("Select", () => {
 			);
 
 			const trigger = container.querySelector('[data-slot="select-trigger"]');
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("select__trigger");
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveClass("custom-trigger");
+			expect(trigger as HTMLElement).toHaveClass("select__trigger");
+			expect(trigger as HTMLElement).toHaveClass("custom-trigger");
 		});
 
 		test("renders with defaultValue selected", async () => {
-			const { getByText } = await renderSelect({
+			renderSelect({
 				defaultValue: "banana",
 			});
 
-			await expect.element(getByText("Banana")).toBeInTheDocument();
+			expect(screen.getByText("Banana")).toBeInTheDocument();
 		});
 	});
 
 	describe("open/close behavior", () => {
-		test("opens dropdown on trigger click", async () => {
-			const { getByText } = await renderSelect();
+		test("opens dropdown on trigger click", () => {
+			renderSelect();
 
-			await getByText("Select an option").click();
+			fireEvent.click(screen.getByText("Select an option"));
 
 			const content = document.querySelector('[data-slot="select-content"]');
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			expect(content as HTMLElement).toBeInTheDocument();
 		});
 
-		test("shows items when opened", async () => {
-			const { getByText } = await renderSelect();
+		test("shows items when opened", () => {
+			renderSelect();
 
-			await getByText("Select an option").click();
+			fireEvent.click(screen.getByText("Select an option"));
 
-			await expect.element(getByText("Apple")).toBeInTheDocument();
-			await expect.element(getByText("Banana")).toBeInTheDocument();
-			await expect.element(getByText("Cherry")).toBeInTheDocument();
+			expect(screen.getByText("Apple")).toBeInTheDocument();
+			expect(screen.getByText("Banana")).toBeInTheDocument();
+			expect(screen.getByText("Cherry")).toBeInTheDocument();
 		});
 
-		test("selects item on click", async () => {
-			const { getByText } = await renderSelect();
+		test("selects item on click", () => {
+			renderSelect();
 
-			await getByText("Select an option").click();
-			await getByText("Apple").click();
+			fireEvent.click(screen.getByText("Select an option"));
+			fireEvent.click(screen.getByText("Apple"));
 
-			await expect.element(getByText("Apple")).toBeInTheDocument();
+			expect(screen.getByText("Apple")).toBeInTheDocument();
 		});
 	});
 
 	describe("disabled", () => {
-		test("trigger has data-disabled when disabled", async () => {
-			const { container } = await renderSelect({ disabled: true });
+		test("trigger has data-disabled when disabled", () => {
+			const { container } = renderSelect({ disabled: true });
 
 			const trigger = container.querySelector('[data-slot="select-trigger"]');
-			await expect
-				.element(trigger as HTMLElement)
-				.toHaveAttribute("data-disabled", "");
+			expect(trigger as HTMLElement).toHaveAttribute("data-disabled", "");
 		});
 
-		test("trigger is disabled when disabled", async () => {
-			const { container } = await renderSelect({ disabled: true });
+		test("trigger is disabled when disabled", () => {
+			const { container } = renderSelect({ disabled: true });
 
 			const trigger = container.querySelector('[data-slot="select-trigger"]');
-			await expect.element(trigger as HTMLElement).toBeDisabled();
+			expect(trigger as HTMLElement).toBeDisabled();
 		});
 	});
 
 	describe("groups and labels", () => {
-		test("renders groups with labels", async () => {
-			const { getByText } = await render(
+		test("renders groups with labels", () => {
+			render(
 				<Select.Root>
 					<Select.Trigger>
 						<Select.Value placeholder="Pick" />
@@ -158,18 +151,18 @@ describe("Select", () => {
 				</Select.Root>,
 			);
 
-			await getByText("Pick").click();
+			fireEvent.click(screen.getByText("Pick"));
 
-			await expect.element(getByText("Fruits")).toBeInTheDocument();
-			await expect.element(getByText("Vegetables")).toBeInTheDocument();
-			await expect.element(getByText("Apple")).toBeInTheDocument();
-			await expect.element(getByText("Carrot")).toBeInTheDocument();
+			expect(screen.getByText("Fruits")).toBeInTheDocument();
+			expect(screen.getByText("Vegetables")).toBeInTheDocument();
+			expect(screen.getByText("Apple")).toBeInTheDocument();
+			expect(screen.getByText("Carrot")).toBeInTheDocument();
 		});
 	});
 
 	describe("disabled items", () => {
-		test("disabled item has data-disabled attribute", async () => {
-			const { getByText } = await render(
+		test("disabled item has data-disabled attribute", () => {
+			render(
 				<Select.Root>
 					<Select.Trigger>
 						<Select.Value placeholder="Pick" />
@@ -183,12 +176,12 @@ describe("Select", () => {
 				</Select.Root>,
 			);
 
-			await getByText("Pick").click();
+			fireEvent.click(screen.getByText("Pick"));
 
 			const disabledItem = document.querySelector(
 				'[data-slot="select-item"][data-disabled]',
 			);
-			await expect.element(disabledItem as HTMLElement).toBeInTheDocument();
+			expect(disabledItem as HTMLElement).toBeInTheDocument();
 		});
 	});
 

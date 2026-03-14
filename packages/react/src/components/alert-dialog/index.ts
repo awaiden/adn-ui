@@ -10,16 +10,16 @@ import AlertDialogTitle from "./alert-dialog-title";
 import AlertDialogTrigger from "./alert-dialog-trigger";
 
 export const AlertDialog = {
-	Root: AlertDialogRoot,
-	Trigger: AlertDialogTrigger,
-	Content: AlertDialogContent,
-	Header: AlertDialogHeader,
-	Footer: AlertDialogFooter,
-	Title: AlertDialogTitle,
-	Description: AlertDialogDescription,
 	Action: AlertDialogAction,
 	Cancel: AlertDialogCancel,
+	Content: AlertDialogContent,
+	Description: AlertDialogDescription,
+	Footer: AlertDialogFooter,
+	Header: AlertDialogHeader,
 	Overlay: AlertDialogOverlay,
+	Root: AlertDialogRoot,
+	Title: AlertDialogTitle,
+	Trigger: AlertDialogTrigger,
 };
 
 export {
@@ -64,7 +64,4 @@ export type AlertDialogOverlayProps = React.ComponentProps<
 	typeof AlertDialogOverlay
 >;
 
-export {
-	type AlertDialogVariants,
-	alertDialogVariants,
-} from "@adn-ui/core";
+export { type AlertDialogVariants, alertDialogVariants } from "@adn-ui/core";

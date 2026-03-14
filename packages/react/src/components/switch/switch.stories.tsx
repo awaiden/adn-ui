@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Switch } from "./index";
 
 const meta: Meta<typeof Switch.Root> = {
-	title: "Components/Switch",
 	component: Switch.Root,
 	tags: ["autodocs"],
+	title: "Components/Switch",
 };
 
 export default meta;

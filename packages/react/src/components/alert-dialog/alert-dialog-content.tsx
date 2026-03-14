@@ -1,5 +1,6 @@
 import { AlertDialog } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useAlertDialogContext } from "./alert-dialog-context";
 import AlertDialogOverlay from "./alert-dialog-overlay";
 
@@ -8,8 +9,8 @@ export type AlertDialogContentProps = React.ComponentProps<
 >;
 
 export default function AlertDialogContent({
-	className,
 	children,
+	className,
 	...props
 }: AlertDialogContentProps) {
 	const { slots } = useAlertDialogContext();

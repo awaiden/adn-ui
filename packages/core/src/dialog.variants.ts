@@ -2,13 +2,13 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const dialogVariants = tv({
 	slots: {
-		overlay: "dialog__overlay",
-		content: "dialog__content",
-		header: "dialog__header",
-		footer: "dialog__footer",
-		title: "dialog__title",
-		description: "dialog__description",
 		close: "dialog__close",
+		content: "dialog__content",
+		description: "dialog__description",
+		footer: "dialog__footer",
+		header: "dialog__header",
+		overlay: "dialog__overlay",
+		title: "dialog__title",
 	},
 });
 

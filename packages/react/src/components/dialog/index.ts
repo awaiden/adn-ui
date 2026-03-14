@@ -10,16 +10,16 @@ import DialogTitle from "./dialog-title";
 import DialogTrigger from "./dialog-trigger";
 
 export const Dialog = {
-	Root: DialogRoot,
-	Trigger: DialogTrigger,
-	Portal: DialogPortal,
-	Overlay: DialogOverlay,
-	Content: DialogContent,
-	Header: DialogHeader,
-	Footer: DialogFooter,
-	Title: DialogTitle,
-	Description: DialogDescription,
 	Close: DialogClose,
+	Content: DialogContent,
+	Description: DialogDescription,
+	Footer: DialogFooter,
+	Header: DialogHeader,
+	Overlay: DialogOverlay,
+	Portal: DialogPortal,
+	Root: DialogRoot,
+	Title: DialogTitle,
+	Trigger: DialogTrigger,
 };
 
 export {

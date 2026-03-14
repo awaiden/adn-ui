@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Separator } from "../separator";
 import { ScrollArea } from "./index";
 
 const meta: Meta = {
-	title: "Components/ScrollArea",
 	tags: ["autodocs"],
+	title: "Components/ScrollArea",
 };
 
 export default meta;

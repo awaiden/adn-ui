@@ -5,11 +5,11 @@ export type SeparatorProps = React.ComponentProps<typeof Separator.Root>;
 
 export default function SeparatorRoot({
 	className,
-	orientation = "horizontal",
 	decorative = true,
+	orientation = "horizontal",
 	...props
 }: SeparatorProps) {
-	const styles = separatorVariants({ orientation, className });
+	const styles = separatorVariants({ className, orientation });
 
 	return (
 		<Separator.Root

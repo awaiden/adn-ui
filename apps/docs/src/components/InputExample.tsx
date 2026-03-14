@@ -23,6 +23,6 @@ const Sizes = () => (
 
 export const InputExample = {
 	Default,
-	WithLabel,
 	Sizes,
+	WithLabel,
 };

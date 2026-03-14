@@ -7,13 +7,13 @@ import BreadcrumbRoot from "./breadcrumb-root";
 import BreadcrumbSeparator from "./breadcrumb-separator";
 
 export const Breadcrumb = {
-	Root: BreadcrumbRoot,
-	List: BreadcrumbList,
+	Ellipsis: BreadcrumbEllipsis,
 	Item: BreadcrumbItem,
 	Link: BreadcrumbLink,
+	List: BreadcrumbList,
 	Page: BreadcrumbPage,
+	Root: BreadcrumbRoot,
 	Separator: BreadcrumbSeparator,
-	Ellipsis: BreadcrumbEllipsis,
 };
 
 export {
@@ -38,7 +38,4 @@ export type BreadcrumbEllipsisProps = React.ComponentProps<
 	typeof BreadcrumbEllipsis
 >;
 
-export {
-	type BreadcrumbVariants,
-	breadcrumbVariants,
-} from "@adn-ui/core";
+export { type BreadcrumbVariants, breadcrumbVariants } from "@adn-ui/core";

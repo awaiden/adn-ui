@@ -1,4 +1,5 @@
 import { cn } from "tailwind-variants";
+
 import { useCardContext } from "./card-context";
 
 export type CardTitleProps = React.ComponentProps<"h2">;

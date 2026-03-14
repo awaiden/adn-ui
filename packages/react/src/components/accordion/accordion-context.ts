@@ -1,4 +1,5 @@
 import type { accordionVariants } from "@adn-ui/core";
+
 import { createContext, useContext } from "react";
 
 interface AccordionContextValue {

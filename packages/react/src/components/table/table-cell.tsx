@@ -1,4 +1,5 @@
 import { cn } from "tailwind-variants";
+
 import { useTableContext } from "./table-context";
 
 export type TableCellProps = React.ComponentProps<"td">;

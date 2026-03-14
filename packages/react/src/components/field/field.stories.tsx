@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Input } from "../input";
 import { Field } from "./index";
 
 const meta: Meta = {
-	title: "Components/Field",
-	tags: ["autodocs"],
 	argTypes: {
 		orientation: {
 			control: "select",
 			options: ["vertical", "horizontal"],
 		},
 	},
+	tags: ["autodocs"],
+	title: "Components/Field",
 };
 
 export default meta;

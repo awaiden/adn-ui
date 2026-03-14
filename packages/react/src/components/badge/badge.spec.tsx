@@ -1,112 +1,97 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import Badge from "./badge";
 
 describe("Badge", () => {
-	test("renders with default props", async () => {
-		const { getByText } = await render(<Badge>New</Badge>);
-		const badge = getByText("New");
+	test("renders with default props", () => {
+		render(<Badge>New</Badge>);
+		const badge = screen.getByText("New");
 
-		await expect.element(badge).toBeInTheDocument();
-		await expect.element(badge).toHaveClass("badge");
-		await expect.element(badge).toHaveClass("badge--primary");
+		expect(badge).toBeInTheDocument();
+		expect(badge).toHaveClass("badge");
+		expect(badge).toHaveClass("badge--primary");
 	});
 
-	test("applies data-slot attribute", async () => {
-		const { container } = await render(<Badge>Tag</Badge>);
+	test("applies data-slot attribute", () => {
+		const { container } = render(<Badge>Tag</Badge>);
 
 		const badge = container.querySelector('[data-slot="badge"]');
-		await expect.element(badge as HTMLElement).toBeInTheDocument();
+		expect(badge as HTMLElement).toBeInTheDocument();
 	});
 
 	describe("variants", () => {
-		test("applies primary variant", async () => {
-			const { getByText } = await render(
-				<Badge variant="primary">Primary</Badge>,
-			);
-			await expect.element(getByText("Primary")).toHaveClass("badge--primary");
+		test("applies primary variant", () => {
+			render(<Badge variant="primary">Primary</Badge>);
+			expect(screen.getByText("Primary")).toHaveClass("badge--primary");
 		});
 
-		test("applies secondary variant", async () => {
-			const { getByText } = await render(
-				<Badge variant="secondary">Secondary</Badge>,
-			);
-			await expect
-				.element(getByText("Secondary"))
-				.toHaveClass("badge--secondary");
+		test("applies secondary variant", () => {
+			render(<Badge variant="secondary">Secondary</Badge>);
+			expect(screen.getByText("Secondary")).toHaveClass("badge--secondary");
 		});
 
-		test("applies destructive variant", async () => {
-			const { getByText } = await render(
-				<Badge variant="destructive">Destructive</Badge>,
-			);
-			await expect
-				.element(getByText("Destructive"))
-				.toHaveClass("badge--destructive");
+		test("applies destructive variant", () => {
+			render(<Badge variant="destructive">Destructive</Badge>);
+			expect(screen.getByText("Destructive")).toHaveClass("badge--destructive");
 		});
 
-		test("applies outline variant", async () => {
-			const { getByText } = await render(
-				<Badge variant="outline">Outline</Badge>,
-			);
-			await expect.element(getByText("Outline")).toHaveClass("badge--outline");
+		test("applies outline variant", () => {
+			render(<Badge variant="outline">Outline</Badge>);
+			expect(screen.getByText("Outline")).toHaveClass("badge--outline");
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("applies custom className alongside variant classes", async () => {
-			const { getByText } = await render(
-				<Badge className="custom-class">Badge</Badge>,
-			);
-			const badge = getByText("Badge");
+		test("applies custom className alongside variant classes", () => {
+			render(<Badge className="custom-class">Badge</Badge>);
+			const badge = screen.getByText("Badge");
 
-			await expect.element(badge).toHaveClass("custom-class");
-			await expect.element(badge).toHaveClass("badge");
+			expect(badge).toHaveClass("custom-class");
+			expect(badge).toHaveClass("badge");
 		});
 
-		test("forwards aria attributes", async () => {
-			const { getByText } = await render(
-				<Badge aria-label="Status badge">Status</Badge>,
+		test("forwards aria attributes", () => {
+			render(<Badge aria-label="Status badge">Status</Badge>);
+			expect(screen.getByText("Status")).toHaveAttribute(
+				"aria-label",
+				"Status badge",
 			);
-			await expect
-				.element(getByText("Status"))
-				.toHaveAttribute("aria-label", "Status badge");
 		});
 
-		test("forwards data attributes", async () => {
-			const { getByText } = await render(
-				<Badge data-testid="my-badge">Tag</Badge>,
+		test("forwards data attributes", () => {
+			render(<Badge data-testid="my-badge">Tag</Badge>);
+			expect(screen.getByText("Tag")).toHaveAttribute(
+				"data-testid",
+				"my-badge",
 			);
-			await expect
-				.element(getByText("Tag"))
-				.toHaveAttribute("data-testid", "my-badge");
 		});
 
-		test("forwards id attribute", async () => {
-			const { getByText } = await render(<Badge id="my-badge">ID</Badge>);
-			await expect.element(getByText("ID")).toHaveAttribute("id", "my-badge");
+		test("forwards id attribute", () => {
+			render(<Badge id="my-badge">ID</Badge>);
+			expect(screen.getByText("ID")).toHaveAttribute("id", "my-badge");
 		});
 	});
 
 	describe("children", () => {
-		test("renders string children", async () => {
-			const { getByText } = await render(<Badge>Text</Badge>);
-			await expect.element(getByText("Text")).toHaveTextContent("Text");
+		test("renders string children", () => {
+			render(<Badge>Text</Badge>);
+			expect(screen.getByText("Text")).toHaveTextContent("Text");
 		});
 
-		test("renders element children", async () => {
-			const { getByText } = await render(
+		test("renders element children", () => {
+			render(
 				<Badge>
 					<span>Icon</span> Label
 				</Badge>,
 			);
-			await expect.element(getByText("Label")).toBeInTheDocument();
+			expect(screen.getByText("Label")).toBeInTheDocument();
 		});
 	});
 
-	test("renders as a span element", async () => {
-		const { container } = await render(<Badge>Check</Badge>);
+	test("renders as a span element", () => {
+		const { container } = render(<Badge>Check</Badge>);
 		const span = container.querySelector("span.badge");
-		await expect.element(span as HTMLElement).toBeInTheDocument();
+		expect(span as HTMLElement).toBeInTheDocument();
 	});
 });

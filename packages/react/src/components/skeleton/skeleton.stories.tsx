@@ -1,10 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Skeleton } from "./index";
 
 const meta: Meta<typeof Skeleton> = {
-	title: "Components/Skeleton",
+	argTypes: {
+		className: {
+			control: "text",
+			description: "Additional CSS classes to control size and layout.",
+		},
+		variant: {
+			control: "select",
+			description: "The shape variant of the skeleton.",
+			options: ["default", "circular"],
+			table: {
+				defaultValue: { summary: "default" },
+			},
+		},
+	},
 	component: Skeleton,
-	tags: ["autodocs"],
 	parameters: {
 		docs: {
 			description: {
@@ -13,20 +26,8 @@ const meta: Meta<typeof Skeleton> = {
 			},
 		},
 	},
-	argTypes: {
-		variant: {
-			control: "select",
-			options: ["default", "circular"],
-			description: "The shape variant of the skeleton.",
-			table: {
-				defaultValue: { summary: "default" },
-			},
-		},
-		className: {
-			control: "text",
-			description: "Additional CSS classes to control size and layout.",
-		},
-	},
+	tags: ["autodocs"],
+	title: "Components/Skeleton",
 };
 
 export default meta;
@@ -34,6 +35,9 @@ export default meta;
 type Story = StoryObj<typeof Skeleton>;
 
 export const Default: Story = {
+	args: {
+		className: "h-4 w-[250px]",
+	},
 	parameters: {
 		docs: {
 			description: {
@@ -41,22 +45,19 @@ export const Default: Story = {
 			},
 		},
 	},
-	args: {
-		className: "h-4 w-[250px]",
-	},
 };
 
 export const Circular: Story = {
+	args: {
+		className: "size-12",
+		variant: "circular",
+	},
 	parameters: {
 		docs: {
 			description: {
 				story: "A circular skeleton used to represent avatars or icons.",
 			},
 		},
-	},
-	args: {
-		variant: "circular",
-		className: "size-12",
 	},
 };
 

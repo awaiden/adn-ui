@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Button } from "../button";
 import { Input } from "../input";
 import { Label } from "../label";
 import { Popover } from "./index";
 
 const meta: Meta = {
-	title: "Components/Popover",
 	tags: ["autodocs"],
+	title: "Components/Popover",
 };
 
 export default meta;

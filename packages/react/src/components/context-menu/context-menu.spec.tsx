@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	ContextMenu,
 	ContextMenuCheckboxItem,
@@ -22,7 +23,7 @@ function renderContextMenu() {
 	return render(
 		<ContextMenu.Root>
 			<ContextMenu.Trigger>
-				<div style={{ width: 200, height: 100, border: "1px dashed gray" }}>
+				<div style={{ border: "1px dashed gray", height: 100, width: 200 }}>
 					Right-click here
 				</div>
 			</ContextMenu.Trigger>
@@ -39,63 +40,59 @@ function renderContextMenu() {
 
 describe("ContextMenu", () => {
 	describe("rendering", () => {
-		test("renders trigger area", async () => {
-			const { getByText } = await renderContextMenu();
+		test("renders trigger area", () => {
+			renderContextMenu();
 
-			await expect.element(getByText("Right-click here")).toBeInTheDocument();
+			expect(screen.getByText("Right-click here")).toBeInTheDocument();
 		});
 
-		test("applies data-slot to trigger", async () => {
-			const { container } = await renderContextMenu();
+		test("applies data-slot to trigger", () => {
+			const { container } = renderContextMenu();
 
 			const trigger = container.querySelector(
 				'[data-slot="context-menu-trigger"]',
 			);
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 	});
 
 	describe("open/close behavior", () => {
 		test("opens context menu on right-click", async () => {
-			const { getByText } = await renderContextMenu();
+			renderContextMenu();
 
-			const trigger = getByText("Right-click here");
-			await trigger.click({ button: "right" });
+			const trigger = screen.getByText("Right-click here");
+			fireEvent.contextMenu(trigger);
 
-			const content = document.querySelector(
-				'[data-slot="context-menu-content"]',
-			);
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			const content = await screen.findByRole("menu");
+			expect(content).toBeInTheDocument();
 		});
 
 		test("shows items when opened", async () => {
-			const { getByText } = await renderContextMenu();
+			renderContextMenu();
 
-			await getByText("Right-click here").click({ button: "right" });
+			fireEvent.contextMenu(screen.getByText("Right-click here"));
 
-			await expect.element(getByText("Back")).toBeInTheDocument();
-			await expect.element(getByText("Forward")).toBeInTheDocument();
+			expect(await screen.findByText("Back")).toBeInTheDocument();
+			expect(await screen.findByText("Forward")).toBeInTheDocument();
 		});
 
 		test("shows label when opened", async () => {
-			const { getByText } = await renderContextMenu();
+			renderContextMenu();
 
-			await getByText("Right-click here").click({ button: "right" });
+			fireEvent.contextMenu(screen.getByText("Right-click here"));
 
-			await expect.element(getByText("Actions")).toBeInTheDocument();
+			expect(await screen.findByText("Actions")).toBeInTheDocument();
 		});
 	});
 
 	describe("disabled items", () => {
 		test("disabled item has data-disabled attribute", async () => {
-			const { getByText } = await renderContextMenu();
+			renderContextMenu();
 
-			await getByText("Right-click here").click({ button: "right" });
+			fireEvent.contextMenu(screen.getByText("Right-click here"));
 
-			const disabledItem = document.querySelector(
-				'[data-slot="context-menu-item"][data-disabled]',
-			);
-			await expect.element(disabledItem as HTMLElement).toBeInTheDocument();
+			const disabledItem = await screen.findByText("Reload");
+			expect(disabledItem).toHaveAttribute("data-disabled");
 		});
 	});
 

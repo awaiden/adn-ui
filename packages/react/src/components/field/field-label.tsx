@@ -3,11 +3,11 @@ import { useFieldContext } from "./field.context";
 export type FieldLabelProps = React.HTMLAttributes<HTMLLabelElement>;
 
 export const FieldLabel = ({
-	className,
 	children,
+	className,
 	...props
 }: FieldLabelProps) => {
-	const { slots, id } = useFieldContext();
+	const { id, slots } = useFieldContext();
 	return (
 		<label
 			htmlFor={id}

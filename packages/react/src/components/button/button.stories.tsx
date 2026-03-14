@@ -1,24 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { ThumbsUp } from "lucide-react";
+
 import { Button } from "./index";
 
 const meta: Meta<typeof Button> = {
-	title: "Components/Button",
-	component: Button,
-	tags: ["autodocs"],
 	argTypes: {
-		variant: {
-			control: "select",
-			options: ["primary", "secondary", "outline", "ghost", "destructive"],
+		disabled: {
+			control: "boolean",
 		},
 		size: {
 			control: "select",
 			options: ["sm", "md", "lg"],
 		},
-		disabled: {
-			control: "boolean",
+		variant: {
+			control: "select",
+			options: ["primary", "secondary", "outline", "ghost", "destructive"],
 		},
 	},
+	component: Button,
+	tags: ["autodocs"],
+	title: "Components/Button",
 };
 
 export default meta;
@@ -90,7 +92,7 @@ export const Disabled: Story = {
 
 export const IconButton: Story = {
 	args: {
-		size: "icon",
 		children: <ThumbsUp />,
+		size: "icon",
 	},
 };

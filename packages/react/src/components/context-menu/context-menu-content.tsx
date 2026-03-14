@@ -1,5 +1,6 @@
 import { ContextMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useContextMenuContext } from "./context-menu-context";
 
 export type ContextMenuContentProps = React.ComponentProps<
@@ -7,8 +8,8 @@ export type ContextMenuContentProps = React.ComponentProps<
 >;
 
 export default function ContextMenuContent({
-	className,
 	children,
+	className,
 	...props
 }: ContextMenuContentProps) {
 	const { slots } = useContextMenuContext();

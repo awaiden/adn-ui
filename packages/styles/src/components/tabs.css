@@ -1,38 +1,38 @@
 .tabs {
-	@apply flex flex-col;
+  @apply flex flex-col;
 }
 
 .tabs__list {
-	@apply inline-flex items-center justify-center rounded-md p-1;
+  @apply inline-flex items-center justify-center rounded-md p-1;
 }
 
 .tabs__list--underline {
-	@apply border-b border-neutral-200 bg-transparent;
+  @apply border-b border-neutral-200 bg-transparent;
 }
 
 .tabs__list--outline {
-	@apply border border-neutral-200 bg-neutral-100;
+  @apply border border-neutral-200 bg-neutral-100;
 }
 
 .tabs__trigger {
-	@apply inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium transition-all;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
-	@apply disabled:pointer-events-none disabled:opacity-50;
-	@apply ring-offset-background;
+  @apply inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium transition-all;
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  @apply disabled:pointer-events-none disabled:opacity-50;
+  @apply ring-offset-background;
 }
 
 .tabs__trigger--underline {
-	@apply border-b-2 border-transparent text-neutral-500;
-	@apply data-[state=active]:border-neutral-900 data-[state=active]:text-neutral-900;
+  @apply border-b-2 border-transparent text-neutral-500;
+  @apply data-[state=active]:border-neutral-900 data-[state=active]:text-neutral-900;
 }
 
 .tabs__trigger--outline {
-	@apply rounded-sm text-neutral-500;
-	@apply data-[state=active]:bg-white data-[state=active]:text-neutral-900 data-[state=active]:shadow-sm;
+  @apply rounded-sm text-neutral-500;
+  @apply data-[state=active]:bg-white data-[state=active]:text-neutral-900 data-[state=active]:shadow-sm;
 }
 
 .tabs__content {
-	@apply mt-2;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
-	@apply ring-offset-background;
+  @apply mt-2;
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  @apply ring-offset-background;
 }

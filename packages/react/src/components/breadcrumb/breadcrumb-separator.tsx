@@ -1,12 +1,13 @@
 import { ChevronRight } from "lucide-react";
 import { cn } from "tailwind-variants";
+
 import { useBreadcrumbContext } from "./breadcrumb-context";
 
 export type BreadcrumbSeparatorProps = React.ComponentProps<"li">;
 
 export default function BreadcrumbSeparator({
-	className,
 	children,
+	className,
 	...props
 }: BreadcrumbSeparatorProps) {
 	const { slots } = useBreadcrumbContext();

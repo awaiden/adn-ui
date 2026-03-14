@@ -1,20 +1,20 @@
 .label {
-	@apply inline-flex items-center select-none font-medium leading-none;
+  @apply inline-flex items-center select-none font-medium leading-none;
 
-	&:has(+ :disabled),
-	&:has(+ input:disabled) {
-		@apply status-disabled;
-	}
+  &:has(+ :disabled),
+  &:has(+ input:disabled) {
+    @apply status-disabled;
+  }
 }
 
 .label--sm {
-	@apply text-xs;
+  @apply text-xs;
 }
 
 .label--md {
-	@apply text-sm;
+  @apply text-sm;
 }
 
 .label--lg {
-	@apply text-base;
+  @apply text-base;
 }

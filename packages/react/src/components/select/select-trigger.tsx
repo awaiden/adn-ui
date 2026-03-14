@@ -1,13 +1,14 @@
 import { ChevronDown } from "lucide-react";
 import { Select } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useSelectContext } from "./select-context";
 
 export type SelectTriggerProps = React.ComponentProps<typeof Select.Trigger>;
 
 export default function SelectTrigger({
-	className,
 	children,
+	className,
 	...props
 }: SelectTriggerProps) {
 	const { slots } = useSelectContext();

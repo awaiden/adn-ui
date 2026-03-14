@@ -1,4 +1,5 @@
 import { cn } from "tailwind-variants";
+
 import { useBreadcrumbContext } from "./breadcrumb-context";
 
 export type BreadcrumbPageProps = React.ComponentProps<"span">;

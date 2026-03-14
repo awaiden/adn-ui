@@ -12,7 +12,7 @@ description: How to enable and customize dark mode in @adn-ui/react and Astro St
 Add the `dark` class to your root element:
 
 ```html
-<html class="dark">
+<html class="dark"></html>
 ```
 
 All design tokens and component styles automatically adapt to dark mode.
@@ -22,7 +22,7 @@ All design tokens and component styles automatically adapt to dark mode.
 You can toggle dark mode programmatically or with a user preference switch. For example, using JavaScript:
 
 ```js
-document.documentElement.classList.toggle('dark');
+document.documentElement.classList.toggle("dark");
 ```
 
 ## Using @adn-ui/react-themes
@@ -43,11 +43,7 @@ Wrap your application with the `ThemeProvider`:
 import { ThemeProvider } from "@adn-ui/react-themes";
 
 function App({ children }) {
-  return (
-    <ThemeProvider>
-      {children}
-    </ThemeProvider>
-  );
+  return <ThemeProvider>{children}</ThemeProvider>;
 }
 ```
 
@@ -62,8 +58,8 @@ function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Switch to {theme === 'light' ? 'dark' : 'light'} mode
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+      Switch to {theme === "light" ? "dark" : "light"} mode
     </button>
   );
 }

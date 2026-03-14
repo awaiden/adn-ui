@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	Popover,
 	PopoverAnchor,
@@ -23,21 +24,21 @@ function renderPopover({ defaultOpen }: { defaultOpen?: boolean } = {}) {
 
 describe("Popover", () => {
 	describe("rendering", () => {
-		test("renders trigger", async () => {
-			const { getByText } = await renderPopover();
+		test("renders trigger", () => {
+			renderPopover();
 
-			await expect.element(getByText("Open popover")).toBeInTheDocument();
+			expect(screen.getByText("Open popover")).toBeInTheDocument();
 		});
 
-		test("applies data-slot to trigger", async () => {
-			const { container } = await renderPopover();
+		test("applies data-slot to trigger", () => {
+			const { container } = renderPopover();
 
 			const trigger = container.querySelector('[data-slot="popover-trigger"]');
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 
 		test("content is not visible by default", async () => {
-			await renderPopover();
+			renderPopover();
 
 			const content = document.querySelector('[data-slot="popover-content"]');
 			expect(content).toBeNull();
@@ -45,50 +46,48 @@ describe("Popover", () => {
 	});
 
 	describe("open/close behavior", () => {
-		test("opens on trigger click", async () => {
-			const { getByText } = await renderPopover();
+		test("opens on trigger click", () => {
+			renderPopover();
 
-			await getByText("Open popover").click();
+			fireEvent.click(screen.getByText("Open popover"));
 
 			const content = document.querySelector('[data-slot="popover-content"]');
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			expect(content as HTMLElement).toBeInTheDocument();
 		});
 
-		test("shows content text when open", async () => {
-			const { getByText } = await renderPopover();
+		test("shows content text when open", () => {
+			renderPopover();
 
-			await getByText("Open popover").click();
+			fireEvent.click(screen.getByText("Open popover"));
 
-			await expect.element(getByText("Popover content")).toBeInTheDocument();
+			expect(screen.getByText("Popover content")).toBeInTheDocument();
 		});
 
 		test("renders open when defaultOpen is true", async () => {
-			await renderPopover({ defaultOpen: true });
+			renderPopover({ defaultOpen: true });
 
 			const content = document.querySelector('[data-slot="popover-content"]');
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			expect(content as HTMLElement).toBeInTheDocument();
 		});
 
 		test("applies CSS class to content", async () => {
-			await renderPopover({ defaultOpen: true });
+			renderPopover({ defaultOpen: true });
 
 			const content = document.querySelector('[data-slot="popover-content"]');
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("popover__content");
+			expect(content as HTMLElement).toHaveClass("popover__content");
 		});
 
 		test("renders close button inside content", async () => {
-			await renderPopover({ defaultOpen: true });
+			renderPopover({ defaultOpen: true });
 
 			const close = document.querySelector('[data-slot="popover-close"]');
-			await expect.element(close as HTMLElement).toBeInTheDocument();
+			expect(close as HTMLElement).toBeInTheDocument();
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("applies custom className to content", async () => {
-			await render(
+		test("applies custom className to content", () => {
+			render(
 				<Popover.Root defaultOpen>
 					<Popover.Trigger>Trigger</Popover.Trigger>
 					<Popover.Content className="custom-content">Content</Popover.Content>
@@ -96,16 +95,12 @@ describe("Popover", () => {
 			);
 
 			const content = document.querySelector('[data-slot="popover-content"]');
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("popover__content");
-			await expect
-				.element(content as HTMLElement)
-				.toHaveClass("custom-content");
+			expect(content as HTMLElement).toHaveClass("popover__content");
+			expect(content as HTMLElement).toHaveClass("custom-content");
 		});
 
-		test("applies custom className to close button", async () => {
-			await render(
+		test("applies custom className to close button", () => {
+			render(
 				<Popover.Root defaultOpen>
 					<Popover.Trigger>Trigger</Popover.Trigger>
 					<Popover.Content>
@@ -115,8 +110,8 @@ describe("Popover", () => {
 			);
 
 			const close = document.querySelector('[data-slot="popover-close"]');
-			await expect.element(close as HTMLElement).toHaveClass("popover__close");
-			await expect.element(close as HTMLElement).toHaveClass("custom-close");
+			expect(close as HTMLElement).toHaveClass("popover__close");
+			expect(close as HTMLElement).toHaveClass("custom-close");
 		});
 	});
 

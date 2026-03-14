@@ -1,5 +1,6 @@
 import { Ellipsis } from "lucide-react";
 import { cn } from "tailwind-variants";
+
 import { useBreadcrumbContext } from "./breadcrumb-context";
 
 export type BreadcrumbEllipsisProps = React.ComponentProps<"span">;

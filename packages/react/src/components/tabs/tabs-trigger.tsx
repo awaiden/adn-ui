@@ -1,4 +1,5 @@
 import { Tabs } from "radix-ui";
+
 import { useTabsContext } from "./tabs-context";
 
 export type TabsTriggerProps = React.ComponentProps<typeof Tabs.Trigger>;

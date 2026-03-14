@@ -1,4 +1,5 @@
 import type { avatarVariants } from "@adn-ui/core";
+
 import { createContext, use } from "react";
 
 type AvatarContextValue = {

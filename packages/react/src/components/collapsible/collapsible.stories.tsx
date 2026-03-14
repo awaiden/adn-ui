@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
+
 import { Collapsible } from "./index";
 
 const meta: Meta = {
-	title: "Components/Collapsible",
 	tags: ["autodocs"],
+	title: "Components/Collapsible",
 };
 
 export default meta;

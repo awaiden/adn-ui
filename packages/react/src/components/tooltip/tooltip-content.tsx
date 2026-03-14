@@ -1,12 +1,13 @@
 import { Tooltip } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useTooltipContext } from "./tooltip-context";
 
 export type TooltipContentProps = React.ComponentProps<typeof Tooltip.Content>;
 
 export default function TooltipContent({
-	className,
 	children,
+	className,
 	side = "top",
 	sideOffset = 4,
 	...props

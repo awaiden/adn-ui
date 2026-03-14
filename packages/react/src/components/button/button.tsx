@@ -3,12 +3,12 @@ import { type ButtonVariants, buttonVariants } from "@adn-ui/core";
 export type ButtonProps = React.ComponentProps<"button"> & ButtonVariants;
 
 export default function Button({
-	variant,
-	size,
 	className,
+	size,
+	variant,
 	...props
 }: ButtonProps) {
-	const styles = buttonVariants({ variant, size, className });
+	const styles = buttonVariants({ className, size, variant });
 
 	return <button type="button" className={styles} {...props} />;
 }

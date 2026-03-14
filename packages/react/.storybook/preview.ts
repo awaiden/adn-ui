@@ -5,13 +5,13 @@ import type { Preview } from "@storybook/react-vite";
 
 const preview: Preview = {
 	parameters: {
-		layout: "centered",
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
 				date: /Date$/i,
 			},
 		},
+		layout: "centered",
 	},
 };
 
@@ -19,10 +19,10 @@ export default preview;
 
 export const decorators = [
 	withThemeByClassName({
-		themes: {
-			light: "light",
-			dark: "dark",
-		},
 		defaultTheme: "light",
+		themes: {
+			dark: "dark",
+			light: "light",
+		},
 	}),
 ];

@@ -1,4 +1,5 @@
 import { cn } from "tailwind-variants";
+
 import { useCardContext } from "./card-context";
 
 export type CardDescriptionProps = React.ComponentProps<"p">;

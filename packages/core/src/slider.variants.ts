@@ -1,33 +1,33 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const sliderVariants = tv({
+	defaultVariants: {
+		size: "md",
+	},
 	slots: {
-		root: "slider",
-		track: "slider__track",
 		range: "slider__range",
+		root: "slider",
 		thumb: "slider__thumb",
+		track: "slider__track",
 	},
 	variants: {
 		size: {
-			sm: {
-				root: "slider--sm",
-				track: "slider__track--sm",
-				thumb: "slider__thumb--sm",
+			lg: {
+				root: "slider--lg",
+				thumb: "slider__thumb--lg",
+				track: "slider__track--lg",
 			},
 			md: {
 				root: "slider--md",
-				track: "slider__track--md",
 				thumb: "slider__thumb--md",
+				track: "slider__track--md",
 			},
-			lg: {
-				root: "slider--lg",
-				track: "slider__track--lg",
-				thumb: "slider__thumb--lg",
+			sm: {
+				root: "slider--sm",
+				thumb: "slider__thumb--sm",
+				track: "slider__track--sm",
 			},
 		},
-	},
-	defaultVariants: {
-		size: "md",
 	},
 });
 

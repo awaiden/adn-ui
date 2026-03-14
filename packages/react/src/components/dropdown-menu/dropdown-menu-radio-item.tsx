@@ -1,6 +1,7 @@
 import { Circle } from "lucide-react";
 import { DropdownMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 
 export type DropdownMenuRadioItemProps = React.ComponentProps<
@@ -8,8 +9,8 @@ export type DropdownMenuRadioItemProps = React.ComponentProps<
 >;
 
 export default function DropdownMenuRadioItem({
-	className,
 	children,
+	className,
 	...props
 }: DropdownMenuRadioItemProps) {
 	const { slots } = useDropdownMenuContext();

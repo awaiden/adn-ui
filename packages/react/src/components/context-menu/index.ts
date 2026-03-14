@@ -14,20 +14,20 @@ import ContextMenuSubTrigger from "./context-menu-sub-trigger";
 import ContextMenuTrigger from "./context-menu-trigger";
 
 export const ContextMenu = {
-	Root: ContextMenuRoot,
-	Trigger: ContextMenuTrigger,
-	Content: ContextMenuContent,
-	Item: ContextMenuItem,
 	CheckboxItem: ContextMenuCheckboxItem,
+	Content: ContextMenuContent,
+	Group: ContextMenuGroup,
+	Item: ContextMenuItem,
+	Label: ContextMenuLabel,
 	RadioGroup: ContextMenuRadioGroup,
 	RadioItem: ContextMenuRadioItem,
-	Label: ContextMenuLabel,
+	Root: ContextMenuRoot,
 	Separator: ContextMenuSeparator,
 	Shortcut: ContextMenuShortcut,
 	Sub: ContextMenuSub,
-	SubTrigger: ContextMenuSubTrigger,
 	SubContent: ContextMenuSubContent,
-	Group: ContextMenuGroup,
+	SubTrigger: ContextMenuSubTrigger,
+	Trigger: ContextMenuTrigger,
 };
 
 export {
@@ -84,7 +84,4 @@ export type ContextMenuGroupProps = React.ComponentProps<
 	typeof ContextMenuGroup
 >;
 
-export {
-	type ContextMenuVariants,
-	contextMenuVariants,
-} from "@adn-ui/core";
+export { type ContextMenuVariants, contextMenuVariants } from "@adn-ui/core";

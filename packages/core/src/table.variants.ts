@@ -2,14 +2,14 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const tableVariants = tv({
 	slots: {
-		root: "table",
-		header: "table__header",
 		body: "table__body",
-		footer: "table__footer",
-		row: "table__row",
-		head: "table__head",
-		cell: "table__cell",
 		caption: "table__caption",
+		cell: "table__cell",
+		footer: "table__footer",
+		head: "table__head",
+		header: "table__header",
+		root: "table",
+		row: "table__row",
 	},
 });
 

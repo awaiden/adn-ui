@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { Checkbox } from "radix-ui";
+
 import { useCheckboxContext } from "./checkbox-context";
 
 export type CheckboxIndicatorProps = React.ComponentProps<
@@ -7,8 +8,8 @@ export type CheckboxIndicatorProps = React.ComponentProps<
 >;
 
 export default function CheckboxIndicator({
-	className,
 	children,
+	className,
 	...props
 }: CheckboxIndicatorProps) {
 	const { slots } = useCheckboxContext();

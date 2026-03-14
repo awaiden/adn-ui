@@ -14,20 +14,20 @@ import DropdownMenuSubTrigger from "./dropdown-menu-sub-trigger";
 import DropdownMenuTrigger from "./dropdown-menu-trigger";
 
 export const DropdownMenu = {
-	Root: DropdownMenuRoot,
-	Trigger: DropdownMenuTrigger,
-	Content: DropdownMenuContent,
-	Item: DropdownMenuItem,
 	CheckboxItem: DropdownMenuCheckboxItem,
+	Content: DropdownMenuContent,
+	Group: DropdownMenuGroup,
+	Item: DropdownMenuItem,
+	Label: DropdownMenuLabel,
 	RadioGroup: DropdownMenuRadioGroup,
 	RadioItem: DropdownMenuRadioItem,
-	Label: DropdownMenuLabel,
+	Root: DropdownMenuRoot,
 	Separator: DropdownMenuSeparator,
 	Shortcut: DropdownMenuShortcut,
 	Sub: DropdownMenuSub,
-	SubTrigger: DropdownMenuSubTrigger,
 	SubContent: DropdownMenuSubContent,
-	Group: DropdownMenuGroup,
+	SubTrigger: DropdownMenuSubTrigger,
+	Trigger: DropdownMenuTrigger,
 };
 
 export {
@@ -88,7 +88,4 @@ export type DropdownMenuGroupProps = React.ComponentProps<
 	typeof DropdownMenuGroup
 >;
 
-export {
-	type DropdownMenuVariants,
-	dropdownMenuVariants,
-} from "@adn-ui/core";
+export { type DropdownMenuVariants, dropdownMenuVariants } from "@adn-ui/core";

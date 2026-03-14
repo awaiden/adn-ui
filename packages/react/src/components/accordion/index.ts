@@ -5,11 +5,11 @@ import AccordionRoot from "./accordion-root";
 import AccordionTrigger from "./accordion-trigger";
 
 export const Accordion = {
-	Root: AccordionRoot,
-	Item: AccordionItem,
-	Header: AccordionHeader,
-	Trigger: AccordionTrigger,
 	Content: AccordionContent,
+	Header: AccordionHeader,
+	Item: AccordionItem,
+	Root: AccordionRoot,
+	Trigger: AccordionTrigger,
 };
 
 export {

@@ -1,97 +1,94 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Label } from "./index";
 
 describe("Label", () => {
-	test("renders with base class", async () => {
-		const { getByText } = await render(<Label>Username</Label>);
-		const label = getByText("Username");
+	test("renders with base class", () => {
+		render(<Label>Username</Label>);
+		const label = screen.getByText("Username");
 
-		await expect.element(label).toBeInTheDocument();
-		await expect.element(label).toHaveClass("label");
+		expect(label).toBeInTheDocument();
+		expect(label).toHaveClass("label");
 	});
 
-	test("applies default md size class", async () => {
-		const { getByText } = await render(<Label>Username</Label>);
-		await expect.element(getByText("Username")).toHaveClass("label--md");
+	test("applies default md size class", () => {
+		render(<Label>Username</Label>);
+		expect(screen.getByText("Username")).toHaveClass("label--md");
 	});
 
 	describe("sizes", () => {
-		test("applies sm size", async () => {
-			const { getByText } = await render(<Label size="sm">Small</Label>);
-			await expect.element(getByText("Small")).toHaveClass("label--sm");
+		test("applies sm size", () => {
+			render(<Label size="sm">Small</Label>);
+			expect(screen.getByText("Small")).toHaveClass("label--sm");
 		});
 
-		test("applies md size", async () => {
-			const { getByText } = await render(<Label size="md">Medium</Label>);
-			await expect.element(getByText("Medium")).toHaveClass("label--md");
+		test("applies md size", () => {
+			render(<Label size="md">Medium</Label>);
+			expect(screen.getByText("Medium")).toHaveClass("label--md");
 		});
 
-		test("applies lg size", async () => {
-			const { getByText } = await render(<Label size="lg">Large</Label>);
-			await expect.element(getByText("Large")).toHaveClass("label--lg");
+		test("applies lg size", () => {
+			render(<Label size="lg">Large</Label>);
+			expect(screen.getByText("Large")).toHaveClass("label--lg");
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("associates with input via htmlFor", async () => {
-			const { getByText } = await render(<Label htmlFor="email">Email</Label>);
-			await expect.element(getByText("Email")).toHaveAttribute("for", "email");
+		test("associates with input via htmlFor", () => {
+			render(<Label htmlFor="email">Email</Label>);
+			expect(screen.getByText("Email")).toHaveAttribute("for", "email");
 		});
 
-		test("applies custom className alongside base class", async () => {
-			const { getByText } = await render(
-				<Label className="custom-class">Label</Label>,
+		test("applies custom className alongside base class", () => {
+			render(<Label className="custom-class">Label</Label>);
+			const label = screen.getByText("Label");
+
+			expect(label).toHaveClass("label");
+			expect(label).toHaveClass("custom-class");
+		});
+
+		test("forwards aria attributes", () => {
+			render(<Label aria-describedby="help-text">Field</Label>);
+			expect(screen.getByText("Field")).toHaveAttribute(
+				"aria-describedby",
+				"help-text",
 			);
-			const label = getByText("Label");
-
-			await expect.element(label).toHaveClass("label");
-			await expect.element(label).toHaveClass("custom-class");
 		});
 
-		test("forwards aria attributes", async () => {
-			const { getByText } = await render(
-				<Label aria-describedby="help-text">Field</Label>,
+		test("forwards id attribute", () => {
+			render(<Label id="my-label">ID</Label>);
+			expect(screen.getByText("ID")).toHaveAttribute("id", "my-label");
+		});
+
+		test("forwards data attributes", () => {
+			render(<Label data-testid="field-label">Data</Label>);
+			expect(screen.getByText("Data")).toHaveAttribute(
+				"data-testid",
+				"field-label",
 			);
-			await expect
-				.element(getByText("Field"))
-				.toHaveAttribute("aria-describedby", "help-text");
-		});
-
-		test("forwards id attribute", async () => {
-			const { getByText } = await render(<Label id="my-label">ID</Label>);
-			await expect.element(getByText("ID")).toHaveAttribute("id", "my-label");
-		});
-
-		test("forwards data attributes", async () => {
-			const { getByText } = await render(
-				<Label data-testid="field-label">Data</Label>,
-			);
-			await expect
-				.element(getByText("Data"))
-				.toHaveAttribute("data-testid", "field-label");
 		});
 	});
 
 	describe("children", () => {
-		test("renders string children", async () => {
-			const { getByText } = await render(<Label>Text</Label>);
-			await expect.element(getByText("Text")).toHaveTextContent("Text");
+		test("renders string children", () => {
+			render(<Label>Text</Label>);
+			expect(screen.getByText("Text")).toHaveTextContent("Text");
 		});
 
-		test("renders element children", async () => {
-			const { getByText } = await render(
+		test("renders element children", () => {
+			render(
 				<Label>
 					<span>Required</span> Field
 				</Label>,
 			);
-			await expect.element(getByText("Required")).toBeInTheDocument();
+			expect(screen.getByText("Required")).toBeInTheDocument();
 		});
 	});
 
-	test("renders as a label element", async () => {
-		const { container } = await render(<Label>Check</Label>);
+	test("renders as a label element", () => {
+		const { container } = render(<Label>Check</Label>);
 		const label = container.querySelector("label");
-		await expect.element(label).toBeInTheDocument();
+		expect(label).toBeInTheDocument();
 	});
 });

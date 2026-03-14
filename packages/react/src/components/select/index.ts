@@ -8,14 +8,14 @@ import SelectTrigger from "./select-trigger";
 import SelectValue from "./select-value";
 
 export const Select = {
+	Content: SelectContent,
+	Group: SelectGroup,
+	Item: SelectItem,
+	Label: SelectLabel,
 	Root: SelectRoot,
+	Separator: SelectSeparator,
 	Trigger: SelectTrigger,
 	Value: SelectValue,
-	Content: SelectContent,
-	Item: SelectItem,
-	Group: SelectGroup,
-	Label: SelectLabel,
-	Separator: SelectSeparator,
 };
 
 export {

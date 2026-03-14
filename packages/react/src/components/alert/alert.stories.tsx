@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { AlertCircle, Info, Terminal } from "lucide-react";
+
 import { Alert } from "./index";
 
 const meta: Meta = {
-	title: "Components/Alert",
 	tags: ["autodocs"],
+	title: "Components/Alert",
 };
 
 export default meta;

@@ -1,23 +1,23 @@
 .avatar {
-	@apply relative flex shrink-0 overflow-hidden rounded-full;
+  @apply relative flex shrink-0 overflow-hidden rounded-full;
 }
 
 .avatar--sm {
-	@apply size-8;
+  @apply size-8;
 }
 
 .avatar--md {
-	@apply size-10;
+  @apply size-10;
 }
 
 .avatar--lg {
-	@apply size-12;
+  @apply size-12;
 }
 
 .avatar__image {
-	@apply aspect-square h-full w-full;
+  @apply aspect-square h-full w-full;
 }
 
 .avatar__fallback {
-	@apply flex h-full w-full items-center justify-center rounded-full bg-neutral-100 font-medium text-neutral-600;
+  @apply flex h-full w-full items-center justify-center rounded-full bg-neutral-100 font-medium text-neutral-600;
 }

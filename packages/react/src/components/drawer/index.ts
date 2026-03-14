@@ -10,16 +10,16 @@ import DrawerTitle from "./drawer-title";
 import DrawerTrigger from "./drawer-trigger";
 
 export const Drawer = {
-	Root: DrawerRoot,
-	Trigger: DrawerTrigger,
-	Portal: DrawerPortal,
-	Overlay: DrawerOverlay,
-	Content: DrawerContent,
-	Header: DrawerHeader,
-	Footer: DrawerFooter,
-	Title: DrawerTitle,
-	Description: DrawerDescription,
 	Close: DrawerClose,
+	Content: DrawerContent,
+	Description: DrawerDescription,
+	Footer: DrawerFooter,
+	Header: DrawerHeader,
+	Overlay: DrawerOverlay,
+	Portal: DrawerPortal,
+	Root: DrawerRoot,
+	Title: DrawerTitle,
+	Trigger: DrawerTrigger,
 };
 
 export {

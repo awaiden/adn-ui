@@ -1,4 +1,5 @@
 import { Avatar } from "radix-ui";
+
 import { useAvatarContext } from "./avatar-context";
 
 export type AvatarImageProps = React.ComponentProps<typeof Avatar.Image>;

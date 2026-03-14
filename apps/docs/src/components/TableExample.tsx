@@ -3,16 +3,16 @@
 import { Table } from "@adn-ui/react";
 
 const invoices = [
-	{ id: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
-	{ id: "INV002", status: "Pending", method: "PayPal", amount: "$150.00" },
+	{ amount: "$250.00", id: "INV001", method: "Credit Card", status: "Paid" },
+	{ amount: "$150.00", id: "INV002", method: "PayPal", status: "Pending" },
 	{
-		id: "INV003",
-		status: "Unpaid",
-		method: "Bank Transfer",
 		amount: "$350.00",
+		id: "INV003",
+		method: "Bank Transfer",
+		status: "Unpaid",
 	},
-	{ id: "INV004", status: "Paid", method: "Credit Card", amount: "$450.00" },
-	{ id: "INV005", status: "Paid", method: "PayPal", amount: "$550.00" },
+	{ amount: "$450.00", id: "INV004", method: "Credit Card", status: "Paid" },
+	{ amount: "$550.00", id: "INV005", method: "PayPal", status: "Paid" },
 ];
 
 const Default = () => (

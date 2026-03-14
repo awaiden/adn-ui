@@ -1,13 +1,14 @@
 import { X } from "lucide-react";
 import { Popover } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { usePopoverContext } from "./popover-context";
 
 export type PopoverCloseProps = React.ComponentProps<typeof Popover.Close>;
 
 export default function PopoverClose({
-	className,
 	children,
+	className,
 	...props
 }: PopoverCloseProps) {
 	const { slots } = usePopoverContext();

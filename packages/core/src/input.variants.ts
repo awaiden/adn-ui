@@ -2,15 +2,15 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const inputVariants = tv({
 	base: "input",
-	variants: {
-		size: {
-			sm: "input--sm",
-			md: "input--md",
-			lg: "input--lg",
-		},
-	},
 	defaultVariants: {
 		size: "md",
+	},
+	variants: {
+		size: {
+			lg: "input--lg",
+			md: "input--md",
+			sm: "input--sm",
+		},
 	},
 });
 

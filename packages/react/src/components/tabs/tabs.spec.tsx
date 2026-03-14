@@ -1,10 +1,11 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Tabs } from "./index";
 
 describe("Tabs", () => {
 	test("renders tabs and switches content", async () => {
-		const { getByRole, getByText } = await render(
+		render(
 			<Tabs.Root defaultValue="tab1">
 				<Tabs.List>
 					<Tabs.Trigger value="tab1">Tab 1</Tabs.Trigger>
@@ -15,16 +16,20 @@ describe("Tabs", () => {
 			</Tabs.Root>,
 		);
 
-		await expect.element(getByText("Content 1")).toBeInTheDocument();
+		expect(screen.getByText("Content 1")).toBeInTheDocument();
 
-		const tab2 = getByRole("tab", { name: "Tab 2" });
-		await tab2.click();
+		const tab2 = screen.getByRole("tab", { name: "Tab 2" });
+		fireEvent.mouseDown(tab2);
+		fireEvent.mouseUp(tab2);
+		fireEvent.click(tab2);
 
-		await expect.element(getByText("Content 2")).toBeInTheDocument();
+		await waitFor(() => {
+			expect(screen.getByText("Content 2")).toBeInTheDocument();
+		});
 	});
 
-	test("applies variant classes", async () => {
-		const { getByRole } = await render(
+	test("applies variant classes", () => {
+		render(
 			<Tabs.Root defaultValue="tab1" variant="outline">
 				<Tabs.List>
 					<Tabs.Trigger value="tab1">Tab 1</Tabs.Trigger>
@@ -33,10 +38,10 @@ describe("Tabs", () => {
 			</Tabs.Root>,
 		);
 
-		const list = getByRole("tablist");
-		const trigger = getByRole("tab");
+		const list = screen.getByRole("tablist");
+		const trigger = screen.getByRole("tab");
 
-		await expect.element(list).toHaveClass("tabs__list--outline");
-		await expect.element(trigger).toHaveClass("tabs__trigger--outline");
+		expect(list).toHaveClass("tabs__list--outline");
+		expect(trigger).toHaveClass("tabs__trigger--outline");
 	});
 });

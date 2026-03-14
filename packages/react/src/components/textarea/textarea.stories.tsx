@@ -1,23 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Label } from "../label";
 import { Textarea } from "./index";
 
 const meta: Meta<typeof Textarea> = {
-	title: "Components/Textarea",
-	component: Textarea,
-	tags: ["autodocs"],
 	argTypes: {
-		size: {
-			control: "select",
-			options: ["sm", "md", "lg"],
-		},
 		disabled: {
 			control: "boolean",
 		},
 		placeholder: {
 			control: "text",
 		},
+		size: {
+			control: "select",
+			options: ["sm", "md", "lg"],
+		},
 	},
+	component: Textarea,
+	tags: ["autodocs"],
+	title: "Components/Textarea",
 };
 
 export default meta;
@@ -53,8 +54,8 @@ export const Large: Story = {
 
 export const Disabled: Story = {
 	args: {
-		placeholder: "Disabled textarea",
 		disabled: true,
+		placeholder: "Disabled textarea",
 	},
 };
 

@@ -22,9 +22,7 @@ import { Collapsible } from "@adn-ui/react";
 export default () => (
   <Collapsible.Root>
     <Collapsible.Trigger>Toggle content</Collapsible.Trigger>
-    <Collapsible.Content>
-      This is the collapsible content.
-    </Collapsible.Content>
+    <Collapsible.Content>This is the collapsible content.</Collapsible.Content>
   </Collapsible.Root>
 );
 ```
@@ -32,6 +30,7 @@ export default () => (
 ## API Reference
 
 ### Root
+
 Contains all the parts of a collapsible.
 
 <table className="min-w-full text-left text-sm">
@@ -67,21 +66,27 @@ Contains all the parts of a collapsible.
 </table>
 
 ### Trigger
+
 The button that toggles the collapsible.
 
 ### Content
+
 The content that is revealed when the collapsible is open.
 
 ## Examples
 
 ### Default
+
 A simple collapsible section.
+
 <ComponentPreview>
   <CollapsibleExample.Default client:load />
 </ComponentPreview>
 
 ### Default Open
+
 A collapsible that starts in the open state.
+
 <ComponentPreview>
   <CollapsibleExample.DefaultOpen client:load />
 </ComponentPreview>

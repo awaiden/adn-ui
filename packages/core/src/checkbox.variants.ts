@@ -1,25 +1,25 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const checkboxVariants = tv({
+	defaultVariants: {
+		size: "md",
+	},
 	slots: {
-		root: "checkbox",
 		indicator: "checkbox__indicator",
+		root: "checkbox",
 	},
 	variants: {
 		size: {
-			sm: {
-				root: "checkbox--sm",
+			lg: {
+				root: "checkbox--lg",
 			},
 			md: {
 				root: "checkbox--md",
 			},
-			lg: {
-				root: "checkbox--lg",
+			sm: {
+				root: "checkbox--sm",
 			},
 		},
-	},
-	defaultVariants: {
-		size: "md",
 	},
 });
 

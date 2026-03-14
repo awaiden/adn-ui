@@ -5,10 +5,10 @@ import CardRoot from "./card-root";
 import CardTitle from "./card-title";
 
 export const Card = {
-	Root: CardRoot,
 	Content: CardContent,
 	Description: CardDescription,
 	Header: CardHeader,
+	Root: CardRoot,
 	Title: CardTitle,
 };
 

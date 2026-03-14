@@ -1,0 +1,49 @@
+name: Canary Release
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - "packages/**"
+      - ".changeset/**"
+
+jobs:
+  publish-canary:
+    name: Build and Publish Canary
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Build All Packages
+        run: bun turbo run build
+
+      - name: Release Canary to NPM
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+
+          # Eğer changeset yoksa hata vermemesi için boş bir tane ekle
+          npx changeset add --empty || true
+
+          npx changeset pre enter canary
+
+          npx changeset version
+
+          npx changeset publish

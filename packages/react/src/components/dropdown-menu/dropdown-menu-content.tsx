@@ -1,5 +1,6 @@
 import { DropdownMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 
 export type DropdownMenuContentProps = React.ComponentProps<
@@ -7,8 +8,8 @@ export type DropdownMenuContentProps = React.ComponentProps<
 >;
 
 export default function DropdownMenuContent({
-	className,
 	children,
+	className,
 	sideOffset = 4,
 	...props
 }: DropdownMenuContentProps) {

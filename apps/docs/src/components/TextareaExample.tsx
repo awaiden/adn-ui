@@ -23,6 +23,6 @@ const Sizes = () => (
 
 export const TextareaExample = {
 	Default,
-	WithLabel,
 	Sizes,
+	WithLabel,
 };

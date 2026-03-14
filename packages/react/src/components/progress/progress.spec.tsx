@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Progress, ProgressIndicator, ProgressRoot } from "./index";
 
 function renderProgress(
@@ -15,16 +16,16 @@ function renderProgress(
 }
 
 describe("Progress", () => {
-	test("renders with base class", async () => {
-		const { container } = await renderProgress();
+	test("renders with base class", () => {
+		const { container } = renderProgress();
 		const root = container.querySelector('[data-slot="progress"]');
 
 		expect(root).not.toBeNull();
 		expect(root?.classList.contains("progress")).toBe(true);
 	});
 
-	test("renders all data-slot attributes", async () => {
-		const { container } = await renderProgress();
+	test("renders all data-slot attributes", () => {
+		const { container } = renderProgress();
 
 		expect(container.querySelector('[data-slot="progress"]')).not.toBeNull();
 		expect(
@@ -32,71 +33,73 @@ describe("Progress", () => {
 		).not.toBeNull();
 	});
 
-	test("applies default md size class", async () => {
-		const { container } = await renderProgress();
+	test("applies default md size class", () => {
+		const { container } = renderProgress();
 		const root = container.querySelector('[data-slot="progress"]');
 
 		expect(root?.classList.contains("progress--md")).toBe(true);
 	});
 
 	describe("sizes", () => {
-		test("applies sm size", async () => {
-			const { container } = await renderProgress({ size: "sm", value: 50 });
+		test("applies sm size", () => {
+			const { container } = renderProgress({ size: "sm", value: 50 });
 			const root = container.querySelector('[data-slot="progress"]');
 
 			expect(root?.classList.contains("progress--sm")).toBe(true);
 		});
 
-		test("applies md size", async () => {
-			const { container } = await renderProgress({ size: "md", value: 50 });
+		test("applies md size", () => {
+			const { container } = renderProgress({ size: "md", value: 50 });
 			const root = container.querySelector('[data-slot="progress"]');
 
 			expect(root?.classList.contains("progress--md")).toBe(true);
 		});
 
-		test("applies lg size", async () => {
-			const { container } = await renderProgress({ size: "lg", value: 50 });
+		test("applies lg size", () => {
+			const { container } = renderProgress({ size: "lg", value: 50 });
 			const root = container.querySelector('[data-slot="progress"]');
 
 			expect(root?.classList.contains("progress--lg")).toBe(true);
 		});
 	});
 
-	test("renders progressbar role", async () => {
-		const { getByRole } = await renderProgress();
-		await expect.element(getByRole("progressbar")).toBeInTheDocument();
+	test("renders progressbar role", () => {
+		renderProgress();
+		expect(screen.getByRole("progressbar")).toBeInTheDocument();
 	});
 
-	test("has correct aria-valuenow", async () => {
-		const { getByRole } = await renderProgress({ value: 75 });
-		await expect
-			.element(getByRole("progressbar"))
-			.toHaveAttribute("aria-valuenow", "75");
+	test("has correct aria-valuenow", () => {
+		renderProgress({ value: 75 });
+		expect(screen.getByRole("progressbar")).toHaveAttribute(
+			"aria-valuenow",
+			"75",
+		);
 	});
 
-	test("has correct aria-valuemax", async () => {
-		const { getByRole } = await renderProgress({ value: 50, max: 200 });
-		await expect
-			.element(getByRole("progressbar"))
-			.toHaveAttribute("aria-valuemax", "200");
+	test("has correct aria-valuemax", () => {
+		renderProgress({ max: 200, value: 50 });
+		expect(screen.getByRole("progressbar")).toHaveAttribute(
+			"aria-valuemax",
+			"200",
+		);
 	});
 
-	test("applies data-state complete when value equals max", async () => {
-		const { container } = await renderProgress({ value: 100 });
+	test("applies data-state complete when value equals max", () => {
+		const { container } = renderProgress({ value: 100 });
 		const root = container.querySelector('[data-slot="progress"]');
 
 		expect(root?.getAttribute("data-state")).toBe("complete");
 	});
 
-	test("applies data-state loading when value is less than max", async () => {
-		const { container } = await renderProgress({ value: 50 });
+	test("applies data-state loading when value is less than max", () => {
+		const { container } = renderProgress({ value: 50 });
 		const root = container.querySelector('[data-slot="progress"]');
 
 		expect(root?.getAttribute("data-state")).toBe("loading");
 	});
 
-	test("applies data-state indeterminate when value is null", async () => {
-		const { container } = await render(
+	test("applies data-state indeterminate when value is null", () => {
+		const { container } = render(
 			<Progress.Root value={null}>
 				<Progress.Indicator />
 			</Progress.Root>,
@@ -107,7 +110,7 @@ describe("Progress", () => {
 	});
 
 	test("forwards custom className to root", async () => {
-		const { container } = await renderProgress({
+		const { container } = renderProgress({
 			className: "custom-progress",
 		});
 		const root = container.querySelector('[data-slot="progress"]');
@@ -116,8 +119,8 @@ describe("Progress", () => {
 		expect(root?.classList.contains("custom-progress")).toBe(true);
 	});
 
-	test("indicator renders inside root", async () => {
-		const { container } = await renderProgress();
+	test("indicator renders inside root", () => {
+		const { container } = renderProgress();
 		const root = container.querySelector('[data-slot="progress"]');
 		const indicator = root?.querySelector('[data-slot="progress-indicator"]');
 

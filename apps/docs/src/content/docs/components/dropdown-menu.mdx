@@ -39,6 +39,7 @@ export default () => (
 ## API Reference
 
 ### Root
+
 Contains all the parts of a dropdown menu.
 
 <table className="min-w-full text-left text-sm">
@@ -74,6 +75,7 @@ Contains all the parts of a dropdown menu.
 </table>
 
 ### Trigger
+
 The button that toggles the dropdown menu.
 
 <table className="min-w-full text-left text-sm">
@@ -94,6 +96,7 @@ The button that toggles the dropdown menu.
 </table>
 
 ### Content
+
 The component that pops out when the dropdown menu is open.
 
 <table className="min-w-full text-left text-sm">
@@ -129,6 +132,7 @@ The component that pops out when the dropdown menu is open.
 </table>
 
 ### Item
+
 The component that contains the dropdown menu items.
 
 <table className="min-w-full text-left text-sm">
@@ -159,6 +163,7 @@ The component that contains the dropdown menu items.
 </table>
 
 ### CheckboxItem
+
 An item that can be controlled and rendered like a checkbox.
 
 <table className="min-w-full text-left text-sm">
@@ -189,6 +194,7 @@ An item that can be controlled and rendered like a checkbox.
 </table>
 
 ### RadioGroup
+
 Used to group multiple radio items.
 
 <table className="min-w-full text-left text-sm">
@@ -214,6 +220,7 @@ Used to group multiple radio items.
 </table>
 
 ### RadioItem
+
 An item that can be controlled and rendered like a radio.
 
 <table className="min-w-full text-left text-sm">
@@ -239,15 +246,19 @@ An item that can be controlled and rendered like a radio.
 </table>
 
 ### Label
+
 Used to render a label. It won't be focusable using arrow keys.
 
 ### Separator
+
 Used to visually separate items in the dropdown menu.
 
 ### Group
+
 Used to group multiple items.
 
 ### Sub
+
 Contains all the parts of a submenu.
 
 <table className="min-w-full text-left text-sm">
@@ -278,6 +289,7 @@ Contains all the parts of a submenu.
 </table>
 
 ### SubTrigger
+
 An item that opens a submenu.
 
 <table className="min-w-full text-left text-sm">
@@ -303,6 +315,7 @@ An item that opens a submenu.
 </table>
 
 ### SubContent
+
 The component that pops out when a submenu is open.
 
 <table className="min-w-full text-left text-sm">
@@ -328,30 +341,39 @@ The component that pops out when a submenu is open.
 </table>
 
 ### Shortcut
+
 A helper to display keyboard shortcut text alongside an item.
 
 ## Examples
 
 ### Default
+
 A standard dropdown menu with labels, items, and shortcuts.
+
 <ComponentPreview>
   <DropdownMenuExample.Default client:load />
 </ComponentPreview>
 
 ### With Checkbox Items
+
 Checkbox items that can be toggled on and off.
+
 <ComponentPreview>
   <DropdownMenuExample.WithCheckbox client:load />
 </ComponentPreview>
 
 ### With Radio Items
+
 Radio items for selecting one option from a group.
+
 <ComponentPreview>
   <DropdownMenuExample.WithRadio client:load />
 </ComponentPreview>
 
 ### With Submenu
+
 Nested submenus for organizing complex menu structures.
+
 <ComponentPreview>
   <DropdownMenuExample.WithSubmenu client:load />
 </ComponentPreview>

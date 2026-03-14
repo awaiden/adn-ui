@@ -23,9 +23,7 @@ export default () => (
   <Accordion.Root type="single" collapsible>
     <Accordion.Item value="item-1">
       <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
-      <Accordion.Content>
-        Yes. It adheres to the WAI-ARIA design pattern.
-      </Accordion.Content>
+      <Accordion.Content>Yes. It adheres to the WAI-ARIA design pattern.</Accordion.Content>
     </Accordion.Item>
   </Accordion.Root>
 );
@@ -34,6 +32,7 @@ export default () => (
 ## API Reference
 
 ### Root
+
 The foundational component for the accordion.
 
 <table className="min-w-full text-left text-sm">
@@ -64,6 +63,7 @@ The foundational component for the accordion.
 </table>
 
 ### Item
+
 Contains all the parts of a single collapsible section.
 
 <table className="min-w-full text-left text-sm">
@@ -89,21 +89,27 @@ Contains all the parts of a single collapsible section.
 </table>
 
 ### Trigger
+
 Toggles the collapsed state of its associated item. It should be nested inside an `Accordion.Header`.
 
 ### Content
+
 Contains the collapsible content for an item.
 
 ## Examples
 
 ### Single (Collapsible)
+
 Allow only one item to be open at a time.
+
 <ComponentPreview>
   <AccordionExample.Single client:load />
 </ComponentPreview>
 
 ### Multiple
+
 Allow multiple items to be open at the same time.
+
 <ComponentPreview>
   <AccordionExample.Multiple client:load />
 </ComponentPreview>

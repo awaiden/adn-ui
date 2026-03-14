@@ -2,8 +2,8 @@ import CheckboxIndicator from "./checkbox-indicator";
 import CheckboxRoot from "./checkbox-root";
 
 export const Checkbox = {
-	Root: CheckboxRoot,
 	Indicator: CheckboxIndicator,
+	Root: CheckboxRoot,
 };
 
 export { CheckboxRoot, CheckboxIndicator };

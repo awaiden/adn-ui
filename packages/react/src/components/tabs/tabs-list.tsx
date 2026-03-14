@@ -1,4 +1,5 @@
 import { Tabs } from "radix-ui";
+
 import { useTabsContext } from "./tabs-context";
 
 export type TabsListProps = React.ComponentProps<typeof Tabs.List>;

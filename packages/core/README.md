@@ -30,7 +30,7 @@ import { button } from "@adn-ui/core";
 const classes = button({
   variant: "primary",
   size: "md",
-  className: "extra-class"
+  className: "extra-class",
 });
 ```
 

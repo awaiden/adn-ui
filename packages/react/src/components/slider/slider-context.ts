@@ -1,4 +1,5 @@
 import type { sliderVariants } from "@adn-ui/core";
+
 import { createContext, use } from "react";
 
 type SliderContextValue = {

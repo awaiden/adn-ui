@@ -1,13 +1,14 @@
 import { Popover } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { usePopoverContext } from "./popover-context";
 
 export type PopoverContentProps = React.ComponentProps<typeof Popover.Content>;
 
 export default function PopoverContent({
-	className,
-	children,
 	align = "center",
+	children,
+	className,
 	sideOffset = 4,
 	...props
 }: PopoverContentProps) {

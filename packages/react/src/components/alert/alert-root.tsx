@@ -1,12 +1,13 @@
 import { type AlertVariants, alertVariants } from "@adn-ui/core";
 import { cn } from "tailwind-variants";
+
 import { AlertContext } from "./alert-context";
 
 export type AlertRootProps = React.ComponentProps<"div"> & AlertVariants;
 
 export default function AlertRoot({
-	variant,
 	className,
+	variant,
 	...props
 }: AlertRootProps) {
 	const slots = alertVariants({ variant });

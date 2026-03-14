@@ -1,16 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Label } from "../label";
 import { Slider } from "./index";
 
 const meta: Meta<typeof Slider.Root> = {
-	title: "Components/Slider",
-	component: Slider.Root,
-	tags: ["autodocs"],
 	argTypes: {
-		size: {
-			control: "select",
-			options: ["sm", "md", "lg"],
-		},
 		disabled: {
 			control: "boolean",
 		},
@@ -18,7 +12,14 @@ const meta: Meta<typeof Slider.Root> = {
 			control: "select",
 			options: ["horizontal", "vertical"],
 		},
+		size: {
+			control: "select",
+			options: ["sm", "md", "lg"],
+		},
 	},
+	component: Slider.Root,
+	tags: ["autodocs"],
+	title: "Components/Slider",
 };
 
 export default meta;

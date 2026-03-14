@@ -47,6 +47,6 @@ const Outline = () => (
 );
 
 export const TabsExample = {
-	Underline,
 	Outline,
+	Underline,
 };

@@ -3,9 +3,9 @@ import AvatarImage from "./avatar-image";
 import AvatarRoot from "./avatar-root";
 
 export const Avatar = {
-	Root: AvatarRoot,
-	Image: AvatarImage,
 	Fallback: AvatarFallback,
+	Image: AvatarImage,
+	Root: AvatarRoot,
 };
 
 export { AvatarRoot, AvatarImage, AvatarFallback };

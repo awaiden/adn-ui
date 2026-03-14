@@ -5,14 +5,14 @@ export type ToggleRootProps = React.ComponentProps<typeof Toggle.Root> &
 	ToggleVariants;
 
 export default function ToggleRoot({
-	variant,
-	size,
 	className,
+	size,
+	variant,
 	...props
 }: ToggleRootProps) {
 	return (
 		<Toggle.Root
-			className={toggleVariants({ variant, size, className })}
+			className={toggleVariants({ className, size, variant })}
 			{...props}
 		/>
 	);

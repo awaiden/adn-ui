@@ -1,10 +1,11 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { AlertDialog } from ".";
 
 describe("AlertDialog", () => {
-	test("renders trigger and opens content on click", async () => {
-		const { getByText } = await render(
+	test("renders trigger and opens content on click", () => {
+		render(
 			<AlertDialog.Root>
 				<AlertDialog.Trigger>Open Dialog</AlertDialog.Trigger>
 				<AlertDialog.Content>
@@ -16,22 +17,22 @@ describe("AlertDialog", () => {
 			</AlertDialog.Root>,
 		);
 
-		const trigger = getByText("Open Dialog");
-		await expect.element(trigger).toBeInTheDocument();
+		const trigger = screen.getByText("Open Dialog");
+		expect(trigger).toBeInTheDocument();
 
 		// Content should not be in the document initially
-		await expect.element(getByText("Dialog Title")).not.toBeInTheDocument();
+		expect(screen.queryByText("Dialog Title")).not.toBeInTheDocument();
 
 		// Click trigger to open
-		await trigger.click();
+		fireEvent.click(trigger);
 
 		// Content should now be in the document
-		await expect.element(getByText("Dialog Title")).toBeInTheDocument();
-		await expect.element(getByText("Dialog Description")).toBeInTheDocument();
+		expect(screen.getByText("Dialog Title")).toBeInTheDocument();
+		expect(screen.getByText("Dialog Description")).toBeInTheDocument();
 	});
 
-	test("closes when Cancel is clicked", async () => {
-		const { getByText } = await render(
+	test("closes when Cancel is clicked", () => {
+		render(
 			<AlertDialog.Root>
 				<AlertDialog.Trigger>Open</AlertDialog.Trigger>
 				<AlertDialog.Content>
@@ -42,17 +43,17 @@ describe("AlertDialog", () => {
 			</AlertDialog.Root>,
 		);
 
-		await getByText("Open").click();
-		await expect.element(getByText("Cancel")).toBeInTheDocument();
+		fireEvent.click(screen.getByText("Open"));
+		expect(screen.getByText("Cancel")).toBeInTheDocument();
 
-		await getByText("Cancel").click();
+		fireEvent.click(screen.getByText("Cancel"));
 
 		// In some environments, it might take a moment to animate out
-		await expect.element(getByText("Title")).not.toBeInTheDocument();
+		expect(screen.queryByText("Title")).not.toBeInTheDocument();
 	});
 
-	test("applies data-slot attributes", async () => {
-		const { getByText } = await render(
+	test("applies data-slot attributes", () => {
+		render(
 			<AlertDialog.Root>
 				<AlertDialog.Trigger>Open</AlertDialog.Trigger>
 				<AlertDialog.Content>
@@ -68,21 +69,21 @@ describe("AlertDialog", () => {
 			</AlertDialog.Root>,
 		);
 
-		await getByText("Open").click();
+		fireEvent.click(screen.getByText("Open"));
 
 		const content = document.body.querySelector(
 			'[data-slot="alert-dialog-content"]',
 		);
-		await expect.element(content as HTMLElement).toBeInTheDocument();
+		expect(content as HTMLElement).toBeInTheDocument();
 
 		const title = document.body.querySelector(
 			'[data-slot="alert-dialog-title"]',
 		);
-		await expect.element(title as HTMLElement).toBeInTheDocument();
+		expect(title as HTMLElement).toBeInTheDocument();
 
 		const description = document.body.querySelector(
 			'[data-slot="alert-dialog-description"]',
 		);
-		await expect.element(description as HTMLElement).toBeInTheDocument();
+		expect(description as HTMLElement).toBeInTheDocument();
 	});
 });

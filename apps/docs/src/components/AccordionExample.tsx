@@ -32,6 +32,6 @@ const Multiple = () => (
 );
 
 export const AccordionExample = {
-	Single,
 	Multiple,
+	Single,
 };

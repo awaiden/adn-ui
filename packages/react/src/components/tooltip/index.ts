@@ -5,11 +5,11 @@ import TooltipRoot from "./tooltip-root";
 import TooltipTrigger from "./tooltip-trigger";
 
 export const Tooltip = {
+	Arrow: TooltipArrow,
+	Content: TooltipContent,
 	Provider: TooltipProvider,
 	Root: TooltipRoot,
 	Trigger: TooltipTrigger,
-	Content: TooltipContent,
-	Arrow: TooltipArrow,
 };
 
 export {

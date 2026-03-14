@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { DropdownMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 
 export type DropdownMenuCheckboxItemProps = React.ComponentProps<
@@ -8,9 +9,9 @@ export type DropdownMenuCheckboxItemProps = React.ComponentProps<
 >;
 
 export default function DropdownMenuCheckboxItem({
-	className,
-	children,
 	checked,
+	children,
+	className,
 	...props
 }: DropdownMenuCheckboxItemProps) {
 	const { slots } = useDropdownMenuContext();

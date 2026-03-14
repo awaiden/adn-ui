@@ -1,84 +1,83 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import { Field, FieldDescription, FieldError, FieldLabel, FieldRoot } from ".";
 
 describe("Field", () => {
 	describe("rendering", () => {
-		test("renders root with base class", async () => {
-			const { container } = await render(
+		test("renders root with base class", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Label>Email</Field.Label>
 				</Field.Root>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root as HTMLElement).toBeInTheDocument();
 		});
 
-		test("renders label as a label element", async () => {
-			const { container } = await render(
+		test("renders label as a label element", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Label>Username</Field.Label>
 				</Field.Root>,
 			);
 
 			const label = container.querySelector("label");
-			await expect.element(label as HTMLElement).toBeInTheDocument();
-			await expect.element(label as HTMLElement).toHaveClass("field__label");
+			expect(label as HTMLElement).toBeInTheDocument();
+			expect(label as HTMLElement).toHaveClass("field__label");
 		});
 
-		test("renders description as a paragraph", async () => {
-			const { container } = await render(
+		test("renders description as a paragraph", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Description>Helper text</Field.Description>
 				</Field.Root>,
 			);
 
 			const description = container.querySelector("p.field__description");
-			await expect.element(description as HTMLElement).toBeInTheDocument();
+			expect(description as HTMLElement).toBeInTheDocument();
 		});
 
-		test("renders error as a paragraph", async () => {
-			const { container } = await render(
+		test("renders error as a paragraph", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Error>Error message</Field.Error>
 				</Field.Root>,
 			);
 
 			const error = container.querySelector("p.field__error");
-			await expect.element(error as HTMLElement).toBeInTheDocument();
+			expect(error as HTMLElement).toBeInTheDocument();
 		});
 	});
 
 	describe("orientation", () => {
-		test("applies vertical orientation by default", async () => {
-			const { container } = await render(
+		test("applies vertical orientation by default", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Label>Label</Field.Label>
 				</Field.Root>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect.element(root as HTMLElement).toHaveClass("field--vertical");
+			expect(root as HTMLElement).toHaveClass("field--vertical");
 		});
 
-		test("applies horizontal orientation", async () => {
-			const { container } = await render(
+		test("applies horizontal orientation", () => {
+			const { container } = render(
 				<Field.Root orientation="horizontal">
 					<Field.Label>Label</Field.Label>
 				</Field.Root>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect
-				.element(root as HTMLElement)
-				.toHaveClass("field--horizontal");
+			expect(root as HTMLElement).toHaveClass("field--horizontal");
 		});
 	});
 
 	describe("id linking", () => {
-		test("label htmlFor matches generated id", async () => {
-			const { container } = await render(
+		test("label htmlFor matches generated id", () => {
+			const { container } = render(
 				<Field.Root>
 					<Field.Label>Email</Field.Label>
 				</Field.Root>,
@@ -89,72 +88,72 @@ describe("Field", () => {
 			expect(htmlFor).toBeTruthy();
 		});
 
-		test("label htmlFor uses custom id when provided", async () => {
-			const { container } = await render(
+		test("label htmlFor uses custom id when provided", () => {
+			const { container } = render(
 				<Field.Root id="custom-id">
 					<Field.Label>Email</Field.Label>
 				</Field.Root>,
 			);
 
 			const label = container.querySelector("label");
-			await expect
-				.element(label as HTMLElement)
-				.toHaveAttribute("for", "custom-id");
+			expect(label as HTMLElement).toHaveAttribute("for", "custom-id");
 		});
 
-		test("description id is derived from field id", async () => {
-			const { container } = await render(
+		test("description id is derived from field id", () => {
+			const { container } = render(
 				<Field.Root id="my-field">
 					<Field.Description>Help text</Field.Description>
 				</Field.Root>,
 			);
 
 			const description = container.querySelector("p.field__description");
-			await expect
-				.element(description as HTMLElement)
-				.toHaveAttribute("id", "my-field-description");
+			expect(description as HTMLElement).toHaveAttribute(
+				"id",
+				"my-field-description",
+			);
 		});
 
-		test("error aria-describedby is derived from field id", async () => {
-			const { container } = await render(
+		test("error aria-describedby is derived from field id", () => {
+			const { container } = render(
 				<Field.Root id="my-field">
 					<Field.Error>Required</Field.Error>
 				</Field.Root>,
 			);
 
 			const error = container.querySelector("p.field__error");
-			await expect
-				.element(error as HTMLElement)
-				.toHaveAttribute("aria-describedby", "my-field-error");
+			expect(error as HTMLElement).toHaveAttribute(
+				"aria-describedby",
+				"my-field-error",
+			);
 		});
 	});
 
 	describe("props forwarding", () => {
-		test("applies custom className to root", async () => {
-			const { container } = await render(
+		test("applies custom className to root", () => {
+			const { container } = render(
 				<Field.Root className="custom-root">
 					<Field.Label>Label</Field.Label>
 				</Field.Root>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect.element(root as HTMLElement).toHaveClass("field");
-			await expect.element(root as HTMLElement).toHaveClass("custom-root");
+			expect(root as HTMLElement).toHaveClass("field");
+			expect(root as HTMLElement).toHaveClass("custom-root");
 		});
 
-		test("applies custom className to label", async () => {
-			const { getByText } = await render(
+		test("applies custom className to label", () => {
+			render(
 				<Field.Root>
 					<Field.Label className="custom-label">Label</Field.Label>
 				</Field.Root>,
 			);
 
-			await expect.element(getByText("Label")).toHaveClass("field__label");
-			await expect.element(getByText("Label")).toHaveClass("custom-label");
+			expect(screen.getByText("Label")).toHaveClass("field__label");
+			expect(screen.getByText("Label")).toHaveClass("custom-label");
 		});
 
-		test("applies custom className to description", async () => {
-			const { getByText } = await render(
+		test("applies custom className to description", () => {
+			render(
 				<Field.Root>
 					<Field.Description className="custom-desc">
 						Help text
@@ -162,73 +161,69 @@ describe("Field", () => {
 				</Field.Root>,
 			);
 
-			await expect
-				.element(getByText("Help text"))
-				.toHaveClass("field__description");
-			await expect.element(getByText("Help text")).toHaveClass("custom-desc");
+			expect(screen.getByText("Help text")).toHaveClass("field__description");
+			expect(screen.getByText("Help text")).toHaveClass("custom-desc");
 		});
 
-		test("applies custom className to error", async () => {
-			const { getByText } = await render(
+		test("applies custom className to error", () => {
+			render(
 				<Field.Root>
 					<Field.Error className="custom-error">Error</Field.Error>
 				</Field.Root>,
 			);
 
-			await expect.element(getByText("Error")).toHaveClass("field__error");
-			await expect.element(getByText("Error")).toHaveClass("custom-error");
+			expect(screen.getByText("Error")).toHaveClass("field__error");
+			expect(screen.getByText("Error")).toHaveClass("custom-error");
 		});
 
-		test("forwards data attributes to root", async () => {
-			const { container } = await render(
+		test("forwards data attributes to root", () => {
+			const { container } = render(
 				<Field.Root data-testid="my-field">
 					<Field.Label>Label</Field.Label>
 				</Field.Root>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect
-				.element(root as HTMLElement)
-				.toHaveAttribute("data-testid", "my-field");
+			expect(root as HTMLElement).toHaveAttribute("data-testid", "my-field");
 		});
 	});
 
 	describe("named exports", () => {
-		test("FieldRoot is accessible as named export", async () => {
-			const { container } = await render(
+		test("FieldRoot is accessible as named export", () => {
+			const { container } = render(
 				<FieldRoot>
 					<FieldLabel>Label</FieldLabel>
 				</FieldRoot>,
 			);
 
 			const root = container.querySelector(".field");
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root as HTMLElement).toBeInTheDocument();
 		});
 
-		test("FieldDescription is accessible as named export", async () => {
-			const { getByText } = await render(
+		test("FieldDescription is accessible as named export", () => {
+			render(
 				<FieldRoot>
 					<FieldDescription>Help</FieldDescription>
 				</FieldRoot>,
 			);
 
-			await expect.element(getByText("Help")).toBeInTheDocument();
+			expect(screen.getByText("Help")).toBeInTheDocument();
 		});
 
-		test("FieldError is accessible as named export", async () => {
-			const { getByText } = await render(
+		test("FieldError is accessible as named export", () => {
+			render(
 				<FieldRoot>
 					<FieldError>Error</FieldError>
 				</FieldRoot>,
 			);
 
-			await expect.element(getByText("Error")).toBeInTheDocument();
+			expect(screen.getByText("Error")).toBeInTheDocument();
 		});
 	});
 
 	describe("full composition", () => {
-		test("renders complete field with all sub-components", async () => {
-			const { container } = await render(
+		test("renders complete field with all sub-components", () => {
+			const { container } = render(
 				<Field.Root id="full-field">
 					<Field.Label>Username</Field.Label>
 					<Field.Description>Enter your username</Field.Description>
@@ -237,16 +232,14 @@ describe("Field", () => {
 			);
 
 			const label = container.querySelector("label");
-			await expect.element(label as HTMLElement).toBeInTheDocument();
-			await expect
-				.element(label as HTMLElement)
-				.toHaveAttribute("for", "full-field");
+			expect(label as HTMLElement).toBeInTheDocument();
+			expect(label as HTMLElement).toHaveAttribute("for", "full-field");
 
 			const description = container.querySelector("p.field__description");
-			await expect.element(description as HTMLElement).toBeInTheDocument();
+			expect(description as HTMLElement).toBeInTheDocument();
 
 			const error = container.querySelector("p.field__error");
-			await expect.element(error as HTMLElement).toBeInTheDocument();
+			expect(error as HTMLElement).toBeInTheDocument();
 		});
 	});
 });

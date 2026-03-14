@@ -35,6 +35,6 @@ const Sizes = () => (
 );
 
 export const SwitchExample = {
-	WithLabel,
 	Sizes,
+	WithLabel,
 };

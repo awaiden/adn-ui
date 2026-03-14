@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { ContextMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useContextMenuContext } from "./context-menu-context";
 
 export type ContextMenuSubTriggerProps = React.ComponentProps<
@@ -8,8 +9,8 @@ export type ContextMenuSubTriggerProps = React.ComponentProps<
 >;
 
 export default function ContextMenuSubTrigger({
-	className,
 	children,
+	className,
 	...props
 }: ContextMenuSubTriggerProps) {
 	const { slots } = useContextMenuContext();

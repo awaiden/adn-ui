@@ -1,4 +1,5 @@
 import { Switch } from "radix-ui";
+
 import { useSwitchContext } from "./switch-context";
 
 export type SwitchThumbProps = React.ComponentProps<typeof Switch.Thumb>;

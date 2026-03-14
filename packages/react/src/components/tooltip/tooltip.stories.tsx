@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Button } from "../button";
 import { Tooltip } from "./index";
 
 const meta: Meta = {
-	title: "Components/Tooltip",
-	tags: ["autodocs"],
 	decorators: [
 		(Story) => (
 			<Tooltip.Provider delayDuration={200}>
@@ -12,6 +11,8 @@ const meta: Meta = {
 			</Tooltip.Provider>
 		),
 	],
+	tags: ["autodocs"],
+	title: "Components/Tooltip",
 };
 
 export default meta;

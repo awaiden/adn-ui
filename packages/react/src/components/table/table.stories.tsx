@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Table } from "./index";
 
 const meta: Meta = {
-	title: "Components/Table",
 	tags: ["autodocs"],
+	title: "Components/Table",
 };
 
 export default meta;
@@ -11,23 +12,23 @@ export default meta;
 type Story = StoryObj;
 
 const invoices = [
-	{ id: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
-	{ id: "INV002", status: "Pending", method: "PayPal", amount: "$150.00" },
+	{ amount: "$250.00", id: "INV001", method: "Credit Card", status: "Paid" },
+	{ amount: "$150.00", id: "INV002", method: "PayPal", status: "Pending" },
 	{
-		id: "INV003",
-		status: "Unpaid",
-		method: "Bank Transfer",
 		amount: "$350.00",
-	},
-	{ id: "INV004", status: "Paid", method: "Credit Card", amount: "$450.00" },
-	{ id: "INV005", status: "Paid", method: "PayPal", amount: "$550.00" },
-	{
-		id: "INV006",
-		status: "Pending",
+		id: "INV003",
 		method: "Bank Transfer",
-		amount: "$200.00",
+		status: "Unpaid",
 	},
-	{ id: "INV007", status: "Unpaid", method: "Credit Card", amount: "$300.00" },
+	{ amount: "$450.00", id: "INV004", method: "Credit Card", status: "Paid" },
+	{ amount: "$550.00", id: "INV005", method: "PayPal", status: "Paid" },
+	{
+		amount: "$200.00",
+		id: "INV006",
+		method: "Bank Transfer",
+		status: "Pending",
+	},
+	{ amount: "$300.00", id: "INV007", method: "Credit Card", status: "Unpaid" },
 ];
 
 export const Default: Story = {

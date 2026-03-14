@@ -1,4 +1,5 @@
 import { Progress } from "radix-ui";
+
 import { useProgressContext } from "./progress-context";
 
 export type ProgressIndicatorProps = React.ComponentProps<

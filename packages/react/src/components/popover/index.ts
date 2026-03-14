@@ -5,11 +5,11 @@ import PopoverRoot from "./popover-root";
 import PopoverTrigger from "./popover-trigger";
 
 export const Popover = {
+	Anchor: PopoverAnchor,
+	Close: PopoverClose,
+	Content: PopoverContent,
 	Root: PopoverRoot,
 	Trigger: PopoverTrigger,
-	Anchor: PopoverAnchor,
-	Content: PopoverContent,
-	Close: PopoverClose,
 };
 
 export {

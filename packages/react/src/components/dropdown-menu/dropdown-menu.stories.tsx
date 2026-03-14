@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { useState } from "react";
+
 import { Button } from "../button";
 import { DropdownMenu } from "./index";
 
 const meta: Meta = {
-	title: "Components/DropdownMenu",
 	tags: ["autodocs"],
+	title: "Components/DropdownMenu",
 };
 
 export default meta;

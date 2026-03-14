@@ -15,12 +15,12 @@ A modern, accessible, and cross-framework UI library built with [Radix UI](https
 
 ## Packages
 
-| Package | Description | Status |
-| :--- | :--- | :--- |
-| [`@adn-ui/react`](./packages/react) | React 19 components (Radix UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/react)](https://www.npmjs.com/package/@adn-ui/react) |
-| [`@adn-ui/svelte`](./packages/svelte) | Svelte 5 components (Bits UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/svelte)](https://www.npmjs.com/package/@adn-ui/svelte) |
-| [`@adn-ui/vue`](./packages/vue) | Vue 3 components (Reka UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/vue)](https://www.npmjs.com/package/@adn-ui/vue) |
-| [`@adn-ui/core`](./packages/core) | Shared styling variants and logic | [![npm](https://img.shields.io/npm/v/@adn-ui/core)](https://www.npmjs.com/package/@adn-ui/core) |
+| Package                               | Description                           | Status                                                                                              |
+| :------------------------------------ | :------------------------------------ | :-------------------------------------------------------------------------------------------------- |
+| [`@adn-ui/react`](./packages/react)   | React 19 components (Radix UI)        | [![npm](https://img.shields.io/npm/v/@adn-ui/react)](https://www.npmjs.com/package/@adn-ui/react)   |
+| [`@adn-ui/svelte`](./packages/svelte) | Svelte 5 components (Bits UI)         | [![npm](https://img.shields.io/npm/v/@adn-ui/svelte)](https://www.npmjs.com/package/@adn-ui/svelte) |
+| [`@adn-ui/vue`](./packages/vue)       | Vue 3 components (Reka UI)            | [![npm](https://img.shields.io/npm/v/@adn-ui/vue)](https://www.npmjs.com/package/@adn-ui/vue)       |
+| [`@adn-ui/core`](./packages/core)     | Shared styling variants and logic     | [![npm](https://img.shields.io/npm/v/@adn-ui/core)](https://www.npmjs.com/package/@adn-ui/core)     |
 | [`@adn-ui/styles`](./packages/styles) | Core CSS, tokens, and Tailwind config | [![npm](https://img.shields.io/npm/v/@adn-ui/styles)](https://www.npmjs.com/package/@adn-ui/styles) |
 
 ## Quick Start (React)

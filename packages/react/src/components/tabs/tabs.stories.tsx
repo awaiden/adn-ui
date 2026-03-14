@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Tabs } from "./index";
 
 const meta: Meta<typeof Tabs.Root> = {
-	title: "Components/Tabs",
 	component: Tabs.Root,
 	tags: ["autodocs"],
+	title: "Components/Tabs",
 };
 
 export default meta;
@@ -12,8 +13,8 @@ type Story = StoryObj<typeof Tabs.Root>;
 
 export const Underline: Story = {
 	args: {
-		variant: "underline",
 		defaultValue: "tab1",
+		variant: "underline",
 	},
 	render: (args) => (
 		<Tabs.Root {...args}>
@@ -31,8 +32,8 @@ export const Underline: Story = {
 
 export const Outline: Story = {
 	args: {
-		variant: "outline",
 		defaultValue: "tab1",
+		variant: "outline",
 	},
 	render: (args) => (
 		<Tabs.Root {...args}>

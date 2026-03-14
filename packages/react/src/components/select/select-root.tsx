@@ -1,5 +1,6 @@
 import { selectVariants } from "@adn-ui/core";
 import { Select } from "radix-ui";
+
 import { SelectContext } from "./select-context";
 
 export type SelectRootProps = React.ComponentProps<typeof Select.Root>;

@@ -1,4 +1,5 @@
 import { cn } from "tailwind-variants";
+
 import { useAlertContext } from "./alert-context";
 
 export type AlertDescriptionProps = React.ComponentProps<"div">;

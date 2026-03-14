@@ -1,0 +1,466 @@
+
+> adn-ui@ lint /home/awaiden/Documents/Github/react-ui
+> vp lint
+
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/alert/alert.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/alert/alert.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/switch/switch.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/switch/switch.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/checkbox/checkbox.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/checkbox/checkbox.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/card/card.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/card/card.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/avatar/avatar.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/avatar/avatar.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/dropdown-menu/dropdown-menu.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Variable 'getByText' is declared but never used. Unused variables should start with a '_'.
+    ,-[packages/react/src/components/dropdown-menu/dropdown-menu.spec.tsx:40:15]
+ 39 |     test("renders trigger", () => {
+ 40 |       const { getByText } = renderDropdownMenu();
+    :               ^^^^|^^^^
+    :                   `-- 'getByText' is declared here
+ 41 | 
+    `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/aspect-ratio/aspect-ratio.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/aspect-ratio/aspect-ratio.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/badge/badge.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/badge/badge.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/tooltip/tooltip.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/tooltip/tooltip.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/alert-dialog/alert-dialog.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/surface/surface.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/surface/surface.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/group/group.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/group/group.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/context-menu/context-menu.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Variable 'getByText' is declared but never used. Unused variables should start with a '_'.
+    ,-[packages/react/src/components/context-menu/context-menu.spec.tsx:42:15]
+ 41 |     test("renders trigger area", () => {
+ 42 |       const { getByText } = renderContextMenu();
+    :               ^^^^|^^^^
+    :                   `-- 'getByText' is declared here
+ 43 | 
+    `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/scroll-area/scroll-area.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/scroll-area/scroll-area.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Variable 'getByText' is declared but never used. Unused variables should start with a '_'.
+    ,-[packages/react/src/components/scroll-area/scroll-area.spec.tsx:50:15]
+ 49 |     test("renders content inside viewport", () => {
+ 50 |       const { getByText } = renderScrollArea();
+    :               ^^^^|^^^^
+    :                   `-- 'getByText' is declared here
+ 51 | 
+    `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/tabs/tabs.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/field/field.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/field/field.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/skeleton/skeleton.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'screen' is imported but never used.
+   ,-[packages/react/src/components/skeleton/skeleton.spec.tsx:1:29]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :                             ^^^|^^
+   :                                `-- 'screen' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/skeleton/skeleton.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/label/label.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/label/label.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/breadcrumb/breadcrumb.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/breadcrumb/breadcrumb.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/radio-group/radio-group.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/separator/separator.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'screen' is imported but never used.
+   ,-[packages/react/src/components/separator/separator.spec.tsx:1:29]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :                             ^^^|^^
+   :                                `-- 'screen' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/separator/separator.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'fireEvent' is imported but never used.
+   ,-[packages/react/src/components/table/table.spec.tsx:1:10]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+   :          ^^^^|^^^^
+   :              `-- 'fireEvent' is imported here
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/table/table.spec.tsx:2:34]
+ 1 | import { fireEvent, render, screen } from "@testing-library/react";
+ 2 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 3 | 
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Variable 'getByText' is declared but never used. Unused variables should start with a '_'.
+     ,-[packages/react/src/components/table/table.spec.tsx:105:26]
+ 104 |     test("renders table content", () => {
+ 105 |       const { container, getByText } = renderTable();
+     :                          ^^^^|^^^^
+     :                              `-- 'getByText' is declared here
+ 106 | 
+     `----
+  help: Consider removing this declaration.
+
+  ! eslint(no-unused-vars): Identifier 'waitForElementToBeRemoved' is imported but never used.
+   ,-[packages/react/src/components/drawer/drawer.spec.tsx:6:3]
+ 5 |   waitFor,
+ 6 |   waitForElementToBeRemoved,
+   :   ^^^^^^^^^^^^|^^^^^^^^^^^^
+   :               `-- 'waitForElementToBeRemoved' is imported here
+ 7 | } from "@testing-library/react";
+   `----
+  help: Consider removing this import.
+
+  ! eslint(no-unused-vars): Identifier 'vi' is imported but never used.
+   ,-[packages/react/src/components/drawer/drawer.spec.tsx:8:34]
+ 7 | } from "@testing-library/react";
+ 8 | import { describe, expect, test, vi } from "vite-plus/test";
+   :                                  ^|
+   :                                   `-- 'vi' is imported here
+ 9 | 
+   `----
+  help: Consider removing this import.
+
+  ! typescript-eslint(await-thenable): Unexpected `await` of a non-Promise (non-"Thenable") value.
+    ,-[packages/react/src/components/button/button.spec.tsx:51:7]
+ 50 |       // fireEvent ile simüle ediyoruz
+ 51 |       await fireEvent.click(button);
+    :       ^^^^^
+ 52 | 
+    `----
+
+Found 48 warnings and 0 errors.
+Finished in 2.8s on 361 files with 111 rules using 12 threads.

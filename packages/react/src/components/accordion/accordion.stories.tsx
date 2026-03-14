@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Accordion } from "./index";
 
 const meta: Meta = {
-	title: "Components/Accordion",
 	tags: ["autodocs"],
+	title: "Components/Accordion",
 };
 
 export default meta;

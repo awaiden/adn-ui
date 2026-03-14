@@ -1,26 +1,26 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const avatarVariants = tv({
+	defaultVariants: {
+		size: "md",
+	},
 	slots: {
-		root: "avatar",
-		image: "avatar__image",
 		fallback: "avatar__fallback",
+		image: "avatar__image",
+		root: "avatar",
 	},
 	variants: {
 		size: {
-			sm: {
-				root: "avatar--sm",
+			lg: {
+				root: "avatar--lg",
 			},
 			md: {
 				root: "avatar--md",
 			},
-			lg: {
-				root: "avatar--lg",
+			sm: {
+				root: "avatar--sm",
 			},
 		},
-	},
-	defaultVariants: {
-		size: "md",
 	},
 });
 

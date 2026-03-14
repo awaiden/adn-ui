@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Breadcrumb } from "./index";
 
 const meta: Meta = {
-	title: "Components/Breadcrumb",
 	tags: ["autodocs"],
+	title: "Components/Breadcrumb",
 };
 
 export default meta;

@@ -2,16 +2,16 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const badgeVariants = tv({
 	base: "badge",
-	variants: {
-		variant: {
-			primary: "badge--primary",
-			secondary: "badge--secondary",
-			destructive: "badge--destructive",
-			outline: "badge--outline",
-		},
-	},
 	defaultVariants: {
 		variant: "primary",
+	},
+	variants: {
+		variant: {
+			destructive: "badge--destructive",
+			outline: "badge--outline",
+			primary: "badge--primary",
+			secondary: "badge--secondary",
+		},
 	},
 });
 

@@ -1,13 +1,14 @@
 import { Check } from "lucide-react";
 import { Select } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useSelectContext } from "./select-context";
 
 export type SelectItemProps = React.ComponentProps<typeof Select.Item>;
 
 export default function SelectItem({
-	className,
 	children,
+	className,
 	...props
 }: SelectItemProps) {
 	const { slots } = useSelectContext();

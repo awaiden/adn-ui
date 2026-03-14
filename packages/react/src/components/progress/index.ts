@@ -2,8 +2,8 @@ import ProgressIndicator from "./progress-indicator";
 import ProgressRoot from "./progress-root";
 
 export const Progress = {
-	Root: ProgressRoot,
 	Indicator: ProgressIndicator,
+	Root: ProgressRoot,
 };
 
 export { ProgressRoot, ProgressIndicator };

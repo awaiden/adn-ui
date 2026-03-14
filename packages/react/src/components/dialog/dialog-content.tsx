@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { Dialog } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useDialogContext } from "./dialog-context";
 import DialogOverlay from "./dialog-overlay";
 import DialogPortal from "./dialog-portal";
@@ -8,8 +9,8 @@ import DialogPortal from "./dialog-portal";
 export type DialogContentProps = React.ComponentProps<typeof Dialog.Content>;
 
 export default function DialogContent({
-	className,
 	children,
+	className,
 	...props
 }: DialogContentProps) {
 	const { slots } = useDialogContext();

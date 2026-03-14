@@ -3,9 +3,9 @@ import RadioGroupItem from "./radio-group-item";
 import RadioGroupRoot from "./radio-group-root";
 
 export const RadioGroup = {
-	Root: RadioGroupRoot,
-	Item: RadioGroupItem,
 	Indicator: RadioGroupIndicator,
+	Item: RadioGroupItem,
+	Root: RadioGroupRoot,
 };
 
 export { RadioGroupRoot, RadioGroupItem, RadioGroupIndicator };
@@ -16,7 +16,4 @@ export type RadioGroupIndicatorProps = React.ComponentProps<
 	typeof RadioGroupIndicator
 >;
 
-export {
-	type RadioGroupVariants,
-	radioGroupVariants,
-} from "@adn-ui/core";
+export { type RadioGroupVariants, radioGroupVariants } from "@adn-ui/core";

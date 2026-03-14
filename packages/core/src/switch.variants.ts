@@ -1,28 +1,28 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const switchVariants = tv({
+	defaultVariants: {
+		size: "md",
+	},
 	slots: {
 		root: "switch",
 		thumb: "switch__thumb",
 	},
 	variants: {
 		size: {
-			sm: {
-				root: "switch--sm",
-				thumb: "switch__thumb--sm",
+			lg: {
+				root: "switch--lg",
+				thumb: "switch__thumb--lg",
 			},
 			md: {
 				root: "switch--md",
 				thumb: "switch__thumb--md",
 			},
-			lg: {
-				root: "switch--lg",
-				thumb: "switch__thumb--lg",
+			sm: {
+				root: "switch--sm",
+				thumb: "switch__thumb--sm",
 			},
 		},
-	},
-	defaultVariants: {
-		size: "md",
 	},
 });
 

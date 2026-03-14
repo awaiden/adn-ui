@@ -6,7 +6,7 @@ export const FieldDescription = ({
 	className,
 	...props
 }: FieldDescriptionProps) => {
-	const { slots, id } = useFieldContext();
+	const { id, slots } = useFieldContext();
 	return (
 		<p
 			id={`${id}-description`}

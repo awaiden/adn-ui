@@ -4,10 +4,10 @@ import SliderThumb from "./slider-thumb";
 import SliderTrack from "./slider-track";
 
 export const Slider = {
-	Root: SliderRoot,
-	Track: SliderTrack,
 	Range: SliderRange,
+	Root: SliderRoot,
 	Thumb: SliderThumb,
+	Track: SliderTrack,
 };
 
 export { SliderRoot, SliderTrack, SliderRange, SliderThumb };

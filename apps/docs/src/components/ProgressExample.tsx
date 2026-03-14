@@ -48,8 +48,8 @@ const Indeterminate = () => (
 );
 
 export const ProgressExample = {
-	Default,
-	Sizes,
 	Complete,
+	Default,
 	Indeterminate,
+	Sizes,
 };

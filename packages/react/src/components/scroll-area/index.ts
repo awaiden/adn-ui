@@ -5,11 +5,11 @@ import ScrollAreaThumb from "./scroll-area-thumb";
 import ScrollAreaViewport from "./scroll-area-viewport";
 
 export const ScrollArea = {
+	Corner: ScrollAreaCorner,
 	Root: ScrollAreaRoot,
-	Viewport: ScrollAreaViewport,
 	Scrollbar: ScrollAreaScrollbar,
 	Thumb: ScrollAreaThumb,
-	Corner: ScrollAreaCorner,
+	Viewport: ScrollAreaViewport,
 };
 
 export {
@@ -32,7 +32,4 @@ export type ScrollAreaCornerProps = React.ComponentProps<
 	typeof ScrollAreaCorner
 >;
 
-export {
-	type ScrollAreaVariants,
-	scrollAreaVariants,
-} from "@adn-ui/core";
+export { type ScrollAreaVariants, scrollAreaVariants } from "@adn-ui/core";

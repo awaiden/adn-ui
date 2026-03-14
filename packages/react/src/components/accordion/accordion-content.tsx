@@ -1,5 +1,6 @@
 import { Accordion } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useAccordionContext } from "./accordion-context";
 
 export type AccordionContentProps = React.ComponentProps<
@@ -7,8 +8,8 @@ export type AccordionContentProps = React.ComponentProps<
 >;
 
 export default function AccordionContent({
-	className,
 	children,
+	className,
 	...props
 }: AccordionContentProps) {
 	const { slots } = useAccordionContext();

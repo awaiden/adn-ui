@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Input } from "../input";
 import { Group } from "./index";
 
 const meta: Meta = {
-	title: "Components/Group",
 	tags: ["autodocs"],
+	title: "Components/Group",
 };
 
 export default meta;

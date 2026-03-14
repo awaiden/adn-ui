@@ -1,10 +1,13 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const alertVariants = tv({
+	defaultVariants: {
+		variant: "default",
+	},
 	slots: {
+		description: "alert__description",
 		root: "alert",
 		title: "alert__title",
-		description: "alert__description",
 	},
 	variants: {
 		variant: {
@@ -15,9 +18,6 @@ export const alertVariants = tv({
 				root: "alert--destructive",
 			},
 		},
-	},
-	defaultVariants: {
-		variant: "default",
 	},
 });
 

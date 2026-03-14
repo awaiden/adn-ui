@@ -3,9 +3,9 @@ import AlertRoot from "./alert-root";
 import AlertTitle from "./alert-title";
 
 export const Alert = {
+	Description: AlertDescription,
 	Root: AlertRoot,
 	Title: AlertTitle,
-	Description: AlertDescription,
 };
 
 export { AlertRoot, AlertTitle, AlertDescription };

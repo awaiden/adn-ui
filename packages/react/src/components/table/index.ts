@@ -8,14 +8,14 @@ import TableRoot from "./table-root";
 import TableRow from "./table-row";
 
 export const Table = {
-	Root: TableRoot,
-	Header: TableHeader,
 	Body: TableBody,
-	Footer: TableFooter,
-	Row: TableRow,
-	Head: TableHead,
-	Cell: TableCell,
 	Caption: TableCaption,
+	Cell: TableCell,
+	Footer: TableFooter,
+	Head: TableHead,
+	Header: TableHeader,
+	Root: TableRoot,
+	Row: TableRow,
 };
 
 export {

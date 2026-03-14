@@ -2,14 +2,14 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const skeletonVariants = tv({
 	base: "skeleton",
-	variants: {
-		variant: {
-			default: "skeleton--default",
-			circular: "skeleton--circular",
-		},
-	},
 	defaultVariants: {
 		variant: "default",
+	},
+	variants: {
+		variant: {
+			circular: "skeleton--circular",
+			default: "skeleton--default",
+		},
 	},
 });
 

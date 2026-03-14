@@ -1,24 +1,24 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const fieldVariants = tv({
+	defaultVariants: {
+		orientation: "vertical",
+	},
 	slots: {
-		root: "field",
-		label: "field__label",
 		description: "field__description",
 		error: "field__error",
+		label: "field__label",
+		root: "field",
 	},
 	variants: {
 		orientation: {
-			vertical: {
-				root: "field--vertical",
-			},
 			horizontal: {
 				root: "field--horizontal",
 			},
+			vertical: {
+				root: "field--vertical",
+			},
 		},
-	},
-	defaultVariants: {
-		orientation: "vertical",
 	},
 });
 

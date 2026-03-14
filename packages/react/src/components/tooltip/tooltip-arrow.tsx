@@ -1,5 +1,6 @@
 import { Tooltip } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useTooltipContext } from "./tooltip-context";
 
 export type TooltipArrowProps = React.ComponentProps<typeof Tooltip.Arrow>;

@@ -1,4 +1,5 @@
 import { Slider } from "radix-ui";
+
 import { useSliderContext } from "./slider-context";
 
 export type SliderTrackProps = React.ComponentProps<typeof Slider.Track>;

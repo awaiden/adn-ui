@@ -3,8 +3,8 @@ import { Button } from "../button";
 import { AlertDialog } from ".";
 
 const meta: Meta<typeof AlertDialog.Root> = {
-	title: "Components/AlertDialog",
 	component: AlertDialog.Root,
+	title: "Components/AlertDialog",
 };
 
 export default meta;

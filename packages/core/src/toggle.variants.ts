@@ -2,20 +2,20 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const toggleVariants = tv({
 	base: "toggle",
+	defaultVariants: {
+		size: "md",
+		variant: "default",
+	},
 	variants: {
+		size: {
+			lg: "toggle--lg",
+			md: "toggle--md",
+			sm: "toggle--sm",
+		},
 		variant: {
 			default: "bg-transparent",
 			outline: "toggle--outline",
 		},
-		size: {
-			sm: "toggle--sm",
-			md: "toggle--md",
-			lg: "toggle--lg",
-		},
-	},
-	defaultVariants: {
-		variant: "default",
-		size: "md",
 	},
 });
 

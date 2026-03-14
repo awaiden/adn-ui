@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { useState } from "react";
+
 import { ContextMenu } from "./index";
 
 const meta: Meta = {
-	title: "Components/ContextMenu",
 	tags: ["autodocs"],
+	title: "Components/ContextMenu",
 };
 
 export default meta;

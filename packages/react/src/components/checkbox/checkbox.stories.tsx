@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Label } from "../label";
 import { Checkbox, CheckboxIndicator } from "./index";
 
 const meta: Meta<typeof Checkbox.Root> = {
-	title: "Components/Checkbox",
-	component: Checkbox.Root,
-	tags: ["autodocs"],
 	argTypes: {
+		disabled: {
+			control: "boolean",
+		},
 		size: {
 			control: "select",
 			options: ["sm", "md", "lg"],
 		},
-		disabled: {
-			control: "boolean",
-		},
 	},
+	component: Checkbox.Root,
+	tags: ["autodocs"],
+	title: "Components/Checkbox",
 };
 
 export default meta;

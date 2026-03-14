@@ -1,6 +1,7 @@
 import { Circle } from "lucide-react";
 import { ContextMenu } from "radix-ui";
 import { cn } from "tailwind-variants";
+
 import { useContextMenuContext } from "./context-menu-context";
 
 export type ContextMenuRadioItemProps = React.ComponentProps<
@@ -8,8 +9,8 @@ export type ContextMenuRadioItemProps = React.ComponentProps<
 >;
 
 export default function ContextMenuRadioItem({
-	className,
 	children,
+	className,
 	...props
 }: ContextMenuRadioItemProps) {
 	const { slots } = useContextMenuContext();

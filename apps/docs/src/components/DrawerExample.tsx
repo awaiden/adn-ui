@@ -76,7 +76,7 @@ const Bottom = () => (
 );
 
 export const DrawerExample = {
-	Right,
-	Left,
 	Bottom,
+	Left,
+	Right,
 };

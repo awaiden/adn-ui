@@ -2,15 +2,15 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const textareaVariants = tv({
 	base: "textarea",
-	variants: {
-		size: {
-			sm: "textarea--sm",
-			md: "textarea--md",
-			lg: "textarea--lg",
-		},
-	},
 	defaultVariants: {
 		size: "md",
+	},
+	variants: {
+		size: {
+			lg: "textarea--lg",
+			md: "textarea--md",
+			sm: "textarea--sm",
+		},
 	},
 });
 

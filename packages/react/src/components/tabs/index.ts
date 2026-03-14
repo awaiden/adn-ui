@@ -4,10 +4,10 @@ import TabsRoot from "./tabs-root";
 import TabsTrigger from "./tabs-trigger";
 
 export const Tabs = {
-	Root: TabsRoot,
-	List: TabsList,
-	Trigger: TabsTrigger,
 	Content: TabsContent,
+	List: TabsList,
+	Root: TabsRoot,
+	Trigger: TabsTrigger,
 };
 
 export { TabsRoot, TabsList, TabsTrigger, TabsContent };

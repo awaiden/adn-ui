@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
@@ -35,62 +36,70 @@ function renderDropdownMenu() {
 
 describe("DropdownMenu", () => {
 	describe("rendering", () => {
-		test("renders trigger", async () => {
-			const { getByText } = await renderDropdownMenu();
+		test("renders trigger", () => {
+			renderDropdownMenu();
 
-			await expect.element(getByText("Open Menu")).toBeInTheDocument();
+			expect(screen.getByText("Open Menu")).toBeInTheDocument();
 		});
 
-		test("applies data-slot to trigger", async () => {
-			const { container } = await renderDropdownMenu();
+		test("applies data-slot to trigger", () => {
+			const { container } = renderDropdownMenu();
 
 			const trigger = container.querySelector(
 				'[data-slot="dropdown-menu-trigger"]',
 			);
-			await expect.element(trigger as HTMLElement).toBeInTheDocument();
+			expect(trigger as HTMLElement).toBeInTheDocument();
 		});
 	});
 
 	describe("open/close behavior", () => {
 		test("opens dropdown on trigger click", async () => {
-			const { getByText } = await renderDropdownMenu();
+			renderDropdownMenu();
 
-			await getByText("Open Menu").click();
+			const trigger = screen.getByText("Open Menu");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			const content = document.querySelector(
-				'[data-slot="dropdown-menu-content"]',
-			);
-			await expect.element(content as HTMLElement).toBeInTheDocument();
+			const content = await screen.findByRole("menu");
+			expect(content).toBeInTheDocument();
 		});
 
 		test("shows items when opened", async () => {
-			const { getByText } = await renderDropdownMenu();
+			renderDropdownMenu();
 
-			await getByText("Open Menu").click();
+			const trigger = screen.getByText("Open Menu");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			await expect.element(getByText("Profile")).toBeInTheDocument();
-			await expect.element(getByText("Settings")).toBeInTheDocument();
+			expect(await screen.findByText("Profile")).toBeInTheDocument();
+			expect(await screen.findByText("Settings")).toBeInTheDocument();
 		});
 
 		test("shows label when opened", async () => {
-			const { getByText } = await renderDropdownMenu();
+			renderDropdownMenu();
 
-			await getByText("Open Menu").click();
+			const trigger = screen.getByText("Open Menu");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			await expect.element(getByText("Actions")).toBeInTheDocument();
+			expect(await screen.findByText("Actions")).toBeInTheDocument();
 		});
 	});
 
 	describe("disabled items", () => {
 		test("disabled item has data-disabled attribute", async () => {
-			const { getByText } = await renderDropdownMenu();
+			renderDropdownMenu();
 
-			await getByText("Open Menu").click();
+			const trigger = screen.getByText("Open Menu");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			const disabledItem = document.querySelector(
-				'[data-slot="dropdown-menu-item"][data-disabled]',
-			);
-			await expect.element(disabledItem as HTMLElement).toBeInTheDocument();
+			const disabledItem = await screen.findByText("Disabled Item");
+			expect(disabledItem).toHaveAttribute("data-disabled");
 		});
 	});
 
@@ -132,7 +141,7 @@ describe("DropdownMenu", () => {
 
 	describe("checkbox items", () => {
 		test("renders checkbox item", async () => {
-			const { getByText } = await render(
+			render(
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
 					<DropdownMenu.Content>
@@ -143,15 +152,18 @@ describe("DropdownMenu", () => {
 				</DropdownMenu.Root>,
 			);
 
-			await getByText("Open").click();
+			const trigger = screen.getByText("Open");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			await expect.element(getByText("Checked Item")).toBeInTheDocument();
+			expect(await screen.findByText("Checked Item")).toBeInTheDocument();
 		});
 	});
 
 	describe("radio items", () => {
 		test("renders radio items", async () => {
-			const { getByText } = await render(
+			render(
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
 					<DropdownMenu.Content>
@@ -167,16 +179,19 @@ describe("DropdownMenu", () => {
 				</DropdownMenu.Root>,
 			);
 
-			await getByText("Open").click();
+			const trigger = screen.getByText("Open");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			await expect.element(getByText("Option A")).toBeInTheDocument();
-			await expect.element(getByText("Option B")).toBeInTheDocument();
+			expect(await screen.findByText("Option A")).toBeInTheDocument();
+			expect(await screen.findByText("Option B")).toBeInTheDocument();
 		});
 	});
 
 	describe("shortcut", () => {
 		test("renders shortcut text", async () => {
-			const { getByText } = await render(
+			render(
 				<DropdownMenu.Root>
 					<DropdownMenu.Trigger>Open</DropdownMenu.Trigger>
 					<DropdownMenu.Content>
@@ -188,9 +203,12 @@ describe("DropdownMenu", () => {
 				</DropdownMenu.Root>,
 			);
 
-			await getByText("Open").click();
+			const trigger = screen.getByText("Open");
+			fireEvent.pointerDown(trigger, { button: 0 });
+			fireEvent.pointerUp(trigger, { button: 0 });
+			fireEvent.click(trigger);
 
-			await expect.element(getByText("⌘C")).toBeInTheDocument();
+			expect(await screen.findByText("⌘C")).toBeInTheDocument();
 		});
 	});
 });

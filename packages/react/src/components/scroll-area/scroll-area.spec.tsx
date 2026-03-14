@@ -1,5 +1,6 @@
-import { describe, expect, test } from "vitest";
-import { render } from "vitest-browser-react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vite-plus/test";
+
 import {
 	ScrollArea,
 	ScrollAreaCorner,
@@ -33,35 +34,35 @@ function renderScrollArea() {
 
 describe("ScrollArea", () => {
 	describe("rendering", () => {
-		test("renders root", async () => {
-			const { container } = await renderScrollArea();
+		test("renders root", () => {
+			const { container } = renderScrollArea();
 
 			const root = container.querySelector('[data-slot="scroll-area-root"]');
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root as HTMLElement).toBeInTheDocument();
 		});
 
-		test("renders viewport", async () => {
-			const { container } = await renderScrollArea();
+		test("renders viewport", () => {
+			const { container } = renderScrollArea();
 
 			const viewport = container.querySelector(
 				'[data-slot="scroll-area-viewport"]',
 			);
-			await expect.element(viewport as HTMLElement).toBeInTheDocument();
+			expect(viewport as HTMLElement).toBeInTheDocument();
 		});
 
-		test("renders content inside viewport", async () => {
-			const { getByText } = await renderScrollArea();
+		test("renders content inside viewport", () => {
+			renderScrollArea();
 
-			await expect.element(getByText("v1.2.0-beta.50")).toBeInTheDocument();
+			expect(screen.getByText("v1.2.0-beta.50")).toBeInTheDocument();
 		});
 
-		test("renders scrollbar", async () => {
-			const { container } = await renderScrollArea();
+		test("renders scrollbar", () => {
+			const { container } = renderScrollArea();
 
 			// Scrollbar may only render when content overflows and is hovered;
 			// verify the scrollbar component is at least part of the tree
 			const root = container.querySelector('[data-slot="scroll-area-root"]');
-			await expect.element(root as HTMLElement).toBeInTheDocument();
+			expect(root as HTMLElement).toBeInTheDocument();
 		});
 	});
 

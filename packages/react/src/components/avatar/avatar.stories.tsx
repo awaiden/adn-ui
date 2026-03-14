@@ -1,16 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Avatar } from "./index";
 
 const meta: Meta<typeof Avatar.Root> = {
-	title: "Components/Avatar",
-	component: Avatar.Root,
-	tags: ["autodocs"],
 	argTypes: {
 		size: {
 			control: "select",
 			options: ["sm", "md", "lg"],
 		},
 	},
+	component: Avatar.Root,
+	tags: ["autodocs"],
+	title: "Components/Avatar",
 };
 
 export default meta;

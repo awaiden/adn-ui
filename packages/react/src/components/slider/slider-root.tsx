@@ -1,13 +1,14 @@
 import { type SliderVariants, sliderVariants } from "@adn-ui/core";
 import { Slider } from "radix-ui";
+
 import { SliderContext } from "./slider-context";
 
 export type SliderRootProps = React.ComponentProps<typeof Slider.Root> &
 	SliderVariants;
 
 export default function SliderRoot({
-	size,
 	className,
+	size,
 	...props
 }: SliderRootProps) {
 	const slots = sliderVariants({ size });
