@@ -1,23 +1,23 @@
 .toggle {
-  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
-  @apply hover:bg-neutral-100 hover:text-neutral-900;
-  @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950;
-  @apply disabled:pointer-events-none disabled:opacity-50;
-  @apply data-[state=on]:bg-neutral-200 data-[state=on]:text-neutral-900;
+	@apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
+	@apply hover:bg-neutral-100 hover:text-neutral-900;
+	@apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950;
+	@apply disabled:pointer-events-none disabled:opacity-50;
+	@apply data-[state=on]:bg-neutral-200 data-[state=on]:text-neutral-900;
 }
 
 .toggle--outline {
-  @apply border border-neutral-200 bg-transparent shadow-sm hover:bg-neutral-100 hover:text-neutral-900;
+	@apply border border-neutral-200 bg-transparent shadow-sm hover:bg-neutral-100 hover:text-neutral-900;
 }
 
 .toggle--sm {
-  @apply h-8 px-2;
+	@apply h-8 px-2;
 }
 
 .toggle--md {
-  @apply h-9 px-3;
+	@apply h-9 px-3;
 }
 
 .toggle--lg {
-  @apply h-10 px-3;
+	@apply h-10 px-3;
 }

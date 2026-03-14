@@ -1,29 +1,29 @@
 .input {
-  @apply w-full rounded-md border border-muted-foreground/30 bg-muted/50 text-foreground;
+	@apply w-full rounded-md border border-muted-foreground/30 bg-muted/50 text-foreground;
 
-  @apply transition-colors;
+	@apply transition-colors;
 
-  @apply placeholder:text-muted-foreground/70;
+	@apply placeholder:text-muted-foreground/70;
 
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:border-accent;
+	@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:border-accent;
 
-  &:disabled {
-    @apply status-disabled;
-  }
+	&:disabled {
+		@apply status-disabled;
+	}
 
-  &[aria-invalid="true"] {
-    @apply border-destructive focus-visible:ring-destructive/50;
-  }
+	&[aria-invalid="true"] {
+		@apply border-destructive focus-visible:ring-destructive/50;
+	}
 }
 
 .input--sm {
-  @apply h-8 px-2 text-sm;
+	@apply h-8 px-2 text-sm;
 }
 
 .input--md {
-  @apply h-10 px-3 text-base;
+	@apply h-10 px-3 text-base;
 }
 
 .input--lg {
-  @apply h-12 px-4 text-lg;
+	@apply h-12 px-4 text-lg;
 }
