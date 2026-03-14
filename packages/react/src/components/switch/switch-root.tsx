@@ -1,5 +1,5 @@
+import { type SwitchVariants, switchVariants } from "@adn-ui/core";
 import { Switch } from "radix-ui";
-import { type SwitchVariants, switchVariants } from "./switch.variants";
 import { SwitchContext } from "./switch-context";
 
 export type SwitchRootProps = React.ComponentProps<typeof Switch.Root> &

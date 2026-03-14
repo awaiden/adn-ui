@@ -29,8 +29,3 @@ export type AccordionTriggerProps = React.ComponentProps<
 export type AccordionContentProps = React.ComponentProps<
 	typeof AccordionContent
 >;
-
-export {
-	type AccordionVariants,
-	accordionVariants,
-} from "./accordion.variants";

@@ -1,5 +1,5 @@
+import { dropdownMenuVariants } from "@adn-ui/core";
 import { DropdownMenu } from "radix-ui";
-import { dropdownMenuVariants } from "./dropdown-menu.variants";
 import { DropdownMenuContext } from "./dropdown-menu-context";
 
 export type DropdownMenuRootProps = React.ComponentProps<

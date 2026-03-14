@@ -17,4 +17,4 @@ export type SliderTrackProps = React.ComponentProps<typeof SliderTrack>;
 export type SliderRangeProps = React.ComponentProps<typeof SliderRange>;
 export type SliderThumbProps = React.ComponentProps<typeof SliderThumb>;
 
-export { type SliderVariants, sliderVariants } from "./slider.variants";
+export { type SliderVariants, sliderVariants } from "@adn-ui/core";

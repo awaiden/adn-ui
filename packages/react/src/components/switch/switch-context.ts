@@ -1,5 +1,5 @@
+import type { switchVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { switchVariants } from "./switch.variants";
 
 type SwitchContextValue = {
 	slots: ReturnType<typeof switchVariants>;

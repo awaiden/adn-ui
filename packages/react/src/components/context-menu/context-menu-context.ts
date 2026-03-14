@@ -1,5 +1,5 @@
+import type { contextMenuVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { contextMenuVariants } from "./context-menu.variants";
 
 type ContextMenuContextValue = {
 	slots: ReturnType<typeof contextMenuVariants>;

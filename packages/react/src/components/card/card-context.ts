@@ -1,6 +1,5 @@
+import type { cardVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-
-import type { cardVariants } from "./card.variants";
 
 interface CardContextValue {
 	slots: ReturnType<typeof cardVariants>;

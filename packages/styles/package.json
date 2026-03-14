@@ -1,0 +1,25 @@
+{
+	"name": "@adn-ui/styles",
+	"module": "index.ts",
+	"type": "module",
+	"main": "./src/index.css",
+	"types": "./src/index.d.ts",
+	"files": [
+		"src"
+	],
+	"exports": {
+		".": {
+			"default": "./src/index.css",
+			"types": "./src/index.d.ts"
+		}
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"tailwind": "^4.0.0",
+		"tailwindcss-animate": "^1.0.7",
+		"tsdown": "^0.21.2"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}

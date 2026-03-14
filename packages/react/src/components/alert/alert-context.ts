@@ -1,5 +1,5 @@
+import type { alertVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { alertVariants } from "./alert.variants";
 
 type AlertContextValue = {
 	slots: ReturnType<typeof alertVariants>;

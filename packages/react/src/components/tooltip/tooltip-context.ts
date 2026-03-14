@@ -1,5 +1,5 @@
+import type { tooltipVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { tooltipVariants } from "./tooltip.variants";
 
 type TooltipContextValue = {
 	slots: ReturnType<typeof tooltipVariants>;

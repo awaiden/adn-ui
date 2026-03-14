@@ -1,4 +1,4 @@
-import { type BadgeVariants, badgeVariants } from "./badge.variants";
+import { type BadgeVariants, badgeVariants } from "@adn-ui/core";
 
 export type BadgeProps = React.ComponentProps<"span"> & BadgeVariants;
 

@@ -7,6 +7,7 @@ export default defineConfig({
 	test: {
 		browser: {
 			enabled: true,
+			// @ts-expect-error - Missing types for browser provider
 			provider: playwright(),
 			// https://vitest.dev/config/browser/playwright
 			instances: [{ browser: "chromium" }],

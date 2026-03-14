@@ -8,7 +8,10 @@ function getAbsolutePath(value: string) {
 
 const config: StorybookConfig = {
 	stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-	addons: [getAbsolutePath("@storybook/addon-themes")],
+	addons: [
+		getAbsolutePath("@storybook/addon-themes"),
+		getAbsolutePath("@storybook/addon-styling-webpack"),
+	],
 	framework: getAbsolutePath("@storybook/react-vite"),
 };
 export default config;

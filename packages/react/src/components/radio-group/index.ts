@@ -19,4 +19,4 @@ export type RadioGroupIndicatorProps = React.ComponentProps<
 export {
 	type RadioGroupVariants,
 	radioGroupVariants,
-} from "./radio-group.variants";
+} from "@adn-ui/core";

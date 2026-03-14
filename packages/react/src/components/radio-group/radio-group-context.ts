@@ -1,5 +1,5 @@
+import type { radioGroupVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { radioGroupVariants } from "./radio-group.variants";
 
 type RadioGroupContextValue = {
 	slots: ReturnType<typeof radioGroupVariants>;

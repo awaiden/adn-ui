@@ -1,5 +1,5 @@
+import { separatorVariants } from "@adn-ui/core";
 import { Separator } from "radix-ui";
-import { separatorVariants } from "./separator.variants";
 
 export type SeparatorProps = React.ComponentProps<typeof Separator.Root>;
 

@@ -1,5 +1,5 @@
+import type { breadcrumbVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { breadcrumbVariants } from "./breadcrumb.variants";
 
 type BreadcrumbContextValue = {
 	slots: ReturnType<typeof breadcrumbVariants>;

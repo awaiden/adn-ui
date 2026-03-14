@@ -12,7 +12,7 @@ export const Field = {
 
 export { FieldDescription, FieldError, FieldLabel, FieldRoot };
 
-export { type FieldVariants, fieldVariants } from "./field.variants";
+export { type FieldVariants, fieldVariants } from "@adn-ui/core";
 export type { FieldDescriptionProps } from "./field-description";
 export type { FieldErrorProps } from "./field-error";
 export type { FieldLabelProps } from "./field-label";

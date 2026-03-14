@@ -14,4 +14,4 @@ export type AvatarRootProps = React.ComponentProps<typeof AvatarRoot>;
 export type AvatarImageProps = React.ComponentProps<typeof AvatarImage>;
 export type AvatarFallbackProps = React.ComponentProps<typeof AvatarFallback>;
 
-export { type AvatarVariants, avatarVariants } from "./avatar.variants";
+export { type AvatarVariants, avatarVariants } from "@adn-ui/core";

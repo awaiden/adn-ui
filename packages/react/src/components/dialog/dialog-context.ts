@@ -1,5 +1,5 @@
+import type { dialogVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { dialogVariants } from "./dialog.variants";
 
 type DialogContextValue = {
 	slots: ReturnType<typeof dialogVariants>;

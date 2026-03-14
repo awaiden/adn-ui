@@ -1,4 +1,4 @@
-import { surfaceVariants } from "./surface.variants";
+import { surfaceVariants } from "@adn-ui/core";
 
 export type SurfaceProps = React.ComponentProps<"div">;
 

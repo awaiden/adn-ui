@@ -91,4 +91,4 @@ export type DropdownMenuGroupProps = React.ComponentProps<
 export {
 	type DropdownMenuVariants,
 	dropdownMenuVariants,
-} from "./dropdown-menu.variants";
+} from "@adn-ui/core";

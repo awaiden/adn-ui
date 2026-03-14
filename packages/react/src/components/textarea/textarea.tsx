@@ -1,4 +1,4 @@
-import { type TextareaVariants, textareaVariants } from "./textarea.variants";
+import { type TextareaVariants, textareaVariants } from "@adn-ui/core";
 
 export type TextareaProps = React.ComponentProps<"textarea"> & TextareaVariants;
 

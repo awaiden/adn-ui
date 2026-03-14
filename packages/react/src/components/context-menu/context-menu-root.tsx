@@ -1,5 +1,5 @@
+import { contextMenuVariants } from "@adn-ui/core";
 import { ContextMenu } from "radix-ui";
-import { contextMenuVariants } from "./context-menu.variants";
 import { ContextMenuContext } from "./context-menu-context";
 
 export type ContextMenuRootProps = React.ComponentProps<

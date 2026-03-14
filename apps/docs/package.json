@@ -10,8 +10,8 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@adn-ui/react": "*",
-		"@adn-ui/react-themes": "*",
+		"@adn-ui/react": "workspace:*",
+		"@adn-ui/styles": "workspace:*",
 		"@astrojs/react": "^4.4.2",
 		"@astrojs/starlight": "^0.37.7",
 		"@tailwindcss/vite": "^4.2.1",

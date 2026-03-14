@@ -1,5 +1,5 @@
+import { alertDialogVariants } from "@adn-ui/core";
 import { AlertDialog } from "radix-ui";
-import { alertDialogVariants } from "./alert-dialog.variants";
 import { AlertDialogContext } from "./alert-dialog-context";
 
 export type AlertDialogRootProps = React.ComponentProps<

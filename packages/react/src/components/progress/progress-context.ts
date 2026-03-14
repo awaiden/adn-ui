@@ -1,5 +1,5 @@
+import type { progressVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { progressVariants } from "./progress.variants";
 
 type ProgressContextValue = {
 	slots: ReturnType<typeof progressVariants>;

@@ -1,5 +1,5 @@
+import type { scrollAreaVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { scrollAreaVariants } from "./scroll-area.variants";
 
 type ScrollAreaContextValue = {
 	slots: ReturnType<typeof scrollAreaVariants>;

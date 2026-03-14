@@ -1,5 +1,5 @@
+import { breadcrumbVariants } from "@adn-ui/core";
 import { cn } from "tailwind-variants";
-import { breadcrumbVariants } from "./breadcrumb.variants";
 import { BreadcrumbContext } from "./breadcrumb-context";
 
 export type BreadcrumbRootProps = React.ComponentProps<"nav">;

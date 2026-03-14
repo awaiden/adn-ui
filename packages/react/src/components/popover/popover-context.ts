@@ -1,5 +1,5 @@
+import type { popoverVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { popoverVariants } from "./popover.variants";
 
 type PopoverContextValue = {
 	slots: ReturnType<typeof popoverVariants>;

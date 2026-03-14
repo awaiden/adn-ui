@@ -67,4 +67,4 @@ export type AlertDialogOverlayProps = React.ComponentProps<
 export {
 	type AlertDialogVariants,
 	alertDialogVariants,
-} from "./alert-dialog.variants";
+} from "@adn-ui/core";

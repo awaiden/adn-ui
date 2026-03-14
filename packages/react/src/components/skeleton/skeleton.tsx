@@ -1,4 +1,4 @@
-import { type SkeletonVariants, skeletonVariants } from "./skeleton.variants";
+import { type SkeletonVariants, skeletonVariants } from "@adn-ui/core";
 
 export type SkeletonProps = React.ComponentProps<"div"> & SkeletonVariants;
 

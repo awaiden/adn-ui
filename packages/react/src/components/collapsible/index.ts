@@ -21,4 +21,4 @@ export type CollapsibleContentProps = React.ComponentProps<
 export {
 	type CollapsibleVariants,
 	collapsibleVariants,
-} from "./collapsible.variants";
+} from "@adn-ui/core";

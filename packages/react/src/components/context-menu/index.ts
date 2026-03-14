@@ -87,4 +87,4 @@ export type ContextMenuGroupProps = React.ComponentProps<
 export {
 	type ContextMenuVariants,
 	contextMenuVariants,
-} from "./context-menu.variants";
+} from "@adn-ui/core";

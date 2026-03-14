@@ -1,5 +1,5 @@
+import { type AlertVariants, alertVariants } from "@adn-ui/core";
 import { cn } from "tailwind-variants";
-import { type AlertVariants, alertVariants } from "./alert.variants";
 import { AlertContext } from "./alert-context";
 
 export type AlertRootProps = React.ComponentProps<"div"> & AlertVariants;

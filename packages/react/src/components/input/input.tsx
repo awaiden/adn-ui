@@ -1,4 +1,4 @@
-import { type InputVariants, inputVariants } from "./input.variants";
+import { type InputVariants, inputVariants } from "@adn-ui/core";
 
 export type InputProps = Omit<React.ComponentProps<"input">, "size"> &
 	InputVariants;

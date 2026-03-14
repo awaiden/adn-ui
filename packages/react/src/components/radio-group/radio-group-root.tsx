@@ -1,6 +1,6 @@
+import { radioGroupVariants } from "@adn-ui/core";
 import { RadioGroup } from "radix-ui";
 import { cn } from "tailwind-variants";
-import { radioGroupVariants } from "./radio-group.variants";
 import { RadioGroupContext } from "./radio-group-context";
 
 export type RadioGroupRootProps = React.ComponentProps<typeof RadioGroup.Root>;

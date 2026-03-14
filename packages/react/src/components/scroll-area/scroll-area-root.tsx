@@ -1,6 +1,6 @@
+import { scrollAreaVariants } from "@adn-ui/core";
 import { ScrollArea } from "radix-ui";
 import { cn } from "tailwind-variants";
-import { scrollAreaVariants } from "./scroll-area.variants";
 import { ScrollAreaContext } from "./scroll-area-context";
 
 export type ScrollAreaRootProps = React.ComponentProps<typeof ScrollArea.Root>;

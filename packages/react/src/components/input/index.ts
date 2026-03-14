@@ -6,4 +6,4 @@ export { InputRoot };
 
 export type InputRootProps = React.ComponentProps<typeof InputRoot>;
 
-export { type InputVariants, inputVariants } from "./input.variants";
+export { type InputVariants, inputVariants } from "@adn-ui/core";

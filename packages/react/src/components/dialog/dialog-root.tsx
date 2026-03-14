@@ -1,5 +1,5 @@
+import { dialogVariants } from "@adn-ui/core";
 import { Dialog } from "radix-ui";
-import { dialogVariants } from "./dialog.variants";
 import { DialogContext } from "./dialog-context";
 
 export type DialogRootProps = React.ComponentProps<typeof Dialog.Root>;

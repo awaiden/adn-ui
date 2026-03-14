@@ -20,4 +20,4 @@ export type CardDescriptionProps = React.ComponentProps<typeof CardDescription>;
 export type CardHeaderProps = React.ComponentProps<typeof CardHeader>;
 export type CardTitleProps = React.ComponentProps<typeof CardTitle>;
 
-export { type CardVariants, cardVariants } from "./card.variants";
+export { type CardVariants, cardVariants } from "@adn-ui/core";

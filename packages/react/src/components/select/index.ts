@@ -38,4 +38,4 @@ export type SelectGroupProps = React.ComponentProps<typeof SelectGroup>;
 export type SelectLabelProps = React.ComponentProps<typeof SelectLabel>;
 export type SelectSeparatorProps = React.ComponentProps<typeof SelectSeparator>;
 
-export { type SelectVariants, selectVariants } from "./select.variants";
+export { type SelectVariants, selectVariants } from "@adn-ui/core";

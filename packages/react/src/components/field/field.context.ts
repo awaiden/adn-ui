@@ -1,5 +1,5 @@
+import type { fieldVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-import type { fieldVariants } from "./field.variants";
 
 interface FieldContextValue {
 	id: string;

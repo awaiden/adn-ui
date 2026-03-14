@@ -1,5 +1,5 @@
+import type { alertDialogVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-import type { alertDialogVariants } from "./alert-dialog.variants";
 
 interface AlertDialogContextValue {
 	slots: ReturnType<typeof alertDialogVariants>;

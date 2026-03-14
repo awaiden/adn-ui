@@ -6,4 +6,4 @@ export { LabelRoot };
 
 export type LabelRootProps = React.ComponentProps<typeof LabelRoot>;
 
-export { type LabelVariants, labelVariants } from "./label.variants";
+export { type LabelVariants, labelVariants } from "@adn-ui/core";

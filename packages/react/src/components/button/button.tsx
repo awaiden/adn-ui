@@ -1,4 +1,4 @@
-import { type ButtonVariants, buttonVariants } from "./button.variants";
+import { type ButtonVariants, buttonVariants } from "@adn-ui/core";
 
 export type ButtonProps = React.ComponentProps<"button"> & ButtonVariants;
 

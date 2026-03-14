@@ -48,4 +48,4 @@ export type DialogDescriptionProps = React.ComponentProps<
 >;
 export type DialogCloseProps = React.ComponentProps<typeof DialogClose>;
 
-export { type DialogVariants, dialogVariants } from "./dialog.variants";
+export { type DialogVariants, dialogVariants } from "@adn-ui/core";

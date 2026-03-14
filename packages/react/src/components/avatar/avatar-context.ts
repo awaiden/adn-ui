@@ -1,5 +1,5 @@
+import type { avatarVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { avatarVariants } from "./avatar.variants";
 
 type AvatarContextValue = {
 	slots: ReturnType<typeof avatarVariants>;

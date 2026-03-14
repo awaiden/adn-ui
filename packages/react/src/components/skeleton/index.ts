@@ -6,4 +6,4 @@ export { SkeletonRoot };
 
 export type SkeletonRootProps = React.ComponentProps<typeof SkeletonRoot>;
 
-export { type SkeletonVariants, skeletonVariants } from "./skeleton.variants";
+export { type SkeletonVariants, skeletonVariants } from "@adn-ui/core";

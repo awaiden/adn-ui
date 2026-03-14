@@ -11,4 +11,4 @@ export { SwitchRoot, SwitchThumb };
 export type SwitchRootProps = React.ComponentProps<typeof SwitchRoot>;
 export type SwitchThumbProps = React.ComponentProps<typeof SwitchThumb>;
 
-export { type SwitchVariants, switchVariants } from "./switch.variants";
+export { type SwitchVariants, switchVariants } from "@adn-ui/core";

@@ -26,4 +26,4 @@ export type PopoverAnchorProps = React.ComponentProps<typeof PopoverAnchor>;
 export type PopoverContentProps = React.ComponentProps<typeof PopoverContent>;
 export type PopoverCloseProps = React.ComponentProps<typeof PopoverClose>;
 
-export { type PopoverVariants, popoverVariants } from "./popover.variants";
+export { type PopoverVariants, popoverVariants } from "@adn-ui/core";

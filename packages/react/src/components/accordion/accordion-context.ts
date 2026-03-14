@@ -1,6 +1,5 @@
+import type { accordionVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-
-import type { accordionVariants } from "./accordion.variants";
 
 interface AccordionContextValue {
 	slots: ReturnType<typeof accordionVariants>;

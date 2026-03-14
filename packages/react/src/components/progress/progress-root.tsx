@@ -1,5 +1,5 @@
+import { type ProgressVariants, progressVariants } from "@adn-ui/core";
 import { Progress } from "radix-ui";
-import { type ProgressVariants, progressVariants } from "./progress.variants";
 import { ProgressContext } from "./progress-context";
 
 export type ProgressRootProps = React.ComponentProps<typeof Progress.Root> &

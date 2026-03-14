@@ -1,5 +1,5 @@
+import type { tabsVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { tabsVariants } from "./tabs.variants";
 
 type TabsContextValue = {
 	slots: ReturnType<typeof tabsVariants>;

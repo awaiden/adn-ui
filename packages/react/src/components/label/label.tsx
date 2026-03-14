@@ -1,4 +1,4 @@
-import { type LabelVariants, labelVariants } from "./label.variants";
+import { type LabelVariants, labelVariants } from "@adn-ui/core";
 
 export type LabelProps = React.ComponentProps<"label"> & LabelVariants;
 

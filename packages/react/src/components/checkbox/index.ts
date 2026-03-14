@@ -13,4 +13,4 @@ export type CheckboxIndicatorProps = React.ComponentProps<
 	typeof CheckboxIndicator
 >;
 
-export { type CheckboxVariants, checkboxVariants } from "./checkbox.variants";
+export { type CheckboxVariants, checkboxVariants } from "@adn-ui/core";

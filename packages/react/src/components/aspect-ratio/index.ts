@@ -9,4 +9,4 @@ export type AspectRatioRootProps = React.ComponentProps<typeof AspectRatioRoot>;
 export {
 	type AspectRatioVariants,
 	aspectRatioVariants,
-} from "./aspect-ratio.variants";
+} from "@adn-ui/core";

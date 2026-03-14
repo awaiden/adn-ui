@@ -1,5 +1,5 @@
+import type { checkboxVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { checkboxVariants } from "./checkbox.variants";
 
 type CheckboxContextValue = {
 	slots: ReturnType<typeof checkboxVariants>;

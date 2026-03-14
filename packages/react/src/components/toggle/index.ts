@@ -6,4 +6,4 @@ export { ToggleRoot };
 
 export type ToggleRootProps = React.ComponentProps<typeof ToggleRoot>;
 
-export { type ToggleVariants, toggleVariants } from "./toggle.variants";
+export { type ToggleVariants, toggleVariants } from "@adn-ui/core";

@@ -26,4 +26,4 @@ export type TooltipTriggerProps = React.ComponentProps<typeof TooltipTrigger>;
 export type TooltipContentProps = React.ComponentProps<typeof TooltipContent>;
 export type TooltipArrowProps = React.ComponentProps<typeof TooltipArrow>;
 
-export { type TooltipVariants, tooltipVariants } from "./tooltip.variants";
+export { type TooltipVariants, tooltipVariants } from "@adn-ui/core";

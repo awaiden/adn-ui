@@ -1,5 +1,5 @@
+import { type GroupVariants, groupVariants } from "@adn-ui/core";
 import { GroupContext } from "./group.context";
-import { type GroupVariants, groupVariants } from "./group.variants";
 
 export type GroupRootProps = React.HTMLAttributes<HTMLDivElement> &
 	GroupVariants;

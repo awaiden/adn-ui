@@ -1,5 +1,5 @@
+import { type TabsVariants, tabsVariants } from "@adn-ui/core";
 import { Tabs } from "radix-ui";
-import { type TabsVariants, tabsVariants } from "./tabs.variants";
 import { TabsContext } from "./tabs-context";
 
 export type TabsRootProps = React.ComponentProps<typeof Tabs.Root> &

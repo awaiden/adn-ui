@@ -1,5 +1,5 @@
+import { tooltipVariants } from "@adn-ui/core";
 import { Tooltip } from "radix-ui";
-import { tooltipVariants } from "./tooltip.variants";
 import { TooltipContext } from "./tooltip-context";
 
 export type TooltipRootProps = React.ComponentProps<typeof Tooltip.Root>;

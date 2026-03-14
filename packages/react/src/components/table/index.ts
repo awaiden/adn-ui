@@ -38,4 +38,4 @@ export type TableHeadProps = React.ComponentProps<typeof TableHead>;
 export type TableCellProps = React.ComponentProps<typeof TableCell>;
 export type TableCaptionProps = React.ComponentProps<typeof TableCaption>;
 
-export { type TableVariants, tableVariants } from "./table.variants";
+export { type TableVariants, tableVariants } from "@adn-ui/core";

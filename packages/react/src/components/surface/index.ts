@@ -6,4 +6,4 @@ export { SurfaceRoot };
 
 export type SurfaceRootProps = React.ComponentProps<typeof SurfaceRoot>;
 
-export { type SurfaceVariants, surfaceVariants } from "./surface.variants";
+export { type SurfaceVariants, surfaceVariants } from "@adn-ui/core";

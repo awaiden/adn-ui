@@ -1,6 +1,5 @@
+import type { collapsibleVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-
-import type { collapsibleVariants } from "./collapsible.variants";
 
 interface CollapsibleContextValue {
 	slots: ReturnType<typeof collapsibleVariants>;

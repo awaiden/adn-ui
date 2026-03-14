@@ -10,7 +10,7 @@ export const Group = {
 
 export { GroupPrefix, GroupRoot, GroupSuffix };
 
-export { type GroupVariants, groupVariants } from "./group.variants";
+export { type GroupVariants, groupVariants } from "@adn-ui/core";
 
 export type { GroupPrefixProps } from "./group-prefix";
 export type { GroupRootProps } from "./group-root";

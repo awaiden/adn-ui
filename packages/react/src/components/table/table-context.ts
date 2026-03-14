@@ -1,5 +1,5 @@
+import type { tableVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { tableVariants } from "./table.variants";
 
 type TableContextValue = {
 	slots: ReturnType<typeof tableVariants>;

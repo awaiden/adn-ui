@@ -1,5 +1,5 @@
+import { type ToggleVariants, toggleVariants } from "@adn-ui/core";
 import { Toggle } from "radix-ui";
-import { type ToggleVariants, toggleVariants } from "./toggle.variants";
 
 export type ToggleRootProps = React.ComponentProps<typeof Toggle.Root> &
 	ToggleVariants;

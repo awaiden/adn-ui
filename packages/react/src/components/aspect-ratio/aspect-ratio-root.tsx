@@ -1,8 +1,5 @@
+import { type AspectRatioVariants, aspectRatioVariants } from "@adn-ui/core";
 import { AspectRatio } from "radix-ui";
-import {
-	type AspectRatioVariants,
-	aspectRatioVariants,
-} from "./aspect-ratio.variants";
 
 export type AspectRatioProps = React.ComponentProps<typeof AspectRatio.Root> &
 	AspectRatioVariants;

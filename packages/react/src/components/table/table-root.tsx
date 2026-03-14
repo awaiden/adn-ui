@@ -1,5 +1,5 @@
+import { tableVariants } from "@adn-ui/core";
 import { cn } from "tailwind-variants";
-import { tableVariants } from "./table.variants";
 import { TableContext } from "./table-context";
 
 export type TableRootProps = React.ComponentProps<"table">;

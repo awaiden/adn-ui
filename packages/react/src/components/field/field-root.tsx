@@ -1,6 +1,6 @@
+import { type FieldVariants, fieldVariants } from "@adn-ui/core";
 import { useId } from "react";
 import { FieldContext } from "./field.context";
-import { type FieldVariants, fieldVariants } from "./field.variants";
 
 export type FieldRootProps = React.HTMLAttributes<HTMLDivElement> &
 	FieldVariants;

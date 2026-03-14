@@ -1,5 +1,5 @@
+import { type AvatarVariants, avatarVariants } from "@adn-ui/core";
 import { Avatar } from "radix-ui";
-import { type AvatarVariants, avatarVariants } from "./avatar.variants";
 import { AvatarContext } from "./avatar-context";
 
 export type AvatarRootProps = React.ComponentProps<typeof Avatar.Root> &

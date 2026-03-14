@@ -6,4 +6,4 @@ export { TextareaRoot };
 
 export type TextareaRootProps = React.ComponentProps<typeof TextareaRoot>;
 
-export { type TextareaVariants, textareaVariants } from "./textarea.variants";
+export { type TextareaVariants, textareaVariants } from "@adn-ui/core";

@@ -35,4 +35,4 @@ export type ScrollAreaCornerProps = React.ComponentProps<
 export {
 	type ScrollAreaVariants,
 	scrollAreaVariants,
-} from "./scroll-area.variants";
+} from "@adn-ui/core";

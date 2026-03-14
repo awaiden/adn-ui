@@ -26,48 +26,47 @@
 		"dist"
 	],
 	"type": "module",
-	"main": "dist/react.cjs",
-	"module": "dist/react.js",
-	"types": "dist/react.d.ts",
+	"main": "dist/index.cjs",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/react.d.ts",
-			"import": "./dist/react.js",
-			"require": "./dist/react.cjs"
-		},
-		"./styles": "./dist/react.css"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
 	},
 	"scripts": {
-		"dev": "vite build --watch",
-		"build": "vite build",
+		"dev": "tsdown --watch",
+		"build": "tsdown",
 		"test": "vitest",
-		"storybook": "BROWSER=none storybook dev -p 6006",
+		"storybook": "BROWSER=none storybook dev -p 6008",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
+		"@adn-ui/core": "workspace:*",
+		"@adn-ui/styles": "workspace:*",
 		"lucide-react": "^0.577.0",
 		"radix-ui": "^1.4.3",
-		"tailwind-merge": "^3.5.0",
-		"tailwind-variants": "^3.2.2",
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
+		"@tailwindcss/vite": "^4.2.1",
+		"@storybook/addon-styling-webpack": "^3.0.0",
 		"@storybook/addon-themes": "^10.2.16",
 		"@storybook/react-vite": "^10.2.16",
-		"@tailwindcss/vite": "^4.2.1",
 		"@types/node": "^25.4.0",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^5.1.4",
-		"@vitest/browser-playwright": "^4.0.18",
+		"@vitejs/plugin-react": "^6.0.0",
 		"globals": "^16.5.0",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
 		"storybook": "^10.2.16",
 		"tailwindcss": "^4.2.1",
+		"tsdown": "^0.21.2",
 		"typescript": "~5.9.3",
-		"vite": "^7.3.1",
-		"vite-plugin-dts": "^4.5.4",
+		"vite": "7",
 		"vitest": "^4.0.18",
 		"vitest-browser-react": "^2.0.5"
 	},

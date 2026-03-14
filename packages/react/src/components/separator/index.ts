@@ -9,4 +9,4 @@ export type SeparatorRootProps = React.ComponentProps<typeof SeparatorRoot>;
 export {
 	type SeparatorVariants,
 	separatorVariants,
-} from "./separator.variants";
+} from "@adn-ui/core";

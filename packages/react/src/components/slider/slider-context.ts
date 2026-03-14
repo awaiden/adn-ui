@@ -1,5 +1,5 @@
+import type { sliderVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { sliderVariants } from "./slider.variants";
 
 type SliderContextValue = {
 	slots: ReturnType<typeof sliderVariants>;

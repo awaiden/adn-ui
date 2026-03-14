@@ -1,5 +1,5 @@
+import { popoverVariants } from "@adn-ui/core";
 import { Popover } from "radix-ui";
-import { popoverVariants } from "./popover.variants";
 import { PopoverContext } from "./popover-context";
 
 export type PopoverRootProps = React.ComponentProps<typeof Popover.Root>;

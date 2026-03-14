@@ -16,4 +16,4 @@ export type AlertDescriptionProps = React.ComponentProps<
 	typeof AlertDescription
 >;
 
-export { type AlertVariants, alertVariants } from "./alert.variants";
+export { type AlertVariants, alertVariants } from "@adn-ui/core";

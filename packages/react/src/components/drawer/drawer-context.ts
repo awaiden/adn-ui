@@ -1,5 +1,5 @@
+import type { drawerVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { drawerVariants } from "./drawer.variants";
 
 type DrawerContextValue = {
 	slots: ReturnType<typeof drawerVariants>;

@@ -48,4 +48,4 @@ export type DrawerDescriptionProps = React.ComponentProps<
 >;
 export type DrawerCloseProps = React.ComponentProps<typeof DrawerClose>;
 
-export { type DrawerVariants, drawerVariants } from "./drawer.variants";
+export { type DrawerVariants, drawerVariants } from "@adn-ui/core";

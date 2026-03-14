@@ -1,5 +1,5 @@
+import type { dropdownMenuVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { dropdownMenuVariants } from "./dropdown-menu.variants";
 
 type DropdownMenuContextValue = {
 	slots: ReturnType<typeof dropdownMenuVariants>;

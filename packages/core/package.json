@@ -1,0 +1,29 @@
+{
+	"name": "@adn-ui/core",
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "tsdown --watch",
+		"build": "tsdown"
+	},
+	"exports": {
+		".": {
+			"types": {
+				"import": "./dist/index.d.mts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"dependencies": {
+		"tailwind-variants": "^3.2.2"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"tsdown": "^0.21.2"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	}
+}

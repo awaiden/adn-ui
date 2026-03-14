@@ -1,5 +1,5 @@
+import type { groupVariants } from "@adn-ui/core";
 import { createContext, useContext } from "react";
-import type { groupVariants } from "./group.variants";
 
 interface GroupContextValue {
 	slots: ReturnType<typeof groupVariants>;

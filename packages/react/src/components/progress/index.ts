@@ -13,4 +13,4 @@ export type ProgressIndicatorProps = React.ComponentProps<
 	typeof ProgressIndicator
 >;
 
-export { type ProgressVariants, progressVariants } from "./progress.variants";
+export { type ProgressVariants, progressVariants } from "@adn-ui/core";

@@ -6,4 +6,4 @@ export { ButtonRoot };
 
 export type ButtonRootProps = React.ComponentProps<typeof ButtonRoot>;
 
-export { type ButtonVariants, buttonVariants } from "./button.variants";
+export { type ButtonVariants, buttonVariants } from "@adn-ui/core";

@@ -1,5 +1,5 @@
+import type { selectVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
-import type { selectVariants } from "./select.variants";
 
 type SelectContextValue = {
 	slots: ReturnType<typeof selectVariants>;

@@ -1,6 +1,6 @@
+import { collapsibleVariants } from "@adn-ui/core";
 import { Collapsible } from "radix-ui";
 import { cn } from "tailwind-variants";
-import { collapsibleVariants } from "./collapsible.variants";
 import { CollapsibleContext } from "./collapsible-context";
 
 export type CollapsibleRootProps = React.ComponentProps<

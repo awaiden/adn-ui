@@ -41,4 +41,4 @@ export type BreadcrumbEllipsisProps = React.ComponentProps<
 export {
 	type BreadcrumbVariants,
 	breadcrumbVariants,
-} from "./breadcrumb.variants";
+} from "@adn-ui/core";
