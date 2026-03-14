@@ -2,7 +2,7 @@
 	@apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
 
 	&:focus {
-		@apply outline-hidden ring-2 ring-neutral-400 ring-offset-2;
+		@apply ring-2 ring-neutral-400 ring-offset-2 outline-hidden;
 	}
 }
 
@@ -19,5 +19,5 @@
 }
 
 .badge--outline {
-	@apply border bg-transparent text-foreground;
+	@apply text-foreground border bg-transparent;
 }

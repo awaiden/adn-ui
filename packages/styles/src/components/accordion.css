@@ -25,7 +25,7 @@
 }
 
 .accordion__trigger > .accordion__chevron {
-	@apply size-4 shrink-0 text-muted-foreground transition-transform duration-200;
+	@apply text-muted-foreground size-4 shrink-0 transition-transform duration-200;
 }
 
 .accordion__content {

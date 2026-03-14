@@ -1,5 +1,5 @@
 .separator {
-	@apply shrink-0 bg-border;
+	@apply bg-border shrink-0;
 }
 
 .separator--horizontal {

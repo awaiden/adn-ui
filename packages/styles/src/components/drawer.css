@@ -1,5 +1,5 @@
 .drawer__overlay {
-	@apply fixed inset-0 z-50 bg-overlay backdrop-blur-sm;
+	@apply bg-overlay fixed inset-0 z-50 backdrop-blur-sm;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in duration-200;
@@ -11,7 +11,7 @@
 }
 
 .drawer__content {
-	@apply fixed z-50 gap-4 border bg-background p-6 shadow-lg transition-transform duration-200 ease-in-out;
+	@apply bg-background fixed z-50 gap-4 border p-6 shadow-lg transition-transform duration-200 ease-in-out;
 
 	&[data-state="closed"] {
 		@apply duration-200;
@@ -75,13 +75,13 @@
 }
 
 .drawer__title {
-	@apply text-lg font-semibold leading-none tracking-tight;
+	@apply text-lg leading-none font-semibold tracking-tight;
 }
 
 .drawer__description {
-	@apply text-sm text-muted-foreground;
+	@apply text-muted-foreground text-sm;
 }
 
 .drawer__close {
-	@apply absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 disabled:pointer-events-none;
+	@apply ring-offset-background absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none;
 }

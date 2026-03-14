@@ -1,11 +1,11 @@
 .select__trigger {
-	@apply flex h-10 w-full items-center justify-between rounded-md border border-muted-foreground/30 bg-muted/50 px-3 py-2 text-base text-foreground;
+	@apply border-muted-foreground/30 bg-muted/50 text-foreground flex h-10 w-full items-center justify-between rounded-md border px-3 py-2 text-base;
 
 	@apply transition-colors;
 
 	@apply placeholder:text-muted-foreground/70;
 
-	@apply focus:outline-none focus:ring-2 focus:ring-ring/70 focus:border-accent;
+	@apply focus:ring-ring/70 focus:border-accent focus:ring-2 focus:outline-none;
 
 	&:disabled {
 		@apply status-disabled;
@@ -17,11 +17,11 @@
 }
 
 .select__icon {
-	@apply size-4 shrink-0 text-muted-foreground;
+	@apply text-muted-foreground size-4 shrink-0;
 }
 
 .select__content {
-	@apply relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border bg-surface text-surface-foreground shadow-md;
+	@apply bg-surface text-surface-foreground relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border shadow-md;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in zoom-in-95;
@@ -53,7 +53,7 @@
 }
 
 .select__item {
-	@apply relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-hidden;
+	@apply relative flex w-full cursor-default items-center rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none;
 
 	@apply focus:bg-accent focus:text-accent-foreground;
 
@@ -67,11 +67,11 @@
 }
 
 .select__label {
-	@apply px-2 py-1.5 text-xs font-semibold text-muted-foreground;
+	@apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;
 }
 
 .select__separator {
-	@apply -mx-1 my-1 h-px bg-border;
+	@apply bg-border -mx-1 my-1 h-px;
 }
 
 .select__scroll-button {

@@ -1,5 +1,5 @@
 .tooltip__content {
-	@apply z-50 overflow-hidden rounded-md border bg-surface px-3 py-1.5 text-sm text-surface-foreground shadow-md outline-hidden;
+	@apply bg-surface text-surface-foreground z-50 overflow-hidden rounded-md border px-3 py-1.5 text-sm shadow-md outline-hidden;
 
 	&[data-state="delayed-open"],
 	&[data-state="instant-open"] {

@@ -1,5 +1,5 @@
 .alert-dialog__overlay {
-	@apply fixed inset-0 z-50 bg-overlay backdrop-blur-sm;
+	@apply bg-overlay fixed inset-0 z-50 backdrop-blur-sm;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in duration-200;
@@ -11,7 +11,7 @@
 }
 
 .alert-dialog__content {
-	@apply fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border bg-background p-6 shadow-lg duration-200 rounded-lg;
+	@apply bg-background fixed top-1/2 left-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg border p-6 shadow-lg duration-200;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-[48%];
@@ -35,5 +35,5 @@
 }
 
 .alert-dialog__description {
-	@apply text-sm text-muted-foreground;
+	@apply text-muted-foreground text-sm;
 }

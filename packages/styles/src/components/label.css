@@ -1,5 +1,5 @@
 .label {
-	@apply inline-flex items-center select-none font-medium leading-none;
+	@apply inline-flex items-center leading-none font-medium select-none;
 
 	&:has(+ :disabled),
 	&:has(+ input:disabled) {

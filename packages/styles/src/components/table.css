@@ -15,11 +15,11 @@
 }
 
 .table__footer {
-	@apply border-t bg-muted/50 font-medium [&_tr:last-child]:border-0;
+	@apply bg-muted/50 border-t font-medium [&_tr:last-child]:border-0;
 }
 
 .table__row {
-	@apply border-b transition-colors hover:bg-muted/50;
+	@apply hover:bg-muted/50 border-b transition-colors;
 
 	&[data-state="selected"] {
 		@apply bg-muted;
@@ -27,7 +27,7 @@
 }
 
 .table__head {
-	@apply h-10 px-3 text-left align-middle font-medium text-muted-foreground;
+	@apply text-muted-foreground h-10 px-3 text-left align-middle font-medium;
 
 	&[role="checkbox"] {
 		@apply pr-0;
@@ -43,5 +43,5 @@
 }
 
 .table__caption {
-	@apply mt-4 text-sm text-muted-foreground;
+	@apply text-muted-foreground mt-4 text-sm;
 }

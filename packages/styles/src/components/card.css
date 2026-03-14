@@ -1,5 +1,5 @@
 .card {
-	@apply rounded-lg border bg-surface text-surface-foreground shadow-sm;
+	@apply bg-surface text-surface-foreground rounded-lg border shadow-sm;
 }
 
 .card__header {
@@ -7,11 +7,11 @@
 }
 
 .card__title {
-	@apply text-lg font-semibold leading-none tracking-tight;
+	@apply text-lg leading-none font-semibold tracking-tight;
 }
 
 .card__description {
-	@apply text-sm text-muted-foreground;
+	@apply text-muted-foreground text-sm;
 }
 
 .card__content {

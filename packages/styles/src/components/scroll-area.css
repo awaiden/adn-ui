@@ -7,7 +7,7 @@
 }
 
 .scroll-area__scrollbar {
-	@apply flex touch-none select-none transition-colors;
+	@apply flex touch-none transition-colors select-none;
 
 	&[data-orientation="vertical"] {
 		@apply h-full w-2.5 border-l border-l-transparent p-px;
@@ -19,7 +19,7 @@
 }
 
 .scroll-area__thumb {
-	@apply relative flex-1 rounded-full bg-border;
+	@apply bg-border relative flex-1 rounded-full;
 }
 
 .scroll-area__corner {

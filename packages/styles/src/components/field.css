@@ -15,9 +15,9 @@
 }
 
 .field__description {
-	@apply text-sm text-muted-foreground;
+	@apply text-muted-foreground text-sm;
 }
 
 .field__error {
-	@apply text-sm text-destructive;
+	@apply text-destructive text-sm;
 }

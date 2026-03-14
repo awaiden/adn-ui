@@ -20,18 +20,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          bun-version: latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Install Dependencies
-        run: bun install
+        run: pnpm install
 
       - name: Build All Packages
-        run: bun turbo run build
+        run: pnpm turbo run build
 
       - name: Release Canary to NPM
         env:

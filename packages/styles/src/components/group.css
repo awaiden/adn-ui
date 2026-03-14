@@ -3,11 +3,11 @@
 }
 
 .group__prefix {
-	@apply absolute left-0 top-1/2 -translate-y-1/2;
+	@apply absolute top-1/2 left-0 -translate-y-1/2;
 }
 
 .group__suffix {
-	@apply absolute right-0 top-1/2 -translate-y-1/2;
+	@apply absolute top-1/2 right-0 -translate-y-1/2;
 }
 
 .group:has([data-slot="prefix"]) [data-slot="input"] {

@@ -1,5 +1,5 @@
 .skeleton {
-	@apply animate-pulse bg-muted;
+	@apply bg-muted animate-pulse;
 }
 
 .skeleton--default {

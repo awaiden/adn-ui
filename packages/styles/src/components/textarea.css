@@ -1,11 +1,11 @@
 .textarea {
-	@apply w-full rounded-md border border-muted-foreground/30 bg-muted/50 text-foreground;
+	@apply border-muted-foreground/30 bg-muted/50 text-foreground w-full rounded-md border;
 
 	@apply transition-colors;
 
 	@apply placeholder:text-muted-foreground/70;
 
-	@apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:border-accent;
+	@apply focus-visible:ring-ring/70 focus-visible:border-accent focus-visible:ring-2 focus-visible:outline-none;
 
 	@apply resize-y;
 

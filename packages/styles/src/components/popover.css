@@ -1,5 +1,5 @@
 .popover__content {
-	@apply z-50 w-72 rounded-md border bg-surface p-4 text-surface-foreground shadow-md outline-hidden;
+	@apply bg-surface text-surface-foreground z-50 w-72 rounded-md border p-4 shadow-md outline-hidden;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in zoom-in-95;
@@ -27,7 +27,7 @@
 }
 
 .popover__close {
-	@apply absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring/50 focus:ring-offset-2;
+	@apply focus:ring-ring/50 absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden;
 }
 
 .popover__arrow {

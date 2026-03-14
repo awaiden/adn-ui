@@ -15,8 +15,8 @@
 }
 
 .tabs__trigger {
-	@apply inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium transition-all;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+	@apply inline-flex items-center justify-center px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-all;
+	@apply focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:outline-hidden;
 	@apply disabled:pointer-events-none disabled:opacity-50;
 	@apply ring-offset-background;
 }
@@ -33,6 +33,6 @@
 
 .tabs__content {
 	@apply mt-2;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+	@apply focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:outline-hidden;
 	@apply ring-offset-background;
 }

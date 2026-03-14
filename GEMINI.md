@@ -15,6 +15,7 @@
 ## Building and Running
 
 ### Core Commands
+
 - **Install Dependencies**: `bun install`
 - **Build All**: `bun run build` (via Turbo)
 - **Dev Mode**: `bun dev` (starts dev mode for all workspaces)
@@ -22,12 +23,14 @@
 - **Test**: `bun run test`
 
 ### Framework-specific Development
+
 - **React Storybook**: `cd packages/react && bun run storybook`
 - **React Tests**: `cd packages/react && bun run test`
 
 ## Development Conventions
 
 ### Component Architecture
+
 - **Compound Components**: Follow a consistent compound component API. Export components as a main object with sub-components (e.g., `Button.Icon`).
 - **Variant-First Styling**: All styling variants must be defined in `@adn-ui/core` using `tailwind-variants` to ensure consistency across frameworks (React, Svelte, Vue).
 - **Separation of Concerns**:
@@ -36,11 +39,13 @@
   - **Framework Implementation**: `packages/react`, etc.
 
 ### Coding Standards
+
 - **Tooling**: Biome is used for linting and formatting via `vp lint` and `vp fmt`.
 - **Naming**: Use kebab-case for filenames and BEM-inspired naming for core CSS classes.
 - **Accessibility**: All components MUST prioritize accessibility, leveraging Radix UI primitives and following WCAG guidelines.
 - **Changesets**: Use `bun changeset` to document changes for versioning and publishing.
 
 ### Testing
+
 - **Vitest**: Preferred testing framework.
 - **Browser Testing**: `vitest-browser-react` is used for React component testing to ensure accurate rendering and interaction checks.

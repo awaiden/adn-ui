@@ -1,5 +1,5 @@
 .button {
-	@apply inline-flex items-center justify-center rounded-button font-medium gap-2;
+	@apply rounded-button inline-flex items-center justify-center gap-2 font-medium;
 
 	@apply transition-[scale,bg-color];
 
@@ -29,23 +29,23 @@
 }
 
 .button--outline {
-	@apply border bg-transparent text-foreground hover:bg-muted hover:text-muted-foreground;
+	@apply text-foreground hover:bg-muted hover:text-muted-foreground border bg-transparent;
 }
 
 .button--ghost {
-	@apply bg-transparent text-foreground hover:bg-muted hover:text-muted-foreground;
+	@apply text-foreground hover:bg-muted hover:text-muted-foreground bg-transparent;
 }
 
 .button--sm {
-	@apply px-2 h-8 text-sm;
+	@apply h-8 px-2 text-sm;
 }
 
 .button--md {
-	@apply px-4 h-10 text-base;
+	@apply h-10 px-4 text-base;
 }
 
 .button--lg {
-	@apply px-6 h-12 text-lg;
+	@apply h-12 px-6 text-lg;
 }
 
 .button--icon {

@@ -1,7 +1,7 @@
 .toggle {
 	@apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
 	@apply hover:bg-neutral-100 hover:text-neutral-900;
-	@apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-950;
+	@apply focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:outline-none;
 	@apply disabled:pointer-events-none disabled:opacity-50;
 	@apply data-[state=on]:bg-neutral-200 data-[state=on]:text-neutral-900;
 }

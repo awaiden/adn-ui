@@ -1,6 +1,6 @@
 .dropdown-menu__content,
 .dropdown-menu__sub-content {
-	@apply z-50 min-w-32 overflow-hidden rounded-md border bg-surface p-1 text-surface-foreground shadow-md;
+	@apply bg-surface text-surface-foreground z-50 min-w-32 overflow-hidden rounded-md border p-1 shadow-md;
 
 	&[data-state="open"] {
 		@apply animate-in fade-in zoom-in-95;
@@ -31,7 +31,7 @@
 .dropdown-menu__checkbox-item,
 .dropdown-menu__radio-item,
 .dropdown-menu__sub-trigger {
-	@apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden;
+	@apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none;
 
 	@apply focus:bg-accent focus:text-accent-foreground;
 
@@ -55,7 +55,7 @@
 }
 
 .dropdown-menu__separator {
-	@apply -mx-1 my-1 h-px bg-border;
+	@apply bg-border -mx-1 my-1 h-px;
 }
 
 .dropdown-menu__shortcut {

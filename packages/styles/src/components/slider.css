@@ -1,8 +1,8 @@
 .slider {
-	@apply relative flex w-full touch-none select-none items-center;
+	@apply relative flex w-full touch-none items-center select-none;
 
 	&[data-orientation="vertical"] {
-		@apply flex-col h-full w-auto;
+		@apply h-full w-auto flex-col;
 	}
 
 	&[data-disabled] {
@@ -14,7 +14,7 @@
 	@apply h-4;
 
 	&[data-orientation="vertical"] {
-		@apply w-4 h-auto;
+		@apply h-auto w-4;
 	}
 }
 
@@ -22,7 +22,7 @@
 	@apply h-5;
 
 	&[data-orientation="vertical"] {
-		@apply w-5 h-auto;
+		@apply h-auto w-5;
 	}
 }
 
@@ -30,12 +30,12 @@
 	@apply h-6;
 
 	&[data-orientation="vertical"] {
-		@apply w-6 h-auto;
+		@apply h-auto w-6;
 	}
 }
 
 .slider__track {
-	@apply relative grow overflow-hidden rounded-full bg-muted;
+	@apply bg-muted relative grow overflow-hidden rounded-full;
 
 	&[data-orientation="horizontal"] {
 		@apply w-full;
@@ -50,7 +50,7 @@
 	@apply h-1;
 
 	&[data-orientation="vertical"] {
-		@apply w-1 h-auto;
+		@apply h-auto w-1;
 	}
 }
 
@@ -58,7 +58,7 @@
 	@apply h-1.5;
 
 	&[data-orientation="vertical"] {
-		@apply w-1.5 h-auto;
+		@apply h-auto w-1.5;
 	}
 }
 
@@ -66,12 +66,12 @@
 	@apply h-2;
 
 	&[data-orientation="vertical"] {
-		@apply w-2 h-auto;
+		@apply h-auto w-2;
 	}
 }
 
 .slider__range {
-	@apply absolute rounded-full bg-primary;
+	@apply bg-primary absolute rounded-full;
 
 	&[data-orientation="horizontal"] {
 		@apply h-full;
@@ -83,9 +83,9 @@
 }
 
 .slider__thumb {
-	@apply block rounded-full border-2 border-primary bg-background shadow-sm;
+	@apply border-primary bg-background block rounded-full border-2 shadow-sm;
 	@apply ring-offset-background transition-colors;
-	@apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+	@apply focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden;
 	@apply disabled:pointer-events-none;
 
 	&[data-disabled] {

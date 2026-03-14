@@ -3,7 +3,7 @@
 }
 
 .radio-group__item {
-	@apply aspect-square size-4 rounded-full border border-neutral-300 text-neutral-900 ring-offset-background;
+	@apply ring-offset-background aspect-square size-4 rounded-full border border-neutral-300 text-neutral-900;
 
 	@apply focus:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
 
