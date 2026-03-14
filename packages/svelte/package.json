@@ -1,6 +1,29 @@
 {
 	"name": "@adn-ui/svelte",
 	"version": "0.0.0",
+	"description": "Accessible, themeable Svelte 5 UI components built on Bits UI and Tailwind CSS v4.",
+	"keywords": [
+		"adn-ui",
+		"design-system",
+		"svelte",
+		"svelte-5",
+		"bits-ui",
+		"tailwindcss",
+		"ui",
+		"components"
+	],
+	"homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/svelte#readme",
+	"bugs": {
+		"url": "https://github.com/awaiden/adn-ui/issues"
+	},
+	"license": "MIT",
+	"author": "awaiden (https://github.com/awaiden)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/awaiden/adn-ui.git",
+		"directory": "packages/svelte"
+	},
+	"sideEffects": false,
 	"type": "module",
 	"scripts": {
 		"prepare": "svelte-kit sync || echo ''",

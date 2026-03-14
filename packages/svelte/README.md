@@ -1,42 +1,63 @@
-# sv
+# @adn-ui/svelte
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[![npm](https://img.shields.io/npm/v/@adn-ui/svelte)](https://www.npmjs.com/package/@adn-ui/svelte)
+[![GitHub](https://img.shields.io/github/license/awaiden/adn-ui)](https://github.com/awaiden/adn-ui/blob/main/LICENSE)
 
-## Creating a project
+The Svelte implementation of the **adn-ui** design system — accessible, themeable components built with [Svelte 5](https://svelte.dev/) and [Bits UI](https://bits-ui.com/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```sh
-# create a new project
-npx sv create my-app
+- **Svelte 5 Runes** — Modern reactivity API.
+- **Accessible** — Built on Bits UI primitives.
+- **Themeable** — Native Tailwind v4 support.
+- **Consistent** — Matches the React and Vue implementation APIs.
+
+## Installation
+
+```bash
+npm install @adn-ui/svelte
+# or
+bun add @adn-ui/svelte
 ```
 
-To recreate this project with the same configuration:
+## Setup
 
-```sh
-# recreate this project
-bun x sv@0.12.5 create --template minimal --types ts --add vitest="usages:unit,component" playwright tailwindcss="plugins:none" storybook --install bun svelte
+Import the styles in your root `+layout.svelte`:
+
+```svelte
+<script>
+  import "@adn-ui/svelte/styles";
+</script>
+
+{@render children()}
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```svelte
+<script>
+  import { Button } from "@adn-ui/svelte";
+</script>
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<Button variant="primary">Click me</Button>
 ```
 
-## Building
+## Development
 
-To create a production version of your app:
+```bash
+# Build (watch mode)
+bun run dev
 
-```sh
-npm run build
+# Production build
+bun run build
+
+# Storybook
+bun run storybook
+
+# Tests
+bun run test:unit
 ```
 
-You can preview the production build with `npm run preview`.
+## License
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+[MIT](../../LICENSE)

@@ -1,18 +1,18 @@
 {
-	"name": "@adn-ui/react",
+	"name": "@adn-ui/vue",
 	"version": "0.0.0",
-	"description": "Accessible, themeable React UI components built on Radix UI and Tailwind CSS v4.",
+	"description": "Accessible, themeable Vue 3 UI components built on Reka UI and Tailwind CSS v4.",
 	"keywords": [
 		"adn-ui",
-		"accessible",
-		"components",
 		"design-system",
-		"radix-ui",
-		"react",
+		"vue",
+		"vue-3",
+		"reka-ui",
 		"tailwindcss",
-		"ui"
+		"ui",
+		"components"
 	],
-	"homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/react#readme",
+	"homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/vue#readme",
 	"bugs": {
 		"url": "https://github.com/awaiden/adn-ui/issues"
 	},
@@ -21,12 +21,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/awaiden/adn-ui.git",
-		"directory": "packages/react"
+		"directory": "packages/vue"
 	},
 	"sideEffects": false,
-	"files": [
-		"dist"
-	],
 	"type": "module",
 	"main": "dist/index.cjs",
 	"module": "dist/index.js",
@@ -36,45 +33,40 @@
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
+		},
+		"./styles": {
+			"import": "./dist/index.css"
 		}
 	},
 	"scripts": {
 		"dev": "tsdown --watch",
 		"build": "tsdown",
 		"test": "vitest",
-		"storybook": "BROWSER=none storybook dev -p 6008",
+		"storybook": "BROWSER=none storybook dev -p 6009",
 		"build-storybook": "storybook build"
 	},
 	"dependencies": {
 		"@adn-ui/core": "workspace:*",
 		"@adn-ui/styles": "workspace:*",
-		"lucide-react": "^0.577.0",
-		"radix-ui": "^1.4.3",
+		"lucide-vue-next": "^0.577.0",
+		"reka-ui": "^1.4.3",
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "^4.2.1",
-		"@storybook/addon-styling-webpack": "^3.0.0",
-		"@storybook/addon-themes": "^10.2.16",
-		"@storybook/react-vite": "^10.2.16",
-		"@types/node": "^25.4.0",
-		"@types/react": "^19.2.7",
-		"@types/react-dom": "^19.2.3",
-		"@vitejs/plugin-react": "^6.0.0",
-		"globals": "^16.5.0",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
+		"@vitejs/plugin-vue": "^6.0.0",
+		"@vue/tsconfig": "^0.7.0",
 		"storybook": "^10.2.16",
 		"tailwindcss": "^4.2.1",
 		"tsdown": "^0.21.2",
 		"typescript": "~5.9.3",
 		"vite": "7",
 		"vitest": "^4.0.18",
-		"vitest-browser-react": "^2.0.5"
+		"vue": "^3.5.13",
+		"vue-tsc": "^3.2.5"
 	},
 	"peerDependencies": {
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"vue": "^3.5.0",
 		"tailwindcss": "^4.0.0"
 	}
 }

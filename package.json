@@ -1,7 +1,7 @@
 {
 	"name": "adn-ui",
 	"private": true,
-	"description": "A modern, accessible React UI library built with Radix UI, Tailwind CSS v4, and Tailwind Variants.",
+	"description": "A modern, accessible, and cross-framework UI library built with Radix UI, Bits UI, Reka UI, Tailwind CSS v4, and Tailwind Variants.",
 	"homepage": "https://github.com/awaiden/adn-ui#readme",
 	"bugs": {
 		"url": "https://github.com/awaiden/adn-ui/issues"

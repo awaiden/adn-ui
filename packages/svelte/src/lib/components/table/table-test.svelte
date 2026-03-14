@@ -5,7 +5,6 @@ let { data = [] } = $props();
 </script>
 
 <Table.Root data-testid="table">
-	<Table.Caption>A list of invoices.</Table.Caption>
 	<Table.Header>
 		<Table.Row>
 			<Table.Head>Invoice</Table.Head>
@@ -24,7 +23,7 @@ let { data = [] } = $props();
 	</Table.Body>
 	<Table.Footer>
 		<Table.Row>
-			<Table.Cell colspan={2}>Total</Table.Cell>
+			<Table.Cell >Total</Table.Cell>
 			<Table.Cell>$400.00</Table.Cell>
 		</Table.Row>
 	</Table.Footer>

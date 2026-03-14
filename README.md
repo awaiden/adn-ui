@@ -3,27 +3,35 @@
 [![GitHub](https://img.shields.io/github/license/awaiden/adn-ui)](https://github.com/awaiden/adn-ui/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/@adn-ui/react)](https://www.npmjs.com/package/@adn-ui/react)
 
-A modern, accessible React UI library built with [Radix UI](https://www.radix-ui.com/), [Tailwind CSS v4](https://tailwindcss.com), and [Tailwind Variants](https://www.tailwind-variants.org/).
+A modern, accessible, and cross-framework UI library built with [Radix UI](https://www.radix-ui.com/) (React), [Bits UI](https://bits-ui.com/) (Svelte), [Reka UI](https://reka-ui.com/) (Vue), [Tailwind CSS v4](https://tailwindcss.com), and [Tailwind Variants](https://www.tailwind-variants.org/).
 
 ## Features
 
-- **Accessible** — Built on Radix UI primitives, WCAG compliant
-- **Themeable** — OKLCH design tokens with light/dark mode
-- **Composable** — Compound component APIs for full layout control
-- **Type-safe** — Full TypeScript declarations
-- **30+ Components** — Buttons, dialogs, forms, navigation, and more
+- **Framework Agnostic Styles** — Shared variants and design tokens in `@adn-ui/core` and `@adn-ui/styles`.
+- **Accessible** — Built on industry-standard primitives (Radix, Bits, Reka), WCAG compliant.
+- **Themeable** — OKLCH design tokens with native Tailwind v4 support.
+- **Composable** — Consistent compound component APIs across all frameworks.
+- **Type-safe** — First-class TypeScript support.
 
-## Quick Start
+## Packages
+
+| Package | Description | Status |
+| :--- | :--- | :--- |
+| [`@adn-ui/react`](./packages/react) | React 19 components (Radix UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/react)](https://www.npmjs.com/package/@adn-ui/react) |
+| [`@adn-ui/svelte`](./packages/svelte) | Svelte 5 components (Bits UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/svelte)](https://www.npmjs.com/package/@adn-ui/svelte) |
+| [`@adn-ui/vue`](./packages/vue) | Vue 3 components (Reka UI) | [![npm](https://img.shields.io/npm/v/@adn-ui/vue)](https://www.npmjs.com/package/@adn-ui/vue) |
+| [`@adn-ui/core`](./packages/core) | Shared styling variants and logic | [![npm](https://img.shields.io/npm/v/@adn-ui/core)](https://www.npmjs.com/package/@adn-ui/core) |
+| [`@adn-ui/styles`](./packages/styles) | Core CSS, tokens, and Tailwind config | [![npm](https://img.shields.io/npm/v/@adn-ui/styles)](https://www.npmjs.com/package/@adn-ui/styles) |
+
+## Quick Start (React)
 
 ```bash
 # Install the library
 npm install @adn-ui/react
-
-# Import styles in your entry point
-import "@adn-ui/react/styles";
 ```
 
 ```tsx
+import "@adn-ui/react/styles";
 import { Button } from "@adn-ui/react";
 
 function App() {
@@ -31,15 +39,9 @@ function App() {
 }
 ```
 
-## Monorepo Structure
-
-| Workspace                | Description                                     |
-| ------------------------ | ----------------------------------------------- |
-| `packages/react`         | Core UI component library (`@adn-ui/react`)     |
-| `packages/react-themes`  | Theme provider and utilities (`@adn-ui/react-themes`) |
-| `apps/docs`              | Documentation site (Astro Starlight)            |
-
 ## Development
+
+This monorepo uses [Bun](https://bun.sh) and [Turborepo](https://turbo.build).
 
 ```bash
 # Install dependencies
@@ -53,38 +55,15 @@ bun run build
 
 # Lint & format
 bun check
-
-# Auto-fix lint issues
-bun check:fix
 ```
 
-### Package-specific
+### Framework-specific Development
 
-```bash
-# Storybook (component dev)
-cd packages/react && bun run storybook
+Each framework package has its own Storybook for component development:
 
-# Run tests
-cd packages/react && bun run test
-
-# Docs dev server
-cd apps/docs && bun run dev
-```
-
-## Tech Stack
-
-- **Runtime:** [Bun](https://bun.sh)
-- **Framework:** [React 19](https://react.dev)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com) + [Tailwind Variants](https://www.tailwind-variants.org/)
-- **Primitives:** [Radix UI](https://www.radix-ui.com/)
-- **Build:** [Vite](https://vite.dev) + [Turborepo](https://turbo.build)
-- **Linting:** [Biome](https://biomejs.dev)
-- **Testing:** [Vitest](https://vitest.dev) + Playwright
-- **Docs:** [Astro Starlight](https://starlight.astro.build/)
-
-## Author
-
-**awaiden** — [github.com/awaiden](https://github.com/awaiden)
+- **React:** `cd packages/react && bun run storybook`
+- **Svelte:** `cd packages/svelte && bun run storybook`
+- **Vue:** `cd packages/vue && bun run storybook`
 
 ## License
 
