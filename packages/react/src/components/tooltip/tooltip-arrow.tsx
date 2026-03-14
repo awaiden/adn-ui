@@ -5,17 +5,10 @@ import { useTooltipContext } from "./tooltip-context";
 
 export type TooltipArrowProps = React.ComponentProps<typeof Tooltip.Arrow>;
 
-export default function TooltipArrow({
-	className,
-	...props
-}: TooltipArrowProps) {
-	const { slots } = useTooltipContext();
+export default function TooltipArrow({ className, ...props }: TooltipArrowProps) {
+  const { slots } = useTooltipContext();
 
-	return (
-		<Tooltip.Arrow
-			data-slot="tooltip-arrow"
-			className={cn(slots.arrow(), className)}
-			{...props}
-		/>
-	);
+  return (
+    <Tooltip.Arrow data-slot="tooltip-arrow" className={cn(slots.arrow(), className)} {...props} />
+  );
 }

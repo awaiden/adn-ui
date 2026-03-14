@@ -1,49 +1,49 @@
 {
-	"name": "@adn-ui/core",
-	"version": "0.0.1-canary.0",
-	"description": "Shared styling variants and logic for adn-ui, built with tailwind-variants.",
-	"keywords": [
-		"adn-ui",
-		"design-system",
-		"styling",
-		"tailwind-variants",
-		"variants"
-	],
-	"homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/core#readme",
-	"bugs": {
-		"url": "https://github.com/awaiden/adn-ui/issues"
-	},
-	"license": "MIT",
-	"author": "awaiden (https://github.com/awaiden)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/awaiden/adn-ui.git",
-		"directory": "packages/core"
-	},
-	"type": "module",
-	"sideEffects": false,
-	"exports": {
-		".": {
-			"types": {
-				"import": "./dist/index.d.mts",
-				"require": "./dist/index.d.cts"
-			},
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
-		}
-	},
-	"scripts": {
-		"dev": "vp pack --watch",
-		"build": "vp pack"
-	},
-	"dependencies": {
-		"tailwind-variants": "^3.2.2"
-	},
-	"devDependencies": {
-		"@types/bun": "latest",
-		"vite-plus": "catalog:"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
-	}
+  "name": "@adn-ui/core",
+  "version": "0.0.1-canary.0",
+  "description": "Shared styling variants and logic for adn-ui, built with tailwind-variants.",
+  "keywords": [
+    "adn-ui",
+    "design-system",
+    "styling",
+    "tailwind-variants",
+    "variants"
+  ],
+  "homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/core#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/adn-ui/issues"
+  },
+  "license": "MIT",
+  "author": "awaiden (https://github.com/awaiden)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awaiden/adn-ui.git",
+    "directory": "packages/core"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vp pack --watch",
+    "build": "vp pack"
+  },
+  "dependencies": {
+    "tailwind-variants": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vite-plus": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
 }

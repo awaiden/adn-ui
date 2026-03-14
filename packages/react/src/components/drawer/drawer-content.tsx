@@ -8,27 +8,23 @@ import DrawerPortal from "./drawer-portal";
 
 export type DrawerContentProps = React.ComponentProps<typeof Dialog.Content>;
 
-export default function DrawerContent({
-	children,
-	className,
-	...props
-}: DrawerContentProps) {
-	const { slots } = useDrawerContext();
+export default function DrawerContent({ children, className, ...props }: DrawerContentProps) {
+  const { slots } = useDrawerContext();
 
-	return (
-		<DrawerPortal>
-			<DrawerOverlay />
-			<Dialog.Content
-				data-slot="drawer-content"
-				className={cn(slots.content(), className)}
-				{...props}
-			>
-				{children}
-				<Dialog.Close data-slot="drawer-close" className={slots.close()}>
-					<X className="size-4" />
-					<span className="sr-only">Close</span>
-				</Dialog.Close>
-			</Dialog.Content>
-		</DrawerPortal>
-	);
+  return (
+    <DrawerPortal>
+      <DrawerOverlay />
+      <Dialog.Content
+        data-slot="drawer-content"
+        className={cn(slots.content(), className)}
+        {...props}
+      >
+        {children}
+        <Dialog.Close data-slot="drawer-close" className={slots.close()}>
+          <X className="size-4" />
+          <span className="sr-only">Close</span>
+        </Dialog.Close>
+      </Dialog.Content>
+    </DrawerPortal>
+  );
 }

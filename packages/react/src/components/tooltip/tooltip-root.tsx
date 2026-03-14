@@ -6,11 +6,11 @@ import { TooltipContext } from "./tooltip-context";
 export type TooltipRootProps = React.ComponentProps<typeof Tooltip.Root>;
 
 export default function TooltipRoot(props: TooltipRootProps) {
-	const slots = tooltipVariants();
+  const slots = tooltipVariants();
 
-	return (
-		<TooltipContext value={{ slots }}>
-			<Tooltip.Root data-slot="tooltip-root" {...props} />
-		</TooltipContext>
-	);
+  return (
+    <TooltipContext value={{ slots }}>
+      <Tooltip.Root data-slot="tooltip-root" {...props} />
+    </TooltipContext>
+  );
 }

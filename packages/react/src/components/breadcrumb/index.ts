@@ -7,23 +7,23 @@ import BreadcrumbRoot from "./breadcrumb-root";
 import BreadcrumbSeparator from "./breadcrumb-separator";
 
 export const Breadcrumb = {
-	Ellipsis: BreadcrumbEllipsis,
-	Item: BreadcrumbItem,
-	Link: BreadcrumbLink,
-	List: BreadcrumbList,
-	Page: BreadcrumbPage,
-	Root: BreadcrumbRoot,
-	Separator: BreadcrumbSeparator,
+  Ellipsis: BreadcrumbEllipsis,
+  Item: BreadcrumbItem,
+  Link: BreadcrumbLink,
+  List: BreadcrumbList,
+  Page: BreadcrumbPage,
+  Root: BreadcrumbRoot,
+  Separator: BreadcrumbSeparator,
 };
 
 export {
-	BreadcrumbRoot,
-	BreadcrumbList,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-	BreadcrumbEllipsis,
+  BreadcrumbRoot,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
 };
 
 export type BreadcrumbRootProps = React.ComponentProps<typeof BreadcrumbRoot>;
@@ -31,11 +31,7 @@ export type BreadcrumbListProps = React.ComponentProps<typeof BreadcrumbList>;
 export type BreadcrumbItemProps = React.ComponentProps<typeof BreadcrumbItem>;
 export type BreadcrumbLinkProps = React.ComponentProps<typeof BreadcrumbLink>;
 export type BreadcrumbPageProps = React.ComponentProps<typeof BreadcrumbPage>;
-export type BreadcrumbSeparatorProps = React.ComponentProps<
-	typeof BreadcrumbSeparator
->;
-export type BreadcrumbEllipsisProps = React.ComponentProps<
-	typeof BreadcrumbEllipsis
->;
+export type BreadcrumbSeparatorProps = React.ComponentProps<typeof BreadcrumbSeparator>;
+export type BreadcrumbEllipsisProps = React.ComponentProps<typeof BreadcrumbEllipsis>;
 
 export { type BreadcrumbVariants, breadcrumbVariants } from "@adn-ui/core";

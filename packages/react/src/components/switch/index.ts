@@ -2,8 +2,8 @@ import SwitchRoot from "./switch-root";
 import SwitchThumb from "./switch-thumb";
 
 export const Switch = {
-	Root: SwitchRoot,
-	Thumb: SwitchThumb,
+  Root: SwitchRoot,
+  Thumb: SwitchThumb,
 };
 
 export { SwitchRoot, SwitchThumb };

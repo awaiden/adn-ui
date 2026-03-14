@@ -3,9 +3,9 @@ import { GroupRoot } from "./group-root";
 import { GroupSuffix } from "./group-suffix";
 
 export const Group = {
-	Prefix: GroupPrefix,
-	Root: GroupRoot,
-	Suffix: GroupSuffix,
+  Prefix: GroupPrefix,
+  Root: GroupRoot,
+  Suffix: GroupSuffix,
 };
 
 export { GroupPrefix, GroupRoot, GroupSuffix };

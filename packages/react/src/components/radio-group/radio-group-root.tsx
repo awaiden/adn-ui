@@ -6,19 +6,16 @@ import { RadioGroupContext } from "./radio-group-context";
 
 export type RadioGroupRootProps = React.ComponentProps<typeof RadioGroup.Root>;
 
-export default function RadioGroupRoot({
-	className,
-	...props
-}: RadioGroupRootProps) {
-	const slots = radioGroupVariants();
+export default function RadioGroupRoot({ className, ...props }: RadioGroupRootProps) {
+  const slots = radioGroupVariants();
 
-	return (
-		<RadioGroupContext value={{ slots }}>
-			<RadioGroup.Root
-				data-slot="radio-group-root"
-				className={cn(slots.root(), className)}
-				{...props}
-			/>
-		</RadioGroupContext>
-	);
+  return (
+    <RadioGroupContext value={{ slots }}>
+      <RadioGroup.Root
+        data-slot="radio-group-root"
+        className={cn(slots.root(), className)}
+        {...props}
+      />
+    </RadioGroupContext>
+  );
 }

@@ -3,26 +3,24 @@ import { cn } from "tailwind-variants";
 
 import { useContextMenuContext } from "./context-menu-context";
 
-export type ContextMenuContentProps = React.ComponentProps<
-	typeof ContextMenu.Content
->;
+export type ContextMenuContentProps = React.ComponentProps<typeof ContextMenu.Content>;
 
 export default function ContextMenuContent({
-	children,
-	className,
-	...props
+  children,
+  className,
+  ...props
 }: ContextMenuContentProps) {
-	const { slots } = useContextMenuContext();
+  const { slots } = useContextMenuContext();
 
-	return (
-		<ContextMenu.Portal>
-			<ContextMenu.Content
-				data-slot="context-menu-content"
-				className={cn(slots.content(), className)}
-				{...props}
-			>
-				{children}
-			</ContextMenu.Content>
-		</ContextMenu.Portal>
-	);
+  return (
+    <ContextMenu.Portal>
+      <ContextMenu.Content
+        data-slot="context-menu-content"
+        className={cn(slots.content(), className)}
+        {...props}
+      >
+        {children}
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  );
 }

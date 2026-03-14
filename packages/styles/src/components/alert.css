@@ -1,19 +1,19 @@
 .alert {
-	@apply [&>svg]:text-foreground relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:top-4 [&>svg]:left-4 [&>svg+div]:-translate-y-0.75 [&>svg~*]:pl-7;
+  @apply [&>svg]:text-foreground relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:top-4 [&>svg]:left-4 [&>svg+div]:-translate-y-0.75 [&>svg~*]:pl-7;
 }
 
 .alert--default {
-	@apply bg-background text-foreground;
+  @apply bg-background text-foreground;
 }
 
 .alert--destructive {
-	@apply border-destructive/50 text-destructive [&>svg]:text-destructive;
+  @apply border-destructive/50 text-destructive [&>svg]:text-destructive;
 }
 
 .alert__title {
-	@apply mb-1 leading-none font-medium tracking-tight;
+  @apply mb-1 leading-none font-medium tracking-tight;
 }
 
 .alert__description {
-	@apply text-sm [&_p]:leading-relaxed;
+  @apply text-sm [&_p]:leading-relaxed;
 }

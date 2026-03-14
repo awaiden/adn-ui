@@ -1,19 +1,19 @@
 .progress {
-	@apply bg-muted relative w-full overflow-hidden rounded-full;
+  @apply bg-muted relative w-full overflow-hidden rounded-full;
 }
 
 .progress--sm {
-	@apply h-1.5;
+  @apply h-1.5;
 }
 
 .progress--md {
-	@apply h-2.5;
+  @apply h-2.5;
 }
 
 .progress--lg {
-	@apply h-4;
+  @apply h-4;
 }
 
 .progress__indicator {
-	@apply bg-primary h-full w-full flex-1 rounded-full transition-transform;
+  @apply bg-primary h-full w-full flex-1 rounded-full transition-transform;
 }

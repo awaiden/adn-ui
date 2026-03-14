@@ -6,11 +6,11 @@ import { SelectContext } from "./select-context";
 export type SelectRootProps = React.ComponentProps<typeof Select.Root>;
 
 export default function SelectRoot(props: SelectRootProps) {
-	const slots = selectVariants();
+  const slots = selectVariants();
 
-	return (
-		<SelectContext value={{ slots }}>
-			<Select.Root data-slot="select-root" {...props} />
-		</SelectContext>
-	);
+  return (
+    <SelectContext value={{ slots }}>
+      <Select.Root data-slot="select-root" {...props} />
+    </SelectContext>
+  );
 }

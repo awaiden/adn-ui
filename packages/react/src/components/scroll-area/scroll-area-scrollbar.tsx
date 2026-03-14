@@ -3,23 +3,21 @@ import { cn } from "tailwind-variants";
 
 import { useScrollAreaContext } from "./scroll-area-context";
 
-export type ScrollAreaScrollbarProps = React.ComponentProps<
-	typeof ScrollArea.Scrollbar
->;
+export type ScrollAreaScrollbarProps = React.ComponentProps<typeof ScrollArea.Scrollbar>;
 
 export default function ScrollAreaScrollbar({
-	className,
-	orientation = "vertical",
-	...props
+  className,
+  orientation = "vertical",
+  ...props
 }: ScrollAreaScrollbarProps) {
-	const { slots } = useScrollAreaContext();
+  const { slots } = useScrollAreaContext();
 
-	return (
-		<ScrollArea.Scrollbar
-			data-slot="scroll-area-scrollbar"
-			orientation={orientation}
-			className={cn(slots.scrollbar(), className)}
-			{...props}
-		/>
-	);
+  return (
+    <ScrollArea.Scrollbar
+      data-slot="scroll-area-scrollbar"
+      orientation={orientation}
+      className={cn(slots.scrollbar(), className)}
+      {...props}
+    />
+  );
 }

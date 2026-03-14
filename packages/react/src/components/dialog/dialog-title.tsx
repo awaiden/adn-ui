@@ -6,13 +6,9 @@ import { useDialogContext } from "./dialog-context";
 export type DialogTitleProps = React.ComponentProps<typeof Dialog.Title>;
 
 export default function DialogTitle({ className, ...props }: DialogTitleProps) {
-	const { slots } = useDialogContext();
+  const { slots } = useDialogContext();
 
-	return (
-		<Dialog.Title
-			data-slot="dialog-title"
-			className={cn(slots.title(), className)}
-			{...props}
-		/>
-	);
+  return (
+    <Dialog.Title data-slot="dialog-title" className={cn(slots.title(), className)} {...props} />
+  );
 }

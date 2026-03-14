@@ -10,58 +10,40 @@ import AlertDialogTitle from "./alert-dialog-title";
 import AlertDialogTrigger from "./alert-dialog-trigger";
 
 export const AlertDialog = {
-	Action: AlertDialogAction,
-	Cancel: AlertDialogCancel,
-	Content: AlertDialogContent,
-	Description: AlertDialogDescription,
-	Footer: AlertDialogFooter,
-	Header: AlertDialogHeader,
-	Overlay: AlertDialogOverlay,
-	Root: AlertDialogRoot,
-	Title: AlertDialogTitle,
-	Trigger: AlertDialogTrigger,
+  Action: AlertDialogAction,
+  Cancel: AlertDialogCancel,
+  Content: AlertDialogContent,
+  Description: AlertDialogDescription,
+  Footer: AlertDialogFooter,
+  Header: AlertDialogHeader,
+  Overlay: AlertDialogOverlay,
+  Root: AlertDialogRoot,
+  Title: AlertDialogTitle,
+  Trigger: AlertDialogTrigger,
 };
 
 export {
-	AlertDialogRoot,
-	AlertDialogTrigger,
-	AlertDialogContent,
-	AlertDialogHeader,
-	AlertDialogFooter,
-	AlertDialogTitle,
-	AlertDialogDescription,
-	AlertDialogAction,
-	AlertDialogCancel,
-	AlertDialogOverlay,
+  AlertDialogRoot,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogOverlay,
 };
 
 export type AlertDialogRootProps = React.ComponentProps<typeof AlertDialogRoot>;
-export type AlertDialogTriggerProps = React.ComponentProps<
-	typeof AlertDialogTrigger
->;
-export type AlertDialogContentProps = React.ComponentProps<
-	typeof AlertDialogContent
->;
-export type AlertDialogHeaderProps = React.ComponentProps<
-	typeof AlertDialogHeader
->;
-export type AlertDialogFooterProps = React.ComponentProps<
-	typeof AlertDialogFooter
->;
-export type AlertDialogTitleProps = React.ComponentProps<
-	typeof AlertDialogTitle
->;
-export type AlertDialogDescriptionProps = React.ComponentProps<
-	typeof AlertDialogDescription
->;
-export type AlertDialogActionProps = React.ComponentProps<
-	typeof AlertDialogAction
->;
-export type AlertDialogCancelProps = React.ComponentProps<
-	typeof AlertDialogCancel
->;
-export type AlertDialogOverlayProps = React.ComponentProps<
-	typeof AlertDialogOverlay
->;
+export type AlertDialogTriggerProps = React.ComponentProps<typeof AlertDialogTrigger>;
+export type AlertDialogContentProps = React.ComponentProps<typeof AlertDialogContent>;
+export type AlertDialogHeaderProps = React.ComponentProps<typeof AlertDialogHeader>;
+export type AlertDialogFooterProps = React.ComponentProps<typeof AlertDialogFooter>;
+export type AlertDialogTitleProps = React.ComponentProps<typeof AlertDialogTitle>;
+export type AlertDialogDescriptionProps = React.ComponentProps<typeof AlertDialogDescription>;
+export type AlertDialogActionProps = React.ComponentProps<typeof AlertDialogAction>;
+export type AlertDialogCancelProps = React.ComponentProps<typeof AlertDialogCancel>;
+export type AlertDialogOverlayProps = React.ComponentProps<typeof AlertDialogOverlay>;
 
 export { type AlertDialogVariants, alertDialogVariants } from "@adn-ui/core";

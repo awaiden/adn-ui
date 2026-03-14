@@ -3,19 +3,14 @@ import { Tabs } from "radix-ui";
 
 import { TabsContext } from "./tabs-context";
 
-export type TabsRootProps = React.ComponentProps<typeof Tabs.Root> &
-	TabsVariants;
+export type TabsRootProps = React.ComponentProps<typeof Tabs.Root> & TabsVariants;
 
-export default function TabsRoot({
-	className,
-	variant,
-	...props
-}: TabsRootProps) {
-	const slots = tabsVariants({ variant });
+export default function TabsRoot({ className, variant, ...props }: TabsRootProps) {
+  const slots = tabsVariants({ variant });
 
-	return (
-		<TabsContext value={{ slots }}>
-			<Tabs.Root className={slots.root({ className })} {...props} />
-		</TabsContext>
-	);
+  return (
+    <TabsContext value={{ slots }}>
+      <Tabs.Root className={slots.root({ className })} {...props} />
+    </TabsContext>
+  );
 }

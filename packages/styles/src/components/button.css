@@ -1,53 +1,53 @@
 .button {
-	@apply rounded-button inline-flex items-center justify-center gap-2 font-medium;
+  @apply rounded-button inline-flex items-center justify-center gap-2 font-medium;
 
-	@apply transition-[scale,bg-color];
+  @apply transition-[scale,bg-color];
 
-	&:disabled {
-		@apply status-disabled;
-	}
+  &:disabled {
+    @apply status-disabled;
+  }
 
-	&:active:not(:disabled) {
-		@apply active:scale-95;
-	}
+  &:active:not(:disabled) {
+    @apply active:scale-95;
+  }
 
-	& svg {
-		@apply size-5 shrink-0;
-	}
+  & svg {
+    @apply size-5 shrink-0;
+  }
 }
 
 .button--primary {
-	@apply bg-primary text-primary-foreground hover:bg-primary-hover;
+  @apply bg-primary text-primary-foreground hover:bg-primary-hover;
 }
 
 .button--secondary {
-	@apply bg-secondary text-secondary-foreground hover:bg-secondary-hover;
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover;
 }
 
 .button--destructive {
-	@apply bg-destructive text-destructive-foreground hover:bg-destructive-hover;
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive-hover;
 }
 
 .button--outline {
-	@apply text-foreground hover:bg-muted hover:text-muted-foreground border bg-transparent;
+  @apply text-foreground hover:bg-muted hover:text-muted-foreground border bg-transparent;
 }
 
 .button--ghost {
-	@apply text-foreground hover:bg-muted hover:text-muted-foreground bg-transparent;
+  @apply text-foreground hover:bg-muted hover:text-muted-foreground bg-transparent;
 }
 
 .button--sm {
-	@apply h-8 px-2 text-sm;
+  @apply h-8 px-2 text-sm;
 }
 
 .button--md {
-	@apply h-10 px-4 text-base;
+  @apply h-10 px-4 text-base;
 }
 
 .button--lg {
-	@apply h-12 px-6 text-lg;
+  @apply h-12 px-6 text-lg;
 }
 
 .button--icon {
-	@apply size-10;
+  @apply size-10;
 }

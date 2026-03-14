@@ -10,29 +10,29 @@ import DialogTitle from "./dialog-title";
 import DialogTrigger from "./dialog-trigger";
 
 export const Dialog = {
-	Close: DialogClose,
-	Content: DialogContent,
-	Description: DialogDescription,
-	Footer: DialogFooter,
-	Header: DialogHeader,
-	Overlay: DialogOverlay,
-	Portal: DialogPortal,
-	Root: DialogRoot,
-	Title: DialogTitle,
-	Trigger: DialogTrigger,
+  Close: DialogClose,
+  Content: DialogContent,
+  Description: DialogDescription,
+  Footer: DialogFooter,
+  Header: DialogHeader,
+  Overlay: DialogOverlay,
+  Portal: DialogPortal,
+  Root: DialogRoot,
+  Title: DialogTitle,
+  Trigger: DialogTrigger,
 };
 
 export {
-	DialogRoot,
-	DialogTrigger,
-	DialogPortal,
-	DialogOverlay,
-	DialogContent,
-	DialogHeader,
-	DialogFooter,
-	DialogTitle,
-	DialogDescription,
-	DialogClose,
+  DialogRoot,
+  DialogTrigger,
+  DialogPortal,
+  DialogOverlay,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
 };
 
 export type DialogRootProps = React.ComponentProps<typeof DialogRoot>;
@@ -43,9 +43,7 @@ export type DialogContentProps = React.ComponentProps<typeof DialogContent>;
 export type DialogHeaderProps = React.ComponentProps<typeof DialogHeader>;
 export type DialogFooterProps = React.ComponentProps<typeof DialogFooter>;
 export type DialogTitleProps = React.ComponentProps<typeof DialogTitle>;
-export type DialogDescriptionProps = React.ComponentProps<
-	typeof DialogDescription
->;
+export type DialogDescriptionProps = React.ComponentProps<typeof DialogDescription>;
 export type DialogCloseProps = React.ComponentProps<typeof DialogClose>;
 
 export { type DialogVariants, dialogVariants } from "@adn-ui/core";

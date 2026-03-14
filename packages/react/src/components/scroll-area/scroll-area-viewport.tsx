@@ -3,21 +3,16 @@ import { cn } from "tailwind-variants";
 
 import { useScrollAreaContext } from "./scroll-area-context";
 
-export type ScrollAreaViewportProps = React.ComponentProps<
-	typeof ScrollArea.Viewport
->;
+export type ScrollAreaViewportProps = React.ComponentProps<typeof ScrollArea.Viewport>;
 
-export default function ScrollAreaViewport({
-	className,
-	...props
-}: ScrollAreaViewportProps) {
-	const { slots } = useScrollAreaContext();
+export default function ScrollAreaViewport({ className, ...props }: ScrollAreaViewportProps) {
+  const { slots } = useScrollAreaContext();
 
-	return (
-		<ScrollArea.Viewport
-			data-slot="scroll-area-viewport"
-			className={cn(slots.viewport(), className)}
-			{...props}
-		/>
-	);
+  return (
+    <ScrollArea.Viewport
+      data-slot="scroll-area-viewport"
+      className={cn(slots.viewport(), className)}
+      {...props}
+    />
+  );
 }

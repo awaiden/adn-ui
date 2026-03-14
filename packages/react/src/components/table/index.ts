@@ -8,25 +8,25 @@ import TableRoot from "./table-root";
 import TableRow from "./table-row";
 
 export const Table = {
-	Body: TableBody,
-	Caption: TableCaption,
-	Cell: TableCell,
-	Footer: TableFooter,
-	Head: TableHead,
-	Header: TableHeader,
-	Root: TableRoot,
-	Row: TableRow,
+  Body: TableBody,
+  Caption: TableCaption,
+  Cell: TableCell,
+  Footer: TableFooter,
+  Head: TableHead,
+  Header: TableHeader,
+  Root: TableRoot,
+  Row: TableRow,
 };
 
 export {
-	TableRoot,
-	TableHeader,
-	TableBody,
-	TableFooter,
-	TableRow,
-	TableHead,
-	TableCell,
-	TableCaption,
+  TableRoot,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
 };
 
 export type TableRootProps = React.ComponentProps<typeof TableRoot>;

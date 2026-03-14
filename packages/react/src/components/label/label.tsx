@@ -3,8 +3,8 @@ import { type LabelVariants, labelVariants } from "@adn-ui/core";
 export type LabelProps = React.ComponentProps<"label"> & LabelVariants;
 
 export default function Label({ className, size, ...props }: LabelProps) {
-	const styles = labelVariants({ className, size });
+  const styles = labelVariants({ className, size });
 
-	// biome-ignore lint/a11y/noLabelWithoutControl: This component is meant to be used as a label for form controls, and the htmlFor prop can be used to associate it with an input.
-	return <label className={styles} {...props} />;
+  // biome-ignore lint/a11y/noLabelWithoutControl: This component is meant to be used as a label for form controls, and the htmlFor prop can be used to associate it with an input.
+  return <label className={styles} {...props} />;
 }

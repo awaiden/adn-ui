@@ -3,23 +3,21 @@ import { cn } from "tailwind-variants";
 
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 
-export type DropdownMenuSubContentProps = React.ComponentProps<
-	typeof DropdownMenu.SubContent
->;
+export type DropdownMenuSubContentProps = React.ComponentProps<typeof DropdownMenu.SubContent>;
 
 export default function DropdownMenuSubContent({
-	className,
-	...props
+  className,
+  ...props
 }: DropdownMenuSubContentProps) {
-	const { slots } = useDropdownMenuContext();
+  const { slots } = useDropdownMenuContext();
 
-	return (
-		<DropdownMenu.Portal>
-			<DropdownMenu.SubContent
-				data-slot="dropdown-menu-sub-content"
-				className={cn(slots.subContent(), className)}
-				{...props}
-			/>
-		</DropdownMenu.Portal>
-	);
+  return (
+    <DropdownMenu.Portal>
+      <DropdownMenu.SubContent
+        data-slot="dropdown-menu-sub-content"
+        className={cn(slots.subContent(), className)}
+        {...props}
+      />
+    </DropdownMenu.Portal>
+  );
 }

@@ -8,25 +8,25 @@ import SelectTrigger from "./select-trigger";
 import SelectValue from "./select-value";
 
 export const Select = {
-	Content: SelectContent,
-	Group: SelectGroup,
-	Item: SelectItem,
-	Label: SelectLabel,
-	Root: SelectRoot,
-	Separator: SelectSeparator,
-	Trigger: SelectTrigger,
-	Value: SelectValue,
+  Content: SelectContent,
+  Group: SelectGroup,
+  Item: SelectItem,
+  Label: SelectLabel,
+  Root: SelectRoot,
+  Separator: SelectSeparator,
+  Trigger: SelectTrigger,
+  Value: SelectValue,
 };
 
 export {
-	SelectRoot,
-	SelectTrigger,
-	SelectValue,
-	SelectContent,
-	SelectItem,
-	SelectGroup,
-	SelectLabel,
-	SelectSeparator,
+  SelectRoot,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  SelectGroup,
+  SelectLabel,
+  SelectSeparator,
 };
 
 export type SelectRootProps = React.ComponentProps<typeof SelectRoot>;

@@ -1,67 +1,67 @@
 .dropdown-menu__content,
 .dropdown-menu__sub-content {
-	@apply bg-surface text-surface-foreground z-50 min-w-32 overflow-hidden rounded-md border p-1 shadow-md;
+  @apply bg-surface text-surface-foreground z-50 min-w-32 overflow-hidden rounded-md border p-1 shadow-md;
 
-	&[data-state="open"] {
-		@apply animate-in fade-in zoom-in-95;
-	}
+  &[data-state="open"] {
+    @apply animate-in fade-in zoom-in-95;
+  }
 
-	&[data-state="closed"] {
-		@apply animate-out fade-out zoom-out-95;
-	}
+  &[data-state="closed"] {
+    @apply animate-out fade-out zoom-out-95;
+  }
 
-	&[data-side="bottom"] {
-		@apply slide-in-from-top-2;
-	}
+  &[data-side="bottom"] {
+    @apply slide-in-from-top-2;
+  }
 
-	&[data-side="top"] {
-		@apply slide-in-from-bottom-2;
-	}
+  &[data-side="top"] {
+    @apply slide-in-from-bottom-2;
+  }
 
-	&[data-side="left"] {
-		@apply slide-in-from-right-2;
-	}
+  &[data-side="left"] {
+    @apply slide-in-from-right-2;
+  }
 
-	&[data-side="right"] {
-		@apply slide-in-from-left-2;
-	}
+  &[data-side="right"] {
+    @apply slide-in-from-left-2;
+  }
 }
 
 .dropdown-menu__item,
 .dropdown-menu__checkbox-item,
 .dropdown-menu__radio-item,
 .dropdown-menu__sub-trigger {
-	@apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none;
+  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none;
 
-	@apply focus:bg-accent focus:text-accent-foreground;
+  @apply focus:bg-accent focus:text-accent-foreground;
 
-	&[data-disabled] {
-		@apply pointer-events-none opacity-50;
-	}
+  &[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
 }
 
 .dropdown-menu__checkbox-item,
 .dropdown-menu__radio-item,
 .dropdown-menu__sub-trigger {
-	@apply pl-8;
+  @apply pl-8;
 }
 
 .dropdown-menu__item-indicator {
-	@apply absolute left-2 flex h-3.5 w-3.5 items-center justify-center;
+  @apply absolute left-2 flex h-3.5 w-3.5 items-center justify-center;
 }
 
 .dropdown-menu__label {
-	@apply px-2 py-1.5 text-sm font-semibold;
+  @apply px-2 py-1.5 text-sm font-semibold;
 }
 
 .dropdown-menu__separator {
-	@apply bg-border -mx-1 my-1 h-px;
+  @apply bg-border -mx-1 my-1 h-px;
 }
 
 .dropdown-menu__shortcut {
-	@apply ml-auto text-xs tracking-widest opacity-60;
+  @apply ml-auto text-xs tracking-widest opacity-60;
 }
 
 .dropdown-menu__sub-trigger[data-state="open"] {
-	@apply bg-accent text-accent-foreground;
+  @apply bg-accent text-accent-foreground;
 }

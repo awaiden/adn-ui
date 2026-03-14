@@ -3,23 +3,18 @@ import { cn } from "tailwind-variants";
 
 import { useRadioGroupContext } from "./radio-group-context";
 
-export type RadioGroupIndicatorProps = React.ComponentProps<
-	typeof RadioGroup.Indicator
->;
+export type RadioGroupIndicatorProps = React.ComponentProps<typeof RadioGroup.Indicator>;
 
-export default function RadioGroupIndicator({
-	className,
-	...props
-}: RadioGroupIndicatorProps) {
-	const { slots } = useRadioGroupContext();
+export default function RadioGroupIndicator({ className, ...props }: RadioGroupIndicatorProps) {
+  const { slots } = useRadioGroupContext();
 
-	return (
-		<RadioGroup.Indicator
-			data-slot="radio-group-indicator"
-			className={cn(slots.indicator(), className)}
-			{...props}
-		>
-			<div className="radio-group__indicator-dot" />
-		</RadioGroup.Indicator>
-	);
+  return (
+    <RadioGroup.Indicator
+      data-slot="radio-group-indicator"
+      className={cn(slots.indicator(), className)}
+      {...props}
+    >
+      <div className="radio-group__indicator-dot" />
+    </RadioGroup.Indicator>
+  );
 }

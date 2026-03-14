@@ -5,13 +5,7 @@ import { useTableContext } from "./table-context";
 export type TableHeaderProps = React.ComponentProps<"thead">;
 
 export default function TableHeader({ className, ...props }: TableHeaderProps) {
-	const { slots } = useTableContext();
+  const { slots } = useTableContext();
 
-	return (
-		<thead
-			data-slot="table-header"
-			className={cn(slots.header(), className)}
-			{...props}
-		/>
-	);
+  return <thead data-slot="table-header" className={cn(slots.header(), className)} {...props} />;
 }

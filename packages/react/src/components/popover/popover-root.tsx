@@ -6,11 +6,11 @@ import { PopoverContext } from "./popover-context";
 export type PopoverRootProps = React.ComponentProps<typeof Popover.Root>;
 
 export default function PopoverRoot(props: PopoverRootProps) {
-	const slots = popoverVariants();
+  const slots = popoverVariants();
 
-	return (
-		<PopoverContext value={{ slots }}>
-			<Popover.Root data-slot="popover-root" {...props} />
-		</PopoverContext>
-	);
+  return (
+    <PopoverContext value={{ slots }}>
+      <Popover.Root data-slot="popover-root" {...props} />
+    </PopoverContext>
+  );
 }

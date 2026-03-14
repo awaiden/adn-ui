@@ -1,19 +1,19 @@
 .card {
-	@apply bg-surface text-surface-foreground rounded-lg border shadow-sm;
+  @apply bg-surface text-surface-foreground rounded-lg border shadow-sm;
 }
 
 .card__header {
-	@apply mb-2 px-4 pt-4;
+  @apply mb-2 px-4 pt-4;
 }
 
 .card__title {
-	@apply text-lg leading-none font-semibold tracking-tight;
+  @apply text-lg leading-none font-semibold tracking-tight;
 }
 
 .card__description {
-	@apply text-muted-foreground text-sm;
+  @apply text-muted-foreground text-sm;
 }
 
 .card__content {
-	@apply px-4 py-2;
+  @apply px-4 py-2;
 }

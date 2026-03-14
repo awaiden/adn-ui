@@ -1,24 +1,24 @@
 import { tv, type VariantProps } from "tailwind-variants";
 
 export const alertVariants = tv({
-	defaultVariants: {
-		variant: "default",
-	},
-	slots: {
-		description: "alert__description",
-		root: "alert",
-		title: "alert__title",
-	},
-	variants: {
-		variant: {
-			default: {
-				root: "alert--default",
-			},
-			destructive: {
-				root: "alert--destructive",
-			},
-		},
-	},
+  defaultVariants: {
+    variant: "default",
+  },
+  slots: {
+    description: "alert__description",
+    root: "alert",
+    title: "alert__title",
+  },
+  variants: {
+    variant: {
+      default: {
+        root: "alert--default",
+      },
+      destructive: {
+        root: "alert--destructive",
+      },
+    },
+  },
 });
 
 export type AlertVariants = VariantProps<typeof alertVariants>;

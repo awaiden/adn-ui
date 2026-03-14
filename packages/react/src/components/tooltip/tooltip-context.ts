@@ -3,17 +3,17 @@ import type { tooltipVariants } from "@adn-ui/core";
 import { createContext, use } from "react";
 
 type TooltipContextValue = {
-	slots: ReturnType<typeof tooltipVariants>;
+  slots: ReturnType<typeof tooltipVariants>;
 };
 
 export const TooltipContext = createContext<TooltipContextValue | null>(null);
 
 export function useTooltipContext() {
-	const context = use(TooltipContext);
+  const context = use(TooltipContext);
 
-	if (!context) {
-		throw new Error("useTooltipContext must be used within a TooltipRoot");
-	}
+  if (!context) {
+    throw new Error("useTooltipContext must be used within a TooltipRoot");
+  }
 
-	return context;
+  return context;
 }

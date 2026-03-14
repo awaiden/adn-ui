@@ -1,47 +1,47 @@
 {
-	"name": "@adn-ui/styles",
-	"version": "0.0.1-canary.0",
-	"description": "Core CSS, design tokens, and Tailwind v4 configuration for adn-ui.",
-	"keywords": [
-		"adn-ui",
-		"css",
-		"design-system",
-		"oklch",
-		"tailwindcss",
-		"tokens"
-	],
-	"homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/styles#readme",
-	"bugs": {
-		"url": "https://github.com/awaiden/adn-ui/issues"
-	},
-	"license": "MIT",
-	"author": "awaiden (https://github.com/awaiden)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/awaiden/adn-ui.git",
-		"directory": "packages/styles"
-	},
-	"files": [
-		"src"
-	],
-	"type": "module",
-	"sideEffects": true,
-	"main": "./src/index.css",
-	"module": "index.ts",
-	"types": "./src/index.d.ts",
-	"exports": {
-		".": {
-			"default": "./src/index.css",
-			"types": "./src/index.d.ts"
-		}
-	},
-	"devDependencies": {
-		"@types/bun": "latest",
-		"tailwind": "^4.0.0",
-		"tailwindcss-animate": "^1.0.7",
-		"vite-plus": "catalog:"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
-	}
+  "name": "@adn-ui/styles",
+  "version": "0.0.1-canary.0",
+  "description": "Core CSS, design tokens, and Tailwind v4 configuration for adn-ui.",
+  "keywords": [
+    "adn-ui",
+    "css",
+    "design-system",
+    "oklch",
+    "tailwindcss",
+    "tokens"
+  ],
+  "homepage": "https://github.com/awaiden/adn-ui/tree/main/packages/styles#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/adn-ui/issues"
+  },
+  "license": "MIT",
+  "author": "awaiden (https://github.com/awaiden)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awaiden/adn-ui.git",
+    "directory": "packages/styles"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "sideEffects": true,
+  "main": "./src/index.css",
+  "module": "index.ts",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "default": "./src/index.css",
+      "types": "./src/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tailwind": "^4.0.0",
+    "tailwindcss-animate": "^1.0.7",
+    "vite-plus": "catalog:"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
 }

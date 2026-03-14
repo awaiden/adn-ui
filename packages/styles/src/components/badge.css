@@ -1,23 +1,23 @@
 .badge {
-	@apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors;
 
-	&:focus {
-		@apply ring-2 ring-neutral-400 ring-offset-2 outline-hidden;
-	}
+  &:focus {
+    @apply ring-2 ring-neutral-400 ring-offset-2 outline-hidden;
+  }
 }
 
 .badge--primary {
-	@apply bg-primary text-primary-foreground hover:bg-primary-hover;
+  @apply bg-primary text-primary-foreground hover:bg-primary-hover;
 }
 
 .badge--secondary {
-	@apply bg-secondary text-secondary-foreground hover:bg-secondary-hover;
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover;
 }
 
 .badge--destructive {
-	@apply bg-destructive text-destructive-foreground hover:bg-destructive-hover;
+  @apply bg-destructive text-destructive-foreground hover:bg-destructive-hover;
 }
 
 .badge--outline {
-	@apply text-foreground border bg-transparent;
+  @apply text-foreground border bg-transparent;
 }

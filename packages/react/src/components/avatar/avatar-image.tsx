@@ -5,7 +5,7 @@ import { useAvatarContext } from "./avatar-context";
 export type AvatarImageProps = React.ComponentProps<typeof Avatar.Image>;
 
 export default function AvatarImage({ className, ...props }: AvatarImageProps) {
-	const { slots } = useAvatarContext();
+  const { slots } = useAvatarContext();
 
-	return <Avatar.Image className={slots.image({ className })} {...props} />;
+  return <Avatar.Image className={slots.image({ className })} {...props} />;
 }

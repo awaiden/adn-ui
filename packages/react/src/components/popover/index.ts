@@ -5,20 +5,14 @@ import PopoverRoot from "./popover-root";
 import PopoverTrigger from "./popover-trigger";
 
 export const Popover = {
-	Anchor: PopoverAnchor,
-	Close: PopoverClose,
-	Content: PopoverContent,
-	Root: PopoverRoot,
-	Trigger: PopoverTrigger,
+  Anchor: PopoverAnchor,
+  Close: PopoverClose,
+  Content: PopoverContent,
+  Root: PopoverRoot,
+  Trigger: PopoverTrigger,
 };
 
-export {
-	PopoverRoot,
-	PopoverTrigger,
-	PopoverAnchor,
-	PopoverContent,
-	PopoverClose,
-};
+export { PopoverRoot, PopoverTrigger, PopoverAnchor, PopoverContent, PopoverClose };
 
 export type PopoverRootProps = React.ComponentProps<typeof PopoverRoot>;
 export type PopoverTriggerProps = React.ComponentProps<typeof PopoverTrigger>;

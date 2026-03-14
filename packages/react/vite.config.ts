@@ -6,6 +6,6 @@ import tsdownConfig from "./tsdown.config.js";
 
 // https://vite.dev/config/
 export default defineConfig({
-	pack: tsdownConfig,
-	plugins: [tailwindcss(), react()],
+  pack: tsdownConfig,
+  plugins: [tailwindcss(), react()],
 });

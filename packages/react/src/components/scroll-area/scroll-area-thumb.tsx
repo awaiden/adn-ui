@@ -3,21 +3,16 @@ import { cn } from "tailwind-variants";
 
 import { useScrollAreaContext } from "./scroll-area-context";
 
-export type ScrollAreaThumbProps = React.ComponentProps<
-	typeof ScrollArea.Thumb
->;
+export type ScrollAreaThumbProps = React.ComponentProps<typeof ScrollArea.Thumb>;
 
-export default function ScrollAreaThumb({
-	className,
-	...props
-}: ScrollAreaThumbProps) {
-	const { slots } = useScrollAreaContext();
+export default function ScrollAreaThumb({ className, ...props }: ScrollAreaThumbProps) {
+  const { slots } = useScrollAreaContext();
 
-	return (
-		<ScrollArea.Thumb
-			data-slot="scroll-area-thumb"
-			className={cn(slots.thumb(), className)}
-			{...props}
-		/>
-	);
+  return (
+    <ScrollArea.Thumb
+      data-slot="scroll-area-thumb"
+      className={cn(slots.thumb(), className)}
+      {...props}
+    />
+  );
 }

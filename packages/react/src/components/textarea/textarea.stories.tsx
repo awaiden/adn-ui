@@ -4,21 +4,21 @@ import { Label } from "../label";
 import { Textarea } from "./index";
 
 const meta: Meta<typeof Textarea> = {
-	argTypes: {
-		disabled: {
-			control: "boolean",
-		},
-		placeholder: {
-			control: "text",
-		},
-		size: {
-			control: "select",
-			options: ["sm", "md", "lg"],
-		},
-	},
-	component: Textarea,
-	tags: ["autodocs"],
-	title: "Components/Textarea",
+  argTypes: {
+    disabled: {
+      control: "boolean",
+    },
+    placeholder: {
+      control: "text",
+    },
+    size: {
+      control: "select",
+      options: ["sm", "md", "lg"],
+    },
+  },
+  component: Textarea,
+  tags: ["autodocs"],
+  title: "Components/Textarea",
 };
 
 export default meta;
@@ -26,64 +26,60 @@ export default meta;
 type Story = StoryObj<typeof Textarea>;
 
 export const Default: Story = {
-	args: {
-		placeholder: "Type your message...",
-	},
+  args: {
+    placeholder: "Type your message...",
+  },
 };
 
 export const Small: Story = {
-	args: {
-		placeholder: "Small textarea",
-		size: "sm",
-	},
+  args: {
+    placeholder: "Small textarea",
+    size: "sm",
+  },
 };
 
 export const Medium: Story = {
-	args: {
-		placeholder: "Medium textarea",
-		size: "md",
-	},
+  args: {
+    placeholder: "Medium textarea",
+    size: "md",
+  },
 };
 
 export const Large: Story = {
-	args: {
-		placeholder: "Large textarea",
-		size: "lg",
-	},
+  args: {
+    placeholder: "Large textarea",
+    size: "lg",
+  },
 };
 
 export const Disabled: Story = {
-	args: {
-		disabled: true,
-		placeholder: "Disabled textarea",
-	},
+  args: {
+    disabled: true,
+    placeholder: "Disabled textarea",
+  },
 };
 
 export const WithLabel: Story = {
-	render: () => (
-		<div className="flex flex-col gap-2">
-			<Label htmlFor="message">Message</Label>
-			<Textarea id="message" placeholder="Write your message here..." />
-		</div>
-	),
+  render: () => (
+    <div className="flex flex-col gap-2">
+      <Label htmlFor="message">Message</Label>
+      <Textarea id="message" placeholder="Write your message here..." />
+    </div>
+  ),
 };
 
 export const Invalid: Story = {
-	render: () => (
-		<div className="flex flex-col gap-2">
-			<Label htmlFor="bio">Bio</Label>
-			<Textarea
-				id="bio"
-				aria-invalid="true"
-				placeholder="This field has an error"
-			/>
-		</div>
-	),
+  render: () => (
+    <div className="flex flex-col gap-2">
+      <Label htmlFor="bio">Bio</Label>
+      <Textarea id="bio" aria-invalid="true" placeholder="This field has an error" />
+    </div>
+  ),
 };
 
 export const WithRows: Story = {
-	args: {
-		placeholder: "Textarea with 6 rows",
-		rows: 6,
-	},
+  args: {
+    placeholder: "Textarea with 6 rows",
+    rows: 6,
+  },
 };

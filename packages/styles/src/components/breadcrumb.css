@@ -1,23 +1,23 @@
 .breadcrumb__list {
-	@apply text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm wrap-break-word sm:gap-2.5;
+  @apply text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm wrap-break-word sm:gap-2.5;
 }
 
 .breadcrumb__item {
-	@apply inline-flex items-center gap-1.5;
+  @apply inline-flex items-center gap-1.5;
 }
 
 .breadcrumb__link {
-	@apply hover:text-foreground transition-colors;
+  @apply hover:text-foreground transition-colors;
 }
 
 .breadcrumb__page {
-	@apply text-foreground font-normal;
+  @apply text-foreground font-normal;
 }
 
 .breadcrumb__separator {
-	@apply [&>svg]:size-3.5;
+  @apply [&>svg]:size-3.5;
 }
 
 .breadcrumb__ellipsis {
-	@apply flex size-9 items-center justify-center;
+  @apply flex size-9 items-center justify-center;
 }

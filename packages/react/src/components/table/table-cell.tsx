@@ -5,13 +5,7 @@ import { useTableContext } from "./table-context";
 export type TableCellProps = React.ComponentProps<"td">;
 
 export default function TableCell({ className, ...props }: TableCellProps) {
-	const { slots } = useTableContext();
+  const { slots } = useTableContext();
 
-	return (
-		<td
-			data-slot="table-cell"
-			className={cn(slots.cell(), className)}
-			{...props}
-		/>
-	);
+  return <td data-slot="table-cell" className={cn(slots.cell(), className)} {...props} />;
 }

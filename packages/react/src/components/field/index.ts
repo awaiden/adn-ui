@@ -4,10 +4,10 @@ import { FieldLabel } from "./field-label";
 import { FieldRoot } from "./field-root";
 
 export const Field = {
-	Description: FieldDescription,
-	Error: FieldError,
-	Label: FieldLabel,
-	Root: FieldRoot,
+  Description: FieldDescription,
+  Error: FieldError,
+  Label: FieldLabel,
+  Root: FieldRoot,
 };
 
 export { FieldDescription, FieldError, FieldLabel, FieldRoot };

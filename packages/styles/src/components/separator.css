@@ -1,11 +1,11 @@
 .separator {
-	@apply bg-border shrink-0;
+  @apply bg-border shrink-0;
 }
 
 .separator--horizontal {
-	@apply h-px w-full;
+  @apply h-px w-full;
 }
 
 .separator--vertical {
-	@apply h-full w-px;
+  @apply h-full w-px;
 }

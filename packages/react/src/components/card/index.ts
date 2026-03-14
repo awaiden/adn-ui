@@ -5,11 +5,11 @@ import CardRoot from "./card-root";
 import CardTitle from "./card-title";
 
 export const Card = {
-	Content: CardContent,
-	Description: CardDescription,
-	Header: CardHeader,
-	Root: CardRoot,
-	Title: CardTitle,
+  Content: CardContent,
+  Description: CardDescription,
+  Header: CardHeader,
+  Root: CardRoot,
+  Title: CardTitle,
 };
 
 export { CardRoot, CardContent, CardDescription, CardHeader, CardTitle };

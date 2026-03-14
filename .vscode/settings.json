@@ -1,12 +1,12 @@
 {
-	"npm.packageManager": "pnpm",
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
-	"editor.defaultFormatter": "oxc.oxc-vscode",
-	"editor.formatOnSaveMode": "file",
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.oxc": "explicit"
-	}
+  "npm.packageManager": "pnpm",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "explicit"
+  }
 }

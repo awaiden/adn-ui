@@ -1,47 +1,47 @@
 .table__wrapper {
-	@apply relative w-full overflow-auto;
+  @apply relative w-full overflow-auto;
 }
 
 .table {
-	@apply w-full caption-bottom text-sm;
+  @apply w-full caption-bottom text-sm;
 }
 
 .table__header {
-	@apply [&_tr]:border-b;
+  @apply [&_tr]:border-b;
 }
 
 .table__body {
-	@apply [&_tr:last-child]:border-0;
+  @apply [&_tr:last-child]:border-0;
 }
 
 .table__footer {
-	@apply bg-muted/50 border-t font-medium [&_tr:last-child]:border-0;
+  @apply bg-muted/50 border-t font-medium [&_tr:last-child]:border-0;
 }
 
 .table__row {
-	@apply hover:bg-muted/50 border-b transition-colors;
+  @apply hover:bg-muted/50 border-b transition-colors;
 
-	&[data-state="selected"] {
-		@apply bg-muted;
-	}
+  &[data-state="selected"] {
+    @apply bg-muted;
+  }
 }
 
 .table__head {
-	@apply text-muted-foreground h-10 px-3 text-left align-middle font-medium;
+  @apply text-muted-foreground h-10 px-3 text-left align-middle font-medium;
 
-	&[role="checkbox"] {
-		@apply pr-0;
-	}
+  &[role="checkbox"] {
+    @apply pr-0;
+  }
 }
 
 .table__cell {
-	@apply p-3 align-middle;
+  @apply p-3 align-middle;
 
-	&[role="checkbox"] {
-		@apply pr-0;
-	}
+  &[role="checkbox"] {
+    @apply pr-0;
+  }
 }
 
 .table__caption {
-	@apply text-muted-foreground mt-4 text-sm;
+  @apply text-muted-foreground mt-4 text-sm;
 }

@@ -1,23 +1,23 @@
 .field {
-	@apply flex gap-1.5;
+  @apply flex gap-1.5;
 }
 
 .field--horizontal {
-	@apply flex-row items-center;
+  @apply flex-row items-center;
 }
 
 .field--vertical {
-	@apply flex-col items-start;
+  @apply flex-col items-start;
 }
 
 .field__label {
-	@apply text-sm font-medium;
+  @apply text-sm font-medium;
 }
 
 .field__description {
-	@apply text-muted-foreground text-sm;
+  @apply text-muted-foreground text-sm;
 }
 
 .field__error {
-	@apply text-destructive text-sm;
+  @apply text-destructive text-sm;
 }

@@ -6,21 +6,21 @@ import { useBreadcrumbContext } from "./breadcrumb-context";
 export type BreadcrumbSeparatorProps = React.ComponentProps<"li">;
 
 export default function BreadcrumbSeparator({
-	children,
-	className,
-	...props
+  children,
+  className,
+  ...props
 }: BreadcrumbSeparatorProps) {
-	const { slots } = useBreadcrumbContext();
+  const { slots } = useBreadcrumbContext();
 
-	return (
-		<li
-			data-slot="breadcrumb-separator"
-			role="presentation"
-			aria-hidden="true"
-			className={cn(slots.separator(), className)}
-			{...props}
-		>
-			{children ?? <ChevronRight className="size-3.5" />}
-		</li>
-	);
+  return (
+    <li
+      data-slot="breadcrumb-separator"
+      role="presentation"
+      aria-hidden="true"
+      className={cn(slots.separator(), className)}
+      {...props}
+    >
+      {children ?? <ChevronRight className="size-3.5" />}
+    </li>
+  );
 }
