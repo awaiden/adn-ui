@@ -1,40 +1,40 @@
 {
-	"name": "adn-ui",
-	"private": true,
-	"description": "A modern, accessible, and cross-framework UI library built with Radix UI, Bits UI, Reka UI, Tailwind CSS v4, and Tailwind Variants.",
-	"homepage": "https://github.com/awaiden/adn-ui#readme",
-	"bugs": {
-		"url": "https://github.com/awaiden/adn-ui/issues"
-	},
-	"license": "MIT",
-	"author": "awaiden (https://github.com/awaiden)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/awaiden/adn-ui.git"
-	},
-	"workspaces": [
-		"packages/*",
-		"apps/*",
-		"examples/*"
-	],
-	"type": "module",
-	"scripts": {
-		"dev": "turbo run dev",
-		"build": "turbo run build",
-		"lint": "vp lint .",
-		"fmt": "vp fmt .",
-		"prepare": "vp config",
-		"test": "turbo run test"
-	},
-	"dependencies": {
-		"@tailwindcss/vite": "^4.2.1",
-		"tailwindcss": "^4.2.1"
-	},
-	"devDependencies": {
-		"@changesets/cli": "^2.30.0",
-		"eslint-plugin-perfectionist": "^5.6.0",
-		"turbo": "^2.8.14",
-		"vite-plus": "catalog:"
-	},
-	"packageManager": "pnpm@10.30.2"
+  "name": "adn-ui",
+  "private": true,
+  "description": "A modern, accessible, and cross-framework UI library built with Radix UI, Bits UI, Reka UI, Tailwind CSS v4, and Tailwind Variants.",
+  "homepage": "https://github.com/awaiden/adn-ui#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/adn-ui/issues"
+  },
+  "license": "MIT",
+  "author": "awaiden (https://github.com/awaiden)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awaiden/adn-ui.git"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "examples/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "vp lint .",
+    "fmt": "vp fmt .",
+    "prepare": "vp config",
+    "test": "turbo run test"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0",
+    "eslint-plugin-perfectionist": "^5.6.0",
+    "turbo": "^2.8.14",
+    "vite-plus": "catalog:"
+  },
+  "packageManager": "pnpm@10.30.2"
 }
