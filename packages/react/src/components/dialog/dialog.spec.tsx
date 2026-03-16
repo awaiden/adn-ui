@@ -1,4 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import { describe, expect, test } from "vite-plus/test";
 
 import { Dialog } from "./index";
@@ -54,6 +60,7 @@ describe("Dialog", () => {
       <Dialog.Root defaultOpen>
         <Dialog.Content>
           <Dialog.Title>Title</Dialog.Title>
+          <Dialog.Description>Description</Dialog.Description>
         </Dialog.Content>
       </Dialog.Root>,
     );
@@ -63,6 +70,8 @@ describe("Dialog", () => {
     const closeButton = document.body.querySelector('[data-slot="dialog-close"]');
     (closeButton as HTMLElement).click();
 
-    expect(screen.queryByText("Title")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByText("Title")).not.toBeInTheDocument();
+    });
   });
 });
