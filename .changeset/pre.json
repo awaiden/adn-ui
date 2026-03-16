@@ -4,8 +4,7 @@
   "initialVersions": {
     "@adn-ui/core": "0.0.0",
     "@adn-ui/react": "0.0.0",
-    "@adn-ui/styles": "0.0.0",
-    "@adn-ui/svelte": "0.0.0"
+    "@adn-ui/styles": "0.0.0"
   },
   "changesets": ["huge-insects-throw"]
 }
