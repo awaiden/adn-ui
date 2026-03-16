@@ -12,10 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/awaiden/adn-ui.git"
   },
-  "engines": {
-    "node": ">=20.0.0",
-    "bun": ">=1.3.9"
-  },
   "workspaces": [
     "packages/*",
     "apps/*",
@@ -39,6 +35,10 @@
   "overrides": {
     "vite": "8.0.0",
     "vite-plus": "0.1.11"
+  },
+  "engines": {
+    "bun": ">=1.3.9",
+    "node": ">=20.0.0"
   },
   "packageManager": "bun@1.3.9"
 }

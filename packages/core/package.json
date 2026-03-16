@@ -20,13 +20,6 @@
     "url": "git+https://github.com/awaiden/adn-ui.git",
     "directory": "packages/core"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "engines": {
-    "node": ">=20.0.0",
-    "bun": ">=1.3.9"
-  },
   "type": "module",
   "sideEffects": false,
   "exports": {
@@ -38,6 +31,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "dev": "vp pack --watch",
@@ -53,5 +49,9 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "engines": {
+    "bun": ">=1.3.9",
+    "node": ">=20.0.0"
   }
 }

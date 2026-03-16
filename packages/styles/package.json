@@ -21,13 +21,6 @@
     "url": "git+https://github.com/awaiden/adn-ui.git",
     "directory": "packages/styles"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "engines": {
-    "node": ">=20.0.0",
-    "bun": ">=1.3.9"
-  },
   "files": [
     "src"
   ],
@@ -42,6 +35,9 @@
       "types": "./src/index.d.ts"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "tailwindcss": "^4.2.1",
     "tailwindcss-animate": "^1.0.7"
@@ -49,5 +45,9 @@
   "peerDependencies": {
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "bun": ">=1.3.9",
+    "node": ">=20.0.0"
   }
 }
