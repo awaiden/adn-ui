@@ -1,6 +1,6 @@
 import { buttonVariants } from "@adn-ui/core";
+import { cn } from "@adn-ui/core";
 import { AlertDialog } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 export type AlertDialogActionProps = React.ComponentProps<typeof AlertDialog.Action>;
 

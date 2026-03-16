@@ -1,5 +1,5 @@
 import { cardVariants } from "@adn-ui/core";
-import { cn } from "tailwind-variants";
+import { cn } from "@adn-ui/core";
 
 import { CardContext } from "./card-context";
 

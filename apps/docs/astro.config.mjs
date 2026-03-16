@@ -44,9 +44,6 @@ export default defineConfig({
   site: "https://ui.awaiden.com",
 
   vite: {
-    plugins: [
-      // @ts-expect-error - tailwindcss vite version mismatch
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
 });

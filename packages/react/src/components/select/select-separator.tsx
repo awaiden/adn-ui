@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { Select } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useSelectContext } from "./select-context";
 

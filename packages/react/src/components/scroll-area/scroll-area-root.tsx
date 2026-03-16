@@ -1,6 +1,6 @@
 import { scrollAreaVariants } from "@adn-ui/core";
+import { cn } from "@adn-ui/core";
 import { ScrollArea } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { ScrollAreaContext } from "./scroll-area-context";
 

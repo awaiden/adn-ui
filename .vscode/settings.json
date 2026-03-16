@@ -1,4 +1,5 @@
 {
+  "js/ts.experimental.useTsgo": true,
   "npm.packageManager": "pnpm",
   "files.associations": {
     "*.css": "tailwindcss"
@@ -8,5 +9,8 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "oxc.oxc-vscode"
   }
 }

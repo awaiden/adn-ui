@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { AlertDialog } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useAlertDialogContext } from "./alert-dialog-context";
 import AlertDialogOverlay from "./alert-dialog-overlay";

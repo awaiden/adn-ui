@@ -25,9 +25,9 @@ bun add @adn-ui/core
 ## Usage
 
 ```ts
-import { button } from "@adn-ui/core";
+import { buttonVariants } from "@adn-ui/core";
 
-const classes = button({
+const classes = buttonVariants({
   variant: "primary",
   size: "md",
   className: "extra-class",

@@ -1,5 +1,5 @@
 import { breadcrumbVariants } from "@adn-ui/core";
-import { cn } from "tailwind-variants";
+import { cn } from "@adn-ui/core";
 
 import { BreadcrumbContext } from "./breadcrumb-context";
 

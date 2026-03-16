@@ -1,6 +1,6 @@
+import { cn } from "@adn-ui/core";
 import { ChevronDown } from "lucide-react";
 import { Accordion } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useAccordionContext } from "./accordion-context";
 import AccordionHeader from "./accordion-header";

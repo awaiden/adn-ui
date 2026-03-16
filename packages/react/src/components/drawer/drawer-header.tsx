@@ -1,4 +1,4 @@
-import { cn } from "tailwind-variants";
+import { cn } from "@adn-ui/core";
 
 import { useDrawerContext } from "./drawer-context";
 

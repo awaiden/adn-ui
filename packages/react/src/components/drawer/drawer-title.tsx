@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { Dialog } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useDrawerContext } from "./drawer-context";
 

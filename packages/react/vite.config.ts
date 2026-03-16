@@ -8,4 +8,9 @@ import tsdownConfig from "./tsdown.config.js";
 export default defineConfig({
   pack: tsdownConfig,
   plugins: [tailwindcss(), react()],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./vitest.setup.ts",
+  },
 });

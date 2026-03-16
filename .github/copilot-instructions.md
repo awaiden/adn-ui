@@ -1,5 +1,32 @@
 # Copilot Workspace Instructions
 
+## 🛠️ Commit Message Rules
+
+**Format:** `<type>(<scope>): <description>`
+
+**Types:**
+
+- **`feat`**: A new feature (e.g., a new component).
+- **`fix`**: A bug fix.
+- **`chore`**: Maintenance tasks (build config, dependencies, styles).
+- **`refactor`**: Code change that neither fixes a bug nor adds a feature.
+- **`docs`**: Documentation only changes.
+- **`style`**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+- **`perf`**: A code change that improves performance.
+- **`test`**: Adding missing tests or correcting existing tests.
+
+**Rules:**
+
+1. **Lowercase:** The description must start with a lowercase letter.
+2. **Imperative:** Use the imperative mood ("add" instead of "added").
+3. **No Period:** Do not put a period at the end of the line.
+4. **Scope:** Use the component name or area (e.g., `accordion`, `build`, `deps`) as the scope.
+
+---
+
+**Example:**
+`chore(style): update button padding and border-radius`
+
 ## Build & Test
 
 - Build all: `bun run build`

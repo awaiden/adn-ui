@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { Popover } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { usePopoverContext } from "./popover-context";
 

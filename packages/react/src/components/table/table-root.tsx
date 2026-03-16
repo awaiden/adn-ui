@@ -1,5 +1,4 @@
-import { tableVariants } from "@adn-ui/core";
-import { cn } from "tailwind-variants";
+import { tableVariants, cn } from "@adn-ui/core";
 
 import { TableContext } from "./table-context";
 

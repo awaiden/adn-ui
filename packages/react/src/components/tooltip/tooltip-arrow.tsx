@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { Tooltip } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useTooltipContext } from "./tooltip-context";
 

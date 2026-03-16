@@ -5,9 +5,13 @@ export default defineConfig({
     sortPackageJson: true,
   },
   lint: {
+    jsPlugins: ["eslint-plugin-perfectionist"],
     options: { typeAware: true, typeCheck: true },
+    rules: {
+      "perfectionist/sort-imports": "error",
+    },
   },
   staged: {
-    "*.{ts,tsx}": ["pnpm lint --fix", "pnpm fmt --write"],
+    "*.{ts,tsx}": ["bun lint --fix", "bun fmt --write"],
   },
 });

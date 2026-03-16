@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { ChevronRight } from "lucide-react";
-import { cn } from "tailwind-variants";
 
 import { useBreadcrumbContext } from "./breadcrumb-context";
 

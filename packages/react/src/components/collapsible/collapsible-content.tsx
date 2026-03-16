@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { Collapsible } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useCollapsibleContext } from "./collapsible-context";
 

@@ -1,5 +1,5 @@
+import { cn } from "@adn-ui/core";
 import { RadioGroup } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useRadioGroupContext } from "./radio-group-context";
 

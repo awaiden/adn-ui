@@ -1,5 +1,5 @@
 import { type AlertVariants, alertVariants } from "@adn-ui/core";
-import { cn } from "tailwind-variants";
+import { cn } from "@adn-ui/core";
 
 import { AlertContext } from "./alert-context";
 

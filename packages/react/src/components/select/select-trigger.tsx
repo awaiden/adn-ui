@@ -1,6 +1,6 @@
+import { cn } from "@adn-ui/core";
 import { ChevronDown } from "lucide-react";
 import { Select } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useSelectContext } from "./select-context";
 

@@ -1,6 +1,6 @@
+import { cn } from "@adn-ui/core";
 import { X } from "lucide-react";
 import { Dialog } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useDrawerContext } from "./drawer-context";
 import DrawerOverlay from "./drawer-overlay";

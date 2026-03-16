@@ -1,6 +1,6 @@
+import { cn } from "@adn-ui/core";
 import { ChevronRight } from "lucide-react";
 import { DropdownMenu } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { useDropdownMenuContext } from "./dropdown-menu-context";
 

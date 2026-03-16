@@ -1,6 +1,6 @@
 import { accordionVariants } from "@adn-ui/core";
+import { cn } from "@adn-ui/core";
 import { Accordion } from "radix-ui";
-import { cn } from "tailwind-variants";
 
 import { AccordionContext } from "./accordion-context";
 
