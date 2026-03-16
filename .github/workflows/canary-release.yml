@@ -43,7 +43,9 @@ jobs:
           # Eğer changeset yoksa hata vermemesi için boş bir tane ekle
           npx changeset add --empty || true
 
-          npx changeset pre enter canary
+          if [ ! -f .changeset/pre.json ]; then
+            npx changeset pre enter canary
+          fi
 
           npx changeset version
 
