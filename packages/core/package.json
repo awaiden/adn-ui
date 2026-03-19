@@ -20,6 +20,9 @@
     "url": "git+https://github.com/awaiden/adn-ui.git",
     "directory": "packages/core"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
   "exports": {

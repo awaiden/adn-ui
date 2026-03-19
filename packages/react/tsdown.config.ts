@@ -7,6 +7,7 @@ export default defineConfig({
   dts: true,
   format: ["esm", "cjs"],
   platform: "neutral",
+  sourcemap: true,
   deps: {
     neverBundle: ["react", "react-dom", "react/jsx-runtime"],
   },

@@ -10,40 +10,37 @@ jobs:
   publish-canary:
     name: Build and Publish Canary
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'chore: publish')"
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
 
       - name: Install Dependencies
-        run: bun install
+        run: bun install --frozen-lockfile
+
+      - name: Enter Prerelease Mode (Canary)
+        run: |
+          if [ ! -f .changeset/pre.json ]; then
+            npx changeset pre enter canary
+          fi
+
+      - name: Versioning
+        run: npx changeset version
 
       - name: Build All Packages
         run: bun run build
 
       - name: Release Canary to NPM
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-
-          # Eğer changeset yoksa hata vermemesi için boş bir tane ekle
-          npx changeset add --empty || true
-
-          if [ ! -f .changeset/pre.json ]; then
-            npx changeset pre enter canary
-          fi
-
-          npx changeset version
-
-          npx changeset publish
+          npx changeset publish --tag canary
