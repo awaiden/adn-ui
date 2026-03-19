@@ -2,45 +2,42 @@ name: Canary Release
 
 on:
   push:
-    branches:
-      - main
-      - dev
+    branches: [main, dev]
 
 jobs:
   publish-canary:
-    name: Build and Publish Canary
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'chore: publish')"
 
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 24
 
-      - name: Install Dependencies
-        run: bun install --frozen-lockfile
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Enter Prerelease Mode (Canary)
+      - name: Install & Build
         run: |
-          if [ ! -f .changeset/pre.json ]; then
-            npx changeset pre enter canary
+          bun install --frozen-lockfile
+          bun run build
+
+      - name: Release Snapshot
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+
+          if [ -z "$(ls .changeset/*.md 2>/dev/null | grep -v README.md)" ]; then
+            echo -e "---\n'@adn-ui/core': patch\n'@adn-ui/react': patch\n'@adn-ui/styles': patch\n---\nAutomated" > .changeset/force-snapshot.md
           fi
 
-      - name: Versioning
-        run: npx changeset version
+          SHA=$(git rev-parse --short HEAD)
 
-      - name: Build All Packages
-        run: bun run build
+          npx changeset version --snapshot canary
 
-      - name: Release Canary to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
           npx changeset publish --tag canary
