@@ -3,7 +3,6 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [["@adn-ui/core", "@adn-ui/react", "@adn-ui/styles"]],
-  "linked": [["@adn-ui/react", "@adn-ui/core", "@adn-ui/styles"]],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
