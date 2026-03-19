@@ -13,8 +13,8 @@ export default function PopoverClose({ children, className, ...props }: PopoverC
     <Popover.Close data-slot="popover-close" className={cn(slots.close(), className)} {...props}>
       {children ?? (
         <>
-          <X className="size-4" />
-          <span className="sr-only">Close</span>
+          <X className={slots.closeIcon()} />
+          <span className={slots.srOnly()}>Close</span>
         </>
       )}
     </Popover.Close>

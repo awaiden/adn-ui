@@ -21,8 +21,8 @@ export default function DrawerContent({ children, className, ...props }: DrawerC
       >
         {children}
         <Dialog.Close data-slot="drawer-close" className={slots.close()}>
-          <X className="size-4" />
-          <span className="sr-only">Close</span>
+          <X className={slots.closeIcon()} />
+          <span className={slots.srOnly()}>Close</span>
         </Dialog.Close>
       </Dialog.Content>
     </DrawerPortal>

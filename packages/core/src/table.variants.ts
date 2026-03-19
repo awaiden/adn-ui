@@ -10,6 +10,7 @@ export const tableVariants = tv({
     header: "table__header",
     root: "table",
     row: "table__row",
+    wrapper: "table__wrapper",
   },
 });
 

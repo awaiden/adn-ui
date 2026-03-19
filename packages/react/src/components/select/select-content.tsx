@@ -1,4 +1,3 @@
-import { cn } from "@adn-ui/core";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Select } from "radix-ui";
 
@@ -17,27 +16,24 @@ export default function SelectContent({
   return (
     <Select.Portal>
       <Select.Content
+        className={slots.content({ className })}
         data-slot="select-content"
-        className={cn(slots.content(), className)}
         position={position}
-        sideOffset={4}
         {...props}
       >
         <Select.ScrollUpButton className={slots.scrollButton()}>
-          <ChevronUp className="size-4" />
+          <ChevronUp className={slots.scrollButtonIcon()} />
         </Select.ScrollUpButton>
         <Select.Viewport
-          data-slot="select-viewport"
-          className={cn(
-            slots.viewport(),
-            position === "popper" &&
-              "h-(--radix-select-trigger-height) w-full min-w-(--radix-select-trigger-width)",
-          )}
+          className={slots.viewport({
+            className,
+            viewport: position === "popper" ? "popper" : undefined,
+          })}
         >
           {children}
         </Select.Viewport>
         <Select.ScrollDownButton className={slots.scrollButton()}>
-          <ChevronDown className="size-4" />
+          <ChevronDown className={slots.scrollButtonIcon()} />
         </Select.ScrollDownButton>
       </Select.Content>
     </Select.Portal>

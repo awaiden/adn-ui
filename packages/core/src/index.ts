@@ -32,4 +32,6 @@ export * from "./tabs.variants";
 export * from "./textarea.variants";
 export * from "./toggle.variants";
 export * from "./tooltip.variants";
+export * from "./navbar.variants";
+export * from "./navigation-menu.variants";
 export * from "./utils";

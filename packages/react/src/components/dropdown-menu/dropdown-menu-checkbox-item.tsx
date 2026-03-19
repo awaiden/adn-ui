@@ -16,14 +16,15 @@ export default function DropdownMenuCheckboxItem({
 
   return (
     <DropdownMenu.CheckboxItem
-      data-slot="dropdown-menu-checkbox-item"
-      className={cn(slots.checkboxItem(), className)}
       checked={checked}
+      className={slots.checkboxItem({ className })}
       {...props}
     >
-      <DropdownMenu.ItemIndicator className={slots.itemIndicator()}>
-        <Check className="size-4" />
-      </DropdownMenu.ItemIndicator>
+      <span className={slots.itemIndicator()}>
+        <DropdownMenu.ItemIndicator>
+          <Check className={cn(slots.itemIndicatorIcon(), "check")} />
+        </DropdownMenu.ItemIndicator>
+      </span>
       {children}
     </DropdownMenu.CheckboxItem>
   );

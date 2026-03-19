@@ -6,6 +6,7 @@ export const checkboxVariants = tv({
   },
   slots: {
     indicator: "checkbox__indicator",
+    checkIcon: "checkbox__check-icon",
     root: "checkbox",
   },
   variants: {

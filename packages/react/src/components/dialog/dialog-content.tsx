@@ -16,13 +16,13 @@ export default function DialogContent({ children, className, ...props }: DialogC
       <DialogOverlay />
       <Dialog.Content
         data-slot="dialog-content"
-        className={cn(slots.content(), className)}
+        className={slots.content({ className })}
         {...props}
       >
         {children}
-        <Dialog.Close data-slot="dialog-close" className={slots.close()}>
-          <X className="size-4" />
-          <span className="sr-only">Close</span>
+        <Dialog.Close className={slots.close()}>
+          <X className={slots.closeIcon()} />
+          <span className={slots.srOnly()}>Close</span>
         </Dialog.Close>
       </Dialog.Content>
     </DialogPortal>

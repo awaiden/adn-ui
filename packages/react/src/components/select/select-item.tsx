@@ -1,4 +1,3 @@
-import { cn } from "@adn-ui/core";
 import { Check } from "lucide-react";
 import { Select } from "radix-ui";
 
@@ -10,11 +9,11 @@ export default function SelectItem({ children, className, ...props }: SelectItem
   const { slots } = useSelectContext();
 
   return (
-    <Select.Item data-slot="select-item" className={cn(slots.item(), className)} {...props}>
-      <Select.ItemText>{children}</Select.ItemText>
+    <Select.Item className={slots.item({ className })} data-slot="select-item" {...props}>
       <Select.ItemIndicator className={slots.itemIndicator()}>
-        <Check className="size-4" />
+        <Check className={slots.itemIndicatorIcon()} />
       </Select.ItemIndicator>
+      <Select.ItemText>{children}</Select.ItemText>
     </Select.Item>
   );
 }

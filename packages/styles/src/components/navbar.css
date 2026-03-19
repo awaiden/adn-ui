@@ -1,0 +1,60 @@
+.navbar {
+  @apply flex w-full h-16 items-center px-4 bg-background z-50;
+}
+
+.navbar--sticky {
+  @apply sticky top-0 backdrop-blur-sm;
+}
+
+.navbar--fixed {
+  @apply fixed top-0 left-0 right-0;
+}
+
+.navbar--border {
+  @apply border-b;
+}
+
+.navbar__brand {
+  @apply font-bold text-xl mr-4;
+}
+
+.navbar__content {
+  @apply flex flex-1 items-center gap-4;
+
+  &:first-child {
+    @apply justify-start;
+  }
+
+  &:nth-child(2) {
+    @apply justify-center;
+  }
+
+  &:last-child {
+    @apply justify-end;
+  }
+}
+
+.navbar__item {
+  @apply text-sm font-medium text-muted-foreground transition-colors hover:text-foreground;
+}
+
+.navbar__toggle {
+  @apply inline-flex items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground md:hidden;
+}
+
+.navbar__toggle-icon {
+  @apply size-6;
+}
+
+/* Menu */
+.navbar__menu {
+  @apply hidden md:flex items-center gap-4;
+
+  &[data-state="open"] {
+    @apply flex flex-col absolute top-16 left-0 w-full bg-background border-b p-4 md:static md:flex-row md:border-0 md:p-0;
+  }
+}
+
+.navbar__menu-item {
+  @apply text-sm font-medium text-muted-foreground transition-colors hover:text-foreground w-full md:w-auto;
+}

@@ -6,6 +6,8 @@ export const drawerVariants = tv({
   },
   slots: {
     close: "drawer__close",
+    closeIcon: "drawer__close-icon",
+    srOnly: "sr-only",
     content: "drawer__content",
     description: "drawer__description",
     footer: "drawer__footer",

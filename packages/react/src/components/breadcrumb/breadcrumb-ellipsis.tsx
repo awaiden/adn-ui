@@ -16,8 +16,8 @@ export default function BreadcrumbEllipsis({ className, ...props }: BreadcrumbEl
       className={cn(slots.ellipsis(), className)}
       {...props}
     >
-      <Ellipsis className="size-4" />
-      <span className="sr-only">More</span>
+      <Ellipsis className={slots.icon()} />
+      <span className={slots.srOnly()}>More</span>
     </span>
   );
 }

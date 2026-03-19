@@ -96,3 +96,9 @@ export const IconButton: Story = {
     size: "icon",
   },
 };
+
+export const CustomStyled: Story = {
+  render: () => (
+    <Button className="bg-green-500 text-white hover:bg-green-600">Custom Styled Button</Button>
+  ),
+};

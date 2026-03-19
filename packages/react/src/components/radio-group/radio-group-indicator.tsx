@@ -1,4 +1,3 @@
-import { cn } from "@adn-ui/core";
 import { RadioGroup } from "radix-ui";
 
 import { useRadioGroupContext } from "./radio-group-context";
@@ -11,10 +10,10 @@ export default function RadioGroupIndicator({ className, ...props }: RadioGroupI
   return (
     <RadioGroup.Indicator
       data-slot="radio-group-indicator"
-      className={cn(slots.indicator(), className)}
+      className={slots.indicator({ className })}
       {...props}
     >
-      <div className="radio-group__indicator-dot" />
+      <div className={slots.indicatorDot()} />
     </RadioGroup.Indicator>
   );
 }

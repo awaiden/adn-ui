@@ -1,5 +1,21 @@
 .alert {
-  @apply [&>svg]:text-foreground relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:top-4 [&>svg]:left-4 [&>svg+div]:-translate-y-0.75 [&>svg~*]:pl-7;
+  @apply relative w-full rounded-lg border p-4 [&>div+div]:-translate-y-0.75;
+}
+
+.alert__icon {
+  @apply text-foreground absolute top-4 left-4;
+
+  & svg {
+    @apply size-4;
+  }
+
+  .alert--destructive & {
+    @apply text-destructive;
+  }
+
+  & ~ * {
+    @apply pl-7;
+  }
 }
 
 .alert--default {

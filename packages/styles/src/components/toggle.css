@@ -1,13 +1,13 @@
 .toggle {
   @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
-  @apply hover:bg-neutral-100 hover:text-neutral-900;
-  @apply focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:outline-none;
+  @apply hover:bg-muted hover:text-muted-foreground;
+  @apply focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none;
   @apply disabled:pointer-events-none disabled:opacity-50;
-  @apply data-[state=on]:bg-neutral-200 data-[state=on]:text-neutral-900;
+  @apply data-[state=on]:bg-secondary data-[state=on]:text-secondary-foreground;
 }
 
 .toggle--outline {
-  @apply border border-neutral-200 bg-transparent shadow-sm hover:bg-neutral-100 hover:text-neutral-900;
+  @apply border border-border bg-transparent shadow-sm hover:bg-muted hover:text-muted-foreground;
 }
 
 .toggle--sm {

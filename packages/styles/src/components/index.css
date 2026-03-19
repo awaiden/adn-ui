@@ -23,7 +23,6 @@
 @import "./select.css";
 @import "./separator.css";
 @import "./skeleton.css";
-@import "./slider.css";
 @import "./surface.css";
 @import "./switch.css";
 @import "./table.css";
@@ -31,4 +30,6 @@
 @import "./textarea.css";
 @import "./toggle.css";
 @import "./tooltip.css";
+@import "./navbar.css";
+@import "./navigation-menu.css";
 @import "./group.css";

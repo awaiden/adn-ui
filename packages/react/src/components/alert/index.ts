@@ -1,14 +1,16 @@
 import AlertDescription from "./alert-description";
+import AlertIcon from "./alert-icon";
 import AlertRoot from "./alert-root";
 import AlertTitle from "./alert-title";
 
 export const Alert = {
   Description: AlertDescription,
+  Icon: AlertIcon,
   Root: AlertRoot,
   Title: AlertTitle,
 };
 
-export { AlertRoot, AlertTitle, AlertDescription };
+export { AlertRoot, AlertTitle, AlertDescription, AlertIcon };
 
 export type AlertRootProps = React.ComponentProps<typeof AlertRoot>;
 export type AlertTitleProps = React.ComponentProps<typeof AlertTitle>;

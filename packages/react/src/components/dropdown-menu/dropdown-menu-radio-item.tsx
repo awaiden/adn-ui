@@ -1,4 +1,3 @@
-import { cn } from "@adn-ui/core";
 import { Circle } from "lucide-react";
 import { DropdownMenu } from "radix-ui";
 
@@ -14,14 +13,12 @@ export default function DropdownMenuRadioItem({
   const { slots } = useDropdownMenuContext();
 
   return (
-    <DropdownMenu.RadioItem
-      data-slot="dropdown-menu-radio-item"
-      className={cn(slots.radioItem(), className)}
-      {...props}
-    >
-      <DropdownMenu.ItemIndicator className={slots.itemIndicator()}>
-        <Circle className="size-2 fill-current" />
-      </DropdownMenu.ItemIndicator>
+    <DropdownMenu.RadioItem className={slots.radioItem({ className })} {...props}>
+      <span className={slots.itemIndicator()}>
+        <DropdownMenu.ItemIndicator>
+          <Circle className={slots.itemIndicatorIcon()} />
+        </DropdownMenu.ItemIndicator>
+      </span>
       {children}
     </DropdownMenu.RadioItem>
   );

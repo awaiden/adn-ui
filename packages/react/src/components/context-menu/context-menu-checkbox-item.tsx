@@ -16,14 +16,15 @@ export default function ContextMenuCheckboxItem({
 
   return (
     <ContextMenu.CheckboxItem
-      data-slot="context-menu-checkbox-item"
-      className={cn(slots.checkboxItem(), className)}
       checked={checked}
+      className={slots.checkboxItem({ className })}
       {...props}
     >
-      <ContextMenu.ItemIndicator className={slots.itemIndicator()}>
-        <Check className="size-4" />
-      </ContextMenu.ItemIndicator>
+      <span className={slots.itemIndicator()}>
+        <ContextMenu.ItemIndicator>
+          <Check className={cn(slots.itemIndicatorIcon(), "check")} />
+        </ContextMenu.ItemIndicator>
+      </span>
       {children}
     </ContextMenu.CheckboxItem>
   );

@@ -1,9 +1,8 @@
 .switch {
-  @apply inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors;
-  @apply focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:outline-hidden;
+  @apply ring-offset-background inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors;
+  @apply focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-hidden;
   @apply disabled:cursor-not-allowed disabled:opacity-50;
-  @apply data-[state=checked]:bg-neutral-900 data-[state=unchecked]:bg-neutral-200;
-  @apply ring-offset-background;
+  @apply data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted;
 }
 
 .switch--sm {
@@ -19,7 +18,7 @@
 }
 
 .switch__thumb {
-  @apply pointer-events-none block rounded-full bg-white ring-0 transition-transform;
+  @apply bg-background pointer-events-none block rounded-full ring-0 transition-transform;
   @apply data-[state=unchecked]:translate-x-0;
 }
 

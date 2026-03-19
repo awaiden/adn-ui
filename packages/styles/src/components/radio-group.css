@@ -3,13 +3,13 @@
 }
 
 .radio-group__item {
-  @apply ring-offset-background aspect-square size-4 rounded-full border border-neutral-300 text-neutral-900;
+  @apply ring-offset-background aspect-square size-4 rounded-full border border-border text-primary;
 
-  @apply focus:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  @apply focus:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
 
   @apply disabled:cursor-not-allowed disabled:opacity-50;
 
-  @apply data-[state=checked]:border-neutral-900;
+  @apply data-[state=checked]:border-primary;
 }
 
 .radio-group__indicator {

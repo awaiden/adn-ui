@@ -13,7 +13,7 @@ type Story = StoryObj;
 
 export const Single: Story = {
   render: () => (
-    <Accordion.Root type="single" collapsible className="w-full max-w-md">
+    <Accordion.Root type="single" collapsible>
       <Accordion.Item value="item-1">
         <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
         <Accordion.Content>

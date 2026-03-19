@@ -13,8 +13,12 @@ export default function CheckboxIndicator({
   const { slots } = useCheckboxContext();
 
   return (
-    <Checkbox.Indicator className={slots.indicator({ className })} {...props}>
-      {children || <Check className="size-full" />}
+    <Checkbox.Indicator
+      data-slot="checkbox-indicator"
+      className={slots.indicator({ className })}
+      {...props}
+    >
+      {children || <Check className={slots.checkIcon()} />}
     </Checkbox.Indicator>
   );
 }

@@ -46,8 +46,26 @@
   @apply pl-8;
 }
 
+.context-menu__sub-trigger-icon {
+  @apply ml-auto;
+
+  & svg {
+    @apply size-4;
+  }
+}
+
 .context-menu__item-indicator {
-  @apply absolute left-2 flex h-3.5 w-3.5 items-center justify-center;
+  @apply absolute left-2 flex size-3.5 items-center justify-center;
+}
+
+.context-menu__item-indicator-icon {
+  & svg {
+    @apply size-2 fill-current;
+  }
+
+  &.check svg {
+    @apply size-4;
+  }
 }
 
 .context-menu__label {

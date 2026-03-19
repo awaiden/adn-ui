@@ -2,7 +2,7 @@ import { tv, type VariantProps } from "tailwind-variants";
 
 export const accordionVariants = tv({
   slots: {
-    chevron: "accordion__chevron",
+    triggerIcon: "accordion__trigger-icon",
     content: "accordion__content",
     header: "accordion__header",
     item: "accordion__item",

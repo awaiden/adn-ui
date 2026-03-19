@@ -1,55 +1,56 @@
-# adn-ui Project Context
+# adn-ui | Gemini Context
 
-`adn-ui` is a modern, accessible, and framework-agnostic UI library built with **Tailwind CSS v4**, **Tailwind Variants**, and accessibility primitives (**Radix UI** for React, **Bits UI** for Svelte, and **Reka UI** for Vue).
+This is the root directory of the **adn-ui** monorepo, a modern, accessible, and cross-framework UI library.
 
 ## Project Overview
 
-- **Monorepo Structure**: Managed with [Bun](https://bun.sh) and [Turborepo](https://turbo.build).
-  - `packages/core`: Shared styling logic and variants using `tailwind-variants`. Defines BEM-like class names (e.g., `button--md`).
-  - `packages/styles`: Central CSS repository, design tokens (OKLCH), and Tailwind v4 configuration.
-  - `packages/react`: React 19 components built on [Radix UI](https://www.radix-ui.com/).
-  - `packages/svelte`: Svelte 5 components built on [Bits UI](https://bits-ui.com/).
-  - `packages/vue`: Vue 3 components built on [Reka UI](https://reka-ui.com/).
-  - `apps/docs`: Documentation site built with Astro.
-- **Styling**: Leverages Tailwind CSS v4's native support for OKLCH, CSS variables, and `@plugin` architecture.
-- **Build System**: Uses `vite-plus` (`vp`) for package bundling (`vp pack`), linting (`vp lint`), and formatting (`vp fmt`).
+- **Purpose:** A unified design system providing consistent, high-quality UI components for React, Svelte, and Vue.
+- **Core Architecture:**
+  - **@adn-ui/styles:** Design tokens, OKLCH color definitions, and Tailwind CSS v4 configuration.
+  - **@adn-ui/core:** Framework-agnostic styling variants and logic powered by [Tailwind Variants](https://www.tailwind-variants.org/).
+  - **@adn-ui/react:** React 19 implementations built on [Radix UI](https://www.radix-ui.com/).
+  - **@adn-ui/svelte:** Svelte 5 implementations built on [Bits UI](https://bits-ui.com/).
+  - **@adn-ui/vue:** Vue 3 implementations built on [Reka UI](https://reka-ui.com/).
+  - **apps/docs:** Documentation site built with [Astro Starlight](https://starlight.astro.build/).
+- **Main Technologies:** [Bun](https://bun.sh), [Turborepo](https://turbo.build), [Vite Plus](https://github.com/vite-plus/vite-plus), [Tailwind CSS v4](https://tailwindcss.com), [TypeScript](https://www.typescriptlang.org/).
 
 ## Building and Running
 
-### Core Commands
+The project uses **Bun** as the primary package manager and task runner, with **Turborepo** for orchestration.
 
-- **Install Dependencies**: `bun install`
-- **Build All**: `bun run build` (via Turbo)
-- **Dev Mode**: `bun dev` (starts dev mode for all workspaces)
-- **Check (Lint/Format)**: `bun check` or `bun lint` / `bun format`
-- **Test**: `bun run test`
-
-### Framework-specific Development
-
-- **React Storybook**: `cd packages/react && bun run storybook`
-- **React Tests**: `cd packages/react && bun run test`
-- **Svelte Storybook**: `cd packages/svelte && bun run storybook`
-- **Vue Storybook**: `cd packages/vue && bun run storybook`
+| Command       | Action                                                   |
+| :------------ | :------------------------------------------------------- |
+| `bun install` | Installs all dependencies across the monorepo.           |
+| `bun dev`     | Starts development mode for all workspaces (watch mode). |
+| `bun build`   | Builds all packages and apps in the correct order.       |
+| `bun test`    | Runs the test suites across all packages.                |
+| `bun lint`    | Runs linting via `vite-plus` across the project.         |
+| `bun fmt`     | Formats the codebase via `vite-plus`.                    |
 
 ## Development Conventions
 
-### Component Architecture
+### Monorepo Management
 
-- **Compound Components**: Follow a consistent compound component API. Export components as a main object with sub-components (e.g., `Accordion.Item`, `Dialog.Content`).
-- **Variant-First Styling**: All styling variants must be defined in `@adn-ui/core` using `tailwind-variants` to ensure consistency across frameworks.
-- **Separation of Concerns**:
-  - **Logic/Variants**: `@adn-ui/core`
-  - **CSS/Tokens**: `@adn-ui/styles`
-  - **Framework Implementation**: `packages/react`, `packages/svelte`, `packages/vue`.
+- **Workspaces:** Organized into `packages/*` (libraries) and `apps/*` (documentation, examples).
+- **Build Pipeline:** Managed via `turbo.json`. Task dependencies (e.g., `build` depending on `^build`) ensure that shared packages like `@adn-ui/core` and `@adn-ui/styles` are built before consumer packages.
+- **Tooling:** Uses `vite-plus` (`vp`) for linting, formatting, and building.
 
-### Coding Standards
+### Component Design
 
-- **Tooling**: Biome is used for linting and formatting via `vp lint` and `vp fmt`.
-- **Naming**: Use kebab-case for filenames and BEM-inspired naming for core CSS classes.
-- **Accessibility**: All components MUST prioritize accessibility, leveraging industry-standard primitives (Radix, Bits, Reka) and following WCAG guidelines.
-- **Changesets**: Use `bun changeset` to document changes for versioning and publishing.
+- **Variants-First:** All styling logic is centralized in `@adn-ui/core` using `tailwind-variants`. This ensures visual consistency across frameworks.
+- **BEM-ish Naming:** Follows a consistent BEM-like naming convention for CSS classes and variant slots (e.g., `button`, `button--primary`, `button__icon`).
+- **Compound Components:** Favors the compound component pattern (e.g., `Accordion.Root`, `Accordion.Item`) for maximum flexibility.
 
-### Testing
+### Releases
 
-- **Vitest**: Preferred testing framework.
-- **Browser Testing**: `vitest-browser-react` is used for React component testing to ensure accurate rendering and interaction checks in a real browser environment.
+- Uses [Changesets](https://github.com/changesets/changesets) for managing versioning and changelogs.
+- Run `bun changeset` to document a change before committing.
+
+## Key Files
+
+- `package.json`: Monorepo workspaces and global scripts.
+- `turbo.json`: Turborepo task configuration.
+- `bun.lock`: Bun lockfile (do not modify manually).
+- `README.md`: High-level public documentation.
+- `GEMINI.md`: (This file) Instructional context for AI agents.
+- `packages/*/GEMINI.md`: Package-specific instructions and patterns.

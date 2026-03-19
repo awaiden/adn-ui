@@ -1,11 +1,11 @@
 .input {
-  @apply border-muted-foreground/30 bg-muted/50 text-foreground w-full rounded-md border;
+  @apply border-border bg-muted/50 text-foreground w-full rounded-md border;
 
   @apply transition-colors;
 
   @apply placeholder:text-muted-foreground/70;
 
-  @apply focus-visible:ring-ring/70 focus-visible:border-accent focus-visible:ring-2 focus-visible:outline-none;
+  @apply focus-visible:ring-ring focus-visible:border-primary focus-visible:ring-2 focus-visible:outline-none;
 
   &:disabled {
     @apply status-disabled;

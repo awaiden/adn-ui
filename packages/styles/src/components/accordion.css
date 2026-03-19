@@ -1,5 +1,5 @@
 .accordion {
-  @apply w-full;
+  @apply w-full max-w-md;
 }
 
 .accordion__item {
@@ -19,13 +19,17 @@
     @apply underline;
   }
 
-  &[data-state="open"] > .accordion__chevron {
+  &[data-state="open"] > .accordion__trigger-icon {
     @apply rotate-180;
   }
 }
 
-.accordion__trigger > .accordion__chevron {
-  @apply text-muted-foreground size-4 shrink-0 transition-transform duration-200;
+.accordion__trigger-icon {
+  @apply text-muted-foreground shrink-0 transition-transform duration-200;
+
+  & svg {
+    @apply size-4;
+  }
 }
 
 .accordion__content {

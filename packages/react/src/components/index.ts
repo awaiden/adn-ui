@@ -17,6 +17,8 @@ export * from "./field";
 export * from "./group";
 export * from "./input";
 export * from "./label";
+export * from "./navbar";
+export * from "./navigation-menu";
 export * from "./popover";
 export * from "./progress";
 export * from "./radio-group";

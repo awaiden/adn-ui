@@ -1,7 +1,9 @@
+@layer base,components,utilities;
+
 @import "tailwindcss";
 
 @import "./themes/default.css";
-@import "./components/index.css";
+@import "./components/index.css" layer(components);
 
 @plugin "tailwindcss-animate";
 
@@ -22,4 +24,12 @@
 
 @utility status-disabled {
   @apply cursor-not-allowed opacity-50;
+}
+
+@custom-variant hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @slot;
+    }
+  }
 }

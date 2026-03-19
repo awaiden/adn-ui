@@ -3,6 +3,8 @@ import { tv, type VariantProps } from "tailwind-variants";
 export const dialogVariants = tv({
   slots: {
     close: "dialog__close",
+    closeIcon: "dialog__close-icon",
+    srOnly: "sr-only",
     content: "dialog__content",
     description: "dialog__description",
     footer: "dialog__footer",
