@@ -12,13 +12,16 @@ description: How to install and configure @adn-ui/react in your project.
 
 ```bash
 # npm
-npm install @adn-ui/react
+npm install @adn-ui/react @adn-ui/styles
 
 # pnpm
-pnpm add @adn-ui/react
+pnpm add @adn-ui/react @adn-ui/styles
+
+# yarn
+yarn add @adn-ui/react @adn-ui/styles
 
 # bun
-bun add @adn-ui/react
+bun add @adn-ui/react @adn-ui/styles
 ```
 
 ## Import Styles
@@ -27,13 +30,13 @@ Import the component stylesheet in your app's entry point (e.g. `main.tsx`, `lay
 
 ```tsx
 // In your entry file
-import "@adn-ui/react/styles";
+import "@adn-ui/styles";
 ```
 
 Or from CSS:
 
 ```css
-@import "@adn-ui/react/styles";
+@import "@adn-ui/styles";
 ```
 
 This single import includes all component styles and the default theme.
@@ -61,7 +64,7 @@ Then in your root CSS file:
 
 ```css
 @import "tailwindcss";
-@import "@adn-ui/react/styles";
+@import "@adn-ui/styles";
 ```
 
 ## Use a Component

@@ -8,9 +8,9 @@ The core component library for **adn-ui** — accessible, themeable React compon
 ## Installation
 
 ```bash
-npm install @adn-ui/react
+npm install @adn-ui/react @adn-ui/styles
 # or
-bun add @adn-ui/react
+bun add @adn-ui/react @adn-ui/styles
 ```
 
 ## Setup
@@ -18,7 +18,7 @@ bun add @adn-ui/react
 Import the stylesheet in your app entry point:
 
 ```tsx
-import "@adn-ui/react/styles";
+import "@adn-ui/styles";
 ```
 
 ## Usage
@@ -77,10 +77,9 @@ bun run test
 
 ## Exports
 
-| Export                 | Description                   |
-| ---------------------- | ----------------------------- |
-| `@adn-ui/react`        | All component exports         |
-| `@adn-ui/react/styles` | Component CSS + default theme |
+| Export          | Description           |
+| --------------- | --------------------- |
+| `@adn-ui/react` | All component exports |
 
 ## Peer Dependencies
 

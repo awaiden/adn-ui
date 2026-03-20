@@ -40,4 +40,6 @@ jobs:
 
           npx changeset version --snapshot canary
 
+          node ./scripts/prepublish.mjs
+
           npx changeset publish --tag canary
