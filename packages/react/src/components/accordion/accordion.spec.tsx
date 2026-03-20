@@ -291,7 +291,7 @@ describe("Accordion", () => {
     test("renders chevron icon inside trigger", () => {
       const { container } = renderAccordion();
 
-      const chevron = container.querySelector(".accordion__chevron");
+      const chevron = container.querySelector(".accordion__trigger-icon");
       expect(chevron).toBeInTheDocument();
     });
   });

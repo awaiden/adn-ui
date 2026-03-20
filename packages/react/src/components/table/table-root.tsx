@@ -11,7 +11,7 @@ export default function TableRoot({ className, ...props }: TableRootProps) {
   return (
     <TableContext value={{ slots }}>
       <div data-slot="table-wrapper" className={slots.wrapper()}>
-        <table data-slot="table" className={cn(slots.root(), className)} {...props} />
+        <table data-slot="table-root" className={cn(slots.root(), className)} {...props} />
       </div>
     </TableContext>
   );

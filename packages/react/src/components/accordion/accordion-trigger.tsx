@@ -10,7 +10,11 @@ export default function AccordionTrigger({ children, className, ...props }: Acco
 
   return (
     <Accordion.Header className={slots.header()}>
-      <Accordion.Trigger className={slots.trigger({ className })} {...props}>
+      <Accordion.Trigger
+        data-slot="accordion-trigger"
+        className={slots.trigger({ className })}
+        {...props}
+      >
         {children}
         <span className={slots.triggerIcon()}>
           <ChevronDown />

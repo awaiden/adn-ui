@@ -20,7 +20,7 @@ export default function DialogContent({ children, className, ...props }: DialogC
         {...props}
       >
         {children}
-        <Dialog.Close className={slots.close()}>
+        <Dialog.Close data-slot="dialog-close" className={slots.close()}>
           <X className={slots.closeIcon()} />
           <span className={slots.srOnly()}>Close</span>
         </Dialog.Close>
