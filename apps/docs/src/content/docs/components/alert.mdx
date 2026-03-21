@@ -22,7 +22,9 @@ import { Terminal } from "lucide-react";
 
 export default () => (
   <Alert.Root>
-    <Terminal className="size-4" />
+    <Alert.Icon>
+      <Terminal />
+    </Alert.Icon>
     <Alert.Title>Heads up!</Alert.Title>
     <Alert.Description>You can add components using the CLI.</Alert.Description>
   </Alert.Root>
@@ -60,7 +62,9 @@ export default () => (
 
 ```tsx
 <Alert.Root>
-  <Terminal className="size-4" />
+  <Alert.Icon>
+    <Terminal />
+  </Alert.Icon>
   <Alert.Title>Heads up!</Alert.Title>
   <Alert.Description>You can add components to your app using the CLI.</Alert.Description>
 </Alert.Root>
@@ -76,7 +80,9 @@ Use the destructive variant to communicate errors or dangerous actions.
 
 ```tsx
 <Alert.Root variant="destructive">
-  <AlertCircle className="size-4" />
+  <Alert.Icon>
+    <AlertCircle />
+  </Alert.Icon>
   <Alert.Title>Error</Alert.Title>
   <Alert.Description>Your session has expired. Please log in again.</Alert.Description>
 </Alert.Root>
@@ -90,7 +96,9 @@ Use the destructive variant to communicate errors or dangerous actions.
 
 ```tsx
 <Alert.Root>
-  <Info className="size-4" />
+  <Alert.Icon>
+    <Info />
+  </Alert.Icon>
   <Alert.Title>Information</Alert.Title>
   <Alert.Description>This is an informational alert with an icon.</Alert.Description>
 </Alert.Root>

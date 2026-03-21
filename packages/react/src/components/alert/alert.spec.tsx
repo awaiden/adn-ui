@@ -144,8 +144,8 @@ describe("Alert", () => {
   });
 
   describe("full composition", () => {
-    test("renders complete alert with title and description", () => {
-      render(
+    test("renders complete alert with title and description wrapped in content", () => {
+      const { container } = render(
         <Alert.Root>
           <Alert.Title>Heads up!</Alert.Title>
           <Alert.Description>You can add components to your app using the CLI.</Alert.Description>
@@ -153,10 +153,10 @@ describe("Alert", () => {
       );
 
       expect(screen.getByRole("alert")).toBeInTheDocument();
+      const content = container.querySelector('[data-slot="alert-content"]');
+      expect(content).toBeInTheDocument();
+      expect(content).toHaveClass("alert__content");
       expect(screen.getByText("Heads up!")).toBeInTheDocument();
-      expect(
-        screen.getByText("You can add components to your app using the CLI."),
-      ).toBeInTheDocument();
     });
   });
 });

@@ -1,9 +1,9 @@
 .alert {
-  @apply relative w-full rounded-lg border p-4 [&>div+div]:-translate-y-0.75;
+  @apply relative flex w-full items-start gap-4 rounded-lg border p-4;
 }
 
 .alert__icon {
-  @apply text-foreground absolute top-4 left-4;
+  @apply text-foreground mt-0.5;
 
   & svg {
     @apply size-4;
@@ -12,10 +12,10 @@
   .alert--destructive & {
     @apply text-destructive;
   }
+}
 
-  & ~ * {
-    @apply pl-7;
-  }
+.alert__content {
+  @apply flex-1;
 }
 
 .alert--default {
@@ -23,7 +23,7 @@
 }
 
 .alert--destructive {
-  @apply border-destructive/50 text-destructive [&>svg]:text-destructive;
+  @apply border-destructive/50 text-destructive;
 }
 
 .alert__title {

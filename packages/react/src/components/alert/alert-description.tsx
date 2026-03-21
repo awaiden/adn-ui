@@ -11,3 +11,4 @@ export default function AlertDescription({ className, ...props }: AlertDescripti
     <div data-slot="alert-description" className={cn(slots.description(), className)} {...props} />
   );
 }
+AlertDescription.displayName = "AlertDescription";

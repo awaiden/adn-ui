@@ -9,3 +9,4 @@ export default function AlertTitle({ className, ...props }: AlertTitleProps) {
 
   return <h5 data-slot="alert-title" className={cn(slots.title(), className)} {...props} />;
 }
+AlertTitle.displayName = "AlertTitle";
