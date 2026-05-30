@@ -28,7 +28,8 @@
     "format": "oxfmt",
     "lint": "oxlint",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "prepare": "husky"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
@@ -58,6 +59,7 @@
     "@vitest/browser-playwright": "^4.1.7",
     "@vitest/coverage-v8": "^4.1.7",
     "eslint-plugin-perfectionist": "^5.9.0",
+    "husky": "^9.1.7",
     "lint-staged": "^17.0.6",
     "oxfmt": "^0.52.0",
     "oxlint": "^1.67.0",
@@ -72,7 +74,7 @@
     "vitest": "^4.1.7"
   },
   "lint-staged": {
-    "*": [
+    "*.{js,jsx,ts,tsx}": [
       "oxlint",
       "oxfmt"
     ]
