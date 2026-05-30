@@ -15,6 +15,7 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
+  base: "/adn-ui/",
   plugins: [react(), tailwindAutoReference("src/index.css"), tailwindcss()],
   resolve: { tsconfigPaths: true },
   test: {
