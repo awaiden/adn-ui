@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "A toggle control for switching between on and off states.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/switch/switch.tsx",
+      "content": "import \"./switch.css\";\n\nimport { Switch } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { switchVariants } from \"./switch.variants\";\n\nexport type SwitchProps = React.ComponentProps<typeof Switch.Root>;\n\nexport const SwitchRoot = ({ className, ...props }: SwitchProps) => {\n  const { root, thumb } = switchVariants();\n\n  return (\n    <Switch.Root className={cn(root(), className)} {...props}>\n      <Switch.Thumb className={thumb()} />\n    </Switch.Root>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/switch/switch.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const switchVariants = tv({\n  slots: {\n    root: \"switch\",\n    thumb: \"switch__thumb\",\n  },\n});\n\nexport type SwitchVariants = VariantProps<typeof switchVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/switch/switch.css",
+      "content": ".switch {\n  @apply inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply cursor-not-allowed opacity-50;\n  }\n\n  &[data-state=\"unchecked\"] {\n    @apply bg-input;\n  }\n\n  &[data-state=\"checked\"] {\n    @apply bg-primary;\n  }\n}\n\n.switch__thumb {\n  @apply bg-background pointer-events-none block size-4 rounded-full shadow-lg ring-0 transition-transform;\n\n  &[data-state=\"unchecked\"] {\n    @apply translate-x-0;\n  }\n\n  &[data-state=\"checked\"] {\n    @apply translate-x-4;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/switch/index.ts",
+      "content": "import { SwitchRoot } from \"./switch\";\n\nexport const Switch = {\n  Root: SwitchRoot,\n};\n\nexport { SwitchRoot };\n\nexport { type SwitchVariants, switchVariants } from \"./switch.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

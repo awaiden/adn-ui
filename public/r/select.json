@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "title": "Select",
+  "description": "A dropdown for selecting a value from a list of options.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/select/select-root.tsx",
+      "content": "import \"./select.css\";\n\nimport { Select } from \"radix-ui\";\n\nimport { SelectContext } from \"./select.context\";\nimport { selectVariants } from \"./select.variants\";\n\nexport type SelectRootProps = React.ComponentProps<typeof Select.Root>;\n\nexport const SelectRoot = (props: SelectRootProps) => {\n  const slots = selectVariants();\n\n  return (\n    <SelectContext value={{ slots }}>\n      <Select.Root {...props} />\n    </SelectContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select-trigger.tsx",
+      "content": "import { ChevronDown } from \"lucide-react\";\nimport { Select } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSelectContext } from \"./select.context\";\n\nexport type SelectTriggerProps = React.ComponentProps<typeof Select.Trigger>;\n\nexport const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps) => {\n  const { slots } = useSelectContext();\n\n  return (\n    <Select.Trigger className={cn(slots.trigger(), className)} {...props}>\n      {children}\n      <Select.Icon asChild>\n        <ChevronDown className=\"size-4 opacity-50\" />\n      </Select.Icon>\n    </Select.Trigger>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select-content.tsx",
+      "content": "import { ChevronDown, ChevronUp } from \"lucide-react\";\nimport { Select } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSelectContext } from \"./select.context\";\n\nexport type SelectContentProps = React.ComponentProps<typeof Select.Content>;\n\nexport const SelectContent = ({\n  children,\n  className,\n  position = \"popper\",\n  ...props\n}: SelectContentProps) => {\n  const { slots } = useSelectContext();\n\n  return (\n    <Select.Portal>\n      <Select.Content className={cn(slots.content(), className)} position={position} {...props}>\n        <Select.ScrollUpButton className={slots.scrollButton()}>\n          <ChevronUp />\n        </Select.ScrollUpButton>\n        <Select.Viewport className={slots.viewport()}>{children}</Select.Viewport>\n        <Select.ScrollDownButton className={slots.scrollButton()}>\n          <ChevronDown />\n        </Select.ScrollDownButton>\n      </Select.Content>\n    </Select.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select-item.tsx",
+      "content": "import { Check } from \"lucide-react\";\nimport { Select } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSelectContext } from \"./select.context\";\n\nexport type SelectItemProps = React.ComponentProps<typeof Select.Item>;\n\nexport const SelectItem = ({ children, className, ...props }: SelectItemProps) => {\n  const { slots } = useSelectContext();\n\n  return (\n    <Select.Item className={cn(slots.item(), className)} {...props}>\n      <Select.ItemIndicator className={slots.itemIndicator()}>\n        <Check />\n      </Select.ItemIndicator>\n      <Select.ItemText>{children}</Select.ItemText>\n    </Select.Item>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select-label.tsx",
+      "content": "import { Select } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSelectContext } from \"./select.context\";\n\nexport type SelectLabelProps = React.ComponentProps<typeof Select.Label>;\n\nexport const SelectLabel = ({ className, ...props }: SelectLabelProps) => {\n  const { slots } = useSelectContext();\n\n  return <Select.Label className={cn(slots.label(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select-separator.tsx",
+      "content": "import { Select } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSelectContext } from \"./select.context\";\n\nexport type SelectSeparatorProps = React.ComponentProps<typeof Select.Separator>;\n\nexport const SelectSeparator = ({ className, ...props }: SelectSeparatorProps) => {\n  const { slots } = useSelectContext();\n\n  return <Select.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { selectVariants } from \"./select.variants\";\n\nexport type SelectContext = {\n  slots: ReturnType<typeof selectVariants>;\n};\n\nexport const SelectContext = createContext<null | SelectContext>(null);\n\nexport const useSelectContext = () => {\n  const context = useContext(SelectContext);\n  if (!context) {\n    throw new Error(\"useSelectContext must be used within a Select\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const selectVariants = tv({\n  slots: {\n    content: \"select__content\",\n    item: \"select__item\",\n    itemIndicator: \"select__item-indicator\",\n    label: \"select__label\",\n    scrollButton: \"select__scroll-button\",\n    separator: \"select__separator\",\n    trigger: \"select__trigger\",\n    viewport: \"select__viewport\",\n  },\n});\n\nexport type SelectVariants = VariantProps<typeof selectVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/select.css",
+      "content": ".select__trigger {\n  @apply border-input bg-background flex h-9 w-full items-center justify-between rounded-md border px-3 py-2 text-sm;\n\n  &:hover {\n    @apply bg-accent;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply cursor-not-allowed opacity-50;\n  }\n\n  &[data-placeholder] {\n    @apply text-muted-foreground;\n  }\n}\n\n.select__content {\n  @apply bg-popover text-popover-foreground relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border shadow-md;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n\n  &[data-position=\"popper\"] {\n    .select__viewport {\n      @apply h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)];\n    }\n  }\n}\n\n.select__viewport {\n  @apply p-1;\n}\n\n.select__item {\n  @apply relative flex w-full cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.select__item-indicator {\n  @apply absolute left-2 flex items-center justify-center;\n\n  & svg {\n    @apply size-3.5;\n  }\n}\n\n.select__label {\n  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;\n}\n\n.select__separator {\n  @apply bg-border -mx-1 my-1 h-px;\n}\n\n.select__scroll-button {\n  @apply flex cursor-default items-center justify-center py-1;\n\n  & svg {\n    @apply size-4;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/select/index.ts",
+      "content": "import { SelectContent } from \"./select-content\";\nimport { SelectItem } from \"./select-item\";\nimport { SelectLabel } from \"./select-label\";\nimport { SelectRoot } from \"./select-root\";\nimport { SelectSeparator } from \"./select-separator\";\nimport { SelectTrigger } from \"./select-trigger\";\n\nexport const Select = {\n  Content: SelectContent,\n  Item: SelectItem,\n  Label: SelectLabel,\n  Root: SelectRoot,\n  Separator: SelectSeparator,\n  Trigger: SelectTrigger,\n};\n\nexport { SelectContent, SelectItem, SelectLabel, SelectRoot, SelectSeparator, SelectTrigger };\n\nexport { SelectContext, useSelectContext } from \"./select.context\";\n\nexport { type SelectVariants, selectVariants } from \"./select.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

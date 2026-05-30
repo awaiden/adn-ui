@@ -1,0 +1,84 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu",
+  "title": "Context Menu",
+  "description": "A menu displayed upon right-click or long-press interaction.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/context-menu/context-menu-root.tsx",
+      "content": "import \"./context-menu.css\";\n\nimport { ContextMenu } from \"radix-ui\";\n\nimport { ContextMenuContext } from \"./context-menu.context\";\nimport { contextMenuVariants } from \"./context-menu.variants\";\n\nexport type ContextMenuRootProps = React.ComponentProps<typeof ContextMenu.Root>;\n\nexport const ContextMenuRoot = (props: ContextMenuRootProps) => {\n  const slots = contextMenuVariants();\n\n  return (\n    <ContextMenuContext value={{ slots }}>\n      <ContextMenu.Root {...props} />\n    </ContextMenuContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-trigger.tsx",
+      "content": "import { ContextMenu } from \"radix-ui\";\n\nexport type ContextMenuTriggerProps = React.ComponentProps<typeof ContextMenu.Trigger>;\n\nexport const ContextMenuTrigger = (props: ContextMenuTriggerProps) => {\n  return <ContextMenu.Trigger {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-content.tsx",
+      "content": "import { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuContentProps = React.ComponentProps<typeof ContextMenu.Content>;\n\nexport const ContextMenuContent = ({ className, ...props }: ContextMenuContentProps) => {\n  const { slots } = useContextMenuContext();\n\n  return (\n    <ContextMenu.Portal>\n      <ContextMenu.Content className={cn(slots.content(), className)} {...props} />\n    </ContextMenu.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-item.tsx",
+      "content": "import { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuItemProps = React.ComponentProps<typeof ContextMenu.Item>;\n\nexport const ContextMenuItem = ({ className, ...props }: ContextMenuItemProps) => {\n  const { slots } = useContextMenuContext();\n\n  return <ContextMenu.Item className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-checkbox-item.tsx",
+      "content": "import { Check } from \"lucide-react\";\nimport { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuCheckboxItemProps = React.ComponentProps<typeof ContextMenu.CheckboxItem>;\n\nexport const ContextMenuCheckboxItem = ({\n  children,\n  className,\n  ...props\n}: ContextMenuCheckboxItemProps) => {\n  const { slots } = useContextMenuContext();\n\n  return (\n    <ContextMenu.CheckboxItem className={cn(slots.checkbox(), className)} {...props}>\n      <ContextMenu.ItemIndicator className={slots.indicator()}>\n        <Check />\n      </ContextMenu.ItemIndicator>\n      {children}\n    </ContextMenu.CheckboxItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-radio-item.tsx",
+      "content": "import { Circle } from \"lucide-react\";\nimport { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuRadioItemProps = React.ComponentProps<typeof ContextMenu.RadioItem>;\n\nexport const ContextMenuRadioItem = ({\n  children,\n  className,\n  ...props\n}: ContextMenuRadioItemProps) => {\n  const { slots } = useContextMenuContext();\n\n  return (\n    <ContextMenu.RadioItem className={cn(slots.radio(), className)} {...props}>\n      <ContextMenu.ItemIndicator className={slots.indicator()}>\n        <Circle />\n      </ContextMenu.ItemIndicator>\n      {children}\n    </ContextMenu.RadioItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-label.tsx",
+      "content": "import { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuLabelProps = React.ComponentProps<typeof ContextMenu.Label>;\n\nexport const ContextMenuLabel = ({ className, ...props }: ContextMenuLabelProps) => {\n  const { slots } = useContextMenuContext();\n\n  return <ContextMenu.Label className={cn(slots.label(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-separator.tsx",
+      "content": "import { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuSeparatorProps = React.ComponentProps<typeof ContextMenu.Separator>;\n\nexport const ContextMenuSeparator = ({ className, ...props }: ContextMenuSeparatorProps) => {\n  const { slots } = useContextMenuContext();\n\n  return <ContextMenu.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-shortcut.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuShortcutProps = React.ComponentProps<\"span\">;\n\nexport const ContextMenuShortcut = ({ className, ...props }: ContextMenuShortcutProps) => {\n  const { slots } = useContextMenuContext();\n\n  return <span className={cn(slots.shortcut(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu-sub.tsx",
+      "content": "import { ChevronRight } from \"lucide-react\";\nimport { ContextMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useContextMenuContext } from \"./context-menu.context\";\n\nexport type ContextMenuSubProps = React.ComponentProps<typeof ContextMenu.Sub>;\n\nexport const ContextMenuSub = (props: ContextMenuSubProps) => {\n  return <ContextMenu.Sub {...props} />;\n};\n\nexport type ContextMenuSubTriggerProps = React.ComponentProps<typeof ContextMenu.SubTrigger>;\n\nexport const ContextMenuSubTrigger = ({\n  children,\n  className,\n  ...props\n}: ContextMenuSubTriggerProps) => {\n  const { slots } = useContextMenuContext();\n\n  return (\n    <ContextMenu.SubTrigger className={cn(slots.subTrigger(), className)} {...props}>\n      {children}\n      <ChevronRight className={slots.shortcut()} />\n    </ContextMenu.SubTrigger>\n  );\n};\n\nexport type ContextMenuSubContentProps = React.ComponentProps<typeof ContextMenu.SubContent>;\n\nexport const ContextMenuSubContent = ({ className, ...props }: ContextMenuSubContentProps) => {\n  const { slots } = useContextMenuContext();\n\n  return (\n    <ContextMenu.Portal>\n      <ContextMenu.SubContent className={cn(slots.subContent(), className)} {...props} />\n    </ContextMenu.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { contextMenuVariants } from \"./context-menu.variants\";\n\nexport type ContextMenuContext = {\n  slots: ReturnType<typeof contextMenuVariants>;\n};\n\nexport const ContextMenuContext = createContext<ContextMenuContext | null>(null);\n\nexport const useContextMenuContext = () => {\n  const context = useContext(ContextMenuContext);\n  if (!context) {\n    throw new Error(\"useContextMenuContext must be used within a ContextMenu\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const contextMenuVariants = tv({\n  slots: {\n    checkbox: \"context-menu__checkbox-item\",\n    content: \"context-menu__content\",\n    indicator: \"context-menu__indicator\",\n    item: \"context-menu__item\",\n    label: \"context-menu__label\",\n    radio: \"context-menu__radio-item\",\n    separator: \"context-menu__separator\",\n    shortcut: \"context-menu__shortcut\",\n    subContent: \"context-menu__sub-content\",\n    subTrigger: \"context-menu__sub-trigger\",\n  },\n});\n\nexport type ContextMenuVariants = VariantProps<typeof contextMenuVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/context-menu.css",
+      "content": ".context-menu__content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n}\n\n.context-menu__item {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.context-menu__checkbox-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.context-menu__radio-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.context-menu__indicator {\n  @apply absolute left-2 inline-flex items-center justify-center;\n\n  & svg {\n    @apply size-3.5;\n  }\n}\n\n.context-menu__label {\n  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;\n}\n\n.context-menu__separator {\n  @apply bg-border -mx-1 my-1 h-px;\n}\n\n.context-menu__shortcut {\n  @apply text-muted-foreground ml-auto text-xs tracking-widest;\n}\n\n.context-menu__sub-trigger {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-state=\"open\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.context-menu__sub-content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/context-menu/index.ts",
+      "content": "import { ContextMenuCheckboxItem } from \"./context-menu-checkbox-item\";\nimport { ContextMenuContent } from \"./context-menu-content\";\nimport { ContextMenuItem } from \"./context-menu-item\";\nimport { ContextMenuLabel } from \"./context-menu-label\";\nimport { ContextMenuRadioItem } from \"./context-menu-radio-item\";\nimport { ContextMenuRoot } from \"./context-menu-root\";\nimport { ContextMenuSeparator } from \"./context-menu-separator\";\nimport { ContextMenuShortcut } from \"./context-menu-shortcut\";\nimport { ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger } from \"./context-menu-sub\";\nimport { ContextMenuTrigger } from \"./context-menu-trigger\";\n\nexport const ContextMenu = {\n  CheckboxItem: ContextMenuCheckboxItem,\n  Content: ContextMenuContent,\n  Item: ContextMenuItem,\n  Label: ContextMenuLabel,\n  RadioItem: ContextMenuRadioItem,\n  Root: ContextMenuRoot,\n  Separator: ContextMenuSeparator,\n  Shortcut: ContextMenuShortcut,\n  Sub: ContextMenuSub,\n  SubContent: ContextMenuSubContent,\n  SubTrigger: ContextMenuSubTrigger,\n  Trigger: ContextMenuTrigger,\n};\n\nexport {\n  ContextMenuCheckboxItem,\n  ContextMenuContent,\n  ContextMenuItem,\n  ContextMenuLabel,\n  ContextMenuRadioItem,\n  ContextMenuRoot,\n  ContextMenuSeparator,\n  ContextMenuShortcut,\n  ContextMenuSub,\n  ContextMenuSubContent,\n  ContextMenuSubTrigger,\n  ContextMenuTrigger,\n};\n\nexport { ContextMenuContext, useContextMenuContext } from \"./context-menu.context\";\n\nexport { type ContextMenuVariants, contextMenuVariants } from \"./context-menu.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

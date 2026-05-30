@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "A clickable button with multiple variants and sizes.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button/button.tsx",
+      "content": "import \"./button.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { buttonVariants, type ButtonVariants } from \"./button.variants\";\n\nexport interface ButtonProps extends ButtonVariants, React.ComponentProps<\"button\"> {}\n\nexport const Button = ({\n  children,\n  className,\n  isIconOnly,\n  size,\n  variant,\n  ...props\n}: ButtonProps) => {\n  const styles = cn(buttonVariants({ isIconOnly, size, variant }), className);\n\n  return (\n    <button className={styles} {...props}>\n      {children}\n    </button>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/button/button.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const buttonVariants = tv({\n  base: \"button\",\n  variants: {\n    variant: {\n      primary: \"button--primary\",\n      secondary: \"button--secondary\",\n      ghost: \"button--ghost\",\n      outline: \"button--outline\",\n      destructive: \"button--destructive\",\n    },\n    size: {\n      sm: \"button--sm\",\n      md: \"button--md\",\n      lg: \"button--lg\",\n    },\n    isIconOnly: {\n      true: \"button--icon-only\",\n      false: \"\",\n    },\n  },\n  defaultVariants: {\n    variant: \"primary\",\n    size: \"md\",\n    isIconOnly: false,\n  },\n});\n\nexport type ButtonVariants = VariantProps<typeof buttonVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/button/button.css",
+      "content": ".button {\n  @apply inline-flex items-center justify-center gap-2 rounded-md font-medium whitespace-nowrap transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.button--primary {\n  @apply bg-primary text-primary-foreground;\n\n  &:hover {\n    @apply bg-primary/90;\n  }\n}\n\n.button--secondary {\n  @apply bg-secondary text-secondary-foreground;\n\n  &:hover {\n    @apply bg-secondary/80;\n  }\n}\n\n.button--ghost {\n  &:hover {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.button--outline {\n  @apply border-input bg-background border;\n\n  &:hover {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.button--sm {\n  @apply h-8 rounded-md px-3 text-xs;\n}\n\n.button--md {\n  @apply h-9 px-4 text-sm;\n}\n\n.button--lg {\n  @apply h-10 px-6 text-base;\n}\n\n.button--icon-only {\n  @apply aspect-square px-0;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/button/index.ts",
+      "content": "import { Button, type ButtonProps } from \"./button\";\nimport { type ButtonVariants, buttonVariants } from \"./button.variants\";\n\nexport { Button, buttonVariants };\n\nexport type { ButtonProps, ButtonVariants };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

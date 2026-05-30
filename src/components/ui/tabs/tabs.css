@@ -1,0 +1,31 @@
+.tabs {
+  @apply w-full;
+}
+
+.tabs__list {
+  @apply bg-muted text-muted-foreground inline-flex h-9 w-full items-center justify-center rounded-lg p-1;
+}
+
+.tabs__trigger {
+  @apply ring-offset-background inline-flex flex-1 items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all;
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  &[data-state="active"] {
+    @apply bg-background text-foreground shadow;
+  }
+}
+
+.tabs__content {
+  @apply ring-offset-background mt-2;
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+}

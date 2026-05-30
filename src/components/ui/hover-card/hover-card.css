@@ -1,0 +1,27 @@
+.hover-card__content {
+  @apply bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-none;
+
+  &[data-state="open"] {
+    @apply animate-in fade-in-0 zoom-in-95;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-out fade-out-0 zoom-out-95;
+  }
+
+  &[data-side="bottom"] {
+    @apply slide-in-from-top-2;
+  }
+
+  &[data-side="left"] {
+    @apply slide-in-from-right-2;
+  }
+
+  &[data-side="right"] {
+    @apply slide-in-from-left-2;
+  }
+
+  &[data-side="top"] {
+    @apply slide-in-from-bottom-2;
+  }
+}

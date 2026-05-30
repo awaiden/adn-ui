@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "An accessible label for form controls.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/label/label.tsx",
+      "content": "import \"./label.css\";\n\nimport { Label } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { labelVariants } from \"./label.variants\";\n\nexport type LabelProps = React.ComponentProps<typeof Label.Root>;\n\nexport const LabelRoot = ({ className, ...props }: LabelProps) => {\n  const { root } = labelVariants();\n\n  return <Label.Root className={cn(root(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/label/label.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const labelVariants = tv({\n  slots: {\n    root: \"label\",\n  },\n});\n\nexport type LabelVariants = VariantProps<typeof labelVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/label/label.css",
+      "content": ".label {\n  @apply text-sm leading-none font-medium;\n\n  &[data-disabled] {\n    @apply cursor-not-allowed opacity-70;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/label/index.ts",
+      "content": "import { LabelRoot } from \"./label\";\n\nexport const Label = {\n  Root: LabelRoot,\n};\n\nexport { LabelRoot };\n\nexport { type LabelVariants, labelVariants } from \"./label.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

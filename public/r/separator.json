@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "A visual divider between content sections.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/separator/separator.tsx",
+      "content": "import \"./separator.css\";\n\nimport { Separator } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { separatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = React.ComponentProps<typeof Separator.Root>;\n\nexport const SeparatorRoot = ({ className, ...props }: SeparatorProps) => {\n  const { root } = separatorVariants();\n\n  return <Separator.Root className={cn(root(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/separator/separator.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const separatorVariants = tv({\n  slots: {\n    root: \"separator\",\n  },\n});\n\nexport type SeparatorVariants = VariantProps<typeof separatorVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/separator/separator.css",
+      "content": ".separator {\n  @apply bg-border shrink-0;\n\n  &[data-orientation=\"horizontal\"] {\n    @apply h-px w-full;\n  }\n\n  &[data-orientation=\"vertical\"] {\n    @apply h-full w-px;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/separator/index.ts",
+      "content": "import { SeparatorRoot } from \"./separator\";\n\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot };\n\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

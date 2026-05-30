@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card",
+  "title": "Hover Card",
+  "description": "A card that appears when hovering over a trigger element.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/hover-card/hover-card-root.tsx",
+      "content": "import \"./hover-card.css\";\n\nimport { HoverCard } from \"radix-ui\";\n\nexport type HoverCardRootProps = React.ComponentProps<typeof HoverCard.Root>;\n\nexport const HoverCardRoot = (props: HoverCardRootProps) => {\n  return <HoverCard.Root {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/hover-card/hover-card-trigger.tsx",
+      "content": "import { HoverCard } from \"radix-ui\";\n\nexport type HoverCardTriggerProps = React.ComponentProps<typeof HoverCard.Trigger>;\n\nexport const HoverCardTrigger = (props: HoverCardTriggerProps) => {\n  return <HoverCard.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/hover-card/hover-card-content.tsx",
+      "content": "import { HoverCard } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { hoverCardVariants } from \"./hover-card.variants\";\n\nexport type HoverCardContentProps = React.ComponentProps<typeof HoverCard.Content>;\n\nexport const HoverCardContent = ({\n  className,\n  sideOffset = 4,\n  ...props\n}: HoverCardContentProps) => {\n  const { content } = hoverCardVariants();\n\n  return (\n    <HoverCard.Portal>\n      <HoverCard.Content className={cn(content(), className)} sideOffset={sideOffset} {...props} />\n    </HoverCard.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/hover-card/hover-card.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const hoverCardVariants = tv({\n  slots: {\n    content: \"hover-card__content\",\n  },\n});\n\nexport type HoverCardVariants = VariantProps<typeof hoverCardVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/hover-card/hover-card.css",
+      "content": ".hover-card__content {\n  @apply bg-popover text-popover-foreground z-50 w-64 rounded-md border p-4 shadow-md outline-none;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/hover-card/index.ts",
+      "content": "import { HoverCardContent } from \"./hover-card-content\";\nimport { HoverCardRoot } from \"./hover-card-root\";\nimport { HoverCardTrigger } from \"./hover-card-trigger\";\n\nexport const HoverCard = {\n  Content: HoverCardContent,\n  Root: HoverCardRoot,\n  Trigger: HoverCardTrigger,\n};\n\nexport { HoverCardContent, HoverCardRoot, HoverCardTrigger };\n\nexport { type HoverCardVariants, hoverCardVariants } from \"./hover-card.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

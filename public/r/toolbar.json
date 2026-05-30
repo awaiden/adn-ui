@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toolbar",
+  "title": "Toolbar",
+  "description": "A container for grouping toggle buttons, links, and actions.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/toolbar/toolbar-root.tsx",
+      "content": "import \"./toolbar.css\";\n\nimport { Toolbar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToolbarContext } from \"./toolbar.context\";\nimport { toolbarVariants } from \"./toolbar.variants\";\n\nexport type ToolbarRootProps = React.ComponentProps<typeof Toolbar.Root>;\n\nexport const ToolbarRoot = ({ className, ...props }: ToolbarRootProps) => {\n  const slots = toolbarVariants();\n\n  return (\n    <ToolbarContext value={{ slots }}>\n      <Toolbar.Root className={cn(slots.root(), className)} {...props} />\n    </ToolbarContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar-toggle-group.tsx",
+      "content": "import { Toolbar } from \"radix-ui\";\n\nexport type ToolbarToggleGroupProps = React.ComponentProps<typeof Toolbar.ToggleGroup>;\n\nexport const ToolbarToggleGroup = (props: ToolbarToggleGroupProps) => {\n  return <Toolbar.ToggleGroup {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar-toggle-item.tsx",
+      "content": "import { Toolbar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useToolbarContext } from \"./toolbar.context\";\n\nexport type ToolbarToggleItemProps = React.ComponentProps<typeof Toolbar.ToggleItem>;\n\nexport const ToolbarToggleItem = ({ className, ...props }: ToolbarToggleItemProps) => {\n  const { slots } = useToolbarContext();\n\n  return <Toolbar.ToggleItem className={cn(slots.toggleItem(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar-separator.tsx",
+      "content": "import { Toolbar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useToolbarContext } from \"./toolbar.context\";\n\nexport type ToolbarSeparatorProps = React.ComponentProps<typeof Toolbar.Separator>;\n\nexport const ToolbarSeparator = ({ className, ...props }: ToolbarSeparatorProps) => {\n  const { slots } = useToolbarContext();\n\n  return <Toolbar.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar-link.tsx",
+      "content": "import { Toolbar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useToolbarContext } from \"./toolbar.context\";\n\nexport type ToolbarLinkProps = React.ComponentProps<typeof Toolbar.Link>;\n\nexport const ToolbarLink = ({ className, ...props }: ToolbarLinkProps) => {\n  const { slots } = useToolbarContext();\n\n  return <Toolbar.Link className={cn(slots.link(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar-button.tsx",
+      "content": "import { Toolbar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useToolbarContext } from \"./toolbar.context\";\n\nexport type ToolbarButtonProps = React.ComponentProps<typeof Toolbar.Button>;\n\nexport const ToolbarButton = ({ className, ...props }: ToolbarButtonProps) => {\n  const { slots } = useToolbarContext();\n\n  return <Toolbar.Button className={cn(slots.button(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { toolbarVariants } from \"./toolbar.variants\";\n\nexport type ToolbarContext = {\n  slots: ReturnType<typeof toolbarVariants>;\n};\n\nexport const ToolbarContext = createContext<null | ToolbarContext>(null);\n\nexport const useToolbarContext = () => {\n  const context = useContext(ToolbarContext);\n  if (!context) {\n    throw new Error(\"useToolbarContext must be used within a Toolbar\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const toolbarVariants = tv({\n  slots: {\n    button: \"toolbar__button\",\n    link: \"toolbar__link\",\n    root: \"toolbar\",\n    separator: \"toolbar__separator\",\n    toggleItem: \"toolbar__toggle-item\",\n  },\n});\n\nexport type ToolbarVariants = VariantProps<typeof toolbarVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/toolbar.css",
+      "content": ".toolbar {\n  @apply bg-background flex w-full items-center gap-1 rounded-md border p-1;\n}\n\n.toolbar__toggle-item {\n  @apply inline-flex size-8 items-center justify-center rounded-md text-sm transition-colors;\n\n  &:hover {\n    @apply bg-muted text-muted-foreground;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &[data-state=\"on\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.toolbar__separator {\n  @apply bg-border mx-1 h-6 w-px;\n}\n\n.toolbar__link {\n  @apply text-muted-foreground inline-flex items-center justify-center rounded-md px-2 py-1 text-sm no-underline transition-colors;\n\n  &:hover {\n    @apply bg-muted text-foreground;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n\n.toolbar__button {\n  @apply bg-primary text-primary-foreground ml-auto inline-flex h-8 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors;\n\n  &:hover {\n    @apply bg-primary/90;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toolbar/index.ts",
+      "content": "import { ToolbarButton } from \"./toolbar-button\";\nimport { ToolbarLink } from \"./toolbar-link\";\nimport { ToolbarRoot } from \"./toolbar-root\";\nimport { ToolbarSeparator } from \"./toolbar-separator\";\nimport { ToolbarToggleGroup } from \"./toolbar-toggle-group\";\nimport { ToolbarToggleItem } from \"./toolbar-toggle-item\";\n\nexport const Toolbar = {\n  Button: ToolbarButton,\n  Link: ToolbarLink,\n  Root: ToolbarRoot,\n  Separator: ToolbarSeparator,\n  ToggleGroup: ToolbarToggleGroup,\n  ToggleItem: ToolbarToggleItem,\n};\n\nexport {\n  ToolbarButton,\n  ToolbarLink,\n  ToolbarRoot,\n  ToolbarSeparator,\n  ToolbarToggleGroup,\n  ToolbarToggleItem,\n};\n\nexport { ToolbarContext, useToolbarContext } from \"./toolbar.context\";\n\nexport { type ToolbarVariants, toolbarVariants } from \"./toolbar.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

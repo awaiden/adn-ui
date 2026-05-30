@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "title": "Card",
+  "description": "A container for grouping related content and actions.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/card/card-root.tsx",
+      "content": "import \"./card.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { CardContext } from \"./card.context\";\nimport { cardVariants, type CardVariants } from \"./card.variants\";\n\nexport type CardProps = CardVariants & React.ComponentProps<\"div\">;\n\nexport const CardRoot = ({ children, className, variant, ...props }: CardProps) => {\n  const slots = cardVariants({ variant });\n\n  return (\n    <CardContext value={{ slots }}>\n      <div className={cn(slots.root(), className)} {...props}>\n        {children}\n      </div>\n    </CardContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card-header.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useCardContext } from \"./card.context\";\n\nexport type CardHeaderProps = React.ComponentProps<\"div\">;\n\nexport const CardHeader = ({ children, className, ...props }: CardHeaderProps) => {\n  const { slots } = useCardContext();\n  return (\n    <div className={cn(slots.header(), className)} {...props}>\n      {children}\n    </div>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card-title.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useCardContext } from \"./card.context\";\n\nexport type CardTitleProps = React.ComponentProps<\"h2\">;\n\nexport const CardTitle = ({ children, className, ...props }: CardTitleProps) => {\n  const { slots } = useCardContext();\n  return (\n    <h2 className={cn(slots.title(), className)} {...props}>\n      {children}\n    </h2>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card-description.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useCardContext } from \"./card.context\";\n\nexport type CardDescriptionProps = React.ComponentProps<\"p\">;\n\nexport const CardDescription = ({ children, className, ...props }: CardDescriptionProps) => {\n  const { slots } = useCardContext();\n  return (\n    <p className={cn(slots.description(), className)} {...props}>\n      {children}\n    </p>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card-content.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useCardContext } from \"./card.context\";\n\nexport type CardContentProps = React.ComponentProps<\"div\">;\n\nexport const CardContent = ({ children, className, ...props }: CardContentProps) => {\n  const { slots } = useCardContext();\n  return (\n    <div className={cn(slots.content(), className)} {...props}>\n      {children}\n    </div>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { cardVariants } from \"./card.variants\";\n\nexport type CardContext = {\n  slots: ReturnType<typeof cardVariants>;\n};\n\nexport const CardContext = createContext<CardContext | null>(null);\n\nexport const useCardContext = () => {\n  const context = useContext(CardContext);\n  if (!context) {\n    throw new Error(\"useCardContext must be used within a CardProvider\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card.variants.tsx",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const cardVariants = tv({\n  slots: {\n    root: \"card\",\n    header: \"card__header\",\n    title: \"card__title\",\n    description: \"card__description\",\n    content: \"card__content\",\n  },\n  variants: {\n    variant: {\n      default: { root: \"card--default\" },\n      outline: { root: \"card--outline\" },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type CardVariants = VariantProps<typeof cardVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/card.css",
+      "content": ".card {\n  @apply bg-card text-card-foreground rounded-xl border;\n}\n\n.card--default {\n  @apply shadow-sm;\n}\n\n.card--outline {\n  @apply shadow-none;\n}\n\n.card__header {\n  @apply flex flex-col gap-1.5 p-6;\n}\n\n.card__title {\n  @apply text-lg leading-none font-semibold tracking-tight;\n}\n\n.card__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.card__content {\n  @apply p-6 pt-0;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/card/index.ts",
+      "content": "import { CardContent } from \"./card-content\";\nimport { CardDescription } from \"./card-description\";\nimport { CardHeader } from \"./card-header\";\nimport { CardRoot } from \"./card-root\";\nimport { CardTitle } from \"./card-title\";\n\nexport const Card = {\n  Content: CardContent,\n  Description: CardDescription,\n  Header: CardHeader,\n  Root: CardRoot,\n  Title: CardTitle,\n};\n\nexport { CardContent, CardDescription, CardHeader, CardRoot, CardTitle };\n\nexport { CardContext, useCardContext } from \"./card.context\";\n\nexport { type CardVariants, cardVariants } from \"./card.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

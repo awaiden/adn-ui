@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Displays an indicator showing the completion progress of a task.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/progress/progress.tsx",
+      "content": "import \"./progress.css\";\n\nimport { Progress } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { progressVariants } from \"./progress.variants\";\n\nexport type ProgressProps = React.ComponentProps<typeof Progress.Root>;\n\nexport const ProgressRoot = ({ className, value, ...props }: ProgressProps) => {\n  const { indicator, root } = progressVariants();\n\n  return (\n    <Progress.Root className={cn(root(), className)} value={value} {...props}>\n      <Progress.Indicator\n        className={indicator()}\n        style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}\n      />\n    </Progress.Root>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/progress/progress.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const progressVariants = tv({\n  slots: {\n    indicator: \"progress__indicator\",\n    root: \"progress\",\n  },\n});\n\nexport type ProgressVariants = VariantProps<typeof progressVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/progress/progress.css",
+      "content": ".progress {\n  @apply bg-primary/20 relative h-2 w-full overflow-hidden rounded-full;\n  transform: translateZ(0);\n}\n\n.progress__indicator {\n  @apply bg-primary size-full transition-transform duration-500 ease-in-out;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/progress/index.ts",
+      "content": "import { ProgressRoot } from \"./progress\";\n\nexport const Progress = {\n  Root: ProgressRoot,\n};\n\nexport { ProgressRoot };\n\nexport { type ProgressVariants, progressVariants } from \"./progress.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

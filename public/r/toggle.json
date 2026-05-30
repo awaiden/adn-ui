@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "A two-state button that can be on or off.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/toggle/toggle.tsx",
+      "content": "import \"./toggle.css\";\n\nimport { Toggle } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = React.ComponentProps<typeof Toggle.Root> & ToggleVariants;\n\nexport const ToggleRoot = ({ className, size, variant, ...props }: ToggleProps) => {\n  const { root } = toggleVariants({ size, variant });\n\n  return <Toggle.Root className={cn(root(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle/toggle.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const toggleVariants = tv({\n  slots: {\n    root: \"toggle\",\n  },\n  variants: {\n    variant: {\n      default: { root: \"toggle--default\" },\n      outline: { root: \"toggle--outline\" },\n    },\n    size: {\n      sm: { root: \"toggle--sm\" },\n      md: { root: \"toggle--md\" },\n      lg: { root: \"toggle--lg\" },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"md\",\n  },\n});\n\nexport type ToggleVariants = VariantProps<typeof toggleVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle/toggle.css",
+      "content": ".toggle {\n  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;\n\n  &:hover {\n    @apply bg-muted text-muted-foreground;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply pointer-events-none opacity-50;\n  }\n\n  &[data-state=\"on\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.toggle--default {\n  @apply bg-transparent;\n}\n\n.toggle--outline {\n  @apply border-input border bg-transparent;\n\n  &:hover {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.toggle--sm {\n  @apply size-8;\n}\n\n.toggle--md {\n  @apply size-9;\n}\n\n.toggle--lg {\n  @apply size-10;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle/index.ts",
+      "content": "import { ToggleRoot } from \"./toggle\";\n\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

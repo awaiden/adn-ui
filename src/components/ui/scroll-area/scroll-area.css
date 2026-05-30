@@ -1,0 +1,36 @@
+.scroll-area {
+  @apply relative overflow-hidden;
+}
+
+.scroll-area__viewport {
+  @apply size-full rounded-[inherit];
+}
+
+.scroll-area__scrollbar {
+  @apply flex touch-none p-0.5 transition-colors select-none;
+
+  &[data-orientation="vertical"] {
+    @apply h-full w-2.5 border-l border-l-transparent;
+  }
+
+  &[data-orientation="horizontal"] {
+    @apply h-2.5 flex-col border-t border-t-transparent;
+  }
+
+  &:hover {
+    @apply bg-border;
+  }
+}
+
+.scroll-area__thumb {
+  @apply bg-border relative flex-1 rounded-full;
+
+  &::before {
+    @apply absolute top-1/2 left-1/2 size-full min-h-11 min-w-11 -translate-x-1/2 -translate-y-1/2;
+    content: "";
+  }
+}
+
+.scroll-area__corner {
+  @apply bg-border;
+}

@@ -1,0 +1,7 @@
+.aspect-ratio {
+  @apply overflow-hidden rounded-md;
+
+  & img {
+    @apply size-full object-cover;
+  }
+}

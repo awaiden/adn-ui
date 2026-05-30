@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "title": "Tabs",
+  "description": "A set of layered sections of content shown one at a time.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/tabs/tabs-root.tsx",
+      "content": "import \"./tabs.css\";\n\nimport { Tabs } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { TabsContext } from \"./tabs.context\";\nimport { tabsVariants } from \"./tabs.variants\";\n\nexport type TabsRootProps = React.ComponentProps<typeof Tabs.Root>;\n\nexport const TabsRoot = ({ className, ...props }: TabsRootProps) => {\n  const slots = tabsVariants();\n\n  return (\n    <TabsContext value={{ slots }}>\n      <Tabs.Root className={cn(slots.root(), className)} {...props} />\n    </TabsContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs-list.tsx",
+      "content": "import { Tabs } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useTabsContext } from \"./tabs.context\";\n\nexport type TabsListProps = React.ComponentProps<typeof Tabs.List>;\n\nexport const TabsList = ({ className, ...props }: TabsListProps) => {\n  const { slots } = useTabsContext();\n\n  return <Tabs.List className={cn(slots.list(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs-trigger.tsx",
+      "content": "import { Tabs } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useTabsContext } from \"./tabs.context\";\n\nexport type TabsTriggerProps = React.ComponentProps<typeof Tabs.Trigger>;\n\nexport const TabsTrigger = ({ className, ...props }: TabsTriggerProps) => {\n  const { slots } = useTabsContext();\n\n  return <Tabs.Trigger className={cn(slots.trigger(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs-content.tsx",
+      "content": "import { Tabs } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useTabsContext } from \"./tabs.context\";\n\nexport type TabsContentProps = React.ComponentProps<typeof Tabs.Content>;\n\nexport const TabsContent = ({ className, ...props }: TabsContentProps) => {\n  const { slots } = useTabsContext();\n\n  return <Tabs.Content className={cn(slots.content(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { tabsVariants } from \"./tabs.variants\";\n\nexport type TabsContext = {\n  slots: ReturnType<typeof tabsVariants>;\n};\n\nexport const TabsContext = createContext<null | TabsContext>(null);\n\nexport const useTabsContext = () => {\n  const context = useContext(TabsContext);\n  if (!context) {\n    throw new Error(\"useTabsContext must be used within Tabs\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const tabsVariants = tv({\n  slots: {\n    content: \"tabs__content\",\n    list: \"tabs__list\",\n    root: \"tabs\",\n    trigger: \"tabs__trigger\",\n  },\n});\n\nexport type TabsVariants = VariantProps<typeof tabsVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.css",
+      "content": ".tabs {\n  @apply w-full;\n}\n\n.tabs__list {\n  @apply bg-muted text-muted-foreground inline-flex h-9 w-full items-center justify-center rounded-lg p-1;\n}\n\n.tabs__trigger {\n  @apply ring-offset-background inline-flex flex-1 items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply pointer-events-none opacity-50;\n  }\n\n  &[data-state=\"active\"] {\n    @apply bg-background text-foreground shadow;\n  }\n}\n\n.tabs__content {\n  @apply ring-offset-background mt-2;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tabs/index.ts",
+      "content": "import { TabsContent } from \"./tabs-content\";\nimport { TabsList } from \"./tabs-list\";\nimport { TabsRoot } from \"./tabs-root\";\nimport { TabsTrigger } from \"./tabs-trigger\";\n\nexport const Tabs = {\n  Content: TabsContent,\n  List: TabsList,\n  Root: TabsRoot,\n  Trigger: TabsTrigger,\n};\n\nexport { TabsContent, TabsList, TabsRoot, TabsTrigger };\n\nexport { TabsContext, useTabsContext } from \"./tabs.context\";\n\nexport { type TabsVariants, tabsVariants } from \"./tabs.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,15 @@
+.collapsible {
+  @apply w-full;
+}
+
+.collapsible__content {
+  @apply overflow-hidden;
+
+  &[data-state="open"] {
+    @apply animate-collapsible-down;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-collapsible-up;
+  }
+}

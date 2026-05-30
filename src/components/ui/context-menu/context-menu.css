@@ -1,0 +1,91 @@
+.context-menu__content {
+  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md;
+
+  &[data-state="open"] {
+    @apply animate-in fade-in-0 zoom-in-95;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-out fade-out-0 zoom-out-95;
+  }
+}
+
+.context-menu__item {
+  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;
+
+  &[data-highlighted] {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+.context-menu__checkbox-item {
+  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;
+
+  &[data-highlighted] {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+.context-menu__radio-item {
+  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;
+
+  &[data-highlighted] {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &[data-disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+.context-menu__indicator {
+  @apply absolute left-2 inline-flex items-center justify-center;
+
+  & svg {
+    @apply size-3.5;
+  }
+}
+
+.context-menu__label {
+  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;
+}
+
+.context-menu__separator {
+  @apply bg-border -mx-1 my-1 h-px;
+}
+
+.context-menu__shortcut {
+  @apply text-muted-foreground ml-auto text-xs tracking-widest;
+}
+
+.context-menu__sub-trigger {
+  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;
+
+  &[data-highlighted] {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &[data-state="open"] {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.context-menu__sub-content {
+  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg;
+
+  &[data-state="open"] {
+    @apply animate-in fade-in-0 zoom-in-95;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-out fade-out-0 zoom-out-95;
+  }
+}

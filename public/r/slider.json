@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "title": "Slider",
+  "description": "An input for selecting a value within a range.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/slider/slider.tsx",
+      "content": "import \"./slider.css\";\n\nimport { Slider } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { sliderVariants } from \"./slider.variants\";\n\nexport type SliderProps = React.ComponentProps<typeof Slider.Root>;\n\nexport const SliderRoot = ({ className, ...props }: SliderProps) => {\n  const { range, root, thumb, track } = sliderVariants();\n\n  return (\n    <Slider.Root className={cn(root(), className)} {...props}>\n      <Slider.Track className={track()}>\n        <Slider.Range className={range()} />\n      </Slider.Track>\n      <Slider.Thumb className={thumb()} />\n    </Slider.Root>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/slider/slider.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const sliderVariants = tv({\n  slots: {\n    range: \"slider__range\",\n    root: \"slider\",\n    thumb: \"slider__thumb\",\n    track: \"slider__track\",\n  },\n});\n\nexport type SliderVariants = VariantProps<typeof sliderVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/slider/slider.css",
+      "content": ".slider {\n  @apply relative flex w-full touch-none items-center select-none;\n}\n\n.slider__track {\n  @apply bg-primary/20 relative h-1.5 w-full grow overflow-hidden rounded-full;\n}\n\n.slider__range {\n  @apply bg-primary absolute h-full;\n}\n\n.slider__thumb {\n  @apply border-primary/50 bg-background block size-4 rounded-full border shadow transition-colors;\n\n  &:hover {\n    @apply bg-accent;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply pointer-events-none opacity-50;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/slider/index.ts",
+      "content": "import { SliderRoot } from \"./slider\";\n\nexport const Slider = {\n  Root: SliderRoot,\n};\n\nexport { SliderRoot };\n\nexport { type SliderVariants, sliderVariants } from \"./slider.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

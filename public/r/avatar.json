@@ -1,0 +1,48 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "An image element with a fallback for representing the user.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/avatar/avatar-root.tsx",
+      "content": "import \"./avatar.css\";\n\nimport { Avatar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { AvatarContext } from \"./avatar.context\";\nimport { avatarVariants, type AvatarVariants } from \"./avatar.variants\";\n\nexport type AvatarRootProps = AvatarVariants & React.ComponentProps<typeof Avatar.Root>;\n\nexport const AvatarRoot = ({ className, size, ...props }: AvatarRootProps) => {\n  const slots = avatarVariants({ size });\n\n  return (\n    <AvatarContext value={{ slots }}>\n      <Avatar.Root className={cn(slots.root(), className)} {...props} />\n    </AvatarContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/avatar-image.tsx",
+      "content": "import { Avatar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAvatarContext } from \"./avatar.context\";\n\nexport type AvatarImageProps = React.ComponentProps<typeof Avatar.Image>;\n\nexport const AvatarImage = ({ className, ...props }: AvatarImageProps) => {\n  const { slots } = useAvatarContext();\n\n  return <Avatar.Image className={cn(slots.image(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/avatar-fallback.tsx",
+      "content": "import { Avatar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAvatarContext } from \"./avatar.context\";\n\nexport type AvatarFallbackProps = React.ComponentProps<typeof Avatar.Fallback>;\n\nexport const AvatarFallback = ({ className, ...props }: AvatarFallbackProps) => {\n  const { slots } = useAvatarContext();\n\n  return <Avatar.Fallback className={cn(slots.fallback(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/avatar.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { avatarVariants } from \"./avatar.variants\";\n\nexport type AvatarContext = {\n  slots: ReturnType<typeof avatarVariants>;\n};\n\nexport const AvatarContext = createContext<AvatarContext | null>(null);\n\nexport const useAvatarContext = () => {\n  const context = useContext(AvatarContext);\n  if (!context) {\n    throw new Error(\"useAvatarContext must be used within an Avatar\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/avatar.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const avatarVariants = tv({\n  slots: {\n    root: \"avatar\",\n    image: \"avatar__image\",\n    fallback: \"avatar__fallback\",\n  },\n  variants: {\n    size: {\n      sm: { root: \"avatar--sm\" },\n      md: { root: \"avatar--md\" },\n      lg: { root: \"avatar--lg\" },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type AvatarVariants = VariantProps<typeof avatarVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/avatar.css",
+      "content": ".avatar {\n  @apply bg-muted relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full align-middle select-none;\n}\n\n.avatar--sm {\n  @apply size-8;\n}\n\n.avatar--md {\n  @apply size-10;\n}\n\n.avatar--lg {\n  @apply size-14;\n}\n\n.avatar__image {\n  @apply size-full rounded-[inherit] object-cover;\n}\n\n.avatar__fallback {\n  @apply bg-muted text-muted-foreground flex size-full items-center justify-center text-sm font-medium;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/avatar/index.ts",
+      "content": "import { AvatarFallback } from \"./avatar-fallback\";\nimport { AvatarImage } from \"./avatar-image\";\nimport { AvatarRoot } from \"./avatar-root\";\n\nexport const Avatar = {\n  Fallback: AvatarFallback,\n  Image: AvatarImage,\n  Root: AvatarRoot,\n};\n\nexport { AvatarFallback, AvatarImage, AvatarRoot };\n\nexport { AvatarContext, useAvatarContext } from \"./avatar.context\";\n\nexport { type AvatarVariants, avatarVariants } from \"./avatar.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

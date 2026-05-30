@@ -1,0 +1,84 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu",
+  "title": "Dropdown Menu",
+  "description": "A menu that appears below a trigger element.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-root.tsx",
+      "content": "import \"./dropdown-menu.css\";\n\nimport { DropdownMenu } from \"radix-ui\";\n\nimport { DropdownMenuContext } from \"./dropdown-menu.context\";\nimport { dropdownMenuVariants } from \"./dropdown-menu.variants\";\n\nexport type DropdownMenuRootProps = React.ComponentProps<typeof DropdownMenu.Root>;\n\nexport const DropdownMenuRoot = (props: DropdownMenuRootProps) => {\n  const slots = dropdownMenuVariants();\n\n  return (\n    <DropdownMenuContext value={{ slots }}>\n      <DropdownMenu.Root {...props} />\n    </DropdownMenuContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-trigger.tsx",
+      "content": "import { DropdownMenu } from \"radix-ui\";\n\nexport type DropdownMenuTriggerProps = React.ComponentProps<typeof DropdownMenu.Trigger>;\n\nexport const DropdownMenuTrigger = (props: DropdownMenuTriggerProps) => {\n  return <DropdownMenu.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-content.tsx",
+      "content": "import { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuContentProps = React.ComponentProps<typeof DropdownMenu.Content>;\n\nexport const DropdownMenuContent = ({\n  className,\n  sideOffset = 4,\n  ...props\n}: DropdownMenuContentProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return (\n    <DropdownMenu.Portal>\n      <DropdownMenu.Content\n        className={cn(slots.content(), className)}\n        sideOffset={sideOffset}\n        {...props}\n      />\n    </DropdownMenu.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-item.tsx",
+      "content": "import { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuItemProps = React.ComponentProps<typeof DropdownMenu.Item>;\n\nexport const DropdownMenuItem = ({ className, ...props }: DropdownMenuItemProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return <DropdownMenu.Item className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-checkbox-item.tsx",
+      "content": "import { Check } from \"lucide-react\";\nimport { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuCheckboxItemProps = React.ComponentProps<typeof DropdownMenu.CheckboxItem>;\n\nexport const DropdownMenuCheckboxItem = ({\n  children,\n  className,\n  ...props\n}: DropdownMenuCheckboxItemProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return (\n    <DropdownMenu.CheckboxItem className={cn(slots.checkbox(), className)} {...props}>\n      <DropdownMenu.ItemIndicator className={slots.indicator()}>\n        <Check />\n      </DropdownMenu.ItemIndicator>\n      {children}\n    </DropdownMenu.CheckboxItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-radio-item.tsx",
+      "content": "import { Circle } from \"lucide-react\";\nimport { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuRadioItemProps = React.ComponentProps<typeof DropdownMenu.RadioItem>;\n\nexport const DropdownMenuRadioItem = ({\n  children,\n  className,\n  ...props\n}: DropdownMenuRadioItemProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return (\n    <DropdownMenu.RadioItem className={cn(slots.radio(), className)} {...props}>\n      <DropdownMenu.ItemIndicator className={slots.indicator()}>\n        <Circle />\n      </DropdownMenu.ItemIndicator>\n      {children}\n    </DropdownMenu.RadioItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-label.tsx",
+      "content": "import { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuLabelProps = React.ComponentProps<typeof DropdownMenu.Label>;\n\nexport const DropdownMenuLabel = ({ className, ...props }: DropdownMenuLabelProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return <DropdownMenu.Label className={cn(slots.label(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-separator.tsx",
+      "content": "import { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuSeparatorProps = React.ComponentProps<typeof DropdownMenu.Separator>;\n\nexport const DropdownMenuSeparator = ({ className, ...props }: DropdownMenuSeparatorProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return <DropdownMenu.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-shortcut.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuShortcutProps = React.ComponentProps<\"span\">;\n\nexport const DropdownMenuShortcut = ({ className, ...props }: DropdownMenuShortcutProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return <span className={cn(slots.shortcut(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu-sub.tsx",
+      "content": "import { ChevronRight } from \"lucide-react\";\nimport { DropdownMenu } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport type DropdownMenuSubProps = React.ComponentProps<typeof DropdownMenu.Sub>;\n\nexport const DropdownMenuSub = (props: DropdownMenuSubProps) => {\n  return <DropdownMenu.Sub {...props} />;\n};\n\nexport type DropdownMenuSubTriggerProps = React.ComponentProps<typeof DropdownMenu.SubTrigger>;\n\nexport const DropdownMenuSubTrigger = ({\n  children,\n  className,\n  ...props\n}: DropdownMenuSubTriggerProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return (\n    <DropdownMenu.SubTrigger className={cn(slots.subTrigger(), className)} {...props}>\n      {children}\n      <ChevronRight className={slots.shortcut()} />\n    </DropdownMenu.SubTrigger>\n  );\n};\n\nexport type DropdownMenuSubContentProps = React.ComponentProps<typeof DropdownMenu.SubContent>;\n\nexport const DropdownMenuSubContent = ({ className, ...props }: DropdownMenuSubContentProps) => {\n  const { slots } = useDropdownMenuContext();\n\n  return (\n    <DropdownMenu.Portal>\n      <DropdownMenu.SubContent className={cn(slots.subContent(), className)} {...props} />\n    </DropdownMenu.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { dropdownMenuVariants } from \"./dropdown-menu.variants\";\n\nexport type DropdownMenuContext = {\n  slots: ReturnType<typeof dropdownMenuVariants>;\n};\n\nexport const DropdownMenuContext = createContext<DropdownMenuContext | null>(null);\n\nexport const useDropdownMenuContext = () => {\n  const context = useContext(DropdownMenuContext);\n  if (!context) {\n    throw new Error(\"useDropdownMenuContext must be used within a DropdownMenu\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const dropdownMenuVariants = tv({\n  slots: {\n    checkbox: \"dropdown-menu__checkbox-item\",\n    content: \"dropdown-menu__content\",\n    indicator: \"dropdown-menu__indicator\",\n    item: \"dropdown-menu__item\",\n    label: \"dropdown-menu__label\",\n    radio: \"dropdown-menu__radio-item\",\n    separator: \"dropdown-menu__separator\",\n    shortcut: \"dropdown-menu__shortcut\",\n    subContent: \"dropdown-menu__sub-content\",\n    subTrigger: \"dropdown-menu__sub-trigger\",\n  },\n});\n\nexport type DropdownMenuVariants = VariantProps<typeof dropdownMenuVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/dropdown-menu.css",
+      "content": ".dropdown-menu__content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n\n.dropdown-menu__item {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.dropdown-menu__checkbox-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.dropdown-menu__radio-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.dropdown-menu__indicator {\n  @apply absolute left-2 inline-flex items-center justify-center;\n\n  & svg {\n    @apply size-3.5;\n  }\n}\n\n.dropdown-menu__label {\n  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;\n}\n\n.dropdown-menu__separator {\n  @apply bg-border -mx-1 my-1 h-px;\n}\n\n.dropdown-menu__shortcut {\n  @apply text-muted-foreground ml-auto text-xs tracking-widest;\n}\n\n.dropdown-menu__sub-trigger {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-state=\"open\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.dropdown-menu__sub-content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dropdown-menu/index.ts",
+      "content": "import { DropdownMenuCheckboxItem } from \"./dropdown-menu-checkbox-item\";\nimport { DropdownMenuContent } from \"./dropdown-menu-content\";\nimport { DropdownMenuItem } from \"./dropdown-menu-item\";\nimport { DropdownMenuLabel } from \"./dropdown-menu-label\";\nimport { DropdownMenuRadioItem } from \"./dropdown-menu-radio-item\";\nimport { DropdownMenuRoot } from \"./dropdown-menu-root\";\nimport { DropdownMenuSeparator } from \"./dropdown-menu-separator\";\nimport { DropdownMenuShortcut } from \"./dropdown-menu-shortcut\";\nimport {\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n} from \"./dropdown-menu-sub\";\nimport { DropdownMenuTrigger } from \"./dropdown-menu-trigger\";\n\nexport const DropdownMenu = {\n  CheckboxItem: DropdownMenuCheckboxItem,\n  Content: DropdownMenuContent,\n  Item: DropdownMenuItem,\n  Label: DropdownMenuLabel,\n  RadioItem: DropdownMenuRadioItem,\n  Root: DropdownMenuRoot,\n  Separator: DropdownMenuSeparator,\n  Shortcut: DropdownMenuShortcut,\n  Sub: DropdownMenuSub,\n  SubContent: DropdownMenuSubContent,\n  SubTrigger: DropdownMenuSubTrigger,\n  Trigger: DropdownMenuTrigger,\n};\n\nexport {\n  DropdownMenuCheckboxItem,\n  DropdownMenuContent,\n  DropdownMenuItem,\n  DropdownMenuLabel,\n  DropdownMenuRadioItem,\n  DropdownMenuRoot,\n  DropdownMenuSeparator,\n  DropdownMenuShortcut,\n  DropdownMenuSub,\n  DropdownMenuSubContent,\n  DropdownMenuSubTrigger,\n  DropdownMenuTrigger,\n};\n\nexport { DropdownMenuContext, useDropdownMenuContext } from \"./dropdown-menu.context\";\n\nexport { type DropdownMenuVariants, dropdownMenuVariants } from \"./dropdown-menu.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

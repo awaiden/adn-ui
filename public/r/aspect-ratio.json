@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Displays content within a desired ratio.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.tsx",
+      "content": "import \"./aspect-ratio.css\";\n\nimport { AspectRatio } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { aspectRatioVariants } from \"./aspect-ratio.variants\";\n\nexport type AspectRatioProps = React.ComponentProps<typeof AspectRatio.Root>;\n\nexport const AspectRatioRoot = ({ className, ...props }: AspectRatioProps) => {\n  const { root } = aspectRatioVariants();\n\n  return <AspectRatio.Root className={cn(root(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const aspectRatioVariants = tv({\n  slots: {\n    root: \"aspect-ratio\",\n  },\n});\n\nexport type AspectRatioVariants = VariantProps<typeof aspectRatioVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.css",
+      "content": ".aspect-ratio {\n  @apply overflow-hidden rounded-md;\n\n  & img {\n    @apply size-full object-cover;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/index.ts",
+      "content": "import { AspectRatioRoot } from \"./aspect-ratio\";\n\nexport const AspectRatio = {\n  Root: AspectRatioRoot,\n};\n\nexport { AspectRatioRoot };\n\nexport { type AspectRatioVariants, aspectRatioVariants } from \"./aspect-ratio.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

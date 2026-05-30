@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "A form component with built-in validation and accessible error messages.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/form/form-root.tsx",
+      "content": "import \"./form.css\";\n\nimport { Form } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FormContext } from \"./form.context\";\nimport { formVariants } from \"./form.variants\";\n\nexport type FormRootProps = React.ComponentProps<typeof Form.Root>;\n\nexport const FormRoot = ({ className, ...props }: FormRootProps) => {\n  const slots = formVariants();\n\n  return (\n    <FormContext value={{ slots }}>\n      <Form.Root className={cn(slots.root(), className)} {...props} />\n    </FormContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form-field.tsx",
+      "content": "import { Form } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useFormContext } from \"./form.context\";\n\nexport type FormFieldProps = React.ComponentProps<typeof Form.Field>;\n\nexport const FormField = ({ className, ...props }: FormFieldProps) => {\n  const { slots } = useFormContext();\n\n  return <Form.Field className={cn(slots.field(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form-label.tsx",
+      "content": "import { Form } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useFormContext } from \"./form.context\";\n\nexport type FormLabelProps = React.ComponentProps<typeof Form.Label>;\n\nexport const FormLabel = ({ className, ...props }: FormLabelProps) => {\n  const { slots } = useFormContext();\n\n  return <Form.Label className={cn(slots.label(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form-control.tsx",
+      "content": "import { Form } from \"radix-ui\";\n\nexport type FormControlProps = React.ComponentProps<typeof Form.Control>;\n\nexport const FormControl = (props: FormControlProps) => {\n  return <Form.Control asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form-message.tsx",
+      "content": "import { Form } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useFormContext } from \"./form.context\";\n\nexport type FormMessageProps = React.ComponentProps<typeof Form.Message>;\n\nexport const FormMessage = ({ className, ...props }: FormMessageProps) => {\n  const { slots } = useFormContext();\n\n  return <Form.Message className={cn(slots.message(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form-submit.tsx",
+      "content": "import { Form } from \"radix-ui\";\n\nexport type FormSubmitProps = React.ComponentProps<typeof Form.Submit>;\n\nexport const FormSubmit = (props: FormSubmitProps) => {\n  return <Form.Submit asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { formVariants } from \"./form.variants\";\n\nexport type FormContext = {\n  slots: ReturnType<typeof formVariants>;\n};\n\nexport const FormContext = createContext<FormContext | null>(null);\n\nexport const useFormContext = () => {\n  const context = useContext(FormContext);\n  if (!context) {\n    throw new Error(\"useFormContext must be used within a Form\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const formVariants = tv({\n  slots: {\n    control: \"form__control\",\n    field: \"form__field\",\n    label: \"form__label\",\n    message: \"form__message\",\n    root: \"form\",\n    submit: \"form__submit\",\n  },\n});\n\nexport type FormVariants = VariantProps<typeof formVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/form.css",
+      "content": ".form {\n  @apply w-full space-y-4;\n}\n\n.form__field {\n  @apply grid gap-2;\n}\n\n.form__label {\n  @apply text-sm leading-none font-medium;\n\n  &[data-invalid] {\n    @apply text-destructive;\n  }\n}\n\n.form__control {\n  @apply w-full;\n}\n\n.form__message {\n  @apply text-destructive text-xs;\n}\n\n.form__submit {\n  @apply w-full;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/form/index.ts",
+      "content": "import { FormControl } from \"./form-control\";\nimport { FormField } from \"./form-field\";\nimport { FormLabel } from \"./form-label\";\nimport { FormMessage } from \"./form-message\";\nimport { FormRoot } from \"./form-root\";\nimport { FormSubmit } from \"./form-submit\";\n\nexport const Form = {\n  Control: FormControl,\n  Field: FormField,\n  Label: FormLabel,\n  Message: FormMessage,\n  Root: FormRoot,\n  Submit: FormSubmit,\n};\n\nexport { FormControl, FormField, FormLabel, FormMessage, FormRoot, FormSubmit };\n\nexport { FormContext, useFormContext } from \"./form.context\";\n\nexport { type FormVariants, formVariants } from \"./form.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

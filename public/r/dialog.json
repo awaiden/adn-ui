@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "title": "Dialog",
+  "description": "A modal window that appears on top of the main content.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/dialog/dialog-root.tsx",
+      "content": "import \"./dialog.css\";\n\nimport { Dialog } from \"radix-ui\";\n\nimport { DialogContext } from \"./dialog.context\";\nimport { dialogVariants } from \"./dialog.variants\";\n\nexport type DialogRootProps = React.ComponentProps<typeof Dialog.Root>;\n\nexport const DialogRoot = (props: DialogRootProps) => {\n  const slots = dialogVariants();\n\n  return (\n    <DialogContext value={{ slots }}>\n      <Dialog.Root {...props} />\n    </DialogContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog-trigger.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\n\nexport type DialogTriggerProps = React.ComponentProps<typeof Dialog.Trigger>;\n\nexport const DialogTrigger = (props: DialogTriggerProps) => {\n  return <Dialog.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog-content.tsx",
+      "content": "import { X } from \"lucide-react\";\nimport { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDialogContext } from \"./dialog.context\";\n\nexport type DialogContentProps = React.ComponentProps<typeof Dialog.Content>;\n\nexport const DialogContent = ({ children, className, ...props }: DialogContentProps) => {\n  const { slots } = useDialogContext();\n\n  return (\n    <Dialog.Portal>\n      <Dialog.Overlay className={slots.overlay()} />\n      <Dialog.Content className={cn(slots.content(), className)} {...props}>\n        {children}\n        <Dialog.Close className={slots.close()}>\n          <X />\n          <span className=\"sr-only\">Close</span>\n        </Dialog.Close>\n      </Dialog.Content>\n    </Dialog.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog-title.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDialogContext } from \"./dialog.context\";\n\nexport type DialogTitleProps = React.ComponentProps<typeof Dialog.Title>;\n\nexport const DialogTitle = ({ className, ...props }: DialogTitleProps) => {\n  const { slots } = useDialogContext();\n\n  return <Dialog.Title className={cn(slots.title(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog-description.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useDialogContext } from \"./dialog.context\";\n\nexport type DialogDescriptionProps = React.ComponentProps<typeof Dialog.Description>;\n\nexport const DialogDescription = ({ className, ...props }: DialogDescriptionProps) => {\n  const { slots } = useDialogContext();\n\n  return <Dialog.Description className={cn(slots.description(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog-footer.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useDialogContext } from \"./dialog.context\";\n\nexport type DialogFooterProps = React.ComponentProps<\"div\">;\n\nexport const DialogFooter = ({ className, ...props }: DialogFooterProps) => {\n  const { slots } = useDialogContext();\n\n  return <div className={cn(slots.footer(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { dialogVariants } from \"./dialog.variants\";\n\nexport type DialogContext = {\n  slots: ReturnType<typeof dialogVariants>;\n};\n\nexport const DialogContext = createContext<DialogContext | null>(null);\n\nexport const useDialogContext = () => {\n  const context = useContext(DialogContext);\n  if (!context) {\n    throw new Error(\"useDialogContext must be used within a Dialog\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const dialogVariants = tv({\n  slots: {\n    close: \"dialog__close\",\n    content: \"dialog__content\",\n    description: \"dialog__description\",\n    footer: \"dialog__footer\",\n    overlay: \"dialog__overlay\",\n    title: \"dialog__title\",\n  },\n});\n\nexport type DialogVariants = VariantProps<typeof dialogVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/dialog.css",
+      "content": ".dialog__overlay {\n  @apply fixed inset-0 z-50 bg-black/80;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0;\n  }\n}\n\n.dialog__content {\n  @apply bg-background fixed top-1/2 left-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg border p-6 shadow-lg duration-200;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-[48%];\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95 slide-out-to-left-1/2 slide-out-to-top-[48%];\n  }\n}\n\n.dialog__title {\n  @apply text-lg leading-none font-semibold tracking-tight;\n}\n\n.dialog__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.dialog__footer {\n  @apply flex flex-col-reverse gap-2 sm:flex-row sm:justify-end;\n}\n\n.dialog__close {\n  @apply absolute top-4 right-4 rounded-sm opacity-70 transition-opacity;\n\n  &:hover {\n    @apply opacity-100;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  & svg {\n    @apply size-4;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/dialog/index.ts",
+      "content": "import { DialogContent } from \"./dialog-content\";\nimport { DialogDescription } from \"./dialog-description\";\nimport { DialogFooter } from \"./dialog-footer\";\nimport { DialogRoot } from \"./dialog-root\";\nimport { DialogTitle } from \"./dialog-title\";\nimport { DialogTrigger } from \"./dialog-trigger\";\n\nexport const Dialog = {\n  Content: DialogContent,\n  Description: DialogDescription,\n  Footer: DialogFooter,\n  Root: DialogRoot,\n  Title: DialogTitle,\n  Trigger: DialogTrigger,\n};\n\nexport { DialogContent, DialogDescription, DialogFooter, DialogRoot, DialogTitle, DialogTrigger };\n\nexport { DialogContext, useDialogContext } from \"./dialog.context\";\n\nexport { type DialogVariants, dialogVariants } from \"./dialog.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "description": "A custom scrollbar component with cross-browser support.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/scroll-area/scroll-area.tsx",
+      "content": "import \"./scroll-area.css\";\n\nimport { ScrollArea } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { scrollAreaVariants } from \"./scroll-area.variants\";\n\nexport type ScrollAreaProps = React.ComponentProps<typeof ScrollArea.Root>;\n\nexport const ScrollAreaRoot = ({ children, className, ...props }: ScrollAreaProps) => {\n  const { corner, root, scrollbar, thumb, viewport } = scrollAreaVariants();\n\n  return (\n    <ScrollArea.Root className={cn(root(), className)} {...props}>\n      <ScrollArea.Viewport className={viewport()}>{children}</ScrollArea.Viewport>\n      <ScrollArea.Scrollbar className={scrollbar()} orientation=\"vertical\">\n        <ScrollArea.Thumb className={thumb()} />\n      </ScrollArea.Scrollbar>\n      <ScrollArea.Scrollbar className={scrollbar()} orientation=\"horizontal\">\n        <ScrollArea.Thumb className={thumb()} />\n      </ScrollArea.Scrollbar>\n      <ScrollArea.Corner className={corner()} />\n    </ScrollArea.Root>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/scroll-area/scroll-area.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const scrollAreaVariants = tv({\n  slots: {\n    corner: \"scroll-area__corner\",\n    root: \"scroll-area\",\n    scrollbar: \"scroll-area__scrollbar\",\n    thumb: \"scroll-area__thumb\",\n    viewport: \"scroll-area__viewport\",\n  },\n});\n\nexport type ScrollAreaVariants = VariantProps<typeof scrollAreaVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/scroll-area/scroll-area.css",
+      "content": ".scroll-area {\n  @apply relative overflow-hidden;\n}\n\n.scroll-area__viewport {\n  @apply size-full rounded-[inherit];\n}\n\n.scroll-area__scrollbar {\n  @apply flex touch-none p-0.5 transition-colors select-none;\n\n  &[data-orientation=\"vertical\"] {\n    @apply h-full w-2.5 border-l border-l-transparent;\n  }\n\n  &[data-orientation=\"horizontal\"] {\n    @apply h-2.5 flex-col border-t border-t-transparent;\n  }\n\n  &:hover {\n    @apply bg-border;\n  }\n}\n\n.scroll-area__thumb {\n  @apply bg-border relative flex-1 rounded-full;\n\n  &::before {\n    @apply absolute top-1/2 left-1/2 size-full min-h-11 min-w-11 -translate-x-1/2 -translate-y-1/2;\n    content: \"\";\n  }\n}\n\n.scroll-area__corner {\n  @apply bg-border;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/scroll-area/index.ts",
+      "content": "import { ScrollAreaRoot } from \"./scroll-area\";\n\nexport const ScrollArea = {\n  Root: ScrollAreaRoot,\n};\n\nexport { ScrollAreaRoot };\n\nexport { type ScrollAreaVariants, scrollAreaVariants } from \"./scroll-area.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

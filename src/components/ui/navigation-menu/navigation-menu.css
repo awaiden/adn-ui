@@ -1,0 +1,87 @@
+.navigation-menu {
+  @apply relative z-10 flex max-w-max flex-1 items-center justify-center;
+}
+
+.navigation-menu__list {
+  @apply flex flex-1 list-none items-center justify-center gap-1;
+}
+
+.navigation-menu__trigger {
+  @apply bg-background inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors;
+
+  &:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &[data-state="open"] > .navigation-menu__chevron {
+    @apply rotate-180;
+  }
+}
+
+.navigation-menu__chevron {
+  @apply relative top-px ml-1 size-3 transition-transform duration-200;
+}
+
+.navigation-menu__content {
+  @apply top-0 left-0 w-full md:absolute md:w-auto;
+
+  &[data-motion="from-start"] {
+    @apply animate-in fade-in slide-in-from-left-52;
+  }
+
+  &[data-motion="from-end"] {
+    @apply animate-in fade-in slide-in-from-right-52;
+  }
+
+  &[data-motion="to-start"] {
+    @apply animate-out fade-out slide-out-to-left-52;
+  }
+
+  &[data-motion="to-end"] {
+    @apply animate-out fade-out slide-out-to-right-52;
+  }
+}
+
+.navigation-menu__link {
+  @apply block rounded-md p-3 text-sm leading-none no-underline transition-colors outline-none select-none;
+
+  &:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+}
+
+.navigation-menu__indicator {
+  @apply top-full z-10 flex h-1.5 items-end justify-center overflow-hidden;
+
+  &[data-state="visible"] {
+    @apply animate-in fade-in;
+  }
+
+  &[data-state="hidden"] {
+    @apply animate-out fade-out;
+  }
+}
+
+.navigation-menu__viewport-wrapper {
+  @apply absolute top-full left-0 flex justify-center;
+}
+
+.navigation-menu__viewport {
+  @apply bg-popover text-popover-foreground relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-md border shadow-md md:w-[var(--radix-navigation-menu-viewport-width)];
+
+  &[data-state="open"] {
+    @apply animate-in fade-in zoom-in-90;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-out fade-out zoom-out-95;
+  }
+}

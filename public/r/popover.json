@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "title": "Popover",
+  "description": "A floating panel anchored to a trigger element.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/popover/popover-root.tsx",
+      "content": "import \"./popover.css\";\n\nimport { Popover } from \"radix-ui\";\n\nexport type PopoverRootProps = React.ComponentProps<typeof Popover.Root>;\n\nexport const PopoverRoot = (props: PopoverRootProps) => {\n  return <Popover.Root {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/popover/popover-trigger.tsx",
+      "content": "import { Popover } from \"radix-ui\";\n\nexport type PopoverTriggerProps = React.ComponentProps<typeof Popover.Trigger>;\n\nexport const PopoverTrigger = (props: PopoverTriggerProps) => {\n  return <Popover.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/popover/popover-content.tsx",
+      "content": "import { X } from \"lucide-react\";\nimport { Popover } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { popoverVariants } from \"./popover.variants\";\n\nexport type PopoverContentProps = React.ComponentProps<typeof Popover.Content>;\n\nexport const PopoverContent = ({\n  children,\n  className,\n  sideOffset = 4,\n  ...props\n}: PopoverContentProps) => {\n  const { close, content } = popoverVariants();\n\n  return (\n    <Popover.Portal>\n      <Popover.Content className={cn(content(), className)} sideOffset={sideOffset} {...props}>\n        {children}\n        <Popover.Close aria-label=\"Close\" className={close()}>\n          <X />\n        </Popover.Close>\n      </Popover.Content>\n    </Popover.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/popover/popover.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const popoverVariants = tv({\n  slots: {\n    close: \"popover__close\",\n    content: \"popover__content\",\n  },\n});\n\nexport type PopoverVariants = VariantProps<typeof popoverVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/popover/popover.css",
+      "content": ".popover__content {\n  @apply bg-popover text-popover-foreground z-50 w-72 rounded-md border p-4 shadow-md outline-none;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n\n.popover__close {\n  @apply absolute top-2 right-2 rounded-sm opacity-70 transition-opacity;\n\n  &:hover {\n    @apply opacity-100;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  & svg {\n    @apply size-4;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/popover/index.ts",
+      "content": "import { PopoverContent } from \"./popover-content\";\nimport { PopoverRoot } from \"./popover-root\";\nimport { PopoverTrigger } from \"./popover-trigger\";\n\nexport const Popover = {\n  Content: PopoverContent,\n  Root: PopoverRoot,\n  Trigger: PopoverTrigger,\n};\n\nexport { PopoverContent, PopoverRoot, PopoverTrigger };\n\nexport { type PopoverVariants, popoverVariants } from \"./popover.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

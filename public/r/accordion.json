@@ -1,0 +1,54 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "title": "Accordion",
+  "description": "A vertically stacked set of interactive headings that reveal content.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/accordion/accordion-root.tsx",
+      "content": "import \"./accordion.css\";\n\nimport { Accordion } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { AccordionContext } from \"./accordion.context\";\nimport { accordionVariants } from \"./accordion.variants\";\n\nexport type AccordionRootProps = React.ComponentProps<typeof Accordion.Root>;\n\nexport const AccordionRoot = ({ className, ...props }: AccordionRootProps) => {\n  const slots = accordionVariants();\n\n  return (\n    <AccordionContext value={{ slots }}>\n      <Accordion.Root className={cn(slots.root(), className)} {...props} />\n    </AccordionContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion-item.tsx",
+      "content": "import { Accordion } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAccordionContext } from \"./accordion.context\";\n\nexport type AccordionItemProps = React.ComponentProps<typeof Accordion.Item>;\n\nexport const AccordionItem = ({ className, ...props }: AccordionItemProps) => {\n  const { slots } = useAccordionContext();\n\n  return <Accordion.Item className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion-trigger.tsx",
+      "content": "import { ChevronDown } from \"lucide-react\";\nimport { Accordion } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAccordionContext } from \"./accordion.context\";\n\nexport type AccordionTriggerProps = React.ComponentProps<typeof Accordion.Trigger>;\n\nexport const AccordionTrigger = ({ children, className, ...props }: AccordionTriggerProps) => {\n  const { slots } = useAccordionContext();\n\n  return (\n    <Accordion.Header className={slots.header()}>\n      <Accordion.Trigger className={cn(slots.trigger(), className)} {...props}>\n        {children}\n        <ChevronDown aria-hidden className={slots.chevron()} />\n      </Accordion.Trigger>\n    </Accordion.Header>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion-content.tsx",
+      "content": "import { Accordion } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAccordionContext } from \"./accordion.context\";\n\nexport type AccordionContentProps = React.ComponentProps<typeof Accordion.Content>;\n\nexport const AccordionContent = ({ children, className, ...props }: AccordionContentProps) => {\n  const { slots } = useAccordionContext();\n\n  return (\n    <Accordion.Content className={cn(slots.content(), className)} {...props}>\n      <div className={slots.contentText()}>{children}</div>\n    </Accordion.Content>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { accordionVariants } from \"./accordion.variants\";\n\nexport type AccordionContext = {\n  slots: ReturnType<typeof accordionVariants>;\n};\n\nexport const AccordionContext = createContext<AccordionContext | null>(null);\n\nexport const useAccordionContext = () => {\n  const context = useContext(AccordionContext);\n  if (!context) {\n    throw new Error(\"useAccordionContext must be used within an Accordion\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const accordionVariants = tv({\n  slots: {\n    root: \"accordion\",\n    item: \"accordion__item\",\n    header: \"accordion__header\",\n    trigger: \"accordion__trigger\",\n    chevron: \"accordion__chevron\",\n    content: \"accordion__content\",\n    contentText: \"accordion__content-text\",\n  },\n});\n\nexport type AccordionVariants = VariantProps<typeof accordionVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/accordion.css",
+      "content": ".accordion {\n  @apply w-full;\n}\n\n.accordion__item {\n  @apply border-border border-b;\n}\n\n.accordion__header {\n  @apply flex;\n}\n\n.accordion__trigger {\n  @apply flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all;\n\n  &:hover {\n    @apply underline;\n  }\n\n  &[data-state=\"open\"] > .accordion__chevron {\n    @apply rotate-180;\n  }\n}\n\n.accordion__chevron {\n  @apply text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200;\n}\n\n.accordion__content {\n  @apply overflow-hidden text-sm;\n\n  &[data-state=\"open\"] {\n    @apply animate-accordion-down;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-accordion-up;\n  }\n}\n\n.accordion__content-text {\n  @apply pt-0 pb-4;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/accordion/index.ts",
+      "content": "import { AccordionContent } from \"./accordion-content\";\nimport { AccordionItem } from \"./accordion-item\";\nimport { AccordionRoot } from \"./accordion-root\";\nimport { AccordionTrigger } from \"./accordion-trigger\";\n\nexport const Accordion = {\n  Content: AccordionContent,\n  Item: AccordionItem,\n  Root: AccordionRoot,\n  Trigger: AccordionTrigger,\n};\n\nexport { AccordionContent, AccordionItem, AccordionRoot, AccordionTrigger };\n\nexport { AccordionContext, useAccordionContext } from \"./accordion.context\";\n\nexport { type AccordionVariants, accordionVariants } from \"./accordion.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

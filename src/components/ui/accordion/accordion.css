@@ -1,0 +1,43 @@
+.accordion {
+  @apply w-full;
+}
+
+.accordion__item {
+  @apply border-border border-b;
+}
+
+.accordion__header {
+  @apply flex;
+}
+
+.accordion__trigger {
+  @apply flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all;
+
+  &:hover {
+    @apply underline;
+  }
+
+  &[data-state="open"] > .accordion__chevron {
+    @apply rotate-180;
+  }
+}
+
+.accordion__chevron {
+  @apply text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200;
+}
+
+.accordion__content {
+  @apply overflow-hidden text-sm;
+
+  &[data-state="open"] {
+    @apply animate-accordion-down;
+  }
+
+  &[data-state="closed"] {
+    @apply animate-accordion-up;
+  }
+}
+
+.accordion__content-text {
+  @apply pt-0 pb-4;
+}

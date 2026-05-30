@@ -1,0 +1,57 @@
+.button {
+  @apply inline-flex items-center justify-center gap-2 rounded-md font-medium whitespace-nowrap transition-colors;
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+}
+
+.button--primary {
+  @apply bg-primary text-primary-foreground;
+
+  &:hover {
+    @apply bg-primary/90;
+  }
+}
+
+.button--secondary {
+  @apply bg-secondary text-secondary-foreground;
+
+  &:hover {
+    @apply bg-secondary/80;
+  }
+}
+
+.button--ghost {
+  &:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.button--outline {
+  @apply border-input bg-background border;
+
+  &:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.button--sm {
+  @apply h-8 rounded-md px-3 text-xs;
+}
+
+.button--md {
+  @apply h-9 px-4 text-sm;
+}
+
+.button--lg {
+  @apply h-10 px-6 text-base;
+}
+
+.button--icon-only {
+  @apply aspect-square px-0;
+}

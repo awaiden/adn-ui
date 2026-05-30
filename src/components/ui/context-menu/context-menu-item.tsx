@@ -1,0 +1,12 @@
+import { ContextMenu } from "radix-ui";
+import { cn } from "tailwind-variants";
+
+import { useContextMenuContext } from "./context-menu.context";
+
+export type ContextMenuItemProps = React.ComponentProps<typeof ContextMenu.Item>;
+
+export const ContextMenuItem = ({ className, ...props }: ContextMenuItemProps) => {
+  const { slots } = useContextMenuContext();
+
+  return <ContextMenu.Item className={cn(slots.item(), className)} {...props} />;
+};

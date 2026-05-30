@@ -1,0 +1,48 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "A popup that displays information on hover or focus.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/tooltip/tooltip-provider.tsx",
+      "content": "import { Tooltip } from \"radix-ui\";\n\nexport type TooltipProviderProps = React.ComponentProps<typeof Tooltip.Provider>;\n\nexport const TooltipProvider = (props: TooltipProviderProps) => {\n  return <Tooltip.Provider {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip-root.tsx",
+      "content": "import \"./tooltip.css\";\n\nimport { Tooltip } from \"radix-ui\";\n\nexport type TooltipRootProps = React.ComponentProps<typeof Tooltip.Root>;\n\nexport const TooltipRoot = (props: TooltipRootProps) => {\n  return <Tooltip.Root {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip-trigger.tsx",
+      "content": "import { Tooltip } from \"radix-ui\";\n\nexport type TooltipTriggerProps = React.ComponentProps<typeof Tooltip.Trigger>;\n\nexport const TooltipTrigger = (props: TooltipTriggerProps) => {\n  return <Tooltip.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip-content.tsx",
+      "content": "import { Tooltip } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { tooltipVariants } from \"./tooltip.variants\";\n\nexport type TooltipContentProps = React.ComponentProps<typeof Tooltip.Content>;\n\nexport const TooltipContent = ({ className, sideOffset = 4, ...props }: TooltipContentProps) => {\n  const { content } = tooltipVariants();\n\n  return (\n    <Tooltip.Portal>\n      <Tooltip.Content className={cn(content(), className)} sideOffset={sideOffset} {...props} />\n    </Tooltip.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const tooltipVariants = tv({\n  slots: {\n    content: \"tooltip__content\",\n  },\n});\n\nexport type TooltipVariants = VariantProps<typeof tooltipVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip.css",
+      "content": ".tooltip__content {\n  @apply bg-primary text-primary-foreground z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs;\n\n  &[data-state=\"delayed-open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/tooltip/index.ts",
+      "content": "import { TooltipContent } from \"./tooltip-content\";\nimport { TooltipProvider } from \"./tooltip-provider\";\nimport { TooltipRoot } from \"./tooltip-root\";\nimport { TooltipTrigger } from \"./tooltip-trigger\";\n\nexport const Tooltip = {\n  Content: TooltipContent,\n  Provider: TooltipProvider,\n  Root: TooltipRoot,\n  Trigger: TooltipTrigger,\n};\n\nexport { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger };\n\nexport { type TooltipVariants, tooltipVariants } from \"./tooltip.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

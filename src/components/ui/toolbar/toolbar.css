@@ -1,0 +1,47 @@
+.toolbar {
+  @apply bg-background flex w-full items-center gap-1 rounded-md border p-1;
+}
+
+.toolbar__toggle-item {
+  @apply inline-flex size-8 items-center justify-center rounded-md text-sm transition-colors;
+
+  &:hover {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &[data-state="on"] {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.toolbar__separator {
+  @apply bg-border mx-1 h-6 w-px;
+}
+
+.toolbar__link {
+  @apply text-muted-foreground inline-flex items-center justify-center rounded-md px-2 py-1 text-sm no-underline transition-colors;
+
+  &:hover {
+    @apply bg-muted text-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+}
+
+.toolbar__button {
+  @apply bg-primary text-primary-foreground ml-auto inline-flex h-8 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors;
+
+  &:hover {
+    @apply bg-primary/90;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+}

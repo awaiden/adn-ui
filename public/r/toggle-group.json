@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "A group of toggle buttons where one or multiple can be active.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/toggle-group/toggle-group-root.tsx",
+      "content": "import \"./toggle-group.css\";\n\nimport { ToggleGroup } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleGroupContext } from \"./toggle-group.context\";\nimport { toggleGroupVariants } from \"./toggle-group.variants\";\n\nexport type ToggleGroupRootProps = React.ComponentProps<typeof ToggleGroup.Root>;\n\nexport const ToggleGroupRoot = ({ className, ...props }: ToggleGroupRootProps) => {\n  const slots = toggleGroupVariants();\n\n  return (\n    <ToggleGroupContext value={{ slots }}>\n      <ToggleGroup.Root className={cn(slots.root(), className)} {...props} />\n    </ToggleGroupContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle-group/toggle-group-item.tsx",
+      "content": "import { ToggleGroup } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useToggleGroupContext } from \"./toggle-group.context\";\n\nexport type ToggleGroupItemProps = React.ComponentProps<typeof ToggleGroup.Item>;\n\nexport const ToggleGroupItem = ({ className, ...props }: ToggleGroupItemProps) => {\n  const { slots } = useToggleGroupContext();\n\n  return <ToggleGroup.Item className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle-group/toggle-group.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { toggleGroupVariants } from \"./toggle-group.variants\";\n\nexport type ToggleGroupContext = {\n  slots: ReturnType<typeof toggleGroupVariants>;\n};\n\nexport const ToggleGroupContext = createContext<null | ToggleGroupContext>(null);\n\nexport const useToggleGroupContext = () => {\n  const context = useContext(ToggleGroupContext);\n  if (!context) {\n    throw new Error(\"useToggleGroupContext must be used within a ToggleGroup\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle-group/toggle-group.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const toggleGroupVariants = tv({\n  slots: {\n    item: \"toggle-group__item\",\n    root: \"toggle-group\",\n  },\n});\n\nexport type ToggleGroupVariants = VariantProps<typeof toggleGroupVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle-group/toggle-group.css",
+      "content": ".toggle-group {\n  @apply inline-flex items-center justify-center rounded-md;\n}\n\n.toggle-group__item {\n  @apply inline-flex size-9 items-center justify-center rounded-md text-sm font-medium transition-colors;\n\n  &:hover {\n    @apply bg-muted text-muted-foreground;\n  }\n\n  &:focus-visible {\n    @apply outline-ring z-10 outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply pointer-events-none opacity-50;\n  }\n\n  &[data-state=\"on\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/toggle-group/index.ts",
+      "content": "import { ToggleGroupItem } from \"./toggle-group-item\";\nimport { ToggleGroupRoot } from \"./toggle-group-root\";\n\nexport const ToggleGroup = {\n  Item: ToggleGroupItem,\n  Root: ToggleGroupRoot,\n};\n\nexport { ToggleGroupItem, ToggleGroupRoot };\n\nexport { ToggleGroupContext, useToggleGroupContext } from \"./toggle-group.context\";\n\nexport { type ToggleGroupVariants, toggleGroupVariants } from \"./toggle-group.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

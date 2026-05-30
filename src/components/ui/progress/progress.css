@@ -1,0 +1,8 @@
+.progress {
+  @apply bg-primary/20 relative h-2 w-full overflow-hidden rounded-full;
+  transform: translateZ(0);
+}
+
+.progress__indicator {
+  @apply bg-primary size-full transition-transform duration-500 ease-in-out;
+}

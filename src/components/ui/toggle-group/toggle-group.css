@@ -1,0 +1,23 @@
+.toggle-group {
+  @apply inline-flex items-center justify-center rounded-md;
+}
+
+.toggle-group__item {
+  @apply inline-flex size-9 items-center justify-center rounded-md text-sm font-medium transition-colors;
+
+  &:hover {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring z-10 outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  &[data-state="on"] {
+    @apply bg-accent text-accent-foreground;
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar",
+  "title": "Menubar",
+  "description": "A horizontal menu bar with dropdown menus.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/menubar/menubar-root.tsx",
+      "content": "import \"./menubar.css\";\n\nimport { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { MenubarContext } from \"./menubar.context\";\nimport { menubarVariants } from \"./menubar.variants\";\n\nexport type MenubarRootProps = React.ComponentProps<typeof Menubar.Root>;\n\nexport const MenubarRoot = ({ className, ...props }: MenubarRootProps) => {\n  const slots = menubarVariants();\n\n  return (\n    <MenubarContext value={{ slots }}>\n      <Menubar.Root className={cn(slots.root(), className)} {...props} />\n    </MenubarContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-menu.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\n\nexport type MenubarMenuProps = React.ComponentProps<typeof Menubar.Menu>;\n\nexport const MenubarMenu = (props: MenubarMenuProps) => {\n  return <Menubar.Menu {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-trigger.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarTriggerProps = React.ComponentProps<typeof Menubar.Trigger>;\n\nexport const MenubarTrigger = ({ className, ...props }: MenubarTriggerProps) => {\n  const { slots } = useMenubarContext();\n\n  return <Menubar.Trigger className={cn(slots.trigger(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-content.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarContentProps = React.ComponentProps<typeof Menubar.Content>;\n\nexport const MenubarContent = ({\n  align = \"start\",\n  alignOffset = -4,\n  className,\n  sideOffset = 8,\n  ...props\n}: MenubarContentProps) => {\n  const { slots } = useMenubarContext();\n\n  return (\n    <Menubar.Portal>\n      <Menubar.Content\n        align={align}\n        alignOffset={alignOffset}\n        className={cn(slots.content(), className)}\n        sideOffset={sideOffset}\n        {...props}\n      />\n    </Menubar.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-item.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarItemProps = React.ComponentProps<typeof Menubar.Item>;\n\nexport const MenubarItem = ({ className, ...props }: MenubarItemProps) => {\n  const { slots } = useMenubarContext();\n\n  return <Menubar.Item className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-checkbox-item.tsx",
+      "content": "import { Check } from \"lucide-react\";\nimport { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarCheckboxItemProps = React.ComponentProps<typeof Menubar.CheckboxItem>;\n\nexport const MenubarCheckboxItem = ({\n  children,\n  className,\n  ...props\n}: MenubarCheckboxItemProps) => {\n  const { slots } = useMenubarContext();\n\n  return (\n    <Menubar.CheckboxItem className={cn(slots.checkbox(), className)} {...props}>\n      <Menubar.ItemIndicator className={slots.indicator()}>\n        <Check />\n      </Menubar.ItemIndicator>\n      {children}\n    </Menubar.CheckboxItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-radio-item.tsx",
+      "content": "import { Circle } from \"lucide-react\";\nimport { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarRadioItemProps = React.ComponentProps<typeof Menubar.RadioItem>;\n\nexport const MenubarRadioItem = ({ children, className, ...props }: MenubarRadioItemProps) => {\n  const { slots } = useMenubarContext();\n\n  return (\n    <Menubar.RadioItem className={cn(slots.radio(), className)} {...props}>\n      <Menubar.ItemIndicator className={slots.indicator()}>\n        <Circle />\n      </Menubar.ItemIndicator>\n      {children}\n    </Menubar.RadioItem>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-label.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarLabelProps = React.ComponentProps<typeof Menubar.Label>;\n\nexport const MenubarLabel = ({ className, ...props }: MenubarLabelProps) => {\n  const { slots } = useMenubarContext();\n\n  return <Menubar.Label className={cn(slots.label(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-separator.tsx",
+      "content": "import { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarSeparatorProps = React.ComponentProps<typeof Menubar.Separator>;\n\nexport const MenubarSeparator = ({ className, ...props }: MenubarSeparatorProps) => {\n  const { slots } = useMenubarContext();\n\n  return <Menubar.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-shortcut.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarShortcutProps = React.ComponentProps<\"span\">;\n\nexport const MenubarShortcut = ({ className, ...props }: MenubarShortcutProps) => {\n  const { slots } = useMenubarContext();\n\n  return <span className={cn(slots.shortcut(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar-sub.tsx",
+      "content": "import { ChevronRight } from \"lucide-react\";\nimport { Menubar } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useMenubarContext } from \"./menubar.context\";\n\nexport type MenubarSubProps = React.ComponentProps<typeof Menubar.Sub>;\n\nexport const MenubarSub = (props: MenubarSubProps) => {\n  return <Menubar.Sub {...props} />;\n};\n\nexport type MenubarSubTriggerProps = React.ComponentProps<typeof Menubar.SubTrigger>;\n\nexport const MenubarSubTrigger = ({ children, className, ...props }: MenubarSubTriggerProps) => {\n  const { slots } = useMenubarContext();\n\n  return (\n    <Menubar.SubTrigger className={cn(slots.subTrigger(), className)} {...props}>\n      {children}\n      <ChevronRight className={slots.shortcut()} />\n    </Menubar.SubTrigger>\n  );\n};\n\nexport type MenubarSubContentProps = React.ComponentProps<typeof Menubar.SubContent>;\n\nexport const MenubarSubContent = ({ className, ...props }: MenubarSubContentProps) => {\n  const { slots } = useMenubarContext();\n\n  return (\n    <Menubar.Portal>\n      <Menubar.SubContent className={cn(slots.subContent(), className)} {...props} />\n    </Menubar.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { menubarVariants } from \"./menubar.variants\";\n\nexport type MenubarContext = {\n  slots: ReturnType<typeof menubarVariants>;\n};\n\nexport const MenubarContext = createContext<MenubarContext | null>(null);\n\nexport const useMenubarContext = () => {\n  const context = useContext(MenubarContext);\n  if (!context) {\n    throw new Error(\"useMenubarContext must be used within a Menubar\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const menubarVariants = tv({\n  slots: {\n    checkbox: \"menubar__checkbox-item\",\n    content: \"menubar__content\",\n    indicator: \"menubar__indicator\",\n    item: \"menubar__item\",\n    label: \"menubar__label\",\n    radio: \"menubar__radio-item\",\n    root: \"menubar\",\n    separator: \"menubar__separator\",\n    shortcut: \"menubar__shortcut\",\n    subContent: \"menubar__sub-content\",\n    subTrigger: \"menubar__sub-trigger\",\n    trigger: \"menubar__trigger\",\n  },\n});\n\nexport type MenubarVariants = VariantProps<typeof menubarVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/menubar.css",
+      "content": ".menubar {\n  @apply bg-background flex h-9 items-center gap-1 rounded-md border p-1 shadow-sm;\n}\n\n.menubar__trigger {\n  @apply flex cursor-default items-center rounded-sm px-3 py-1 text-sm font-medium outline-none select-none;\n\n  &:focus {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-state=\"open\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.menubar__content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[12rem] overflow-hidden rounded-md border p-1 shadow-md;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n\n.menubar__item {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.menubar__checkbox-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.menubar__radio-item {\n  @apply relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-disabled] {\n    @apply pointer-events-none opacity-50;\n  }\n}\n\n.menubar__indicator {\n  @apply absolute left-2 inline-flex items-center justify-center;\n\n  & svg {\n    @apply size-3.5;\n  }\n}\n\n.menubar__label {\n  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;\n}\n\n.menubar__separator {\n  @apply bg-border -mx-1 my-1 h-px;\n}\n\n.menubar__shortcut {\n  @apply text-muted-foreground ml-auto text-xs tracking-widest;\n}\n\n.menubar__sub-trigger {\n  @apply relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none;\n\n  &[data-highlighted] {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &[data-state=\"open\"] {\n    @apply bg-accent text-accent-foreground;\n  }\n}\n\n.menubar__sub-content {\n  @apply bg-popover text-popover-foreground z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95;\n  }\n\n  &[data-side=\"bottom\"] {\n    @apply slide-in-from-top-2;\n  }\n\n  &[data-side=\"left\"] {\n    @apply slide-in-from-right-2;\n  }\n\n  &[data-side=\"right\"] {\n    @apply slide-in-from-left-2;\n  }\n\n  &[data-side=\"top\"] {\n    @apply slide-in-from-bottom-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/menubar/index.ts",
+      "content": "import { MenubarCheckboxItem } from \"./menubar-checkbox-item\";\nimport { MenubarContent } from \"./menubar-content\";\nimport { MenubarItem } from \"./menubar-item\";\nimport { MenubarLabel } from \"./menubar-label\";\nimport { MenubarMenu } from \"./menubar-menu\";\nimport { MenubarRadioItem } from \"./menubar-radio-item\";\nimport { MenubarRoot } from \"./menubar-root\";\nimport { MenubarSeparator } from \"./menubar-separator\";\nimport { MenubarShortcut } from \"./menubar-shortcut\";\nimport { MenubarSub, MenubarSubContent, MenubarSubTrigger } from \"./menubar-sub\";\nimport { MenubarTrigger } from \"./menubar-trigger\";\n\nexport const Menubar = {\n  CheckboxItem: MenubarCheckboxItem,\n  Content: MenubarContent,\n  Item: MenubarItem,\n  Label: MenubarLabel,\n  Menu: MenubarMenu,\n  RadioItem: MenubarRadioItem,\n  Root: MenubarRoot,\n  Separator: MenubarSeparator,\n  Shortcut: MenubarShortcut,\n  Sub: MenubarSub,\n  SubContent: MenubarSubContent,\n  SubTrigger: MenubarSubTrigger,\n  Trigger: MenubarTrigger,\n};\n\nexport {\n  MenubarCheckboxItem,\n  MenubarContent,\n  MenubarItem,\n  MenubarLabel,\n  MenubarMenu,\n  MenubarRadioItem,\n  MenubarRoot,\n  MenubarSeparator,\n  MenubarShortcut,\n  MenubarSub,\n  MenubarSubContent,\n  MenubarSubTrigger,\n  MenubarTrigger,\n};\n\nexport { MenubarContext, useMenubarContext } from \"./menubar.context\";\n\nexport { type MenubarVariants, menubarVariants } from \"./menubar.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

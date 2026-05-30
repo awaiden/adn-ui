@@ -1,0 +1,1111 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "adn-ui",
+  "homepage": "https://github.com/awaiden/adn-ui",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "A vertically stacked set of interactive headings that reveal content.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion/accordion-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/accordion/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:component",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that interrupts the user with important content and expects a response.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-title.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-cancel.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog-action.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:component",
+      "title": "Aspect Ratio",
+      "description": "Displays content within a desired ratio.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "description": "An image element with a fallback for representing the user.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/avatar/avatar-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar-image.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar-fallback.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/avatar/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "A clickable button with multiple variants and sizes.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/button/button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/button/button.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/button/button.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/button/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "A container for grouping related content and actions.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/card/card-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card-title.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card.variants.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/card/card.css",
+          "type": "registry:component"
+        },
+        { "path": "src/components/ui/card/index.ts", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "description": "A control that allows the user to toggle between checked and not checked.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox/checkbox.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/checkbox/checkbox.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/checkbox/checkbox.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/checkbox/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:component",
+      "title": "Collapsible",
+      "description": "An interactive component which expands and collapses content.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible/collapsible-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/collapsible/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:component",
+      "title": "Context Menu",
+      "description": "A menu displayed upon right-click or long-press interaction.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/context-menu/context-menu-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-checkbox-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-radio-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-shortcut.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu-sub.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/context-menu/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "A modal window that appears on top of the main content.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/dialog/dialog-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog-title.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog-footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dialog/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown Menu",
+      "description": "A menu that appears below a trigger element.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-checkbox-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-radio-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-shortcut.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu-sub.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:component",
+      "title": "Form",
+      "description": "A form component with built-in validation and accessible error messages.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/form/form-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form-field.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form-label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form-control.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form-message.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form-submit.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/form/form.css",
+          "type": "registry:component"
+        },
+        { "path": "src/components/ui/form/index.ts", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:component",
+      "title": "Hover Card",
+      "description": "A card that appears when hovering over a trigger element.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/hover-card/hover-card-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/hover-card/hover-card-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/hover-card/hover-card-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/hover-card/hover-card.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/hover-card/hover-card.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/hover-card/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:component",
+      "title": "Label",
+      "description": "An accessible label for form controls.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/label/label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/label/label.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/label/label.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/label/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:component",
+      "title": "Menubar",
+      "description": "A horizontal menu bar with dropdown menus.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/menubar/menubar-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-menu.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-checkbox-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-radio-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-shortcut.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar-sub.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/menubar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/menubar/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:component",
+      "title": "Navigation Menu",
+      "description": "A navigation menu with support for dropdowns and viewport transitions.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu-link.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/navigation-menu.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/navigation-menu/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Popover",
+      "description": "A floating panel anchored to a trigger element.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/popover/popover-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/popover/popover-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/popover/popover-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/popover/popover.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/popover/popover.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/popover/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "Progress",
+      "description": "Displays an indicator showing the completion progress of a task.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/progress/progress.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/progress/progress.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/progress/progress.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/progress/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "title": "Radio Group",
+      "description": "A set of checkable buttons where only one can be checked at a time.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group/radio-group-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/radio-group/radio-group-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/radio-group/radio-group.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/radio-group/radio-group.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/radio-group/radio-group.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/radio-group/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:component",
+      "title": "Scroll Area",
+      "description": "A custom scrollbar component with cross-browser support.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/scroll-area/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "A dropdown for selecting a value from a list of options.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/select/select-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select-label.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/select.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/select/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "title": "Separator",
+      "description": "A visual divider between content sections.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/separator/separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/separator/separator.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/separator/separator.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/separator/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:component",
+      "title": "Slider",
+      "description": "An input for selecting a value within a range.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/slider/slider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/slider/slider.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/slider/slider.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/slider/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "description": "A toggle control for switching between on and off states.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/switch/switch.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/switch/switch.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/switch/switch.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/switch/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "A set of layered sections of content shown one at a time.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/tabs/tabs-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.css",
+          "type": "registry:component"
+        },
+        { "path": "src/components/ui/tabs/index.ts", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:component",
+      "title": "Toggle",
+      "description": "A two-state button that can be on or off.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/toggle/toggle.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle/toggle.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle/toggle.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:component",
+      "title": "Toggle Group",
+      "description": "A group of toggle buttons where one or multiple can be active.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group/toggle-group-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toggle-group/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:component",
+      "title": "Toolbar",
+      "description": "A container for grouping toggle buttons, links, and actions.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/toolbar/toolbar-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar-toggle-group.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar-toggle-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar-link.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar-button.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/toolbar.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/toolbar/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "A popup that displays information on hover or focus.",
+      "dependencies": ["radix-ui", "tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip/tooltip-provider.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip-trigger.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/tooltip/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

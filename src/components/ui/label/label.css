@@ -1,0 +1,7 @@
+.label {
+  @apply text-sm leading-none font-medium;
+
+  &[data-disabled] {
+    @apply cursor-not-allowed opacity-70;
+  }
+}

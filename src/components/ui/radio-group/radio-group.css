@@ -1,0 +1,27 @@
+.radio-group {
+  @apply grid gap-2;
+}
+
+.radio-group__item {
+  @apply border-primary text-primary aspect-square size-4 rounded-full border;
+
+  &:hover {
+    @apply bg-accent;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+}
+
+.radio-group__indicator {
+  @apply flex items-center justify-center;
+
+  & svg {
+    @apply size-2.5 fill-current;
+  }
+}

@@ -1,0 +1,43 @@
+.toggle {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
+
+  &:hover {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply pointer-events-none opacity-50;
+  }
+
+  &[data-state="on"] {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.toggle--default {
+  @apply bg-transparent;
+}
+
+.toggle--outline {
+  @apply border-input border bg-transparent;
+
+  &:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+.toggle--sm {
+  @apply size-8;
+}
+
+.toggle--md {
+  @apply size-9;
+}
+
+.toggle--lg {
+  @apply size-10;
+}

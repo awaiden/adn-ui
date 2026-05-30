@@ -1,0 +1,69 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "title": "Alert Dialog",
+  "description": "A modal dialog that interrupts the user with important content and expects a response.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-root.tsx",
+      "content": "import \"./alert-dialog.css\";\n\nimport { AlertDialog } from \"radix-ui\";\n\nimport { AlertDialogContext } from \"./alert-dialog.context\";\nimport { alertDialogVariants } from \"./alert-dialog.variants\";\n\nexport type AlertDialogRootProps = React.ComponentProps<typeof AlertDialog.Root>;\n\nexport const AlertDialogRoot = (props: AlertDialogRootProps) => {\n  const slots = alertDialogVariants();\n\n  return (\n    <AlertDialogContext value={{ slots }}>\n      <AlertDialog.Root {...props} />\n    </AlertDialogContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-trigger.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\n\nexport type AlertDialogTriggerProps = React.ComponentProps<typeof AlertDialog.Trigger>;\n\nexport const AlertDialogTrigger = (props: AlertDialogTriggerProps) => {\n  return <AlertDialog.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-content.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport type AlertDialogContentProps = React.ComponentProps<typeof AlertDialog.Content>;\n\nexport const AlertDialogContent = ({ children, className, ...props }: AlertDialogContentProps) => {\n  const { slots } = useAlertDialogContext();\n\n  return (\n    <AlertDialog.Portal>\n      <AlertDialog.Overlay className={slots.overlay()} />\n      <AlertDialog.Content className={cn(slots.content(), className)} {...props}>\n        {children}\n      </AlertDialog.Content>\n    </AlertDialog.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-title.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport type AlertDialogTitleProps = React.ComponentProps<typeof AlertDialog.Title>;\n\nexport const AlertDialogTitle = ({ className, ...props }: AlertDialogTitleProps) => {\n  const { slots } = useAlertDialogContext();\n\n  return <AlertDialog.Title className={cn(slots.title(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-description.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport type AlertDialogDescriptionProps = React.ComponentProps<typeof AlertDialog.Description>;\n\nexport const AlertDialogDescription = ({ className, ...props }: AlertDialogDescriptionProps) => {\n  const { slots } = useAlertDialogContext();\n\n  return <AlertDialog.Description className={cn(slots.description(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-cancel.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport type AlertDialogCancelProps = React.ComponentProps<typeof AlertDialog.Cancel>;\n\nexport const AlertDialogCancel = ({ className, ...props }: AlertDialogCancelProps) => {\n  const { slots } = useAlertDialogContext();\n\n  return <AlertDialog.Cancel className={cn(slots.cancel(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog-action.tsx",
+      "content": "import { AlertDialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport type AlertDialogActionProps = React.ComponentProps<typeof AlertDialog.Action>;\n\nexport const AlertDialogAction = ({ className, ...props }: AlertDialogActionProps) => {\n  const { slots } = useAlertDialogContext();\n\n  return <AlertDialog.Action className={cn(slots.action(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { alertDialogVariants } from \"./alert-dialog.variants\";\n\nexport type AlertDialogContext = {\n  slots: ReturnType<typeof alertDialogVariants>;\n};\n\nexport const AlertDialogContext = createContext<AlertDialogContext | null>(null);\n\nexport const useAlertDialogContext = () => {\n  const context = useContext(AlertDialogContext);\n  if (!context) {\n    throw new Error(\"useAlertDialogContext must be used within an AlertDialog\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const alertDialogVariants = tv({\n  slots: {\n    overlay: \"alert-dialog__overlay\",\n    content: \"alert-dialog__content\",\n    title: \"alert-dialog__title\",\n    description: \"alert-dialog__description\",\n    actions: \"alert-dialog__actions\",\n    cancel: \"alert-dialog__cancel\",\n    action: \"alert-dialog__action\",\n  },\n});\n\nexport type AlertDialogVariants = VariantProps<typeof alertDialogVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/alert-dialog.css",
+      "content": ".alert-dialog__overlay {\n  @apply fixed inset-0 z-50 bg-black/80;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0;\n  }\n}\n\n.alert-dialog__content {\n  @apply bg-background fixed top-1/2 left-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 rounded-lg border p-6 shadow-lg duration-200;\n\n  &[data-state=\"open\"] {\n    @apply animate-in fade-in-0 zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-[48%];\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-out fade-out-0 zoom-out-95 slide-out-to-left-1/2 slide-out-to-top-[48%];\n  }\n}\n\n.alert-dialog__title {\n  @apply text-lg font-semibold;\n}\n\n.alert-dialog__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.alert-dialog__actions {\n  @apply flex flex-col-reverse gap-2 sm:flex-row sm:justify-end;\n}\n\n.alert-dialog__cancel {\n  @apply border-input bg-background inline-flex h-9 items-center justify-center rounded-md border px-4 text-sm font-medium transition-colors;\n\n  &:hover {\n    @apply bg-accent text-accent-foreground;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n\n.alert-dialog__action {\n  @apply bg-destructive text-primary-foreground inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors;\n\n  &:hover {\n    @apply bg-destructive/90;\n  }\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert-dialog/index.ts",
+      "content": "import { AlertDialogAction } from \"./alert-dialog-action\";\nimport { AlertDialogCancel } from \"./alert-dialog-cancel\";\nimport { AlertDialogContent } from \"./alert-dialog-content\";\nimport { AlertDialogDescription } from \"./alert-dialog-description\";\nimport { AlertDialogRoot } from \"./alert-dialog-root\";\nimport { AlertDialogTitle } from \"./alert-dialog-title\";\nimport { AlertDialogTrigger } from \"./alert-dialog-trigger\";\n\nexport const AlertDialog = {\n  Action: AlertDialogAction,\n  Cancel: AlertDialogCancel,\n  Content: AlertDialogContent,\n  Description: AlertDialogDescription,\n  Root: AlertDialogRoot,\n  Title: AlertDialogTitle,\n  Trigger: AlertDialogTrigger,\n};\n\nexport {\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogRoot,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n};\n\nexport { AlertDialogContext, useAlertDialogContext } from \"./alert-dialog.context\";\n\nexport { type AlertDialogVariants, alertDialogVariants } from \"./alert-dialog.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

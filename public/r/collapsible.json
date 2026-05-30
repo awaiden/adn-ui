@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "title": "Collapsible",
+  "description": "An interactive component which expands and collapses content.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/collapsible/collapsible-root.tsx",
+      "content": "import \"./collapsible.css\";\n\nimport { Collapsible } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { collapsibleVariants } from \"./collapsible.variants\";\n\nexport type CollapsibleRootProps = React.ComponentProps<typeof Collapsible.Root>;\n\nexport const CollapsibleRoot = ({ className, ...props }: CollapsibleRootProps) => {\n  const { root } = collapsibleVariants();\n\n  return <Collapsible.Root className={cn(root(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible-trigger.tsx",
+      "content": "import { Collapsible } from \"radix-ui\";\n\nexport type CollapsibleTriggerProps = React.ComponentProps<typeof Collapsible.Trigger>;\n\nexport const CollapsibleTrigger = (props: CollapsibleTriggerProps) => {\n  return <Collapsible.Trigger asChild {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible-content.tsx",
+      "content": "import { Collapsible } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { collapsibleVariants } from \"./collapsible.variants\";\n\nexport type CollapsibleContentProps = React.ComponentProps<typeof Collapsible.Content>;\n\nexport const CollapsibleContent = ({ className, ...props }: CollapsibleContentProps) => {\n  const { content } = collapsibleVariants();\n\n  return <Collapsible.Content className={cn(content(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const collapsibleVariants = tv({\n  slots: {\n    content: \"collapsible__content\",\n    root: \"collapsible\",\n  },\n});\n\nexport type CollapsibleVariants = VariantProps<typeof collapsibleVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible.css",
+      "content": ".collapsible {\n  @apply w-full;\n}\n\n.collapsible__content {\n  @apply overflow-hidden;\n\n  &[data-state=\"open\"] {\n    @apply animate-collapsible-down;\n  }\n\n  &[data-state=\"closed\"] {\n    @apply animate-collapsible-up;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/collapsible/index.ts",
+      "content": "import { CollapsibleContent } from \"./collapsible-content\";\nimport { CollapsibleRoot } from \"./collapsible-root\";\nimport { CollapsibleTrigger } from \"./collapsible-trigger\";\n\nexport const Collapsible = {\n  Content: CollapsibleContent,\n  Root: CollapsibleRoot,\n  Trigger: CollapsibleTrigger,\n};\n\nexport { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger };\n\nexport { type CollapsibleVariants, collapsibleVariants } from \"./collapsible.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
