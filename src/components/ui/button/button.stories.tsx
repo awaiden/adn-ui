@@ -40,6 +40,13 @@ export const Outline: Story = {
   },
 };
 
+export const Destructive: Story = {
+  args: {
+    children: "Button",
+    variant: "destructive",
+  },
+};
+
 export const Small: Story = {
   args: {
     children: "Button",

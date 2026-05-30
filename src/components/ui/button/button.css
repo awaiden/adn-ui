@@ -18,6 +18,14 @@
   }
 }
 
+.button--destructive {
+  @apply bg-destructive text-white;
+
+  &:hover {
+    @apply bg-destructive/90;
+  }
+}
+
 .button--secondary {
   @apply bg-secondary text-secondary-foreground;
 
