@@ -49,7 +49,7 @@
     },
     {
       "path": "src/components/ui/card/index.ts",
-      "content": "import { CardContent } from \"./card-content\";\nimport { CardDescription } from \"./card-description\";\nimport { CardHeader } from \"./card-header\";\nimport { CardRoot } from \"./card-root\";\nimport { CardTitle } from \"./card-title\";\n\nexport const Card = {\n  Content: CardContent,\n  Description: CardDescription,\n  Header: CardHeader,\n  Root: CardRoot,\n  Title: CardTitle,\n};\n\nexport { CardContent, CardDescription, CardHeader, CardRoot, CardTitle };\n\nexport { CardContext, useCardContext } from \"./card.context\";\n\nexport { type CardVariants, cardVariants } from \"./card.variants\";\n",
+      "content": "import { CardContent } from \"./card-content\";\nimport { CardDescription } from \"./card-description\";\nimport { CardHeader } from \"./card-header\";\nimport { CardRoot } from \"./card-root\";\nimport { CardTitle } from \"./card-title\";\n\nexport const Card = {\n  Content: CardContent,\n  Description: CardDescription,\n  Header: CardHeader,\n  Root: CardRoot,\n  Title: CardTitle,\n};\n\nexport { CardContent, CardDescription, CardHeader, CardRoot, CardTitle };\n\nexport type { CardContentProps } from \"./card-content\";\n\nexport type { CardDescriptionProps } from \"./card-description\";\n\nexport type { CardHeaderProps } from \"./card-header\";\nexport type { CardProps } from \"./card-root\";\nexport type { CardTitleProps } from \"./card-title\";\nexport { CardContext, useCardContext } from \"./card.context\";\nexport { type CardVariants, cardVariants } from \"./card.variants\";\n",
       "type": "registry:component"
     }
   ],

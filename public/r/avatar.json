@@ -40,7 +40,7 @@
     },
     {
       "path": "src/components/ui/avatar/index.ts",
-      "content": "import { AvatarFallback } from \"./avatar-fallback\";\nimport { AvatarImage } from \"./avatar-image\";\nimport { AvatarRoot } from \"./avatar-root\";\n\nexport const Avatar = {\n  Fallback: AvatarFallback,\n  Image: AvatarImage,\n  Root: AvatarRoot,\n};\n\nexport { AvatarFallback, AvatarImage, AvatarRoot };\n\nexport { AvatarContext, useAvatarContext } from \"./avatar.context\";\n\nexport { type AvatarVariants, avatarVariants } from \"./avatar.variants\";\n",
+      "content": "import { AvatarFallback } from \"./avatar-fallback\";\nimport { AvatarImage } from \"./avatar-image\";\nimport { AvatarRoot } from \"./avatar-root\";\n\nexport const Avatar = {\n  Fallback: AvatarFallback,\n  Image: AvatarImage,\n  Root: AvatarRoot,\n};\n\nexport { AvatarFallback, AvatarImage, AvatarRoot };\n\nexport type { AvatarFallbackProps } from \"./avatar-fallback\";\n\nexport type { AvatarImageProps } from \"./avatar-image\";\n\nexport type { AvatarRootProps } from \"./avatar-root\";\nexport { AvatarContext, useAvatarContext } from \"./avatar.context\";\nexport { type AvatarVariants, avatarVariants } from \"./avatar.variants\";\n",
       "type": "registry:component"
     }
   ],

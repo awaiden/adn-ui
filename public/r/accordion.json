@@ -46,7 +46,7 @@
     },
     {
       "path": "src/components/ui/accordion/index.ts",
-      "content": "import { AccordionContent } from \"./accordion-content\";\nimport { AccordionItem } from \"./accordion-item\";\nimport { AccordionRoot } from \"./accordion-root\";\nimport { AccordionTrigger } from \"./accordion-trigger\";\n\nexport const Accordion = {\n  Content: AccordionContent,\n  Item: AccordionItem,\n  Root: AccordionRoot,\n  Trigger: AccordionTrigger,\n};\n\nexport { AccordionContent, AccordionItem, AccordionRoot, AccordionTrigger };\n\nexport { AccordionContext, useAccordionContext } from \"./accordion.context\";\n\nexport { type AccordionVariants, accordionVariants } from \"./accordion.variants\";\n",
+      "content": "import { AccordionContent } from \"./accordion-content\";\nimport { AccordionItem } from \"./accordion-item\";\nimport { AccordionRoot } from \"./accordion-root\";\nimport { AccordionTrigger } from \"./accordion-trigger\";\n\nexport const Accordion = {\n  Content: AccordionContent,\n  Item: AccordionItem,\n  Root: AccordionRoot,\n  Trigger: AccordionTrigger,\n};\n\nexport { AccordionContent, AccordionItem, AccordionRoot, AccordionTrigger };\n\nexport type { AccordionContentProps } from \"./accordion-content\";\n\nexport type { AccordionItemProps } from \"./accordion-item\";\n\nexport type { AccordionRootProps } from \"./accordion-root\";\nexport type { AccordionTriggerProps } from \"./accordion-trigger\";\nexport { AccordionContext, useAccordionContext } from \"./accordion.context\";\nexport { type AccordionVariants, accordionVariants } from \"./accordion.variants\";\n",
       "type": "registry:component"
     }
   ],

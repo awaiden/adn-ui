@@ -26,7 +26,7 @@
     },
     {
       "path": "src/components/ui/checkbox/index.ts",
-      "content": "import { CheckboxRoot } from \"./checkbox\";\n\nexport const Checkbox = {\n  Root: CheckboxRoot,\n};\n\nexport { CheckboxRoot };\n\nexport { type CheckboxVariants, checkboxVariants } from \"./checkbox.variants\";\n",
+      "content": "import { CheckboxRoot } from \"./checkbox\";\n\nexport const Checkbox = {\n  Root: CheckboxRoot,\n};\n\nexport { CheckboxRoot };\n\nexport type { CheckboxProps } from \"./checkbox\";\n\nexport { type CheckboxVariants, checkboxVariants } from \"./checkbox.variants\";\n",
       "type": "registry:component"
     }
   ],

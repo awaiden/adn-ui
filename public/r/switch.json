@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/switch/index.ts",
-      "content": "import { SwitchRoot } from \"./switch\";\n\nexport const Switch = {\n  Root: SwitchRoot,\n};\n\nexport { SwitchRoot };\n\nexport { type SwitchVariants, switchVariants } from \"./switch.variants\";\n",
+      "content": "import { SwitchRoot } from \"./switch\";\n\nexport const Switch = {\n  Root: SwitchRoot,\n};\n\nexport { SwitchRoot };\n\nexport type { SwitchProps } from \"./switch\";\n\nexport { type SwitchVariants, switchVariants } from \"./switch.variants\";\n",
       "type": "registry:component"
     }
   ],

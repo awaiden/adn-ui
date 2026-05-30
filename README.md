@@ -6,15 +6,15 @@ A shadcn registry of accessible React components built with Radix UI primitives,
 
 shadcn/ui is great for getting started, but adn-ui solves the problems you hit as you scale:
 
-| | shadcn/ui | adn-ui |
-|---|---|---|
-| **Styling** | Inline utility strings in JSX | BEM-style CSS classes — components stay readable, styles stay in `.css` files |
-| **Variants** | `cva` with flat string arrays | `tailwind-variants` with typed slots — compound components get per-slot variant control |
-| **Compound components** | Flat exports, manual class threading | Context-based slot system — child components inherit styles from root automatically |
-| **CSS architecture** | Utilities baked into components | Separated concerns — override a class in CSS without touching component code |
-| **Color system** | HSL custom properties | oklch custom properties — perceptually uniform, wider gamut |
-| **Customization** | Copy-paste then modify inline classes | Override BEM classes in your own CSS layer or swap variant definitions |
-| **Bundle** | Every utility string ships in JS | Styles extract to CSS — smaller JS bundles, cacheable stylesheets |
+|                         | shadcn/ui                             | adn-ui                                                                                  |
+| ----------------------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Styling**             | Inline utility strings in JSX         | BEM-style CSS classes — components stay readable, styles stay in `.css` files           |
+| **Variants**            | `cva` with flat string arrays         | `tailwind-variants` with typed slots — compound components get per-slot variant control |
+| **Compound components** | Flat exports, manual class threading  | Context-based slot system — child components inherit styles from root automatically     |
+| **CSS architecture**    | Utilities baked into components       | Separated concerns — override a class in CSS without touching component code            |
+| **Color system**        | HSL custom properties                 | oklch custom properties — perceptually uniform, wider gamut                             |
+| **Customization**       | Copy-paste then modify inline classes | Override BEM classes in your own CSS layer or swap variant definitions                  |
+| **Bundle**              | Every utility string ships in JS      | Styles extract to CSS — smaller JS bundles, cacheable stylesheets                       |
 
 adn-ui is still a shadcn registry — you install components the same way (`npx shadcn@latest add @adn/button`). You get the same copy-paste ownership model with a cleaner architecture underneath.
 

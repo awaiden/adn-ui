@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/progress/index.ts",
-      "content": "import { ProgressRoot } from \"./progress\";\n\nexport const Progress = {\n  Root: ProgressRoot,\n};\n\nexport { ProgressRoot };\n\nexport { type ProgressVariants, progressVariants } from \"./progress.variants\";\n",
+      "content": "import { ProgressRoot } from \"./progress\";\n\nexport const Progress = {\n  Root: ProgressRoot,\n};\n\nexport { ProgressRoot };\n\nexport type { ProgressProps } from \"./progress\";\n\nexport { type ProgressVariants, progressVariants } from \"./progress.variants\";\n",
       "type": "registry:component"
     }
   ],

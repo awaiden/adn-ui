@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/toggle/index.ts",
-      "content": "import { ToggleRoot } from \"./toggle\";\n\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
+      "content": "import { ToggleRoot } from \"./toggle\";\n\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport type { ToggleProps } from \"./toggle\";\n\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
       "type": "registry:component"
     }
   ],

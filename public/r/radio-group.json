@@ -36,7 +36,7 @@
     },
     {
       "path": "src/components/ui/radio-group/index.ts",
-      "content": "import { RadioGroupItem } from \"./radio-group-item\";\nimport { RadioGroupRoot } from \"./radio-group-root\";\n\nexport const RadioGroup = {\n  Item: RadioGroupItem,\n  Root: RadioGroupRoot,\n};\n\nexport { RadioGroupItem, RadioGroupRoot };\n\nexport { RadioGroupContext, useRadioGroupContext } from \"./radio-group.context\";\n\nexport { type RadioGroupVariants, radioGroupVariants } from \"./radio-group.variants\";\n",
+      "content": "import { RadioGroupItem } from \"./radio-group-item\";\nimport { RadioGroupRoot } from \"./radio-group-root\";\n\nexport const RadioGroup = {\n  Item: RadioGroupItem,\n  Root: RadioGroupRoot,\n};\n\nexport { RadioGroupItem, RadioGroupRoot };\n\nexport type { RadioGroupItemProps } from \"./radio-group-item\";\n\nexport type { RadioGroupRootProps } from \"./radio-group-root\";\n\nexport { RadioGroupContext, useRadioGroupContext } from \"./radio-group.context\";\nexport { type RadioGroupVariants, radioGroupVariants } from \"./radio-group.variants\";\n",
       "type": "registry:component"
     }
   ],

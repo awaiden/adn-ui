@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { expect, userEvent, within } from "storybook/test";
+
 import { Sheet } from ".";
 import { Button } from "../button";
 
@@ -12,6 +14,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Right: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole("button", { name: "Open Sheet" });
+
+    await userEvent.click(trigger);
+
+    const dialog = await within(document.body).findByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(within(dialog).getByText("Edit profile")).toBeVisible();
+
+    const closeButton = within(dialog).getByRole("button", { name: "Close" });
+    await userEvent.click(closeButton);
+  },
   render: () => (
     <Sheet.Root>
       <Sheet.Trigger asChild>
@@ -49,6 +64,16 @@ export const Left: Story = {
 };
 
 export const Top: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole("button", { name: "Open Top" });
+
+    await userEvent.click(trigger);
+
+    const dialog = await within(document.body).findByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(within(dialog).getByText("Notifications")).toBeVisible();
+  },
   render: () => (
     <Sheet.Root>
       <Sheet.Trigger asChild>
@@ -69,6 +94,16 @@ export const Top: Story = {
 };
 
 export const Bottom: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const trigger = canvas.getByRole("button", { name: "Open Bottom" });
+
+    await userEvent.click(trigger);
+
+    const dialog = await within(document.body).findByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(within(dialog).getByText("Actions")).toBeVisible();
+  },
   render: () => (
     <Sheet.Root>
       <Sheet.Trigger asChild>

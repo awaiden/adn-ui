@@ -35,7 +35,7 @@
     },
     {
       "path": "src/components/ui/collapsible/index.ts",
-      "content": "import { CollapsibleContent } from \"./collapsible-content\";\nimport { CollapsibleRoot } from \"./collapsible-root\";\nimport { CollapsibleTrigger } from \"./collapsible-trigger\";\n\nexport const Collapsible = {\n  Content: CollapsibleContent,\n  Root: CollapsibleRoot,\n  Trigger: CollapsibleTrigger,\n};\n\nexport { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger };\n\nexport { type CollapsibleVariants, collapsibleVariants } from \"./collapsible.variants\";\n",
+      "content": "import { CollapsibleContent } from \"./collapsible-content\";\nimport { CollapsibleRoot } from \"./collapsible-root\";\nimport { CollapsibleTrigger } from \"./collapsible-trigger\";\n\nexport const Collapsible = {\n  Content: CollapsibleContent,\n  Root: CollapsibleRoot,\n  Trigger: CollapsibleTrigger,\n};\n\nexport { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger };\n\nexport type { CollapsibleContentProps } from \"./collapsible-content\";\n\nexport type { CollapsibleRootProps } from \"./collapsible-root\";\nexport type { CollapsibleTriggerProps } from \"./collapsible-trigger\";\nexport { type CollapsibleVariants, collapsibleVariants } from \"./collapsible.variants\";\n",
       "type": "registry:component"
     }
   ],

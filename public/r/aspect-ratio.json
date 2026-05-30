@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/aspect-ratio/index.ts",
-      "content": "import { AspectRatioRoot } from \"./aspect-ratio\";\n\nexport const AspectRatio = {\n  Root: AspectRatioRoot,\n};\n\nexport { AspectRatioRoot };\n\nexport { type AspectRatioVariants, aspectRatioVariants } from \"./aspect-ratio.variants\";\n",
+      "content": "import { AspectRatioRoot } from \"./aspect-ratio\";\n\nexport const AspectRatio = {\n  Root: AspectRatioRoot,\n};\n\nexport { AspectRatioRoot };\n\nexport type { AspectRatioProps } from \"./aspect-ratio\";\n\nexport { type AspectRatioVariants, aspectRatioVariants } from \"./aspect-ratio.variants\";\n",
       "type": "registry:component"
     }
   ],

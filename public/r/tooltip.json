@@ -40,7 +40,7 @@
     },
     {
       "path": "src/components/ui/tooltip/index.ts",
-      "content": "import { TooltipContent } from \"./tooltip-content\";\nimport { TooltipProvider } from \"./tooltip-provider\";\nimport { TooltipRoot } from \"./tooltip-root\";\nimport { TooltipTrigger } from \"./tooltip-trigger\";\n\nexport const Tooltip = {\n  Content: TooltipContent,\n  Provider: TooltipProvider,\n  Root: TooltipRoot,\n  Trigger: TooltipTrigger,\n};\n\nexport { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger };\n\nexport { type TooltipVariants, tooltipVariants } from \"./tooltip.variants\";\n",
+      "content": "import { TooltipContent } from \"./tooltip-content\";\nimport { TooltipProvider } from \"./tooltip-provider\";\nimport { TooltipRoot } from \"./tooltip-root\";\nimport { TooltipTrigger } from \"./tooltip-trigger\";\n\nexport const Tooltip = {\n  Content: TooltipContent,\n  Provider: TooltipProvider,\n  Root: TooltipRoot,\n  Trigger: TooltipTrigger,\n};\n\nexport { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger };\n\nexport type { TooltipContentProps } from \"./tooltip-content\";\n\nexport type { TooltipProviderProps } from \"./tooltip-provider\";\nexport type { TooltipRootProps } from \"./tooltip-root\";\nexport type { TooltipTriggerProps } from \"./tooltip-trigger\";\nexport { type TooltipVariants, tooltipVariants } from \"./tooltip.variants\";\n",
       "type": "registry:component"
     }
   ],

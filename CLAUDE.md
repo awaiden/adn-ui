@@ -42,6 +42,7 @@ Multi-part components (Card, Sheet, Table, etc.) use a context-based slot system
 ### Index File Export Order
 
 Barrel files follow this order (enforced by perfectionist sort-exports):
+
 1. Namespace `export const X = {...}`
 2. Named component re-exports `export { ... }`
 3. Type exports `export type { XProps } from "./x-part"`

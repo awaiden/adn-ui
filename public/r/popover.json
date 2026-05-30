@@ -36,7 +36,7 @@
     },
     {
       "path": "src/components/ui/popover/index.ts",
-      "content": "import { PopoverContent } from \"./popover-content\";\nimport { PopoverRoot } from \"./popover-root\";\nimport { PopoverTrigger } from \"./popover-trigger\";\n\nexport const Popover = {\n  Content: PopoverContent,\n  Root: PopoverRoot,\n  Trigger: PopoverTrigger,\n};\n\nexport { PopoverContent, PopoverRoot, PopoverTrigger };\n\nexport { type PopoverVariants, popoverVariants } from \"./popover.variants\";\n",
+      "content": "import { PopoverContent } from \"./popover-content\";\nimport { PopoverRoot } from \"./popover-root\";\nimport { PopoverTrigger } from \"./popover-trigger\";\n\nexport const Popover = {\n  Content: PopoverContent,\n  Root: PopoverRoot,\n  Trigger: PopoverTrigger,\n};\n\nexport { PopoverContent, PopoverRoot, PopoverTrigger };\n\nexport type { PopoverContentProps } from \"./popover-content\";\n\nexport type { PopoverRootProps } from \"./popover-root\";\nexport type { PopoverTriggerProps } from \"./popover-trigger\";\nexport { type PopoverVariants, popoverVariants } from \"./popover.variants\";\n",
       "type": "registry:component"
     }
   ],

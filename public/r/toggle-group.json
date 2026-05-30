@@ -35,7 +35,7 @@
     },
     {
       "path": "src/components/ui/toggle-group/index.ts",
-      "content": "import { ToggleGroupItem } from \"./toggle-group-item\";\nimport { ToggleGroupRoot } from \"./toggle-group-root\";\n\nexport const ToggleGroup = {\n  Item: ToggleGroupItem,\n  Root: ToggleGroupRoot,\n};\n\nexport { ToggleGroupItem, ToggleGroupRoot };\n\nexport { ToggleGroupContext, useToggleGroupContext } from \"./toggle-group.context\";\n\nexport { type ToggleGroupVariants, toggleGroupVariants } from \"./toggle-group.variants\";\n",
+      "content": "import { ToggleGroupItem } from \"./toggle-group-item\";\nimport { ToggleGroupRoot } from \"./toggle-group-root\";\n\nexport const ToggleGroup = {\n  Item: ToggleGroupItem,\n  Root: ToggleGroupRoot,\n};\n\nexport { ToggleGroupItem, ToggleGroupRoot };\n\nexport type { ToggleGroupItemProps } from \"./toggle-group-item\";\n\nexport type { ToggleGroupRootProps } from \"./toggle-group-root\";\n\nexport { ToggleGroupContext, useToggleGroupContext } from \"./toggle-group.context\";\nexport { type ToggleGroupVariants, toggleGroupVariants } from \"./toggle-group.variants\";\n",
       "type": "registry:component"
     }
   ],

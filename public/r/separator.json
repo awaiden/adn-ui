@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/separator/index.ts",
-      "content": "import { SeparatorRoot } from \"./separator\";\n\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot };\n\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
+      "content": "import { SeparatorRoot } from \"./separator\";\n\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot };\n\nexport type { SeparatorProps } from \"./separator\";\n\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
       "type": "registry:component"
     }
   ],

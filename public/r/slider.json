@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/slider/index.ts",
-      "content": "import { SliderRoot } from \"./slider\";\n\nexport const Slider = {\n  Root: SliderRoot,\n};\n\nexport { SliderRoot };\n\nexport { type SliderVariants, sliderVariants } from \"./slider.variants\";\n",
+      "content": "import { SliderRoot } from \"./slider\";\n\nexport const Slider = {\n  Root: SliderRoot,\n};\n\nexport { SliderRoot };\n\nexport type { SliderProps } from \"./slider\";\n\nexport { type SliderVariants, sliderVariants } from \"./slider.variants\";\n",
       "type": "registry:component"
     }
   ],

@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/scroll-area/index.ts",
-      "content": "import { ScrollAreaRoot } from \"./scroll-area\";\n\nexport const ScrollArea = {\n  Root: ScrollAreaRoot,\n};\n\nexport { ScrollAreaRoot };\n\nexport { type ScrollAreaVariants, scrollAreaVariants } from \"./scroll-area.variants\";\n",
+      "content": "import { ScrollAreaRoot } from \"./scroll-area\";\n\nexport const ScrollArea = {\n  Root: ScrollAreaRoot,\n};\n\nexport { ScrollAreaRoot };\n\nexport type { ScrollAreaProps } from \"./scroll-area\";\n\nexport { type ScrollAreaVariants, scrollAreaVariants } from \"./scroll-area.variants\";\n",
       "type": "registry:component"
     }
   ],

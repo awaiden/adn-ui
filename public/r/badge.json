@@ -19,7 +19,7 @@
     },
     {
       "path": "src/components/ui/badge/badge.css",
-      "content": ".badge {\n  @apply inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n\n.badge--default {\n  @apply bg-primary text-primary-foreground border-transparent;\n}\n\n.badge--secondary {\n  @apply bg-secondary text-secondary-foreground border-transparent;\n}\n\n.badge--destructive {\n  @apply bg-destructive text-white border-transparent;\n}\n\n.badge--outline {\n  @apply text-foreground;\n}\n",
+      "content": ".badge {\n  @apply inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n\n.badge--default {\n  @apply bg-primary text-primary-foreground border-transparent;\n}\n\n.badge--secondary {\n  @apply bg-secondary text-secondary-foreground border-transparent;\n}\n\n.badge--destructive {\n  @apply bg-destructive border-transparent text-white;\n}\n\n.badge--outline {\n  @apply text-foreground;\n}\n",
       "type": "registry:component"
     },
     {

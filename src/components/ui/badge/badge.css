@@ -15,7 +15,7 @@
 }
 
 .badge--destructive {
-  @apply bg-destructive text-white border-transparent;
+  @apply bg-destructive border-transparent text-white;
 }
 
 .badge--outline {

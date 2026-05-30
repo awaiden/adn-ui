@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/label/index.ts",
-      "content": "import { LabelRoot } from \"./label\";\n\nexport const Label = {\n  Root: LabelRoot,\n};\n\nexport { LabelRoot };\n\nexport { type LabelVariants, labelVariants } from \"./label.variants\";\n",
+      "content": "import { LabelRoot } from \"./label\";\n\nexport const Label = {\n  Root: LabelRoot,\n};\n\nexport { LabelRoot };\n\nexport type { LabelProps } from \"./label\";\n\nexport { type LabelVariants, labelVariants } from \"./label.variants\";\n",
       "type": "registry:component"
     }
   ],

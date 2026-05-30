@@ -45,7 +45,7 @@
     },
     {
       "path": "src/components/ui/tabs/index.ts",
-      "content": "import { TabsContent } from \"./tabs-content\";\nimport { TabsList } from \"./tabs-list\";\nimport { TabsRoot } from \"./tabs-root\";\nimport { TabsTrigger } from \"./tabs-trigger\";\n\nexport const Tabs = {\n  Content: TabsContent,\n  List: TabsList,\n  Root: TabsRoot,\n  Trigger: TabsTrigger,\n};\n\nexport { TabsContent, TabsList, TabsRoot, TabsTrigger };\n\nexport { TabsContext, useTabsContext } from \"./tabs.context\";\n\nexport { type TabsVariants, tabsVariants } from \"./tabs.variants\";\n",
+      "content": "import { TabsContent } from \"./tabs-content\";\nimport { TabsList } from \"./tabs-list\";\nimport { TabsRoot } from \"./tabs-root\";\nimport { TabsTrigger } from \"./tabs-trigger\";\n\nexport const Tabs = {\n  Content: TabsContent,\n  List: TabsList,\n  Root: TabsRoot,\n  Trigger: TabsTrigger,\n};\n\nexport { TabsContent, TabsList, TabsRoot, TabsTrigger };\n\nexport type { TabsContentProps } from \"./tabs-content\";\n\nexport type { TabsListProps } from \"./tabs-list\";\n\nexport type { TabsRootProps } from \"./tabs-root\";\nexport type { TabsTriggerProps } from \"./tabs-trigger\";\nexport { TabsContext, useTabsContext } from \"./tabs.context\";\nexport { type TabsVariants, tabsVariants } from \"./tabs.variants\";\n",
       "type": "registry:component"
     }
   ],
