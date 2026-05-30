@@ -10,4 +10,8 @@ export const HoverCard = {
 
 export { HoverCardContent, HoverCardRoot, HoverCardTrigger };
 
+export type { HoverCardContentProps } from "./hover-card-content";
+
+export type { HoverCardRootProps } from "./hover-card-root";
+export type { HoverCardTriggerProps } from "./hover-card-trigger";
 export { type HoverCardVariants, hoverCardVariants } from "./hover-card.variants";

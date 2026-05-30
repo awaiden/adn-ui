@@ -14,6 +14,12 @@ export const Card = {
 
 export { CardContent, CardDescription, CardHeader, CardRoot, CardTitle };
 
-export { CardContext, useCardContext } from "./card.context";
+export type { CardContentProps } from "./card-content";
 
+export type { CardDescriptionProps } from "./card-description";
+
+export type { CardHeaderProps } from "./card-header";
+export type { CardProps } from "./card-root";
+export type { CardTitleProps } from "./card-title";
+export { CardContext, useCardContext } from "./card.context";
 export { type CardVariants, cardVariants } from "./card.variants";

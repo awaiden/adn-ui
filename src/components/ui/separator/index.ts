@@ -6,4 +6,6 @@ export const Separator = {
 
 export { SeparatorRoot };
 
+export type { SeparatorProps } from "./separator";
+
 export { type SeparatorVariants, separatorVariants } from "./separator.variants";

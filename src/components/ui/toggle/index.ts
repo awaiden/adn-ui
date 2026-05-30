@@ -6,4 +6,6 @@ export const Toggle = {
 
 export { ToggleRoot };
 
+export type { ToggleProps } from "./toggle";
+
 export { type ToggleVariants, toggleVariants } from "./toggle.variants";

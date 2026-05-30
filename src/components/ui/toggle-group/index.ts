@@ -8,6 +8,9 @@ export const ToggleGroup = {
 
 export { ToggleGroupItem, ToggleGroupRoot };
 
-export { ToggleGroupContext, useToggleGroupContext } from "./toggle-group.context";
+export type { ToggleGroupItemProps } from "./toggle-group-item";
 
+export type { ToggleGroupRootProps } from "./toggle-group-root";
+
+export { ToggleGroupContext, useToggleGroupContext } from "./toggle-group.context";
 export { type ToggleGroupVariants, toggleGroupVariants } from "./toggle-group.variants";

@@ -10,4 +10,8 @@ export const Popover = {
 
 export { PopoverContent, PopoverRoot, PopoverTrigger };
 
+export type { PopoverContentProps } from "./popover-content";
+
+export type { PopoverRootProps } from "./popover-root";
+export type { PopoverTriggerProps } from "./popover-trigger";
 export { type PopoverVariants, popoverVariants } from "./popover.variants";

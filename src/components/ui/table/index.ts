@@ -29,6 +29,15 @@ export {
   TableRow,
 };
 
-export { TableContext, useTableContext } from "./table.context";
+export type { TableBodyProps } from "./table-body";
 
+export type { TableCaptionProps } from "./table-caption";
+
+export type { TableCellProps } from "./table-cell";
+export type { TableFooterProps } from "./table-footer";
+export type { TableHeadProps } from "./table-head";
+export type { TableHeaderProps } from "./table-header";
+export type { TableProps } from "./table-root";
+export type { TableRowProps } from "./table-row";
+export { TableContext, useTableContext } from "./table.context";
 export { type TableVariants, tableVariants } from "./table.variants";

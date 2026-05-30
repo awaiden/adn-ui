@@ -12,6 +12,11 @@ export const Tabs = {
 
 export { TabsContent, TabsList, TabsRoot, TabsTrigger };
 
-export { TabsContext, useTabsContext } from "./tabs.context";
+export type { TabsContentProps } from "./tabs-content";
 
+export type { TabsListProps } from "./tabs-list";
+
+export type { TabsRootProps } from "./tabs-root";
+export type { TabsTriggerProps } from "./tabs-trigger";
+export { TabsContext, useTabsContext } from "./tabs.context";
 export { type TabsVariants, tabsVariants } from "./tabs.variants";

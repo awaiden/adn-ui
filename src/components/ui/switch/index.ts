@@ -6,4 +6,6 @@ export const Switch = {
 
 export { SwitchRoot };
 
+export type { SwitchProps } from "./switch";
+
 export { type SwitchVariants, switchVariants } from "./switch.variants";

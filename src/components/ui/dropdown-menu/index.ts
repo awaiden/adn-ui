@@ -43,6 +43,21 @@ export {
   DropdownMenuTrigger,
 };
 
-export { DropdownMenuContext, useDropdownMenuContext } from "./dropdown-menu.context";
+export type { DropdownMenuCheckboxItemProps } from "./dropdown-menu-checkbox-item";
 
+export type { DropdownMenuContentProps } from "./dropdown-menu-content";
+
+export type { DropdownMenuItemProps } from "./dropdown-menu-item";
+export type { DropdownMenuLabelProps } from "./dropdown-menu-label";
+export type { DropdownMenuRadioItemProps } from "./dropdown-menu-radio-item";
+export type { DropdownMenuRootProps } from "./dropdown-menu-root";
+export type { DropdownMenuSeparatorProps } from "./dropdown-menu-separator";
+export type { DropdownMenuShortcutProps } from "./dropdown-menu-shortcut";
+export type {
+  DropdownMenuSubContentProps,
+  DropdownMenuSubProps,
+  DropdownMenuSubTriggerProps,
+} from "./dropdown-menu-sub";
+export type { DropdownMenuTriggerProps } from "./dropdown-menu-trigger";
+export { DropdownMenuContext, useDropdownMenuContext } from "./dropdown-menu.context";
 export { type DropdownMenuVariants, dropdownMenuVariants } from "./dropdown-menu.variants";

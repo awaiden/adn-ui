@@ -26,6 +26,14 @@ export {
   AlertDialogTrigger,
 };
 
-export { AlertDialogContext, useAlertDialogContext } from "./alert-dialog.context";
+export type { AlertDialogActionProps } from "./alert-dialog-action";
 
+export type { AlertDialogCancelProps } from "./alert-dialog-cancel";
+
+export type { AlertDialogContentProps } from "./alert-dialog-content";
+export type { AlertDialogDescriptionProps } from "./alert-dialog-description";
+export type { AlertDialogRootProps } from "./alert-dialog-root";
+export type { AlertDialogTitleProps } from "./alert-dialog-title";
+export type { AlertDialogTriggerProps } from "./alert-dialog-trigger";
+export { AlertDialogContext, useAlertDialogContext } from "./alert-dialog.context";
 export { type AlertDialogVariants, alertDialogVariants } from "./alert-dialog.variants";

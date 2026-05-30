@@ -6,4 +6,6 @@ export const Slider = {
 
 export { SliderRoot };
 
+export type { SliderProps } from "./slider";
+
 export { type SliderVariants, sliderVariants } from "./slider.variants";

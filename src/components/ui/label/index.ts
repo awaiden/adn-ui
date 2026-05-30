@@ -6,4 +6,6 @@ export const Label = {
 
 export { LabelRoot };
 
+export type { LabelProps } from "./label";
+
 export { type LabelVariants, labelVariants } from "./label.variants";

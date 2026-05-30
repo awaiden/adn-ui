@@ -5,56 +5,67 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 - **Dev server:** `bun run dev` (Vite with HMR)
-- **Build:** `bun run build` (runs `tsc -b && vite build`)
-- **Lint:** `bun run lint` (ESLint with perfectionist plugin for import/object sorting)
+- **Build:** `bun run build` (runs `tsc -b && vite build`, prebuild runs `shadcn build`)
+- **Lint:** `bun run lint` (oxlint with perfectionist plugin)
+- **Format:** `bun run format` (oxfmt)
 - **Type check only:** `npx tsc -b`
-- **Preview production build:** `bun run preview`
 - **Storybook:** `bun run storybook` (port 6006)
 - **Build Storybook:** `bun run build-storybook`
-- **Storybook tests:** `npx vitest --project=storybook`
+- **Storybook tests:** `npx vitest --project=storybook` (runs in headless Chromium via Playwright)
 
 Package manager is **bun** (uses `bun.lock`).
 
 ## Architecture
 
-This is a React component library (adn-ui) using Tailwind CSS v4, Vite, and TypeScript.
+React component library (adn-ui) published as a shadcn registry. Built with Tailwind CSS v4, Vite, TypeScript, and Radix UI primitives.
 
-### Component Pattern
+### Component File Structure
 
-Components follow a consistent structure under `src/components/<name>/`:
+Each component lives in `src/components/ui/<name>/` with these files:
 
-- **`<name>.tsx`** — Component implementation. Props extend `React.ComponentProps<element>` merged with variant types.
-- **`<name>.variants.ts`** — Variant definitions using `tailwind-variants` (`tv()`). Exports the variants function and its `VariantProps` type.
-- **`<name>.css`** — Styles using Tailwind `@apply` on BEM-style class names (e.g., `.button--primary`, `.card__header`).
-- **`index.ts`** — Barrel file exporting the component, variants, and types.
+- **`<name>-<part>.tsx`** — Component implementation. Props extend `React.ComponentProps<element>` merged with variant types. Exports both the component and its Props type.
+- **`<name>.variants.ts` (or `.tsx`)** — Variant definitions using `tailwind-variants` (`tv()`). Exports the variants function and its `VariantProps` type. Uses `/* eslint-disable perfectionist/sort-objects */` when variant ordering is intentional.
+- **`<name>.css`** — Styles using Tailwind `@apply` on BEM-style class names.
+- **`<name>.context.ts`** — React context for compound components (slot system).
+- **`<name>.stories.tsx`** — Storybook stories using `satisfies Meta<typeof Component>` pattern.
+- **`index.ts`** — Barrel file exporting: namespace object, individual named exports, Props types, context/hook, and variants.
 
-### Multi-part Components (Card pattern)
+### Compound Components (Slot System)
 
-Compound components use a context-based slot system:
+Multi-part components (Card, Sheet, Table, etc.) use a context-based slot system:
 
-- Root component creates variants with `tv({ slots: {...} })` and provides slot classes via React context.
-- Child components consume context with a `useXContext()` hook to get their slot class.
-- Exported as a namespace object (`Card.Root`, `Card.Header`, etc.) plus individual named exports.
+1. Root component calls `tv({ slots: {...} })` to create per-slot class functions.
+2. Root wraps children in a context provider passing `{ slots }`.
+3. Child components call `useXContext()` to get their slot class function.
+4. Exported as both a namespace object (`Card.Root`, `Card.Header`) and individual named exports.
 
-### Styling Approach
+### Index File Export Order
+
+Barrel files follow this order (enforced by perfectionist sort-exports):
+1. Namespace `export const X = {...}`
+2. Named component re-exports `export { ... }`
+3. Type exports `export type { XProps } from "./x-part"`
+4. Context export `export { XContext, useXContext } from "./x.context"`
+5. Variants export `export { type XVariants, xVariants } from "./x.variants"`
+
+All exports are sorted alphabetically by source path.
+
+### Styling
 
 - Tailwind CSS v4 with `@tailwindcss/vite` plugin
-- `tailwind-variants` for variant logic (`tv()` for definitions, `cn()` for merging)
-- `vite-plugin-tailwind-ref` for auto-referencing `src/index.css`
-- CSS classes use BEM naming: block (`card`), element (`card__header`), modifier (`card--outline`)
+- `tailwind-variants` for variant logic (`tv()` for definitions, `cn()` for class merging in components)
+- `vite-plugin-tailwind-ref` auto-references `src/index.css` in all component CSS files
+- BEM naming: block (`card`), element (`card__header`), modifier (`card--outline`)
+- Design tokens in `src/index.css` as CSS custom properties using oklch color space
 
 ### shadcn Registry
 
-This project IS a shadcn registry (not a consumer). Components are published as registry entries with `radix-nova` style (`components.json`). Design tokens (colors, radii) are defined as CSS custom properties in `src/index.css` using oklch.
+This project IS a shadcn registry (style: `radix-nova`). The `prebuild` step runs `shadcn build` to generate registry JSON. Components are consumed via `npx shadcn@latest add @adn/<component>`.
 
-### Class Merging
+### Linting
 
-Two `cn` utilities exist — use `cn` from `tailwind-variants` (which components import) for combining variant output with className overrides. The `src/lib/utils.ts` `cn` (clsx + tailwind-merge) is the shadcn-compatible utility for general class merging.
+Uses **oxlint** (not eslint) with `eslint-plugin-perfectionist` (`recommended-natural` config). This enforces alphabetical sorting of imports, exports, object keys, and JSX props. Pre-commit hook runs `shadcn build` then `lint-staged` (oxlint + oxfmt).
 
-### Storybook
+### Path Aliases
 
-Stories live alongside components as `<name>.stories.tsx`. Use `satisfies Meta<typeof Component>` pattern. Tests run in a real browser via Playwright (`npx vitest --project=storybook`).
-
-### ESLint
-
-Uses `eslint-plugin-perfectionist` with `recommended-natural` config for automatic sorting of imports, objects, etc. Disable with `/* eslint-disable perfectionist/sort-objects */` when variant ordering is intentional.
+TypeScript paths: `~/` maps to `./src/` (configured in tsconfig.json, resolved by Vite via `tsconfigPaths`).

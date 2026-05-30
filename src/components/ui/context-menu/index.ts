@@ -39,6 +39,21 @@ export {
   ContextMenuTrigger,
 };
 
-export { ContextMenuContext, useContextMenuContext } from "./context-menu.context";
+export type { ContextMenuCheckboxItemProps } from "./context-menu-checkbox-item";
 
+export type { ContextMenuContentProps } from "./context-menu-content";
+
+export type { ContextMenuItemProps } from "./context-menu-item";
+export type { ContextMenuLabelProps } from "./context-menu-label";
+export type { ContextMenuRadioItemProps } from "./context-menu-radio-item";
+export type { ContextMenuRootProps } from "./context-menu-root";
+export type { ContextMenuSeparatorProps } from "./context-menu-separator";
+export type { ContextMenuShortcutProps } from "./context-menu-shortcut";
+export type {
+  ContextMenuSubContentProps,
+  ContextMenuSubProps,
+  ContextMenuSubTriggerProps,
+} from "./context-menu-sub";
+export type { ContextMenuTriggerProps } from "./context-menu-trigger";
+export { ContextMenuContext, useContextMenuContext } from "./context-menu.context";
 export { type ContextMenuVariants, contextMenuVariants } from "./context-menu.variants";

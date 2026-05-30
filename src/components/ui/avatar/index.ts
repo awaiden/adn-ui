@@ -10,6 +10,10 @@ export const Avatar = {
 
 export { AvatarFallback, AvatarImage, AvatarRoot };
 
-export { AvatarContext, useAvatarContext } from "./avatar.context";
+export type { AvatarFallbackProps } from "./avatar-fallback";
 
+export type { AvatarImageProps } from "./avatar-image";
+
+export type { AvatarRootProps } from "./avatar-root";
+export { AvatarContext, useAvatarContext } from "./avatar.context";
 export { type AvatarVariants, avatarVariants } from "./avatar.variants";

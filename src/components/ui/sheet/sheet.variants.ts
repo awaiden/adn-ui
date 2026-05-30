@@ -11,6 +11,7 @@ export const sheetVariants = tv({
     title: "sheet__title",
     description: "sheet__description",
     close: "sheet__close",
+    handle: "sheet__handle",
   },
   variants: {
     side: {

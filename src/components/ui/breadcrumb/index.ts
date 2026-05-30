@@ -26,6 +26,14 @@ export {
   BreadcrumbSeparator,
 };
 
-export { BreadcrumbContext, useBreadcrumbContext } from "./breadcrumb.context";
+export type { BreadcrumbEllipsisProps } from "./breadcrumb-ellipsis";
 
+export type { BreadcrumbItemProps } from "./breadcrumb-item";
+
+export type { BreadcrumbLinkProps } from "./breadcrumb-link";
+export type { BreadcrumbListProps } from "./breadcrumb-list";
+export type { BreadcrumbPageProps } from "./breadcrumb-page";
+export type { BreadcrumbRootProps } from "./breadcrumb-root";
+export type { BreadcrumbSeparatorProps } from "./breadcrumb-separator";
+export { BreadcrumbContext, useBreadcrumbContext } from "./breadcrumb.context";
 export { type BreadcrumbVariants, breadcrumbVariants } from "./breadcrumb.variants";

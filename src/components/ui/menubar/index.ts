@@ -42,6 +42,22 @@ export {
   MenubarTrigger,
 };
 
-export { MenubarContext, useMenubarContext } from "./menubar.context";
+export type { MenubarCheckboxItemProps } from "./menubar-checkbox-item";
 
+export type { MenubarContentProps } from "./menubar-content";
+
+export type { MenubarItemProps } from "./menubar-item";
+export type { MenubarLabelProps } from "./menubar-label";
+export type { MenubarMenuProps } from "./menubar-menu";
+export type { MenubarRadioItemProps } from "./menubar-radio-item";
+export type { MenubarRootProps } from "./menubar-root";
+export type { MenubarSeparatorProps } from "./menubar-separator";
+export type { MenubarShortcutProps } from "./menubar-shortcut";
+export type {
+  MenubarSubContentProps,
+  MenubarSubProps,
+  MenubarSubTriggerProps,
+} from "./menubar-sub";
+export type { MenubarTriggerProps } from "./menubar-trigger";
+export { MenubarContext, useMenubarContext } from "./menubar.context";
 export { type MenubarVariants, menubarVariants } from "./menubar.variants";

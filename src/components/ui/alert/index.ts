@@ -10,6 +10,10 @@ export const Alert = {
 
 export { AlertDescription, AlertRoot, AlertTitle };
 
-export { AlertContext, useAlertContext } from "./alert.context";
+export type { AlertDescriptionProps } from "./alert-description";
 
+export type { AlertRootProps } from "./alert-root";
+
+export type { AlertTitleProps } from "./alert-title";
+export { AlertContext, useAlertContext } from "./alert.context";
 export { type AlertVariants, alertVariants } from "./alert.variants";

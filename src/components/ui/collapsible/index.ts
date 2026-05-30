@@ -10,4 +10,8 @@ export const Collapsible = {
 
 export { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger };
 
+export type { CollapsibleContentProps } from "./collapsible-content";
+
+export type { CollapsibleRootProps } from "./collapsible-root";
+export type { CollapsibleTriggerProps } from "./collapsible-trigger";
 export { type CollapsibleVariants, collapsibleVariants } from "./collapsible.variants";

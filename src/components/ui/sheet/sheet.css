@@ -7,11 +7,15 @@
 }
 
 .sheet__content--top {
-  @apply inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top;
+  @apply inset-x-0 top-0 max-h-[80vh] rounded-b-lg border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top;
 }
 
 .sheet__content--bottom {
-  @apply inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom;
+  @apply inset-x-0 bottom-0 max-h-[80vh] rounded-t-lg border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom;
+}
+
+.sheet__handle {
+  @apply bg-muted-foreground/30 mx-auto mt-2 mb-4 h-1.5 w-12 shrink-0 rounded-full;
 }
 
 .sheet__content--left {

@@ -16,6 +16,13 @@ export const Dialog = {
 
 export { DialogContent, DialogDescription, DialogFooter, DialogRoot, DialogTitle, DialogTrigger };
 
-export { DialogContext, useDialogContext } from "./dialog.context";
+export type { DialogContentProps } from "./dialog-content";
 
+export type { DialogDescriptionProps } from "./dialog-description";
+
+export type { DialogFooterProps } from "./dialog-footer";
+export type { DialogRootProps } from "./dialog-root";
+export type { DialogTitleProps } from "./dialog-title";
+export type { DialogTriggerProps } from "./dialog-trigger";
+export { DialogContext, useDialogContext } from "./dialog.context";
 export { type DialogVariants, dialogVariants } from "./dialog.variants";

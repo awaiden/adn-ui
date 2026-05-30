@@ -23,6 +23,13 @@ export {
   ToolbarToggleItem,
 };
 
-export { ToolbarContext, useToolbarContext } from "./toolbar.context";
+export type { ToolbarButtonProps } from "./toolbar-button";
 
+export type { ToolbarLinkProps } from "./toolbar-link";
+
+export type { ToolbarRootProps } from "./toolbar-root";
+export type { ToolbarSeparatorProps } from "./toolbar-separator";
+export type { ToolbarToggleGroupProps } from "./toolbar-toggle-group";
+export type { ToolbarToggleItemProps } from "./toolbar-toggle-item";
+export { ToolbarContext, useToolbarContext } from "./toolbar.context";
 export { type ToolbarVariants, toolbarVariants } from "./toolbar.variants";

@@ -12,6 +12,11 @@ export const Accordion = {
 
 export { AccordionContent, AccordionItem, AccordionRoot, AccordionTrigger };
 
-export { AccordionContext, useAccordionContext } from "./accordion.context";
+export type { AccordionContentProps } from "./accordion-content";
 
+export type { AccordionItemProps } from "./accordion-item";
+
+export type { AccordionRootProps } from "./accordion-root";
+export type { AccordionTriggerProps } from "./accordion-trigger";
+export { AccordionContext, useAccordionContext } from "./accordion.context";
 export { type AccordionVariants, accordionVariants } from "./accordion.variants";

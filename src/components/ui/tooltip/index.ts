@@ -12,4 +12,9 @@ export const Tooltip = {
 
 export { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger };
 
+export type { TooltipContentProps } from "./tooltip-content";
+
+export type { TooltipProviderProps } from "./tooltip-provider";
+export type { TooltipRootProps } from "./tooltip-root";
+export type { TooltipTriggerProps } from "./tooltip-trigger";
 export { type TooltipVariants, tooltipVariants } from "./tooltip.variants";

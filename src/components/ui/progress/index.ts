@@ -6,4 +6,6 @@ export const Progress = {
 
 export { ProgressRoot };
 
+export type { ProgressProps } from "./progress";
+
 export { type ProgressVariants, progressVariants } from "./progress.variants";

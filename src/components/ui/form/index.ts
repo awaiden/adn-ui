@@ -16,6 +16,13 @@ export const Form = {
 
 export { FormControl, FormField, FormLabel, FormMessage, FormRoot, FormSubmit };
 
-export { FormContext, useFormContext } from "./form.context";
+export type { FormControlProps } from "./form-control";
 
+export type { FormFieldProps } from "./form-field";
+
+export type { FormLabelProps } from "./form-label";
+export type { FormMessageProps } from "./form-message";
+export type { FormRootProps } from "./form-root";
+export type { FormSubmitProps } from "./form-submit";
+export { FormContext, useFormContext } from "./form.context";
 export { type FormVariants, formVariants } from "./form.variants";

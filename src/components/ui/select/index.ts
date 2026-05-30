@@ -16,6 +16,13 @@ export const Select = {
 
 export { SelectContent, SelectItem, SelectLabel, SelectRoot, SelectSeparator, SelectTrigger };
 
-export { SelectContext, useSelectContext } from "./select.context";
+export type { SelectContentProps } from "./select-content";
 
+export type { SelectItemProps } from "./select-item";
+
+export type { SelectLabelProps } from "./select-label";
+export type { SelectRootProps } from "./select-root";
+export type { SelectSeparatorProps } from "./select-separator";
+export type { SelectTriggerProps } from "./select-trigger";
+export { SelectContext, useSelectContext } from "./select.context";
 export { type SelectVariants, selectVariants } from "./select.variants";

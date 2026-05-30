@@ -25,6 +25,12 @@ export {
   SheetTrigger,
 };
 
-export { SheetContext, useSheetContext } from "./sheet.context";
+export type { SheetContentProps } from "./sheet-content";
 
+export type { SheetDescriptionProps } from "./sheet-description";
+
+export type { SheetFooterProps } from "./sheet-footer";
+export type { SheetHeaderProps } from "./sheet-header";
+export type { SheetTitleProps } from "./sheet-title";
+export { SheetContext, useSheetContext } from "./sheet.context";
 export { type SheetVariants, sheetVariants } from "./sheet.variants";
