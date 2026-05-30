@@ -12,7 +12,7 @@ A shadcn registry of accessible React components built with Radix UI primitives,
 
 ## Components
 
-Accordion, Alert Dialog, Aspect Ratio, Avatar, Button, Card, Checkbox, Collapsible, Context Menu, Dialog, Dropdown Menu, Form, Hover Card, Label, Menubar, Navigation Menu, Popover, Progress, Radio Group, Scroll Area, Select, Separator, Slider, Switch, Tabs, Toggle, Toggle Group, Toolbar, Tooltip.
+Accordion, Alert, Alert Dialog, Aspect Ratio, Avatar, Badge, Breadcrumb, Button, Card, Checkbox, Collapsible, Context Menu, Dialog, Dropdown Menu, Form, Hover Card, Input, Label, Menubar, Navigation Menu, Popover, Progress, Radio Group, Scroll Area, Select, Separator, Sheet, Skeleton, Slider, Switch, Table, Tabs, Textarea, Toggle, Toggle Group, Toolbar, Tooltip.
 
 ## Getting Started
 
@@ -42,10 +42,22 @@ npx vitest --project=storybook
 
 ## Usage as a Registry
 
-This project is a [shadcn registry](https://ui.shadcn.com/docs/registry). Consumers can install components via:
+This project is a [shadcn registry](https://ui.shadcn.com/docs/registry). Add the registry to your project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@adn": "https://awaiden.github.io/adn-ui/r/{name}.json"
+  }
+}
+```
+
+Then install components using the `@adn` prefix:
 
 ```bash
-npx shadcn@latest add <component> --registry https://awaiden.github.io/adn-ui
+npx shadcn@latest add @adn/button
+npx shadcn@latest add @adn/card
+npx shadcn@latest add @adn/table
 ```
 
 ## License
