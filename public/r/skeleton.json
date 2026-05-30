@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "description": "A placeholder loading animation for content.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/skeleton/skeleton.tsx",
+      "content": "import \"./skeleton.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { skeletonVariants, type SkeletonVariants } from \"./skeleton.variants\";\n\nexport type SkeletonProps = React.ComponentProps<\"div\"> & SkeletonVariants;\n\nexport const Skeleton = ({ className, ...props }: SkeletonProps) => {\n  return <div className={cn(skeletonVariants(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/skeleton/skeleton.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const skeletonVariants = tv({\n  base: \"skeleton\",\n});\n\nexport type SkeletonVariants = VariantProps<typeof skeletonVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/skeleton/skeleton.css",
+      "content": ".skeleton {\n  @apply bg-primary/10 animate-pulse rounded-md;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/skeleton/index.ts",
+      "content": "import { Skeleton, type SkeletonProps } from \"./skeleton\";\nimport { type SkeletonVariants, skeletonVariants } from \"./skeleton.variants\";\n\nexport { Skeleton, skeletonVariants };\n\nexport type { SkeletonProps, SkeletonVariants };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

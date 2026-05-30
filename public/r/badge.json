@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "A small status indicator for highlighting information.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge/badge.tsx",
+      "content": "import \"./badge.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { badgeVariants, type BadgeVariants } from \"./badge.variants\";\n\nexport type BadgeProps = BadgeVariants & React.ComponentProps<\"span\">;\n\nexport const Badge = ({ children, className, variant, ...props }: BadgeProps) => {\n  return (\n    <span className={cn(badgeVariants({ variant }), className)} {...props}>\n      {children}\n    </span>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/badge/badge.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const badgeVariants = tv({\n  base: \"badge\",\n  variants: {\n    variant: {\n      default: \"badge--default\",\n      secondary: \"badge--secondary\",\n      destructive: \"badge--destructive\",\n      outline: \"badge--outline\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type BadgeVariants = VariantProps<typeof badgeVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/badge/badge.css",
+      "content": ".badge {\n  @apply inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n}\n\n.badge--default {\n  @apply bg-primary text-primary-foreground border-transparent;\n}\n\n.badge--secondary {\n  @apply bg-secondary text-secondary-foreground border-transparent;\n}\n\n.badge--destructive {\n  @apply bg-destructive text-white border-transparent;\n}\n\n.badge--outline {\n  @apply text-foreground;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/badge/index.ts",
+      "content": "import { Badge, type BadgeProps } from \"./badge\";\nimport { type BadgeVariants, badgeVariants } from \"./badge.variants\";\n\nexport { Badge, badgeVariants };\n\nexport type { BadgeProps, BadgeVariants };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "A multi-line text input field for forms.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/textarea/textarea.tsx",
+      "content": "import \"./textarea.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = React.ComponentProps<\"textarea\"> & TextareaVariants;\n\nexport const Textarea = ({ className, ...props }: TextareaProps) => {\n  return <textarea className={cn(textareaVariants(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/textarea/textarea.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const textareaVariants = tv({\n  base: \"textarea\",\n});\n\nexport type TextareaVariants = VariantProps<typeof textareaVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/textarea/textarea.css",
+      "content": ".textarea {\n  @apply border-input bg-background text-foreground placeholder:text-muted-foreground flex min-h-[60px] w-full rounded-md border px-3 py-2 text-sm shadow-sm transition-colors;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply cursor-not-allowed opacity-50;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/textarea/index.ts",
+      "content": "import { Textarea, type TextareaProps } from \"./textarea\";\nimport { type TextareaVariants, textareaVariants } from \"./textarea.variants\";\n\nexport { Textarea, textareaVariants };\n\nexport type { TextareaProps, TextareaVariants };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1106,6 +1106,302 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "description": "A responsive table component for displaying tabular data.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/table/table-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-body.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-row.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-head.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-cell.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table-caption.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table.variants.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/table.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/table/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "A text input field for forms.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/input/input.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/input/input.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/input/input.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/input/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "description": "A multi-line text input field for forms.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/textarea/textarea.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/textarea/textarea.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/textarea/textarea.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/textarea/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "A small status indicator for highlighting information.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/badge/badge.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/badge/badge.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/badge/badge.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/badge/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Alert",
+      "description": "A callout for displaying important messages to the user.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/alert/alert-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/alert-title.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/alert-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/alert.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/alert.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/alert.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/alert/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Skeleton",
+      "description": "A placeholder loading animation for content.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton/skeleton.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/skeleton/skeleton.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/skeleton/skeleton.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/skeleton/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:component",
+      "title": "Sheet",
+      "description": "A slide-over panel anchored to an edge of the screen.",
+      "dependencies": ["radix-ui", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/sheet/sheet-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet-content.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet-header.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet-footer.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet-title.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet-description.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/sheet.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/sheet/index.ts",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "Breadcrumb",
+      "description": "A navigation aid showing the user's current location in a hierarchy.",
+      "dependencies": ["tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-root.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-list.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-item.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-link.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-page.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-separator.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb-ellipsis.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.context.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.variants.ts",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.css",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/index.ts",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

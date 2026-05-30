@@ -1,0 +1,68 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "title": "Breadcrumb",
+  "description": "A navigation aid showing the user's current location in a hierarchy.",
+  "dependencies": [
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-root.tsx",
+      "content": "import \"./breadcrumb.css\";\nimport { BreadcrumbContext } from \"./breadcrumb.context\";\nimport { breadcrumbVariants, type BreadcrumbVariants } from \"./breadcrumb.variants\";\n\nexport type BreadcrumbRootProps = BreadcrumbVariants & React.ComponentProps<\"nav\">;\n\nexport const BreadcrumbRoot = ({ children, ...props }: BreadcrumbRootProps) => {\n  const slots = breadcrumbVariants();\n\n  return (\n    <BreadcrumbContext value={{ slots }}>\n      <nav aria-label=\"breadcrumb\" {...props}>\n        {children}\n      </nav>\n    </BreadcrumbContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-list.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbListProps = React.ComponentProps<\"ol\">;\n\nexport const BreadcrumbList = ({ className, ...props }: BreadcrumbListProps) => {\n  const { slots } = useBreadcrumbContext();\n  return <ol className={cn(slots.list(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-item.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbItemProps = React.ComponentProps<\"li\">;\n\nexport const BreadcrumbItem = ({ className, ...props }: BreadcrumbItemProps) => {\n  const { slots } = useBreadcrumbContext();\n  return <li className={cn(slots.item(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-link.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbLinkProps = React.ComponentProps<\"a\">;\n\nexport const BreadcrumbLink = ({ className, ...props }: BreadcrumbLinkProps) => {\n  const { slots } = useBreadcrumbContext();\n  return <a className={cn(slots.link(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-page.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbPageProps = React.ComponentProps<\"span\">;\n\nexport const BreadcrumbPage = ({ className, ...props }: BreadcrumbPageProps) => {\n  const { slots } = useBreadcrumbContext();\n  return <span aria-current=\"page\" aria-disabled=\"true\" className={cn(slots.page(), className)} role=\"link\" {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-separator.tsx",
+      "content": "import { ChevronRight } from \"lucide-react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbSeparatorProps = React.ComponentProps<\"li\">;\n\nexport const BreadcrumbSeparator = ({ children, className, ...props }: BreadcrumbSeparatorProps) => {\n  const { slots } = useBreadcrumbContext();\n  return (\n    <li aria-hidden=\"true\" className={cn(slots.separator(), className)} role=\"presentation\" {...props}>\n      {children ?? <ChevronRight className=\"size-3.5\" />}\n    </li>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb-ellipsis.tsx",
+      "content": "import { MoreHorizontal } from \"lucide-react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport type BreadcrumbEllipsisProps = React.ComponentProps<\"span\">;\n\nexport const BreadcrumbEllipsis = ({ className, ...props }: BreadcrumbEllipsisProps) => {\n  const { slots } = useBreadcrumbContext();\n  return (\n    <span aria-hidden=\"true\" className={cn(slots.ellipsis(), className)} role=\"presentation\" {...props}>\n      <MoreHorizontal className=\"size-4\" />\n      <span className=\"sr-only\">More</span>\n    </span>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { breadcrumbVariants } from \"./breadcrumb.variants\";\n\nexport type BreadcrumbContext = {\n  slots: ReturnType<typeof breadcrumbVariants>;\n};\n\nexport const BreadcrumbContext = createContext<BreadcrumbContext | null>(null);\n\nexport const useBreadcrumbContext = () => {\n  const context = useContext(BreadcrumbContext);\n  if (!context) {\n    throw new Error(\"useBreadcrumbContext must be used within a Breadcrumb.Root\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const breadcrumbVariants = tv({\n  slots: {\n    root: \"breadcrumb\",\n    list: \"breadcrumb__list\",\n    item: \"breadcrumb__item\",\n    link: \"breadcrumb__link\",\n    page: \"breadcrumb__page\",\n    separator: \"breadcrumb__separator\",\n    ellipsis: \"breadcrumb__ellipsis\",\n  },\n});\n\nexport type BreadcrumbVariants = VariantProps<typeof breadcrumbVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/breadcrumb.css",
+      "content": ".breadcrumb__list {\n  @apply text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5;\n}\n\n.breadcrumb__item {\n  @apply inline-flex items-center gap-1.5;\n}\n\n.breadcrumb__link {\n  @apply hover:text-foreground transition-colors;\n}\n\n.breadcrumb__page {\n  @apply text-foreground font-normal;\n}\n\n.breadcrumb__separator {\n  @apply [&>svg]:size-3.5;\n}\n\n.breadcrumb__ellipsis {\n  @apply flex size-9 items-center justify-center;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/breadcrumb/index.ts",
+      "content": "import { BreadcrumbEllipsis } from \"./breadcrumb-ellipsis\";\nimport { BreadcrumbItem } from \"./breadcrumb-item\";\nimport { BreadcrumbLink } from \"./breadcrumb-link\";\nimport { BreadcrumbList } from \"./breadcrumb-list\";\nimport { BreadcrumbPage } from \"./breadcrumb-page\";\nimport { BreadcrumbRoot } from \"./breadcrumb-root\";\nimport { BreadcrumbSeparator } from \"./breadcrumb-separator\";\n\nexport const Breadcrumb = {\n  Ellipsis: BreadcrumbEllipsis,\n  Item: BreadcrumbItem,\n  Link: BreadcrumbLink,\n  List: BreadcrumbList,\n  Page: BreadcrumbPage,\n  Root: BreadcrumbRoot,\n  Separator: BreadcrumbSeparator,\n};\n\nexport {\n  BreadcrumbEllipsis,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbList,\n  BreadcrumbPage,\n  BreadcrumbRoot,\n  BreadcrumbSeparator,\n};\n\nexport { BreadcrumbContext, useBreadcrumbContext } from \"./breadcrumb.context\";\n\nexport { type BreadcrumbVariants, breadcrumbVariants } from \"./breadcrumb.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

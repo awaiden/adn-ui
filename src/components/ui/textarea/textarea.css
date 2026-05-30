@@ -1,0 +1,11 @@
+.textarea {
+  @apply border-input bg-background text-foreground placeholder:text-muted-foreground flex min-h-[60px] w-full rounded-md border px-3 py-2 text-sm shadow-sm transition-colors;
+
+  &:focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "A text input field for forms.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/input/input.tsx",
+      "content": "import \"./input.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & React.ComponentProps<\"input\">;\n\nexport const Input = ({ className, ...props }: InputProps) => {\n  return <input className={cn(inputVariants(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/input/input.variants.ts",
+      "content": "import { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const inputVariants = tv({\n  base: \"input\",\n});\n\nexport type InputVariants = VariantProps<typeof inputVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/input/input.css",
+      "content": ".input {\n  @apply border-input bg-background text-foreground placeholder:text-muted-foreground flex h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium;\n\n  &:focus-visible {\n    @apply outline-ring outline-2 outline-offset-2;\n  }\n\n  &:disabled {\n    @apply cursor-not-allowed opacity-50;\n  }\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/input/index.ts",
+      "content": "import { Input, type InputProps } from \"./input\";\nimport { type InputVariants, inputVariants } from \"./input.variants\";\n\nexport { Input, inputVariants };\n\nexport type { InputProps, InputVariants };\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

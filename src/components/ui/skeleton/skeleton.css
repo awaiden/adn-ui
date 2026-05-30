@@ -1,0 +1,3 @@
+.skeleton {
+  @apply bg-primary/10 animate-pulse rounded-md;
+}

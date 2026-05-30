@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "title": "Alert",
+  "description": "A callout for displaying important messages to the user.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/alert/alert-root.tsx",
+      "content": "import \"./alert.css\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { AlertContext } from \"./alert.context\";\nimport { alertVariants, type AlertVariants } from \"./alert.variants\";\n\nexport type AlertRootProps = AlertVariants & React.ComponentProps<\"div\">;\n\nexport const AlertRoot = ({ children, className, variant, ...props }: AlertRootProps) => {\n  const slots = alertVariants({ variant });\n\n  return (\n    <AlertContext value={{ slots }}>\n      <div className={cn(slots.root(), className)} role=\"alert\" {...props}>\n        {children}\n      </div>\n    </AlertContext>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/alert-title.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useAlertContext } from \"./alert.context\";\n\nexport type AlertTitleProps = React.ComponentProps<\"h5\">;\n\nexport const AlertTitle = ({ children, className, ...props }: AlertTitleProps) => {\n  const { slots } = useAlertContext();\n  return (\n    <h5 className={cn(slots.title(), className)} {...props}>\n      {children}\n    </h5>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/alert-description.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useAlertContext } from \"./alert.context\";\n\nexport type AlertDescriptionProps = React.ComponentProps<\"div\">;\n\nexport const AlertDescription = ({ children, className, ...props }: AlertDescriptionProps) => {\n  const { slots } = useAlertContext();\n  return (\n    <div className={cn(slots.description(), className)} {...props}>\n      {children}\n    </div>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/alert.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { alertVariants } from \"./alert.variants\";\n\nexport type AlertContext = {\n  slots: ReturnType<typeof alertVariants>;\n};\n\nexport const AlertContext = createContext<AlertContext | null>(null);\n\nexport const useAlertContext = () => {\n  const context = useContext(AlertContext);\n  if (!context) {\n    throw new Error(\"useAlertContext must be used within an Alert.Root\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/alert.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const alertVariants = tv({\n  slots: {\n    root: \"alert\",\n    title: \"alert__title\",\n    description: \"alert__description\",\n  },\n  variants: {\n    variant: {\n      default: { root: \"alert--default\" },\n      destructive: { root: \"alert--destructive\" },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type AlertVariants = VariantProps<typeof alertVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/alert.css",
+      "content": ".alert {\n  @apply relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:top-4 [&>svg]:left-4 [&>svg~*]:pl-7;\n}\n\n.alert--default {\n  @apply bg-background text-foreground;\n}\n\n.alert--destructive {\n  @apply border-destructive/50 text-destructive [&>svg]:text-destructive;\n}\n\n.alert__title {\n  @apply mb-1 font-medium leading-none tracking-tight;\n}\n\n.alert__description {\n  @apply text-sm [&_p]:leading-relaxed;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/alert/index.ts",
+      "content": "import { AlertDescription } from \"./alert-description\";\nimport { AlertRoot } from \"./alert-root\";\nimport { AlertTitle } from \"./alert-title\";\n\nexport const Alert = {\n  Description: AlertDescription,\n  Root: AlertRoot,\n  Title: AlertTitle,\n};\n\nexport { AlertDescription, AlertRoot, AlertTitle };\n\nexport { AlertContext, useAlertContext } from \"./alert.context\";\n\nexport { type AlertVariants, alertVariants } from \"./alert.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

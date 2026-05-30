@@ -1,0 +1,64 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet",
+  "title": "Sheet",
+  "description": "A slide-over panel anchored to an edge of the screen.",
+  "dependencies": [
+    "radix-ui",
+    "tailwind-variants",
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/sheet/sheet-root.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\n\nexport const SheetRoot = Dialog.Root;\nexport const SheetTrigger = Dialog.Trigger;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet-content.tsx",
+      "content": "import \"./sheet.css\";\n\nimport { X } from \"lucide-react\";\nimport { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SheetContext } from \"./sheet.context\";\nimport { sheetVariants, type SheetVariants } from \"./sheet.variants\";\n\nexport type SheetContentProps = React.ComponentProps<typeof Dialog.Content> & SheetVariants;\n\nexport const SheetContent = ({ children, className, side, ...props }: SheetContentProps) => {\n  const slots = sheetVariants({ side });\n\n  return (\n    <Dialog.Portal>\n      <Dialog.Overlay className={slots.overlay()} />\n      <SheetContext value={{ slots }}>\n        <Dialog.Content className={cn(slots.content(), className)} {...props}>\n          <Dialog.Close className={slots.close()}>\n            <X className=\"size-4\" />\n            <span className=\"sr-only\">Close</span>\n          </Dialog.Close>\n          {children}\n        </Dialog.Content>\n      </SheetContext>\n    </Dialog.Portal>\n  );\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet-header.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useSheetContext } from \"./sheet.context\";\n\nexport type SheetHeaderProps = React.ComponentProps<\"div\">;\n\nexport const SheetHeader = ({ className, ...props }: SheetHeaderProps) => {\n  const { slots } = useSheetContext();\n  return <div className={cn(slots.header(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet-footer.tsx",
+      "content": "import { cn } from \"tailwind-variants\";\n\nimport { useSheetContext } from \"./sheet.context\";\n\nexport type SheetFooterProps = React.ComponentProps<\"div\">;\n\nexport const SheetFooter = ({ className, ...props }: SheetFooterProps) => {\n  const { slots } = useSheetContext();\n  return <div className={cn(slots.footer(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet-title.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSheetContext } from \"./sheet.context\";\n\nexport type SheetTitleProps = React.ComponentProps<typeof Dialog.Title>;\n\nexport const SheetTitle = ({ className, ...props }: SheetTitleProps) => {\n  const { slots } = useSheetContext();\n  return <Dialog.Title className={cn(slots.title(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet-description.tsx",
+      "content": "import { Dialog } from \"radix-ui\";\nimport { cn } from \"tailwind-variants\";\n\nimport { useSheetContext } from \"./sheet.context\";\n\nexport type SheetDescriptionProps = React.ComponentProps<typeof Dialog.Description>;\n\nexport const SheetDescription = ({ className, ...props }: SheetDescriptionProps) => {\n  const { slots } = useSheetContext();\n  return <Dialog.Description className={cn(slots.description(), className)} {...props} />;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet.context.ts",
+      "content": "import { createContext, useContext } from \"react\";\n\nimport { sheetVariants } from \"./sheet.variants\";\n\nexport type SheetContext = {\n  slots: ReturnType<typeof sheetVariants>;\n};\n\nexport const SheetContext = createContext<null | SheetContext>(null);\n\nexport const useSheetContext = () => {\n  const context = useContext(SheetContext);\n  if (!context) {\n    throw new Error(\"useSheetContext must be used within a Sheet.Content\");\n  }\n  return context;\n};\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const sheetVariants = tv({\n  slots: {\n    overlay: \"sheet__overlay\",\n    content: \"sheet__content\",\n    header: \"sheet__header\",\n    footer: \"sheet__footer\",\n    title: \"sheet__title\",\n    description: \"sheet__description\",\n    close: \"sheet__close\",\n  },\n  variants: {\n    side: {\n      top: { content: \"sheet__content--top\" },\n      bottom: { content: \"sheet__content--bottom\" },\n      left: { content: \"sheet__content--left\" },\n      right: { content: \"sheet__content--right\" },\n    },\n  },\n  defaultVariants: {\n    side: \"right\",\n  },\n});\n\nexport type SheetVariants = VariantProps<typeof sheetVariants>;\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/sheet.css",
+      "content": ".sheet__overlay {\n  @apply data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80;\n}\n\n.sheet__content {\n  @apply bg-background fixed z-50 gap-4 p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out;\n}\n\n.sheet__content--top {\n  @apply inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top;\n}\n\n.sheet__content--bottom {\n  @apply inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom;\n}\n\n.sheet__content--left {\n  @apply inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm;\n}\n\n.sheet__content--right {\n  @apply inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm;\n}\n\n.sheet__header {\n  @apply flex flex-col gap-2 text-center sm:text-left;\n}\n\n.sheet__footer {\n  @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:gap-2;\n}\n\n.sheet__title {\n  @apply text-foreground text-lg font-semibold;\n}\n\n.sheet__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.sheet__close {\n  @apply ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none;\n}\n",
+      "type": "registry:component"
+    },
+    {
+      "path": "src/components/ui/sheet/index.ts",
+      "content": "import { SheetContent } from \"./sheet-content\";\nimport { SheetDescription } from \"./sheet-description\";\nimport { SheetFooter } from \"./sheet-footer\";\nimport { SheetHeader } from \"./sheet-header\";\nimport { SheetRoot, SheetTrigger } from \"./sheet-root\";\nimport { SheetTitle } from \"./sheet-title\";\n\nexport const Sheet = {\n  Content: SheetContent,\n  Description: SheetDescription,\n  Footer: SheetFooter,\n  Header: SheetHeader,\n  Root: SheetRoot,\n  Title: SheetTitle,\n  Trigger: SheetTrigger,\n};\n\nexport {\n  SheetContent,\n  SheetDescription,\n  SheetFooter,\n  SheetHeader,\n  SheetRoot,\n  SheetTitle,\n  SheetTrigger,\n};\n\nexport { SheetContext, useSheetContext } from \"./sheet.context\";\n\nexport { type SheetVariants, sheetVariants } from \"./sheet.variants\";\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
