@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/avatar/avatar.css",
-      "content": "@reference \"../../../app/global.css\";\n.avatar {\n  @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted text-muted-foreground select-none align-middle font-medium;\n}\n\n.avatar--sm {\n  @apply h-8 w-8 text-xs;\n}\n\n.avatar--md {\n  @apply h-10 w-10 text-sm;\n}\n\n.avatar--lg {\n  @apply h-12 w-12 text-base;\n}\n\n.avatar--xl {\n  @apply h-16 w-16 text-lg;\n}\n\n.avatar--circle {\n  @apply rounded-full;\n}\n\n.avatar--square {\n  @apply rounded-none;\n}\n\n.avatar--rounded {\n  @apply rounded-lg;\n}\n\n.avatar__image {\n  @apply h-full w-full object-cover;\n}\n\n.avatar__fallback {\n  @apply flex h-full w-full items-center justify-center font-semibold uppercase;\n}\n",
+      "content": ".avatar {\n  @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted text-muted-foreground select-none align-middle font-medium;\n}\n\n.avatar--sm {\n  @apply h-8 w-8 text-xs;\n}\n\n.avatar--md {\n  @apply h-10 w-10 text-sm;\n}\n\n.avatar--lg {\n  @apply h-12 w-12 text-base;\n}\n\n.avatar--xl {\n  @apply h-16 w-16 text-lg;\n}\n\n.avatar--circle {\n  @apply rounded-full;\n}\n\n.avatar--square {\n  @apply rounded-none;\n}\n\n.avatar--rounded {\n  @apply rounded-lg;\n}\n\n.avatar__image {\n  @apply h-full w-full object-cover;\n}\n\n.avatar__fallback {\n  @apply flex h-full w-full items-center justify-center font-semibold uppercase;\n}\n",
       "type": "registry:ui"
     },
     {

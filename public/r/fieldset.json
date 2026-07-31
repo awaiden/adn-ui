@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/fieldset/fieldset.css",
-      "content": "@reference \"../../../app/global.css\";\n.fieldset {\n  @apply flex w-full flex-col gap-4 border-0 p-0 m-0 text-foreground;\n}\n\n.fieldset--bordered {\n  @apply rounded-lg border border-border p-4;\n}\n\n.fieldset__legend {\n  @apply border-b border-border text-base font-semibold text-foreground pb-1 mb-1;\n}\n",
+      "content": ".fieldset {\n  @apply flex w-full flex-col gap-4 border-0 p-0 m-0 text-foreground;\n}\n\n.fieldset--bordered {\n  @apply rounded-lg border border-border p-4;\n}\n\n.fieldset__legend {\n  @apply border-b border-border text-base font-semibold text-foreground pb-1 mb-1;\n}\n",
       "type": "registry:ui"
     },
     {

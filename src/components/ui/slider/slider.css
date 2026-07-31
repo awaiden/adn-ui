@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .slider {
   @apply grid w-full max-w-xs grid-cols-2 gap-y-1.5 text-foreground select-none;
 }

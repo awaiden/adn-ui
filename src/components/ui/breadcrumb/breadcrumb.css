@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .breadcrumb {
   @apply text-sm text-muted-foreground;
 }

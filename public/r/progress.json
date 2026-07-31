@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/progress/progress.css",
-      "content": "@reference \"../../../app/global.css\";\n.progress {\n  @apply grid w-full max-w-sm grid-cols-2 gap-y-1.5 text-foreground;\n}\n\n.progress__label {\n  @apply text-sm font-medium text-foreground;\n}\n\n.progress__value {\n  @apply text-right text-sm text-muted-foreground;\n}\n\n.progress__track {\n  @apply col-span-2 relative w-full overflow-hidden rounded-full bg-secondary;\n}\n\n.progress__track--sm {\n  @apply h-1.5;\n}\n\n.progress__track--md {\n  @apply h-2.5;\n}\n\n.progress__track--lg {\n  @apply h-4;\n}\n\n.progress__indicator {\n  @apply h-full w-full flex-1 bg-primary transition-all duration-300 ease-in-out;\n}\n",
+      "content": ".progress {\n  @apply grid w-full max-w-sm grid-cols-2 gap-y-1.5 text-foreground;\n}\n\n.progress__label {\n  @apply text-sm font-medium text-foreground;\n}\n\n.progress__value {\n  @apply text-right text-sm text-muted-foreground;\n}\n\n.progress__track {\n  @apply col-span-2 relative w-full overflow-hidden rounded-full bg-secondary;\n}\n\n.progress__track--sm {\n  @apply h-1.5;\n}\n\n.progress__track--md {\n  @apply h-2.5;\n}\n\n.progress__track--lg {\n  @apply h-4;\n}\n\n.progress__indicator {\n  @apply h-full w-full flex-1 bg-primary transition-all duration-300 ease-in-out;\n}\n",
       "type": "registry:ui"
     },
     {

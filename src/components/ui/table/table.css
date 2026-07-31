@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .table-container {
   @apply relative w-full overflow-auto;
 }

@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .combobox {
   @apply relative flex flex-col gap-1 text-foreground;
 }

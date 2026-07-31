@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .accordion {
   @apply flex w-full flex-col border border-border text-foreground rounded-xl overflow-hidden;
 }

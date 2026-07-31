@@ -24,7 +24,7 @@
     },
     {
       "path": "src/components/ui/card/card.css",
-      "content": "@reference \"../../../app/global.css\";\n.card {\n  @apply bg-card text-card-foreground rounded-xl border;\n}\n\n.card--default {\n  @apply shadow-sm;\n}\n\n.card--outline {\n  @apply shadow-none;\n}\n\n.card__header {\n  @apply flex flex-col gap-1.5 p-6;\n}\n\n.card__title {\n  @apply text-lg leading-none font-semibold tracking-tight;\n}\n\n.card__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.card__content {\n  @apply p-6 pt-0;\n}\n\n.card__footer {\n  @apply flex items-center p-6 pt-0;\n}\n",
+      "content": ".card {\n  @apply bg-card text-card-foreground rounded-xl border;\n}\n\n.card--default {\n  @apply shadow-sm;\n}\n\n.card--outline {\n  @apply shadow-none;\n}\n\n.card__header {\n  @apply flex flex-col gap-1.5 p-6;\n}\n\n.card__title {\n  @apply text-lg leading-none font-semibold tracking-tight;\n}\n\n.card__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.card__content {\n  @apply p-6 pt-0;\n}\n\n.card__footer {\n  @apply flex items-center p-6 pt-0;\n}\n",
       "type": "registry:ui"
     },
     {

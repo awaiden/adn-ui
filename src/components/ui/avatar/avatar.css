@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .avatar {
   @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted text-muted-foreground select-none align-middle font-medium;
 }

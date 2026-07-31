@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/collapsible/collapsible.css",
-      "content": "@reference \"../../../app/global.css\";\n.collapsible {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.collapsible__trigger {\n  @apply flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;\n}\n\n.collapsible__panel {\n  @apply flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;\n}\n",
+      "content": ".collapsible {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.collapsible__trigger {\n  @apply flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;\n}\n\n.collapsible__panel {\n  @apply flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;\n}\n",
       "type": "registry:ui"
     },
     {

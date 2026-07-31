@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .tooltip__trigger {
   @apply inline-flex items-center justify-center cursor-pointer;
 }

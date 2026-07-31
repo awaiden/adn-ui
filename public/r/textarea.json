@@ -24,7 +24,7 @@
     },
     {
       "path": "src/components/ui/textarea/textarea.css",
-      "content": "@reference \"../../../app/global.css\";\n.textarea {\n  @apply flex w-full transition-colors field-sizing-content disabled:cursor-not-allowed disabled:opacity-50 resize-y;\n}\n",
+      "content": ".textarea {\n  @apply flex w-full transition-colors field-sizing-content disabled:cursor-not-allowed disabled:opacity-50 resize-y;\n}\n",
       "type": "registry:ui"
     },
     {

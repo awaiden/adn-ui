@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/checkbox-group/checkbox-group.css",
-      "content": "@reference \"../../../app/global.css\";\n.checkbox-group {\n  @apply flex text-foreground;\n}\n\n.checkbox-group--vertical {\n  @apply flex-col items-start gap-2;\n}\n\n.checkbox-group--horizontal {\n  @apply flex-row items-center gap-4;\n}\n",
+      "content": ".checkbox-group {\n  @apply flex text-foreground;\n}\n\n.checkbox-group--vertical {\n  @apply flex-col items-start gap-2;\n}\n\n.checkbox-group--horizontal {\n  @apply flex-row items-center gap-4;\n}\n",
       "type": "registry:ui"
     },
     {

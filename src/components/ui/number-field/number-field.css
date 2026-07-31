@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .number-field {
   @apply flex flex-col items-start gap-1 text-foreground;
 }

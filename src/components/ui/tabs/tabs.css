@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .tabs {
   @apply flex w-full flex-col text-foreground;
 }

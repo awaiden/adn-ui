@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .field {
   @apply flex w-full flex-col items-start gap-1.5 text-foreground;
 }

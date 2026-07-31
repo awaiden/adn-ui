@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/tabs/tabs.css",
-      "content": "@reference \"../../../app/global.css\";\n.tabs {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.tabs__list {\n  @apply relative flex items-center select-none;\n}\n\n.tabs__tab {\n  @apply inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-muted-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;\n}\n\n.tabs__indicator {\n  @apply absolute z-0;\n}\n\n.tabs__panel {\n  @apply mt-2 outline-none focus-visible:outline-2 focus-visible:outline-ring;\n}\n",
+      "content": ".tabs {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.tabs__list {\n  @apply relative flex items-center select-none;\n}\n\n.tabs__tab {\n  @apply inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-muted-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;\n}\n\n.tabs__indicator {\n  @apply absolute z-0;\n}\n\n.tabs__panel {\n  @apply mt-2 outline-none focus-visible:outline-2 focus-visible:outline-ring;\n}\n",
       "type": "registry:ui"
     },
     {

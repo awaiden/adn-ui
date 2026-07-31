@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .input {
   @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;
 }

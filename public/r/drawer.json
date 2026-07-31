@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/drawer/drawer.css",
-      "content": "@reference \"../../../app/global.css\";\n.drawer__backdrop {\n  @apply fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n\n.drawer__viewport {\n  @apply fixed inset-0 z-50 flex h-full w-full pointer-events-none;\n}\n\n.drawer__popup {\n  @apply pointer-events-auto relative z-50 bg-background p-6 shadow-xl outline-none transition-all duration-300 ease-out flex flex-col gap-4 text-foreground data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n\n.drawer__title {\n  @apply text-lg font-semibold text-foreground;\n}\n\n.drawer__description {\n  @apply text-sm text-muted-foreground;\n}\n",
+      "content": ".drawer__backdrop {\n  @apply fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n\n.drawer__viewport {\n  @apply fixed inset-0 z-50 flex h-full w-full pointer-events-none;\n}\n\n.drawer__popup {\n  @apply pointer-events-auto relative z-50 bg-background p-6 shadow-xl outline-none transition-all duration-300 ease-out flex flex-col gap-4 text-foreground data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n\n.drawer__title {\n  @apply text-lg font-semibold text-foreground;\n}\n\n.drawer__description {\n  @apply text-sm text-muted-foreground;\n}\n",
       "type": "registry:ui"
     },
     {

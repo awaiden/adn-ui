@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .popover__positioner {
   @apply outline-none z-50;
 }

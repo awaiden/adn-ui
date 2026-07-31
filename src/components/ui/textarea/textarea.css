@@ -1,4 +1,3 @@
-@reference "../../../app/global.css";
 .textarea {
   @apply flex w-full transition-colors field-sizing-content disabled:cursor-not-allowed disabled:opacity-50 resize-y;
 }

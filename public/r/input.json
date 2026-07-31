@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/input/input.css",
-      "content": "@reference \"../../../app/global.css\";\n.input {\n  @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;\n}\n\n.input--sm {\n  @apply h-8 px-2 text-xs;\n}\n\n.input--md {\n  @apply h-9 px-3 text-sm;\n}\n\n.input--lg {\n  @apply h-10 px-4 text-base;\n}\n",
+      "content": ".input {\n  @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;\n}\n\n.input--sm {\n  @apply h-8 px-2 text-xs;\n}\n\n.input--md {\n  @apply h-9 px-3 text-sm;\n}\n\n.input--lg {\n  @apply h-10 px-4 text-base;\n}\n",
       "type": "registry:ui"
     },
     {
