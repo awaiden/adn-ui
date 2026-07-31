@@ -401,19 +401,19 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left text-xs font-mono">
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
-              <div className="font-semibold text-primary mb-1">component.tsx</div>
-              <div className="text-muted-foreground">React JSX structure & @base-ui/react primitive binding</div>
+              <div className="font-semibold text-primary mb-1">card.tsx</div>
+              <div className="text-muted-foreground">React JSX structure & primitive component binding</div>
             </div>
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
-              <div className="font-semibold text-primary mb-1">component.variants.ts</div>
+              <div className="font-semibold text-primary mb-1">card.variants.ts</div>
               <div className="text-muted-foreground">Tailwind Variants slot specs & option definitions</div>
             </div>
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
-              <div className="font-semibold text-primary mb-1">component.css</div>
+              <div className="font-semibold text-primary mb-1">card.css</div>
               <div className="text-muted-foreground">Keyframes, transitions, and CSS variables</div>
             </div>
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
-              <div className="font-semibold text-primary mb-1">component.context.ts</div>
+              <div className="font-semibold text-primary mb-1">card.context.ts</div>
               <div className="text-muted-foreground">React Context provider for slot specs</div>
             </div>
           </div>

@@ -26,11 +26,11 @@ Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)
 Unlike standard UI registries that bundle JSX rendering, CVA variant definitions, and animation styles into a single monolithic file, **adn-ui** uses a **Modular System**. Every component is cleanly split into specialized modules:
 
 ```
-src/components/ui/drawer/
-├── drawer.tsx           # 🧠 Logic: React structure & @base-ui/react primitive binding
-├── drawer.variants.ts   # 🎨 Variants: Slot-based Tailwind Variant specifications
-├── drawer.css          # 💅 Styles: CSS variables, keyframe transitions & utility rules
-├── drawer.context.ts   # 🔗 Context: Shared slot context across sub-components
+src/components/ui/card/
+├── card.tsx           # 🧠 Logic: React structure & primitive component binding
+├── card.variants.ts   # 🎨 Variants: Slot-based Tailwind Variant specifications
+├── card.css          # 💅 Styles: CSS variables, transitions & utility rules
+├── card.context.ts   # 🔗 Context: Shared slot context across card sub-components
 └── index.ts            # 📦 Exports: Clean public API and TypeScript types
 ```
 
