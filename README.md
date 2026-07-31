@@ -21,6 +21,26 @@ Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)
 
 ---
 
+## 🏗️ Why adn-ui? Modular Architecture
+
+Unlike standard UI registries that bundle JSX rendering, CVA variant definitions, and animation styles into a single monolithic file, **adn-ui** uses a **Modular System**. Every component is cleanly split into specialized modules:
+
+```
+src/components/ui/drawer/
+├── drawer.tsx           # 🧠 Logic: React structure & @base-ui/react primitive binding
+├── drawer.variants.ts   # 🎨 Variants: Slot-based Tailwind Variant specifications
+├── drawer.css          # 💅 Styles: CSS variables, keyframe transitions & utility rules
+├── drawer.context.ts   # 🔗 Context: Shared slot context across sub-components
+└── index.ts            # 📦 Exports: Clean public API and TypeScript types
+```
+
+### Key Benefits:
+- **Effortless Customization**: Tweak styling or add new variants in `*.variants.ts` or `*.css` without risking breaking component logic or accessibility attributes.
+- **Clean Separation of Concerns**: Keeps rendering logic isolated from design tokens and slots.
+- **Maintainable & Scalable**: Swap styles, add theme slots, or extend component logic independently as your application grows.
+
+---
+
 ## 🚀 Getting Started
 
 ### Installation

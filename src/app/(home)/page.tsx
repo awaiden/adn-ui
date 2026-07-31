@@ -340,7 +340,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <CardRoot className="p-6 border border-border rounded-xl bg-card">
             <CardHeader className="p-0 mb-3">
               <Zap className="w-8 h-8 text-primary mb-2" />
@@ -367,6 +367,18 @@ export default function HomePage() {
 
           <CardRoot className="p-6 border border-border rounded-xl bg-card">
             <CardHeader className="p-0 mb-3">
+              <Sliders className="w-8 h-8 text-primary mb-2" />
+              <CardTitle className="text-lg">Modular System</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0">
+              <CardDescription className="text-sm">
+                Separates styles (<code className="text-xs bg-muted px-1 rounded">.css</code>, <code className="text-xs bg-muted px-1 rounded">.variants.ts</code>) from logic (<code className="text-xs bg-muted px-1 rounded">.tsx</code>) for effortless editing.
+              </CardDescription>
+            </CardContent>
+          </CardRoot>
+
+          <CardRoot className="p-6 border border-border rounded-xl bg-card">
+            <CardHeader className="p-0 mb-3">
               <Layers className="w-8 h-8 text-primary mb-2" />
               <CardTitle className="text-lg">Zero Lock-In</CardTitle>
             </CardHeader>
@@ -376,6 +388,35 @@ export default function HomePage() {
               </CardDescription>
             </CardContent>
           </CardRoot>
+        </div>
+
+        {/* Modular Architecture Breakdown */}
+        <div className="mt-12 p-8 border border-border rounded-2xl bg-card/60 backdrop-blur-sm">
+          <div className="max-w-3xl mx-auto text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">Designed for Maximum Customizability</h3>
+            <p className="text-muted-foreground text-sm">
+              Unlike monolithic single-file registries, ADN UI isolates styling, slot variants, context, and React logic so you can modify design specs without touching primitive logic.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left text-xs font-mono">
+            <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
+              <div className="font-semibold text-primary mb-1">component.tsx</div>
+              <div className="text-muted-foreground">React JSX structure & @base-ui/react primitive binding</div>
+            </div>
+            <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
+              <div className="font-semibold text-primary mb-1">component.variants.ts</div>
+              <div className="text-muted-foreground">Tailwind Variants slot specs & option definitions</div>
+            </div>
+            <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
+              <div className="font-semibold text-primary mb-1">component.css</div>
+              <div className="text-muted-foreground">Keyframes, transitions, and CSS variables</div>
+            </div>
+            <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
+              <div className="font-semibold text-primary mb-1">component.context.ts</div>
+              <div className="text-muted-foreground">React Context provider for slot specs</div>
+            </div>
+          </div>
         </div>
       </section>
 
