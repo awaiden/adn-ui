@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-group",
+  "title": "Checkbox Group",
+  "description": "Provides shared state management for a group of checkboxes.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/checkbox-group/checkbox-group.tsx",
+      "content": "\"use client\";\n\nimport \"./checkbox-group.css\";\n\nimport type React from \"react\";\n\nimport { CheckboxGroup as BaseCheckboxGroup } from \"@base-ui/react/checkbox-group\";\nimport { cn } from \"tailwind-variants\";\n\nimport { CheckboxGroupContext } from \"./checkbox-group.context\";\nimport { checkboxGroupVariants, type CheckboxGroupVariants } from \"./checkbox-group.variants\";\n\nexport type CheckboxGroupProps = CheckboxGroupVariants &\n  React.ComponentProps<typeof BaseCheckboxGroup>;\n\nexport const CheckboxGroupRoot = ({\n  children,\n  className,\n  orientation,\n  ...props\n}: CheckboxGroupProps) => {\n  const slots = checkboxGroupVariants({ orientation });\n\n  return (\n    <CheckboxGroupContext.Provider value={{ slots }}>\n      <BaseCheckboxGroup className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseCheckboxGroup>\n    </CheckboxGroupContext.Provider>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox-group/checkbox-group.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const checkboxGroupVariants = tv({\n  slots: {\n    root: \"checkbox-group\",\n  },\n  variants: {\n    orientation: {\n      vertical: {\n        root: \"checkbox-group--vertical\",\n      },\n      horizontal: {\n        root: \"checkbox-group--horizontal\",\n      },\n    },\n  },\n  defaultVariants: {\n    orientation: \"vertical\",\n  },\n});\n\nexport type CheckboxGroupVariants = VariantProps<typeof checkboxGroupVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox-group/checkbox-group.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { checkboxGroupVariants } from \"./checkbox-group.variants\";\n\nexport type CheckboxGroupContext = {\n  slots: ReturnType<typeof checkboxGroupVariants>;\n};\n\nexport const CheckboxGroupContext = createContext<CheckboxGroupContext | null>(null);\n\nexport const useCheckboxGroupContext = () => {\n  const context = useContext(CheckboxGroupContext);\n  return context ?? { slots: checkboxGroupVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox-group/checkbox-group.css",
+      "content": "@reference \"../../../app/global.css\";\n.checkbox-group {\n  @apply flex text-foreground;\n}\n\n.checkbox-group--vertical {\n  @apply flex-col items-start gap-2;\n}\n\n.checkbox-group--horizontal {\n  @apply flex-row items-center gap-4;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox-group/index.ts",
+      "content": "import { CheckboxGroupRoot } from \"./checkbox-group\";\n\nexport const CheckboxGroup = {\n  Root: CheckboxGroupRoot,\n};\n\nexport { CheckboxGroupRoot };\n\nexport type { CheckboxGroupProps } from \"./checkbox-group\";\nexport { CheckboxGroupContext, useCheckboxGroupContext } from \"./checkbox-group.context\";\nexport { type CheckboxGroupVariants, checkboxGroupVariants } from \"./checkbox-group.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,78 @@
+---
+title: Preview Card
+subtitle: A popup that appears when a link is hovered, showing a preview snippet.
+description: A high-quality, unstyled React preview card component built with @base-ui/react that displays a preview card when hovering a link.
+---
+
+import { PreviewCardDemo } from "@/components/ui/preview-card/preview-card-demo";
+
+The `PreviewCard` component provides a floating summary popup when hovering over hyperlinked trigger elements.
+
+## Usage
+
+```tsx
+import { PreviewCard } from "@/components/ui/preview-card";
+
+export function ExamplePreviewCard() {
+  return (
+    <p>
+      Learn more about{" "}
+      <PreviewCard.Root>
+        <PreviewCard.Trigger href="https://wikipedia.org/wiki/Typography">
+          Typography
+        </PreviewCard.Trigger>
+        <PreviewCard.Portal>
+          <PreviewCard.Positioner sideOffset={8}>
+            <PreviewCard.Popup>
+              <h4>Typography</h4>
+              <p>The art and technique of arranging type.</p>
+            </PreviewCard.Popup>
+          </PreviewCard.Positioner>
+        </PreviewCard.Portal>
+      </PreviewCard.Root>
+    </p>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <PreviewCardDemo text="Typography" />
+</div>
+
+## Anatomy
+
+```tsx
+import { PreviewCard } from "@base-ui/react/preview-card";
+
+<PreviewCard.Root>
+  <PreviewCard.Trigger />
+  <PreviewCard.Portal>
+    <PreviewCard.Backdrop />
+    <PreviewCard.Positioner>
+      <PreviewCard.Popup>
+        <PreviewCard.Arrow />
+      </PreviewCard.Popup>
+    </PreviewCard.Positioner>
+  </PreviewCard.Portal>
+</PreviewCard.Root>;
+```
+
+## API Reference
+
+### PreviewCard.Root Props
+
+| Prop           | Type                      | Default     | Description                             |
+| :------------- | :------------------------ | :---------- | :-------------------------------------- |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                  |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.        |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback fired when open state changes. |
+| `delay`        | `number`                  | `undefined` | Delay in ms before opening on hover.    |
+
+### PreviewCard.Positioner Props
+
+| Prop         | Type                                     | Default    | Description                                        |
+| :----------- | :--------------------------------------- | :--------- | :------------------------------------------------- |
+| `side`       | `'top' \| 'right' \| 'bottom' \| 'left'` | `'bottom'` | Preferred placement side relative to trigger link. |
+| `sideOffset` | `number`                                 | `8`        | Distance in pixels from trigger element.           |

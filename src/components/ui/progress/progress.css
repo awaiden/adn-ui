@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.progress {
+  @apply grid w-full max-w-sm grid-cols-2 gap-y-1.5 text-foreground;
+}
+
+.progress__label {
+  @apply text-sm font-medium text-foreground;
+}
+
+.progress__value {
+  @apply text-right text-sm text-muted-foreground;
+}
+
+.progress__track {
+  @apply col-span-2 relative w-full overflow-hidden rounded-full bg-secondary;
+}
+
+.progress__track--sm {
+  @apply h-1.5;
+}
+
+.progress__track--md {
+  @apply h-2.5;
+}
+
+.progress__track--lg {
+  @apply h-4;
+}
+
+.progress__indicator {
+  @apply h-full w-full flex-1 bg-primary transition-all duration-300 ease-in-out;
+}

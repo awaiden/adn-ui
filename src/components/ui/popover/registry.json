@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "An accessible popup anchored to a trigger button.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "popover.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "popover.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "popover.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

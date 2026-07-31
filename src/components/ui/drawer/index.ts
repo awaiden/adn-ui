@@ -1,0 +1,73 @@
+import {
+  DrawerBackdrop,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerIndent,
+  DrawerIndentBackground,
+  DrawerOverlay,
+  DrawerPopup,
+  DrawerPortal,
+  DrawerProvider,
+  DrawerRoot,
+  DrawerSwipeArea,
+  DrawerTitle,
+  DrawerTrigger,
+  DrawerViewport,
+} from "./drawer";
+
+export const Drawer = {
+  Backdrop: DrawerBackdrop,
+  Close: DrawerClose,
+  Content: DrawerContent,
+  Description: DrawerDescription,
+  Indent: DrawerIndent,
+  IndentBackground: DrawerIndentBackground,
+  Overlay: DrawerOverlay,
+  Popup: DrawerPopup,
+  Portal: DrawerPortal,
+  Provider: DrawerProvider,
+  Root: DrawerRoot,
+  SwipeArea: DrawerSwipeArea,
+  Title: DrawerTitle,
+  Trigger: DrawerTrigger,
+  Viewport: DrawerViewport,
+};
+
+export {
+  DrawerBackdrop,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerIndent,
+  DrawerIndentBackground,
+  DrawerOverlay,
+  DrawerPopup,
+  DrawerPortal,
+  DrawerProvider,
+  DrawerRoot,
+  DrawerSwipeArea,
+  DrawerTitle,
+  DrawerTrigger,
+  DrawerViewport,
+};
+
+export type {
+  DrawerBackdropProps,
+  DrawerCloseProps,
+  DrawerContentProps,
+  DrawerDescriptionProps,
+  DrawerIndentBackgroundProps,
+  DrawerIndentProps,
+  DrawerOverlayProps,
+  DrawerPopupProps,
+  DrawerPortalProps,
+  DrawerProps,
+  DrawerProviderProps,
+  DrawerSwipeAreaProps,
+  DrawerTitleProps,
+  DrawerTriggerProps,
+  DrawerViewportProps,
+} from "./drawer";
+export { DrawerContext, useDrawerContext } from "./drawer.context";
+export { type DrawerVariants, drawerVariants } from "./drawer.variants";

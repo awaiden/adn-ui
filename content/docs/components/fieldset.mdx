@@ -1,0 +1,57 @@
+---
+title: Fieldset
+subtitle: A native fieldset element with an easily stylable legend.
+description: A high-quality, unstyled React fieldset component built with @base-ui/react for grouping related form controls with a shared legend.
+---
+
+import { FieldsetDemo } from "@/components/ui/fieldset/fieldset-demo";
+
+The `Fieldset` component groups related form controls and provides accessible group labeling via its legend part.
+
+## Usage
+
+```tsx
+import { Fieldset } from "@/components/ui/fieldset";
+import { Field } from "@/components/ui/field";
+
+export function ExampleFieldset() {
+  return (
+    <Fieldset.Root>
+      <Fieldset.Legend>Billing Details</Fieldset.Legend>
+      <Field.Root>
+        <Field.Label>Company</Field.Label>
+        <Field.Control placeholder="Enter company name" />
+      </Field.Root>
+      <Field.Root>
+        <Field.Label>Tax ID</Field.Label>
+        <Field.Control placeholder="Enter fiscal number" />
+      </Field.Root>
+    </Fieldset.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <FieldsetDemo legend="Billing Details" />
+</div>
+
+## Anatomy
+
+```tsx
+import { Fieldset } from "@base-ui/react/fieldset";
+
+<Fieldset.Root>
+  <Fieldset.Legend />
+</Fieldset.Root>;
+```
+
+## API Reference
+
+### Fieldset.Root Props
+
+| Prop       | Type                      | Default     | Description                                          |
+| :--------- | :------------------------ | :---------- | :--------------------------------------------------- |
+| `variant`  | `'default' \| 'bordered'` | `'default'` | Visual layout framing variant.                       |
+| `disabled` | `boolean`                 | `false`     | Disables interaction for all wrapped field controls. |

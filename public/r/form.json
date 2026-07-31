@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form",
+  "title": "Form",
+  "description": "A native form element with consolidated error handling.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/form/form.tsx",
+      "content": "\"use client\";\n\nimport \"./form.css\";\n\nimport type React from \"react\";\n\nimport { Form as BaseForm } from \"@base-ui/react/form\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FormContext, useFormContext } from \"./form.context\";\nimport { formVariants, type FormVariants } from \"./form.variants\";\n\nexport type FormProps = FormVariants & React.ComponentProps<typeof BaseForm>;\n\nexport const FormRoot = ({ children, className, layout, ...props }: FormProps) => {\n  const slots = formVariants({ layout });\n\n  return (\n    <FormContext.Provider value={{ slots }}>\n      <BaseForm className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseForm>\n    </FormContext.Provider>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/form/form.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const formVariants = tv({\n  slots: {\n    root: \"form\",\n  },\n  variants: {\n    layout: {\n      vertical: {\n        root: \"form--vertical\",\n      },\n      horizontal: {\n        root: \"form--horizontal\",\n      },\n    },\n  },\n  defaultVariants: {\n    layout: \"vertical\",\n  },\n});\n\nexport type FormVariants = VariantProps<typeof formVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/form/form.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { formVariants } from \"./form.variants\";\n\nexport type FormContext = {\n  slots: ReturnType<typeof formVariants>;\n};\n\nexport const FormContext = createContext<FormContext | null>(null);\n\nexport const useFormContext = () => {\n  const context = useContext(FormContext);\n  return context ?? { slots: formVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/form/form.css",
+      "content": "@reference \"../../../app/global.css\";\n.form {\n  @apply flex w-full flex-col gap-4 text-foreground;\n}\n\n.form--vertical {\n  @apply flex-col;\n}\n\n.form--horizontal {\n  @apply flex-row items-start flex-wrap;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/form/index.ts",
+      "content": "import { FormRoot } from \"./form\";\n\nexport const Form = {\n  Root: FormRoot,\n};\n\nexport { FormRoot };\n\nexport type { FormProps } from \"./form\";\nexport { FormContext, useFormContext } from \"./form.context\";\nexport { type FormVariants, formVariants } from \"./form.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

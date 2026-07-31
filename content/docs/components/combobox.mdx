@@ -1,0 +1,115 @@
+---
+title: Combobox
+subtitle: An input combined with a list of predefined items to select.
+description: A high-quality, unstyled React combobox component built with @base-ui/react that renders an input combined with a list of predefined items to select.
+---
+
+import { ComboboxDemo } from "@/components/ui/combobox/combobox-demo";
+
+The `Combobox` component combines a text input with a filterable dropdown popup for selecting from predefined option lists.
+
+## Usage
+
+```tsx
+import { Combobox } from "@/components/ui/combobox";
+
+const fruits = [
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+  { label: "Orange", value: "orange" },
+];
+
+export function ExampleCombobox() {
+  return (
+    <Combobox.Root items={fruits}>
+      <Combobox.InputGroup>
+        <Combobox.Input placeholder="Select fruit..." />
+        <Combobox.Clear />
+        <Combobox.Trigger />
+      </Combobox.InputGroup>
+      <Combobox.Portal>
+        <Combobox.Positioner sideOffset={4}>
+          <Combobox.Popup>
+            <Combobox.Empty>No items found.</Combobox.Empty>
+            <Combobox.List>
+              {(fruit) => (
+                <Combobox.Item key={fruit.value} value={fruit}>
+                  <Combobox.ItemIndicator />
+                  <span>{fruit.label}</span>
+                </Combobox.Item>
+              )}
+            </Combobox.List>
+          </Combobox.Popup>
+        </Combobox.Positioner>
+      </Combobox.Portal>
+    </Combobox.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ComboboxDemo placeholder="Select a fruit..." size="md" />
+</div>
+
+## Sizes
+
+<div className="flex flex-col gap-4 p-4 border rounded-xl my-4">
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Small</span>
+    <ComboboxDemo placeholder="Small size..." size="sm" />
+  </div>
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Medium</span>
+    <ComboboxDemo placeholder="Medium size..." size="md" />
+  </div>
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Large</span>
+    <ComboboxDemo placeholder="Large size..." size="lg" />
+  </div>
+</div>
+
+```tsx
+<Combobox.Root size="sm">...</Combobox.Root>
+<Combobox.Root size="md">...</Combobox.Root>
+<Combobox.Root size="lg">...</Combobox.Root>
+```
+
+## Anatomy
+
+```tsx
+import { Combobox } from "@base-ui/react/combobox";
+
+<Combobox.Root>
+  <Combobox.InputGroup>
+    <Combobox.Input />
+    <Combobox.Clear />
+    <Combobox.Trigger />
+  </Combobox.InputGroup>
+  <Combobox.Portal>
+    <Combobox.Positioner>
+      <Combobox.Popup>
+        <Combobox.Empty />
+        <Combobox.List>
+          <Combobox.Item>
+            <Combobox.ItemIndicator />
+          </Combobox.Item>
+        </Combobox.List>
+      </Combobox.Popup>
+    </Combobox.Positioner>
+  </Combobox.Portal>
+</Combobox.Root>;
+```
+
+## API Reference
+
+### Combobox.Root Props
+
+| Prop            | Type                   | Default     | Description                                       |
+| :-------------- | :--------------------- | :---------- | :------------------------------------------------ |
+| `items`         | `Array`                | `[]`        | Predefined list of items available for selection. |
+| `size`          | `'sm' \| 'md' \| 'lg'` | `'md'`      | Component size.                                   |
+| `multiple`      | `boolean`              | `false`     | Enables multi-item selection with chips.          |
+| `value`         | `any`                  | `undefined` | Controlled value.                                 |
+| `onValueChange` | `(value: any) => void` | `undefined` | Event handler called when selection changes.      |

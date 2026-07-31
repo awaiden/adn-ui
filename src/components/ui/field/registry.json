@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Provides labeling, helper text, and validation error messages for form controls.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "field.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "field.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "field.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

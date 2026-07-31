@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "checkbox-group",
+      "type": "registry:ui",
+      "title": "Checkbox Group",
+      "description": "Provides shared state management for a group of checkboxes.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "checkbox-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox-group.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox-group.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox-group.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

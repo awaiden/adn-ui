@@ -1,0 +1,56 @@
+@reference "../../../app/global.css";
+.combobox {
+  @apply relative flex flex-col gap-1 text-foreground;
+}
+
+.combobox__input-group {
+  @apply relative flex min-h-9 w-full items-center gap-1 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-xs transition-colors focus-within:outline-2 focus-within:outline-ring;
+}
+
+.combobox__input {
+  @apply flex-1 border-0 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.combobox__trigger {
+  @apply flex size-5 items-center justify-center text-muted-foreground transition-colors hover:text-foreground;
+}
+
+.combobox__clear {
+  @apply flex size-5 items-center justify-center text-muted-foreground transition-colors hover:text-foreground;
+}
+
+.combobox__chips {
+  @apply flex flex-wrap items-center gap-1;
+}
+
+.combobox__chip {
+  @apply inline-flex items-center gap-1 rounded-sm bg-secondary px-2 py-0.5 text-xs text-secondary-foreground font-medium;
+}
+
+.combobox__chip-remove {
+  @apply flex size-3.5 items-center justify-center rounded-xs text-muted-foreground transition-colors hover:bg-muted hover:text-foreground;
+}
+
+.combobox__positioner {
+  @apply outline-none z-50;
+}
+
+.combobox__popup {
+  @apply w-[var(--anchor-width)] max-w-[var(--available-width)] overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-all duration-100 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;
+}
+
+.combobox__list {
+  @apply outline-none overflow-y-auto scroll-py-1 p-1 overscroll-contain max-h-[min(20rem,var(--available-height))] data-empty:p-0;
+}
+
+.combobox__item {
+  @apply relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm text-foreground outline-none transition-colors data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50;
+}
+
+.combobox__item-indicator {
+  @apply flex size-4 items-center justify-center shrink-0;
+}
+
+.combobox__empty {
+  @apply p-3 text-center text-sm text-muted-foreground;
+}

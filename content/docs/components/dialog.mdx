@@ -1,0 +1,66 @@
+---
+title: Dialog
+subtitle: A popup that opens on top of the entire page.
+description: A high-quality, unstyled React dialog component built with @base-ui/react that opens on top of the entire page.
+---
+
+import { DialogDemo } from "@/components/ui/dialog/dialog-demo";
+
+The `Dialog` component displays a modal popup dialog over the page layout with backdrop Dim control and smooth enter/exit transitions.
+
+## Usage
+
+```tsx
+import { Dialog } from "@/components/ui/dialog";
+
+export function ExampleDialog() {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger>View notifications</Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Backdrop />
+        <Dialog.Popup>
+          <Dialog.Title>Notifications</Dialog.Title>
+          <Dialog.Description>You are all caught up.</Dialog.Description>
+          <Dialog.Close>Close</Dialog.Close>
+        </Dialog.Popup>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <DialogDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Dialog } from "@base-ui/react/dialog";
+
+<Dialog.Root>
+  <Dialog.Trigger />
+  <Dialog.Portal>
+    <Dialog.Backdrop />
+    <Dialog.Popup>
+      <Dialog.Title />
+      <Dialog.Description />
+      <Dialog.Close />
+    </Dialog.Popup>
+  </Dialog.Portal>
+</Dialog.Root>;
+```
+
+## API Reference
+
+### Dialog.Root Props
+
+| Prop           | Type                      | Default     | Description                                          |
+| :------------- | :------------------------ | :---------- | :--------------------------------------------------- |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                               |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.                     |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Event handler called when dialog open state changes. |
+| `size`         | `'sm' \| 'md' \| 'lg'`    | `'md'`      | Popup modal width size.                              |

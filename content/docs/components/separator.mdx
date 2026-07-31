@@ -1,0 +1,49 @@
+---
+title: Separator
+subtitle: A separator element accessible to screen readers.
+description: A high-quality, unstyled React separator component built with @base-ui/react.
+---
+
+import { SeparatorDemo } from "@/components/ui/separator/separator-demo";
+
+The `Separator` component visually or semantically separates content in horizontal or vertical layouts with built-in accessibility.
+
+## Usage
+
+```tsx
+import { Separator } from "@/components/ui/separator";
+
+export function ExampleSeparator() {
+  return (
+    <div className="flex h-5 items-center gap-4 text-sm font-medium">
+      <span>Blog</span>
+      <Separator.Root orientation="vertical" />
+      <span>Pricing</span>
+      <Separator.Root orientation="vertical" />
+      <span>Docs</span>
+    </div>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <SeparatorDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Separator } from "@base-ui/react/separator";
+
+<Separator />;
+```
+
+## API Reference
+
+### Separator.Root Props
+
+| Prop          | Type                         | Default        | Description                                            |
+| :------------ | :--------------------------- | :------------- | :----------------------------------------------------- |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | Orientation layout direction of the separator element. |

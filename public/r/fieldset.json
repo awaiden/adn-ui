@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fieldset",
+  "title": "Fieldset",
+  "description": "Groups a shared legend with related form controls.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/fieldset/fieldset.tsx",
+      "content": "\"use client\";\n\nimport \"./fieldset.css\";\n\nimport type React from \"react\";\n\nimport { Fieldset as BaseFieldset } from \"@base-ui/react/fieldset\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FieldsetContext, useFieldsetContext } from \"./fieldset.context\";\nimport { fieldsetVariants, type FieldsetVariants } from \"./fieldset.variants\";\n\nexport type FieldsetProps = FieldsetVariants & React.ComponentProps<typeof BaseFieldset.Root>;\n\nexport const FieldsetRoot = ({ children, className, variant, ...props }: FieldsetProps) => {\n  const slots = fieldsetVariants({ variant });\n\n  return (\n    <FieldsetContext.Provider value={{ slots }}>\n      <BaseFieldset.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseFieldset.Root>\n    </FieldsetContext.Provider>\n  );\n};\n\nexport type FieldsetLegendProps = React.ComponentProps<typeof BaseFieldset.Legend>;\n\nexport const FieldsetLegend = ({ className, ...props }: FieldsetLegendProps) => {\n  const { slots } = useFieldsetContext();\n  return <BaseFieldset.Legend className={cn(slots.legend(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/fieldset/fieldset.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const fieldsetVariants = tv({\n  slots: {\n    root: \"fieldset\",\n    legend: \"fieldset__legend\",\n  },\n  variants: {\n    variant: {\n      default: {\n        root: \"fieldset--default\",\n      },\n      bordered: {\n        root: \"fieldset--bordered\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type FieldsetVariants = VariantProps<typeof fieldsetVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/fieldset/fieldset.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { fieldsetVariants } from \"./fieldset.variants\";\n\nexport type FieldsetContext = {\n  slots: ReturnType<typeof fieldsetVariants>;\n};\n\nexport const FieldsetContext = createContext<FieldsetContext | null>(null);\n\nexport const useFieldsetContext = () => {\n  const context = useContext(FieldsetContext);\n  return context ?? { slots: fieldsetVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/fieldset/fieldset.css",
+      "content": "@reference \"../../../app/global.css\";\n.fieldset {\n  @apply flex w-full flex-col gap-4 border-0 p-0 m-0 text-foreground;\n}\n\n.fieldset--bordered {\n  @apply rounded-lg border border-border p-4;\n}\n\n.fieldset__legend {\n  @apply border-b border-border text-base font-semibold text-foreground pb-1 mb-1;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/fieldset/index.ts",
+      "content": "import { FieldsetLegend, FieldsetRoot } from \"./fieldset\";\n\nexport const Fieldset = {\n  Legend: FieldsetLegend,\n  Root: FieldsetRoot,\n};\n\nexport { FieldsetLegend, FieldsetRoot };\n\nexport type { FieldsetLegendProps, FieldsetProps } from \"./fieldset\";\nexport { FieldsetContext, useFieldsetContext } from \"./fieldset.context\";\nexport { type FieldsetVariants, fieldsetVariants } from \"./fieldset.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,53 @@
+---
+title: Breadcrumb
+subtitle: Displays the path to the current resource using a hierarchy of links.
+description: An accessible breadcrumb navigation bar component.
+---
+
+import { BreadcrumbDemo } from "@/components/ui/breadcrumb/breadcrumb-demo";
+
+The `Breadcrumb` component helps users visualize location hierarchy within an app.
+
+## Usage
+
+```tsx
+import { Breadcrumb } from "@/components/ui/breadcrumb";
+
+export function ExampleBreadcrumb() {
+  return (
+    <Breadcrumb.Root>
+      <Breadcrumb.List>
+        <Breadcrumb.Item>
+          <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+        </Breadcrumb.Item>
+        <Breadcrumb.Separator />
+        <Breadcrumb.Item>
+          <Breadcrumb.Page>Docs</Breadcrumb.Page>
+        </Breadcrumb.Item>
+      </Breadcrumb.List>
+    </Breadcrumb.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <BreadcrumbDemo />
+</div>
+
+## Anatomy
+
+```tsx
+<Breadcrumb.Root>
+  <Breadcrumb.List>
+    <Breadcrumb.Item>
+      <Breadcrumb.Link />
+    </Breadcrumb.Item>
+    <Breadcrumb.Separator />
+    <Breadcrumb.Item>
+      <Breadcrumb.Page />
+    </Breadcrumb.Item>
+  </Breadcrumb.List>
+</Breadcrumb.Root>
+```

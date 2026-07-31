@@ -1,0 +1,61 @@
+---
+title: Form
+subtitle: A native form element with consolidated error handling.
+description: A high-quality, unstyled React form component built with @base-ui/react with consolidated error handling and server action support.
+---
+
+import { FormDemo } from "@/components/ui/form/form-demo";
+
+The `Form` component manages form submission states, error mapping, and field validation integration across form controls.
+
+## Usage
+
+```tsx
+import { Form } from "@/components/ui/form";
+import { Field } from "@/components/ui/field";
+import { Button } from "@/components/ui/button";
+
+export function ExampleForm() {
+  return (
+    <Form.Root onSubmit={(e) => e.preventDefault()}>
+      <Field.Root name="email">
+        <Field.Label>Email</Field.Label>
+        <Field.Control type="email" required />
+        <Field.Error />
+      </Field.Root>
+      <Button type="submit">Submit</Button>
+    </Form.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <FormDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Form } from "@base-ui/react/form";
+import { Field } from "@base-ui/react/field";
+
+<Form.Root>
+  <Field.Root name="email">
+    <Field.Label />
+    <Field.Control />
+    <Field.Error />
+  </Field.Root>
+</Form.Root>;
+```
+
+## API Reference
+
+### Form.Root Props
+
+| Prop           | Type                                    | Default      | Description                                                    |
+| :------------- | :-------------------------------------- | :----------- | :------------------------------------------------------------- |
+| `errors`       | `Record<string, string \| string[]>`    | `{}`         | Map of field names to server-side or custom validation errors. |
+| `onFormSubmit` | `(values: Record<string, any>) => void` | `undefined`  | Callback receiving parsed form values object.                  |
+| `layout`       | `'vertical' \| 'horizontal'`            | `'vertical'` | Form layout direction.                                         |

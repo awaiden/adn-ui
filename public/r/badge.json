@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "Displays a badge or a component that looks like a badge.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge/badge.tsx",
+      "content": "\"use client\";\n\nimport \"./badge.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { BadgeContext, useBadgeContext } from \"./badge.context\";\nimport { badgeVariants, type BadgeVariants } from \"./badge.variants\";\n\nexport type BadgeProps = BadgeVariants & React.HTMLAttributes<HTMLDivElement>;\n\nexport const BadgeRoot = ({ children, className, variant, size, ...props }: BadgeProps) => {\n  const slots = badgeVariants({ variant, size });\n\n  return (\n    <BadgeContext.Provider value={{ slots }}>\n      <div className={cn(slots.root(), className)} {...props}>\n        {children}\n      </div>\n    </BadgeContext.Provider>\n  );\n};\n\nexport const Badge = BadgeRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/badge/badge.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const badgeVariants = tv({\n  slots: {\n    root: \"badge\",\n  },\n  variants: {\n    variant: {\n      default: {\n        root: \"bg-primary text-primary-foreground hover:bg-primary/80 border-transparent\",\n      },\n      secondary: {\n        root: \"bg-secondary text-secondary-foreground hover:bg-secondary/80 border-transparent\",\n      },\n      destructive: {\n        root: \"bg-destructive text-destructive-foreground hover:bg-destructive/80 border-transparent\",\n      },\n      outline: {\n        root: \"text-foreground border-border bg-background hover:bg-accent hover:text-accent-foreground\",\n      },\n    },\n    size: {\n      sm: {\n        root: \"px-2 py-0.5 text-xs font-semibold\",\n      },\n      md: {\n        root: \"px-2.5 py-0.5 text-xs font-semibold\",\n      },\n      lg: {\n        root: \"px-3 py-1 text-sm font-semibold\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"md\",\n  },\n});\n\nexport type BadgeVariants = VariantProps<typeof badgeVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/badge/badge.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { badgeVariants } from \"./badge.variants\";\n\nexport type BadgeContext = {\n  slots: ReturnType<typeof badgeVariants>;\n};\n\nexport const BadgeContext = createContext<BadgeContext | null>(null);\n\nexport const useBadgeContext = () => {\n  const context = useContext(BadgeContext);\n  return context ?? { slots: badgeVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/badge/badge.css",
+      "content": "@reference \"../../../app/global.css\";\n.badge {\n  @apply inline-flex items-center rounded-full border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 select-none;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/badge/index.ts",
+      "content": "import { Badge, BadgeRoot } from \"./badge\";\n\nexport const BadgeContainer = {\n  Root: BadgeRoot,\n};\n\nexport { Badge, BadgeRoot };\n\nexport type { BadgeProps } from \"./badge\";\nexport { BadgeContext, useBadgeContext } from \"./badge.context\";\nexport { type BadgeVariants, badgeVariants } from \"./badge.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

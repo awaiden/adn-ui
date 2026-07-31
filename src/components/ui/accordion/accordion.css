@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.accordion {
+  @apply flex w-full flex-col border border-border text-foreground rounded-xl overflow-hidden;
+}
+
+.accordion--default {
+  @apply bg-card border-border shadow-sm;
+}
+
+.accordion--outline {
+  @apply bg-transparent border-border;
+}
+
+.accordion--ghost {
+  @apply bg-transparent border-none shadow-none rounded-none;
+}
+
+.accordion__item {
+  @apply border-b border-border last:border-b-0;
+}
+
+.accordion__header {
+  @apply m-0 flex;
+}
+
+.accordion__trigger {
+  @apply flex w-full items-center justify-between gap-4 bg-transparent px-4 py-3 text-left text-sm font-medium text-foreground select-none transition-colors hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground focus-visible:relative focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-ring disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.accordion__panel {
+  @apply h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;
+}

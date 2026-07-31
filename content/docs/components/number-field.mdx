@@ -1,0 +1,66 @@
+---
+title: Number Field
+subtitle: A numeric input element with increment and decrement buttons, and a scrub area.
+description: A high-quality, unstyled React number field component built with @base-ui/react with stepping controls and scrub interactions.
+---
+
+import { NumberFieldDemo } from "@/components/ui/number-field/number-field-demo";
+
+The `NumberField` component provides accessible controls for adjusting numeric values via input typing, stepper buttons, arrow keys, or dragging the scrub area label.
+
+## Usage
+
+```tsx
+import { NumberField } from "@/components/ui/number-field";
+
+export function ExampleNumberField() {
+  return (
+    <NumberField.Root defaultValue={10} min={0} max={100}>
+      <NumberField.ScrubArea>Quantity</NumberField.ScrubArea>
+      <NumberField.Group>
+        <NumberField.Decrement />
+        <NumberField.Input />
+        <NumberField.Increment />
+      </NumberField.Group>
+    </NumberField.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <NumberFieldDemo defaultValue={25} label="Amount" />
+</div>
+
+## Anatomy
+
+```tsx
+import { NumberField } from "@base-ui/react/number-field";
+
+<NumberField.Root>
+  <NumberField.ScrubArea>
+    <NumberField.ScrubAreaCursor />
+  </NumberField.ScrubArea>
+  <NumberField.Group>
+    <NumberField.Decrement />
+    <NumberField.Input />
+    <NumberField.Increment />
+  </NumberField.Group>
+</NumberField.Root>;
+```
+
+## API Reference
+
+### NumberField.Root Props
+
+| Prop            | Type                              | Default     | Description                          |
+| :-------------- | :-------------------------------- | :---------- | :----------------------------------- |
+| `value`         | `number \| null`                  | `undefined` | Controlled numeric value.            |
+| `defaultValue`  | `number`                          | `undefined` | Initial uncontrolled numeric value.  |
+| `min`           | `number`                          | `undefined` | Minimum allowed value.               |
+| `max`           | `number`                          | `undefined` | Maximum allowed value.               |
+| `step`          | `number \| 'any'`                 | `1`         | Increment and decrement step amount. |
+| `smallStep`     | `number`                          | `0.1`       | Step value when holding Alt key.     |
+| `largeStep`     | `number`                          | `10`        | Step value when holding Shift key.   |
+| `onValueChange` | `(value: number \| null) => void` | `undefined` | Callback fired when value changes.   |

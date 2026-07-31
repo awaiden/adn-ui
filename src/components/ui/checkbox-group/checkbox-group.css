@@ -1,0 +1,12 @@
+@reference "../../../app/global.css";
+.checkbox-group {
+  @apply flex text-foreground;
+}
+
+.checkbox-group--vertical {
+  @apply flex-col items-start gap-2;
+}
+
+.checkbox-group--horizontal {
+  @apply flex-row items-center gap-4;
+}

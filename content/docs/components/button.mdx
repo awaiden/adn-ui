@@ -1,0 +1,124 @@
+---
+title: Button
+description: Interactive button component supporting multiple variants, sizes, and icon modes.
+---
+
+import { Button } from "@/components/ui/button";
+
+The `Button` component is used to trigger an action or event, such as submitting a form, opening a dialog, or performing an operation.
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+
+export function Example() {
+  return <Button variant="primary">Click me</Button>;
+}
+```
+
+## Preview
+
+<div className="flex flex-wrap items-center gap-4 p-4 border rounded-xl my-4">
+  <Button variant="primary">
+    Primary
+  </Button>
+  <Button variant="secondary">
+    Secondary
+  </Button>
+  <Button variant="outline">
+    Outline
+  </Button>
+  <Button variant="ghost">
+    Ghost
+  </Button>
+  <Button variant="destructive">
+    Destructive
+  </Button>
+</div>
+
+## Variants
+
+### Visual Variants
+
+The `variant` prop controls the visual appearance of the button.
+
+<div className="flex flex-wrap items-center gap-4 p-4 border rounded-xl my-4">
+  <Button variant="primary">
+    Primary
+  </Button>
+  <Button variant="secondary">
+    Secondary
+  </Button>
+  <Button variant="outline">
+    Outline
+  </Button>
+  <Button variant="ghost">
+    Ghost
+  </Button>
+  <Button variant="destructive">
+    Destructive
+  </Button>
+</div>
+
+```tsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="destructive">Destructive</Button>
+```
+
+### Sizes
+
+The `size` prop adjusts the padding and font size of the button (`sm`, `md`, `lg`).
+
+<div className="flex flex-wrap items-center gap-4 p-4 border rounded-xl my-4">
+  <Button size="sm">
+    Small
+  </Button>
+  <Button size="md">
+    Medium
+  </Button>
+  <Button size="lg">
+    Large
+  </Button>
+</div>
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="md">Medium</Button>
+<Button size="lg">Large</Button>
+```
+
+### Icon Only
+
+Set `isIconOnly` to `true` for square/icon-only buttons.
+
+<div className="flex flex-wrap items-center gap-4 p-4 border rounded-xl my-4">
+  <Button isIconOnly size="sm">
+    🚀
+  </Button>
+  <Button isIconOnly size="md">
+    🚀
+  </Button>
+  <Button isIconOnly size="lg">
+    🚀
+  </Button>
+</div>
+
+```tsx
+<Button isIconOnly size="md">
+  🚀
+</Button>
+```
+
+## API Reference
+
+| Prop         | Type                                                                | Default     | Description                                       |
+| :----------- | :------------------------------------------------------------------ | :---------- | :------------------------------------------------ |
+| `variant`    | `'primary' \| 'secondary' \| 'ghost' \| 'outline' \| 'destructive'` | `'primary'` | Visual style of the button.                       |
+| `size`       | `'sm' \| 'md' \| 'lg'`                                              | `'md'`      | Size of the button.                               |
+| `isIconOnly` | `boolean`                                                           | `false`     | Adjusts layout and padding for icon-only buttons. |
+| `disabled`   | `boolean`                                                           | `false`     | Disables user interaction.                        |
+| `className`  | `string`                                                            | `undefined` | Additional CSS classes.                           |

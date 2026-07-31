@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field",
+  "title": "Field",
+  "description": "Provides labeling, helper text, and validation error messages for form controls.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/field/field.tsx",
+      "content": "\"use client\";\n\nimport \"./field.css\";\n\nimport type React from \"react\";\n\nimport { Field as BaseField } from \"@base-ui/react/field\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FieldContext, useFieldContext } from \"./field.context\";\nimport { fieldVariants, type FieldVariants } from \"./field.variants\";\n\nexport type FieldProps = FieldVariants & React.ComponentProps<typeof BaseField.Root>;\n\nexport const FieldRoot = ({ children, className, size, ...props }: FieldProps) => {\n  const slots = fieldVariants({ size });\n\n  return (\n    <FieldContext.Provider value={{ slots }}>\n      <BaseField.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseField.Root>\n    </FieldContext.Provider>\n  );\n};\n\nexport type FieldLabelProps = React.ComponentProps<typeof BaseField.Label>;\n\nexport const FieldLabel = ({ className, ...props }: FieldLabelProps) => {\n  const { slots } = useFieldContext();\n  return <BaseField.Label className={cn(slots.label(), className)} {...props} />;\n};\n\nexport type FieldControlProps = React.ComponentProps<typeof BaseField.Control>;\n\nexport const FieldControl = ({ className, ...props }: FieldControlProps) => {\n  const { slots } = useFieldContext();\n  return <BaseField.Control className={cn(slots.control(), className)} {...props} />;\n};\n\nexport type FieldErrorProps = React.ComponentProps<typeof BaseField.Error>;\n\nexport const FieldError = ({ className, ...props }: FieldErrorProps) => {\n  const { slots } = useFieldContext();\n  return <BaseField.Error className={cn(slots.error(), className)} {...props} />;\n};\n\nexport type FieldDescriptionProps = React.ComponentProps<typeof BaseField.Description>;\n\nexport const FieldDescription = ({ className, ...props }: FieldDescriptionProps) => {\n  const { slots } = useFieldContext();\n  return <BaseField.Description className={cn(slots.description(), className)} {...props} />;\n};\n\nexport type FieldItemProps = React.ComponentProps<typeof BaseField.Item>;\n\nexport const FieldItem = ({ className, ...props }: FieldItemProps) => {\n  const { slots } = useFieldContext();\n  return <BaseField.Item className={cn(slots.item(), className)} {...props} />;\n};\n\nexport type FieldValidityProps = React.ComponentProps<typeof BaseField.Validity>;\n\nexport const FieldValidity = (props: FieldValidityProps) => {\n  return <BaseField.Validity {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/field/field.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const fieldVariants = tv({\n  slots: {\n    root: \"field\",\n    label: \"field__label\",\n    control: \"field__control\",\n    error: \"field__error\",\n    description: \"field__description\",\n    item: \"field__item\",\n  },\n  variants: {\n    size: {\n      sm: {\n        label: \"field__label--sm\",\n        control: \"field__control--sm\",\n      },\n      md: {\n        label: \"field__label--md\",\n        control: \"field__control--md\",\n      },\n      lg: {\n        label: \"field__label--lg\",\n        control: \"field__control--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type FieldVariants = VariantProps<typeof fieldVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/field/field.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { fieldVariants } from \"./field.variants\";\n\nexport type FieldContext = {\n  slots: ReturnType<typeof fieldVariants>;\n};\n\nexport const FieldContext = createContext<FieldContext | null>(null);\n\nexport const useFieldContext = () => {\n  const context = useContext(FieldContext);\n  return context ?? { slots: fieldVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/field/field.css",
+      "content": "@reference \"../../../app/global.css\";\n.field {\n  @apply flex w-full flex-col items-start gap-1.5 text-foreground;\n}\n\n.field__label {\n  @apply text-sm font-medium text-foreground select-none data-disabled:opacity-50 data-invalid:text-destructive;\n}\n\n.field__control {\n  @apply h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;\n}\n\n.field__error {\n  @apply text-xs font-medium text-destructive transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n\n.field__description {\n  @apply text-xs text-muted-foreground;\n}\n\n.field__item {\n  @apply flex items-center gap-2;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/field/index.ts",
+      "content": "import {\n  FieldControl,\n  FieldDescription,\n  FieldError,\n  FieldItem,\n  FieldLabel,\n  FieldRoot,\n  FieldValidity,\n} from \"./field\";\n\nexport const Field = {\n  Control: FieldControl,\n  Description: FieldDescription,\n  Error: FieldError,\n  Item: FieldItem,\n  Label: FieldLabel,\n  Root: FieldRoot,\n  Validity: FieldValidity,\n};\n\nexport {\n  FieldControl,\n  FieldDescription,\n  FieldError,\n  FieldItem,\n  FieldLabel,\n  FieldRoot,\n  FieldValidity,\n};\n\nexport type {\n  FieldControlProps,\n  FieldDescriptionProps,\n  FieldErrorProps,\n  FieldItemProps,\n  FieldLabelProps,\n  FieldProps,\n  FieldValidityProps,\n} from \"./field\";\nexport { FieldContext, useFieldContext } from \"./field.context\";\nexport { type FieldVariants, fieldVariants } from \"./field.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

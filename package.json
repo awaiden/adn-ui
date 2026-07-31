@@ -1,0 +1,51 @@
+{
+  "name": "fumadocs",
+  "version": "0.0.10",
+  "private": true,
+  "scripts": {
+    "build:registry": "npx shadcn build",
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "types:check": "next typegen && tsc --noEmit",
+    "lint": "oxlint",
+    "storybook": "BROWSER=none storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "oxlint --fix"
+    ]
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "cnfast": "^0.1.0",
+    "fumadocs-core": "16.14.0",
+    "fumadocs-mdx": "15.2.1",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.14.0",
+    "lucide-react": "^1.27.0",
+    "next": "16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "tailwind-variants": "^3.3.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/nextjs-vite": "10.5.5",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "oxlint": "^1.76.0",
+    "postcss": "^8.5.24",
+    "storybook": "10.5.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.0"
+  }
+}

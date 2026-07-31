@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "badge.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "badge.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "badge.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

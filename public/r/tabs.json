@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "title": "Tabs",
+  "description": "A component for toggling between related panels on the same page.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/tabs/tabs.tsx",
+      "content": "\"use client\";\n\nimport \"./tabs.css\";\n\nimport type React from \"react\";\n\nimport { Tabs as BaseTabs } from \"@base-ui/react/tabs\";\nimport { cn } from \"tailwind-variants\";\n\nimport { TabsContext, useTabsContext } from \"./tabs.context\";\nimport { tabsVariants, type TabsVariants } from \"./tabs.variants\";\n\nexport type TabsProps = TabsVariants & React.ComponentProps<typeof BaseTabs.Root>;\n\nexport const TabsRoot = ({ children, className, variant, size, ...props }: TabsProps) => {\n  const slots = tabsVariants({ variant, size });\n\n  return (\n    <TabsContext.Provider value={{ slots }}>\n      <BaseTabs.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseTabs.Root>\n    </TabsContext.Provider>\n  );\n};\n\nexport type TabsListProps = React.ComponentProps<typeof BaseTabs.List>;\n\nexport const TabsList = ({ className, ...props }: TabsListProps) => {\n  const { slots } = useTabsContext();\n  return <BaseTabs.List className={cn(slots.list(), className)} {...props} />;\n};\n\nexport type TabsTabProps = React.ComponentProps<typeof BaseTabs.Tab>;\n\nexport const TabsTab = ({ className, ...props }: TabsTabProps) => {\n  const { slots } = useTabsContext();\n  return <BaseTabs.Tab className={cn(slots.tab(), className)} {...props} />;\n};\n\nexport type TabsIndicatorProps = React.ComponentProps<typeof BaseTabs.Indicator>;\n\nexport const TabsIndicator = ({ className, ...props }: TabsIndicatorProps) => {\n  const { slots } = useTabsContext();\n  return <BaseTabs.Indicator className={cn(slots.indicator(), className)} {...props} />;\n};\n\nexport type TabsPanelProps = React.ComponentProps<typeof BaseTabs.Panel>;\n\nexport const TabsPanel = ({ className, ...props }: TabsPanelProps) => {\n  const { slots } = useTabsContext();\n  return <BaseTabs.Panel className={cn(slots.panel(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const tabsVariants = tv({\n  slots: {\n    root: \"tabs\",\n    list: \"tabs__list\",\n    tab: \"tabs__tab\",\n    indicator: \"tabs__indicator\",\n    panel: \"tabs__panel\",\n  },\n  variants: {\n    variant: {\n      default: {\n        list: \"border-b border-border gap-1\",\n        tab: \"data-active:text-foreground pb-2 font-medium\",\n        indicator: \"bottom-0 h-0.5 bg-primary transition-all duration-200\",\n      },\n      pills: {\n        list: \"bg-muted p-1 rounded-lg gap-1\",\n        tab: \"rounded-md px-3 py-1.5 data-active:bg-background data-active:text-foreground data-active:shadow-xs\",\n        indicator: \"bg-background rounded-md shadow-xs transition-all duration-200\",\n      },\n      underline: {\n        list: \"border-b border-border gap-4\",\n        tab: \"pb-2 border-b-2 border-transparent data-active:border-primary data-active:text-primary font-medium\",\n      },\n    },\n    size: {\n      sm: {\n        tab: \"text-xs px-2.5 py-1\",\n        panel: \"p-3 text-xs\",\n      },\n      md: {\n        tab: \"text-sm px-3.5 py-1.5\",\n        panel: \"p-4 text-sm\",\n      },\n      lg: {\n        tab: \"text-base px-4 py-2\",\n        panel: \"p-6 text-base\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"md\",\n  },\n});\n\nexport type TabsVariants = VariantProps<typeof tabsVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { tabsVariants } from \"./tabs.variants\";\n\nexport type TabsContext = {\n  slots: ReturnType<typeof tabsVariants>;\n};\n\nexport const TabsContext = createContext<TabsContext | null>(null);\n\nexport const useTabsContext = () => {\n  const context = useContext(TabsContext);\n  return context ?? { slots: tabsVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tabs/tabs.css",
+      "content": "@reference \"../../../app/global.css\";\n.tabs {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.tabs__list {\n  @apply relative flex items-center select-none;\n}\n\n.tabs__tab {\n  @apply inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-muted-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;\n}\n\n.tabs__indicator {\n  @apply absolute z-0;\n}\n\n.tabs__panel {\n  @apply mt-2 outline-none focus-visible:outline-2 focus-visible:outline-ring;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tabs/index.ts",
+      "content": "import { TabsIndicator, TabsList, TabsPanel, TabsRoot, TabsTab } from \"./tabs\";\n\nexport const Tabs = {\n  Indicator: TabsIndicator,\n  List: TabsList,\n  Panel: TabsPanel,\n  Root: TabsRoot,\n  Tab: TabsTab,\n};\n\nexport { TabsIndicator, TabsList, TabsPanel, TabsRoot, TabsTab };\n\nexport type {\n  TabsIndicatorProps,\n  TabsListProps,\n  TabsPanelProps,\n  TabsProps,\n  TabsTabProps,\n} from \"./tabs\";\nexport { TabsContext, useTabsContext } from \"./tabs.context\";\nexport { type TabsVariants, tabsVariants } from \"./tabs.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

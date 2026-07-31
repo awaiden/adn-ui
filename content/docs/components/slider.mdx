@@ -1,0 +1,71 @@
+---
+title: Slider
+subtitle: An easily stylable range input.
+description: A high-quality, unstyled React slider component built with @base-ui/react for single and range values.
+---
+
+import { SliderDemo } from "@/components/ui/slider/slider-demo";
+
+The `Slider` component allows selecting a numeric value or value range along a continuous track.
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider";
+
+export function ExampleSlider() {
+  return (
+    <Slider.Root defaultValue={40}>
+      <Slider.Label>Brightness</Slider.Label>
+      <Slider.Value />
+      <Slider.Control>
+        <Slider.Track>
+          <Slider.Indicator />
+          <Slider.Thumb aria-label="Brightness" />
+        </Slider.Track>
+      </Slider.Control>
+    </Slider.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <SliderDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Slider } from "@base-ui/react/slider";
+
+<Slider.Root>
+  <Slider.Label />
+  <Slider.Value />
+  <Slider.Control>
+    <Slider.Track>
+      <Slider.Indicator />
+      <Slider.Thumb />
+    </Slider.Track>
+  </Slider.Control>
+</Slider.Root>;
+```
+
+## API Reference
+
+### Slider.Root Props
+
+| Prop           | Type                 | Default     | Description                                              |
+| :------------- | :------------------- | :---------- | :------------------------------------------------------- |
+| `value`        | `number \| number[]` | `undefined` | Controlled value or array of values for range selection. |
+| `defaultValue` | `number \| number[]` | `undefined` | Initial uncontrolled value or value range.               |
+| `min`          | `number`             | `0`         | Minimum allowed value on the slider.                     |
+| `max`          | `number`             | `100`       | Maximum allowed value on the slider.                     |
+| `step`         | `number`             | `1`         | Step size for value increments.                          |
+
+### Slider.Thumb Props
+
+| Prop    | Type     | Default | Description                                               |
+| :------ | :------- | :------ | :-------------------------------------------------------- |
+| `index` | `number` | `0`     | Zero-based index of the thumb when using range selection. |

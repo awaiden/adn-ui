@@ -1,0 +1,28 @@
+@reference "../../../app/global.css";
+.popover__positioner {
+  @apply outline-none z-50;
+}
+
+.popover__popup {
+  @apply relative flex max-w-sm flex-col gap-1.5 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-md outline-none transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+}
+
+.popover__title {
+  @apply text-sm font-semibold text-foreground;
+}
+
+.popover__description {
+  @apply text-xs text-muted-foreground;
+}
+
+.popover__close {
+  @apply absolute right-2 top-2 inline-flex size-6 items-center justify-center rounded-xs opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none;
+}
+
+.popover__arrow {
+  @apply fill-popover stroke-border;
+}
+
+.popover__backdrop {
+  @apply fixed inset-0 z-40 bg-black/50 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
+}

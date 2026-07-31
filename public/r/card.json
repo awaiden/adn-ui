@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "title": "Card",
+  "description": "A container component displaying content, header, title, and footer.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/card/card.tsx",
+      "content": "\"use client\";\n\nimport \"./card.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { CardContext, useCardContext } from \"./card.context\";\nimport { cardVariants, type CardVariants } from \"./card.variants\";\n\nexport type CardProps = CardVariants & React.ComponentProps<\"div\">;\n\nexport const CardRoot = ({ children, className, variant, ...props }: CardProps) => {\n  const slots = cardVariants({ variant });\n\n  return (\n    <CardContext.Provider value={{ slots }}>\n      <div className={cn(slots.root(), className)} {...props}>\n        {children}\n      </div>\n    </CardContext.Provider>\n  );\n};\n\nexport type CardHeaderProps = React.ComponentProps<\"div\">;\n\nexport const CardHeader = ({ className, ...props }: CardHeaderProps) => {\n  const { slots } = useCardContext();\n  return <div className={cn(slots.header(), className)} {...props} />;\n};\n\nexport type CardTitleProps = React.ComponentProps<\"h3\">;\n\nexport const CardTitle = ({ className, ...props }: CardTitleProps) => {\n  const { slots } = useCardContext();\n  return <h3 className={cn(slots.title(), className)} {...props} />;\n};\n\nexport type CardDescriptionProps = React.ComponentProps<\"p\">;\n\nexport const CardDescription = ({ className, ...props }: CardDescriptionProps) => {\n  const { slots } = useCardContext();\n  return <p className={cn(slots.description(), className)} {...props} />;\n};\n\nexport type CardContentProps = React.ComponentProps<\"div\">;\n\nexport const CardContent = ({ className, ...props }: CardContentProps) => {\n  const { slots } = useCardContext();\n  return <div className={cn(slots.content(), className)} {...props} />;\n};\n\nexport type CardFooterProps = React.ComponentProps<\"div\">;\n\nexport const CardFooter = ({ className, ...props }: CardFooterProps) => {\n  const { slots } = useCardContext();\n  return <div className={cn(slots.footer(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/card/card.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const cardVariants = tv({\n  slots: {\n    root: \"card\",\n    header: \"card__header\",\n    title: \"card__title\",\n    description: \"card__description\",\n    content: \"card__content\",\n    footer: \"card__footer\",\n  },\n  variants: {\n    variant: {\n      default: { root: \"card--default\" },\n      outline: { root: \"card--outline\" },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type CardVariants = VariantProps<typeof cardVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/card/card.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { cardVariants } from \"./card.variants\";\n\nexport type CardContext = {\n  slots: ReturnType<typeof cardVariants>;\n};\n\nexport const CardContext = createContext<CardContext | null>(null);\n\nexport const useCardContext = () => {\n  const context = useContext(CardContext);\n  return context ?? { slots: cardVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/card/card.css",
+      "content": "@reference \"../../../app/global.css\";\n.card {\n  @apply bg-card text-card-foreground rounded-xl border;\n}\n\n.card--default {\n  @apply shadow-sm;\n}\n\n.card--outline {\n  @apply shadow-none;\n}\n\n.card__header {\n  @apply flex flex-col gap-1.5 p-6;\n}\n\n.card__title {\n  @apply text-lg leading-none font-semibold tracking-tight;\n}\n\n.card__description {\n  @apply text-muted-foreground text-sm;\n}\n\n.card__content {\n  @apply p-6 pt-0;\n}\n\n.card__footer {\n  @apply flex items-center p-6 pt-0;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/card/index.ts",
+      "content": "import { CardContent, CardDescription, CardFooter, CardHeader, CardRoot, CardTitle } from \"./card\";\n\nexport const Card = {\n  Content: CardContent,\n  Description: CardDescription,\n  Footer: CardFooter,\n  Header: CardHeader,\n  Root: CardRoot,\n  Title: CardTitle,\n};\n\nexport { CardContent, CardDescription, CardFooter, CardHeader, CardRoot, CardTitle };\n\nexport type {\n  CardContentProps,\n  CardDescriptionProps,\n  CardFooterProps,\n  CardHeaderProps,\n  CardProps,\n  CardTitleProps,\n} from \"./card\";\n\nexport { CardContext, useCardContext } from \"./card.context\";\nexport { type CardVariants, cardVariants } from \"./card.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,1149 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "adn-ui",
+  "homepage": "https://ui.awaiden.com",
+  "items": [
+    {
+      "name": "accordion",
+      "title": "Accordion",
+      "description": "A set of collapsible panels with headings.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/accordion/accordion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/accordion.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/accordion/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert-dialog",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that interrupts the user with important information.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/alert-dialog.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/alert-dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "autocomplete",
+      "title": "Autocomplete",
+      "description": "An input component that provides suggestions as the user types.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/autocomplete/autocomplete.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/autocomplete/autocomplete.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/autocomplete/autocomplete.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/autocomplete/autocomplete.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/autocomplete/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar",
+      "title": "Avatar",
+      "description": "An easily stylable avatar component for profile images and fallbacks.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar/avatar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/avatar.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/avatar/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "button",
+      "title": "Button",
+      "description": "An interactive button component supporting variants and sizes.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button/button.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button/button.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "card",
+      "title": "Card",
+      "description": "A container component displaying content, header, title, and footer.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card/card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/card.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/card.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/card.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/card/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "checkbox",
+      "title": "Checkbox",
+      "description": "A control that allows toggling between checked and unchecked states.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox/checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox/checkbox.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox/checkbox.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox/checkbox.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "checkbox-group",
+      "title": "Checkbox Group",
+      "description": "Provides shared state management for a group of checkboxes.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox-group/checkbox-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox-group/checkbox-group.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox-group/checkbox-group.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox-group/checkbox-group.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/checkbox-group/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "collapsible",
+      "title": "Collapsible",
+      "description": "A collapsible panel controlled by a trigger button.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible/collapsible.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/collapsible.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/collapsible/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox",
+      "title": "Combobox",
+      "description": "An input combined with a filterable popup list of predefined items.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox/combobox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/combobox.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/combobox.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/combobox.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu",
+      "title": "Context Menu",
+      "description": "A menu that appears at the pointer on right click or long press.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/context-menu/context-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/context-menu/context-menu.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/context-menu/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog",
+      "title": "Dialog",
+      "description": "A popup that opens on top of the entire page.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog/dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/dialog.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/dialog/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "field",
+      "title": "Field",
+      "description": "Provides labeling, helper text, and validation error messages for form controls.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field/field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/field/field.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/field/field.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/field/field.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/field/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "fieldset",
+      "title": "Fieldset",
+      "description": "Groups a shared legend with related form controls.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/fieldset/fieldset.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/fieldset/fieldset.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/fieldset/fieldset.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/fieldset/fieldset.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/fieldset/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "form",
+      "title": "Form",
+      "description": "A native form element with consolidated error handling.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/form/form.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/form.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/form.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/form.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/form/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "input",
+      "title": "Input",
+      "description": "A native input element that automatically works with Field and form controls.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input/input.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input/input.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input/input.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input/input.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/input/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "menu",
+      "title": "Menu",
+      "description": "A dropdown menu displaying a list of actions with keyboard navigation.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/menu/menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/menu/menu.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/menu/menu.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/menu/menu.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/menu/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "number-field",
+      "title": "Number Field",
+      "description": "A numeric input element with increment and decrement buttons, and scrub area.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/number-field/number-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/number-field.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/number-field.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/number-field.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/number-field/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover",
+      "title": "Popover",
+      "description": "An accessible popup anchored to a trigger button.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover/popover.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/popover.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/popover.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/popover.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/popover/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "preview-card",
+      "title": "Preview Card",
+      "description": "A popup that appears when a link is hovered, showing a preview snippet.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/preview-card/preview-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/preview-card/preview-card.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/preview-card/preview-card.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/preview-card/preview-card.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/preview-card/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "progress",
+      "title": "Progress",
+      "description": "Displays the status of a task that takes a long time.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progress/progress.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/progress/progress.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/progress/progress.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/progress/progress.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/progress/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "radio",
+      "title": "Radio",
+      "description": "An easily stylable radio button component and group.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio/radio.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio/radio.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio/radio.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio/radio.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/radio/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-area",
+      "title": "Scroll Area",
+      "description": "A native scroll container with custom scrollbars.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/scroll-area.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/scroll-area/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "select",
+      "title": "Select",
+      "description": "A common form component for choosing a predefined value in a dropdown menu.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select/select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/select.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/select.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/select.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/select/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "separator",
+      "title": "Separator",
+      "description": "A separator element accessible to screen readers.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/separator/separator.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/separator/separator.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/separator/separator.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/separator/separator.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/separator/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "slider",
+      "title": "Slider",
+      "description": "An easily stylable range input component.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/slider/slider.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/slider/slider.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/slider/slider.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/slider/slider.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/slider/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "switch",
+      "title": "Switch",
+      "description": "A control that indicates whether a setting is on or off.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch/switch.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/switch/switch.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/switch/switch.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/switch/switch.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/switch/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs",
+      "title": "Tabs",
+      "description": "A component for toggling between related panels on the same page.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tabs/tabs.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/tabs.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tabs/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle",
+      "title": "Toggle",
+      "description": "A two-state button that can be on or off.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle/toggle.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle/toggle.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle/toggle.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle/toggle.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle-group",
+      "title": "Toggle Group",
+      "description": "Provides a shared state to a series of toggle buttons.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/toggle-group.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toggle-group/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip",
+      "title": "Tooltip",
+      "description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip/tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/tooltip.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/tooltip/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "drawer",
+      "title": "Drawer",
+      "description": "A panel that slides in from the edge of the screen with swipe gestures.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/drawer/drawer.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/drawer/drawer.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/drawer/drawer.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/drawer/drawer.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/drawer/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge",
+      "title": "Badge",
+      "description": "Displays a badge or a component that looks like a badge.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/badge/badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/badge/badge.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/badge/badge.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/badge/badge.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/badge/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "breadcrumb",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using a hierarchy of links.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/breadcrumb.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/breadcrumb/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "table",
+      "title": "Table",
+      "description": "A responsive table component.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table/table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/table.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/table.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/table.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/table/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "textarea",
+      "title": "Textarea",
+      "description": "Displays a form textarea or a component that looks like a textarea.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/textarea/textarea.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/textarea/textarea.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/textarea/textarea.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/textarea/textarea.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/textarea/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    }
+  ]
+}

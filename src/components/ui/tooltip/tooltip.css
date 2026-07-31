@@ -1,0 +1,16 @@
+@reference "../../../app/global.css";
+.tooltip__trigger {
+  @apply inline-flex items-center justify-center cursor-pointer;
+}
+
+.tooltip__positioner {
+  @apply z-50 outline-none select-none;
+}
+
+.tooltip__popup {
+  @apply relative z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+}
+
+.tooltip__arrow {
+  @apply z-50;
+}

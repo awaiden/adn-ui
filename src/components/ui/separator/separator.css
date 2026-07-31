@@ -1,0 +1,12 @@
+@reference "../../../app/global.css";
+.separator {
+  @apply shrink-0 bg-border;
+}
+
+.separator--horizontal {
+  @apply h-px w-full;
+}
+
+.separator--vertical {
+  @apply h-full w-px;
+}

@@ -1,0 +1,108 @@
+---
+title: Autocomplete
+subtitle: An input that suggests options as you type.
+description: A high-quality, unstyled React autocomplete component built with @base-ui/react that suggests options as you type.
+---
+
+import { AutocompleteDemo } from "@/components/ui/autocomplete/autocomplete-demo";
+
+The `Autocomplete` component provides a search input that filters and displays suggested options in a dropdown popup as the user types.
+
+## Usage
+
+```tsx
+import { Autocomplete } from "@/components/ui/autocomplete";
+
+const tags = [
+  { id: "1", label: "Feature" },
+  { id: "2", label: "Bugfix" },
+  { id: "3", label: "Documentation" },
+];
+
+export function ExampleAutocomplete() {
+  return (
+    <Autocomplete.Root items={tags}>
+      <Autocomplete.Input placeholder="Search tags..." />
+      <Autocomplete.Portal>
+        <Autocomplete.Positioner sideOffset={4}>
+          <Autocomplete.Popup>
+            <Autocomplete.Empty>No items found.</Autocomplete.Empty>
+            <Autocomplete.List>
+              {(tag) => (
+                <Autocomplete.Item key={tag.id} value={tag}>
+                  {tag.label}
+                </Autocomplete.Item>
+              )}
+            </Autocomplete.List>
+          </Autocomplete.Popup>
+        </Autocomplete.Positioner>
+      </Autocomplete.Portal>
+    </Autocomplete.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <AutocompleteDemo
+    placeholder="Search tags (e.g. feature)..."
+    size="md"
+    variant="default"
+  />
+</div>
+
+## Sizes
+
+<div className="flex flex-col gap-4 p-4 border rounded-xl my-4">
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Small</span>
+    <AutocompleteDemo placeholder="Small size..." size="sm" />
+  </div>
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Medium</span>
+    <AutocompleteDemo placeholder="Medium size..." size="md" />
+  </div>
+  <div>
+    <span className="text-xs font-semibold text-muted-foreground block mb-2">Large</span>
+    <AutocompleteDemo placeholder="Large size..." size="lg" />
+  </div>
+</div>
+
+```tsx
+<Autocomplete.Root size="sm">...</Autocomplete.Root>
+<Autocomplete.Root size="md">...</Autocomplete.Root>
+<Autocomplete.Root size="lg">...</Autocomplete.Root>
+```
+
+## Anatomy
+
+```tsx
+import { Autocomplete } from "@base-ui/react/autocomplete";
+
+<Autocomplete.Root>
+  <Autocomplete.Input />
+  <Autocomplete.Portal>
+    <Autocomplete.Positioner>
+      <Autocomplete.Popup>
+        <Autocomplete.Empty />
+        <Autocomplete.List>
+          <Autocomplete.Item />
+        </Autocomplete.List>
+      </Autocomplete.Popup>
+    </Autocomplete.Positioner>
+  </Autocomplete.Portal>
+</Autocomplete.Root>;
+```
+
+## API Reference
+
+### Autocomplete.Root Props
+
+| Prop            | Type                      | Default     | Description                     |
+| :-------------- | :------------------------ | :---------- | :------------------------------ |
+| `items`         | `Array`                   | `[]`        | Array of items to filter.       |
+| `variant`       | `'default' \| 'outline'`  | `'default'` | Input visual variant.           |
+| `size`          | `'sm' \| 'md' \| 'lg'`    | `'md'`      | Component size.                 |
+| `value`         | `string`                  | `undefined` | Controlled input value.         |
+| `onValueChange` | `(value: string) => void` | `undefined` | Callback fired on value change. |

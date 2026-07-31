@@ -1,0 +1,33 @@
+@reference "../../../app/global.css";
+.number-field {
+  @apply flex flex-col items-start gap-1 text-foreground;
+}
+
+.number-field__group {
+  @apply inline-flex h-9 items-center rounded-md border border-input bg-background shadow-xs transition-colors focus-within:outline-2 focus-within:outline-ring;
+}
+
+.number-field__input {
+  @apply h-full w-20 border-0 bg-transparent px-2 text-center text-sm font-normal text-foreground tabular-nums outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.number-field__decrement,
+.number-field__increment {
+  @apply flex h-full w-8 items-center justify-center border-0 bg-transparent p-0 text-muted-foreground transition-colors hover:text-foreground hover:bg-accent active:bg-muted disabled:cursor-not-allowed disabled:opacity-50 select-none;
+}
+
+.number-field__decrement {
+  @apply border-r border-input rounded-l-md;
+}
+
+.number-field__increment {
+  @apply border-l border-input rounded-r-md;
+}
+
+.number-field__scrub-area {
+  @apply cursor-ew-resize font-medium select-none text-sm text-foreground;
+}
+
+.number-field__scrub-area-cursor {
+  @apply drop-shadow-sm;
+}

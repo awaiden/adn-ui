@@ -1,0 +1,55 @@
+---
+title: Theming
+subtitle: Customizing colors, design tokens, and dark mode for adn-ui.
+description: Learn how to customize OKLCH design tokens and dark mode styling for adn-ui components.
+---
+
+`adn-ui` uses OKLCH color space for precise luminance control and vibrant palette generation across light and dark modes.
+
+## OKLCH Design Tokens
+
+Tokens are declared under `@theme` in `src/styles/global.css`:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(14.5% 0 0);
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(14.5% 0 0);
+  --color-primary: oklch(20.5% 0 0);
+  --color-primary-foreground: oklch(98.5% 0 0);
+  --color-muted: oklch(97% 0 0);
+  --color-muted-foreground: oklch(55.6% 0 0);
+  --color-accent: oklch(97% 0 0);
+  --color-accent-foreground: oklch(20.5% 0 0);
+  --color-border: oklch(92.2% 0 0);
+  --color-ring: oklch(70.8% 0 0);
+}
+```
+
+## Dark Mode Support
+
+Dark mode tokens are overridden using `.dark` class or `@media (prefers-color-scheme: dark)` selectors:
+
+```css
+.dark {
+  --color-background: oklch(14.5% 0 0);
+  --color-foreground: oklch(98.5% 0 0);
+  --color-card: oklch(14.5% 0 0);
+  --color-card-foreground: oklch(98.5% 0 0);
+  --color-popover: oklch(14.5% 0 0);
+  --color-popover-foreground: oklch(98.5% 0 0);
+  --color-primary: oklch(98.5% 0 0);
+  --color-primary-foreground: oklch(20.5% 0 0);
+  --color-muted: oklch(26.9% 0 0);
+  --color-muted-foreground: oklch(70.8% 0 0);
+  --color-border: oklch(26.9% 0 0);
+  --color-input: oklch(26.9% 0 0);
+}
+```
+
+## Customizing Variants
+
+Components use `tailwind-variants` (`tv()`) in `<component>.variants.ts` files. You can extend or modify default slots and variant definitions directly to match your brand design system.

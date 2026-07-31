@@ -1,0 +1,4 @@
+@reference "../../../app/global.css";
+.toggle-group {
+  @apply inline-flex items-center text-foreground select-none;
+}

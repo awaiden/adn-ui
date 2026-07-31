@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator",
+  "title": "Separator",
+  "description": "A separator element accessible to screen readers.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/separator/separator.tsx",
+      "content": "\"use client\";\n\nimport \"./separator.css\";\n\nimport type React from \"react\";\n\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SeparatorContext, useSeparatorContext } from \"./separator.context\";\nimport { separatorVariants, type SeparatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;\n\nexport const SeparatorRoot = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => {\n  const slots = separatorVariants({ orientation });\n\n  return (\n    <SeparatorContext.Provider value={{ slots }}>\n      <BaseSeparator className={cn(slots.root(), className)} orientation={orientation} {...props} />\n    </SeparatorContext.Provider>\n  );\n};\n\nexport const Separator = SeparatorRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/separator/separator.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const separatorVariants = tv({\n  slots: {\n    root: \"separator\",\n  },\n  variants: {\n    orientation: {\n      horizontal: {\n        root: \"separator--horizontal\",\n      },\n      vertical: {\n        root: \"separator--vertical\",\n      },\n    },\n  },\n  defaultVariants: {\n    orientation: \"horizontal\",\n  },\n});\n\nexport type SeparatorVariants = VariantProps<typeof separatorVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/separator/separator.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { separatorVariants } from \"./separator.variants\";\n\nexport type SeparatorContext = {\n  slots: ReturnType<typeof separatorVariants>;\n};\n\nexport const SeparatorContext = createContext<SeparatorContext | null>(null);\n\nexport const useSeparatorContext = () => {\n  const context = useContext(SeparatorContext);\n  return context ?? { slots: separatorVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/separator/separator.css",
+      "content": "@reference \"../../../app/global.css\";\n.separator {\n  @apply shrink-0 bg-border;\n}\n\n.separator--horizontal {\n  @apply h-px w-full;\n}\n\n.separator--vertical {\n  @apply h-full w-px;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/separator/index.ts",
+      "content": "import { SeparatorRoot } from \"./separator\";\n\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot, SeparatorRoot as SeparatorComponent };\nexport { Separator as SeparatorAlias } from \"./separator\";\n\nexport type { SeparatorProps } from \"./separator\";\nexport { SeparatorContext, useSeparatorContext } from \"./separator.context\";\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

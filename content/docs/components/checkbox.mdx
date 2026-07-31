@@ -1,0 +1,71 @@
+---
+title: Checkbox
+subtitle: An easily stylable checkbox component.
+description: A high-quality, unstyled React checkbox component built with @base-ui/react that is easy to customize.
+---
+
+import { CheckboxDemo } from "@/components/ui/checkbox/checkbox-demo";
+
+The `Checkbox` component allows users to toggle between checked and unchecked boolean states.
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox";
+
+export function ExampleCheckbox() {
+  return (
+    <label className="flex items-center gap-2 text-sm font-medium">
+      <Checkbox.Root defaultChecked>
+        <Checkbox.Indicator />
+      </Checkbox.Root>
+      Enable notifications
+    </label>
+  );
+}
+```
+
+## Preview
+
+<div className="flex flex-col gap-3 p-4 border rounded-xl my-4">
+  <CheckboxDemo defaultChecked={true} label="Accept terms and conditions" />
+  <CheckboxDemo defaultChecked={false} label="Subscribe to newsletter" />
+  <CheckboxDemo disabled defaultChecked={true} label="Disabled checked option" />
+</div>
+
+## Sizes
+
+<div className="flex flex-col gap-3 p-4 border rounded-xl my-4">
+  <CheckboxDemo defaultChecked label="Small checkbox" size="sm" />
+  <CheckboxDemo defaultChecked label="Medium checkbox" size="md" />
+  <CheckboxDemo defaultChecked label="Large checkbox" size="lg" />
+</div>
+
+```tsx
+<Checkbox.Root size="sm">...</Checkbox.Root>
+<Checkbox.Root size="md">...</Checkbox.Root>
+<Checkbox.Root size="lg">...</Checkbox.Root>
+```
+
+## Anatomy
+
+```tsx
+import { Checkbox } from "@base-ui/react/checkbox";
+
+<Checkbox.Root>
+  <Checkbox.Indicator />
+</Checkbox.Root>;
+```
+
+## API Reference
+
+### Checkbox.Root Props
+
+| Prop              | Type                         | Default     | Description                                  |
+| :---------------- | :--------------------------- | :---------- | :------------------------------------------- |
+| `size`            | `'sm' \| 'md' \| 'lg'`       | `'md'`      | Checkbox dimensions.                         |
+| `checked`         | `boolean`                    | `undefined` | Controlled checked state.                    |
+| `defaultChecked`  | `boolean`                    | `false`     | Uncontrolled initial checked state.          |
+| `onCheckedChange` | `(checked: boolean) => void` | `undefined` | Callback fired on checked state change.      |
+| `disabled`        | `boolean`                    | `false`     | Disables user interaction.                   |
+| `indeterminate`   | `boolean`                    | `false`     | Mixed state (neither checked nor unchecked). |

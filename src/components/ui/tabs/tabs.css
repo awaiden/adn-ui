@@ -1,0 +1,20 @@
+@reference "../../../app/global.css";
+.tabs {
+  @apply flex w-full flex-col text-foreground;
+}
+
+.tabs__list {
+  @apply relative flex items-center select-none;
+}
+
+.tabs__tab {
+  @apply inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-muted-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+.tabs__indicator {
+  @apply absolute z-0;
+}
+
+.tabs__panel {
+  @apply mt-2 outline-none focus-visible:outline-2 focus-visible:outline-ring;
+}

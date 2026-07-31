@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A set of collapsible panels with headings.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "accordion.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "accordion.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "accordion.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "accordion.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

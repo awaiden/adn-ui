@@ -1,0 +1,76 @@
+---
+title: Tooltip
+subtitle: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+description: A high-quality, unstyled React tooltip component built with @base-ui/react for hint popups.
+---
+
+import { TooltipDemo } from "@/components/ui/tooltip/tooltip-demo";
+
+The `Tooltip` component provides accessible hint popups on hover or focus.
+
+## Usage
+
+```tsx
+import { Tooltip } from "@/components/ui/tooltip";
+
+export function ExampleTooltip() {
+  return (
+    <Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger className="px-3 py-1.5 border rounded">Hover Me</Tooltip.Trigger>
+        <Tooltip.Portal>
+          <Tooltip.Positioner sideOffset={6}>
+            <Tooltip.Popup>
+              <Tooltip.Arrow />
+              Useful tooltip hint
+            </Tooltip.Popup>
+          </Tooltip.Positioner>
+        </Tooltip.Portal>
+      </Tooltip.Root>
+    </Tooltip.Provider>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <TooltipDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Tooltip } from "@base-ui/react/tooltip";
+
+<Tooltip.Provider>
+  <Tooltip.Root>
+    <Tooltip.Trigger />
+    <Tooltip.Portal>
+      <Tooltip.Positioner>
+        <Tooltip.Popup>
+          <Tooltip.Arrow />
+        </Tooltip.Popup>
+      </Tooltip.Positioner>
+    </Tooltip.Portal>
+  </Tooltip.Root>
+</Tooltip.Provider>;
+```
+
+## API Reference
+
+### Tooltip.Root Props
+
+| Prop          | Type                  | Default     | Description                                                |
+| :------------ | :-------------------- | :---------- | :--------------------------------------------------------- |
+| `open`        | `boolean`             | `undefined` | Controlled visibility state of the tooltip popup.          |
+| `defaultOpen` | `boolean`             | `false`     | Initial uncontrolled open state.                           |
+| `delay`       | `number`              | `undefined` | Delay in milliseconds before opening the tooltip on hover. |
+| `variant`     | `'default' \| 'dark'` | `'dark'`    | Visual color theme for the tooltip popup and arrow.        |
+
+### Tooltip.Positioner Props
+
+| Prop         | Type                                     | Default | Description                                               |
+| :----------- | :--------------------------------------- | :------ | :-------------------------------------------------------- |
+| `side`       | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | Preferred side placement relative to the trigger.         |
+| `sideOffset` | `number`                                 | `6`     | Distance in pixels between the trigger and tooltip popup. |

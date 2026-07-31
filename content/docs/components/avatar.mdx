@@ -1,0 +1,90 @@
+---
+title: Avatar
+subtitle: An easily stylable avatar component.
+description: A high-quality, unstyled React avatar component built with @base-ui/react for user profile pictures and fallbacks.
+---
+
+import { AvatarDemo } from "@/components/ui/avatar/avatar-demo";
+
+The `Avatar` component displays a user profile picture, initials, or fallback icon.
+
+## Usage
+
+```tsx
+import { Avatar } from "@/components/ui/avatar";
+
+export function ExampleAvatar() {
+  return (
+    <Avatar.Root size="md" shape="circle">
+      <Avatar.Image src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80" />
+      <Avatar.Fallback delay={600}>LT</Avatar.Fallback>
+    </Avatar.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="flex items-center gap-4 p-4 border rounded-xl my-4">
+  <AvatarDemo fallback="LT" size="md" />
+  <AvatarDemo fallback="JD" shape="rounded" size="md" />
+  <AvatarDemo fallback="AB" shape="square" size="md" />
+  <AvatarDemo fallback="FB" src="invalid-url" size="md" />
+</div>
+
+## Sizes
+
+<div className="flex items-end gap-4 p-4 border rounded-xl my-4">
+  <AvatarDemo fallback="SM" size="sm" />
+  <AvatarDemo fallback="MD" size="md" />
+  <AvatarDemo fallback="LG" size="lg" />
+  <AvatarDemo fallback="XL" size="xl" />
+</div>
+
+```tsx
+<Avatar.Root size="sm">...</Avatar.Root>
+<Avatar.Root size="md">...</Avatar.Root>
+<Avatar.Root size="lg">...</Avatar.Root>
+<Avatar.Root size="xl">...</Avatar.Root>
+```
+
+## Shapes
+
+<div className="flex items-center gap-4 p-4 border rounded-xl my-4">
+  <AvatarDemo fallback="CR" shape="circle" size="lg" />
+  <AvatarDemo fallback="RN" shape="rounded" size="lg" />
+  <AvatarDemo fallback="SQ" shape="square" size="lg" />
+</div>
+
+```tsx
+<Avatar.Root shape="circle">...</Avatar.Root>
+<Avatar.Root shape="rounded">...</Avatar.Root>
+<Avatar.Root shape="square">...</Avatar.Root>
+```
+
+## Anatomy
+
+```tsx
+import { Avatar } from "@base-ui/react/avatar";
+
+<Avatar.Root>
+  <Avatar.Image src="..." />
+  <Avatar.Fallback>LT</Avatar.Fallback>
+</Avatar.Root>;
+```
+
+## API Reference
+
+### Avatar.Root Props
+
+| Prop        | Type                                | Default     | Description             |
+| :---------- | :---------------------------------- | :---------- | :---------------------- |
+| `size`      | `'sm' \| 'md' \| 'lg' \| 'xl'`      | `'md'`      | Avatar dimensions.      |
+| `shape`     | `'circle' \| 'square' \| 'rounded'` | `'circle'`  | Border radius shape.    |
+| `className` | `string`                            | `undefined` | Additional CSS classes. |
+
+### Avatar.Fallback Props
+
+| Prop    | Type     | Default     | Description                            |
+| :------ | :------- | :---------- | :------------------------------------- |
+| `delay` | `number` | `undefined` | Delay in ms before rendering fallback. |

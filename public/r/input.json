@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "description": "A native input element that automatically works with Field and form controls.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/input/input.tsx",
+      "content": "\"use client\";\n\nimport \"./input.css\";\n\nimport type React from \"react\";\n\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport { cn } from \"tailwind-variants\";\n\nimport { InputContext } from \"./input.context\";\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, \"children\">;\n\nexport const InputRoot = ({\n  className,\n  size,\n  variant,\n  children,\n  dangerouslySetInnerHTML,\n  ...props\n}: InputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {\n  const slots = inputVariants({ size, variant });\n\n  const cleanProps = { ...props };\n  delete (cleanProps as any).children;\n  delete (cleanProps as any).dangerouslySetInnerHTML;\n\n  return (\n    <InputContext.Provider value={{ slots }}>\n      <BaseInput className={cn(slots.root(), className)} {...cleanProps} />\n    </InputContext.Provider>\n  );\n};\n\nexport const Input = InputRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/input/input.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const inputVariants = tv({\n  slots: {\n    root: \"input\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"input--sm\",\n      },\n      md: {\n        root: \"input--md\",\n      },\n      lg: {\n        root: \"input--lg\",\n      },\n    },\n    variant: {\n      default: {\n        root: \"input--default\",\n      },\n      outline: {\n        root: \"input--outline\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n    variant: \"default\",\n  },\n});\n\nexport type InputVariants = VariantProps<typeof inputVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/input/input.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { inputVariants } from \"./input.variants\";\n\nexport type InputContext = {\n  slots: ReturnType<typeof inputVariants>;\n};\n\nexport const InputContext = createContext<InputContext | null>(null);\n\nexport const useInputContext = () => {\n  const context = useContext(InputContext);\n  return context ?? { slots: inputVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/input/input.css",
+      "content": "@reference \"../../../app/global.css\";\n.input {\n  @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;\n}\n\n.input--sm {\n  @apply h-8 px-2 text-xs;\n}\n\n.input--md {\n  @apply h-9 px-3 text-sm;\n}\n\n.input--lg {\n  @apply h-10 px-4 text-base;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/input/index.ts",
+      "content": "import { Input, InputRoot } from \"./input\";\n\nexport const InputContainer = {\n  Root: InputRoot,\n};\n\nexport { Input, InputRoot };\n\nexport type { InputProps } from \"./input\";\nexport { InputContext, useInputContext } from \"./input.context\";\nexport { type InputVariants, inputVariants } from \"./input.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

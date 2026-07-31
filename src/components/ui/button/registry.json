@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "An interactive button component supporting variants and sizes.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

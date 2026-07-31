@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "A collapsible panel controlled by a trigger button.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "collapsible.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "collapsible.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "collapsible.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "collapsible.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

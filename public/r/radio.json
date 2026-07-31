@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio",
+  "title": "Radio",
+  "description": "An easily stylable radio button component and group.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/radio/radio.tsx",
+      "content": "\"use client\";\n\nimport \"./radio.css\";\n\nimport type React from \"react\";\n\nimport { Radio as BaseRadio } from \"@base-ui/react/radio\";\nimport { RadioGroup as BaseRadioGroup } from \"@base-ui/react/radio-group\";\nimport { cn } from \"tailwind-variants\";\n\nimport { RadioContext, useRadioContext } from \"./radio.context\";\nimport { radioVariants, type RadioVariants } from \"./radio.variants\";\n\nexport type RadioGroupProps = RadioVariants & React.ComponentProps<typeof BaseRadioGroup>;\n\nexport const RadioGroup = ({ children, className, size, ...props }: RadioGroupProps) => {\n  const slots = radioVariants({ size });\n\n  return (\n    <RadioContext.Provider value={{ slots }}>\n      <BaseRadioGroup className={cn(slots.group(), className)} {...props}>\n        {children}\n      </BaseRadioGroup>\n    </RadioContext.Provider>\n  );\n};\n\nexport const RadioGroupRoot = RadioGroup;\n\nexport type RadioProps = React.ComponentProps<typeof BaseRadio.Root>;\n\nexport const RadioRoot = ({ className, ...props }: RadioProps) => {\n  const { slots } = useRadioContext();\n  return <BaseRadio.Root className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const RadioItem = RadioRoot;\n\nexport type RadioIndicatorProps = React.ComponentProps<typeof BaseRadio.Indicator>;\n\nexport const RadioIndicator = ({ className, ...props }: RadioIndicatorProps) => {\n  const { slots } = useRadioContext();\n  return <BaseRadio.Indicator className={cn(slots.indicator(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/radio/radio.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const radioVariants = tv({\n  slots: {\n    group: \"radio-group\",\n    root: \"radio\",\n    indicator: \"radio__indicator\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"radio--sm\",\n        indicator: \"radio__indicator--sm\",\n      },\n      md: {\n        root: \"radio--md\",\n        indicator: \"radio__indicator--md\",\n      },\n      lg: {\n        root: \"radio--lg\",\n        indicator: \"radio__indicator--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type RadioVariants = VariantProps<typeof radioVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/radio/radio.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { radioVariants } from \"./radio.variants\";\n\nexport type RadioContext = {\n  slots: ReturnType<typeof radioVariants>;\n};\n\nexport const RadioContext = createContext<RadioContext | null>(null);\n\nexport const useRadioContext = () => {\n  const context = useContext(RadioContext);\n  return context ?? { slots: radioVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/radio/radio.css",
+      "content": "@reference \"../../../app/global.css\";\n.radio-group {\n  @apply flex flex-col gap-2 text-foreground;\n}\n\n.radio {\n  @apply inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full border border-input bg-background p-0 text-primary-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:border-primary data-checked:bg-primary data-invalid:border-destructive;\n}\n\n.radio--sm {\n  @apply size-3.5;\n}\n\n.radio--md {\n  @apply size-4;\n}\n\n.radio--lg {\n  @apply size-5;\n}\n\n.radio__indicator {\n  @apply flex items-center justify-center data-unchecked:hidden before:size-1.5 before:rounded-full before:bg-primary-foreground;\n}\n\n.radio__indicator--sm::before {\n  @apply size-1;\n}\n\n.radio__indicator--lg::before {\n  @apply size-2;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/radio/index.ts",
+      "content": "import { RadioGroup, RadioGroupRoot, RadioIndicator, RadioItem, RadioRoot } from \"./radio\";\n\nexport const Radio = {\n  Group: RadioGroup,\n  Indicator: RadioIndicator,\n  Item: RadioItem,\n  Root: RadioRoot,\n};\n\nexport { RadioGroup, RadioGroupRoot, RadioIndicator, RadioItem, RadioRoot };\n\nexport type { RadioGroupProps, RadioIndicatorProps, RadioProps } from \"./radio\";\nexport { RadioContext, useRadioContext } from \"./radio.context\";\nexport { type RadioVariants, radioVariants } from \"./radio.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

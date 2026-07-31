@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal dialog that interrupts the user with important information.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "alert-dialog.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "alert-dialog.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "alert-dialog.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "alert-dialog.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

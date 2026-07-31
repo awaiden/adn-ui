@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "A control that indicates whether a setting is on or off.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/switch/switch.tsx",
+      "content": "\"use client\";\n\nimport \"./switch.css\";\n\nimport type React from \"react\";\n\nimport { Switch as BaseSwitch } from \"@base-ui/react/switch\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SwitchContext, useSwitchContext } from \"./switch.context\";\nimport { switchVariants, type SwitchVariants } from \"./switch.variants\";\n\nexport type SwitchProps = SwitchVariants & React.ComponentProps<typeof BaseSwitch.Root>;\n\nexport const SwitchRoot = ({ children, className, size, ...props }: SwitchProps) => {\n  const slots = switchVariants({ size });\n\n  return (\n    <SwitchContext.Provider value={{ slots }}>\n      <BaseSwitch.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseSwitch.Root>\n    </SwitchContext.Provider>\n  );\n};\n\nexport type SwitchThumbProps = React.ComponentProps<typeof BaseSwitch.Thumb>;\n\nexport const SwitchThumb = ({ className, ...props }: SwitchThumbProps) => {\n  const { slots } = useSwitchContext();\n  return <BaseSwitch.Thumb className={cn(slots.thumb(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/switch/switch.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const switchVariants = tv({\n  slots: {\n    root: \"switch\",\n    thumb: \"switch__thumb\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"switch--sm\",\n        thumb: \"switch__thumb--sm\",\n      },\n      md: {\n        root: \"switch--md\",\n        thumb: \"switch__thumb--md\",\n      },\n      lg: {\n        root: \"switch--lg\",\n        thumb: \"switch__thumb--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type SwitchVariants = VariantProps<typeof switchVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/switch/switch.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { switchVariants } from \"./switch.variants\";\n\nexport type SwitchContext = {\n  slots: ReturnType<typeof switchVariants>;\n};\n\nexport const SwitchContext = createContext<SwitchContext | null>(null);\n\nexport const useSwitchContext = () => {\n  const context = useContext(SwitchContext);\n  return context ?? { slots: switchVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/switch/switch.css",
+      "content": "@reference \"../../../app/global.css\";\n.switch {\n  @apply inline-flex cursor-pointer items-center rounded-full border-2 border-transparent p-0.5 transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary bg-input data-invalid:border-destructive select-none;\n}\n\n.switch--sm {\n  @apply h-4 w-7;\n}\n\n.switch--md {\n  @apply h-6 w-11;\n}\n\n.switch--lg {\n  @apply h-7 w-14;\n}\n\n.switch__thumb {\n  @apply pointer-events-none block rounded-full bg-background shadow-lg ring-0 transition-transform data-checked:translate-x-full data-unchecked:translate-x-0;\n}\n\n.switch__thumb--sm {\n  @apply size-3 data-checked:translate-x-3;\n}\n\n.switch__thumb--md {\n  @apply size-5 data-checked:translate-x-5;\n}\n\n.switch__thumb--lg {\n  @apply size-6 data-checked:translate-x-7;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/switch/index.ts",
+      "content": "import { SwitchRoot, SwitchThumb } from \"./switch\";\n\nexport const Switch = {\n  Root: SwitchRoot,\n  Thumb: SwitchThumb,\n};\n\nexport { SwitchRoot, SwitchThumb };\n\nexport type { SwitchProps, SwitchThumbProps } from \"./switch\";\nexport { SwitchContext, useSwitchContext } from \"./switch.context\";\nexport { type SwitchVariants, switchVariants } from \"./switch.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

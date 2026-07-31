@@ -1,0 +1,54 @@
+---
+title: Switch
+subtitle: A control that indicates whether a setting is on or off.
+description: A high-quality, unstyled React switch toggle component built with @base-ui/react.
+---
+
+import { SwitchDemo } from "@/components/ui/switch/switch-demo";
+
+The `Switch` component toggles the state of a single setting between enabled (on) and disabled (off).
+
+## Usage
+
+```tsx
+import { Switch } from "@/components/ui/switch";
+
+export function ExampleSwitch() {
+  return (
+    <label className="flex items-center gap-3 text-sm font-medium">
+      <Switch.Root defaultChecked>
+        <Switch.Thumb />
+      </Switch.Root>
+      Enable Airplane Mode
+    </label>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <SwitchDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Switch } from "@base-ui/react/switch";
+
+<Switch.Root>
+  <Switch.Thumb />
+</Switch.Root>;
+```
+
+## API Reference
+
+### Switch.Root Props
+
+| Prop              | Type                         | Default     | Description                                     |
+| :---------------- | :--------------------------- | :---------- | :---------------------------------------------- |
+| `checked`         | `boolean`                    | `undefined` | Controlled toggle state of the switch.          |
+| `defaultChecked`  | `boolean`                    | `false`     | Initial uncontrolled toggle state.              |
+| `onCheckedChange` | `(checked: boolean) => void` | `undefined` | Event handler called when toggle state changes. |
+| `disabled`        | `boolean`                    | `false`     | Disables user interaction.                      |
+| `size`            | `'sm' \| 'md' \| 'lg'`       | `'md'`      | Physical size variant of the switch control.    |

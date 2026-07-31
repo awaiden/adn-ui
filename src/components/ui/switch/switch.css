@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.switch {
+  @apply inline-flex cursor-pointer items-center rounded-full border-2 border-transparent p-0.5 transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary bg-input data-invalid:border-destructive select-none;
+}
+
+.switch--sm {
+  @apply h-4 w-7;
+}
+
+.switch--md {
+  @apply h-6 w-11;
+}
+
+.switch--lg {
+  @apply h-7 w-14;
+}
+
+.switch__thumb {
+  @apply pointer-events-none block rounded-full bg-background shadow-lg ring-0 transition-transform data-checked:translate-x-full data-unchecked:translate-x-0;
+}
+
+.switch__thumb--sm {
+  @apply size-3 data-checked:translate-x-3;
+}
+
+.switch__thumb--md {
+  @apply size-5 data-checked:translate-x-5;
+}
+
+.switch__thumb--lg {
+  @apply size-6 data-checked:translate-x-7;
+}

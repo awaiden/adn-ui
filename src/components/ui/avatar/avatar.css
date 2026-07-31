@@ -1,0 +1,40 @@
+@reference "../../../app/global.css";
+.avatar {
+  @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted text-muted-foreground select-none align-middle font-medium;
+}
+
+.avatar--sm {
+  @apply h-8 w-8 text-xs;
+}
+
+.avatar--md {
+  @apply h-10 w-10 text-sm;
+}
+
+.avatar--lg {
+  @apply h-12 w-12 text-base;
+}
+
+.avatar--xl {
+  @apply h-16 w-16 text-lg;
+}
+
+.avatar--circle {
+  @apply rounded-full;
+}
+
+.avatar--square {
+  @apply rounded-none;
+}
+
+.avatar--rounded {
+  @apply rounded-lg;
+}
+
+.avatar__image {
+  @apply h-full w-full object-cover;
+}
+
+.avatar__fallback {
+  @apply flex h-full w-full items-center justify-center font-semibold uppercase;
+}

@@ -1,0 +1,16 @@
+@reference "../../../app/global.css";
+.input {
+  @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;
+}
+
+.input--sm {
+  @apply h-8 px-2 text-xs;
+}
+
+.input--md {
+  @apply h-9 px-3 text-sm;
+}
+
+.input--lg {
+  @apply h-10 px-4 text-base;
+}

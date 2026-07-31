@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Displays the path to the current resource using a hierarchy of links.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "breadcrumb.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "breadcrumb.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "breadcrumb.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "breadcrumb.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

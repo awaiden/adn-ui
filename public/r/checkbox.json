@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "A control that allows toggling between checked and unchecked states.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/checkbox/checkbox.tsx",
+      "content": "\"use client\";\n\nimport \"./checkbox.css\";\n\nimport type React from \"react\";\n\nimport { Checkbox as BaseCheckbox } from \"@base-ui/react/checkbox\";\nimport { cn } from \"tailwind-variants\";\n\nimport { CheckboxContext, useCheckboxContext } from \"./checkbox.context\";\nimport { checkboxVariants, type CheckboxVariants } from \"./checkbox.variants\";\n\nexport type CheckboxProps = CheckboxVariants & React.ComponentProps<typeof BaseCheckbox.Root>;\n\nexport const CheckboxRoot = ({ children, className, size, variant, ...props }: CheckboxProps) => {\n  const slots = checkboxVariants({ size, variant });\n\n  return (\n    <CheckboxContext.Provider value={{ slots }}>\n      <BaseCheckbox.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseCheckbox.Root>\n    </CheckboxContext.Provider>\n  );\n};\n\nexport type CheckboxIndicatorProps = React.ComponentProps<typeof BaseCheckbox.Indicator>;\n\nexport const CheckboxIndicator = ({ children, className, ...props }: CheckboxIndicatorProps) => {\n  const { slots } = useCheckboxContext();\n  return (\n    <BaseCheckbox.Indicator className={cn(slots.indicator(), className)} {...props}>\n      {children ?? (\n        <svg\n          className=\"h-full w-full stroke-current\"\n          fill=\"none\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"3\"\n          viewBox=\"0 0 24 24\"\n        >\n          <polyline points=\"20 6 9 17 4 12\" />\n        </svg>\n      )}\n    </BaseCheckbox.Indicator>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox/checkbox.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const checkboxVariants = tv({\n  slots: {\n    root: \"checkbox\",\n    indicator: \"checkbox__indicator\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"checkbox--sm\",\n        indicator: \"checkbox__indicator--sm\",\n      },\n      md: {\n        root: \"checkbox--md\",\n        indicator: \"checkbox__indicator--md\",\n      },\n      lg: {\n        root: \"checkbox--lg\",\n        indicator: \"checkbox__indicator--lg\",\n      },\n    },\n    variant: {\n      default: {\n        root: \"checkbox--default\",\n      },\n      outline: {\n        root: \"checkbox--outline\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n    variant: \"default\",\n  },\n});\n\nexport type CheckboxVariants = VariantProps<typeof checkboxVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox/checkbox.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { checkboxVariants } from \"./checkbox.variants\";\n\nexport type CheckboxContext = {\n  slots: ReturnType<typeof checkboxVariants>;\n};\n\nexport const CheckboxContext = createContext<CheckboxContext | null>(null);\n\nexport const useCheckboxContext = () => {\n  const context = useContext(CheckboxContext);\n  return context ?? { slots: checkboxVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox/checkbox.css",
+      "content": "@reference \"../../../app/global.css\";\n.checkbox {\n  @apply inline-flex shrink-0 items-center justify-center rounded-sm border border-input bg-background p-0 text-primary-foreground shadow-xs transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary data-checked:border-primary data-indeterminate:bg-primary data-indeterminate:border-primary;\n}\n\n.checkbox--sm {\n  @apply h-4 w-4;\n}\n\n.checkbox--md {\n  @apply h-5 w-5;\n}\n\n.checkbox--lg {\n  @apply h-6 w-6;\n}\n\n.checkbox__indicator {\n  @apply flex items-center justify-center text-current data-unchecked:hidden;\n}\n\n.checkbox__indicator--sm {\n  @apply h-3 w-3;\n}\n\n.checkbox__indicator--md {\n  @apply h-3.5 w-3.5;\n}\n\n.checkbox__indicator--lg {\n  @apply h-4 w-4;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/checkbox/index.ts",
+      "content": "import { CheckboxIndicator, CheckboxRoot } from \"./checkbox\";\n\nexport const Checkbox = {\n  Indicator: CheckboxIndicator,\n  Root: CheckboxRoot,\n};\n\nexport { CheckboxIndicator, CheckboxRoot };\n\nexport type { CheckboxIndicatorProps, CheckboxProps } from \"./checkbox\";\nexport { CheckboxContext, useCheckboxContext } from \"./checkbox.context\";\nexport { type CheckboxVariants, checkboxVariants } from \"./checkbox.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "title": "Table",
+  "description": "A responsive table component.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/table/table.tsx",
+      "content": "\"use client\";\n\nimport \"./table.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { TableContext, useTableContext } from \"./table.context\";\nimport { tableVariants, type TableVariants } from \"./table.variants\";\n\nexport type TableProps = TableVariants & React.HTMLAttributes<HTMLTableElement>;\n\nexport const TableRoot = ({ children, className, ...props }: TableProps) => {\n  const slots = tableVariants();\n\n  return (\n    <TableContext.Provider value={{ slots }}>\n      <div className={slots.root()}>\n        <table className={cn(slots.table(), className)} {...props}>\n          {children}\n        </table>\n      </div>\n    </TableContext.Provider>\n  );\n};\n\nexport type TableHeaderProps = React.HTMLAttributes<HTMLTableSectionElement>;\n\nexport const TableHeader = ({ className, ...props }: TableHeaderProps) => {\n  const { slots } = useTableContext();\n  return <thead className={cn(slots.header(), className)} {...props} />;\n};\n\nexport type TableBodyProps = React.HTMLAttributes<HTMLTableSectionElement>;\n\nexport const TableBody = ({ className, ...props }: TableBodyProps) => {\n  const { slots } = useTableContext();\n  return <tbody className={cn(slots.body(), className)} {...props} />;\n};\n\nexport type TableFooterProps = React.HTMLAttributes<HTMLTableSectionElement>;\n\nexport const TableFooter = ({ className, ...props }: TableFooterProps) => {\n  const { slots } = useTableContext();\n  return <tfoot className={cn(slots.footer(), className)} {...props} />;\n};\n\nexport type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;\n\nexport const TableRow = ({ className, ...props }: TableRowProps) => {\n  const { slots } = useTableContext();\n  return <tr className={cn(slots.row(), className)} {...props} />;\n};\n\nexport type TableHeadProps = React.ThHTMLAttributes<HTMLTableCellElement>;\n\nexport const TableHead = ({ className, ...props }: TableHeadProps) => {\n  const { slots } = useTableContext();\n  return <th className={cn(slots.head(), className)} {...props} />;\n};\n\nexport type TableCellProps = React.TdHTMLAttributes<HTMLTableCellElement>;\n\nexport const TableCell = ({ className, ...props }: TableCellProps) => {\n  const { slots } = useTableContext();\n  return <td className={cn(slots.cell(), className)} {...props} />;\n};\n\nexport type TableCaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>;\n\nexport const TableCaption = ({ className, ...props }: TableCaptionProps) => {\n  const { slots } = useTableContext();\n  return <caption className={cn(slots.caption(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/table/table.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const tableVariants = tv({\n  slots: {\n    root: \"table-container\",\n    table: \"table\",\n    header: \"table__header\",\n    body: \"table__body\",\n    footer: \"table__footer\",\n    row: \"table__row\",\n    head: \"table__head\",\n    cell: \"table__cell\",\n    caption: \"table__caption\",\n  },\n});\n\nexport type TableVariants = VariantProps<typeof tableVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/table/table.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { tableVariants } from \"./table.variants\";\n\nexport type TableContext = {\n  slots: ReturnType<typeof tableVariants>;\n};\n\nexport const TableContext = createContext<TableContext | null>(null);\n\nexport const useTableContext = () => {\n  const context = useContext(TableContext);\n  return context ?? { slots: tableVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/table/table.css",
+      "content": "@reference \"../../../app/global.css\";\n.table-container {\n  @apply relative w-full overflow-auto;\n}\n\n.table {\n  @apply w-full caption-bottom text-sm;\n}\n\n.table__header {\n  @apply border-b border-border;\n}\n\n.table__body {\n  @apply [&_tr:last-child]:border-0;\n}\n\n.table__footer {\n  @apply border-t border-border bg-muted/50 font-medium [&>tr]:last:border-b-0;\n}\n\n.table__row {\n  @apply border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted;\n}\n\n.table__head {\n  @apply h-10 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0;\n}\n\n.table__cell {\n  @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;\n}\n\n.table__caption {\n  @apply mt-4 text-sm text-muted-foreground;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/table/index.ts",
+      "content": "import {\n  TableBody,\n  TableCaption,\n  TableCell,\n  TableFooter,\n  TableHead,\n  TableHeader,\n  TableRoot,\n  TableRow,\n} from \"./table\";\n\nexport const Table = {\n  Body: TableBody,\n  Caption: TableCaption,\n  Cell: TableCell,\n  Footer: TableFooter,\n  Head: TableHead,\n  Header: TableHeader,\n  Root: TableRoot,\n  Row: TableRow,\n};\n\nexport {\n  TableBody,\n  TableCaption,\n  TableCell,\n  TableFooter,\n  TableHead,\n  TableHeader,\n  TableRoot,\n  TableRow,\n};\n\nexport type {\n  TableBodyProps,\n  TableCaptionProps,\n  TableCellProps,\n  TableFooterProps,\n  TableHeadProps,\n  TableHeaderProps,\n  TableProps,\n  TableRowProps,\n} from \"./table\";\nexport { TableContext, useTableContext } from \"./table.context\";\nexport { type TableVariants, tableVariants } from \"./table.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

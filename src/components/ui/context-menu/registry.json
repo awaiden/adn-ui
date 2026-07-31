@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "A menu that appears at the pointer on right click or long press.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "context-menu.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "context-menu.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "context-menu.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "context-menu.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

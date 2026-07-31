@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "tooltip.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "tooltip.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "tooltip.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "tooltip.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

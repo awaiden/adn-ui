@@ -1,0 +1,122 @@
+---
+title: Accordion
+subtitle: A set of collapsible panels with headings.
+description: A high-quality, unstyled React accordion component powered by @base-ui/react that displays a set of collapsible panels with headings.
+---
+
+import { AccordionDemo } from "@/components/ui/accordion/accordion-demo";
+
+The `Accordion` component displays a set of collapsible panels with headings, built on top of `@base-ui/react/accordion` primitives.
+
+## Usage
+
+```tsx
+import { Accordion } from "@/components/ui/accordion";
+
+export function ExampleAccordion() {
+  return (
+    <Accordion.Root>
+      <Accordion.Item>
+        <Accordion.Header>
+          <Accordion.Trigger>What is adn-ui?</Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel>
+          adn-ui is a modern component library built with Astro, React 19, Tailwind CSS v4, and Base
+          UI.
+        </Accordion.Panel>
+      </Accordion.Item>
+
+      <Accordion.Item>
+        <Accordion.Header>
+          <Accordion.Trigger>Is it customizable?</Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Panel>
+          Yes! Every slot component uses tailwind-variants and supports custom classes.
+        </Accordion.Panel>
+      </Accordion.Item>
+    </Accordion.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4 max-w-lg">
+  <AccordionDemo variant="default" />
+</div>
+
+## Variants
+
+### Default
+
+The standard accordion card layout with borders and background.
+
+<div className="p-4 border rounded-xl my-4 max-w-lg">
+  <AccordionDemo variant="default" />
+</div>
+
+```tsx
+<Accordion.Root variant="default">
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger>What is Base UI?</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>
+      Base UI is a library of high-quality unstyled React components for design systems and web
+      apps.
+    </Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+### Multiple Open Panels
+
+Use the `multiple` prop to allow multiple panels to be open simultaneously.
+
+<div className="p-4 border rounded-xl my-4 max-w-lg">
+  <AccordionDemo multiple variant="outline" />
+</div>
+
+```tsx
+<Accordion.Root multiple variant="outline">
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger>First Panel</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>Multiple panels can stay expanded at once.</Accordion.Panel>
+  </Accordion.Item>
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger>Second Panel</Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel>This panel can also be expanded at the same time.</Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+## Structure & Anatomy
+
+```tsx
+import { Accordion } from "@base-ui/react/accordion";
+
+<Accordion.Root>
+  <Accordion.Item>
+    <Accordion.Header>
+      <Accordion.Trigger />
+    </Accordion.Header>
+    <Accordion.Panel />
+  </Accordion.Item>
+</Accordion.Root>;
+```
+
+## API Reference
+
+### Accordion.Root
+
+| Prop           | Type                                | Default     | Description                                       |
+| :------------- | :---------------------------------- | :---------- | :------------------------------------------------ |
+| `variant`      | `'default' \| 'outline' \| 'ghost'` | `'default'` | Visual styling variant.                           |
+| `multiple`     | `boolean`                           | `false`     | Allows multiple panels to be open simultaneously. |
+| `defaultValue` | `Array`                             | `undefined` | Initially open item value(s).                     |
+| `value`        | `Array`                             | `undefined` | Controlled open item value(s).                    |
+| `disabled`     | `boolean`                           | `false`     | Disables interaction across the component.        |

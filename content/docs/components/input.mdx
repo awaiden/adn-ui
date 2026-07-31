@@ -1,0 +1,64 @@
+---
+title: Input
+subtitle: A native input element that automatically works with Field.
+description: A high-quality, unstyled React input component built with @base-ui/react that integrates seamlessly with Field and form state.
+---
+
+import { InputDemo } from "@/components/ui/input/input-demo";
+
+The `Input` component renders an accessible form text input with customizable size variants and focus state styling.
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input";
+
+export function ExampleInput() {
+  return (
+    <label className="flex flex-col items-start gap-1 text-sm font-medium">
+      Name
+      <Input placeholder="e.g. Colm Tuite" />
+    </label>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <InputDemo placeholder="Enter text..." size="md" />
+</div>
+
+## Sizes
+
+<div className="flex flex-col gap-3 p-4 border rounded-xl my-4">
+  <InputDemo placeholder="Small size..." size="sm" />
+  <InputDemo placeholder="Medium size..." size="md" />
+  <InputDemo placeholder="Large size..." size="lg" />
+</div>
+
+```tsx
+<Input size="sm" placeholder="Small..." />
+<Input size="md" placeholder="Medium..." />
+<Input size="lg" placeholder="Large..." />
+```
+
+## Anatomy
+
+```tsx
+import { Input } from "@base-ui/react/input";
+
+<Input />;
+```
+
+## API Reference
+
+### Input Props
+
+| Prop            | Type                      | Default     | Description                        |
+| :-------------- | :------------------------ | :---------- | :--------------------------------- |
+| `size`          | `'sm' \| 'md' \| 'lg'`    | `'md'`      | Dimension size of the input.       |
+| `value`         | `string`                  | `undefined` | Controlled input value.            |
+| `defaultValue`  | `string`                  | `undefined` | Initial uncontrolled input value.  |
+| `onValueChange` | `(value: string) => void` | `undefined` | Callback fired when value changes. |
+| `disabled`      | `boolean`                 | `false`     | Disables user interaction.         |

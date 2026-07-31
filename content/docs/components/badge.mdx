@@ -1,0 +1,34 @@
+---
+title: Badge
+subtitle: Displays a badge or a component that looks like a badge.
+description: A customizable badge component for status indicators, counts, and tags.
+---
+
+import { BadgeDemo } from "@/components/ui/badge/badge-demo";
+
+The `Badge` component renders small visual indicators for statuses, categories, or notifications.
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge";
+
+export function ExampleBadge() {
+  return <Badge.Root variant="secondary">New</Badge.Root>;
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <BadgeDemo />
+</div>
+
+## API Reference
+
+### Badge.Root Props
+
+| Prop      | Type                                                     | Default     | Description                      |
+| :-------- | :------------------------------------------------------- | :---------- | :------------------------------- |
+| `variant` | `'default' \| 'secondary' \| 'destructive' \| 'outline'` | `'default'` | Visual color style of the badge. |
+| `size`    | `'sm' \| 'md' \| 'lg'`                                   | `'md'`      | Size variant of the badge.       |

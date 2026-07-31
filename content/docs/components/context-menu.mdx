@@ -1,0 +1,73 @@
+---
+title: Context Menu
+subtitle: A menu that appears at the pointer on right click or long press.
+description: A high-quality, unstyled React context menu component built with @base-ui/react that appears at the pointer on right click or long press.
+---
+
+import { ContextMenuDemo } from "@/components/ui/context-menu/context-menu-demo";
+
+The `ContextMenu` component displays a contextual action menu triggered by right clicking or long pressing an active area.
+
+## Usage
+
+```tsx
+import { ContextMenu } from "@/components/ui/context-menu";
+
+export function ExampleContextMenu() {
+  return (
+    <ContextMenu.Root>
+      <ContextMenu.Trigger className="p-8 border border-dashed rounded-md">
+        Right click here
+      </ContextMenu.Trigger>
+      <ContextMenu.Portal>
+        <ContextMenu.Positioner>
+          <ContextMenu.Popup>
+            <ContextMenu.Item>Add to Library</ContextMenu.Item>
+            <ContextMenu.Item>Add to Playlist</ContextMenu.Item>
+            <ContextMenu.Separator />
+            <ContextMenu.Item>Favorite</ContextMenu.Item>
+          </ContextMenu.Popup>
+        </ContextMenu.Positioner>
+      </ContextMenu.Portal>
+    </ContextMenu.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ContextMenuDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { ContextMenu } from "@base-ui/react/context-menu";
+
+<ContextMenu.Root>
+  <ContextMenu.Trigger />
+  <ContextMenu.Portal>
+    <ContextMenu.Positioner>
+      <ContextMenu.Popup>
+        <ContextMenu.Item />
+        <ContextMenu.Separator />
+        <ContextMenu.SubmenuRoot>
+          <ContextMenu.SubmenuTrigger />
+        </ContextMenu.SubmenuRoot>
+      </ContextMenu.Popup>
+    </ContextMenu.Positioner>
+  </ContextMenu.Portal>
+</ContextMenu.Root>;
+```
+
+## API Reference
+
+### ContextMenu.Root Props
+
+| Prop           | Type                      | Default     | Description                                 |
+| :------------- | :------------------------ | :---------- | :------------------------------------------ |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                      |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.            |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Callback fired when open state changes.     |
+| `disabled`     | `boolean`                 | `false`     | Disables interaction with the context menu. |

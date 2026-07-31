@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Displays the status of a task that takes a long time.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/progress/progress.tsx",
+      "content": "\"use client\";\n\nimport \"./progress.css\";\n\nimport type React from \"react\";\n\nimport { Progress as BaseProgress } from \"@base-ui/react/progress\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ProgressContext, useProgressContext } from \"./progress.context\";\nimport { progressVariants, type ProgressVariants } from \"./progress.variants\";\n\nexport type ProgressProps = ProgressVariants & React.ComponentProps<typeof BaseProgress.Root>;\n\nexport const ProgressRoot = ({ children, className, size, ...props }: ProgressProps) => {\n  const slots = progressVariants({ size });\n\n  return (\n    <ProgressContext.Provider value={{ slots }}>\n      <BaseProgress.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseProgress.Root>\n    </ProgressContext.Provider>\n  );\n};\n\nexport type ProgressTrackProps = React.ComponentProps<typeof BaseProgress.Track>;\n\nexport const ProgressTrack = ({ className, ...props }: ProgressTrackProps) => {\n  const { slots } = useProgressContext();\n  return <BaseProgress.Track className={cn(slots.track(), className)} {...props} />;\n};\n\nexport type ProgressIndicatorProps = React.ComponentProps<typeof BaseProgress.Indicator>;\n\nexport const ProgressIndicator = ({ className, ...props }: ProgressIndicatorProps) => {\n  const { slots } = useProgressContext();\n  return <BaseProgress.Indicator className={cn(slots.indicator(), className)} {...props} />;\n};\n\nexport type ProgressLabelProps = React.ComponentProps<typeof BaseProgress.Label>;\n\nexport const ProgressLabel = ({ className, ...props }: ProgressLabelProps) => {\n  const { slots } = useProgressContext();\n  return <BaseProgress.Label className={cn(slots.label(), className)} {...props} />;\n};\n\nexport type ProgressValueProps = React.ComponentProps<typeof BaseProgress.Value>;\n\nexport const ProgressValue = ({ className, ...props }: ProgressValueProps) => {\n  const { slots } = useProgressContext();\n  return <BaseProgress.Value className={cn(slots.value(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/progress/progress.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const progressVariants = tv({\n  slots: {\n    root: \"progress\",\n    track: \"progress__track\",\n    indicator: \"progress__indicator\",\n    label: \"progress__label\",\n    value: \"progress__value\",\n  },\n  variants: {\n    size: {\n      sm: {\n        track: \"progress__track--sm\",\n      },\n      md: {\n        track: \"progress__track--md\",\n      },\n      lg: {\n        track: \"progress__track--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type ProgressVariants = VariantProps<typeof progressVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/progress/progress.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { progressVariants } from \"./progress.variants\";\n\nexport type ProgressContext = {\n  slots: ReturnType<typeof progressVariants>;\n};\n\nexport const ProgressContext = createContext<ProgressContext | null>(null);\n\nexport const useProgressContext = () => {\n  const context = useContext(ProgressContext);\n  return context ?? { slots: progressVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/progress/progress.css",
+      "content": "@reference \"../../../app/global.css\";\n.progress {\n  @apply grid w-full max-w-sm grid-cols-2 gap-y-1.5 text-foreground;\n}\n\n.progress__label {\n  @apply text-sm font-medium text-foreground;\n}\n\n.progress__value {\n  @apply text-right text-sm text-muted-foreground;\n}\n\n.progress__track {\n  @apply col-span-2 relative w-full overflow-hidden rounded-full bg-secondary;\n}\n\n.progress__track--sm {\n  @apply h-1.5;\n}\n\n.progress__track--md {\n  @apply h-2.5;\n}\n\n.progress__track--lg {\n  @apply h-4;\n}\n\n.progress__indicator {\n  @apply h-full w-full flex-1 bg-primary transition-all duration-300 ease-in-out;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/progress/index.ts",
+      "content": "import {\n  ProgressIndicator,\n  ProgressLabel,\n  ProgressRoot,\n  ProgressTrack,\n  ProgressValue,\n} from \"./progress\";\n\nexport const Progress = {\n  Indicator: ProgressIndicator,\n  Label: ProgressLabel,\n  Root: ProgressRoot,\n  Track: ProgressTrack,\n  Value: ProgressValue,\n};\n\nexport { ProgressIndicator, ProgressLabel, ProgressRoot, ProgressTrack, ProgressValue };\n\nexport type {\n  ProgressIndicatorProps,\n  ProgressLabelProps,\n  ProgressProps,\n  ProgressTrackProps,\n  ProgressValueProps,\n} from \"./progress\";\nexport { ProgressContext, useProgressContext } from \"./progress.context\";\nexport { type ProgressVariants, progressVariants } from \"./progress.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "An easily stylable radio button component and group.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "radio.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "radio.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "radio.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "radio.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

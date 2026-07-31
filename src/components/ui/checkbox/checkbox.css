@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.checkbox {
+  @apply inline-flex shrink-0 items-center justify-center rounded-sm border border-input bg-background p-0 text-primary-foreground shadow-xs transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary data-checked:border-primary data-indeterminate:bg-primary data-indeterminate:border-primary;
+}
+
+.checkbox--sm {
+  @apply h-4 w-4;
+}
+
+.checkbox--md {
+  @apply h-5 w-5;
+}
+
+.checkbox--lg {
+  @apply h-6 w-6;
+}
+
+.checkbox__indicator {
+  @apply flex items-center justify-center text-current data-unchecked:hidden;
+}
+
+.checkbox__indicator--sm {
+  @apply h-3 w-3;
+}
+
+.checkbox__indicator--md {
+  @apply h-3.5 w-3.5;
+}
+
+.checkbox__indicator--lg {
+  @apply h-4 w-4;
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "preview-card",
+  "title": "Preview Card",
+  "description": "A popup that appears when a link is hovered, showing a preview snippet.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/preview-card/preview-card.tsx",
+      "content": "\"use client\";\n\nimport \"./preview-card.css\";\n\nimport type React from \"react\";\n\nimport { PreviewCard as BasePreviewCard } from \"@base-ui/react/preview-card\";\nimport { cn } from \"tailwind-variants\";\n\nimport { PreviewCardContext, usePreviewCardContext } from \"./preview-card.context\";\nimport { previewCardVariants, type PreviewCardVariants } from \"./preview-card.variants\";\n\nexport type PreviewCardProps = PreviewCardVariants &\n  React.ComponentProps<typeof BasePreviewCard.Root>;\n\nexport const PreviewCardRoot = ({ children, size, ...props }: PreviewCardProps) => {\n  const slots = previewCardVariants({ size });\n\n  return (\n    <PreviewCardContext.Provider value={{ slots }}>\n      <BasePreviewCard.Root {...props}>{children}</BasePreviewCard.Root>\n    </PreviewCardContext.Provider>\n  );\n};\n\nexport type PreviewCardTriggerProps = React.ComponentProps<typeof BasePreviewCard.Trigger>;\n\nexport const PreviewCardTrigger = ({ className, ...props }: PreviewCardTriggerProps) => {\n  const { slots } = usePreviewCardContext();\n  return <BasePreviewCard.Trigger className={cn(slots.trigger(), className)} {...props} />;\n};\n\nexport type PreviewCardPortalProps = React.ComponentProps<typeof BasePreviewCard.Portal>;\n\nexport const PreviewCardPortal = (props: PreviewCardPortalProps) => {\n  return <BasePreviewCard.Portal {...props} />;\n};\n\nexport type PreviewCardBackdropProps = React.ComponentProps<typeof BasePreviewCard.Backdrop>;\n\nexport const PreviewCardBackdrop = ({ className, ...props }: PreviewCardBackdropProps) => {\n  const { slots } = usePreviewCardContext();\n  return <BasePreviewCard.Backdrop className={cn(slots.backdrop(), className)} {...props} />;\n};\n\nexport type PreviewCardPositionerProps = React.ComponentProps<typeof BasePreviewCard.Positioner>;\n\nexport const PreviewCardPositioner = ({\n  className,\n  sideOffset = 8,\n  ...props\n}: PreviewCardPositionerProps) => {\n  const { slots } = usePreviewCardContext();\n  return (\n    <BasePreviewCard.Positioner\n      className={cn(slots.positioner(), className)}\n      sideOffset={sideOffset}\n      {...props}\n    />\n  );\n};\n\nexport type PreviewCardPopupProps = React.ComponentProps<typeof BasePreviewCard.Popup>;\n\nexport const PreviewCardPopup = ({ className, ...props }: PreviewCardPopupProps) => {\n  const { slots } = usePreviewCardContext();\n  return <BasePreviewCard.Popup className={cn(slots.popup(), className)} {...props} />;\n};\n\nexport type PreviewCardArrowProps = React.ComponentProps<typeof BasePreviewCard.Arrow>;\n\nexport const PreviewCardArrow = ({ className, ...props }: PreviewCardArrowProps) => {\n  const { slots } = usePreviewCardContext();\n  return <BasePreviewCard.Arrow className={cn(slots.arrow(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/preview-card/preview-card.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const previewCardVariants = tv({\n  slots: {\n    root: \"preview-card\",\n    trigger: \"preview-card__trigger\",\n    positioner: \"preview-card__positioner\",\n    popup: \"preview-card__popup\",\n    arrow: \"preview-card__arrow\",\n    backdrop: \"preview-card__backdrop\",\n  },\n  variants: {\n    size: {\n      sm: {\n        popup: \"preview-card__popup--sm\",\n      },\n      md: {\n        popup: \"preview-card__popup--md\",\n      },\n      lg: {\n        popup: \"preview-card__popup--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type PreviewCardVariants = VariantProps<typeof previewCardVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/preview-card/preview-card.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { previewCardVariants } from \"./preview-card.variants\";\n\nexport type PreviewCardContext = {\n  slots: ReturnType<typeof previewCardVariants>;\n};\n\nexport const PreviewCardContext = createContext<PreviewCardContext | null>(null);\n\nexport const usePreviewCardContext = () => {\n  const context = useContext(PreviewCardContext);\n  return context ?? { slots: previewCardVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/preview-card/preview-card.css",
+      "content": "@reference \"../../../app/global.css\";\n.preview-card__positioner {\n  @apply outline-none z-50;\n}\n\n.preview-card__popup {\n  @apply relative flex max-w-xs flex-col gap-2 rounded-lg border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;\n}\n\n.preview-card__trigger {\n  @apply cursor-pointer underline decoration-muted-foreground/50 underline-offset-2 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-ring;\n}\n\n.preview-card__arrow {\n  @apply fill-popover stroke-border;\n}\n\n.preview-card__backdrop {\n  @apply fixed inset-0 z-40 bg-black/50 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/preview-card/index.ts",
+      "content": "import { PreviewCard as BasePreviewCard } from \"@base-ui/react/preview-card\";\n\nimport {\n  PreviewCardArrow,\n  PreviewCardBackdrop,\n  PreviewCardPopup,\n  PreviewCardPortal,\n  PreviewCardPositioner,\n  PreviewCardRoot,\n  PreviewCardTrigger,\n} from \"./preview-card\";\n\nexport const PreviewCard = {\n  Arrow: PreviewCardArrow,\n  Backdrop: PreviewCardBackdrop,\n  Popup: PreviewCardPopup,\n  Portal: PreviewCardPortal,\n  Positioner: PreviewCardPositioner,\n  Root: PreviewCardRoot,\n  Trigger: PreviewCardTrigger,\n  createHandle: BasePreviewCard.createHandle,\n};\n\nexport {\n  PreviewCardArrow,\n  PreviewCardBackdrop,\n  PreviewCardPopup,\n  PreviewCardPortal,\n  PreviewCardPositioner,\n  PreviewCardRoot,\n  PreviewCardTrigger,\n};\n\nexport type {\n  PreviewCardArrowProps,\n  PreviewCardBackdropProps,\n  PreviewCardPopupProps,\n  PreviewCardPortalProps,\n  PreviewCardPositionerProps,\n  PreviewCardProps,\n  PreviewCardTriggerProps,\n} from \"./preview-card\";\nexport { PreviewCardContext, usePreviewCardContext } from \"./preview-card.context\";\nexport { type PreviewCardVariants, previewCardVariants } from \"./preview-card.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

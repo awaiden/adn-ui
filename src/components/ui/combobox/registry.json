@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "An input combined with a filterable popup list of predefined items.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "combobox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "combobox.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "combobox.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "combobox.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

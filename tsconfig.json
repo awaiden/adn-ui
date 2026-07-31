@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".storybook/preview.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/components/ui/**/*-demo.tsx",
+    "src/components/ui/**/*-demo.ts",
+    "src/components/ui/**/*.demo.tsx",
+    "src/components/ui/**/*.demo.ts",
+    "src/components/ui/**/*.stories.tsx",
+    "src/components/ui/**/*.stories.ts",
+    "src/components/ui/**/__tests__",
+    "src/components/ui/**/stories"
+  ]
+}

@@ -1,0 +1,88 @@
+---
+title: Checkbox Group
+subtitle: Provides shared state to a series of checkboxes.
+description: A high-quality, unstyled React checkbox group component built with @base-ui/react that provides shared state management for child checkboxes.
+---
+
+import { CheckboxGroupDemo } from "@/components/ui/checkbox-group/checkbox-group-demo";
+
+The `CheckboxGroup` component manages a shared selection state across a set of checkbox controls.
+
+## Usage
+
+```tsx
+import { CheckboxGroup } from "@/components/ui/checkbox-group";
+import { Checkbox } from "@/components/ui/checkbox";
+
+export function ExampleCheckboxGroup() {
+  return (
+    <CheckboxGroup.Root defaultValue={["fuji"]}>
+      <label className="flex items-center gap-2 text-sm">
+        <Checkbox.Root value="fuji">
+          <Checkbox.Indicator />
+        </Checkbox.Root>
+        Fuji
+      </label>
+      <label className="flex items-center gap-2 text-sm">
+        <Checkbox.Root value="gala">
+          <Checkbox.Indicator />
+        </Checkbox.Root>
+        Gala
+      </label>
+    </CheckboxGroup.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <CheckboxGroupDemo orientation="vertical" />
+</div>
+
+## Orientations
+
+### Vertical
+
+<div className="p-4 border rounded-xl my-4">
+  <CheckboxGroupDemo orientation="vertical" />
+</div>
+
+```tsx
+<CheckboxGroup.Root orientation="vertical">...</CheckboxGroup.Root>
+```
+
+### Horizontal
+
+<div className="p-4 border rounded-xl my-4">
+  <CheckboxGroupDemo orientation="horizontal" />
+</div>
+
+```tsx
+<CheckboxGroup.Root orientation="horizontal">...</CheckboxGroup.Root>
+```
+
+## Anatomy
+
+```tsx
+import { CheckboxGroup } from "@base-ui/react/checkbox-group";
+import { Checkbox } from "@base-ui/react/checkbox";
+
+<CheckboxGroup.Root>
+  <Checkbox.Root value="1">
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+</CheckboxGroup.Root>;
+```
+
+## API Reference
+
+### CheckboxGroup.Root Props
+
+| Prop            | Type                         | Default      | Description                                           |
+| :-------------- | :--------------------------- | :----------- | :---------------------------------------------------- |
+| `orientation`   | `'vertical' \| 'horizontal'` | `'vertical'` | Layout direction of the group.                        |
+| `value`         | `Array`                      | `undefined`  | Controlled array of selected checkbox values.         |
+| `defaultValue`  | `Array`                      | `[]`         | Initial uncontrolled selected checkbox values.        |
+| `onValueChange` | `(value: Array) => void`     | `undefined`  | Callback fired when selection changes.                |
+| `disabled`      | `boolean`                    | `false`      | Disables interaction for all checkboxes in the group. |

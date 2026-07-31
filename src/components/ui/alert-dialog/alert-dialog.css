@@ -1,0 +1,44 @@
+@reference "../../../app/global.css";
+.alert-dialog__backdrop {
+  @apply fixed inset-0 z-50 min-h-dvh bg-black/50 opacity-100 backdrop-blur-xs transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
+}
+
+.alert-dialog__popup {
+  @apply fixed top-1/2 left-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border border-border bg-card p-6 text-card-foreground shadow-lg transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-[0.96] data-ending-style:opacity-0 data-starting-style:scale-[0.96] data-starting-style:opacity-0;
+}
+
+.alert-dialog__popup--sm {
+  @apply w-full max-w-xs;
+}
+
+.alert-dialog__popup--md {
+  @apply w-full max-w-md;
+}
+
+.alert-dialog__popup--lg {
+  @apply w-full max-w-lg;
+}
+
+.alert-dialog__popup--default {
+  @apply border-border;
+}
+
+.alert-dialog__popup--destructive {
+  @apply border-destructive/30;
+}
+
+.alert-dialog__title {
+  @apply text-lg font-semibold leading-none tracking-tight text-foreground;
+}
+
+.alert-dialog__description {
+  @apply text-sm text-muted-foreground leading-normal;
+}
+
+.alert-dialog__trigger {
+  @apply inline-flex items-center justify-center;
+}
+
+.alert-dialog__close {
+  @apply inline-flex items-center justify-center;
+}

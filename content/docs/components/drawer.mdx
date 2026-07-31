@@ -1,0 +1,138 @@
+---
+title: Drawer
+subtitle: A panel that slides in from the edge of the screen.
+description: A high-quality, unstyled React drawer component with swipe-to-dismiss gestures built with @base-ui/react.
+---
+
+import { DrawerDemo } from "@/components/ui/drawer/drawer-demo";
+
+The `Drawer` component provides slide-in panels from any screen edge (`bottom`, `right`, `left`, `top`) with native swipe-to-dismiss gesture support.
+
+## Usage
+
+```tsx
+import { Drawer } from "@/components/ui/drawer";
+
+export function ExampleDrawer() {
+  return (
+    <Drawer.Root side="bottom">
+      <Drawer.Trigger className="px-4 py-2 border rounded">Open Drawer</Drawer.Trigger>
+      <Drawer.Portal>
+        <Drawer.Backdrop />
+        <Drawer.Viewport>
+          <Drawer.Popup>
+            <Drawer.Content>
+              <Drawer.Title>Drawer Title</Drawer.Title>
+              <Drawer.Description>Swipe down or click close to dismiss.</Drawer.Description>
+              <Drawer.Close className="mt-4 px-3 py-1 bg-secondary rounded">Close</Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Popup>
+        </Drawer.Viewport>
+      </Drawer.Portal>
+    </Drawer.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <DrawerDemo side="bottom" />
+</div>
+
+## Variants (Placement & Sides)
+
+The `side` prop controls which edge of the screen the drawer panel slides into view (`bottom`, `right`, `left`, `top`).
+
+### Bottom (Default)
+
+The `bottom` variant slides up from the bottom edge. Ideal for mobile sheets and quick action menus.
+
+<div className="p-4 border rounded-xl my-4">
+  <DrawerDemo side="bottom" />
+</div>
+
+```tsx
+<Drawer.Root side="bottom">
+  <Drawer.Trigger>Open Bottom Drawer</Drawer.Trigger>
+  ...
+</Drawer.Root>
+```
+
+### Right
+
+The `right` variant slides in from the right edge. Ideal for side panels, detail inspectors, and settings.
+
+<div className="p-4 border rounded-xl my-4">
+  <DrawerDemo side="right" />
+</div>
+
+```tsx
+<Drawer.Root side="right">
+  <Drawer.Trigger>Open Right Drawer</Drawer.Trigger>
+  ...
+</Drawer.Root>
+```
+
+### Left
+
+The `left` variant slides in from the left edge. Ideal for navigation sidebars and drawer menus.
+
+<div className="p-4 border rounded-xl my-4">
+  <DrawerDemo side="left" />
+</div>
+
+```tsx
+<Drawer.Root side="left">
+  <Drawer.Trigger>Open Left Drawer</Drawer.Trigger>
+  ...
+</Drawer.Root>
+```
+
+### Top
+
+The `top` variant slides down from the top edge. Ideal for notifications and top quick-access controls.
+
+<div className="p-4 border rounded-xl my-4">
+  <DrawerDemo side="top" />
+</div>
+
+```tsx
+<Drawer.Root side="top">
+  <Drawer.Trigger>Open Top Drawer</Drawer.Trigger>
+  ...
+</Drawer.Root>
+```
+
+## Anatomy
+
+```tsx
+import { Drawer } from "@base-ui/react/drawer";
+
+<Drawer.Root>
+  <Drawer.Trigger />
+  <Drawer.Portal>
+    <Drawer.Backdrop />
+    <Drawer.Viewport>
+      <Drawer.Popup>
+        <Drawer.Content>
+          <Drawer.Title />
+          <Drawer.Description />
+          <Drawer.Close />
+        </Drawer.Content>
+      </Drawer.Popup>
+    </Drawer.Viewport>
+  </Drawer.Portal>
+</Drawer.Root>;
+```
+
+## API Reference
+
+### Drawer.Root Props
+
+| Prop             | Type                                     | Default     | Description                                         |
+| :--------------- | :--------------------------------------- | :---------- | :-------------------------------------------------- |
+| `open`           | `boolean`                                | `undefined` | Controlled visibility state of the drawer.          |
+| `defaultOpen`    | `boolean`                                | `false`     | Initial uncontrolled open state.                    |
+| `side`           | `'bottom' \| 'top' \| 'left' \| 'right'` | `'bottom'`  | Edge from which the drawer panel slides into view.  |
+| `swipeDirection` | `'down' \| 'up' \| 'left' \| 'right'`    | `'down'`    | Direction required to swipe and dismiss the drawer. |

@@ -1,0 +1,56 @@
+@reference "../../../app/global.css";
+.autocomplete__input {
+  @apply flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.autocomplete__input--sm {
+  @apply h-8 text-xs px-2.5;
+}
+
+.autocomplete__input--md {
+  @apply h-9 text-sm px-3;
+}
+
+.autocomplete__input--lg {
+  @apply h-10 text-base px-3.5;
+}
+
+.autocomplete__positioner {
+  @apply outline-none z-50;
+}
+
+.autocomplete__popup {
+  @apply w-[var(--anchor-width)] max-w-[var(--available-width)] overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-all duration-100 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;
+}
+
+.autocomplete__list {
+  @apply outline-none overflow-y-auto scroll-py-1 p-1 overscroll-contain max-h-[min(20rem,var(--available-height))] data-empty:p-0;
+}
+
+.autocomplete__item {
+  @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm text-foreground outline-none transition-colors data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50;
+}
+
+.autocomplete__item--sm {
+  @apply px-2 py-1 text-xs;
+}
+
+.autocomplete__item--md {
+  @apply px-2.5 py-1.5 text-sm;
+}
+
+.autocomplete__item--lg {
+  @apply px-3 py-2 text-base;
+}
+
+.autocomplete__empty {
+  @apply p-3 text-center text-sm text-muted-foreground;
+}
+
+.autocomplete__status {
+  @apply p-2 text-xs text-muted-foreground;
+}
+
+.autocomplete__group-label {
+  @apply px-2 py-1.5 text-xs font-semibold text-muted-foreground;
+}

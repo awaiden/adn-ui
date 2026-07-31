@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.radio-group {
+  @apply flex flex-col gap-2 text-foreground;
+}
+
+.radio {
+  @apply inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full border border-input bg-background p-0 text-primary-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:border-primary data-checked:bg-primary data-invalid:border-destructive;
+}
+
+.radio--sm {
+  @apply size-3.5;
+}
+
+.radio--md {
+  @apply size-4;
+}
+
+.radio--lg {
+  @apply size-5;
+}
+
+.radio__indicator {
+  @apply flex items-center justify-center data-unchecked:hidden before:size-1.5 before:rounded-full before:bg-primary-foreground;
+}
+
+.radio__indicator--sm::before {
+  @apply size-1;
+}
+
+.radio__indicator--lg::before {
+  @apply size-2;
+}

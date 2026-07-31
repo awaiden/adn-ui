@@ -1,0 +1,77 @@
+---
+title: Popover
+subtitle: An accessible popup anchored to a button.
+description: A high-quality, unstyled React popover component built with @base-ui/react that displays an accessible popup anchored to a trigger button.
+---
+
+import { PopoverDemo } from "@/components/ui/popover/popover-demo";
+
+The `Popover` component displays rich content in an overlay floating container positioned relative to a trigger element.
+
+## Usage
+
+```tsx
+import { Popover } from "@/components/ui/popover";
+
+export function ExamplePopover() {
+  return (
+    <Popover.Root>
+      <Popover.Trigger>Notifications</Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Positioner sideOffset={8}>
+          <Popover.Popup>
+            <Popover.Close />
+            <Popover.Title>Notifications</Popover.Title>
+            <Popover.Description>You are all caught up.</Popover.Description>
+          </Popover.Popup>
+        </Popover.Positioner>
+      </Popover.Portal>
+    </Popover.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <PopoverDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Popover } from "@base-ui/react/popover";
+
+<Popover.Root>
+  <Popover.Trigger />
+  <Popover.Portal>
+    <Popover.Backdrop />
+    <Popover.Positioner>
+      <Popover.Popup>
+        <Popover.Arrow />
+        <Popover.Title />
+        <Popover.Description />
+        <Popover.Close />
+      </Popover.Popup>
+    </Popover.Positioner>
+  </Popover.Portal>
+</Popover.Root>;
+```
+
+## API Reference
+
+### Popover.Root Props
+
+| Prop           | Type                      | Default     | Description                                           |
+| :------------- | :------------------------ | :---------- | :---------------------------------------------------- |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                                |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.                      |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Event handler called when popover open state changes. |
+
+### Popover.Positioner Props
+
+| Prop         | Type                                     | Default    | Description                                   |
+| :----------- | :--------------------------------------- | :--------- | :-------------------------------------------- |
+| `side`       | `'top' \| 'right' \| 'bottom' \| 'left'` | `'bottom'` | Preferred placement side relative to trigger. |
+| `sideOffset` | `number`                                 | `8`        | Distance in pixels from trigger element.      |
+| `align`      | `'start' \| 'center' \| 'end'`           | `'center'` | Alignment along cross axis.                   |

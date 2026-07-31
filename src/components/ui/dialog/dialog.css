@@ -1,0 +1,32 @@
+@reference "../../../app/global.css";
+.dialog__backdrop {
+  @apply fixed inset-0 z-50 bg-black/80 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
+}
+
+.dialog__popup {
+  @apply fixed top-1/2 left-1/2 z-50 flex w-full max-w-lg -translate-x-1/2 -translate-y-1/2 flex-col gap-4 border border-border bg-background p-6 shadow-lg duration-100 ease-out transition-[scale,opacity] rounded-lg text-foreground data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+}
+
+.dialog__popup--sm {
+  @apply max-w-sm;
+}
+
+.dialog__popup--md {
+  @apply max-w-lg;
+}
+
+.dialog__popup--lg {
+  @apply max-w-2xl;
+}
+
+.dialog__title {
+  @apply text-lg font-semibold leading-none tracking-tight;
+}
+
+.dialog__description {
+  @apply text-sm text-muted-foreground;
+}
+
+.dialog__close {
+  @apply inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;
+}

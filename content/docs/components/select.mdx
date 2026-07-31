@@ -1,0 +1,100 @@
+---
+title: Select
+subtitle: A common form component for choosing a predefined value in a dropdown menu.
+description: A high-quality, unstyled React select dropdown component built with @base-ui/react.
+---
+
+import { SelectDemo } from "@/components/ui/select/select-demo";
+
+The `Select` component displays a customizable dropdown for picking single or multiple values from a list of options.
+
+## Usage
+
+```tsx
+import { Select } from "@/components/ui/select";
+
+const options = [
+  { label: "System", value: "system" },
+  { label: "Light", value: "light" },
+  { label: "Dark", value: "dark" },
+];
+
+export function ExampleSelect() {
+  return (
+    <Select.Root items={options} defaultValue="system">
+      <Select.Label>Theme</Select.Label>
+      <Select.Trigger>
+        <Select.Value placeholder="Select theme" />
+        <Select.Icon />
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Positioner sideOffset={4}>
+          <Select.Popup>
+            <Select.List>
+              {options.map((opt) => (
+                <Select.Item key={opt.value} value={opt.value}>
+                  <Select.ItemText>{opt.label}</Select.ItemText>
+                  <Select.ItemIndicator />
+                </Select.Item>
+              ))}
+            </Select.List>
+          </Select.Popup>
+        </Select.Positioner>
+      </Select.Portal>
+    </Select.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <SelectDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Select } from "@base-ui/react/select";
+
+<Select.Root>
+  <Select.Label />
+  <Select.Trigger>
+    <Select.Value />
+    <Select.Icon />
+  </Select.Trigger>
+
+  <Select.Portal>
+    <Select.Backdrop />
+    <Select.Positioner>
+      <Select.Popup>
+        <Select.ScrollUpArrow />
+        <Select.List>
+          <Select.Item>
+            <Select.ItemText />
+            <Select.ItemIndicator />
+          </Select.Item>
+        </Select.List>
+        <Select.ScrollDownArrow />
+      </Select.Popup>
+    </Select.Positioner>
+  </Select.Portal>
+</Select.Root>;
+```
+
+## API Reference
+
+### Select.Root Props
+
+| Prop           | Type                                   | Default     | Description                                      |
+| :------------- | :------------------------------------- | :---------- | :----------------------------------------------- |
+| `value`        | `any`                                  | `undefined` | Controlled value of the selected item.           |
+| `defaultValue` | `any`                                  | `undefined` | Initial uncontrolled selected item value.        |
+| `items`        | `Array<{ label: string, value: any }>` | `undefined` | Items array for automated value label mapping.   |
+| `multiple`     | `boolean`                              | `false`     | Enables selecting multiple items simultaneously. |
+
+### Select.Trigger Props
+
+| Prop       | Type      | Default | Description                   |
+| :--------- | :-------- | :------ | :---------------------------- |
+| `disabled` | `boolean` | `false` | Disables trigger interaction. |

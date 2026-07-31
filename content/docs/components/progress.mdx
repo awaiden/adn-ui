@@ -1,0 +1,58 @@
+---
+title: Progress
+subtitle: Displays the status of a task that takes a long time.
+description: A high-quality, unstyled React progress bar component built with @base-ui/react for task progress indication.
+---
+
+import { ProgressDemo } from "@/components/ui/progress/progress-demo";
+
+The `Progress` component visualizes task completion status with support for animated indicators, custom labels, and percentage formatting.
+
+## Usage
+
+```tsx
+import { Progress } from "@/components/ui/progress";
+
+export function ExampleProgress() {
+  return (
+    <Progress.Root value={65}>
+      <Progress.Label>Uploading Assets</Progress.Label>
+      <Progress.Value />
+      <Progress.Track>
+        <Progress.Indicator />
+      </Progress.Track>
+    </Progress.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ProgressDemo label="Exporting Data" />
+</div>
+
+## Anatomy
+
+```tsx
+import { Progress } from "@base-ui/react/progress";
+
+<Progress.Root>
+  <Progress.Label />
+  <Progress.Track>
+    <Progress.Indicator />
+  </Progress.Track>
+  <Progress.Value />
+</Progress.Root>;
+```
+
+## API Reference
+
+### Progress.Root Props
+
+| Prop    | Type                   | Default | Description                                                      |
+| :------ | :--------------------- | :------ | :--------------------------------------------------------------- |
+| `value` | `number \| null`       | `null`  | Current completion value. Set to `null` for indeterminate state. |
+| `min`   | `number`               | `0`     | Minimum progress value.                                          |
+| `max`   | `number`               | `100`   | Maximum progress value.                                          |
+| `size`  | `'sm' \| 'md' \| 'lg'` | `'md'`  | Progress track height size.                                      |

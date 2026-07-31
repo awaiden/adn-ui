@@ -1,0 +1,35 @@
+---
+title: Textarea
+subtitle: Displays a form textarea or a component that looks like a textarea.
+description: A multi-line input component for collecting text responses.
+---
+
+import { TextareaDemo } from "@/components/ui/textarea/textarea-demo";
+
+The `Textarea` component allows users to enter multi-line text input.
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea";
+
+export function ExampleTextarea() {
+  return <Textarea.Root placeholder="Enter description..." />;
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <TextareaDemo />
+</div>
+
+## API Reference
+
+### Textarea.Root Props
+
+| Prop       | Type                    | Default     | Description                   |
+| :--------- | :---------------------- | :---------- | :---------------------------- |
+| `variant`  | `'default' \| 'filled'` | `'default'` | Visual style of the textarea. |
+| `size`     | `'sm' \| 'md' \| 'lg'`  | `'md'`      | Size variant of the textarea. |
+| `disabled` | `boolean`               | `false`     | Disables user interaction.    |

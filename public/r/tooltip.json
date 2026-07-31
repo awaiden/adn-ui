@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/tooltip/tooltip.tsx",
+      "content": "\"use client\";\n\nimport \"./tooltip.css\";\n\nimport type React from \"react\";\n\nimport { Tooltip as BaseTooltip } from \"@base-ui/react/tooltip\";\nimport { cn } from \"tailwind-variants\";\n\nimport { TooltipContext, useTooltipContext } from \"./tooltip.context\";\nimport { tooltipVariants, type TooltipVariants } from \"./tooltip.variants\";\n\nexport type TooltipProviderProps = React.ComponentProps<typeof BaseTooltip.Provider>;\n\nexport const TooltipProvider = (props: TooltipProviderProps) => {\n  return <BaseTooltip.Provider {...props} />;\n};\n\nexport type TooltipProps = TooltipVariants & React.ComponentProps<typeof BaseTooltip.Root>;\n\nexport const TooltipRoot = ({ children, variant, ...props }: TooltipProps) => {\n  const slots = tooltipVariants({ variant });\n\n  return (\n    <TooltipContext.Provider value={{ slots }}>\n      <BaseTooltip.Root {...props}>{children}</BaseTooltip.Root>\n    </TooltipContext.Provider>\n  );\n};\n\nexport type TooltipTriggerProps = React.ComponentProps<typeof BaseTooltip.Trigger>;\n\nexport const TooltipTrigger = ({ className, ...props }: TooltipTriggerProps) => {\n  const { slots } = useTooltipContext();\n  return <BaseTooltip.Trigger className={cn(slots.trigger(), className)} {...props} />;\n};\n\nexport type TooltipPortalProps = React.ComponentProps<typeof BaseTooltip.Portal>;\n\nexport const TooltipPortal = (props: TooltipPortalProps) => {\n  return <BaseTooltip.Portal {...props} />;\n};\n\nexport type TooltipPositionerProps = React.ComponentProps<typeof BaseTooltip.Positioner>;\n\nexport const TooltipPositioner = ({\n  className,\n  sideOffset = 6,\n  ...props\n}: TooltipPositionerProps) => {\n  const { slots } = useTooltipContext();\n  return (\n    <BaseTooltip.Positioner\n      className={cn(slots.positioner(), className)}\n      sideOffset={sideOffset}\n      {...props}\n    />\n  );\n};\n\nexport type TooltipPopupProps = React.ComponentProps<typeof BaseTooltip.Popup>;\n\nexport const TooltipPopup = ({ className, ...props }: TooltipPopupProps) => {\n  const { slots } = useTooltipContext();\n  return <BaseTooltip.Popup className={cn(slots.popup(), className)} {...props} />;\n};\n\nexport type TooltipArrowProps = React.ComponentProps<typeof BaseTooltip.Arrow>;\n\nexport const TooltipArrow = ({ className, ...props }: TooltipArrowProps) => {\n  const { slots } = useTooltipContext();\n  return <BaseTooltip.Arrow className={cn(slots.arrow(), className)} {...props} />;\n};\n\nexport type TooltipViewportProps = React.ComponentProps<typeof BaseTooltip.Viewport>;\n\nexport const TooltipViewport = ({ className, ...props }: TooltipViewportProps) => {\n  const { slots } = useTooltipContext();\n  return <BaseTooltip.Viewport className={cn(slots.viewport(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const tooltipVariants = tv({\n  slots: {\n    provider: \"tooltip-provider\",\n    root: \"tooltip\",\n    trigger: \"tooltip__trigger\",\n    positioner: \"tooltip__positioner\",\n    popup: \"tooltip__popup\",\n    arrow: \"tooltip__arrow\",\n    viewport: \"tooltip__viewport\",\n  },\n  variants: {\n    variant: {\n      default: {\n        popup: \"bg-popover text-popover-foreground border border-border shadow-md\",\n        arrow: \"fill-popover stroke-border\",\n      },\n      dark: {\n        popup: \"bg-foreground text-background shadow-md\",\n        arrow: \"fill-foreground stroke-transparent\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"dark\",\n  },\n});\n\nexport type TooltipVariants = VariantProps<typeof tooltipVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { tooltipVariants } from \"./tooltip.variants\";\n\nexport type TooltipContext = {\n  slots: ReturnType<typeof tooltipVariants>;\n};\n\nexport const TooltipContext = createContext<TooltipContext | null>(null);\n\nexport const useTooltipContext = () => {\n  const context = useContext(TooltipContext);\n  return context ?? { slots: tooltipVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tooltip/tooltip.css",
+      "content": "@reference \"../../../app/global.css\";\n.tooltip__trigger {\n  @apply inline-flex items-center justify-center cursor-pointer;\n}\n\n.tooltip__positioner {\n  @apply z-50 outline-none select-none;\n}\n\n.tooltip__popup {\n  @apply relative z-50 overflow-hidden rounded-md px-3 py-1.5 text-xs transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;\n}\n\n.tooltip__arrow {\n  @apply z-50;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/tooltip/index.ts",
+      "content": "import {\n  TooltipArrow,\n  TooltipPopup,\n  TooltipPortal,\n  TooltipPositioner,\n  TooltipProvider,\n  TooltipRoot,\n  TooltipTrigger,\n  TooltipViewport,\n} from \"./tooltip\";\n\nexport const Tooltip = {\n  Arrow: TooltipArrow,\n  Popup: TooltipPopup,\n  Portal: TooltipPortal,\n  Positioner: TooltipPositioner,\n  Provider: TooltipProvider,\n  Root: TooltipRoot,\n  Trigger: TooltipTrigger,\n  Viewport: TooltipViewport,\n};\n\nexport {\n  TooltipArrow,\n  TooltipPopup,\n  TooltipPortal,\n  TooltipPositioner,\n  TooltipProvider,\n  TooltipRoot,\n  TooltipTrigger,\n  TooltipViewport,\n};\n\nexport type {\n  TooltipArrowProps,\n  TooltipPopupProps,\n  TooltipPortalProps,\n  TooltipPositionerProps,\n  TooltipProps,\n  TooltipProviderProps,\n  TooltipTriggerProps,\n  TooltipViewportProps,\n} from \"./tooltip\";\nexport { TooltipContext, useTooltipContext } from \"./tooltip.context\";\nexport { type TooltipVariants, tooltipVariants } from \"./tooltip.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

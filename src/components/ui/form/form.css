@@ -1,0 +1,12 @@
+@reference "../../../app/global.css";
+.form {
+  @apply flex w-full flex-col gap-4 text-foreground;
+}
+
+.form--vertical {
+  @apply flex-col;
+}
+
+.form--horizontal {
+  @apply flex-row items-start flex-wrap;
+}

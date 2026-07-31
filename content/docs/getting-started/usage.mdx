@@ -1,0 +1,132 @@
+---
+title: Usage Guide
+description: Learn how to install and use adn-ui components via the shadcn CLI registry system.
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+# Installing adn-ui Components
+
+**adn-ui** is built as a custom [shadcn registry](https://ui.shadcn.com/docs/registry/getting-started). Instead of installing a heavy NPM package dependency, you copy components directly into your codebase using the official `shadcn` CLI.
+
+---
+
+## 🚀 Quick Start
+
+You can install `adn-ui` components in two simple ways:
+
+<Tabs items={['Method 1: Namespace (Recommended)', 'Method 2: Direct URL']}>
+  <Tab value="Method 1: Namespace (Recommended)">
+    Configure the `@adn-ui` namespace once in your project, then install any component by name.
+
+    <Steps>
+      <Step>
+        ### Initialize `shadcn` in your project
+        If you haven't already initialized `shadcn` in your project, run:
+        ```bash
+        npx shadcn@latest init
+        ```
+      </Step>
+
+      <Step>
+        ### Add `@adn-ui` to `components.json`
+        Open your project's `components.json` file and add the `@adn-ui` registry mapping under `registries`:
+        ```json title="components.json"
+        {
+          "registries": {
+            "@adn-ui": "https://ui.awaiden.com/r/{name}.json"
+          }
+        }
+        ```
+      </Step>
+
+      <Step>
+        ### Add components to your project
+        Now you can add any `adn-ui` component using the namespace alias:
+        ```bash
+        npx shadcn@latest add @adn-ui/button
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab value="Method 2: Direct URL">
+    You can also install components directly without modifying `components.json` by providing the direct registry JSON URL.
+
+    ```bash
+    npx shadcn@latest add https://ui.awaiden.com/r/button.json
+    ```
+
+    Install multiple components at once:
+    ```bash
+    npx shadcn@latest add https://ui.awaiden.com/r/button.json https://ui.awaiden.com/r/card.json https://ui.awaiden.com/r/dialog.json
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## 🛠️ How the Registry Works
+
+The `shadcn` registry architecture operates as a decentralized distribution system (see [shadcn registry docs](https://ui.shadcn.com/docs/registry/getting-started)):
+
+1. **Manifest Fetching**: When you run `npx shadcn@latest add @adn-ui/button`, the CLI fetches the JSON item manifest from `https://ui.awaiden.com/r/button.json`.
+2. **Dependency Resolution**: The CLI inspects the manifest's `dependencies` (such as `@base-ui/react`, `tailwind-variants`, `tailwind-merge`) and installs them into your `package.json`.
+3. **File Placement**: The CLI places component files (`.tsx`, `.variants.ts`, `.css`, `.context.ts`) directly into your project's `src/components/ui/button/` directory.
+4. **Full Ownership**: You own the code! Modify, theme, or extend component variants directly in your repository.
+
+---
+
+## 🔍 Useful CLI Commands
+
+Here are essential commands for managing your components:
+
+| Command | Description |
+| :--- | :--- |
+| `npx shadcn@latest add @adn-ui/button` | Installs the specified component and its required npm dependencies. |
+| `npx shadcn@latest add @adn-ui/card @adn-ui/dialog` | Installs multiple components in a single command. |
+| `npx shadcn@latest view @adn-ui/button` | Inspects a component's JSON manifest and file list before adding. |
+| `npx shadcn@latest add --overwrite @adn-ui/button` | Overwrites existing component files in your project with the latest version. |
+
+---
+
+## 💡 Example Usage in Code
+
+Once installed, import and use the component compound objects or named exports in your application:
+
+```tsx title="src/app/page.tsx"
+import { Button } from "@/components/ui/button";
+import { CardRoot, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+
+export default function ExamplePage() {
+  return (
+    <CardRoot className="max-w-md mx-auto my-8">
+      <CardHeader>
+        <CardTitle>Welcome to adn-ui</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <p className="text-muted-foreground">
+          Unstyled Base UI primitives styled with Tailwind CSS v4 OKLCH tokens.
+        </p>
+        <Button variant="primary" size="md">
+          Get Started
+        </Button>
+      </CardContent>
+    </CardRoot>
+  );
+}
+```
+
+---
+
+## ❓ Frequently Asked Questions
+
+<Callout type="info" title="Do I need to install an adn-ui npm package?">
+  No package installation is required! `adn-ui` components are copy-and-paste primitives installed straight into your codebase so you have 100% control over design and implementation.
+</Callout>
+
+<Callout type="warn" title="What if I get 'Unknown registry @adn-ui'?">
+  Ensure `"registries": { "@adn-ui": "https://ui.awaiden.com/r/{name}.json" }` is included in your `components.json` file.
+</Callout>

@@ -1,0 +1,36 @@
+@reference "../../../app/global.css";
+.table-container {
+  @apply relative w-full overflow-auto;
+}
+
+.table {
+  @apply w-full caption-bottom text-sm;
+}
+
+.table__header {
+  @apply border-b border-border;
+}
+
+.table__body {
+  @apply [&_tr:last-child]:border-0;
+}
+
+.table__footer {
+  @apply border-t border-border bg-muted/50 font-medium [&>tr]:last:border-b-0;
+}
+
+.table__row {
+  @apply border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted;
+}
+
+.table__head {
+  @apply h-10 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0;
+}
+
+.table__cell {
+  @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
+}
+
+.table__caption {
+  @apply mt-4 text-sm text-muted-foreground;
+}

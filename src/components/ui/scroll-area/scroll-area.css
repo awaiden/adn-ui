@@ -1,0 +1,36 @@
+@reference "../../../app/global.css";
+.scroll-area {
+  @apply relative overflow-hidden rounded-md border border-border bg-background text-foreground;
+}
+
+.scroll-area__viewport {
+  @apply h-full w-full rounded-[inherit] outline-none focus-visible:outline-2 focus-visible:outline-ring;
+}
+
+.scroll-area__content {
+  @apply flex flex-col p-4;
+}
+
+.scroll-area__scrollbar {
+  @apply flex select-none touch-none p-0.5 bg-muted/30 transition-opacity duration-150 data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:h-2.5 data-[orientation=horizontal]:flex-col data-hovering:opacity-100 data-scrolling:opacity-100 opacity-0;
+}
+
+.scroll-area__scrollbar--sm {
+  @apply data-[orientation=vertical]:w-2 data-[orientation=horizontal]:h-2;
+}
+
+.scroll-area__scrollbar--md {
+  @apply data-[orientation=vertical]:w-2.5 data-[orientation=horizontal]:h-2.5;
+}
+
+.scroll-area__scrollbar--lg {
+  @apply data-[orientation=vertical]:w-3.5 data-[orientation=horizontal]:h-3.5;
+}
+
+.scroll-area__thumb {
+  @apply relative flex-1 rounded-full bg-border transition-colors hover:bg-muted-foreground/50;
+}
+
+.scroll-area__corner {
+  @apply bg-muted;
+}

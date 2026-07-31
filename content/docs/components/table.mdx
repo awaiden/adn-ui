@@ -1,0 +1,59 @@
+---
+title: Table
+subtitle: A responsive table component.
+description: A semantic table component for tabular data display.
+---
+
+import { TableDemo } from "@/components/ui/table/table-demo";
+
+The `Table` component displays tabular data cleanly with scrollable overflow handling.
+
+## Usage
+
+```tsx
+import { Table } from "@/components/ui/table";
+
+export function ExampleTable() {
+  return (
+    <Table.Root>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head>Name</Table.Head>
+          <Table.Head>Email</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>Alex</Table.Cell>
+          <Table.Cell>alex@example.com</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <TableDemo />
+</div>
+
+## Anatomy
+
+```tsx
+<Table.Root>
+  <Table.Caption />
+  <Table.Header>
+    <Table.Row>
+      <Table.Head />
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell />
+    </Table.Row>
+  </Table.Body>
+  <Table.Footer />
+</Table.Root>
+```

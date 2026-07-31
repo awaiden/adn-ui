@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A control that allows toggling between checked and unchecked states.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "checkbox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "checkbox.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

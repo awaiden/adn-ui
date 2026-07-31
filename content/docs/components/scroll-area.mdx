@@ -1,0 +1,67 @@
+---
+title: Scroll Area
+subtitle: A native scroll container with custom scrollbars.
+description: A high-quality, unstyled React scroll area component built with @base-ui/react for smooth custom scrollbar rendering.
+---
+
+import { ScrollAreaDemo } from "@/components/ui/scroll-area/scroll-area-demo";
+
+The `ScrollArea` component wraps scrollable content to provide custom, cross-browser styled scrollbars with smooth hover and interaction states.
+
+## Usage
+
+```tsx
+import { ScrollArea } from "@/components/ui/scroll-area";
+
+export function ExampleScrollArea() {
+  return (
+    <ScrollArea.Root className="h-44 w-80">
+      <ScrollArea.Viewport>
+        <ScrollArea.Content>
+          <p>Long scrollable content goes here...</p>
+        </ScrollArea.Content>
+      </ScrollArea.Viewport>
+      <ScrollArea.Scrollbar>
+        <ScrollArea.Thumb />
+      </ScrollArea.Scrollbar>
+      <ScrollArea.Corner />
+    </ScrollArea.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ScrollAreaDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { ScrollArea } from "@base-ui/react/scroll-area";
+
+<ScrollArea.Root>
+  <ScrollArea.Viewport>
+    <ScrollArea.Content />
+  </ScrollArea.Viewport>
+  <ScrollArea.Scrollbar>
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Corner />
+</ScrollArea.Root>;
+```
+
+## API Reference
+
+### ScrollArea.Root Props
+
+| Prop   | Type                   | Default | Description                             |
+| :----- | :--------------------- | :------ | :-------------------------------------- |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'`  | Width/height size of custom scrollbars. |
+
+### ScrollArea.Scrollbar Props
+
+| Prop          | Type                         | Default      | Description                        |
+| :------------ | :--------------------------- | :----------- | :--------------------------------- |
+| `orientation` | `'vertical' \| 'horizontal'` | `'vertical'` | Orientation axis of the scrollbar. |

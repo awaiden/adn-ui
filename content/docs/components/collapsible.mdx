@@ -1,0 +1,56 @@
+---
+title: Collapsible
+subtitle: A collapsible panel controlled by a button.
+description: A high-quality, unstyled React collapsible component built with @base-ui/react that displays a panel controlled by a button.
+---
+
+import { CollapsibleDemo } from "@/components/ui/collapsible/collapsible-demo";
+
+The `Collapsible` component displays a collapsible panel controlled by a toggle button with height animations.
+
+## Usage
+
+```tsx
+import { Collapsible } from "@/components/ui/collapsible";
+
+export function ExampleCollapsible() {
+  return (
+    <Collapsible.Root>
+      <Collapsible.Trigger>Toggle Recovery Keys</Collapsible.Trigger>
+      <Collapsible.Panel>
+        <div>alien-bean-pasta</div>
+        <div>wild-irish-burrito</div>
+        <div>horse-battery-staple</div>
+      </Collapsible.Panel>
+    </Collapsible.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <CollapsibleDemo title="Recovery Keys" />
+</div>
+
+## Anatomy
+
+```tsx
+import { Collapsible } from "@base-ui/react/collapsible";
+
+<Collapsible.Root>
+  <Collapsible.Trigger />
+  <Collapsible.Panel />
+</Collapsible.Root>;
+```
+
+## API Reference
+
+### Collapsible.Root Props
+
+| Prop           | Type                      | Default     | Description                                      |
+| :------------- | :------------------------ | :---------- | :----------------------------------------------- |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                           |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.                 |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Event handler called when panel opens or closes. |
+| `disabled`     | `boolean`                 | `false`     | Disables user interaction.                       |

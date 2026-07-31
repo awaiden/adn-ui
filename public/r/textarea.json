@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "description": "Displays a form textarea or a component that looks like a textarea.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/textarea/textarea.tsx",
+      "content": "\"use client\";\n\nimport \"./textarea.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { TextareaContext, useTextareaContext } from \"./textarea.context\";\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\nexport const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {\n  const slots = textareaVariants({ variant, size });\n\n  return (\n    <TextareaContext.Provider value={{ slots }}>\n      <textarea className={cn(slots.root(), className)} {...props} />\n    </TextareaContext.Provider>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/textarea/textarea.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const textareaVariants = tv({\n  slots: {\n    root: \"textarea\",\n  },\n  variants: {\n    variant: {\n      default: {\n        root: \"border border-input bg-background text-foreground shadow-xs placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring\",\n      },\n      filled: {\n        root: \"border border-transparent bg-muted text-foreground placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring\",\n      },\n    },\n    size: {\n      sm: {\n        root: \"min-h-16 px-2.5 py-1.5 text-xs rounded-md\",\n      },\n      md: {\n        root: \"min-h-20 px-3 py-2 text-sm rounded-md\",\n      },\n      lg: {\n        root: \"min-h-28 px-4 py-3 text-base rounded-lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"md\",\n  },\n});\n\nexport type TextareaVariants = VariantProps<typeof textareaVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/textarea/textarea.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { textareaVariants } from \"./textarea.variants\";\n\nexport type TextareaContext = {\n  slots: ReturnType<typeof textareaVariants>;\n};\n\nexport const TextareaContext = createContext<TextareaContext | null>(null);\n\nexport const useTextareaContext = () => {\n  const context = useContext(TextareaContext);\n  return context ?? { slots: textareaVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/textarea/textarea.css",
+      "content": "@reference \"../../../app/global.css\";\n.textarea {\n  @apply flex w-full transition-colors field-sizing-content disabled:cursor-not-allowed disabled:opacity-50 resize-y;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/textarea/index.ts",
+      "content": "import { TextareaRoot } from \"./textarea\";\n\nexport const Textarea = {\n  Root: TextareaRoot,\n};\n\nexport { TextareaRoot };\n\nexport type { TextareaProps } from \"./textarea\";\nexport { TextareaContext, useTextareaContext } from \"./textarea.context\";\nexport { type TextareaVariants, textareaVariants } from \"./textarea.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

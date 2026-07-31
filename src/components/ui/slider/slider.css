@@ -1,0 +1,52 @@
+@reference "../../../app/global.css";
+.slider {
+  @apply grid w-full max-w-xs grid-cols-2 gap-y-1.5 text-foreground select-none;
+}
+
+.slider__label {
+  @apply text-sm font-medium text-foreground;
+}
+
+.slider__value {
+  @apply text-right text-sm text-muted-foreground;
+}
+
+.slider__control {
+  @apply col-span-2 flex touch-none items-center py-2 select-none;
+}
+
+.slider__track {
+  @apply relative w-full rounded-full bg-secondary select-none;
+}
+
+.slider__track--sm {
+  @apply h-1;
+}
+
+.slider__track--md {
+  @apply h-1.5;
+}
+
+.slider__track--lg {
+  @apply h-2.5;
+}
+
+.slider__indicator {
+  @apply rounded-full bg-primary select-none;
+}
+
+.slider__thumb {
+  @apply block shrink-0 rounded-full border border-primary bg-background shadow-xs transition-colors select-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
+}
+
+.slider__thumb--sm {
+  @apply size-3.5;
+}
+
+.slider__thumb--md {
+  @apply size-4.5;
+}
+
+.slider__thumb--lg {
+  @apply size-6;
+}

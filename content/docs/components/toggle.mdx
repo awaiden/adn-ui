@@ -1,0 +1,50 @@
+---
+title: Toggle
+subtitle: A two-state button that can be on or off.
+description: A high-quality, unstyled React toggle button component built with @base-ui/react.
+---
+
+import { ToggleDemo } from "@/components/ui/toggle/toggle-demo";
+
+The `Toggle` component provides a two-state button for toggling states such as bookmarks, pins, or favorites.
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle";
+
+export function ExampleToggle() {
+  return (
+    <Toggle.Root aria-label="Toggle pin" variant="outline">
+      Pin to Top
+    </Toggle.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ToggleDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Toggle } from "@base-ui/react/toggle";
+
+<Toggle />;
+```
+
+## API Reference
+
+### Toggle.Root Props
+
+| Prop              | Type                         | Default     | Description                                      |
+| :---------------- | :--------------------------- | :---------- | :----------------------------------------------- |
+| `pressed`         | `boolean`                    | `undefined` | Controlled pressed state of the toggle button.   |
+| `defaultPressed`  | `boolean`                    | `false`     | Initial uncontrolled pressed state.              |
+| `onPressedChange` | `(pressed: boolean) => void` | `undefined` | Event handler called when pressed state changes. |
+| `disabled`        | `boolean`                    | `false`     | Disables user interaction.                       |
+| `variant`         | `'default' \| 'outline'`     | `'default'` | Visual style of the toggle button.               |
+| `size`            | `'sm' \| 'md' \| 'lg'`       | `'md'`      | Size variant of the toggle button.               |

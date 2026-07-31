@@ -1,0 +1,72 @@
+---
+title: Introduction
+subtitle: Modern UI component library for Astro and React powered by Base UI & Tailwind CSS v4.
+description: Learn about adn-ui, a high-performance, accessible, and unstyled UI component library built on top of Base UI, React 19, and Tailwind CSS v4.
+---
+
+import { Card, Cards } from "fumadocs-ui/components/card";
+
+**adn-ui** is an open-source collection of accessible, copy-and-paste UI components built specifically for **Astro** and **React 19**, styled using **Tailwind CSS v4** and OKLCH color design tokens.
+
+## Key Features
+
+<Cards>
+  <Card title="Base UI Powered" icon="star">
+    Built on top of `@base-ui/react`, offering unstyled accessibility primitives with keyboard
+    navigation and focus management.
+  </Card>
+  <Card title="Tailwind CSS v4 & OKLCH" icon="palette">
+    Leverages Tailwind v4 CSS variables and OKLCH color spaces for dark mode and dynamic theme
+    tokens.
+  </Card>
+  <Card title="Single-File Slots" icon="document">
+    Clean multi-file architecture with compound object exports, type safety, and tailwind-variants
+    (`tv()`).
+  </Card>
+  <Card title="Copy & Paste Registry" icon="laptop">
+    Integrates with `registry.json` allowing quick component installation into your own codebase.
+  </Card>
+</Cards>
+
+## Tech Stack
+
+- **Framework**: Astro (Starlight) + React 19
+- **Primitives**: `@base-ui/react`
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`)
+- **Variants**: `tailwind-variants` (`tv()`)
+
+## Next Steps
+
+Check out the [Usage](/getting-started/usage/) guide to set up `adn-ui` in your project, or explore the [Theming](/getting-started/theming/) guide to customize design tokens.
+
+## Using the `@adn-ui` namespace (shadcn CLI)
+
+You can install `adn-ui` components via the `shadcn` CLI using a namespace alias. First initialize `shadcn`, then configure the single canonical registry in `components.json` to point to `ui.awaiden.com`.
+
+1. Initialize `shadcn` (run first):
+
+```bash
+npx shadcn@latest init
+```
+
+2. Default `components.json` (single canonical registry):
+
+```json
+{
+  "registries": { "@adn-ui": "https://ui.awaiden.com/r/{name}.json" }
+}
+```
+
+3. Install with the CLI (no global install required):
+
+```bash
+npx shadcn@latest add @adn-ui/button
+```
+
+4. View the manifest before installing:
+
+```bash
+npx shadcn@latest view @adn-ui/button
+```
+
+Keep manifests private if they include internal resources. Use `ui.awaiden.com` as the single canonical registry source.

@@ -1,0 +1,71 @@
+---
+title: Radio
+subtitle: An easily stylable radio button component.
+description: A high-quality, unstyled React radio button and group component built with @base-ui/react.
+---
+
+import { RadioDemo } from "@/components/ui/radio/radio-demo";
+
+The `Radio` component provides single-selection radio button controls grouped within a `RadioGroup`.
+
+## Usage
+
+```tsx
+import { Radio } from "@/components/ui/radio";
+
+export function ExampleRadio() {
+  return (
+    <Radio.Group defaultValue="option-1">
+      <label className="flex items-center gap-2 text-sm font-medium">
+        <Radio.Root value="option-1">
+          <Radio.Indicator />
+        </Radio.Root>
+        Option 1
+      </label>
+      <label className="flex items-center gap-2 text-sm font-medium">
+        <Radio.Root value="option-2">
+          <Radio.Indicator />
+        </Radio.Root>
+        Option 2
+      </label>
+    </Radio.Group>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <RadioDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Radio } from "@base-ui/react/radio";
+import { RadioGroup } from "@base-ui/react/radio-group";
+
+<RadioGroup>
+  <Radio.Root>
+    <Radio.Indicator />
+  </Radio.Root>
+</RadioGroup>;
+```
+
+## API Reference
+
+### Radio.Group Props
+
+| Prop            | Type                      | Default     | Description                                                   |
+| :-------------- | :------------------------ | :---------- | :------------------------------------------------------------ |
+| `value`         | `string`                  | `undefined` | Controlled value of the selected radio button.                |
+| `defaultValue`  | `string`                  | `undefined` | Initial uncontrolled selected radio value.                    |
+| `onValueChange` | `(value: string) => void` | `undefined` | Callback fired when selected value changes.                   |
+| `disabled`      | `boolean`                 | `false`     | Disables user interaction for all radio buttons in the group. |
+
+### Radio.Root Props
+
+| Prop       | Type      | Default  | Description                                 |
+| :--------- | :-------- | :------- | :------------------------------------------ |
+| `value`    | `string`  | Required | Unique value identifying this radio option. |
+| `disabled` | `boolean` | `false`  | Disables this specific radio option.        |

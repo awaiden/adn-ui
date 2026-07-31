@@ -1,0 +1,130 @@
+---
+title: Alert Dialog
+subtitle: A dialog that requires a user response to proceed.
+description: A high-quality, unstyled React alert dialog component built with @base-ui/react that requires a user response to proceed.
+---
+
+import { AlertDialogDemo } from "@/components/ui/alert-dialog/alert-dialog-demo";
+
+The `AlertDialog` component displays a modal dialog requiring explicit user confirmation before proceeding with destructive or critical actions.
+
+## Usage
+
+```tsx
+import { AlertDialog } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+
+export function ExampleAlertDialog() {
+  return (
+    <AlertDialog.Root>
+      <AlertDialog.Trigger asChild>
+        <Button variant="destructive">Discard draft</Button>
+      </AlertDialog.Trigger>
+      <AlertDialog.Portal>
+        <AlertDialog.Backdrop />
+        <AlertDialog.Popup>
+          <div className="flex flex-col gap-1">
+            <AlertDialog.Title>Discard draft?</AlertDialog.Title>
+            <AlertDialog.Description>
+              You cannot undo this action once completed.
+            </AlertDialog.Description>
+          </div>
+          <div className="flex justify-end gap-3 pt-2">
+            <AlertDialog.Close asChild>
+              <Button variant="ghost">Cancel</Button>
+            </AlertDialog.Close>
+            <AlertDialog.Close asChild>
+              <Button variant="destructive">Discard</Button>
+            </AlertDialog.Close>
+          </div>
+        </AlertDialog.Popup>
+      </AlertDialog.Portal>
+    </AlertDialog.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <AlertDialogDemo
+    actionText="Discard"
+    description="You cannot undo this action."
+    title="Discard draft?"
+    triggerText="Discard Draft"
+    variant="destructive"
+  />
+</div>
+
+## Variants
+
+### Default Confirmation
+
+<div className="p-4 border rounded-xl my-4">
+  <AlertDialogDemo
+    actionText="Confirm"
+    description="Do you want to save changes to your profile?"
+    title="Save Changes?"
+    triggerText="Save Profile"
+    variant="default"
+  />
+</div>
+
+```tsx
+<AlertDialog.Root variant="default">
+  <AlertDialog.Trigger asChild>
+    <Button variant="outline">Save Profile</Button>
+  </AlertDialog.Trigger>
+  {/* Dialog content */}
+</AlertDialog.Root>
+```
+
+### Destructive Alert
+
+<div className="p-4 border rounded-xl my-4">
+  <AlertDialogDemo
+    actionText="Delete Account"
+    description="This will permanently delete your account and all associated data."
+    title="Delete Account?"
+    triggerText="Delete Account"
+    variant="destructive"
+  />
+</div>
+
+```tsx
+<AlertDialog.Root variant="destructive">
+  <AlertDialog.Trigger asChild>
+    <Button variant="destructive">Delete Account</Button>
+  </AlertDialog.Trigger>
+  {/* Dialog content */}
+</AlertDialog.Root>
+```
+
+## Anatomy
+
+```tsx
+import { AlertDialog } from "@base-ui/react/alert-dialog";
+
+<AlertDialog.Root>
+  <AlertDialog.Trigger />
+  <AlertDialog.Portal>
+    <AlertDialog.Backdrop />
+    <AlertDialog.Popup>
+      <AlertDialog.Title />
+      <AlertDialog.Description />
+      <AlertDialog.Close />
+    </AlertDialog.Popup>
+  </AlertDialog.Portal>
+</AlertDialog.Root>;
+```
+
+## API Reference
+
+### Accordion.Root Props
+
+| Prop           | Type                         | Default     | Description                                   |
+| :------------- | :--------------------------- | :---------- | :-------------------------------------------- |
+| `variant`      | `'default' \| 'destructive'` | `'default'` | Visual variant styling.                       |
+| `size`         | `'sm' \| 'md' \| 'lg'`       | `'md'`      | Popup container size.                         |
+| `open`         | `boolean`                    | `undefined` | Controlled open state.                        |
+| `onOpenChange` | `(open: boolean) => void`    | `undefined` | Event handler called when open state changes. |

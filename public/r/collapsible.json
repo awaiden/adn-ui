@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "title": "Collapsible",
+  "description": "A collapsible panel controlled by a trigger button.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/collapsible/collapsible.tsx",
+      "content": "\"use client\";\n\nimport \"./collapsible.css\";\n\nimport type React from \"react\";\n\nimport { Collapsible as BaseCollapsible } from \"@base-ui/react/collapsible\";\nimport { cn } from \"tailwind-variants\";\n\nimport { CollapsibleContext, useCollapsibleContext } from \"./collapsible.context\";\nimport { collapsibleVariants, type CollapsibleVariants } from \"./collapsible.variants\";\n\nexport type CollapsibleProps = CollapsibleVariants &\n  React.ComponentProps<typeof BaseCollapsible.Root>;\n\nexport const CollapsibleRoot = ({ children, className, variant, ...props }: CollapsibleProps) => {\n  const slots = collapsibleVariants({ variant });\n\n  return (\n    <CollapsibleContext.Provider value={{ slots }}>\n      <BaseCollapsible.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseCollapsible.Root>\n    </CollapsibleContext.Provider>\n  );\n};\n\nexport type CollapsibleTriggerProps = React.ComponentProps<typeof BaseCollapsible.Trigger> & {\n  hideChevron?: boolean;\n};\n\nexport const CollapsibleTrigger = ({\n  children,\n  className,\n  hideChevron = false,\n  ...props\n}: CollapsibleTriggerProps) => {\n  const { slots } = useCollapsibleContext();\n  return (\n    <BaseCollapsible.Trigger className={cn(slots.trigger(), className)} {...props}>\n      {children}\n      {!hideChevron && (\n        <svg\n          className=\"h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-150 group-data-panel-open:rotate-90\"\n          fill=\"none\"\n          stroke=\"currentColor\"\n          strokeLinecap=\"round\"\n          strokeLinejoin=\"round\"\n          strokeWidth=\"2\"\n          viewBox=\"0 0 24 24\"\n        >\n          <path d=\"m9 18 6-6-6-6\" />\n        </svg>\n      )}\n    </BaseCollapsible.Trigger>\n  );\n};\n\nexport type CollapsiblePanelProps = React.ComponentProps<typeof BaseCollapsible.Panel>;\n\nexport const CollapsiblePanel = ({ children, className, ...props }: CollapsiblePanelProps) => {\n  const { slots } = useCollapsibleContext();\n  return (\n    <BaseCollapsible.Panel className={cn(slots.panel(), className)} {...props}>\n      <div className=\"py-2 px-1 text-muted-foreground\">{children}</div>\n    </BaseCollapsible.Panel>\n  );\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const collapsibleVariants = tv({\n  slots: {\n    root: \"collapsible\",\n    trigger: \"collapsible__trigger group\",\n    panel: \"collapsible__panel\",\n  },\n  variants: {\n    variant: {\n      default: {\n        root: \"collapsible--default\",\n      },\n      outline: {\n        root: \"collapsible--outline\",\n      },\n      ghost: {\n        root: \"collapsible--ghost\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nexport type CollapsibleVariants = VariantProps<typeof collapsibleVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { collapsibleVariants } from \"./collapsible.variants\";\n\nexport type CollapsibleContext = {\n  slots: ReturnType<typeof collapsibleVariants>;\n};\n\nexport const CollapsibleContext = createContext<CollapsibleContext | null>(null);\n\nexport const useCollapsibleContext = () => {\n  const context = useContext(CollapsibleContext);\n  return context ?? { slots: collapsibleVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/collapsible/collapsible.css",
+      "content": "@reference \"../../../app/global.css\";\n.collapsible {\n  @apply flex w-full flex-col text-foreground;\n}\n\n.collapsible__trigger {\n  @apply flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;\n}\n\n.collapsible__panel {\n  @apply flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/collapsible/index.ts",
+      "content": "import { CollapsiblePanel, CollapsibleRoot, CollapsibleTrigger } from \"./collapsible\";\n\nexport const Collapsible = {\n  Panel: CollapsiblePanel,\n  Root: CollapsibleRoot,\n  Trigger: CollapsibleTrigger,\n};\n\nexport { CollapsiblePanel, CollapsibleRoot, CollapsibleTrigger };\n\nexport type {\n  CollapsiblePanelProps,\n  CollapsibleProps,\n  CollapsibleTriggerProps,\n} from \"./collapsible\";\nexport { CollapsibleContext, useCollapsibleContext } from \"./collapsible.context\";\nexport { type CollapsibleVariants, collapsibleVariants } from \"./collapsible.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

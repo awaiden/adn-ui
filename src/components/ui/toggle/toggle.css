@@ -1,0 +1,4 @@
+@reference "../../../app/global.css";
+.toggle {
+  @apply inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium text-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 select-none;
+}

@@ -1,0 +1,56 @@
+---
+title: Toggle Group
+subtitle: Provides a shared state to a series of toggle buttons.
+description: A high-quality, unstyled React toggle group component built with @base-ui/react for button groups.
+---
+
+import { ToggleGroupDemo } from "@/components/ui/toggle-group/toggle-group-demo";
+
+The `ToggleGroup` component organizes multiple `Toggle` controls into a single managed group supporting single or multi-selection.
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle";
+import { ToggleGroup } from "@/components/ui/toggle-group";
+
+export function ExampleToggleGroup() {
+  return (
+    <ToggleGroup.Root defaultValue={["bold"]} multiple>
+      <Toggle.Root value="bold">Bold</Toggle.Root>
+      <Toggle.Root value="italic">Italic</Toggle.Root>
+      <Toggle.Root value="underline">Underline</Toggle.Root>
+    </ToggleGroup.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ToggleGroupDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Toggle } from "@base-ui/react/toggle";
+import { ToggleGroup } from "@base-ui/react/toggle-group";
+
+<ToggleGroup>
+  <Toggle value="1" />
+  <Toggle value="2" />
+</ToggleGroup>;
+```
+
+## API Reference
+
+### ToggleGroup.Root Props
+
+| Prop           | Type                         | Default        | Description                                                           |
+| :------------- | :--------------------------- | :------------- | :-------------------------------------------------------------------- |
+| `value`        | `string[]`                   | `undefined`    | Controlled array of pressed toggle values.                            |
+| `defaultValue` | `string[]`                   | `undefined`    | Initial uncontrolled array of pressed toggle values.                  |
+| `multiple`     | `boolean`                    | `false`        | When true, multiple items in the group can be pressed simultaneously. |
+| `orientation`  | `'horizontal' \| 'vertical'` | `'horizontal'` | Layout direction of the toggle button group.                          |
+| `disabled`     | `boolean`                    | `false`        | Disables user interaction for all toggles in the group.               |

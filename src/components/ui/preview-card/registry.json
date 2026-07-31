@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "preview-card",
+      "type": "registry:ui",
+      "title": "Preview Card",
+      "description": "A popup that appears when a link is hovered, showing a preview snippet.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "preview-card.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "preview-card.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "preview-card.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "preview-card.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

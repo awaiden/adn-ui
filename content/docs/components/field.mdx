@@ -1,0 +1,64 @@
+---
+title: Field
+subtitle: A component that provides labeling and validation for form controls.
+description: A high-quality, unstyled React field component built with @base-ui/react that provides accessible labeling, descriptions, and validation error messages for form controls.
+---
+
+import { FieldDemo } from "@/components/ui/field/field-demo";
+
+The `Field` component wraps form controls to handle labels, description messages, and automatic HTML5 validation error matching.
+
+## Usage
+
+```tsx
+import { Field } from "@/components/ui/field";
+
+export function ExampleField() {
+  return (
+    <Field.Root>
+      <Field.Label>Name</Field.Label>
+      <Field.Control required placeholder="Required" />
+      <Field.Error match="valueMissing">Please enter your name.</Field.Error>
+      <Field.Description>Visible on your profile.</Field.Description>
+    </Field.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <FieldDemo label="Username" placeholder="e.g. alex" />
+</div>
+
+## Anatomy
+
+```tsx
+import { Field } from "@base-ui/react/field";
+
+<Field.Root>
+  <Field.Label />
+  <Field.Control />
+  <Field.Error />
+  <Field.Description />
+  <Field.Item />
+  <Field.Validity />
+</Field.Root>;
+```
+
+## API Reference
+
+### Field.Root Props
+
+| Prop             | Type                                   | Default      | Description                               |
+| :--------------- | :------------------------------------- | :----------- | :---------------------------------------- |
+| `name`           | `string`                               | `undefined`  | Identifies the field in form submissions. |
+| `disabled`       | `boolean`                              | `false`      | Disables user interaction.                |
+| `invalid`        | `boolean`                              | `undefined`  | Forces invalid state.                     |
+| `validationMode` | `'onSubmit' \| 'onBlur' \| 'onChange'` | `'onSubmit'` | Determines when field validation is run.  |
+
+### Field.Error Props
+
+| Prop    | Type                          | Default     | Description                                                |
+| :------ | :---------------------------- | :---------- | :--------------------------------------------------------- |
+| `match` | `ValidityStateKey \| boolean` | `undefined` | Validity state key matching rule to display error message. |

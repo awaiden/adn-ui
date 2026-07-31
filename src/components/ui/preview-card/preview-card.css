@@ -1,0 +1,20 @@
+@reference "../../../app/global.css";
+.preview-card__positioner {
+  @apply outline-none z-50;
+}
+
+.preview-card__popup {
+  @apply relative flex max-w-xs flex-col gap-2 rounded-lg border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+}
+
+.preview-card__trigger {
+  @apply cursor-pointer underline decoration-muted-foreground/50 underline-offset-2 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-ring;
+}
+
+.preview-card__arrow {
+  @apply fill-popover stroke-border;
+}
+
+.preview-card__backdrop {
+  @apply fixed inset-0 z-40 bg-black/50 transition-opacity duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
+}
