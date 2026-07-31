@@ -1,45 +1,108 @@
-# fumadocs
+# adn-ui
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+> A high-quality, unstyled React UI component library built on [@base-ui/react](https://base-ui.com) primitives and styled with **Tailwind CSS v4**.
 
-Run development server:
+Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)).
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-awaiden%2Fadn--ui-blue?logo=github)](https://github.com/awaiden/adn-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
+[![Base UI](https://img.shields.io/badge/Base_UI-%40base--ui%2Freact-purple)](https://base-ui.com)
+
+---
+
+## ✨ Features
+
+- ⚡ **Base UI Primitives**: Full W3C ARIA compliance, focus trapping, and keyboard navigation powered by `@base-ui/react`.
+- 🎨 **Tailwind CSS v4 Native**: Configured with modern `@theme` design tokens and seamless dark mode support.
+- 📱 **Multi-Directional Touch Gestures**: Drawers with swipe-to-dismiss gesture handling for all screen edges (`bottom`, `right`, `left`, `top`).
+- 🧩 **Zero Lock-In**: Copy, paste, and customize components directly inside your project under `src/components/ui`.
+- 📦 **Registry CLI Integration**: Built-in `shadcn` compatible registry generator (`bun run build:registry`).
+
+---
+
+## 🚀 Getting Started
+
+### Installation
+
+Clone the repository and install dependencies using [Bun](https://bun.sh):
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+git clone https://github.com/awaiden/adn-ui.git
+cd adn-ui
+bun install
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+### Development Server
 
-## Explore
+Run the Next.js development server:
 
-In the project, you can see:
+```bash
+bun dev
+```
 
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the interactive landing page and documentation.
 
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
+---
 
-### Fumadocs MDX
+## 🛠️ Scripts & Commands
 
-Collections are defined with the [Macro API](https://fumadocs.dev/docs/mdx/macro) in `lib/source.ts`.
+| Command | Description |
+| :--- | :--- |
+| `bun dev` | Starts the Next.js development server. |
+| `bun run build` | Builds the production Next.js application. |
+| `bun run build:registry` | Builds the component registry via `shadcn build`. |
+| `bun run types:check` | Validates TypeScript types across the codebase. |
+| `bun run lint` | Runs `oxlint` for fast linter checks. |
+| `bun run prepare` | Configures Husky pre-commit hooks. |
 
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
+---
 
-## Learn More
+## 🧩 Component Library
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+`adn-ui` includes 35+ accessible components located in `src/components/ui/`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+- **Accordion**
+- **Alert Dialog**
+- **Autocomplete**
+- **Avatar**
+- **Badge**
+- **Breadcrumb**
+- **Button**
+- **Card**
+- **Checkbox & Checkbox Group**
+- **Collapsible**
+- **Combobox**
+- **Context Menu**
+- **Dialog & Overlay**
+- **Drawer** *(Multi-directional swipe gestures)*
+- **Field & Fieldset**
+- **Form**
+- **Input & Number Field**
+- **Menu & Popover**
+- **Progress**
+- **Radio & Radio Group**
+- **Scroll Area**
+- **Select**
+- **Separator**
+- **Slider**
+- **Switch**
+- **Table**
+- **Tabs**
+- **Textarea**
+- **Toggle & Toggle Group**
+- **Tooltip**
+
+---
+
+## 👤 Author
+
+**Halil Aydın**
+- GitHub: [@awaiden](https://github.com/awaiden)
+- Repository: [awaiden/adn-ui](https://github.com/awaiden/adn-ui)
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for details.
