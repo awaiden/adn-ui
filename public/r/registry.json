@@ -7,10 +7,7 @@
       "name": "accordion",
       "title": "Accordion",
       "description": "A set of collapsible panels with headings.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/accordion/accordion.tsx",
@@ -39,10 +36,7 @@
       "name": "alert-dialog",
       "title": "Alert Dialog",
       "description": "A modal dialog that interrupts the user with important information.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/alert-dialog/alert-dialog.tsx",
@@ -71,10 +65,7 @@
       "name": "autocomplete",
       "title": "Autocomplete",
       "description": "An input component that provides suggestions as the user types.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/autocomplete/autocomplete.tsx",
@@ -103,10 +94,7 @@
       "name": "avatar",
       "title": "Avatar",
       "description": "An easily stylable avatar component for profile images and fallbacks.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/avatar/avatar.tsx",
@@ -135,9 +123,7 @@
       "name": "button",
       "title": "Button",
       "description": "An interactive button component supporting variants and sizes.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/button/button.tsx",
@@ -162,9 +148,7 @@
       "name": "card",
       "title": "Card",
       "description": "A container component displaying content, header, title, and footer.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/card/card.tsx",
@@ -193,10 +177,7 @@
       "name": "checkbox",
       "title": "Checkbox",
       "description": "A control that allows toggling between checked and unchecked states.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/checkbox/checkbox.tsx",
@@ -225,10 +206,7 @@
       "name": "checkbox-group",
       "title": "Checkbox Group",
       "description": "Provides shared state management for a group of checkboxes.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/checkbox-group/checkbox-group.tsx",
@@ -257,10 +235,7 @@
       "name": "collapsible",
       "title": "Collapsible",
       "description": "A collapsible panel controlled by a trigger button.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/collapsible/collapsible.tsx",
@@ -289,10 +264,7 @@
       "name": "combobox",
       "title": "Combobox",
       "description": "An input combined with a filterable popup list of predefined items.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/combobox/combobox.tsx",
@@ -321,10 +293,7 @@
       "name": "context-menu",
       "title": "Context Menu",
       "description": "A menu that appears at the pointer on right click or long press.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/context-menu/context-menu.tsx",
@@ -353,10 +322,7 @@
       "name": "dialog",
       "title": "Dialog",
       "description": "A popup that opens on top of the entire page.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/dialog/dialog.tsx",
@@ -385,10 +351,7 @@
       "name": "field",
       "title": "Field",
       "description": "Provides labeling, helper text, and validation error messages for form controls.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/field/field.tsx",
@@ -417,10 +380,7 @@
       "name": "fieldset",
       "title": "Fieldset",
       "description": "Groups a shared legend with related form controls.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/fieldset/fieldset.tsx",
@@ -449,10 +409,7 @@
       "name": "form",
       "title": "Form",
       "description": "A native form element with consolidated error handling.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/form/form.tsx",
@@ -481,10 +438,7 @@
       "name": "input",
       "title": "Input",
       "description": "A native input element that automatically works with Field and form controls.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/input/input.tsx",
@@ -513,10 +467,7 @@
       "name": "menu",
       "title": "Menu",
       "description": "A dropdown menu displaying a list of actions with keyboard navigation.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/menu/menu.tsx",
@@ -545,10 +496,7 @@
       "name": "number-field",
       "title": "Number Field",
       "description": "A numeric input element with increment and decrement buttons, and scrub area.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/number-field/number-field.tsx",
@@ -577,10 +525,7 @@
       "name": "popover",
       "title": "Popover",
       "description": "An accessible popup anchored to a trigger button.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/popover/popover.tsx",
@@ -609,10 +554,7 @@
       "name": "preview-card",
       "title": "Preview Card",
       "description": "A popup that appears when a link is hovered, showing a preview snippet.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/preview-card/preview-card.tsx",
@@ -641,10 +583,7 @@
       "name": "progress",
       "title": "Progress",
       "description": "Displays the status of a task that takes a long time.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/progress/progress.tsx",
@@ -673,10 +612,7 @@
       "name": "radio",
       "title": "Radio",
       "description": "An easily stylable radio button component and group.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/radio/radio.tsx",
@@ -705,10 +641,7 @@
       "name": "scroll-area",
       "title": "Scroll Area",
       "description": "A native scroll container with custom scrollbars.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/scroll-area/scroll-area.tsx",
@@ -737,10 +670,7 @@
       "name": "select",
       "title": "Select",
       "description": "A common form component for choosing a predefined value in a dropdown menu.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/select/select.tsx",
@@ -769,10 +699,7 @@
       "name": "separator",
       "title": "Separator",
       "description": "A separator element accessible to screen readers.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/separator/separator.tsx",
@@ -798,13 +725,39 @@
       "type": "registry:ui"
     },
     {
+      "name": "skeleton",
+      "title": "Skeleton",
+      "description": "Displays placeholder content while data is loading.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton/skeleton.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/skeleton/skeleton.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/skeleton/skeleton.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/skeleton/skeleton.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/skeleton/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "slider",
       "title": "Slider",
       "description": "An easily stylable range input component.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/slider/slider.tsx",
@@ -833,10 +786,7 @@
       "name": "switch",
       "title": "Switch",
       "description": "A control that indicates whether a setting is on or off.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/switch/switch.tsx",
@@ -865,10 +815,7 @@
       "name": "tabs",
       "title": "Tabs",
       "description": "A component for toggling between related panels on the same page.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/tabs/tabs.tsx",
@@ -897,10 +844,7 @@
       "name": "toggle",
       "title": "Toggle",
       "description": "A two-state button that can be on or off.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/toggle/toggle.tsx",
@@ -929,10 +873,7 @@
       "name": "toggle-group",
       "title": "Toggle Group",
       "description": "Provides a shared state to a series of toggle buttons.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/toggle-group/toggle-group.tsx",
@@ -961,10 +902,7 @@
       "name": "tooltip",
       "title": "Tooltip",
       "description": "A popup that appears when an element is hovered or focused, showing a hint for sighted users.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/tooltip/tooltip.tsx",
@@ -993,10 +931,7 @@
       "name": "drawer",
       "title": "Drawer",
       "description": "A panel that slides in from the edge of the screen with swipe gestures.",
-      "dependencies": [
-        "@base-ui/react",
-        "tailwind-variants"
-      ],
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/drawer/drawer.tsx",
@@ -1025,9 +960,7 @@
       "name": "badge",
       "title": "Badge",
       "description": "Displays a badge or a component that looks like a badge.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/badge/badge.tsx",
@@ -1056,9 +989,7 @@
       "name": "breadcrumb",
       "title": "Breadcrumb",
       "description": "Displays the path to the current resource using a hierarchy of links.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/breadcrumb/breadcrumb.tsx",
@@ -1087,9 +1018,7 @@
       "name": "table",
       "title": "Table",
       "description": "A responsive table component.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/table/table.tsx",
@@ -1118,9 +1047,7 @@
       "name": "textarea",
       "title": "Textarea",
       "description": "Displays a form textarea or a component that looks like a textarea.",
-      "dependencies": [
-        "tailwind-variants"
-      ],
+      "dependencies": ["tailwind-variants"],
       "files": [
         {
           "path": "src/components/ui/textarea/textarea.tsx",

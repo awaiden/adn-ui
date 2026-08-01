@@ -1,0 +1,114 @@
+.skeleton {
+  @apply bg-muted relative overflow-hidden select-none;
+}
+
+.skeleton--default {
+  @apply bg-muted;
+}
+
+.skeleton--secondary {
+  @apply bg-muted/60;
+}
+
+.skeleton--primary {
+  @apply bg-primary/10;
+}
+
+/* Animations */
+.skeleton--pulse {
+  @apply animate-pulse;
+}
+
+.skeleton--shimmer {
+  @apply relative overflow-hidden;
+}
+
+.skeleton--shimmer::after {
+  content: "";
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    transparent 100%
+  );
+  animation: skeleton-shimmer 2s infinite;
+}
+
+:root.dark .skeleton--shimmer::after,
+.dark .skeleton--shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 80%,
+    transparent 100%
+  );
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton--none {
+  animation: none;
+}
+
+/* Shapes */
+.skeleton--rounded {
+  @apply rounded-md;
+}
+
+.skeleton--circle {
+  @apply rounded-full;
+}
+
+.skeleton--square {
+  @apply rounded-none;
+}
+
+.skeleton--pill {
+  @apply rounded-full;
+}
+
+/* Sizes */
+.skeleton--xs {
+  @apply h-3;
+}
+
+.skeleton--sm {
+  @apply h-4;
+}
+
+.skeleton--md {
+  @apply h-6;
+}
+
+.skeleton--lg {
+  @apply h-8;
+}
+
+.skeleton--xl {
+  @apply h-12;
+}
+
+.skeleton__text {
+  @apply flex flex-col gap-2;
+}
+
+.skeleton__avatar {
+  @apply shrink-0;
+}
+
+.skeleton__button {
+  @apply inline-block;
+}
+
+.skeleton__card {
+  @apply border-border bg-card flex flex-col gap-4 rounded-xl border p-4 shadow-xs;
+}

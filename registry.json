@@ -28,6 +28,7 @@
     "src/components/ui/scroll-area/registry.json",
     "src/components/ui/select/registry.json",
     "src/components/ui/separator/registry.json",
+    "src/components/ui/skeleton/registry.json",
     "src/components/ui/slider/registry.json",
     "src/components/ui/switch/registry.json",
     "src/components/ui/tabs/registry.json",

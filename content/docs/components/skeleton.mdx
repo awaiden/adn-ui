@@ -1,0 +1,69 @@
+---
+title: Skeleton
+subtitle: Displays placeholder content while data is loading.
+description: A flexible loading placeholder with pulse, shimmer animations, and preset shapes.
+---
+
+import { SkeletonDemo } from "@/components/ui/skeleton/skeleton-demo";
+
+The `Skeleton` component displays placeholder shapes while content is loading, reducing perceived layout shifts and improving user experience.
+
+## Usage
+
+```tsx
+import { Skeleton, SkeletonAvatar, SkeletonText, SkeletonCard } from "@/components/ui/skeleton";
+
+export function ExampleSkeleton() {
+  return (
+    <div className="space-y-4">
+      {/* Basic skeleton */}
+      <Skeleton className="h-6 w-48" />
+
+      {/* Shimmer animation */}
+      <Skeleton animation="shimmer" shape="circle" className="h-10 w-10" />
+
+      {/* Preset multi-line text */}
+      <SkeletonText lines={3} />
+
+      {/* Preset Skeleton Card */}
+      <SkeletonCard animation="shimmer" />
+    </div>
+  );
+}
+```
+
+## Preview
+
+<div className="p-6 border rounded-xl my-4">
+  <SkeletonDemo />
+</div>
+
+## API Reference
+
+### Skeleton.Root Props
+
+| Prop        | Type                                          | Default     | Description                     |
+| :---------- | :-------------------------------------------- | :---------- | :------------------------------ |
+| `variant`   | `'default' \| 'secondary' \| 'primary'`       | `'default'` | Background color tone variant.  |
+| `animation` | `'pulse' \| 'shimmer' \| 'none'`              | `'pulse'`   | Animation effect while loading. |
+| `shape`     | `'rounded' \| 'circle' \| 'square' \| 'pill'` | `'rounded'` | Border radius shape.            |
+| `size`      | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`        | `'md'`      | Predefined height preset.       |
+
+### SkeletonText Props
+
+| Prop            | Type     | Default | Description                                 |
+| :-------------- | :------- | :------ | :------------------------------------------ |
+| `lines`         | `number` | `3`     | Number of text placeholder lines to render. |
+| `lastLineWidth` | `string` | `'60%'` | CSS width value for the final text line.    |
+
+### SkeletonAvatar Props
+
+| Prop   | Type                                   | Default | Description                    |
+| :----- | :------------------------------------- | :------ | :----------------------------- |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'`  | Avatar placeholder dimensions. |
+
+### SkeletonButton Props
+
+| Prop   | Type                                   | Default | Description              |
+| :----- | :------------------------------------- | :------ | :----------------------- |
+| `size` | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'`  | Button placeholder size. |

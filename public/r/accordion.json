@@ -3,10 +3,7 @@
   "name": "accordion",
   "title": "Accordion",
   "description": "A set of collapsible panels with headings.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/accordion/accordion.tsx",
