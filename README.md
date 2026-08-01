@@ -64,7 +64,43 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the interactive landing page and documentation.
 
+### ⚠️ Mandatory Setup for Tailwind CSS v4 CSS Files
+
+Because `adn-ui` components utilize dedicated `.css` files with `@apply` rules, standalone CSS files in Tailwind CSS v4 require a reference to your global CSS entry file. 
+
+**Without auto-referencing plugins, PostCSS will throw errors such as:**
+> `Unknown directive @apply` or `Cannot find utility class... (did you forget @reference?)`
+
+Ensure your project config includes auto-referencing:
+
+#### Next.js (`postcss.config.mjs`)
+
+```js
+const config = {
+  plugins: {
+    "postcss-tw-auto-reference": {
+      globalCssPath: "app/globals.css",
+    },
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+```
+
+#### Vite (`vite.config.ts`)
+
+```ts
+import { defineConfig } from "vite";
+import tailwindAutoReference from "vite-plugin-tailwind-ref";
+
+export default defineConfig({
+  plugins: [tailwindAutoReference("src/styles.css")],
+});
+```
+
 ---
+
 
 ## 🛠️ Scripts & Commands
 

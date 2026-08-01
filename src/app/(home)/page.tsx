@@ -66,7 +66,7 @@ export default function HomePage() {
   const [activeSide, setActiveSide] = useState<"bottom" | "right" | "left" | "top">("bottom");
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const command = "bun add @base-ui/react cnfast tailwind-variants";
+  const command = "bunx --bun shadcn@latest add @adn-ui/button";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);

@@ -81,6 +81,51 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
 
 ---
 
+## ⚙️ Project Setup for Tailwind CSS v4 Component CSS Files
+
+`adn-ui` uses modular `.css` files per component (e.g., `card.css`, `button.css`) which utilize `@apply` directives. In **Tailwind CSS v4**, standalone CSS files with `@apply` rules require an explicit `@reference` to your main CSS file.
+
+<Callout type="warn" title="Preventing @apply / unknown directive Errors">
+  Without auto-reference plugins, PostCSS will throw runtime or build errors such as:
+  **`Unknown directive @apply ... (did you forget @reference?)`**
+  
+  Configure auto-referencing in your build setup so PostCSS resolves utility classes automatically:
+</Callout>
+
+<Tabs items={['Next.js', 'Vite']}>
+  <Tab value="Next.js">
+    Configure `postcss-tw-auto-reference` in your `postcss.config.mjs`:
+
+    ```js title="postcss.config.mjs"
+    const config = {
+      plugins: {
+        "postcss-tw-auto-reference": {
+          globalCssPath: "app/globals.css", // or "src/app/global.css"
+        },
+        "@tailwindcss/postcss": {},
+      },
+    };
+
+    export default config;
+    ```
+  </Tab>
+
+  <Tab value="Vite">
+    Configure `vite-plugin-tailwind-ref` in your `vite.config.ts`:
+
+    ```ts title="vite.config.ts"
+    import { defineConfig } from "vite";
+    import tailwindAutoReference from "vite-plugin-tailwind-ref";
+
+    export default defineConfig({
+      plugins: [tailwindAutoReference("src/styles.css")],
+    });
+    ```
+  </Tab>
+</Tabs>
+
+---
+
 ## 🔍 Useful CLI Commands
 
 Here are essential commands for managing your components:
@@ -133,3 +178,8 @@ export default function ExamplePage() {
 <Callout type="warn" title="What if I get 'Unknown registry @adn-ui'?">
   Ensure `"registries": { "@adn-ui": "https://ui.awaiden.com/r/{name}.json" }` is included in your `components.json` file.
 </Callout>
+
+<Callout type="warn" title="What if I get 'Unknown directive @apply' or 'did you forget @reference?'">
+  This happens because Tailwind v4 needs to know where global theme definitions are located when compiling standalone component `.css` files. See the [PostCSS / Vite setup](#-project-setup-for-tailwind-css-v4-component-css-files) section above to configure `postcss-tw-auto-reference` or `vite-plugin-tailwind-ref`.
+</Callout>
+
