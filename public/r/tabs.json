@@ -3,7 +3,10 @@
   "name": "tabs",
   "title": "Tabs",
   "description": "A component for toggling between related panels on the same page.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/tabs/tabs.tsx",

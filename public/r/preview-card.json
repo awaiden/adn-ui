@@ -3,7 +3,10 @@
   "name": "preview-card",
   "title": "Preview Card",
   "description": "A popup that appears when a link is hovered, showing a preview snippet.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/preview-card/preview-card.tsx",

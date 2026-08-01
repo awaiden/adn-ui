@@ -3,11 +3,14 @@
   "name": "input",
   "title": "Input",
   "description": "A native input element that automatically works with Field and form controls.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/input/input.tsx",
-      "content": "\"use client\";\n\nimport \"./input.css\";\n\nimport type React from \"react\";\n\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport { cn } from \"tailwind-variants\";\n\nimport { InputContext } from \"./input.context\";\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, \"children\">;\n\nexport const InputRoot = ({\n  className,\n  size,\n  variant,\n  children,\n  dangerouslySetInnerHTML,\n  ...props\n}: InputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {\n  const slots = inputVariants({ size, variant });\n\n  const cleanProps = { ...props };\n  delete (cleanProps as any).children;\n  delete (cleanProps as any).dangerouslySetInnerHTML;\n\n  return (\n    <InputContext.Provider value={{ slots }}>\n      <BaseInput className={cn(slots.root(), className)} {...cleanProps} />\n    </InputContext.Provider>\n  );\n};\n\nexport const Input = InputRoot;\n",
+      "content": "\"use client\";\n\nimport \"./input.css\";\n\nimport type React from \"react\";\n\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport { cn } from \"tailwind-variants\";\n\nimport { InputContext } from \"./input.context\";\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, \"children\">;\n\nexport const InputRoot = ({\n  className,\n  size,\n  variant,\n  children: _children,\n  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,\n  ...props\n}: InputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {\n  const slots = inputVariants({ size, variant });\n\n  return (\n    <InputContext.Provider value={{ slots }}>\n      <BaseInput className={cn(slots.root(), className)} {...props} />\n    </InputContext.Provider>\n  );\n};\n\nexport const Input = InputRoot;\n",
       "type": "registry:ui"
     },
     {

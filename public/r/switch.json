@@ -3,7 +3,10 @@
   "name": "switch",
   "title": "Switch",
   "description": "A control that indicates whether a setting is on or off.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/switch/switch.tsx",
