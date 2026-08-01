@@ -3,11 +3,13 @@
   "name": "textarea",
   "title": "Textarea",
   "description": "Displays a form textarea or a component that looks like a textarea.",
-  "dependencies": ["tailwind-variants"],
+  "dependencies": [
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/textarea/textarea.tsx",
-      "content": "\"use client\";\n\nimport \"./textarea.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { TextareaContext } from \"./textarea.context\";\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/textarea/content.md\n */\nexport const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {\n  const slots = textareaVariants({ variant, size });\n\n  return (\n    <TextareaContext.Provider value={{ slots }}>\n      <textarea className={cn(slots.root(), className)} {...props} />\n    </TextareaContext.Provider>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport \"./textarea.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { TextareaContext } from \"./textarea.context\";\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/textarea/content.md\n */\nexport const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {\n  const slots = textareaVariants({ variant, size });\n\n  return (\n    <TextareaContext.Provider value={{ slots }}>\n      <textarea className={cn(slots.root(), className)} {...props} />\n    </TextareaContext.Provider>\n  );\n};\n",
       "type": "registry:ui"
     },
     {
@@ -22,7 +24,7 @@
     },
     {
       "path": "src/components/ui/textarea/textarea.css",
-      "content": ".textarea {\n  @apply flex w-full transition-colors field-sizing-content disabled:cursor-not-allowed disabled:opacity-50 resize-y;\n}\n",
+      "content": ".textarea {\n  @apply flex field-sizing-content w-full resize-y transition-colors disabled:cursor-not-allowed disabled:opacity-50;\n}\n",
       "type": "registry:ui"
     },
     {

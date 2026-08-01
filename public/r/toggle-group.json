@@ -3,11 +3,14 @@
   "name": "toggle-group",
   "title": "Toggle Group",
   "description": "Provides a shared state to a series of toggle buttons.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/toggle-group/toggle-group.tsx",
-      "content": "\"use client\";\n\nimport \"./toggle-group.css\";\n\nimport type React from \"react\";\n\nimport { ToggleGroup as BaseToggleGroup } from \"@base-ui/react/toggle-group\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleGroupContext } from \"./toggle-group.context\";\nimport { toggleGroupVariants, type ToggleGroupVariants } from \"./toggle-group.variants\";\nimport { ToggleRoot } from \"../toggle\";\n\nexport type ToggleGroupProps = ToggleGroupVariants & React.ComponentProps<typeof BaseToggleGroup>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleGroupRoot = ({\n  children,\n  className,\n  orientation = \"horizontal\",\n  variant = \"default\",\n  ...props\n}: ToggleGroupProps) => {\n  const slots = toggleGroupVariants({ orientation, variant });\n\n  return (\n    <ToggleGroupContext.Provider value={{ slots }}>\n      <BaseToggleGroup className={cn(slots.root(), className)} orientation={orientation} {...props}>\n        {children}\n      </BaseToggleGroup>\n    </ToggleGroupContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleItem = ToggleRoot;\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleGroupItem = ToggleRoot;\n",
+      "content": "\"use client\";\n\nimport \"./toggle-group.css\";\nimport { ToggleGroup as BaseToggleGroup } from \"@base-ui/react/toggle-group\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleRoot } from \"../toggle\";\nimport { ToggleGroupContext } from \"./toggle-group.context\";\nimport { toggleGroupVariants, type ToggleGroupVariants } from \"./toggle-group.variants\";\n\nexport type ToggleGroupProps = ToggleGroupVariants & React.ComponentProps<typeof BaseToggleGroup>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleGroupRoot = ({\n  children,\n  className,\n  orientation = \"horizontal\",\n  variant = \"default\",\n  ...props\n}: ToggleGroupProps) => {\n  const slots = toggleGroupVariants({ orientation, variant });\n\n  return (\n    <ToggleGroupContext.Provider value={{ slots }}>\n      <BaseToggleGroup className={cn(slots.root(), className)} orientation={orientation} {...props}>\n        {children}\n      </BaseToggleGroup>\n    </ToggleGroupContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleItem = ToggleRoot;\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md\n */\nexport const ToggleGroupItem = ToggleRoot;\n",
       "type": "registry:ui"
     },
     {
@@ -22,7 +25,7 @@
     },
     {
       "path": "src/components/ui/toggle-group/toggle-group.css",
-      "content": ".toggle-group {\n  @apply inline-flex items-center text-foreground select-none;\n}\n",
+      "content": ".toggle-group {\n  @apply text-foreground inline-flex items-center select-none;\n}\n",
       "type": "registry:ui"
     },
     {

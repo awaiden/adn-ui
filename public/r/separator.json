@@ -3,11 +3,14 @@
   "name": "separator",
   "title": "Separator",
   "description": "A separator element accessible to screen readers.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/separator/separator.tsx",
-      "content": "\"use client\";\n\nimport \"./separator.css\";\n\nimport type React from \"react\";\n\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SeparatorContext } from \"./separator.context\";\nimport { separatorVariants, type SeparatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const SeparatorRoot = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => {\n  const slots = separatorVariants({ orientation });\n\n  return (\n    <SeparatorContext.Provider value={{ slots }}>\n      <BaseSeparator className={cn(slots.root(), className)} orientation={orientation} {...props} />\n    </SeparatorContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const Separator = SeparatorRoot;\n",
+      "content": "\"use client\";\n\nimport \"./separator.css\";\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SeparatorContext } from \"./separator.context\";\nimport { separatorVariants, type SeparatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const SeparatorRoot = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => {\n  const slots = separatorVariants({ orientation });\n\n  return (\n    <SeparatorContext.Provider value={{ slots }}>\n      <BaseSeparator className={cn(slots.root(), className)} orientation={orientation} {...props} />\n    </SeparatorContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const Separator = SeparatorRoot;\n",
       "type": "registry:ui"
     },
     {
@@ -22,7 +25,7 @@
     },
     {
       "path": "src/components/ui/separator/separator.css",
-      "content": ".separator {\n  @apply shrink-0 bg-border;\n}\n\n.separator--horizontal {\n  @apply h-px w-full;\n}\n\n.separator--vertical {\n  @apply h-full w-px;\n}\n",
+      "content": ".separator {\n  @apply bg-border shrink-0;\n}\n\n.separator--horizontal {\n  @apply h-px w-full;\n}\n\n.separator--vertical {\n  @apply h-full w-px;\n}\n",
       "type": "registry:ui"
     },
     {

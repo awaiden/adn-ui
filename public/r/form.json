@@ -3,11 +3,14 @@
   "name": "form",
   "title": "Form",
   "description": "A native form element with consolidated error handling.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/form/form.tsx",
-      "content": "\"use client\";\n\nimport \"./form.css\";\n\nimport type React from \"react\";\n\nimport { Form as BaseForm } from \"@base-ui/react/form\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FormContext } from \"./form.context\";\nimport { formVariants, type FormVariants } from \"./form.variants\";\n\nexport type FormProps = FormVariants & React.ComponentProps<typeof BaseForm>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/form/content.md\n */\nexport const FormRoot = ({ children, className, layout, ...props }: FormProps) => {\n  const slots = formVariants({ layout });\n\n  return (\n    <FormContext.Provider value={{ slots }}>\n      <BaseForm className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseForm>\n    </FormContext.Provider>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport \"./form.css\";\nimport { Form as BaseForm } from \"@base-ui/react/form\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { FormContext } from \"./form.context\";\nimport { formVariants, type FormVariants } from \"./form.variants\";\n\nexport type FormProps = FormVariants & React.ComponentProps<typeof BaseForm>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/form/content.md\n */\nexport const FormRoot = ({ children, className, layout, ...props }: FormProps) => {\n  const slots = formVariants({ layout });\n\n  return (\n    <FormContext.Provider value={{ slots }}>\n      <BaseForm className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseForm>\n    </FormContext.Provider>\n  );\n};\n",
       "type": "registry:ui"
     },
     {
@@ -22,7 +25,7 @@
     },
     {
       "path": "src/components/ui/form/form.css",
-      "content": ".form {\n  @apply flex w-full flex-col gap-4 text-foreground;\n}\n\n.form--vertical {\n  @apply flex-col;\n}\n\n.form--horizontal {\n  @apply flex-row items-start flex-wrap;\n}\n",
+      "content": ".form {\n  @apply text-foreground flex w-full flex-col gap-4;\n}\n\n.form--vertical {\n  @apply flex-col;\n}\n\n.form--horizontal {\n  @apply flex-row flex-wrap items-start;\n}\n",
       "type": "registry:ui"
     },
     {
