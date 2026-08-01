@@ -3,7 +3,10 @@
   "name": "avatar",
   "title": "Avatar",
   "description": "An easily stylable avatar component for profile images and fallbacks.",
-  "dependencies": ["@base-ui/react", "tailwind-variants"],
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/avatar/avatar.tsx",

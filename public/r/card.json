@@ -3,7 +3,9 @@
   "name": "card",
   "title": "Card",
   "description": "A container component displaying content, header, title, and footer.",
-  "dependencies": ["tailwind-variants"],
+  "dependencies": [
+    "tailwind-variants"
+  ],
   "files": [
     {
       "path": "src/components/ui/card/card.tsx",
