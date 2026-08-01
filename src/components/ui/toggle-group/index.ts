@@ -1,6 +1,9 @@
 import { ToggleRoot as ToggleGroupItem, ToggleRoot as ToggleItem } from "../toggle";
 import { ToggleGroupRoot } from "./toggle-group";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md
+ */
 export const ToggleGroup = {
   Item: ToggleGroupItem,
   Root: ToggleGroupRoot,

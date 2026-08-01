@@ -12,18 +12,27 @@ import { drawerVariants, type DrawerVariants } from "./drawer.variants";
 
 export type DrawerProviderProps = React.ComponentProps<typeof BaseDrawer.Provider>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerProvider = (props: DrawerProviderProps) => {
   return <BaseDrawer.Provider {...props} />;
 };
 
 export type DrawerIndentBackgroundProps = React.ComponentProps<typeof BaseDrawer.IndentBackground>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerIndentBackground = (props: DrawerIndentBackgroundProps) => {
   return <BaseDrawer.IndentBackground {...props} />;
 };
 
 export type DrawerIndentProps = React.ComponentProps<typeof BaseDrawer.Indent>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerIndent = (props: DrawerIndentProps) => {
   return <BaseDrawer.Indent {...props} />;
 };
@@ -40,6 +49,9 @@ const SIDE_TO_SWIPE_DIRECTION: Record<
 
 export type DrawerProps = DrawerVariants & React.ComponentProps<typeof BaseDrawer.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerRoot = ({
   children,
   side = "bottom",
@@ -63,6 +75,9 @@ export type DrawerTriggerProps = React.ComponentProps<typeof BaseDrawer.Trigger>
   asChild?: boolean;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerTrigger = ({
   className,
   children,
@@ -83,28 +98,43 @@ export const DrawerTrigger = ({
 
 export type DrawerSwipeAreaProps = React.ComponentProps<typeof BaseDrawer.SwipeArea>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerSwipeArea = (props: DrawerSwipeAreaProps) => {
   return <BaseDrawer.SwipeArea {...props} />;
 };
 
 export type DrawerPortalProps = React.ComponentProps<typeof BaseDrawer.Portal>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerPortal = (props: DrawerPortalProps) => {
   return <BaseDrawer.Portal {...props} />;
 };
 
 export type DrawerBackdropProps = React.ComponentProps<typeof BaseDrawer.Backdrop>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerBackdrop = ({ className, ...props }: DrawerBackdropProps) => {
   const { slots } = useDrawerContext();
   return <BaseDrawer.Backdrop className={cn(slots.backdrop(), className)} {...props} />;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerOverlay = DrawerBackdrop;
 export type DrawerOverlayProps = DrawerBackdropProps;
 
 export type DrawerViewportProps = DrawerVariants & React.ComponentProps<typeof BaseDrawer.Viewport>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerViewport = ({ className, side, ...props }: DrawerViewportProps) => {
   const { slots } = useDrawerContext();
   const viewportClass = side ? drawerVariants({ side }).viewport() : slots.viewport();
@@ -113,6 +143,9 @@ export const DrawerViewport = ({ className, side, ...props }: DrawerViewportProp
 
 export type DrawerPopupProps = DrawerVariants & React.ComponentProps<typeof BaseDrawer.Popup>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerPopup = ({ className, side, ...props }: DrawerPopupProps) => {
   const { slots } = useDrawerContext();
   const popupClass = side ? drawerVariants({ side }).popup() : slots.popup();
@@ -121,6 +154,9 @@ export const DrawerPopup = ({ className, side, ...props }: DrawerPopupProps) => 
 
 export type DrawerContentProps = React.ComponentProps<typeof BaseDrawer.Content>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerContent = ({ className, ...props }: DrawerContentProps) => {
   const { slots } = useDrawerContext();
   return <BaseDrawer.Content className={cn(slots.content(), className)} {...props} />;
@@ -128,6 +164,9 @@ export const DrawerContent = ({ className, ...props }: DrawerContentProps) => {
 
 export type DrawerTitleProps = React.ComponentProps<typeof BaseDrawer.Title>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerTitle = ({ className, ...props }: DrawerTitleProps) => {
   const { slots } = useDrawerContext();
   return <BaseDrawer.Title className={cn(slots.title(), className)} {...props} />;
@@ -135,6 +174,9 @@ export const DrawerTitle = ({ className, ...props }: DrawerTitleProps) => {
 
 export type DrawerDescriptionProps = React.ComponentProps<typeof BaseDrawer.Description>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerDescription = ({ className, ...props }: DrawerDescriptionProps) => {
   const { slots } = useDrawerContext();
   return <BaseDrawer.Description className={cn(slots.description(), className)} {...props} />;
@@ -145,6 +187,9 @@ export type DrawerCloseProps = React.ComponentProps<typeof BaseDrawer.Close> & {
   asChild?: boolean;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const DrawerClose = ({
   className,
   children,

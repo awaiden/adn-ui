@@ -13,6 +13,9 @@ import { contextMenuVariants, type ContextMenuVariants } from "./context-menu.va
 export type ContextMenuProps = ContextMenuVariants &
   React.ComponentProps<typeof BaseContextMenu.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuRoot = ({ children, size, ...props }: ContextMenuProps) => {
   const slots = contextMenuVariants({ size });
 
@@ -25,6 +28,9 @@ export const ContextMenuRoot = ({ children, size, ...props }: ContextMenuProps) 
 
 export type ContextMenuTriggerProps = React.ComponentProps<typeof BaseContextMenu.Trigger>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuTrigger = ({ className, ...props }: ContextMenuTriggerProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Trigger className={cn(slots.trigger(), className)} {...props} />;
@@ -32,12 +38,18 @@ export const ContextMenuTrigger = ({ className, ...props }: ContextMenuTriggerPr
 
 export type ContextMenuPortalProps = React.ComponentProps<typeof BaseContextMenu.Portal>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuPortal = (props: ContextMenuPortalProps) => {
   return <BaseContextMenu.Portal {...props} />;
 };
 
 export type ContextMenuPositionerProps = React.ComponentProps<typeof BaseContextMenu.Positioner>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuPositioner = ({ className, ...props }: ContextMenuPositionerProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Positioner className={cn(slots.positioner(), className)} {...props} />;
@@ -45,6 +57,9 @@ export const ContextMenuPositioner = ({ className, ...props }: ContextMenuPositi
 
 export type ContextMenuPopupProps = React.ComponentProps<typeof BaseContextMenu.Popup>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuPopup = ({ className, ...props }: ContextMenuPopupProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Popup className={cn(slots.popup(), className)} {...props} />;
@@ -52,6 +67,9 @@ export const ContextMenuPopup = ({ className, ...props }: ContextMenuPopupProps)
 
 export type ContextMenuItemProps = React.ComponentProps<typeof BaseContextMenu.Item>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuItem = ({ className, ...props }: ContextMenuItemProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Item className={cn(slots.item(), className)} {...props} />;
@@ -59,6 +77,9 @@ export const ContextMenuItem = ({ className, ...props }: ContextMenuItemProps) =
 
 export type ContextMenuSeparatorProps = React.ComponentProps<typeof BaseContextMenu.Separator>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuSeparator = ({ className, ...props }: ContextMenuSeparatorProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Separator className={cn(slots.separator(), className)} {...props} />;
@@ -66,6 +87,9 @@ export const ContextMenuSeparator = ({ className, ...props }: ContextMenuSeparat
 
 export type ContextMenuSubmenuRootProps = React.ComponentProps<typeof BaseContextMenu.SubmenuRoot>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuSubmenuRoot = (props: ContextMenuSubmenuRootProps) => {
   return <BaseContextMenu.SubmenuRoot {...props} />;
 };
@@ -74,6 +98,9 @@ export type ContextMenuSubmenuTriggerProps = React.ComponentProps<
   typeof BaseContextMenu.SubmenuTrigger
 >;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuSubmenuTrigger = ({
   children,
   className,
@@ -98,6 +125,9 @@ export const ContextMenuSubmenuTrigger = ({
 
 export type ContextMenuGroupProps = React.ComponentProps<typeof BaseContextMenu.Group>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuGroup = ({ className, ...props }: ContextMenuGroupProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.Group className={cn(slots.group(), className)} {...props} />;
@@ -105,6 +135,9 @@ export const ContextMenuGroup = ({ className, ...props }: ContextMenuGroupProps)
 
 export type ContextMenuGroupLabelProps = React.ComponentProps<typeof BaseContextMenu.GroupLabel>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuGroupLabel = ({ className, ...props }: ContextMenuGroupLabelProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.GroupLabel className={cn(slots.groupLabel(), className)} {...props} />;
@@ -114,6 +147,9 @@ export type ContextMenuCheckboxItemProps = React.ComponentProps<
   typeof BaseContextMenu.CheckboxItem
 >;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuCheckboxItem = ({ className, ...props }: ContextMenuCheckboxItemProps) => {
   const { slots } = useContextMenuContext();
   return (
@@ -125,6 +161,9 @@ export type ContextMenuCheckboxItemIndicatorProps = React.ComponentProps<
   typeof BaseContextMenu.CheckboxItemIndicator
 >;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuCheckboxItemIndicator = ({
   children,
   className,
@@ -147,6 +186,9 @@ export const ContextMenuCheckboxItemIndicator = ({
 
 export type ContextMenuRadioGroupProps = React.ComponentProps<typeof BaseContextMenu.RadioGroup>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuRadioGroup = ({ className, ...props }: ContextMenuRadioGroupProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.RadioGroup className={cn(slots.radioGroup(), className)} {...props} />;
@@ -154,6 +196,9 @@ export const ContextMenuRadioGroup = ({ className, ...props }: ContextMenuRadioG
 
 export type ContextMenuRadioItemProps = React.ComponentProps<typeof BaseContextMenu.RadioItem>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuRadioItem = ({ className, ...props }: ContextMenuRadioItemProps) => {
   const { slots } = useContextMenuContext();
   return <BaseContextMenu.RadioItem className={cn(slots.radioItem(), className)} {...props} />;
@@ -163,6 +208,9 @@ export type ContextMenuRadioItemIndicatorProps = React.ComponentProps<
   typeof BaseContextMenu.RadioItemIndicator
 >;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenuRadioItemIndicator = ({
   children,
   className,

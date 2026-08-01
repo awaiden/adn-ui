@@ -1,5 +1,8 @@
 import { RadioGroup, RadioGroupRoot, RadioIndicator, RadioItem, RadioRoot } from "./radio";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
+ */
 export const Radio = {
   Group: RadioGroup,
   Indicator: RadioIndicator,

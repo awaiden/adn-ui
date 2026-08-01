@@ -1,5 +1,8 @@
 import { CheckboxIndicator, CheckboxRoot } from "./checkbox";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/checkbox/content.md
+ */
 export const Checkbox = {
   Indicator: CheckboxIndicator,
   Root: CheckboxRoot,

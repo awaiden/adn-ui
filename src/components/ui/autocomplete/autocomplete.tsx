@@ -13,6 +13,9 @@ import { autocompleteVariants, type AutocompleteVariants } from "./autocomplete.
 export type AutocompleteProps = AutocompleteVariants &
   React.ComponentProps<typeof BaseAutocomplete.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export function AutocompleteRoot({ children, size, variant, ...props }: AutocompleteProps) {
   const slots = autocompleteVariants({ size, variant });
 
@@ -25,6 +28,9 @@ export function AutocompleteRoot({ children, size, variant, ...props }: Autocomp
 
 export type AutocompleteInputProps = React.ComponentProps<typeof BaseAutocomplete.Input>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompleteInput = ({
   className,
   children: _children,
@@ -37,12 +43,18 @@ export const AutocompleteInput = ({
 
 export type AutocompletePortalProps = React.ComponentProps<typeof BaseAutocomplete.Portal>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompletePortal = (props: AutocompletePortalProps) => {
   return <BaseAutocomplete.Portal {...props} />;
 };
 
 export type AutocompletePositionerProps = React.ComponentProps<typeof BaseAutocomplete.Positioner>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompletePositioner = ({
   className,
   sideOffset = 4,
@@ -60,6 +72,9 @@ export const AutocompletePositioner = ({
 
 export type AutocompletePopupProps = React.ComponentProps<typeof BaseAutocomplete.Popup>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompletePopup = ({ className, ...props }: AutocompletePopupProps) => {
   const { slots } = useAutocompleteContext();
   return <BaseAutocomplete.Popup className={cn(slots.popup(), className)} {...props} />;
@@ -67,6 +82,9 @@ export const AutocompletePopup = ({ className, ...props }: AutocompletePopupProp
 
 export type AutocompleteListProps = React.ComponentProps<typeof BaseAutocomplete.List>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export function AutocompleteList({ className, ...props }: AutocompleteListProps) {
   const { slots } = useAutocompleteContext();
   return <BaseAutocomplete.List className={cn(slots.list(), className)} {...props} />;
@@ -74,6 +92,9 @@ export function AutocompleteList({ className, ...props }: AutocompleteListProps)
 
 export type AutocompleteItemProps = React.ComponentProps<typeof BaseAutocomplete.Item>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export function AutocompleteItem({ className, ...props }: AutocompleteItemProps) {
   const { slots } = useAutocompleteContext();
   return <BaseAutocomplete.Item className={cn(slots.item(), className)} {...props} />;
@@ -81,6 +102,9 @@ export function AutocompleteItem({ className, ...props }: AutocompleteItemProps)
 
 export type AutocompleteEmptyProps = React.ComponentProps<typeof BaseAutocomplete.Empty>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompleteEmpty = ({ className, ...props }: AutocompleteEmptyProps) => {
   const { slots } = useAutocompleteContext();
   return <BaseAutocomplete.Empty className={cn(slots.empty(), className)} {...props} />;
@@ -88,6 +112,9 @@ export const AutocompleteEmpty = ({ className, ...props }: AutocompleteEmptyProp
 
 export type AutocompleteStatusProps = React.ComponentProps<typeof BaseAutocomplete.Status>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/autocomplete/content.md
+ */
 export const AutocompleteStatus = ({ className, ...props }: AutocompleteStatusProps) => {
   const { slots } = useAutocompleteContext();
   return <BaseAutocomplete.Status className={cn(slots.status(), className)} {...props} />;

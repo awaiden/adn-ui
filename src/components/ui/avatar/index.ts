@@ -1,5 +1,8 @@
 import { AvatarFallback, AvatarImage, AvatarRoot } from "./avatar";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/avatar/content.md
+ */
 export const Avatar = {
   Fallback: AvatarFallback,
   Image: AvatarImage,

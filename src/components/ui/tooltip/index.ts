@@ -9,6 +9,9 @@ import {
   TooltipViewport,
 } from "./tooltip";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/tooltip/content.md
+ */
 export const Tooltip = {
   Arrow: TooltipArrow,
   Popup: TooltipPopup,

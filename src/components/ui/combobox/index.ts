@@ -17,6 +17,9 @@ import {
   ComboboxValue,
 } from "./combobox";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
+ */
 export const Combobox = {
   Chip: ComboboxChip,
   ChipRemove: ComboboxChipRemove,

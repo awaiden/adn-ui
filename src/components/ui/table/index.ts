@@ -9,6 +9,9 @@ import {
   TableRow,
 } from "./table";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
+ */
 export const Table = {
   Body: TableBody,
   Caption: TableCaption,

@@ -16,6 +16,7 @@ Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)
 - ⚡ **Base UI Primitives**: Full W3C ARIA compliance, focus trapping, and keyboard navigation powered by `@base-ui/react`.
 - 🎨 **Tailwind CSS v4 Native**: Configured with modern `@theme` design tokens and seamless dark mode support.
 - 📱 **Multi-Directional Touch Gestures**: Drawers with swipe-to-dismiss gesture handling for all screen edges (`bottom`, `right`, `left`, `top`).
+- 🤖 **AI-Friendly JSDoc Docs**: Every component includes JSDoc `@see` annotations (e.g. `@see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md`) linking directly to markdown docs for AI coding assistants.
 - 🧩 **Zero Lock-In**: Copy, paste, and customize components directly inside your project under `src/components/ui`.
 - 📦 **Registry CLI Integration**: Built-in `shadcn` compatible registry generator (`bun run build:registry`).
 
@@ -38,6 +39,7 @@ src/components/ui/card/
 
 - **Effortless Customization**: Tweak styling or add new variants in `*.variants.ts` or `*.css` without risking breaking component logic or accessibility attributes.
 - **Clean Separation of Concerns**: Keeps rendering logic isolated from design tokens and slots.
+- **AI-Friendly & LLM Ready**: JSDoc `@see` annotations point AI coding assistants (Antigravity, Cursor, Copilot) directly to raw component markdown docs.
 - **Maintainable & Scalable**: Swap styles, add theme slots, or extend component logic independently as your application grows.
 
 ---

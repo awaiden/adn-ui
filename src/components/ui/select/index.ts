@@ -20,6 +20,9 @@ import {
   SelectValue,
 } from "./select";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/select/content.md
+ */
 export const Select = {
   Arrow: SelectArrow,
   Backdrop: SelectBackdrop,

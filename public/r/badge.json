@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/badge/badge.tsx",
-      "content": "\"use client\";\n\nimport \"./badge.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { BadgeContext } from \"./badge.context\";\nimport { badgeVariants, type BadgeVariants } from \"./badge.variants\";\n\nexport type BadgeProps = BadgeVariants & React.HTMLAttributes<HTMLDivElement>;\n\nexport const BadgeRoot = ({ children, className, variant, size, ...props }: BadgeProps) => {\n  const slots = badgeVariants({ variant, size });\n\n  return (\n    <BadgeContext.Provider value={{ slots }}>\n      <div className={cn(slots.root(), className)} {...props}>\n        {children}\n      </div>\n    </BadgeContext.Provider>\n  );\n};\n\nexport const Badge = BadgeRoot;\n",
+      "content": "\"use client\";\n\nimport \"./badge.css\";\n\nimport type React from \"react\";\n\nimport { cn } from \"tailwind-variants\";\n\nimport { BadgeContext } from \"./badge.context\";\nimport { badgeVariants, type BadgeVariants } from \"./badge.variants\";\n\nexport type BadgeProps = BadgeVariants & React.HTMLAttributes<HTMLDivElement>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md\n */\nexport const BadgeRoot = ({ children, className, variant, size, ...props }: BadgeProps) => {\n  const slots = badgeVariants({ variant, size });\n\n  return (\n    <BadgeContext.Provider value={{ slots }}>\n      <div className={cn(slots.root(), className)} {...props}>\n        {children}\n      </div>\n    </BadgeContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md\n */\nexport const Badge = BadgeRoot;\n",
       "type": "registry:ui"
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "path": "src/components/ui/badge/index.ts",
-      "content": "import { Badge, BadgeRoot } from \"./badge\";\n\nexport const BadgeContainer = {\n  Root: BadgeRoot,\n};\n\nexport { Badge, BadgeRoot };\n\nexport type { BadgeProps } from \"./badge\";\nexport { BadgeContext, useBadgeContext } from \"./badge.context\";\nexport { type BadgeVariants, badgeVariants } from \"./badge.variants\";\n",
+      "content": "import { Badge, BadgeRoot } from \"./badge\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md\n */\nexport const BadgeContainer = {\n  Root: BadgeRoot,\n};\n\nexport { Badge, BadgeRoot };\n\nexport type { BadgeProps } from \"./badge\";\nexport { BadgeContext, useBadgeContext } from \"./badge.context\";\nexport { type BadgeVariants, badgeVariants } from \"./badge.variants\";\n",
       "type": "registry:ui"
     }
   ],

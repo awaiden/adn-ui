@@ -1,5 +1,8 @@
 import { TabsIndicator, TabsList, TabsPanel, TabsRoot, TabsTab } from "./tabs";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
+ */
 export const Tabs = {
   Indicator: TabsIndicator,
   List: TabsList,

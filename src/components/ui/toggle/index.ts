@@ -1,5 +1,8 @@
 import { ToggleRoot } from "./toggle";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md
+ */
 export const Toggle = {
   Root: ToggleRoot,
 };

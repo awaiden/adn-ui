@@ -11,6 +11,9 @@ import { textareaVariants, type TextareaVariants } from "./textarea.variants";
 
 export type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/textarea/content.md
+ */
 export const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {
   const slots = textareaVariants({ variant, size });
 

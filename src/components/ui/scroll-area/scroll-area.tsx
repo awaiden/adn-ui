@@ -12,6 +12,9 @@ import { scrollAreaVariants, type ScrollAreaVariants } from "./scroll-area.varia
 
 export type ScrollAreaProps = ScrollAreaVariants & React.ComponentProps<typeof BaseScrollArea.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaRoot = ({ children, className, size, ...props }: ScrollAreaProps) => {
   const slots = scrollAreaVariants({ size });
 
@@ -26,6 +29,9 @@ export const ScrollAreaRoot = ({ children, className, size, ...props }: ScrollAr
 
 export type ScrollAreaViewportProps = React.ComponentProps<typeof BaseScrollArea.Viewport>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaViewport = ({ className, ...props }: ScrollAreaViewportProps) => {
   const { slots } = useScrollAreaContext();
   return <BaseScrollArea.Viewport className={cn(slots.viewport(), className)} {...props} />;
@@ -33,6 +39,9 @@ export const ScrollAreaViewport = ({ className, ...props }: ScrollAreaViewportPr
 
 export type ScrollAreaContentProps = React.ComponentProps<typeof BaseScrollArea.Content>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaContent = ({ className, ...props }: ScrollAreaContentProps) => {
   const { slots } = useScrollAreaContext();
   return <BaseScrollArea.Content className={cn(slots.content(), className)} {...props} />;
@@ -40,6 +49,9 @@ export const ScrollAreaContent = ({ className, ...props }: ScrollAreaContentProp
 
 export type ScrollAreaScrollbarProps = React.ComponentProps<typeof BaseScrollArea.Scrollbar>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaScrollbar = ({ className, ...props }: ScrollAreaScrollbarProps) => {
   const { slots } = useScrollAreaContext();
   return <BaseScrollArea.Scrollbar className={cn(slots.scrollbar(), className)} {...props} />;
@@ -47,6 +59,9 @@ export const ScrollAreaScrollbar = ({ className, ...props }: ScrollAreaScrollbar
 
 export type ScrollAreaThumbProps = React.ComponentProps<typeof BaseScrollArea.Thumb>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaThumb = ({ className, ...props }: ScrollAreaThumbProps) => {
   const { slots } = useScrollAreaContext();
   return <BaseScrollArea.Thumb className={cn(slots.thumb(), className)} {...props} />;
@@ -54,6 +69,9 @@ export const ScrollAreaThumb = ({ className, ...props }: ScrollAreaThumbProps) =
 
 export type ScrollAreaCornerProps = React.ComponentProps<typeof BaseScrollArea.Corner>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollAreaCorner = ({ className, ...props }: ScrollAreaCornerProps) => {
   const { slots } = useScrollAreaContext();
   return <BaseScrollArea.Corner className={cn(slots.corner(), className)} {...props} />;

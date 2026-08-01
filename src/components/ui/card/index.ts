@@ -1,5 +1,8 @@
 import { CardContent, CardDescription, CardFooter, CardHeader, CardRoot, CardTitle } from "./card";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/card/content.md
+ */
 export const Card = {
   Content: CardContent,
   Description: CardDescription,

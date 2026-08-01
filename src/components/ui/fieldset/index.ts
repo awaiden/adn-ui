@@ -1,5 +1,8 @@
 import { FieldsetLegend, FieldsetRoot } from "./fieldset";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/fieldset/content.md
+ */
 export const Fieldset = {
   Legend: FieldsetLegend,
   Root: FieldsetRoot,

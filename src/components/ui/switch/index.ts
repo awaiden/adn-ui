@@ -1,5 +1,8 @@
 import { SwitchRoot, SwitchThumb } from "./switch";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/switch/content.md
+ */
 export const Switch = {
   Root: SwitchRoot,
   Thumb: SwitchThumb,

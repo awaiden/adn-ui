@@ -12,6 +12,9 @@ import { separatorVariants, type SeparatorVariants } from "./separator.variants"
 
 export type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md
+ */
 export const SeparatorRoot = ({
   className,
   orientation = "horizontal",
@@ -26,4 +29,7 @@ export const SeparatorRoot = ({
   );
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md
+ */
 export const Separator = SeparatorRoot;

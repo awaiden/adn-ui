@@ -10,6 +10,9 @@ import {
   DialogTrigger,
 } from "./dialog";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/dialog/content.md
+ */
 export const Dialog = {
   Backdrop: DialogBackdrop,
   Close: DialogClose,

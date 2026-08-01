@@ -6,6 +6,9 @@ import {
   AccordionTrigger,
 } from "./accordion";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
+ */
 export const Accordion = {
   Header: AccordionHeader,
   Item: AccordionItem,

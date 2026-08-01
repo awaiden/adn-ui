@@ -1,5 +1,8 @@
 import { CollapsiblePanel, CollapsibleRoot, CollapsibleTrigger } from "./collapsible";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/collapsible/content.md
+ */
 export const Collapsible = {
   Panel: CollapsiblePanel,
   Root: CollapsibleRoot,

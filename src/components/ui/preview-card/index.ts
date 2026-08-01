@@ -10,6 +10,9 @@ import {
   PreviewCardTrigger,
 } from "./preview-card";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/preview-card/content.md
+ */
 export const PreviewCard = {
   Arrow: PreviewCardArrow,
   Backdrop: PreviewCardBackdrop,

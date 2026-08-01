@@ -1,5 +1,8 @@
 import { CheckboxGroupRoot } from "./checkbox-group";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/checkbox-group/content.md
+ */
 export const CheckboxGroup = {
   Root: CheckboxGroupRoot,
 };

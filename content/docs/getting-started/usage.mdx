@@ -168,6 +168,21 @@ export default function ExamplePage() {
 
 ---
 
+## 🤖 AI-Friendly JSDoc & LLM Integration
+
+All `adn-ui` components include JSDoc `@see` annotations linking directly to raw markdown documentation URLs (powered by the `/llms.mdx/docs/...` route):
+
+```tsx
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md
+ */
+export const Button = ...
+```
+
+When using AI coding assistants (such as Antigravity, Cursor, Claude Code, or GitHub Copilot), the AI model reads the JSDoc `@see` link on hover or definition inspection. It can automatically fetch component API specifications, variant options, and usage examples directly from `ui.awaiden.com`.
+
+---
+
 ## ❓ Frequently Asked Questions
 
 <Callout type="info" title="Do I need to install an adn-ui npm package?">

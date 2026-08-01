@@ -1,5 +1,8 @@
 import { Input, InputRoot } from "./input";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/input/content.md
+ */
 export const InputContainer = {
   Root: InputRoot,
 };

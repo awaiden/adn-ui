@@ -11,6 +11,9 @@ import {
   AlertDialogTrigger,
 } from "./alert-dialog";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialog = {
   Actions: AlertDialogActions,
   Backdrop: AlertDialogBackdrop,

@@ -13,6 +13,9 @@ import { collapsibleVariants, type CollapsibleVariants } from "./collapsible.var
 export type CollapsibleProps = CollapsibleVariants &
   React.ComponentProps<typeof BaseCollapsible.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/collapsible/content.md
+ */
 export const CollapsibleRoot = ({ children, className, variant, ...props }: CollapsibleProps) => {
   const slots = collapsibleVariants({ variant });
 
@@ -29,6 +32,9 @@ export type CollapsibleTriggerProps = React.ComponentProps<typeof BaseCollapsibl
   hideChevron?: boolean;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/collapsible/content.md
+ */
 export const CollapsibleTrigger = ({
   children,
   className,
@@ -58,6 +64,9 @@ export const CollapsibleTrigger = ({
 
 export type CollapsiblePanelProps = React.ComponentProps<typeof BaseCollapsible.Panel>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/collapsible/content.md
+ */
 export const CollapsiblePanel = ({ children, className, ...props }: CollapsiblePanelProps) => {
   const { slots } = useCollapsibleContext();
   return (

@@ -8,6 +8,9 @@ import {
   SliderValue,
 } from "./slider";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/slider/content.md
+ */
 export const Slider = {
   Control: SliderControl,
   Indicator: SliderIndicator,

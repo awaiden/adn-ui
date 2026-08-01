@@ -11,6 +11,9 @@ import { badgeVariants, type BadgeVariants } from "./badge.variants";
 
 export type BadgeProps = BadgeVariants & React.HTMLAttributes<HTMLDivElement>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md
+ */
 export const BadgeRoot = ({ children, className, variant, size, ...props }: BadgeProps) => {
   const slots = badgeVariants({ variant, size });
 
@@ -23,4 +26,7 @@ export const BadgeRoot = ({ children, className, variant, size, ...props }: Badg
   );
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md
+ */
 export const Badge = BadgeRoot;

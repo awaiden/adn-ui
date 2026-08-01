@@ -17,6 +17,9 @@ import {
   MenuTrigger,
 } from "./menu";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/menu/content.md
+ */
 export const Menu = {
   CheckboxItem: MenuCheckboxItem,
   CheckboxItemIndicator: MenuCheckboxItemIndicator,

@@ -1,5 +1,8 @@
 import { Badge, BadgeRoot } from "./badge";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/badge/content.md
+ */
 export const BadgeContainer = {
   Root: BadgeRoot,
 };

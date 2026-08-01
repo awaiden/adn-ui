@@ -12,6 +12,9 @@ import { fieldsetVariants, type FieldsetVariants } from "./fieldset.variants";
 
 export type FieldsetProps = FieldsetVariants & React.ComponentProps<typeof BaseFieldset.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/fieldset/content.md
+ */
 export const FieldsetRoot = ({ children, className, variant, ...props }: FieldsetProps) => {
   const slots = fieldsetVariants({ variant });
 
@@ -26,6 +29,9 @@ export const FieldsetRoot = ({ children, className, variant, ...props }: Fieldse
 
 export type FieldsetLegendProps = React.ComponentProps<typeof BaseFieldset.Legend>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/fieldset/content.md
+ */
 export const FieldsetLegend = ({ className, ...props }: FieldsetLegendProps) => {
   const { slots } = useFieldsetContext();
   return <BaseFieldset.Legend className={cn(slots.legend(), className)} {...props} />;

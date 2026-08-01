@@ -13,6 +13,9 @@ import { alertDialogVariants, type AlertDialogVariants } from "./alert-dialog.va
 export type AlertDialogProps = AlertDialogVariants &
   React.ComponentProps<typeof BaseAlertDialog.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogRoot = ({ children, size, variant, ...props }: AlertDialogProps) => {
   const slots = alertDialogVariants({ size, variant });
 
@@ -28,6 +31,9 @@ export type AlertDialogTriggerProps = React.ComponentProps<typeof BaseAlertDialo
   asChild?: boolean;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogTrigger = ({
   className,
   children,
@@ -48,22 +54,34 @@ export const AlertDialogTrigger = ({
 
 export type AlertDialogPortalProps = React.ComponentProps<typeof BaseAlertDialog.Portal>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogPortal = (props: AlertDialogPortalProps) => {
   return <BaseAlertDialog.Portal {...props} />;
 };
 
 export type AlertDialogBackdropProps = React.ComponentProps<typeof BaseAlertDialog.Backdrop>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogBackdrop = ({ className, ...props }: AlertDialogBackdropProps) => {
   const { slots } = useAlertDialogContext();
   return <BaseAlertDialog.Backdrop className={cn(slots.backdrop(), className)} {...props} />;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogOverlay = AlertDialogBackdrop;
 export type AlertDialogOverlayProps = AlertDialogBackdropProps;
 
 export type AlertDialogPopupProps = React.ComponentProps<typeof BaseAlertDialog.Popup>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogPopup = ({ className, ...props }: AlertDialogPopupProps) => {
   const { slots } = useAlertDialogContext();
   return <BaseAlertDialog.Popup className={cn(slots.popup(), className)} {...props} />;
@@ -71,6 +89,9 @@ export const AlertDialogPopup = ({ className, ...props }: AlertDialogPopupProps)
 
 export type AlertDialogTitleProps = React.ComponentProps<typeof BaseAlertDialog.Title>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogTitle = ({ className, ...props }: AlertDialogTitleProps) => {
   const { slots } = useAlertDialogContext();
   return <BaseAlertDialog.Title className={cn(slots.title(), className)} {...props} />;
@@ -78,6 +99,9 @@ export const AlertDialogTitle = ({ className, ...props }: AlertDialogTitleProps)
 
 export type AlertDialogDescriptionProps = React.ComponentProps<typeof BaseAlertDialog.Description>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogDescription = ({ className, ...props }: AlertDialogDescriptionProps) => {
   const { slots } = useAlertDialogContext();
   return <BaseAlertDialog.Description className={cn(slots.description(), className)} {...props} />;
@@ -88,6 +112,9 @@ export type AlertDialogCloseProps = React.ComponentProps<typeof BaseAlertDialog.
   asChild?: boolean;
 };
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogClose = ({
   className,
   children,
@@ -108,6 +135,9 @@ export const AlertDialogClose = ({
 
 export type AlertDialogActionsProps = React.ComponentProps<"div">;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/alert-dialog/content.md
+ */
 export const AlertDialogActions = ({ className, ...props }: AlertDialogActionsProps) => (
   <div
     className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4", className)}

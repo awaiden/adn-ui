@@ -7,6 +7,9 @@ import {
   ScrollAreaViewport,
 } from "./scroll-area";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/scroll-area/content.md
+ */
 export const ScrollArea = {
   Content: ScrollAreaContent,
   Corner: ScrollAreaCorner,

@@ -1,5 +1,8 @@
 import { SeparatorRoot } from "./separator";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md
+ */
 export const Separator = {
   Root: SeparatorRoot,
 };

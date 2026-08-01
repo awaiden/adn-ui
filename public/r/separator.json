@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/ui/separator/separator.tsx",
-      "content": "\"use client\";\n\nimport \"./separator.css\";\n\nimport type React from \"react\";\n\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SeparatorContext } from \"./separator.context\";\nimport { separatorVariants, type SeparatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;\n\nexport const SeparatorRoot = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => {\n  const slots = separatorVariants({ orientation });\n\n  return (\n    <SeparatorContext.Provider value={{ slots }}>\n      <BaseSeparator className={cn(slots.root(), className)} orientation={orientation} {...props} />\n    </SeparatorContext.Provider>\n  );\n};\n\nexport const Separator = SeparatorRoot;\n",
+      "content": "\"use client\";\n\nimport \"./separator.css\";\n\nimport type React from \"react\";\n\nimport { Separator as BaseSeparator } from \"@base-ui/react/separator\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SeparatorContext } from \"./separator.context\";\nimport { separatorVariants, type SeparatorVariants } from \"./separator.variants\";\n\nexport type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const SeparatorRoot = ({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorProps) => {\n  const slots = separatorVariants({ orientation });\n\n  return (\n    <SeparatorContext.Provider value={{ slots }}>\n      <BaseSeparator className={cn(slots.root(), className)} orientation={orientation} {...props} />\n    </SeparatorContext.Provider>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const Separator = SeparatorRoot;\n",
       "type": "registry:ui"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "path": "src/components/ui/separator/index.ts",
-      "content": "import { SeparatorRoot } from \"./separator\";\n\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot, SeparatorRoot as SeparatorComponent };\nexport { Separator as SeparatorAlias } from \"./separator\";\n\nexport type { SeparatorProps } from \"./separator\";\nexport { SeparatorContext, useSeparatorContext } from \"./separator.context\";\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
+      "content": "import { SeparatorRoot } from \"./separator\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/separator/content.md\n */\nexport const Separator = {\n  Root: SeparatorRoot,\n};\n\nexport { SeparatorRoot, SeparatorRoot as SeparatorComponent };\nexport { Separator as SeparatorAlias } from \"./separator\";\n\nexport type { SeparatorProps } from \"./separator\";\nexport { SeparatorContext, useSeparatorContext } from \"./separator.context\";\nexport { type SeparatorVariants, separatorVariants } from \"./separator.variants\";\n",
       "type": "registry:ui"
     }
   ],

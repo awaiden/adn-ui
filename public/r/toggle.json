@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/ui/toggle/toggle.tsx",
-      "content": "\"use client\";\n\nimport \"./toggle.css\";\n\nimport type React from \"react\";\n\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleContext } from \"./toggle.context\";\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <ToggleContext.Provider value={{ slots }}>\n      <BaseToggle className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseToggle>\n    </ToggleContext.Provider>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport \"./toggle.css\";\n\nimport type React from \"react\";\n\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleContext } from \"./toggle.context\";\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md\n */\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <ToggleContext.Provider value={{ slots }}>\n      <BaseToggle className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseToggle>\n    </ToggleContext.Provider>\n  );\n};\n",
       "type": "registry:ui"
     },
     {
@@ -30,7 +30,7 @@
     },
     {
       "path": "src/components/ui/toggle/index.ts",
-      "content": "import { ToggleRoot } from \"./toggle\";\n\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport type { ToggleProps } from \"./toggle\";\nexport { ToggleContext, useToggleContext } from \"./toggle.context\";\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
+      "content": "import { ToggleRoot } from \"./toggle\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md\n */\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport type { ToggleProps } from \"./toggle\";\nexport { ToggleContext, useToggleContext } from \"./toggle.context\";\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
       "type": "registry:ui"
     }
   ],

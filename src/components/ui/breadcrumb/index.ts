@@ -8,6 +8,9 @@ import {
   BreadcrumbSeparator,
 } from "./breadcrumb";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/breadcrumb/content.md
+ */
 export const Breadcrumb = {
   Ellipsis: BreadcrumbEllipsis,
   Item: BreadcrumbItem,

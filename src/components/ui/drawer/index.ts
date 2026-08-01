@@ -16,6 +16,9 @@ import {
   DrawerViewport,
 } from "./drawer";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/drawer/content.md
+ */
 export const Drawer = {
   Backdrop: DrawerBackdrop,
   Close: DrawerClose,

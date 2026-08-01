@@ -6,6 +6,9 @@ import {
   ProgressValue,
 } from "./progress";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const Progress = {
   Indicator: ProgressIndicator,
   Label: ProgressLabel,

@@ -13,6 +13,9 @@ import {
   PopoverTrigger,
 } from "./popover";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
+ */
 export const Popover = {
   Arrow: PopoverArrow,
   Backdrop: PopoverBackdrop,

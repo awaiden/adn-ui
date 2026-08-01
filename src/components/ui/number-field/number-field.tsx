@@ -13,6 +13,9 @@ import { numberFieldVariants, type NumberFieldVariants } from "./number-field.va
 export type NumberFieldProps = NumberFieldVariants &
   React.ComponentProps<typeof BaseNumberField.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldRoot = ({ children, className, size, ...props }: NumberFieldProps) => {
   const slots = numberFieldVariants({ size });
 
@@ -27,6 +30,9 @@ export const NumberFieldRoot = ({ children, className, size, ...props }: NumberF
 
 export type NumberFieldGroupProps = React.ComponentProps<typeof BaseNumberField.Group>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldGroup = ({ className, ...props }: NumberFieldGroupProps) => {
   const { slots } = useNumberFieldContext();
   return <BaseNumberField.Group className={cn(slots.group(), className)} {...props} />;
@@ -34,6 +40,9 @@ export const NumberFieldGroup = ({ className, ...props }: NumberFieldGroupProps)
 
 export type NumberFieldInputProps = React.ComponentProps<typeof BaseNumberField.Input>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldInput = ({
   className,
   children: _children,
@@ -46,6 +55,9 @@ export const NumberFieldInput = ({
 
 export type NumberFieldDecrementProps = React.ComponentProps<typeof BaseNumberField.Decrement>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldDecrement = ({
   children,
   className,
@@ -65,6 +77,9 @@ export const NumberFieldDecrement = ({
 
 export type NumberFieldIncrementProps = React.ComponentProps<typeof BaseNumberField.Increment>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldIncrement = ({
   children,
   className,
@@ -84,6 +99,9 @@ export const NumberFieldIncrement = ({
 
 export type NumberFieldScrubAreaProps = React.ComponentProps<typeof BaseNumberField.ScrubArea>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldScrubArea = ({ className, ...props }: NumberFieldScrubAreaProps) => {
   const { slots } = useNumberFieldContext();
   return <BaseNumberField.ScrubArea className={cn(slots.scrubArea(), className)} {...props} />;
@@ -93,6 +111,9 @@ export type NumberFieldScrubAreaCursorProps = React.ComponentProps<
   typeof BaseNumberField.ScrubAreaCursor
 >;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberFieldScrubAreaCursor = ({
   className,
   ...props

@@ -8,6 +8,9 @@ import {
   NumberFieldScrubAreaCursor,
 } from "./number-field";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/number-field/content.md
+ */
 export const NumberField = {
   Decrement: NumberFieldDecrement,
   Group: NumberFieldGroup,

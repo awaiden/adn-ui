@@ -12,6 +12,9 @@ import { progressVariants, type ProgressVariants } from "./progress.variants";
 
 export type ProgressProps = ProgressVariants & React.ComponentProps<typeof BaseProgress.Root>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const ProgressRoot = ({ children, className, size, ...props }: ProgressProps) => {
   const slots = progressVariants({ size });
 
@@ -26,6 +29,9 @@ export const ProgressRoot = ({ children, className, size, ...props }: ProgressPr
 
 export type ProgressTrackProps = React.ComponentProps<typeof BaseProgress.Track>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const ProgressTrack = ({ className, ...props }: ProgressTrackProps) => {
   const { slots } = useProgressContext();
   return <BaseProgress.Track className={cn(slots.track(), className)} {...props} />;
@@ -33,6 +39,9 @@ export const ProgressTrack = ({ className, ...props }: ProgressTrackProps) => {
 
 export type ProgressIndicatorProps = React.ComponentProps<typeof BaseProgress.Indicator>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const ProgressIndicator = ({ className, ...props }: ProgressIndicatorProps) => {
   const { slots } = useProgressContext();
   return <BaseProgress.Indicator className={cn(slots.indicator(), className)} {...props} />;
@@ -40,6 +49,9 @@ export const ProgressIndicator = ({ className, ...props }: ProgressIndicatorProp
 
 export type ProgressLabelProps = React.ComponentProps<typeof BaseProgress.Label>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const ProgressLabel = ({ className, ...props }: ProgressLabelProps) => {
   const { slots } = useProgressContext();
   return <BaseProgress.Label className={cn(slots.label(), className)} {...props} />;
@@ -47,6 +59,9 @@ export const ProgressLabel = ({ className, ...props }: ProgressLabelProps) => {
 
 export type ProgressValueProps = React.ComponentProps<typeof BaseProgress.Value>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
+ */
 export const ProgressValue = ({ className, ...props }: ProgressValueProps) => {
   const { slots } = useProgressContext();
   return <BaseProgress.Value className={cn(slots.value(), className)} {...props} />;

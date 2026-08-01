@@ -1,5 +1,8 @@
 import { TextareaRoot } from "./textarea";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/textarea/content.md
+ */
 export const Textarea = {
   Root: TextareaRoot,
 };

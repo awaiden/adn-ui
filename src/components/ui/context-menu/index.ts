@@ -17,6 +17,9 @@ import {
   ContextMenuTrigger,
 } from "./context-menu";
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/context-menu/content.md
+ */
 export const ContextMenu = {
   CheckboxItem: ContextMenuCheckboxItem,
   CheckboxItemIndicator: ContextMenuCheckboxItemIndicator,

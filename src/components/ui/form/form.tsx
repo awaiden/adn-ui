@@ -12,6 +12,9 @@ import { formVariants, type FormVariants } from "./form.variants";
 
 export type FormProps = FormVariants & React.ComponentProps<typeof BaseForm>;
 
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/form/content.md
+ */
 export const FormRoot = ({ children, className, layout, ...props }: FormProps) => {
   const slots = formVariants({ layout });
 
