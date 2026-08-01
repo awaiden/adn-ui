@@ -111,14 +111,18 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
   </Tab>
 
   <Tab value="Vite">
-    Configure `vite-plugin-tailwind-ref` in your `vite.config.ts`:
+    Configure `vite-plugin-tw-auto-reference` in your `vite.config.ts`:
 
     ```ts title="vite.config.ts"
     import { defineConfig } from "vite";
-    import tailwindAutoReference from "vite-plugin-tailwind-ref";
+    import tailwindAutoReference from "vite-plugin-tw-auto-reference";
 
     export default defineConfig({
-      plugins: [tailwindAutoReference("src/styles.css")],
+      plugins: [
+        tailwindAutoReference({
+          globalCssPath: "src/index.css",
+        }),
+      ],
     });
     ```
 
@@ -202,5 +206,5 @@ When using AI coding assistants (such as Antigravity, Cursor, Claude Code, or Gi
   This happens because Tailwind v4 needs to know where global theme definitions are located when
   compiling standalone component `.css` files. See the [PostCSS / Vite
   setup](#-project-setup-for-tailwind-css-v4-component-css-files) section above to configure
-  `postcss-tw-auto-reference` or `vite-plugin-tailwind-ref`.
+  `postcss-tw-auto-reference` or `vite-plugin-tw-auto-reference`.
 </Callout>

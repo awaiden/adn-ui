@@ -95,10 +95,14 @@ export default config;
 
 ```ts
 import { defineConfig } from "vite";
-import tailwindAutoReference from "vite-plugin-tailwind-ref";
+import tailwindAutoReference from "vite-plugin-tw-auto-reference";
 
 export default defineConfig({
-  plugins: [tailwindAutoReference("src/styles.css")],
+  plugins: [
+    tailwindAutoReference({
+      globalCssPath: "src/styles.css",
+    }),
+  ],
 });
 ```
 
