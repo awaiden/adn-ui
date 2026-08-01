@@ -1,10 +1,8 @@
 "use client";
 
 import "./select.css";
-
-import type React from "react";
-
 import { Select as BaseSelect } from "@base-ui/react/select";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { SelectContext, useSelectContext } from "./select.context";

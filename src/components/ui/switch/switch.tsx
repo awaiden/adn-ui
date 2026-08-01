@@ -1,10 +1,8 @@
 "use client";
 
 import "./switch.css";
-
-import type React from "react";
-
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { SwitchContext, useSwitchContext } from "./switch.context";

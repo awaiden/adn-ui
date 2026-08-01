@@ -68,9 +68,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ### ⚠️ Mandatory Setup for Tailwind CSS v4 CSS Files
 
-Because `adn-ui` components utilize dedicated `.css` files with `@apply` rules, standalone CSS files in Tailwind CSS v4 require a reference to your global CSS entry file. 
+Because `adn-ui` components utilize dedicated `.css` files with `@apply` rules, standalone CSS files in Tailwind CSS v4 require a reference to your global CSS entry file.
 
 **Without auto-referencing plugins, PostCSS will throw errors such as:**
+
 > `Unknown directive @apply` or `Cannot find utility class... (did you forget @reference?)`
 
 Ensure your project config includes auto-referencing:
@@ -102,7 +103,6 @@ export default defineConfig({
 ```
 
 ---
-
 
 ## 🛠️ Scripts & Commands
 

@@ -1,5 +1,5 @@
 .tabs {
-  @apply flex w-full flex-col text-foreground;
+  @apply text-foreground flex w-full flex-col;
 }
 
 .tabs__list {
@@ -7,7 +7,7 @@
 }
 
 .tabs__tab {
-  @apply inline-flex items-center justify-center cursor-pointer whitespace-nowrap text-muted-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
+  @apply text-muted-foreground focus-visible:outline-ring inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition-colors outline-none focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50;
 }
 
 .tabs__indicator {
@@ -15,5 +15,5 @@
 }
 
 .tabs__panel {
-  @apply mt-2 outline-none focus-visible:outline-2 focus-visible:outline-ring;
+  @apply focus-visible:outline-ring mt-2 outline-none focus-visible:outline-2;
 }

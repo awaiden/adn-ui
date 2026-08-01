@@ -1,5 +1,5 @@
 .switch {
-  @apply inline-flex cursor-pointer items-center rounded-full border-2 border-transparent p-0.5 transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary bg-input data-invalid:border-destructive select-none;
+  @apply focus-visible:outline-ring data-checked:bg-primary bg-input data-invalid:border-destructive inline-flex cursor-pointer items-center rounded-full border-2 border-transparent p-0.5 transition-colors select-none focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .switch--sm {
@@ -15,7 +15,7 @@
 }
 
 .switch__thumb {
-  @apply pointer-events-none block rounded-full bg-background shadow-lg ring-0 transition-transform data-checked:translate-x-full data-unchecked:translate-x-0;
+  @apply bg-background pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-checked:translate-x-full data-unchecked:translate-x-0;
 }
 
 .switch__thumb--sm {

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import {
   AutocompleteRoot,
   AutocompleteInput,
@@ -36,7 +37,7 @@ export const Default = () => (
 );
 
 export const Sizes = () => (
-  <div className="flex flex-col gap-4 max-w-xs">
+  <div className="flex max-w-xs flex-col gap-4">
     <AutocompleteRoot size="sm">
       <AutocompleteInput placeholder="Small search..." />
     </AutocompleteRoot>

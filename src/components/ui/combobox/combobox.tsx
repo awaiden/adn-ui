@@ -1,10 +1,8 @@
 "use client";
 
 import "./combobox.css";
-
-import type React from "react";
-
 import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { ComboboxContext, useComboboxContext } from "./combobox.context";

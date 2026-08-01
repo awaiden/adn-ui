@@ -12,17 +12,17 @@ export function TabsDemo() {
         <TabsIndicator />
       </TabsList>
       <TabsPanel value="account">
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           Manage your profile information and account preferences here.
         </p>
       </TabsPanel>
       <TabsPanel value="password">
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           Change your security credentials and active sessions.
         </p>
       </TabsPanel>
       <TabsPanel value="notifications">
-        <p className="text-xs text-muted-foreground">
+        <p className="text-muted-foreground text-xs">
           Configure email, SMS, and desktop notification settings.
         </p>
       </TabsPanel>

@@ -1,10 +1,8 @@
 "use client";
 
 import "./avatar.css";
-
-import type React from "react";
-
 import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { AvatarContext, useAvatarContext } from "./avatar.context";

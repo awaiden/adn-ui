@@ -1,11 +1,11 @@
 .fieldset {
-  @apply flex w-full flex-col gap-4 border-0 p-0 m-0 text-foreground;
+  @apply text-foreground m-0 flex w-full flex-col gap-4 border-0 p-0;
 }
 
 .fieldset--bordered {
-  @apply rounded-lg border border-border p-4;
+  @apply border-border rounded-lg border p-4;
 }
 
 .fieldset__legend {
-  @apply border-b border-border text-base font-semibold text-foreground pb-1 mb-1;
+  @apply border-border text-foreground mb-1 border-b pb-1 text-base font-semibold;
 }

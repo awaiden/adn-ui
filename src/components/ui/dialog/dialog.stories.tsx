@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+import { Button } from "../button";
 import {
   DialogRoot,
   DialogTrigger,
@@ -11,7 +13,6 @@ import {
   DialogDescription,
   DialogClose,
 } from "./dialog";
-import { Button } from "../button";
 
 export default {
   title: "Components/Dialog",

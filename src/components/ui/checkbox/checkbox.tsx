@@ -1,10 +1,8 @@
 "use client";
 
 import "./checkbox.css";
-
-import type React from "react";
-
 import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { CheckboxContext, useCheckboxContext } from "./checkbox.context";

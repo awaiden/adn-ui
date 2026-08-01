@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import {
   PreviewCardRoot,
   PreviewCardTrigger,
@@ -16,14 +17,14 @@ export default {
 
 export const Default = () => (
   <PreviewCardRoot>
-    <PreviewCardTrigger className="text-primary underline text-sm cursor-pointer">
+    <PreviewCardTrigger className="text-primary cursor-pointer text-sm underline">
       @nextjs
     </PreviewCardTrigger>
     <PreviewCardPortal>
       <PreviewCardPositioner>
-        <PreviewCardPopup className="p-4 max-w-xs border rounded-lg shadow-lg bg-popover text-popover-foreground">
+        <PreviewCardPopup className="bg-popover text-popover-foreground max-w-xs rounded-lg border p-4 shadow-lg">
           <h4 className="text-sm font-semibold">Next.js</h4>
-          <p className="text-xs text-muted-foreground mt-1">The React Framework for the Web.</p>
+          <p className="text-muted-foreground mt-1 text-xs">The React Framework for the Web.</p>
         </PreviewCardPopup>
       </PreviewCardPositioner>
     </PreviewCardPortal>

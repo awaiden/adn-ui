@@ -1,5 +1,5 @@
 .checkbox {
-  @apply inline-flex shrink-0 items-center justify-center rounded-sm border border-input bg-background p-0 text-primary-foreground shadow-xs transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-primary data-checked:border-primary data-indeterminate:bg-primary data-indeterminate:border-primary;
+  @apply border-input bg-background text-primary-foreground focus-visible:outline-ring data-checked:bg-primary data-checked:border-primary data-indeterminate:bg-primary data-indeterminate:border-primary inline-flex shrink-0 items-center justify-center rounded-sm border p-0 shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .checkbox--sm {

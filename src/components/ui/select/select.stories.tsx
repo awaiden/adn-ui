@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import {
   SelectRoot,
   SelectTrigger,
@@ -19,12 +20,12 @@ export default {
 
 export const Default = () => (
   <SelectRoot defaultValue="apple">
-    <SelectTrigger className="w-48 flex justify-between items-center px-3 py-1.5 border rounded-md text-sm">
+    <SelectTrigger className="flex w-48 items-center justify-between rounded-md border px-3 py-1.5 text-sm">
       <SelectValue placeholder="Select fruit..." />
     </SelectTrigger>
     <SelectPortal>
       <SelectPositioner>
-        <SelectPopup className="border rounded-md shadow-md bg-popover text-popover-foreground">
+        <SelectPopup className="bg-popover text-popover-foreground rounded-md border shadow-md">
           <SelectList>
             <SelectItem value="apple">Apple</SelectItem>
             <SelectItem value="banana">Banana</SelectItem>

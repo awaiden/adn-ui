@@ -1,10 +1,8 @@
 "use client";
 
 import "./field.css";
-
-import type React from "react";
-
 import { Field as BaseField } from "@base-ui/react/field";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { FieldContext, useFieldContext } from "./field.context";

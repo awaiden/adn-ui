@@ -1,10 +1,8 @@
 "use client";
 
 import "./scroll-area.css";
-
-import type React from "react";
-
 import { ScrollArea as BaseScrollArea } from "@base-ui/react/scroll-area";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { ScrollAreaContext, useScrollAreaContext } from "./scroll-area.context";

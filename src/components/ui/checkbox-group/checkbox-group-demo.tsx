@@ -10,20 +10,20 @@ export function CheckboxGroupDemo({
 }) {
   return (
     <CheckboxGroupRoot defaultValue={["fuji"]} orientation={orientation}>
-      <div className="text-sm font-semibold mb-1">Select Apples</div>
-      <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+      <div className="mb-1 text-sm font-semibold">Select Apples</div>
+      <label className="flex cursor-pointer items-center gap-2 text-sm select-none">
         <CheckboxRoot value="fuji">
           <CheckboxIndicator />
         </CheckboxRoot>
         Fuji
       </label>
-      <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+      <label className="flex cursor-pointer items-center gap-2 text-sm select-none">
         <CheckboxRoot value="gala">
           <CheckboxIndicator />
         </CheckboxRoot>
         Gala
       </label>
-      <label className="flex items-center gap-2 text-sm cursor-pointer select-none">
+      <label className="flex cursor-pointer items-center gap-2 text-sm select-none">
         <CheckboxRoot value="granny">
           <CheckboxIndicator />
         </CheckboxRoot>

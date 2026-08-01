@@ -1,21 +1,21 @@
 .popover__positioner {
-  @apply outline-none z-50;
+  @apply z-50 outline-none;
 }
 
 .popover__popup {
-  @apply relative flex max-w-sm flex-col gap-1.5 rounded-lg border border-border bg-popover p-4 text-popover-foreground shadow-md outline-none transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+  @apply border-border bg-popover text-popover-foreground relative flex max-w-sm flex-col gap-1.5 rounded-lg border p-4 shadow-md transition-all duration-100 ease-out outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
 }
 
 .popover__title {
-  @apply text-sm font-semibold text-foreground;
+  @apply text-foreground text-sm font-semibold;
 }
 
 .popover__description {
-  @apply text-xs text-muted-foreground;
+  @apply text-muted-foreground text-xs;
 }
 
 .popover__close {
-  @apply absolute right-2 top-2 inline-flex size-6 items-center justify-center rounded-xs opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none;
+  @apply focus-visible:outline-ring absolute top-2 right-2 inline-flex size-6 items-center justify-center rounded-xs opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-2 disabled:pointer-events-none;
 }
 
 .popover__arrow {

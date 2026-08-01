@@ -11,7 +11,7 @@ import {
 export function PreviewCardDemo({ text = "Typography" }: { text?: string }) {
   return (
     <div className="p-2">
-      <p className="text-sm text-foreground">
+      <p className="text-foreground text-sm">
         The principles of good{" "}
         <PreviewCardRoot>
           <PreviewCardTrigger href="#">{text}</PreviewCardTrigger>
@@ -20,7 +20,7 @@ export function PreviewCardDemo({ text = "Typography" }: { text?: string }) {
               <PreviewCardPopup>
                 <div className="flex flex-col gap-1.5 p-1">
                   <h4 className="text-sm font-semibold">{text}</h4>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-muted-foreground text-xs">
                     Typography is the art and technique of arranging type to make written language
                     legible, readable, and appealing when displayed.
                   </p>

@@ -1,5 +1,5 @@
 .tooltip__trigger {
-  @apply inline-flex items-center justify-center cursor-pointer;
+  @apply inline-flex cursor-pointer items-center justify-center;
 }
 
 .tooltip__positioner {

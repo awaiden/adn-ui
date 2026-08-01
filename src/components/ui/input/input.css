@@ -1,5 +1,5 @@
 .input {
-  @apply flex w-full rounded-md border border-input bg-background text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;
+  @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive flex w-full rounded-md border text-sm shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .input--sm {

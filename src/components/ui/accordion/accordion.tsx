@@ -1,10 +1,8 @@
 "use client";
 
 import "./accordion.css";
-
-import type React from "react";
-
 import { Accordion as BaseAccordion } from "@base-ui/react/accordion";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { AccordionContext, useAccordionContext } from "./accordion.context";
@@ -66,7 +64,7 @@ export const AccordionTrigger = ({
       {children}
       {!hideChevron && (
         <svg
-          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-panel-open:rotate-180"
+          className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-data-panel-open:rotate-180"
           fill="none"
           stroke="currentColor"
           strokeLinecap="round"
@@ -90,7 +88,7 @@ export const AccordionPanel = ({ children, className, ...props }: AccordionPanel
   const { slots } = useAccordionContext();
   return (
     <BaseAccordion.Panel className={cn(slots.panel(), className)} {...props}>
-      <div className="px-4 py-3 text-muted-foreground">{children}</div>
+      <div className="text-muted-foreground px-4 py-3">{children}</div>
     </BaseAccordion.Panel>
   );
 };

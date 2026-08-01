@@ -5,7 +5,7 @@ import { BadgeRoot } from "./badge";
 
 export function BadgeDemo() {
   return (
-    <div className="flex flex-wrap gap-2 items-center">
+    <div className="flex flex-wrap items-center gap-2">
       <BadgeRoot variant="default">Default</BadgeRoot>
       <BadgeRoot variant="secondary">Secondary</BadgeRoot>
       <BadgeRoot variant="destructive">Destructive</BadgeRoot>

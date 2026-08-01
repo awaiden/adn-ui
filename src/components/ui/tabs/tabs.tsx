@@ -1,10 +1,8 @@
 "use client";
 
 import "./tabs.css";
-
-import type React from "react";
-
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { TabsContext, useTabsContext } from "./tabs.context";

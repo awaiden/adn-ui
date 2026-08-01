@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { TabsRoot, TabsList, TabsTab, TabsPanel } from "./tabs";
 
 export default {
@@ -11,10 +12,10 @@ export default {
 export const Default = () => (
   <TabsRoot defaultValue="account" className="w-full max-w-sm">
     <TabsList className="flex border-b">
-      <TabsTab value="account" className="px-4 py-2 text-sm font-medium border-b-2">
+      <TabsTab value="account" className="border-b-2 px-4 py-2 text-sm font-medium">
         Account
       </TabsTab>
-      <TabsTab value="password" className="px-4 py-2 text-sm font-medium border-b-2">
+      <TabsTab value="password" className="border-b-2 px-4 py-2 text-sm font-medium">
         Password
       </TabsTab>
     </TabsList>

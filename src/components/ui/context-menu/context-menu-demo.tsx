@@ -13,7 +13,7 @@ import {
 export function ContextMenuDemo() {
   return (
     <ContextMenuRoot>
-      <ContextMenuTrigger className="flex h-32 w-full max-w-sm items-center justify-center rounded-md border border-dashed border-border bg-muted/30 text-sm text-muted-foreground select-none font-medium">
+      <ContextMenuTrigger className="border-border bg-muted/30 text-muted-foreground flex h-32 w-full max-w-sm items-center justify-center rounded-md border border-dashed text-sm font-medium select-none">
         Right click inside this box
       </ContextMenuTrigger>
       <ContextMenuPortal>

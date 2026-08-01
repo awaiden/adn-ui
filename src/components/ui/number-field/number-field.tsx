@@ -1,10 +1,8 @@
 "use client";
 
 import "./number-field.css";
-
-import type React from "react";
-
 import { NumberField as BaseNumberField } from "@base-ui/react/number-field";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { NumberFieldContext, useNumberFieldContext } from "./number-field.context";

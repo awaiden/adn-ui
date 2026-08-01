@@ -1,10 +1,8 @@
 "use client";
 
 import "./popover.css";
-
-import React from "react";
-
 import { Popover as BasePopover } from "@base-ui/react/popover";
+import React from "react";
 import { cn } from "tailwind-variants";
 
 import { PopoverContext, usePopoverContext } from "./popover.context";

@@ -13,9 +13,9 @@ import {
 export function TooltipDemo() {
   return (
     <TooltipProvider>
-      <div className="flex gap-4 items-center">
+      <div className="flex items-center gap-4">
         <TooltipRoot>
-          <TooltipTrigger className="inline-flex h-9 px-4 items-center justify-center rounded-md border border-input text-xs font-medium hover:bg-accent hover:text-accent-foreground">
+          <TooltipTrigger className="border-input hover:bg-accent hover:text-accent-foreground inline-flex h-9 items-center justify-center rounded-md border px-4 text-xs font-medium">
             Hover Me
           </TooltipTrigger>
           <TooltipPortal>

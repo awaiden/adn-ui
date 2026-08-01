@@ -23,7 +23,7 @@ export function DrawerDemo({ side = "bottom" }: { side?: "bottom" | "top" | "lef
 
   return (
     <DrawerRoot side={side}>
-      <DrawerTrigger className="inline-flex h-9 px-4 items-center justify-center rounded-md border border-input bg-background text-xs font-medium hover:bg-accent hover:text-accent-foreground">
+      <DrawerTrigger className="border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-9 items-center justify-center rounded-md border px-4 text-xs font-medium">
         {sideLabels[side] || "Open Drawer"}
       </DrawerTrigger>
       <DrawerPortal>
@@ -35,8 +35,8 @@ export function DrawerDemo({ side = "bottom" }: { side?: "bottom" | "top" | "lef
               <DrawerDescription>
                 This panel slides in smoothly from the {side} edge of the screen.
               </DrawerDescription>
-              <div className="flex justify-end gap-2 mt-4">
-                <DrawerClose className="inline-flex h-8 px-3 items-center justify-center rounded-md bg-secondary text-secondary-foreground text-xs font-medium">
+              <div className="mt-4 flex justify-end gap-2">
+                <DrawerClose className="bg-secondary text-secondary-foreground inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium">
                   Close
                 </DrawerClose>
               </div>

@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { FieldRoot, FieldLabel, FieldControl, FieldDescription, FieldError } from "./field";
+
 import { InputRoot } from "../input";
+import { FieldRoot, FieldLabel, FieldControl, FieldDescription, FieldError } from "./field";
 
 export default {
   title: "Components/Field",

@@ -1,10 +1,8 @@
 "use client";
 
 import "./dialog.css";
-
-import React from "react";
-
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
+import React from "react";
 import { cn } from "tailwind-variants";
 
 import { DialogContext, useDialogContext } from "./dialog.context";

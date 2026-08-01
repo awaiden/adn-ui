@@ -1,5 +1,5 @@
 .avatar {
-  @apply relative inline-flex shrink-0 items-center justify-center overflow-hidden bg-muted text-muted-foreground select-none align-middle font-medium;
+  @apply bg-muted text-muted-foreground relative inline-flex shrink-0 items-center justify-center overflow-hidden align-middle font-medium select-none;
 }
 
 .avatar--sm {

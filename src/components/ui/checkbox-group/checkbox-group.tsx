@@ -1,10 +1,8 @@
 "use client";
 
 import "./checkbox-group.css";
-
-import type React from "react";
-
 import { CheckboxGroup as BaseCheckboxGroup } from "@base-ui/react/checkbox-group";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { CheckboxGroupContext } from "./checkbox-group.context";

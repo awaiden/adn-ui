@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { ProgressRoot, ProgressTrack, ProgressIndicator } from "./progress";
 
 export default {
@@ -11,9 +12,9 @@ export default {
 export const Default = () => (
   <div className="w-full max-w-xs">
     <ProgressRoot value={65}>
-      <ProgressTrack className="h-2 w-full bg-muted rounded-full overflow-hidden">
+      <ProgressTrack className="bg-muted h-2 w-full overflow-hidden rounded-full">
         <ProgressIndicator
-          className="h-full bg-primary transition-all duration-300"
+          className="bg-primary h-full transition-all duration-300"
           style={{ width: "65%" }}
         />
       </ProgressTrack>

@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+import { Button } from "../button";
 import {
   TooltipRoot,
   TooltipTrigger,
@@ -9,7 +11,6 @@ import {
   TooltipPopup,
   TooltipArrow,
 } from "./tooltip";
-import { Button } from "../button";
 
 export default {
   title: "Components/Tooltip",
@@ -23,7 +24,7 @@ export const Default = () => (
     </TooltipTrigger>
     <TooltipPortal>
       <TooltipPositioner>
-        <TooltipPopup className="px-3 py-1.5 text-xs border rounded bg-popover text-popover-foreground shadow">
+        <TooltipPopup className="bg-popover text-popover-foreground rounded border px-3 py-1.5 text-xs shadow">
           Add to library
           <TooltipArrow />
         </TooltipPopup>

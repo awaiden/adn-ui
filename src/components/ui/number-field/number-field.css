@@ -1,30 +1,30 @@
 .number-field {
-  @apply flex flex-col items-start gap-1 text-foreground;
+  @apply text-foreground flex flex-col items-start gap-1;
 }
 
 .number-field__group {
-  @apply inline-flex h-9 items-center rounded-md border border-input bg-background shadow-xs transition-colors focus-within:outline-2 focus-within:outline-ring;
+  @apply border-input bg-background focus-within:outline-ring inline-flex h-9 items-center rounded-md border shadow-xs transition-colors focus-within:outline-2;
 }
 
 .number-field__input {
-  @apply h-full w-20 border-0 bg-transparent px-2 text-center text-sm font-normal text-foreground tabular-nums outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50;
+  @apply text-foreground placeholder:text-muted-foreground h-full w-20 border-0 bg-transparent px-2 text-center text-sm font-normal tabular-nums outline-none disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .number-field__decrement,
 .number-field__increment {
-  @apply flex h-full w-8 items-center justify-center border-0 bg-transparent p-0 text-muted-foreground transition-colors hover:text-foreground hover:bg-accent active:bg-muted disabled:cursor-not-allowed disabled:opacity-50 select-none;
+  @apply text-muted-foreground hover:text-foreground hover:bg-accent active:bg-muted flex h-full w-8 items-center justify-center border-0 bg-transparent p-0 transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .number-field__decrement {
-  @apply border-r border-input rounded-l-md;
+  @apply border-input rounded-l-md border-r;
 }
 
 .number-field__increment {
-  @apply border-l border-input rounded-r-md;
+  @apply border-input rounded-r-md border-l;
 }
 
 .number-field__scrub-area {
-  @apply cursor-ew-resize font-medium select-none text-sm text-foreground;
+  @apply text-foreground cursor-ew-resize text-sm font-medium select-none;
 }
 
 .number-field__scrub-area-cursor {

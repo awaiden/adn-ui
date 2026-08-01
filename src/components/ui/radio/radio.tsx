@@ -1,11 +1,9 @@
 "use client";
 
 import "./radio.css";
-
-import type React from "react";
-
 import { Radio as BaseRadio } from "@base-ui/react/radio";
 import { RadioGroup as BaseRadioGroup } from "@base-ui/react/radio-group";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { RadioContext, useRadioContext } from "./radio.context";

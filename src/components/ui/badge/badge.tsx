@@ -1,9 +1,7 @@
 "use client";
 
 import "./badge.css";
-
 import type React from "react";
-
 import { cn } from "tailwind-variants";
 
 import { BadgeContext } from "./badge.context";

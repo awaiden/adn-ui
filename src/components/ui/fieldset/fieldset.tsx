@@ -1,10 +1,8 @@
 "use client";
 
 import "./fieldset.css";
-
-import type React from "react";
-
 import { Fieldset as BaseFieldset } from "@base-ui/react/fieldset";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { FieldsetContext, useFieldsetContext } from "./fieldset.context";

@@ -1,10 +1,8 @@
 "use client";
 
 import "./alert-dialog.css";
-
-import React from "react";
-
 import { AlertDialog as BaseAlertDialog } from "@base-ui/react/alert-dialog";
+import React from "react";
 import { cn } from "tailwind-variants";
 
 import { AlertDialogContext, useAlertDialogContext } from "./alert-dialog.context";

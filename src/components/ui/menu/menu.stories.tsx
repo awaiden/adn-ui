@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { MenuRoot, MenuTrigger, MenuPortal, MenuPositioner, MenuPopup, MenuItem } from "./menu";
+
 import { Button } from "../button";
+import { MenuRoot, MenuTrigger, MenuPortal, MenuPositioner, MenuPopup, MenuItem } from "./menu";
 
 export default {
   title: "Components/Menu",

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { InputRoot } from "./input";
 
 export default {
@@ -11,7 +12,7 @@ export default {
 export const Default = () => <InputRoot placeholder="e.g. Colm Tuite" className="max-w-xs" />;
 
 export const Sizes = () => (
-  <div className="flex flex-col gap-3 max-w-xs">
+  <div className="flex max-w-xs flex-col gap-3">
     <InputRoot size="sm" placeholder="Small size..." />
     <InputRoot size="md" placeholder="Medium size..." />
     <InputRoot size="lg" placeholder="Large size..." />

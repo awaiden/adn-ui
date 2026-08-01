@@ -4,7 +4,7 @@ import { ToggleRoot } from "./toggle";
 
 export function ToggleDemo() {
   return (
-    <div className="flex gap-3 items-center">
+    <div className="flex items-center gap-3">
       <ToggleRoot aria-label="Toggle bookmark" variant="outline">
         <svg className="size-4 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24">
           <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />

@@ -7,7 +7,7 @@
 }
 
 .table__header {
-  @apply border-b border-border;
+  @apply border-border border-b;
 }
 
 .table__body {
@@ -15,15 +15,15 @@
 }
 
 .table__footer {
-  @apply border-t border-border bg-muted/50 font-medium [&>tr]:last:border-b-0;
+  @apply border-border bg-muted/50 border-t font-medium [&>tr]:last:border-b-0;
 }
 
 .table__row {
-  @apply border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted;
+  @apply border-border hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors;
 }
 
 .table__head {
-  @apply h-10 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0;
+  @apply text-muted-foreground h-10 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0;
 }
 
 .table__cell {
@@ -31,5 +31,5 @@
 }
 
 .table__caption {
-  @apply mt-4 text-sm text-muted-foreground;
+  @apply text-muted-foreground mt-4 text-sm;
 }

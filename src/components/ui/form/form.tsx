@@ -1,10 +1,8 @@
 "use client";
 
 import "./form.css";
-
-import type React from "react";
-
 import { Form as BaseForm } from "@base-ui/react/form";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { FormContext } from "./form.context";

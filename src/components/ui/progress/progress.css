@@ -1,17 +1,17 @@
 .progress {
-  @apply grid w-full max-w-sm grid-cols-2 gap-y-1.5 text-foreground;
+  @apply text-foreground grid w-full max-w-sm grid-cols-2 gap-y-1.5;
 }
 
 .progress__label {
-  @apply text-sm font-medium text-foreground;
+  @apply text-foreground text-sm font-medium;
 }
 
 .progress__value {
-  @apply text-right text-sm text-muted-foreground;
+  @apply text-muted-foreground text-right text-sm;
 }
 
 .progress__track {
-  @apply col-span-2 relative w-full overflow-hidden rounded-full bg-secondary;
+  @apply bg-secondary relative col-span-2 w-full overflow-hidden rounded-full;
 }
 
 .progress__track--sm {
@@ -27,5 +27,5 @@
 }
 
 .progress__indicator {
-  @apply h-full w-full flex-1 bg-primary transition-all duration-300 ease-in-out;
+  @apply bg-primary h-full w-full flex-1 transition-all duration-300 ease-in-out;
 }

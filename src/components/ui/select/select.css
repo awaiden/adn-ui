@@ -1,13 +1,13 @@
 .select {
-  @apply flex flex-col gap-1.5 text-foreground;
+  @apply text-foreground flex flex-col gap-1.5;
 }
 
 .select__label {
-  @apply text-sm font-medium text-foreground cursor-default;
+  @apply text-foreground cursor-default text-sm font-medium;
 }
 
 .select__trigger {
-  @apply flex h-9 w-full min-w-40 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive select-none;
+  @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring data-invalid:border-destructive flex h-9 w-full min-w-40 items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm shadow-xs transition-colors select-none focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .select__trigger--sm {
@@ -23,27 +23,27 @@
 }
 
 .select__value {
-  @apply truncate data-placeholder:text-muted-foreground;
+  @apply data-placeholder:text-muted-foreground truncate;
 }
 
 .select__icon {
-  @apply flex size-4 items-center justify-center shrink-0 text-muted-foreground;
+  @apply text-muted-foreground flex size-4 shrink-0 items-center justify-center;
 }
 
 .select__positioner {
-  @apply outline-none z-50 select-none;
+  @apply z-50 outline-none select-none;
 }
 
 .select__popup {
-  @apply relative min-w-[var(--anchor-width)] overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+  @apply border-border bg-popover text-popover-foreground relative min-w-[var(--anchor-width)] overflow-hidden rounded-md border shadow-md transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
 }
 
 .select__list {
-  @apply relative max-h-60 overflow-y-auto p-1 scroll-py-1;
+  @apply relative max-h-60 scroll-py-1 overflow-y-auto p-1;
 }
 
 .select__item {
-  @apply relative flex cursor-default select-none items-center justify-between rounded-xs px-2 py-1.5 text-sm outline-none transition-colors data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50;
+  @apply data-highlighted:bg-accent data-highlighted:text-accent-foreground relative flex cursor-default items-center justify-between rounded-xs px-2 py-1.5 text-sm transition-colors outline-none select-none data-disabled:pointer-events-none data-disabled:opacity-50;
 }
 
 .select__item-text {
@@ -51,19 +51,19 @@
 }
 
 .select__item-indicator {
-  @apply flex size-4 items-center justify-center shrink-0 text-foreground;
+  @apply text-foreground flex size-4 shrink-0 items-center justify-center;
 }
 
 .select__group-label {
-  @apply px-2 py-1.5 text-xs font-semibold text-muted-foreground;
+  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;
 }
 
 .select__separator {
-  @apply -mx-1 my-1 h-px bg-border;
+  @apply bg-border -mx-1 my-1 h-px;
 }
 
 .select__scroll-arrow {
-  @apply flex h-5 w-full cursor-default items-center justify-center bg-popover text-muted-foreground text-xs;
+  @apply bg-popover text-muted-foreground flex h-5 w-full cursor-default items-center justify-center text-xs;
 }
 
 .select__arrow {

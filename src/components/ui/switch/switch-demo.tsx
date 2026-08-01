@@ -4,7 +4,7 @@ import { SwitchRoot, SwitchThumb } from "./switch";
 
 export function SwitchDemo() {
   return (
-    <label className="flex items-center gap-3 text-sm font-medium cursor-pointer">
+    <label className="flex cursor-pointer items-center gap-3 text-sm font-medium">
       <SwitchRoot defaultChecked>
         <SwitchThumb />
       </SwitchRoot>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { Toggle } from "./toggle";
 
 export default {

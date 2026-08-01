@@ -1,10 +1,8 @@
 "use client";
 
 import "./autocomplete.css";
-
-import type React from "react";
-
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react/autocomplete";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { AutocompleteContext, useAutocompleteContext } from "./autocomplete.context";

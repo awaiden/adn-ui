@@ -1,10 +1,8 @@
 "use client";
 
 import "./separator.css";
-
-import type React from "react";
-
 import { Separator as BaseSeparator } from "@base-ui/react/separator";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { SeparatorContext } from "./separator.context";

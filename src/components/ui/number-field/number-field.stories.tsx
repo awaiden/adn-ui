@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import {
   NumberFieldRoot,
   NumberFieldInput,
@@ -14,9 +15,9 @@ export default {
 };
 
 export const Default = () => (
-  <NumberFieldRoot defaultValue={1} className="flex items-center gap-1 max-w-xs">
+  <NumberFieldRoot defaultValue={1} className="flex max-w-xs items-center gap-1">
     <NumberFieldDecrement />
-    <NumberFieldInput className="w-16 text-center border rounded py-1 text-sm" />
+    <NumberFieldInput className="w-16 rounded border py-1 text-center text-sm" />
     <NumberFieldIncrement />
   </NumberFieldRoot>
 );

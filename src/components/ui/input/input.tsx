@@ -1,10 +1,8 @@
 "use client";
 
 import "./input.css";
-
-import type React from "react";
-
 import { Input as BaseInput } from "@base-ui/react/input";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { InputContext } from "./input.context";

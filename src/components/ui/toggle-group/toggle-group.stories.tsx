@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { ToggleGroupRoot, ToggleItem } from "./toggle-group";
 
 export default {
@@ -9,14 +10,14 @@ export default {
 };
 
 export const Single = () => (
-  <ToggleGroupRoot type="single" defaultValue="center" className="flex border rounded-md p-1 gap-1">
-    <ToggleItem value="left" className="px-3 py-1 text-sm rounded">
+  <ToggleGroupRoot type="single" defaultValue="center" className="flex gap-1 rounded-md border p-1">
+    <ToggleItem value="left" className="rounded px-3 py-1 text-sm">
       Left
     </ToggleItem>
-    <ToggleItem value="center" className="px-3 py-1 text-sm rounded">
+    <ToggleItem value="center" className="rounded px-3 py-1 text-sm">
       Center
     </ToggleItem>
-    <ToggleItem value="right" className="px-3 py-1 text-sm rounded">
+    <ToggleItem value="right" className="rounded px-3 py-1 text-sm">
       Right
     </ToggleItem>
   </ToggleGroupRoot>
@@ -26,12 +27,12 @@ export const Multiple = () => (
   <ToggleGroupRoot
     type="multiple"
     defaultValue={["bold"]}
-    className="flex border rounded-md p-1 gap-1"
+    className="flex gap-1 rounded-md border p-1"
   >
-    <ToggleItem value="bold" className="px-3 py-1 text-sm rounded">
+    <ToggleItem value="bold" className="rounded px-3 py-1 text-sm">
       Bold
     </ToggleItem>
-    <ToggleItem value="italic" className="px-3 py-1 text-sm rounded">
+    <ToggleItem value="italic" className="rounded px-3 py-1 text-sm">
       Italic
     </ToggleItem>
   </ToggleGroupRoot>

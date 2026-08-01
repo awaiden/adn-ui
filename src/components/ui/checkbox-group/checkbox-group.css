@@ -1,5 +1,5 @@
 .checkbox-group {
-  @apply flex text-foreground;
+  @apply text-foreground flex;
 }
 
 .checkbox-group--vertical {

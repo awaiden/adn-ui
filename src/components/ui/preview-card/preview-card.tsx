@@ -1,10 +1,8 @@
 "use client";
 
 import "./preview-card.css";
-
-import type React from "react";
-
 import { PreviewCard as BasePreviewCard } from "@base-ui/react/preview-card";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { PreviewCardContext, usePreviewCardContext } from "./preview-card.context";

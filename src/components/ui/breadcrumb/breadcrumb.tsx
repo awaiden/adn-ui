@@ -1,9 +1,7 @@
 "use client";
 
 import "./breadcrumb.css";
-
 import type React from "react";
-
 import { cn } from "tailwind-variants";
 
 import { BreadcrumbContext, useBreadcrumbContext } from "./breadcrumb.context";

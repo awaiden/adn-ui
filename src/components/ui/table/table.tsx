@@ -1,9 +1,7 @@
 "use client";
 
 import "./table.css";
-
 import type React from "react";
-
 import { cn } from "tailwind-variants";
 
 import { TableContext, useTableContext } from "./table.context";

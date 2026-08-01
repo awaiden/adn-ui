@@ -1,10 +1,8 @@
 "use client";
 
 import "./toggle.css";
-
-import type React from "react";
-
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { ToggleContext } from "./toggle.context";

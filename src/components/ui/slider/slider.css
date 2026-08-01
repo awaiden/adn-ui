@@ -1,13 +1,13 @@
 .slider {
-  @apply grid w-full max-w-xs grid-cols-2 gap-y-1.5 text-foreground select-none;
+  @apply text-foreground grid w-full max-w-xs grid-cols-2 gap-y-1.5 select-none;
 }
 
 .slider__label {
-  @apply text-sm font-medium text-foreground;
+  @apply text-foreground text-sm font-medium;
 }
 
 .slider__value {
-  @apply text-right text-sm text-muted-foreground;
+  @apply text-muted-foreground text-right text-sm;
 }
 
 .slider__control {
@@ -15,7 +15,7 @@
 }
 
 .slider__track {
-  @apply relative w-full rounded-full bg-secondary select-none;
+  @apply bg-secondary relative w-full rounded-full select-none;
 }
 
 .slider__track--sm {
@@ -31,11 +31,11 @@
 }
 
 .slider__indicator {
-  @apply rounded-full bg-primary select-none;
+  @apply bg-primary rounded-full select-none;
 }
 
 .slider__thumb {
-  @apply block shrink-0 rounded-full border border-primary bg-background shadow-xs transition-colors select-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50;
+  @apply border-primary bg-background focus-visible:outline-ring block shrink-0 rounded-full border shadow-xs transition-colors select-none focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50;
 }
 
 .slider__thumb--sm {

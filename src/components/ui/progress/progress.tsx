@@ -1,10 +1,8 @@
 "use client";
 
 import "./progress.css";
-
-import type React from "react";
-
 import { Progress as BaseProgress } from "@base-ui/react/progress";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { ProgressContext, useProgressContext } from "./progress.context";

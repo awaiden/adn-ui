@@ -1,10 +1,8 @@
 "use client";
 
 import "./tooltip.css";
-
-import type React from "react";
-
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { TooltipContext, useTooltipContext } from "./tooltip.context";

@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { CollapsibleRoot, CollapsibleTrigger, CollapsiblePanel } from "./collapsible";
+
 import { Button } from "../button";
+import { CollapsibleRoot, CollapsibleTrigger, CollapsiblePanel } from "./collapsible";
 
 export default {
   title: "Components/Collapsible",

@@ -1,9 +1,7 @@
 "use client";
 
 import "./button.css";
-
 import type React from "react";
-
 import { cn } from "tailwind-variants";
 
 import { buttonVariants, type ButtonVariants } from "./button.variants";

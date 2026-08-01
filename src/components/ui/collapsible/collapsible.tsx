@@ -1,10 +1,8 @@
 "use client";
 
 import "./collapsible.css";
-
-import type React from "react";
-
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { CollapsibleContext, useCollapsibleContext } from "./collapsible.context";
@@ -47,7 +45,7 @@ export const CollapsibleTrigger = ({
       {children}
       {!hideChevron && (
         <svg
-          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-150 group-data-panel-open:rotate-90"
+          className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-150 group-data-panel-open:rotate-90"
           fill="none"
           stroke="currentColor"
           strokeLinecap="round"
@@ -71,7 +69,7 @@ export const CollapsiblePanel = ({ children, className, ...props }: CollapsibleP
   const { slots } = useCollapsibleContext();
   return (
     <BaseCollapsible.Panel className={cn(slots.panel(), className)} {...props}>
-      <div className="py-2 px-1 text-muted-foreground">{children}</div>
+      <div className="text-muted-foreground px-1 py-2">{children}</div>
     </BaseCollapsible.Panel>
   );
 };

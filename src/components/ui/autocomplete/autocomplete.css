@@ -1,33 +1,33 @@
 .autocomplete__input {
-  @apply flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;
+  @apply border-input bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-ring flex w-full rounded-md border px-3 py-2 text-sm shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .autocomplete__input--sm {
-  @apply h-8 text-xs px-2.5;
+  @apply h-8 px-2.5 text-xs;
 }
 
 .autocomplete__input--md {
-  @apply h-9 text-sm px-3;
+  @apply h-9 px-3 text-sm;
 }
 
 .autocomplete__input--lg {
-  @apply h-10 text-base px-3.5;
+  @apply h-10 px-3.5 text-base;
 }
 
 .autocomplete__positioner {
-  @apply outline-none z-50;
+  @apply z-50 outline-none;
 }
 
 .autocomplete__popup {
-  @apply w-[var(--anchor-width)] max-w-[var(--available-width)] overflow-hidden rounded-md border border-border bg-popover text-popover-foreground shadow-md transition-all duration-100 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;
+  @apply border-border bg-popover text-popover-foreground w-[var(--anchor-width)] max-w-[var(--available-width)] overflow-hidden rounded-md border shadow-md transition-all duration-100 ease-out data-ending-style:opacity-0 data-starting-style:opacity-0;
 }
 
 .autocomplete__list {
-  @apply outline-none overflow-y-auto scroll-py-1 p-1 overscroll-contain max-h-[min(20rem,var(--available-height))] data-empty:p-0;
+  @apply max-h-[min(20rem,var(--available-height))] scroll-py-1 overflow-y-auto overscroll-contain p-1 outline-none data-empty:p-0;
 }
 
 .autocomplete__item {
-  @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm text-foreground outline-none transition-colors data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50;
+  @apply text-foreground data-highlighted:bg-accent data-highlighted:text-accent-foreground relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none data-disabled:pointer-events-none data-disabled:opacity-50;
 }
 
 .autocomplete__item--sm {
@@ -43,13 +43,13 @@
 }
 
 .autocomplete__empty {
-  @apply p-3 text-center text-sm text-muted-foreground;
+  @apply text-muted-foreground p-3 text-center text-sm;
 }
 
 .autocomplete__status {
-  @apply p-2 text-xs text-muted-foreground;
+  @apply text-muted-foreground p-2 text-xs;
 }
 
 .autocomplete__group-label {
-  @apply px-2 py-1.5 text-xs font-semibold text-muted-foreground;
+  @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;
 }

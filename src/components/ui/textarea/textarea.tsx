@@ -1,9 +1,7 @@
 "use client";
 
 import "./textarea.css";
-
 import type React from "react";
-
 import { cn } from "tailwind-variants";
 
 import { TextareaContext } from "./textarea.context";

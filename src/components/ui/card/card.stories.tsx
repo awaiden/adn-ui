@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { CardRoot, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
+
 import { Button } from "../button";
+import { CardRoot, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./card";
 
 export default {
   title: "Components/Card",

@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { FormRoot } from "./form";
+
+import { Button } from "../button";
 import { FieldRoot, FieldLabel, FieldControl } from "../field";
 import { InputRoot } from "../input";
-import { Button } from "../button";
+import { FormRoot } from "./form";
 
 export default {
   title: "Components/Form",
@@ -12,7 +13,7 @@ export default {
 };
 
 export const Default = () => (
-  <FormRoot className="space-y-4 max-w-sm">
+  <FormRoot className="max-w-sm space-y-4">
     <FieldRoot className="space-y-1">
       <FieldLabel>Username</FieldLabel>
       <FieldControl>

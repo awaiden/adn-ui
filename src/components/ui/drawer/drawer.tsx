@@ -1,10 +1,8 @@
 "use client";
 
 import "./drawer.css";
-
-import React from "react";
-
 import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
+import React from "react";
 import { cn } from "tailwind-variants";
 
 import { DrawerContext, useDrawerContext } from "./drawer.context";

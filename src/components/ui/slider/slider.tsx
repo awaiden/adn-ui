@@ -1,10 +1,8 @@
 "use client";
 
 import "./slider.css";
-
-import type React from "react";
-
 import { Slider as BaseSlider } from "@base-ui/react/slider";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { SliderContext, useSliderContext } from "./slider.context";

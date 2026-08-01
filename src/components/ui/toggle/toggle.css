@@ -1,3 +1,3 @@
 .toggle {
-  @apply inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium text-foreground transition-colors outline-none focus-visible:outline-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 select-none;
+  @apply text-foreground focus-visible:outline-ring inline-flex cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors outline-none select-none focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50;
 }

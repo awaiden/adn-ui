@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { TableRoot, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./table";
 
 export default {
@@ -9,7 +10,7 @@ export default {
 };
 
 export const Default = () => (
-  <TableRoot className="w-full max-w-md border rounded-md">
+  <TableRoot className="w-full max-w-md rounded-md border">
     <TableHeader>
       <TableRow>
         <TableHead>Invoice</TableHead>

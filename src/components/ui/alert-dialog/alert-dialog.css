@@ -3,7 +3,7 @@
 }
 
 .alert-dialog__popup {
-  @apply fixed top-1/2 left-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border border-border bg-card p-6 text-card-foreground shadow-lg transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-[0.96] data-ending-style:opacity-0 data-starting-style:scale-[0.96] data-starting-style:opacity-0;
+  @apply border-border bg-card text-card-foreground fixed top-1/2 left-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border p-6 shadow-lg transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-[0.96] data-ending-style:opacity-0 data-starting-style:scale-[0.96] data-starting-style:opacity-0;
 }
 
 .alert-dialog__popup--sm {
@@ -27,11 +27,11 @@
 }
 
 .alert-dialog__title {
-  @apply text-lg font-semibold leading-none tracking-tight text-foreground;
+  @apply text-foreground text-lg leading-none font-semibold tracking-tight;
 }
 
 .alert-dialog__description {
-  @apply text-sm text-muted-foreground leading-normal;
+  @apply text-muted-foreground text-sm leading-normal;
 }
 
 .alert-dialog__trigger {

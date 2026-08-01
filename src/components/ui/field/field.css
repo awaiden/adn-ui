@@ -1,21 +1,21 @@
 .field {
-  @apply flex w-full flex-col items-start gap-1.5 text-foreground;
+  @apply text-foreground flex w-full flex-col items-start gap-1.5;
 }
 
 .field__label {
-  @apply text-sm font-medium text-foreground select-none data-disabled:opacity-50 data-invalid:text-destructive;
+  @apply text-foreground data-invalid:text-destructive text-sm font-medium select-none data-disabled:opacity-50;
 }
 
 .field__control {
-  @apply h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-xs transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-invalid:border-destructive data-invalid:focus-visible:outline-destructive;
+  @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive h-9 w-full rounded-md border px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .field__error {
-  @apply text-xs font-medium text-destructive transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
+  @apply text-destructive text-xs font-medium transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
 }
 
 .field__description {
-  @apply text-xs text-muted-foreground;
+  @apply text-muted-foreground text-xs;
 }
 
 .field__item {

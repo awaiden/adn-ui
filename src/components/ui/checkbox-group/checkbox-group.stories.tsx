@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { CheckboxGroupRoot } from "./checkbox-group";
+
 import { CheckboxRoot, CheckboxIndicator } from "../checkbox";
+import { CheckboxGroupRoot } from "./checkbox-group";
 
 export default {
   title: "Components/CheckboxGroup",

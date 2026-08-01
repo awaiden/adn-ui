@@ -5,10 +5,7 @@ function tailwindAutoReference() {
     postcssPlugin: "tailwind-auto-reference",
     Once(root, { AtRule }) {
       const file = root.source?.input?.file;
-      if (
-        file &&
-        (file.endsWith("global.css") || file.endsWith("globals.css"))
-      ) {
+      if (file && (file.endsWith("global.css") || file.endsWith("globals.css"))) {
         return;
       }
 

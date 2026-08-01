@@ -1,15 +1,13 @@
 "use client";
 
 import "./toggle-group.css";
-
-import type React from "react";
-
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
+import { ToggleRoot } from "../toggle";
 import { ToggleGroupContext } from "./toggle-group.context";
 import { toggleGroupVariants, type ToggleGroupVariants } from "./toggle-group.variants";
-import { ToggleRoot } from "../toggle";
 
 export type ToggleGroupProps = ToggleGroupVariants & React.ComponentProps<typeof BaseToggleGroup>;
 

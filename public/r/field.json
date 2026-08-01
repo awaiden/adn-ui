@@ -3,10 +3,7 @@
   "name": "field",
   "title": "Field",
   "description": "Provides labeling, helper text, and validation error messages for form controls.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/field/field.tsx",

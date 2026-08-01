@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { BadgeRoot } from "./badge";
 
 export default {

@@ -1,13 +1,13 @@
 .preview-card__positioner {
-  @apply outline-none z-50;
+  @apply z-50 outline-none;
 }
 
 .preview-card__popup {
-  @apply relative flex max-w-xs flex-col gap-2 rounded-lg border border-border bg-popover p-3 text-popover-foreground shadow-md outline-none transition-all duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+  @apply border-border bg-popover text-popover-foreground relative flex max-w-xs flex-col gap-2 rounded-lg border p-3 shadow-md transition-all duration-100 ease-out outline-none data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
 }
 
 .preview-card__trigger {
-  @apply cursor-pointer underline decoration-muted-foreground/50 underline-offset-2 transition-colors hover:decoration-foreground focus-visible:outline-2 focus-visible:outline-ring;
+  @apply decoration-muted-foreground/50 hover:decoration-foreground focus-visible:outline-ring cursor-pointer underline underline-offset-2 transition-colors focus-visible:outline-2;
 }
 
 .preview-card__arrow {

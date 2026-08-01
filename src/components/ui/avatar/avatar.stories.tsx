@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import { AvatarRoot, AvatarImage, AvatarFallback } from "./avatar";
 
 export default {

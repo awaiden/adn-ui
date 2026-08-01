@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+
+import { Button } from "../button";
 import {
   PopoverRoot,
   PopoverTrigger,
@@ -11,7 +13,6 @@ import {
   PopoverDescription,
   PopoverClose,
 } from "./popover";
-import { Button } from "../button";
 
 export default {
   title: "Components/Popover",
@@ -25,9 +26,9 @@ export const Default = () => (
     </PopoverTrigger>
     <PopoverPortal>
       <PopoverPositioner>
-        <PopoverPopup className="p-4 space-y-2 max-w-xs">
-          <PopoverTitle className="font-semibold text-sm">Dimensions</PopoverTitle>
-          <PopoverDescription className="text-xs text-muted-foreground">
+        <PopoverPopup className="max-w-xs space-y-2 p-4">
+          <PopoverTitle className="text-sm font-semibold">Dimensions</PopoverTitle>
+          <PopoverDescription className="text-muted-foreground text-xs">
             Set the dimensions for the layer.
           </PopoverDescription>
           <PopoverClose>

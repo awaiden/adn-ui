@@ -1,10 +1,8 @@
 "use client";
 
 import "./menu.css";
-
-import type React from "react";
-
 import { Menu as BaseMenu } from "@base-ui/react/menu";
+import type React from "react";
 import { cn } from "tailwind-variants";
 
 import { MenuContext, useMenuContext } from "./menu.context";
@@ -110,7 +108,7 @@ export const MenuSubmenuTrigger = ({ children, className, ...props }: MenuSubmen
     <BaseMenu.SubmenuTrigger className={cn(slots.submenuTrigger(), className)} {...props}>
       {children}
       <svg
-        className="h-4 w-4 shrink-0 text-muted-foreground"
+        className="text-muted-foreground h-4 w-4 shrink-0"
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

@@ -1,9 +1,9 @@
 .collapsible {
-  @apply flex w-full flex-col text-foreground;
+  @apply text-foreground flex w-full flex-col;
 }
 
 .collapsible__trigger {
-  @apply flex h-9 items-center justify-between gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50;
+  @apply border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring flex h-9 items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .collapsible__panel {

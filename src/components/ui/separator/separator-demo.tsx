@@ -4,10 +4,10 @@ import { SeparatorRoot } from "./separator";
 
 export function SeparatorDemo() {
   return (
-    <div className="flex flex-col gap-4 max-w-sm">
+    <div className="flex max-w-sm flex-col gap-4">
       <div>
-        <h4 className="text-sm font-semibold leading-none">adn-ui Design System</h4>
-        <p className="text-xs text-muted-foreground mt-1">
+        <h4 className="text-sm leading-none font-semibold">adn-ui Design System</h4>
+        <p className="text-muted-foreground mt-1 text-xs">
           An open-source UI component library built for Astro & React 19.
         </p>
       </div>

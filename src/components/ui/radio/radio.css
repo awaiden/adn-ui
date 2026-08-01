@@ -1,9 +1,9 @@
 .radio-group {
-  @apply flex flex-col gap-2 text-foreground;
+  @apply text-foreground flex flex-col gap-2;
 }
 
 .radio {
-  @apply inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full border border-input bg-background p-0 text-primary-foreground transition-colors focus-visible:outline-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:border-primary data-checked:bg-primary data-invalid:border-destructive;
+  @apply border-input bg-background text-primary-foreground focus-visible:outline-ring data-checked:border-primary data-checked:bg-primary data-invalid:border-destructive inline-flex size-4 shrink-0 cursor-pointer items-center justify-center rounded-full border p-0 transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
 .radio--sm {
@@ -19,7 +19,7 @@
 }
 
 .radio__indicator {
-  @apply flex items-center justify-center data-unchecked:hidden before:size-1.5 before:rounded-full before:bg-primary-foreground;
+  @apply before:bg-primary-foreground flex items-center justify-center before:size-1.5 before:rounded-full data-unchecked:hidden;
 }
 
 .radio__indicator--sm::before {

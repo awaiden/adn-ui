@@ -1,5 +1,5 @@
 .form {
-  @apply flex w-full flex-col gap-4 text-foreground;
+  @apply text-foreground flex w-full flex-col gap-4;
 }
 
 .form--vertical {
@@ -7,5 +7,5 @@
 }
 
 .form--horizontal {
-  @apply flex-row items-start flex-wrap;
+  @apply flex-row flex-wrap items-start;
 }
