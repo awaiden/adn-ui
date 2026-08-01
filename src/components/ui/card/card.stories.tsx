@@ -19,7 +19,9 @@ export const Default = () => (
       <p className="text-sm">Two-factor authentication is currently enabled on your account.</p>
     </CardContent>
     <CardFooter>
-      <Button size="sm" variant="primary">Update Settings</Button>
+      <Button size="sm" variant="primary">
+        Update Settings
+      </Button>
     </CardFooter>
   </CardRoot>
 );

@@ -31,7 +31,7 @@ export const DialogTrigger = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: DialogTriggerProps) => {
   const { slots } = useDialogContext();
@@ -91,7 +91,7 @@ export const DialogClose = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: DialogCloseProps) => {
   const { slots } = useDialogContext();

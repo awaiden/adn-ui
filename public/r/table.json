@@ -3,9 +3,7 @@
   "name": "table",
   "title": "Table",
   "description": "A responsive table component.",
-  "dependencies": [
-    "tailwind-variants"
-  ],
+  "dependencies": ["tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/table/table.tsx",

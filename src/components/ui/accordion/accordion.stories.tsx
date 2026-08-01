@@ -21,7 +21,8 @@ export const Default = () => (
         <AccordionTrigger>What is Base UI?</AccordionTrigger>
       </AccordionHeader>
       <AccordionPanel>
-        Base UI is a library of high-quality unstyled React components for design systems and web apps.
+        Base UI is a library of high-quality unstyled React components for design systems and web
+        apps.
       </AccordionPanel>
     </AccordionItem>
     <AccordionItem value="item-2">
@@ -29,7 +30,8 @@ export const Default = () => (
         <AccordionTrigger>How do I get started?</AccordionTrigger>
       </AccordionHeader>
       <AccordionPanel>
-        Head to the Quick Start guide in the docs. If you have used unstyled libraries before, you will feel right at home.
+        Head to the Quick Start guide in the docs. If you have used unstyled libraries before, you
+        will feel right at home.
       </AccordionPanel>
     </AccordionItem>
   </AccordionRoot>

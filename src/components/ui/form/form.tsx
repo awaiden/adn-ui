@@ -7,7 +7,7 @@ import type React from "react";
 import { Form as BaseForm } from "@base-ui/react/form";
 import { cn } from "tailwind-variants";
 
-import { FormContext, useFormContext } from "./form.context";
+import { FormContext } from "./form.context";
 import { formVariants, type FormVariants } from "./form.variants";
 
 export type FormProps = FormVariants & React.ComponentProps<typeof BaseForm>;

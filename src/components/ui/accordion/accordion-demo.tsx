@@ -15,7 +15,7 @@ export function AccordionDemo({
   multiple?: boolean;
   variant?: "default" | "outline" | "ghost";
 }) {
-// @ts-nocheck
+  // @ts-nocheck
   return (
     <AccordionRoot multiple={multiple} variant={variant}>
       <AccordionItem>

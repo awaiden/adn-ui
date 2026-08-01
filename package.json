@@ -1,17 +1,17 @@
 {
   "name": "adn-ui",
   "version": "0.1.0",
-  "description": "High-quality, unstyled React UI components built with Base UI and Tailwind CSS v4",
-  "license": "MIT",
   "private": true,
+  "description": "High-quality, unstyled React UI components built with Base UI and Tailwind CSS v4",
+  "homepage": "https://github.com/awaiden/adn-ui#readme",
+  "bugs": {
+    "url": "https://github.com/awaiden/adn-ui/issues"
+  },
+  "license": "MIT",
   "author": "Halil Aydın <https://github.com/awaiden>",
   "repository": {
     "type": "git",
     "url": "https://github.com/awaiden/adn-ui.git"
-  },
-  "homepage": "https://github.com/awaiden/adn-ui#readme",
-  "bugs": {
-    "url": "https://github.com/awaiden/adn-ui/issues"
   },
   "scripts": {
     "build:registry": "npx shadcn build",
@@ -20,14 +20,10 @@
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "oxlint",
+    "format": "oxfmt",
     "storybook": "BROWSER=none storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "oxlint --fix"
-    ]
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -52,12 +48,19 @@
     "@types/react-dom": "^19.2.3",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
+    "oxfmt": "^0.61.0",
     "oxlint": "^1.76.0",
     "postcss": "^8.5.24",
+    "postcss-prepend-imports": "^1.0.1",
     "storybook": "10.5.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vite": "^8.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "oxlint --fix"
+    ]
   },
   "engines": {
     "node": ">=22.0.0"

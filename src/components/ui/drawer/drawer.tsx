@@ -40,10 +40,14 @@ const SIDE_TO_SWIPE_DIRECTION: Record<
 
 export type DrawerProps = DrawerVariants & React.ComponentProps<typeof BaseDrawer.Root>;
 
-export const DrawerRoot = ({ children, side = "bottom", swipeDirection, ...props }: DrawerProps) => {
+export const DrawerRoot = ({
+  children,
+  side = "bottom",
+  swipeDirection,
+  ...props
+}: DrawerProps) => {
   const slots = drawerVariants({ side });
-  const resolvedSwipeDirection =
-    swipeDirection ?? (side ? SIDE_TO_SWIPE_DIRECTION[side] : "down");
+  const resolvedSwipeDirection = swipeDirection ?? (side ? SIDE_TO_SWIPE_DIRECTION[side] : "down");
 
   return (
     <DrawerContext.Provider value={{ slots }}>
@@ -63,7 +67,7 @@ export const DrawerTrigger = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: DrawerTriggerProps) => {
   const { slots } = useDrawerContext();
@@ -145,7 +149,7 @@ export const DrawerClose = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: DrawerCloseProps) => {
   const { slots } = useDrawerContext();

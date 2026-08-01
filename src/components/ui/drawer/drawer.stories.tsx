@@ -33,7 +33,9 @@ export const SideBottom = () => (
             <DrawerTitle>Bottom Drawer</DrawerTitle>
             <DrawerDescription>Slides up from bottom edge.</DrawerDescription>
             <DrawerClose className="mt-4">
-              <Button size="sm" variant="secondary">Close</Button>
+              <Button size="sm" variant="secondary">
+                Close
+              </Button>
             </DrawerClose>
           </DrawerContent>
         </DrawerPopup>
@@ -55,7 +57,9 @@ export const SideRight = () => (
             <DrawerTitle>Right Drawer</DrawerTitle>
             <DrawerDescription>Slides in from right edge.</DrawerDescription>
             <DrawerClose className="mt-4">
-              <Button size="sm" variant="secondary">Close</Button>
+              <Button size="sm" variant="secondary">
+                Close
+              </Button>
             </DrawerClose>
           </DrawerContent>
         </DrawerPopup>
@@ -77,7 +81,9 @@ export const SideLeft = () => (
             <DrawerTitle>Left Drawer</DrawerTitle>
             <DrawerDescription>Slides in from left edge.</DrawerDescription>
             <DrawerClose className="mt-4">
-              <Button size="sm" variant="secondary">Close</Button>
+              <Button size="sm" variant="secondary">
+                Close
+              </Button>
             </DrawerClose>
           </DrawerContent>
         </DrawerPopup>
@@ -99,7 +105,9 @@ export const SideTop = () => (
             <DrawerTitle>Top Drawer</DrawerTitle>
             <DrawerDescription>Slides down from top edge.</DrawerDescription>
             <DrawerClose className="mt-4">
-              <Button size="sm" variant="secondary">Close</Button>
+              <Button size="sm" variant="secondary">
+                Close
+              </Button>
             </DrawerClose>
           </DrawerContent>
         </DrawerPopup>

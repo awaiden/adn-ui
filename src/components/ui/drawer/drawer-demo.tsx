@@ -13,11 +13,7 @@ import {
   DrawerViewport,
 } from "./drawer";
 
-export function DrawerDemo({
-  side = "bottom",
-}: {
-  side?: "bottom" | "top" | "left" | "right";
-}) {
+export function DrawerDemo({ side = "bottom" }: { side?: "bottom" | "top" | "left" | "right" }) {
   const sideLabels: Record<string, string> = {
     bottom: "Open Bottom Drawer",
     right: "Open Right Drawer",

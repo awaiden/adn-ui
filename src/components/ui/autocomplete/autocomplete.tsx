@@ -13,12 +13,7 @@ import { autocompleteVariants, type AutocompleteVariants } from "./autocomplete.
 export type AutocompleteProps = AutocompleteVariants &
   React.ComponentProps<typeof BaseAutocomplete.Root>;
 
-export function AutocompleteRoot({
-  children,
-  size,
-  variant,
-  ...props
-}: AutocompleteProps) {
+export function AutocompleteRoot({ children, size, variant, ...props }: AutocompleteProps) {
   const slots = autocompleteVariants({ size, variant });
 
   return (
@@ -32,15 +27,12 @@ export type AutocompleteInputProps = React.ComponentProps<typeof BaseAutocomplet
 
 export const AutocompleteInput = ({
   className,
-  children,
-  dangerouslySetInnerHTML,
+  children: _children,
+  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,
   ...props
 }: AutocompleteInputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {
   const { slots } = useAutocompleteContext();
-  const cleanProps = { ...props };
-  delete (cleanProps as any).children;
-  delete (cleanProps as any).dangerouslySetInnerHTML;
-  return <BaseAutocomplete.Input className={cn(slots.input(), className)} {...cleanProps} />;
+  return <BaseAutocomplete.Input className={cn(slots.input(), className)} {...props} />;
 };
 
 export type AutocompletePortalProps = React.ComponentProps<typeof BaseAutocomplete.Portal>;

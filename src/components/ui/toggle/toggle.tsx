@@ -7,7 +7,7 @@ import type React from "react";
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 import { cn } from "tailwind-variants";
 
-import { ToggleContext, useToggleContext } from "./toggle.context";
+import { ToggleContext } from "./toggle.context";
 import { toggleVariants, type ToggleVariants } from "./toggle.variants";
 
 export type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;

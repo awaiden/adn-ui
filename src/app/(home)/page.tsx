@@ -22,7 +22,13 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CardRoot, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import {
+  CardRoot,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
 import { SwitchRoot, SwitchThumb } from "@/components/ui/switch";
 import {
   DrawerRoot,
@@ -52,12 +58,7 @@ import {
   AccordionTrigger,
   AccordionPanel,
 } from "@/components/ui/accordion";
-import {
-  TabsRoot,
-  TabsList,
-  TabsTab,
-  TabsPanel,
-} from "@/components/ui/tabs";
+import { TabsRoot, TabsList, TabsTab, TabsPanel } from "@/components/ui/tabs";
 
 export default function HomePage() {
   const [copied, setCopied] = useState(false);
@@ -91,22 +92,36 @@ export default function HomePage() {
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-4xl leading-[1.1] mb-6">
-          Unstyled Primitives for <span className="bg-gradient-to-r from-primary via-primary/80 to-muted-foreground bg-clip-text text-transparent">Modern UI Components</span>
+          Unstyled Primitives for{" "}
+          <span className="bg-gradient-to-r from-primary via-primary/80 to-muted-foreground bg-clip-text text-transparent">
+            Modern UI Components
+          </span>
         </h1>
 
         <p className="text-base md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-          High-performance, fully accessible UI components built on top of <code className="text-foreground font-mono text-sm px-1.5 py-0.5 rounded bg-muted">@base-ui/react</code>. Styled with Tailwind v4, ready for production.
+          High-performance, fully accessible UI components built on top of{" "}
+          <code className="text-foreground font-mono text-sm px-1.5 py-0.5 rounded bg-muted">
+            @base-ui/react
+          </code>
+          . Styled with Tailwind v4, ready for production.
         </p>
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <Link href="/docs">
-            <Button size="lg" className="h-11 px-6 text-sm font-semibold rounded-lg shadow-md transition-all hover:scale-[1.02]">
+            <Button
+              size="lg"
+              className="h-11 px-6 text-sm font-semibold rounded-lg shadow-md transition-all hover:scale-[1.02]"
+            >
               Explore Documentation <ArrowRight className="w-4 h-4 ml-1.5" />
             </Button>
           </Link>
           <a href="https://github.com/awaiden/adn-ui" target="_blank" rel="noreferrer">
-            <Button variant="outline" size="lg" className="h-11 px-6 text-sm font-medium rounded-lg">
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-11 px-6 text-sm font-medium rounded-lg"
+            >
               GitHub Repository
             </Button>
           </a>
@@ -143,7 +158,8 @@ export default function HomePage() {
           <Badge className="mb-2">Interactive Showcase</Badge>
           <h2 className="text-3xl font-bold tracking-tight">Try ADN UI Components</h2>
           <p className="text-muted-foreground mt-2 max-w-lg mx-auto text-sm">
-            Experience gestures, accessible dialogs, drawers, and form controls built with zero friction.
+            Experience gestures, accessible dialogs, drawers, and form controls built with zero
+            friction.
           </p>
         </div>
 
@@ -151,16 +167,28 @@ export default function HomePage() {
         <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-xl">
           <TabsRoot defaultValue="drawers">
             <TabsList className="flex border-b border-border mb-6 gap-2 pb-2">
-              <TabsTab value="drawers" className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer">
+              <TabsTab
+                value="drawers"
+                className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer"
+              >
                 Drawer Variants
               </TabsTab>
-              <TabsTab value="dialogs" className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer">
+              <TabsTab
+                value="dialogs"
+                className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer"
+              >
                 Dialog & Modal
               </TabsTab>
-              <TabsTab value="form" className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer">
+              <TabsTab
+                value="form"
+                className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer"
+              >
                 Controls & Badges
               </TabsTab>
-              <TabsTab value="accordion" className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer">
+              <TabsTab
+                value="accordion"
+                className="px-4 py-2 text-sm font-medium rounded-md data-[selected]:bg-muted data-[selected]:text-foreground text-muted-foreground transition-colors cursor-pointer"
+              >
                 Accordion
               </TabsTab>
             </TabsList>
@@ -171,7 +199,11 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Multi-directional Drawers</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Full swipe-to-dismiss gesture support for all screen edges (<code className="text-xs bg-muted px-1 py-0.5 rounded">bottom</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">right</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">left</code>, <code className="text-xs bg-muted px-1 py-0.5 rounded">top</code>).
+                    Full swipe-to-dismiss gesture support for all screen edges (
+                    <code className="text-xs bg-muted px-1 py-0.5 rounded">bottom</code>,{" "}
+                    <code className="text-xs bg-muted px-1 py-0.5 rounded">right</code>,{" "}
+                    <code className="text-xs bg-muted px-1 py-0.5 rounded">left</code>,{" "}
+                    <code className="text-xs bg-muted px-1 py-0.5 rounded">top</code>).
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     <Button
@@ -209,7 +241,9 @@ export default function HomePage() {
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3">
                     <Sliders className="w-6 h-6" />
                   </div>
-                  <h4 className="font-semibold text-sm mb-1">Active Side: <span className="capitalize text-primary">{activeSide}</span></h4>
+                  <h4 className="font-semibold text-sm mb-1">
+                    Active Side: <span className="capitalize text-primary">{activeSide}</span>
+                  </h4>
                   <p className="text-xs text-muted-foreground max-w-xs mb-4">
                     Click any drawer side above to launch a live demo with touch swipe interactions.
                   </p>
@@ -226,7 +260,8 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Accessible Dialogs</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Focus trapping, backdrop blur overlay, escape key dismissal, and seamless transitions.
+                    Focus trapping, backdrop blur overlay, escape key dismissal, and seamless
+                    transitions.
                   </p>
                   <DialogRoot>
                     <DialogTrigger>
@@ -239,7 +274,8 @@ export default function HomePage() {
                       <DialogPopup>
                         <DialogTitle>ADN UI Dialog</DialogTitle>
                         <DialogDescription>
-                          This modal is fully accessible, traps focus automatically, and closes with the Escape key or backdrop tap.
+                          This modal is fully accessible, traps focus automatically, and closes with
+                          the Escape key or backdrop tap.
                         </DialogDescription>
                         <div className="flex justify-end gap-2 mt-6">
                           <DialogClose className="inline-flex h-9 px-4 items-center justify-center rounded-md bg-secondary text-secondary-foreground text-xs font-medium hover:bg-secondary/80">
@@ -272,7 +308,10 @@ export default function HomePage() {
                         <SwitchThumb />
                       </SwitchRoot>
                       <span className="text-sm text-muted-foreground">
-                        Status: <strong className="text-foreground">{switchChecked ? "Enabled" : "Disabled"}</strong>
+                        Status:{" "}
+                        <strong className="text-foreground">
+                          {switchChecked ? "Enabled" : "Disabled"}
+                        </strong>
                       </span>
                     </div>
                   </div>
@@ -291,10 +330,18 @@ export default function HomePage() {
                   <h4 className="text-sm font-semibold mb-1">Button Variants</h4>
                   <div className="flex flex-wrap gap-2">
                     <Button size="sm">Primary</Button>
-                    <Button size="sm" variant="secondary">Secondary</Button>
-                    <Button size="sm" variant="outline">Outline</Button>
-                    <Button size="sm" variant="ghost">Ghost</Button>
-                    <Button size="sm" variant="destructive">Destructive</Button>
+                    <Button size="sm" variant="secondary">
+                      Secondary
+                    </Button>
+                    <Button size="sm" variant="outline">
+                      Outline
+                    </Button>
+                    <Button size="sm" variant="ghost">
+                      Ghost
+                    </Button>
+                    <Button size="sm" variant="destructive">
+                      Destructive
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -311,7 +358,8 @@ export default function HomePage() {
                       </AccordionTrigger>
                     </AccordionHeader>
                     <AccordionPanel className="text-xs text-muted-foreground pb-2">
-                      ADN UI is a collection of re-usable UI components built on `@base-ui/react` and styled with Tailwind CSS v4.
+                      ADN UI is a collection of re-usable UI components built on `@base-ui/react`
+                      and styled with Tailwind CSS v4.
                     </AccordionPanel>
                   </AccordionItem>
                   <AccordionItem value="item-2" className="border-b border-border py-2">
@@ -321,7 +369,8 @@ export default function HomePage() {
                       </AccordionTrigger>
                     </AccordionHeader>
                     <AccordionPanel className="text-xs text-muted-foreground pb-2">
-                      The core logic uses unstyled Base UI primitives, wrapped with Tailwind CSS v4 design tokens for clean, responsive styling out of the box.
+                      The core logic uses unstyled Base UI primitives, wrapped with Tailwind CSS v4
+                      design tokens for clean, responsive styling out of the box.
                     </AccordionPanel>
                   </AccordionItem>
                 </AccordionRoot>
@@ -360,7 +409,8 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-0">
               <CardDescription className="text-sm">
-                Customized with standard Tailwind v4 theme variables for effortless light & dark mode styling.
+                Customized with standard Tailwind v4 theme variables for effortless light & dark
+                mode styling.
               </CardDescription>
             </CardContent>
           </CardRoot>
@@ -372,7 +422,9 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-0">
               <CardDescription className="text-sm">
-                Separates styles (<code className="text-xs bg-muted px-1 rounded">.css</code>, <code className="text-xs bg-muted px-1 rounded">.variants.ts</code>) from logic (<code className="text-xs bg-muted px-1 rounded">.tsx</code>) for effortless editing.
+                Separates styles (<code className="text-xs bg-muted px-1 rounded">.css</code>,{" "}
+                <code className="text-xs bg-muted px-1 rounded">.variants.ts</code>) from logic (
+                <code className="text-xs bg-muted px-1 rounded">.tsx</code>) for effortless editing.
               </CardDescription>
             </CardContent>
           </CardRoot>
@@ -384,7 +436,8 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="p-0">
               <CardDescription className="text-sm">
-                All components live directly in your codebase under <code className="text-xs bg-muted px-1 py-0.5 rounded">src/components/ui</code>.
+                All components live directly in your codebase under{" "}
+                <code className="text-xs bg-muted px-1 py-0.5 rounded">src/components/ui</code>.
               </CardDescription>
             </CardContent>
           </CardRoot>
@@ -395,18 +448,24 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto text-center mb-8">
             <h3 className="text-2xl font-bold mb-2">Designed for Maximum Customizability</h3>
             <p className="text-muted-foreground text-sm">
-              Unlike monolithic single-file registries, ADN UI isolates styling, slot variants, context, and React logic so you can modify design specs without touching primitive logic.
+              Unlike monolithic single-file registries, ADN UI isolates styling, slot variants,
+              context, and React logic so you can modify design specs without touching primitive
+              logic.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left text-xs font-mono">
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
               <div className="font-semibold text-primary mb-1">card.tsx</div>
-              <div className="text-muted-foreground">React JSX structure & primitive component binding</div>
+              <div className="text-muted-foreground">
+                React JSX structure & primitive component binding
+              </div>
             </div>
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
               <div className="font-semibold text-primary mb-1">card.variants.ts</div>
-              <div className="text-muted-foreground">Tailwind Variants slot specs & option definitions</div>
+              <div className="text-muted-foreground">
+                Tailwind Variants slot specs & option definitions
+              </div>
             </div>
             <div className="p-4 rounded-lg border border-border/80 bg-muted/30">
               <div className="font-semibold text-primary mb-1">card.css</div>
@@ -425,7 +484,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to build your next app?</h2>
           <p className="text-muted-foreground text-sm max-w-xl mx-auto mb-6">
-            Browse our full catalog of over 35 components including Drawer, Dialog, Combobox, Autocomplete, Tooltip, and Table.
+            Browse our full catalog of over 35 components including Drawer, Dialog, Combobox,
+            Autocomplete, Tooltip, and Table.
           </p>
           <Link href="/docs">
             <Button size="lg" className="h-11 px-8 font-semibold rounded-lg">
@@ -444,7 +504,8 @@ export default function HomePage() {
               <DrawerContent className="p-4">
                 <DrawerTitle className="capitalize">{activeSide} Drawer Demo</DrawerTitle>
                 <DrawerDescription>
-                  This panel smoothly slides in from the <strong>{activeSide}</strong> edge of the screen. You can swipe towards the edge to dismiss.
+                  This panel smoothly slides in from the <strong>{activeSide}</strong> edge of the
+                  screen. You can swipe towards the edge to dismiss.
                 </DrawerDescription>
                 <div className="flex justify-end gap-2 mt-6">
                   <DrawerClose className="inline-flex h-9 px-4 items-center justify-center rounded-md bg-secondary text-secondary-foreground text-xs font-medium hover:bg-secondary/80">

@@ -19,6 +19,8 @@ export const WithLabel = () => (
     <CheckboxRoot id="terms-label">
       <CheckboxIndicator />
     </CheckboxRoot>
-    <label htmlFor="terms-label" className="text-sm font-medium">Accept terms and conditions</label>
+    <label htmlFor="terms-label" className="text-sm font-medium">
+      Accept terms and conditions
+    </label>
   </div>
 );

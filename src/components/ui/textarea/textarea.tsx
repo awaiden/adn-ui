@@ -6,7 +6,7 @@ import type React from "react";
 
 import { cn } from "tailwind-variants";
 
-import { TextareaContext, useTextareaContext } from "./textarea.context";
+import { TextareaContext } from "./textarea.context";
 import { textareaVariants, type TextareaVariants } from "./textarea.variants";
 
 export type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;

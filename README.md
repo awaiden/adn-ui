@@ -35,6 +35,7 @@ src/components/ui/card/
 ```
 
 ### Key Benefits:
+
 - **Effortless Customization**: Tweak styling or add new variants in `*.variants.ts` or `*.css` without risking breaking component logic or accessibility attributes.
 - **Clean Separation of Concerns**: Keeps rendering logic isolated from design tokens and slots.
 - **Maintainable & Scalable**: Swap styles, add theme slots, or extend component logic independently as your application grows.
@@ -67,14 +68,14 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## 🛠️ Scripts & Commands
 
-| Command | Description |
-| :--- | :--- |
-| `bun dev` | Starts the Next.js development server. |
-| `bun run build` | Builds the production Next.js application. |
+| Command                  | Description                                       |
+| :----------------------- | :------------------------------------------------ |
+| `bun dev`                | Starts the Next.js development server.            |
+| `bun run build`          | Builds the production Next.js application.        |
 | `bun run build:registry` | Builds the component registry via `shadcn build`. |
-| `bun run types:check` | Validates TypeScript types across the codebase. |
-| `bun run lint` | Runs `oxlint` for fast linter checks. |
-| `bun run prepare` | Configures Husky pre-commit hooks. |
+| `bun run types:check`    | Validates TypeScript types across the codebase.   |
+| `bun run lint`           | Runs `oxlint` for fast linter checks.             |
+| `bun run prepare`        | Configures Husky pre-commit hooks.                |
 
 ---
 
@@ -95,7 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - **Combobox**
 - **Context Menu**
 - **Dialog & Overlay**
-- **Drawer** *(Multi-directional swipe gestures)*
+- **Drawer** _(Multi-directional swipe gestures)_
 - **Field & Fieldset**
 - **Form**
 - **Input & Number Field**
@@ -118,6 +119,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## 👤 Author
 
 **Halil Aydın**
+
 - GitHub: [@awaiden](https://github.com/awaiden)
 - Repository: [awaiden/adn-ui](https://github.com/awaiden/adn-ui)
 

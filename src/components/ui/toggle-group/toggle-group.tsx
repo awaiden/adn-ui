@@ -7,7 +7,7 @@ import type React from "react";
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
 import { cn } from "tailwind-variants";
 
-import { ToggleGroupContext, useToggleGroupContext } from "./toggle-group.context";
+import { ToggleGroupContext } from "./toggle-group.context";
 import { toggleGroupVariants, type ToggleGroupVariants } from "./toggle-group.variants";
 import { ToggleRoot } from "../toggle";
 

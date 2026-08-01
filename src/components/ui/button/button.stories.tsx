@@ -32,9 +32,15 @@ export const Sizes = () => (
 
 export const IconOnly = () => (
   <div className="flex flex-wrap items-center gap-4">
-    <Button isIconOnly size="sm">🚀</Button>
-    <Button isIconOnly size="md">🚀</Button>
-    <Button isIconOnly size="lg">🚀</Button>
+    <Button isIconOnly size="sm">
+      🚀
+    </Button>
+    <Button isIconOnly size="md">
+      🚀
+    </Button>
+    <Button isIconOnly size="lg">
+      🚀
+    </Button>
   </div>
 );
 

@@ -41,15 +41,12 @@ export type ComboboxInputProps = React.ComponentProps<typeof BaseCombobox.Input>
 
 export const ComboboxInput = ({
   className,
-  children,
-  dangerouslySetInnerHTML,
+  children: _children,
+  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,
   ...props
 }: ComboboxInputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {
   const { slots } = useComboboxContext();
-  const cleanProps = { ...props };
-  delete (cleanProps as any).children;
-  delete (cleanProps as any).dangerouslySetInnerHTML;
-  return <BaseCombobox.Input className={cn(slots.input(), className)} {...cleanProps} />;
+  return <BaseCombobox.Input className={cn(slots.input(), className)} {...props} />;
 };
 
 export type ComboboxTriggerProps = React.ComponentProps<typeof BaseCombobox.Trigger>;

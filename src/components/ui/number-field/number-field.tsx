@@ -36,15 +36,12 @@ export type NumberFieldInputProps = React.ComponentProps<typeof BaseNumberField.
 
 export const NumberFieldInput = ({
   className,
-  children,
-  dangerouslySetInnerHTML,
+  children: _children,
+  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,
   ...props
 }: NumberFieldInputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {
   const { slots } = useNumberFieldContext();
-  const cleanProps = { ...props };
-  delete (cleanProps as any).children;
-  delete (cleanProps as any).dangerouslySetInnerHTML;
-  return <BaseNumberField.Input className={cn(slots.input(), className)} {...cleanProps} />;
+  return <BaseNumberField.Input className={cn(slots.input(), className)} {...props} />;
 };
 
 export type NumberFieldDecrementProps = React.ComponentProps<typeof BaseNumberField.Decrement>;

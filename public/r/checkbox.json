@@ -3,10 +3,7 @@
   "name": "checkbox",
   "title": "Checkbox",
   "description": "A control that allows toggling between checked and unchecked states.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/checkbox/checkbox.tsx",

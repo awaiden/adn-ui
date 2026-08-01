@@ -3,10 +3,7 @@
   "name": "scroll-area",
   "title": "Scroll Area",
   "description": "A native scroll container with custom scrollbars.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/scroll-area/scroll-area.tsx",

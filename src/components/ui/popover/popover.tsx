@@ -31,7 +31,7 @@ export const PopoverTrigger = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: PopoverTriggerProps) => {
   const { slots } = usePopoverContext();
@@ -112,7 +112,7 @@ export const PopoverClose = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: PopoverCloseProps) => {
   const { slots } = usePopoverContext();

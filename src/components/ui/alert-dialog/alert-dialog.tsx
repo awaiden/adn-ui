@@ -32,7 +32,7 @@ export const AlertDialogTrigger = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: AlertDialogTriggerProps) => {
   const { slots } = useAlertDialogContext();
@@ -92,7 +92,7 @@ export const AlertDialogClose = ({
   className,
   children,
   render,
-  asChild,
+  asChild: _asChild,
   ...props
 }: AlertDialogCloseProps) => {
   const { slots } = useAlertDialogContext();
@@ -109,5 +109,8 @@ export const AlertDialogClose = ({
 export type AlertDialogActionsProps = React.ComponentProps<"div">;
 
 export const AlertDialogActions = ({ className, ...props }: AlertDialogActionsProps) => (
-  <div className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4", className)} {...props} />
+  <div
+    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4", className)}
+    {...props}
+  />
 );

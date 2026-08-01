@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { isMarkdownPreferred, rewritePath } from 'fumadocs-core/negotiation';
-import { docsContentRoute, docsRoute } from '@/lib/shared';
+import { NextRequest, NextResponse } from "next/server";
+import { isMarkdownPreferred, rewritePath } from "fumadocs-core/negotiation";
+import { docsContentRoute, docsRoute } from "@/lib/shared";
 
 const { rewrite: rewriteDocs } = rewritePath(
   `${docsRoute}{/*path}`,
@@ -23,10 +23,14 @@ export default function proxy(request: NextRequest) {
     if (result) {
       return NextResponse.rewrite(new URL(result, request.nextUrl), {
         // this URL has two representations, selected by `Accept`
-        headers: { Vary: 'Accept' },
+        headers: { Vary: "Accept" },
       });
     }
   }
 
   return NextResponse.next();
 }
+
+export const config = {
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+};

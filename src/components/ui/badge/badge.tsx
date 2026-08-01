@@ -6,7 +6,7 @@ import type React from "react";
 
 import { cn } from "tailwind-variants";
 
-import { BadgeContext, useBadgeContext } from "./badge.context";
+import { BadgeContext } from "./badge.context";
 import { badgeVariants, type BadgeVariants } from "./badge.variants";
 
 export type BadgeProps = BadgeVariants & React.HTMLAttributes<HTMLDivElement>;

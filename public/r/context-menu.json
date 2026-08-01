@@ -3,10 +3,7 @@
   "name": "context-menu",
   "title": "Context Menu",
   "description": "A menu that appears at the pointer on right click or long press.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/context-menu/context-menu.tsx",

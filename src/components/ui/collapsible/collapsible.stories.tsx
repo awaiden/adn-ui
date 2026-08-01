@@ -14,7 +14,9 @@ export const Default = () => (
     <div className="flex items-center justify-between">
       <h4 className="text-sm font-semibold">Starred Repositories</h4>
       <CollapsibleTrigger>
-        <Button variant="ghost" size="sm">Toggle</Button>
+        <Button variant="ghost" size="sm">
+          Toggle
+        </Button>
       </CollapsibleTrigger>
     </div>
     <div className="rounded-md border px-4 py-3 text-sm">adn-ui</div>

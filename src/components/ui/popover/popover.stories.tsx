@@ -31,7 +31,9 @@ export const Default = () => (
             Set the dimensions for the layer.
           </PopoverDescription>
           <PopoverClose>
-            <Button size="sm" variant="ghost">Close</Button>
+            <Button size="sm" variant="ghost">
+              Close
+            </Button>
           </PopoverClose>
         </PopoverPopup>
       </PopoverPositioner>

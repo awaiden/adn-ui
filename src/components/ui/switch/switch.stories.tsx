@@ -13,6 +13,8 @@ export const Default = () => (
     <SwitchRoot id="airplane-mode">
       <SwitchThumb />
     </SwitchRoot>
-    <label htmlFor="airplane-mode" className="text-sm font-medium">Airplane Mode</label>
+    <label htmlFor="airplane-mode" className="text-sm font-medium">
+      Airplane Mode
+    </label>
   </div>
 );

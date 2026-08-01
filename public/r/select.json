@@ -3,10 +3,7 @@
   "name": "select",
   "title": "Select",
   "description": "A common form component for choosing a predefined value in a dropdown menu.",
-  "dependencies": [
-    "@base-ui/react",
-    "tailwind-variants"
-  ],
+  "dependencies": ["@base-ui/react", "tailwind-variants"],
   "files": [
     {
       "path": "src/components/ui/select/select.tsx",

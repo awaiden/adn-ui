@@ -30,7 +30,9 @@ export const Default = () => (
         <DialogDescription>Make changes to your profile here.</DialogDescription>
         <div className="py-4 text-sm">Profile form controls go here...</div>
         <DialogClose>
-          <Button variant="primary" size="sm">Save Changes</Button>
+          <Button variant="primary" size="sm">
+            Save Changes
+          </Button>
         </DialogClose>
       </DialogPopup>
     </DialogPortal>

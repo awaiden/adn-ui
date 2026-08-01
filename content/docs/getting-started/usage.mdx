@@ -3,9 +3,9 @@ title: Usage Guide
 description: Learn how to install and use adn-ui components via the shadcn CLI registry system.
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
 
 # Installing adn-ui Components
 
@@ -50,6 +50,7 @@ You can install `adn-ui` components in two simple ways:
         ```
       </Step>
     </Steps>
+
   </Tab>
 
   <Tab value="Method 2: Direct URL">
@@ -63,6 +64,7 @@ You can install `adn-ui` components in two simple ways:
     ```bash
     npx shadcn@latest add https://ui.awaiden.com/r/button.json https://ui.awaiden.com/r/card.json https://ui.awaiden.com/r/dialog.json
     ```
+
   </Tab>
 </Tabs>
 
@@ -83,12 +85,12 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
 
 Here are essential commands for managing your components:
 
-| Command | Description |
-| :--- | :--- |
-| `npx shadcn@latest add @adn-ui/button` | Installs the specified component and its required npm dependencies. |
-| `npx shadcn@latest add @adn-ui/card @adn-ui/dialog` | Installs multiple components in a single command. |
-| `npx shadcn@latest view @adn-ui/button` | Inspects a component's JSON manifest and file list before adding. |
-| `npx shadcn@latest add --overwrite @adn-ui/button` | Overwrites existing component files in your project with the latest version. |
+| Command                                             | Description                                                                  |
+| :-------------------------------------------------- | :--------------------------------------------------------------------------- |
+| `npx shadcn@latest add @adn-ui/button`              | Installs the specified component and its required npm dependencies.          |
+| `npx shadcn@latest add @adn-ui/card @adn-ui/dialog` | Installs multiple components in a single command.                            |
+| `npx shadcn@latest view @adn-ui/button`             | Inspects a component's JSON manifest and file list before adding.            |
+| `npx shadcn@latest add --overwrite @adn-ui/button`  | Overwrites existing component files in your project with the latest version. |
 
 ---
 
@@ -124,7 +126,8 @@ export default function ExamplePage() {
 ## ❓ Frequently Asked Questions
 
 <Callout type="info" title="Do I need to install an adn-ui npm package?">
-  No package installation is required! `adn-ui` components are copy-and-paste primitives installed straight into your codebase so you have 100% control over design and implementation.
+  No package installation is required! `adn-ui` components are copy-and-paste primitives installed
+  straight into your codebase so you have 100% control over design and implementation.
 </Callout>
 
 <Callout type="warn" title="What if I get 'Unknown registry @adn-ui'?">

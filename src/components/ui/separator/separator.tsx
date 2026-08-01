@@ -7,7 +7,7 @@ import type React from "react";
 import { Separator as BaseSeparator } from "@base-ui/react/separator";
 import { cn } from "tailwind-variants";
 
-import { SeparatorContext, useSeparatorContext } from "./separator.context";
+import { SeparatorContext } from "./separator.context";
 import { separatorVariants, type SeparatorVariants } from "./separator.variants";
 
 export type SeparatorProps = SeparatorVariants & React.ComponentProps<typeof BaseSeparator>;

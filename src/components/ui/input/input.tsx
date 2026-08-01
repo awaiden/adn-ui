@@ -16,19 +16,15 @@ export const InputRoot = ({
   className,
   size,
   variant,
-  children,
-  dangerouslySetInnerHTML,
+  children: _children,
+  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,
   ...props
 }: InputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {
   const slots = inputVariants({ size, variant });
 
-  const cleanProps = { ...props };
-  delete (cleanProps as any).children;
-  delete (cleanProps as any).dangerouslySetInnerHTML;
-
   return (
     <InputContext.Provider value={{ slots }}>
-      <BaseInput className={cn(slots.root(), className)} {...cleanProps} />
+      <BaseInput className={cn(slots.root(), className)} {...props} />
     </InputContext.Provider>
   );
 };

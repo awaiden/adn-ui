@@ -15,7 +15,9 @@ export const Default = () => (
   <FormRoot className="space-y-4 max-w-sm">
     <FieldRoot className="space-y-1">
       <FieldLabel>Username</FieldLabel>
-      <FieldControl><InputRoot placeholder="johndoe" /></FieldControl>
+      <FieldControl>
+        <InputRoot placeholder="johndoe" />
+      </FieldControl>
     </FieldRoot>
     <Button variant="primary">Submit</Button>
   </FormRoot>

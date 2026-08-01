@@ -1,14 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  TableRoot,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableHead,
-  TableCell,
-} from "./table";
+import { TableRoot, TableHeader, TableBody, TableRow, TableHead, TableCell } from "./table";
 
 export default {
   title: "Components/Table",
