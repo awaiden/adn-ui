@@ -1,6 +1,6 @@
 # adn-ui
 
-> A high-quality, unstyled React UI component library built on [@base-ui/react](https://base-ui.com) primitives and styled with **Tailwind CSS v4**.
+> A high-quality, styled React UI component library built on [@base-ui/react](https://base-ui.com) primitives and styled with **Tailwind CSS v4**.
 
 Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)).
 

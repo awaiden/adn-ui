@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
 
         <h1 className="mb-6 max-w-4xl text-4xl leading-[1.1] font-extrabold tracking-tight md:text-6xl lg:text-7xl">
-          Unstyled Primitives for{" "}
+          Styled React Primitives for{" "}
           <span className="from-primary via-primary/80 to-muted-foreground bg-gradient-to-r bg-clip-text text-transparent">
             Modern UI Components
           </span>

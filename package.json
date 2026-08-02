@@ -2,7 +2,7 @@
   "name": "adn-ui",
   "version": "0.1.0",
   "private": true,
-  "description": "High-quality, unstyled React UI components built with Base UI and Tailwind CSS v4",
+  "description": "High-quality, styled React UI components built with Base UI and Tailwind CSS v4",
   "homepage": "https://github.com/awaiden/adn-ui#readme",
   "bugs": {
     "url": "https://github.com/awaiden/adn-ui/issues"
