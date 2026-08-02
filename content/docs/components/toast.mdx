@@ -11,6 +11,8 @@ The `Toast` component displays temporary, non-disruptive notifications in respon
 
 ## Usage
 
+Simply wrap your application or component tree in `Toast.Provider`, and trigger toasts from anywhere using `useToastManager()`.
+
 ```tsx
 import { Toast, useToastManager } from "@/components/ui/toast";
 import { Button } from "@/components/ui/button";
@@ -19,11 +21,6 @@ export function ExampleToast() {
   return (
     <Toast.Provider>
       <ToastTrigger />
-      <Toast.Portal>
-        <Toast.Viewport>
-          <ToastList />
-        </Toast.Viewport>
-      </Toast.Portal>
     </Toast.Provider>
   );
 }
@@ -42,6 +39,28 @@ function ToastTrigger() {
     >
       Show Notification
     </Button>
+  );
+}
+```
+
+## Custom Layout
+
+If you want custom control over the toast list and layout, pass `defaultViewport={false}` to `Toast.Provider` and render your own `Toast.Portal` and `Toast.Viewport`:
+
+```tsx
+import { Toast, useToastManager } from "@/components/ui/toast";
+import { Button } from "@/components/ui/button";
+
+export function CustomToast() {
+  return (
+    <Toast.Provider defaultViewport={false}>
+      <ToastTrigger />
+      <Toast.Portal>
+        <Toast.Viewport>
+          <ToastList />
+        </Toast.Viewport>
+      </Toast.Portal>
+    </Toast.Provider>
   );
 }
 

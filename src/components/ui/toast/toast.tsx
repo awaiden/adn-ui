@@ -8,10 +8,49 @@ import { cn } from "tailwind-variants";
 import { ToastContext, useToastContext } from "./toast.context";
 import { toastVariants, type ToastVariants } from "./toast.variants";
 
-export type ToastProviderProps = React.ComponentProps<typeof BaseToast.Provider>;
+export type ToastProviderProps = React.ComponentProps<typeof BaseToast.Provider> & {
+  /**
+   * Whether to render the default toast viewport and list automatically.
+   * @default true
+   */
+  defaultViewport?: boolean;
+};
 
-export const ToastProvider = (props: ToastProviderProps) => {
-  return <BaseToast.Provider {...props} />;
+function DefaultToastList() {
+  const { toasts } = BaseToast.useToastManager();
+
+  if (!toasts || toasts.length === 0) return null;
+
+  return (
+    <ToastPortal>
+      <ToastViewport>
+        {toasts.map((toast) => (
+          <ToastRoot key={toast.id} toast={toast} variant={(toast as any).variant ?? "default"}>
+            <ToastContent>
+              <div className="flex flex-col gap-1">
+                {toast.title && <ToastTitle>{toast.title}</ToastTitle>}
+                {toast.description && <ToastDescription>{toast.description}</ToastDescription>}
+              </div>
+              <ToastClose />
+            </ToastContent>
+          </ToastRoot>
+        ))}
+      </ToastViewport>
+    </ToastPortal>
+  );
+}
+
+export const ToastProvider = ({
+  children,
+  defaultViewport = true,
+  ...props
+}: ToastProviderProps) => {
+  return (
+    <BaseToast.Provider {...props}>
+      {children}
+      {defaultViewport && <DefaultToastList />}
+    </BaseToast.Provider>
+  );
 };
 
 export type ToastPortalProps = React.ComponentProps<typeof BaseToast.Portal>;

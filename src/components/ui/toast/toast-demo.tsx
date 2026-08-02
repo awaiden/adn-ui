@@ -3,18 +3,7 @@
 import React, { useState } from "react";
 
 import { Button } from "../button";
-
-import {
-  ToastClose,
-  ToastContent,
-  ToastDescription,
-  ToastPortal,
-  ToastProvider,
-  ToastRoot,
-  ToastTitle,
-  ToastViewport,
-  useToastManager,
-} from "./index";
+import { ToastProvider, useToastManager } from "./index";
 
 function ToastTriggerButtons() {
   const toastManager = useToastManager();
@@ -47,37 +36,12 @@ function ToastTriggerButtons() {
   );
 }
 
-function ToastList() {
-  const { toasts } = useToastManager();
-
-  return (
-    <>
-      {toasts.map((toast) => (
-        <ToastRoot key={toast.id} toast={toast} variant={(toast as any).variant ?? "default"}>
-          <ToastContent>
-            <div className="flex flex-col gap-1">
-              <ToastTitle>{toast.title}</ToastTitle>
-              {toast.description && <ToastDescription>{toast.description}</ToastDescription>}
-            </div>
-            <ToastClose />
-          </ToastContent>
-        </ToastRoot>
-      ))}
-    </>
-  );
-}
-
 export function ToastDemo() {
   return (
     <ToastProvider>
       <div className="py-6 flex justify-center">
         <ToastTriggerButtons />
       </div>
-      <ToastPortal>
-        <ToastViewport>
-          <ToastList />
-        </ToastViewport>
-      </ToastPortal>
     </ToastProvider>
   );
 }
