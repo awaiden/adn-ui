@@ -574,6 +574,38 @@
       "type": "registry:ui"
     },
     {
+      "name": "otp-field",
+      "title": "OTP Field",
+      "description": "A one-time password input composed of individual character slots.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/otp-field/otp-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/otp-field/otp-field.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/otp-field/otp-field.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/otp-field/otp-field.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/otp-field/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "popover",
       "title": "Popover",
       "description": "An accessible popup anchored to a trigger button.",

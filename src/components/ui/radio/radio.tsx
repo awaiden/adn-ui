@@ -11,9 +11,6 @@ import { radioVariants, type RadioVariants } from "./radio.variants";
 
 export type RadioGroupProps = RadioVariants & React.ComponentProps<typeof BaseRadioGroup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
- */
 export const RadioGroup = ({ children, className, size, ...props }: RadioGroupProps) => {
   const slots = radioVariants({ size });
 
@@ -26,31 +23,19 @@ export const RadioGroup = ({ children, className, size, ...props }: RadioGroupPr
   );
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
- */
 export const RadioGroupRoot = RadioGroup;
 
 export type RadioProps = React.ComponentProps<typeof BaseRadio.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
- */
 export const RadioRoot = ({ className, ...props }: RadioProps) => {
   const { slots } = useRadioContext();
   return <BaseRadio.Root className={cn(slots.root(), className)} {...props} />;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
- */
 export const RadioItem = RadioRoot;
 
 export type RadioIndicatorProps = React.ComponentProps<typeof BaseRadio.Indicator>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/radio/content.md
- */
 export const RadioIndicator = ({ className, ...props }: RadioIndicatorProps) => {
   const { slots } = useRadioContext();
   return <BaseRadio.Indicator className={cn(slots.indicator(), className)} {...props} />;

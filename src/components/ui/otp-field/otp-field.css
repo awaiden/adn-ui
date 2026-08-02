@@ -1,0 +1,23 @@
+.otp-field {
+  @apply text-foreground flex items-center gap-2;
+}
+
+.otp-field__input {
+  @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring focus-visible:ring-ring focus-visible:border-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive flex h-10 w-10 items-center justify-center rounded-md border text-center font-mono text-base shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50 data-complete:border-primary;
+}
+
+.otp-field__input--sm {
+  @apply h-8 w-8 text-xs;
+}
+
+.otp-field__input--md {
+  @apply h-10 w-10 text-sm;
+}
+
+.otp-field__input--lg {
+  @apply h-12 w-12 text-base;
+}
+
+.otp-field__separator {
+  @apply bg-border h-px w-3 shrink-0;
+}

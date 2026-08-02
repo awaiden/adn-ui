@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "otp-field",
+  "title": "OTP Field",
+  "description": "A one-time password input composed of individual character slots.",
+  "dependencies": [
+    "@base-ui/react",
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/otp-field/otp-field.tsx",
+      "content": "\"use client\";\n\nimport \"./otp-field.css\";\nimport { OTPField as BaseOTPField } from \"@base-ui/react/otp-field\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { OTPFieldContext, useOTPFieldContext } from \"./otp-field.context\";\nimport { otpFieldVariants, type OTPFieldVariants } from \"./otp-field.variants\";\n\nexport type OTPFieldRootProps = OTPFieldVariants &\n  React.ComponentProps<typeof BaseOTPField.Root>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/otp-field/content.md\n */\nexport const OTPFieldRoot = ({ children, className, size, ...props }: OTPFieldRootProps) => {\n  const slots = otpFieldVariants({ size });\n\n  return (\n    <OTPFieldContext.Provider value={{ slots }}>\n      <BaseOTPField.Root className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseOTPField.Root>\n    </OTPFieldContext.Provider>\n  );\n};\n\nexport type OTPFieldInputProps = React.ComponentProps<typeof BaseOTPField.Input>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/otp-field/content.md\n */\nexport const OTPFieldInput = ({ className, ...props }: OTPFieldInputProps) => {\n  const { slots } = useOTPFieldContext();\n  return <BaseOTPField.Input className={cn(slots.input(), className)} {...props} />;\n};\n\nexport type OTPFieldSeparatorProps = React.ComponentProps<typeof BaseOTPField.Separator>;\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/otp-field/content.md\n */\nexport const OTPFieldSeparator = ({ className, ...props }: OTPFieldSeparatorProps) => {\n  const { slots } = useOTPFieldContext();\n  return <BaseOTPField.Separator className={cn(slots.separator(), className)} {...props} />;\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/otp-field/otp-field.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const otpFieldVariants = tv({\n  slots: {\n    root: \"otp-field\",\n    input: \"otp-field__input\",\n    separator: \"otp-field__separator\",\n  },\n  variants: {\n    size: {\n      sm: {\n        input: \"otp-field__input--sm\",\n      },\n      md: {\n        input: \"otp-field__input--md\",\n      },\n      lg: {\n        input: \"otp-field__input--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type OTPFieldVariants = VariantProps<typeof otpFieldVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/otp-field/otp-field.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { otpFieldVariants } from \"./otp-field.variants\";\n\nexport type OTPFieldContext = {\n  slots: ReturnType<typeof otpFieldVariants>;\n};\n\nexport const OTPFieldContext = createContext<OTPFieldContext | null>(null);\n\nexport const useOTPFieldContext = () => {\n  const context = useContext(OTPFieldContext);\n  return context ?? { slots: otpFieldVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/otp-field/otp-field.css",
+      "content": ".otp-field {\n  @apply text-foreground flex items-center gap-2;\n}\n\n.otp-field__input {\n  @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring focus-visible:ring-ring focus-visible:border-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive flex h-10 w-10 items-center justify-center rounded-md border text-center font-mono text-base shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50 data-complete:border-primary;\n}\n\n.otp-field__input--sm {\n  @apply h-8 w-8 text-xs;\n}\n\n.otp-field__input--md {\n  @apply h-10 w-10 text-sm;\n}\n\n.otp-field__input--lg {\n  @apply h-12 w-12 text-base;\n}\n\n.otp-field__separator {\n  @apply bg-border h-px w-3 shrink-0;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/otp-field/index.ts",
+      "content": "import {\n  OTPFieldInput,\n  OTPFieldRoot,\n  OTPFieldSeparator,\n} from \"./otp-field\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/otp-field/content.md\n */\nexport const OTPField = {\n  Input: OTPFieldInput,\n  Root: OTPFieldRoot,\n  Separator: OTPFieldSeparator,\n};\n\nexport {\n  OTPFieldInput,\n  OTPFieldRoot,\n  OTPFieldSeparator,\n};\n\nexport type {\n  OTPFieldInputProps,\n  OTPFieldRootProps,\n  OTPFieldSeparatorProps,\n} from \"./otp-field\";\nexport { OTPFieldContext, useOTPFieldContext } from \"./otp-field.context\";\nexport { type OTPFieldVariants, otpFieldVariants } from \"./otp-field.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

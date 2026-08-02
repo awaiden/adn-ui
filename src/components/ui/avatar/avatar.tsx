@@ -10,9 +10,6 @@ import { avatarVariants, type AvatarVariants } from "./avatar.variants";
 
 export type AvatarProps = AvatarVariants & React.ComponentProps<typeof BaseAvatar.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/avatar/content.md
- */
 export const AvatarRoot = ({ children, className, shape, size, ...props }: AvatarProps) => {
   const slots = avatarVariants({ shape, size });
 
@@ -27,9 +24,6 @@ export const AvatarRoot = ({ children, className, shape, size, ...props }: Avata
 
 export type AvatarImageProps = React.ComponentProps<typeof BaseAvatar.Image>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/avatar/content.md
- */
 export const AvatarImage = ({ className, ...props }: AvatarImageProps) => {
   const { slots } = useAvatarContext();
   return <BaseAvatar.Image className={cn(slots.image(), className)} {...props} />;
@@ -37,9 +31,6 @@ export const AvatarImage = ({ className, ...props }: AvatarImageProps) => {
 
 export type AvatarFallbackProps = React.ComponentProps<typeof BaseAvatar.Fallback>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/avatar/content.md
- */
 export const AvatarFallback = ({ className, ...props }: AvatarFallbackProps) => {
   const { slots } = useAvatarContext();
   return <BaseAvatar.Fallback className={cn(slots.fallback(), className)} {...props} />;

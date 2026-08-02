@@ -13,9 +13,6 @@ export type ComboboxProps<
   Multiple extends boolean | undefined = false,
 > = ComboboxVariants & React.ComponentProps<typeof BaseCombobox.Root<Item, Multiple>>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export function ComboboxRoot<Item = any, Multiple extends boolean | undefined = false>({
   children,
   size,
@@ -33,9 +30,6 @@ export function ComboboxRoot<Item = any, Multiple extends boolean | undefined = 
 
 export type ComboboxInputGroupProps = React.ComponentProps<typeof BaseCombobox.InputGroup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxInputGroup = ({ className, ...props }: ComboboxInputGroupProps) => {
   const { slots } = useComboboxContext();
   return <BaseCombobox.InputGroup className={cn(slots.inputGroup(), className)} {...props} />;
@@ -43,9 +37,6 @@ export const ComboboxInputGroup = ({ className, ...props }: ComboboxInputGroupPr
 
 export type ComboboxInputProps = React.ComponentProps<typeof BaseCombobox.Input>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxInput = ({
   className,
   children: _children,
@@ -58,9 +49,6 @@ export const ComboboxInput = ({
 
 export type ComboboxTriggerProps = React.ComponentProps<typeof BaseCombobox.Trigger>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxTrigger = ({ children, className, ...props }: ComboboxTriggerProps) => {
   const { slots } = useComboboxContext();
   return (
@@ -76,9 +64,6 @@ export const ComboboxTrigger = ({ children, className, ...props }: ComboboxTrigg
 
 export type ComboboxClearProps = React.ComponentProps<typeof BaseCombobox.Clear>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxClear = ({ children, className, ...props }: ComboboxClearProps) => {
   const { slots } = useComboboxContext();
   return (
@@ -94,9 +79,6 @@ export const ComboboxClear = ({ children, className, ...props }: ComboboxClearPr
 
 export type ComboboxChipsProps = React.ComponentProps<typeof BaseCombobox.Chips>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxChips = ({ className, ...props }: ComboboxChipsProps) => {
   const { slots } = useComboboxContext();
   return <BaseCombobox.Chips className={cn(slots.chips(), className)} {...props} />;
@@ -104,9 +86,6 @@ export const ComboboxChips = ({ className, ...props }: ComboboxChipsProps) => {
 
 export type ComboboxChipProps = React.ComponentProps<typeof BaseCombobox.Chip>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxChip = ({ className, ...props }: ComboboxChipProps) => {
   const { slots } = useComboboxContext();
   return <BaseCombobox.Chip className={cn(slots.chip(), className)} {...props} />;
@@ -114,9 +93,6 @@ export const ComboboxChip = ({ className, ...props }: ComboboxChipProps) => {
 
 export type ComboboxChipRemoveProps = React.ComponentProps<typeof BaseCombobox.ChipRemove>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxChipRemove = ({ children, className, ...props }: ComboboxChipRemoveProps) => {
   const { slots } = useComboboxContext();
   return (
@@ -132,27 +108,18 @@ export const ComboboxChipRemove = ({ children, className, ...props }: ComboboxCh
 
 export type ComboboxValueProps = React.ComponentProps<typeof BaseCombobox.Value>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxValue = (props: ComboboxValueProps) => {
   return <BaseCombobox.Value {...props} />;
 };
 
 export type ComboboxPortalProps = React.ComponentProps<typeof BaseCombobox.Portal>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxPortal = (props: ComboboxPortalProps) => {
   return <BaseCombobox.Portal {...props} />;
 };
 
 export type ComboboxPositionerProps = React.ComponentProps<typeof BaseCombobox.Positioner>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxPositioner = ({
   className,
   sideOffset = 4,
@@ -170,9 +137,6 @@ export const ComboboxPositioner = ({
 
 export type ComboboxPopupProps = React.ComponentProps<typeof BaseCombobox.Popup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxPopup = ({ className, ...props }: ComboboxPopupProps) => {
   const { slots } = useComboboxContext();
   return <BaseCombobox.Popup className={cn(slots.popup(), className)} {...props} />;
@@ -180,9 +144,6 @@ export const ComboboxPopup = ({ className, ...props }: ComboboxPopupProps) => {
 
 export type ComboboxListProps = React.ComponentProps<typeof BaseCombobox.List>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export function ComboboxList({ className, ...props }: ComboboxListProps) {
   const { slots } = useComboboxContext();
   return <BaseCombobox.List className={cn(slots.list(), className)} {...props} />;
@@ -190,9 +151,6 @@ export function ComboboxList({ className, ...props }: ComboboxListProps) {
 
 export type ComboboxItemProps = React.ComponentProps<typeof BaseCombobox.Item>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
   const { slots } = useComboboxContext();
   return <BaseCombobox.Item className={cn(slots.item(), className)} {...props} />;
@@ -200,9 +158,6 @@ export function ComboboxItem({ className, ...props }: ComboboxItemProps) {
 
 export type ComboboxItemIndicatorProps = React.ComponentProps<typeof BaseCombobox.ItemIndicator>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxItemIndicator = ({
   children,
   className,
@@ -222,9 +177,6 @@ export const ComboboxItemIndicator = ({
 
 export type ComboboxEmptyProps = React.ComponentProps<typeof BaseCombobox.Empty>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/combobox/content.md
- */
 export const ComboboxEmpty = ({ className, ...props }: ComboboxEmptyProps) => {
   const { slots } = useComboboxContext();
   return <BaseCombobox.Empty className={cn(slots.empty(), className)} {...props} />;

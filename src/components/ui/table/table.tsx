@@ -9,9 +9,6 @@ import { tableVariants, type TableVariants } from "./table.variants";
 
 export type TableProps = TableVariants & React.HTMLAttributes<HTMLTableElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableRoot = ({ children, className, ...props }: TableProps) => {
   const slots = tableVariants();
 
@@ -28,9 +25,6 @@ export const TableRoot = ({ children, className, ...props }: TableProps) => {
 
 export type TableHeaderProps = React.HTMLAttributes<HTMLTableSectionElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableHeader = ({ className, ...props }: TableHeaderProps) => {
   const { slots } = useTableContext();
   return <thead className={cn(slots.header(), className)} {...props} />;
@@ -38,9 +32,6 @@ export const TableHeader = ({ className, ...props }: TableHeaderProps) => {
 
 export type TableBodyProps = React.HTMLAttributes<HTMLTableSectionElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableBody = ({ className, ...props }: TableBodyProps) => {
   const { slots } = useTableContext();
   return <tbody className={cn(slots.body(), className)} {...props} />;
@@ -48,9 +39,6 @@ export const TableBody = ({ className, ...props }: TableBodyProps) => {
 
 export type TableFooterProps = React.HTMLAttributes<HTMLTableSectionElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableFooter = ({ className, ...props }: TableFooterProps) => {
   const { slots } = useTableContext();
   return <tfoot className={cn(slots.footer(), className)} {...props} />;
@@ -58,9 +46,6 @@ export const TableFooter = ({ className, ...props }: TableFooterProps) => {
 
 export type TableRowProps = React.HTMLAttributes<HTMLTableRowElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableRow = ({ className, ...props }: TableRowProps) => {
   const { slots } = useTableContext();
   return <tr className={cn(slots.row(), className)} {...props} />;
@@ -68,9 +53,6 @@ export const TableRow = ({ className, ...props }: TableRowProps) => {
 
 export type TableHeadProps = React.ThHTMLAttributes<HTMLTableCellElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableHead = ({ className, ...props }: TableHeadProps) => {
   const { slots } = useTableContext();
   return <th className={cn(slots.head(), className)} {...props} />;
@@ -78,9 +60,6 @@ export const TableHead = ({ className, ...props }: TableHeadProps) => {
 
 export type TableCellProps = React.TdHTMLAttributes<HTMLTableCellElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableCell = ({ className, ...props }: TableCellProps) => {
   const { slots } = useTableContext();
   return <td className={cn(slots.cell(), className)} {...props} />;
@@ -88,9 +67,6 @@ export const TableCell = ({ className, ...props }: TableCellProps) => {
 
 export type TableCaptionProps = React.HTMLAttributes<HTMLTableCaptionElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/table/content.md
- */
 export const TableCaption = ({ className, ...props }: TableCaptionProps) => {
   const { slots } = useTableContext();
   return <caption className={cn(slots.caption(), className)} {...props} />;

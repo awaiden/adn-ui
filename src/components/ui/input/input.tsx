@@ -10,9 +10,6 @@ import { inputVariants, type InputVariants } from "./input.variants";
 
 export type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, "children">;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/input/content.md
- */
 export const InputRoot = ({
   className,
   size,
@@ -30,7 +27,4 @@ export const InputRoot = ({
   );
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/input/content.md
- */
 export const Input = InputRoot;

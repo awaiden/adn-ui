@@ -14,9 +14,6 @@ export type CommandRootProps = CommandVariants &
     onValueChange?: (value: string) => void;
   };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandRoot = ({
   children,
   className,
@@ -42,9 +39,6 @@ export const CommandRoot = ({
 
 export type CommandDialogProps = React.ComponentProps<typeof BaseDialog.Root> & CommandRootProps;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandDialog = ({
   children,
   open,
@@ -75,9 +69,6 @@ export type CommandInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>
   onValueChange?: (value: string) => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandInput = ({ className, value, onValueChange, ...props }: CommandInputProps) => {
   const { slots, search, setSearch } = useCommandContext();
 
@@ -110,9 +101,6 @@ export const CommandInput = ({ className, value, onValueChange, ...props }: Comm
 
 export type CommandListProps = React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandList = ({ className, ...props }: CommandListProps) => {
   const { slots } = useCommandContext();
   return <div className={cn(slots.list(), className)} {...props} />;
@@ -120,9 +108,6 @@ export const CommandList = ({ className, ...props }: CommandListProps) => {
 
 export type CommandEmptyProps = React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandEmpty = ({ className, ...props }: CommandEmptyProps) => {
   const { slots } = useCommandContext();
   return <div className={cn(slots.empty(), className)} {...props} />;
@@ -132,9 +117,6 @@ export type CommandGroupProps = React.HTMLAttributes<HTMLDivElement> & {
   heading?: React.ReactNode;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandGroup = ({ children, className, heading, ...props }: CommandGroupProps) => {
   const { slots } = useCommandContext();
   return (
@@ -151,9 +133,6 @@ export type CommandItemProps = React.HTMLAttributes<HTMLDivElement> & {
   onSelect?: () => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandItem = ({
   children,
   className,
@@ -188,9 +167,6 @@ export const CommandItem = ({
 
 export type CommandShortcutProps = React.HTMLAttributes<HTMLSpanElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandShortcut = ({ className, ...props }: CommandShortcutProps) => {
   const { slots } = useCommandContext();
   return <span className={cn(slots.shortcut(), className)} {...props} />;
@@ -198,9 +174,6 @@ export const CommandShortcut = ({ className, ...props }: CommandShortcutProps) =
 
 export type CommandSeparatorProps = React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/command/content.md
- */
 export const CommandSeparator = ({ className, ...props }: CommandSeparatorProps) => {
   const { slots } = useCommandContext();
   return <div className={cn(slots.separator(), className)} {...props} />;

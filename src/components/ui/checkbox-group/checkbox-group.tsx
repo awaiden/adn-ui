@@ -11,9 +11,6 @@ import { checkboxGroupVariants, type CheckboxGroupVariants } from "./checkbox-gr
 export type CheckboxGroupProps = CheckboxGroupVariants &
   React.ComponentProps<typeof BaseCheckboxGroup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/checkbox-group/content.md
- */
 export const CheckboxGroupRoot = ({
   children,
   className,

@@ -10,9 +10,6 @@ import { tabsVariants, type TabsVariants } from "./tabs.variants";
 
 export type TabsProps = TabsVariants & React.ComponentProps<typeof BaseTabs.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
- */
 export const TabsRoot = ({ children, className, variant, size, ...props }: TabsProps) => {
   const slots = tabsVariants({ variant, size });
 
@@ -27,9 +24,6 @@ export const TabsRoot = ({ children, className, variant, size, ...props }: TabsP
 
 export type TabsListProps = React.ComponentProps<typeof BaseTabs.List>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
- */
 export const TabsList = ({ className, ...props }: TabsListProps) => {
   const { slots } = useTabsContext();
   return <BaseTabs.List className={cn(slots.list(), className)} {...props} />;
@@ -37,9 +31,6 @@ export const TabsList = ({ className, ...props }: TabsListProps) => {
 
 export type TabsTabProps = React.ComponentProps<typeof BaseTabs.Tab>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
- */
 export const TabsTab = ({ className, ...props }: TabsTabProps) => {
   const { slots } = useTabsContext();
   return <BaseTabs.Tab className={cn(slots.tab(), className)} {...props} />;
@@ -47,9 +38,6 @@ export const TabsTab = ({ className, ...props }: TabsTabProps) => {
 
 export type TabsIndicatorProps = React.ComponentProps<typeof BaseTabs.Indicator>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
- */
 export const TabsIndicator = ({ className, ...props }: TabsIndicatorProps) => {
   const { slots } = useTabsContext();
   return <BaseTabs.Indicator className={cn(slots.indicator(), className)} {...props} />;
@@ -57,9 +45,6 @@ export const TabsIndicator = ({ className, ...props }: TabsIndicatorProps) => {
 
 export type TabsPanelProps = React.ComponentProps<typeof BaseTabs.Panel>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/tabs/content.md
- */
 export const TabsPanel = ({ className, ...props }: TabsPanelProps) => {
   const { slots } = useTabsContext();
   return <BaseTabs.Panel className={cn(slots.panel(), className)} {...props} />;

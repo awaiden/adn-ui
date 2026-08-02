@@ -10,9 +10,6 @@ import { popoverVariants, type PopoverVariants } from "./popover.variants";
 
 export type PopoverProps = PopoverVariants & React.ComponentProps<typeof BasePopover.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverRoot = ({ children, size, ...props }: PopoverProps) => {
   const slots = popoverVariants({ size });
 
@@ -28,9 +25,6 @@ export type PopoverTriggerProps = React.ComponentProps<typeof BasePopover.Trigge
   asChild?: boolean;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverTrigger = ({
   className,
   children,
@@ -51,18 +45,12 @@ export const PopoverTrigger = ({
 
 export type PopoverPortalProps = React.ComponentProps<typeof BasePopover.Portal>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverPortal = (props: PopoverPortalProps) => {
   return <BasePopover.Portal {...props} />;
 };
 
 export type PopoverBackdropProps = React.ComponentProps<typeof BasePopover.Backdrop>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverBackdrop = ({ className, ...props }: PopoverBackdropProps) => {
   const { slots } = usePopoverContext();
   return <BasePopover.Backdrop className={cn(slots.backdrop(), className)} {...props} />;
@@ -70,9 +58,6 @@ export const PopoverBackdrop = ({ className, ...props }: PopoverBackdropProps) =
 
 export type PopoverPositionerProps = React.ComponentProps<typeof BasePopover.Positioner>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverPositioner = ({
   className,
   sideOffset = 4,
@@ -90,9 +75,6 @@ export const PopoverPositioner = ({
 
 export type PopoverPopupProps = React.ComponentProps<typeof BasePopover.Popup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverPopup = ({ className, ...props }: PopoverPopupProps) => {
   const { slots } = usePopoverContext();
   return <BasePopover.Popup className={cn(slots.popup(), className)} {...props} />;
@@ -100,9 +82,6 @@ export const PopoverPopup = ({ className, ...props }: PopoverPopupProps) => {
 
 export type PopoverTitleProps = React.ComponentProps<typeof BasePopover.Title>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverTitle = ({ className, ...props }: PopoverTitleProps) => {
   const { slots } = usePopoverContext();
   return <BasePopover.Title className={cn(slots.title(), className)} {...props} />;
@@ -110,9 +89,6 @@ export const PopoverTitle = ({ className, ...props }: PopoverTitleProps) => {
 
 export type PopoverDescriptionProps = React.ComponentProps<typeof BasePopover.Description>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverDescription = ({ className, ...props }: PopoverDescriptionProps) => {
   const { slots } = usePopoverContext();
   return <BasePopover.Description className={cn(slots.description(), className)} {...props} />;
@@ -120,9 +96,6 @@ export const PopoverDescription = ({ className, ...props }: PopoverDescriptionPr
 
 export type PopoverArrowProps = React.ComponentProps<typeof BasePopover.Arrow>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverArrow = ({ className, ...props }: PopoverArrowProps) => {
   const { slots } = usePopoverContext();
   return <BasePopover.Arrow className={cn(slots.arrow(), className)} {...props} />;
@@ -133,9 +106,6 @@ export type PopoverCloseProps = React.ComponentProps<typeof BasePopover.Close> &
   asChild?: boolean;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/popover/content.md
- */
 export const PopoverClose = ({
   className,
   children,

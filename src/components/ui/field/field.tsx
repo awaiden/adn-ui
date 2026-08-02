@@ -10,9 +10,6 @@ import { fieldVariants, type FieldVariants } from "./field.variants";
 
 export type FieldProps = FieldVariants & React.ComponentProps<typeof BaseField.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldRoot = ({ children, className, size, ...props }: FieldProps) => {
   const slots = fieldVariants({ size });
 
@@ -27,9 +24,6 @@ export const FieldRoot = ({ children, className, size, ...props }: FieldProps) =
 
 export type FieldLabelProps = React.ComponentProps<typeof BaseField.Label>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldLabel = ({ className, ...props }: FieldLabelProps) => {
   const { slots } = useFieldContext();
   return <BaseField.Label className={cn(slots.label(), className)} {...props} />;
@@ -37,9 +31,6 @@ export const FieldLabel = ({ className, ...props }: FieldLabelProps) => {
 
 export type FieldControlProps = React.ComponentProps<typeof BaseField.Control>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldControl = ({ className, ...props }: FieldControlProps) => {
   const { slots } = useFieldContext();
   return <BaseField.Control className={cn(slots.control(), className)} {...props} />;
@@ -47,9 +38,6 @@ export const FieldControl = ({ className, ...props }: FieldControlProps) => {
 
 export type FieldErrorProps = React.ComponentProps<typeof BaseField.Error>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldError = ({ className, ...props }: FieldErrorProps) => {
   const { slots } = useFieldContext();
   return <BaseField.Error className={cn(slots.error(), className)} {...props} />;
@@ -57,9 +45,6 @@ export const FieldError = ({ className, ...props }: FieldErrorProps) => {
 
 export type FieldDescriptionProps = React.ComponentProps<typeof BaseField.Description>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldDescription = ({ className, ...props }: FieldDescriptionProps) => {
   const { slots } = useFieldContext();
   return <BaseField.Description className={cn(slots.description(), className)} {...props} />;
@@ -67,9 +52,6 @@ export const FieldDescription = ({ className, ...props }: FieldDescriptionProps)
 
 export type FieldItemProps = React.ComponentProps<typeof BaseField.Item>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldItem = ({ className, ...props }: FieldItemProps) => {
   const { slots } = useFieldContext();
   return <BaseField.Item className={cn(slots.item(), className)} {...props} />;
@@ -77,9 +59,6 @@ export const FieldItem = ({ className, ...props }: FieldItemProps) => {
 
 export type FieldValidityProps = React.ComponentProps<typeof BaseField.Validity>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
- */
 export const FieldValidity = (props: FieldValidityProps) => {
   return <BaseField.Validity {...props} />;
 };

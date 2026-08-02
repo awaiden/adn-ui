@@ -8,9 +8,6 @@ import { buttonVariants, type ButtonVariants } from "./button.variants";
 
 export interface ButtonProps extends ButtonVariants, React.ComponentProps<"button"> {}
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md
- */
 export const Button = ({
   children,
   className,
@@ -28,7 +25,4 @@ export const Button = ({
   );
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md
- */
 export const ButtonRoot = Button;

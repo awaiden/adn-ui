@@ -1,0 +1,77 @@
+---
+title: OTP Field
+subtitle: A one-time password input composed of individual character slots.
+description: A high-quality, unstyled React OTP field component built with @base-ui/react for one-time password and verification code entry.
+---
+
+import { OTPFieldDemo } from "@/components/ui/otp-field/otp-field-demo";
+
+The `OTPField` component provides accessible character slot inputs for one-time password and verification code entry.
+
+## Usage
+
+```tsx
+import { OTPField } from "@/components/ui/otp-field";
+
+export function ExampleOTPField() {
+  return (
+    <OTPField.Root length={6}>
+      <OTPField.Input aria-label="Character 1 of 6" />
+      <OTPField.Input aria-label="Character 2 of 6" />
+      <OTPField.Input aria-label="Character 3 of 6" />
+      <OTPField.Separator />
+      <OTPField.Input aria-label="Character 4 of 6" />
+      <OTPField.Input aria-label="Character 5 of 6" />
+      <OTPField.Input aria-label="Character 6 of 6" />
+    </OTPField.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <OTPFieldDemo length={6} />
+</div>
+
+## Sizes
+
+<div className="flex flex-col gap-4 p-4 border rounded-xl my-4">
+  <OTPFieldDemo length={6} size="sm" />
+  <OTPFieldDemo length={6} size="md" />
+  <OTPFieldDemo length={6} size="lg" />
+</div>
+
+```tsx
+<OTPField.Root length={6} size="sm">...</OTPField.Root>
+<OTPField.Root length={6} size="md">...</OTPField.Root>
+<OTPField.Root length={6} size="lg">...</OTPField.Root>
+```
+
+## Anatomy
+
+```tsx
+import { OTPField } from "@base-ui/react/otp-field";
+
+<OTPField.Root>
+  <OTPField.Input />
+  <OTPField.Separator />
+</OTPField.Root>;
+```
+
+## API Reference
+
+### OTPField.Root Props
+
+| Prop              | Type                             | Default         | Description                                                       |
+| :---------------- | :------------------------------- | :-------------- | :---------------------------------------------------------------- |
+| `length`          | `number`                         | -               | The number of OTP input slots (Required).                         |
+| `size`            | `'sm' \| 'md' \| 'lg'`           | `'md'`          | Dimension size of the slot inputs.                                |
+| `value`           | `string`                         | `undefined`     | Controlled OTP value.                                             |
+| `defaultValue`    | `string`                         | `undefined`     | Initial uncontrolled OTP value.                                   |
+| `validationType`  | `'numeric' \| 'alpha' \| 'alphanumeric' \| 'none'` | `'numeric'` | Input validation mode applied to characters.     |
+| `mask`            | `boolean`                        | `false`         | Obscures characters as password inputs.                           |
+| `autoSubmit`      | `boolean`                        | `false`         | Submits the parent form when all slots are filled.                |
+| `onValueChange`   | `(value: string) => void`        | `undefined`     | Callback fired when the OTP value changes.                        |
+| `onValueComplete` | `(value: string) => void`        | `undefined`     | Callback fired when all slots are filled.                         |
+| `disabled`        | `boolean`                        | `false`         | Disables user interaction.                                        |

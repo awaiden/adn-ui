@@ -11,9 +11,6 @@ import { toggleGroupVariants, type ToggleGroupVariants } from "./toggle-group.va
 
 export type ToggleGroupProps = ToggleGroupVariants & React.ComponentProps<typeof BaseToggleGroup>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md
- */
 export const ToggleGroupRoot = ({
   children,
   className,
@@ -32,11 +29,5 @@ export const ToggleGroupRoot = ({
   );
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md
- */
 export const ToggleItem = ToggleRoot;
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle-group/content.md
- */
 export const ToggleGroupItem = ToggleRoot;

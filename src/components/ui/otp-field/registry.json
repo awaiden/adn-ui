@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "otp-field",
+      "type": "registry:ui",
+      "title": "OTP Field",
+      "description": "A one-time password input composed of individual character slots.",
+      "dependencies": ["@base-ui/react", "tailwind-variants"],
+      "files": [
+        {
+          "path": "otp-field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "otp-field.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "otp-field.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "otp-field.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

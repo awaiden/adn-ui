@@ -9,9 +9,6 @@ import { skeletonVariants, type SkeletonVariants } from "./skeleton.variants";
 
 export type SkeletonProps = SkeletonVariants & React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const SkeletonRoot = ({
   children,
   className,
@@ -32,9 +29,6 @@ export const SkeletonRoot = ({
   );
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const Skeleton = SkeletonRoot;
 
 export type SkeletonTextProps = SkeletonProps & {
@@ -43,9 +37,6 @@ export type SkeletonTextProps = SkeletonProps & {
   gap?: string;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const SkeletonText = ({
   lines = 3,
   lastLineWidth = "60%",
@@ -77,9 +68,6 @@ export const SkeletonText = ({
 
 export type SkeletonAvatarProps = SkeletonProps;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const SkeletonAvatar = ({
   className,
   variant,
@@ -111,9 +99,6 @@ export const SkeletonAvatar = ({
 
 export type SkeletonButtonProps = SkeletonProps;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const SkeletonButton = ({
   className,
   variant,
@@ -145,9 +130,6 @@ export const SkeletonButton = ({
 
 export type SkeletonCardProps = SkeletonProps;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/skeleton/content.md
- */
 export const SkeletonCard = ({
   className,
   variant,

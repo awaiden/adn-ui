@@ -10,9 +10,6 @@ import { toggleVariants, type ToggleVariants } from "./toggle.variants";
 
 export type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md
- */
 export const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {
   const slots = toggleVariants({ variant, size });
 

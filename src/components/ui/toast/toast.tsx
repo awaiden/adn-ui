@@ -10,27 +10,18 @@ import { toastVariants, type ToastVariants } from "./toast.variants";
 
 export type ToastProviderProps = React.ComponentProps<typeof BaseToast.Provider>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastProvider = (props: ToastProviderProps) => {
   return <BaseToast.Provider {...props} />;
 };
 
 export type ToastPortalProps = React.ComponentProps<typeof BaseToast.Portal>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastPortal = (props: ToastPortalProps) => {
   return <BaseToast.Portal {...props} />;
 };
 
 export type ToastViewportProps = React.ComponentProps<typeof BaseToast.Viewport>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastViewport = ({ className, ...props }: ToastViewportProps) => {
   const slots = toastVariants();
   return <BaseToast.Viewport className={cn(slots.viewport(), className)} {...props} />;
@@ -38,9 +29,6 @@ export const ToastViewport = ({ className, ...props }: ToastViewportProps) => {
 
 export type ToastRootProps = ToastVariants & React.ComponentProps<typeof BaseToast.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastRoot = ({ children, className, variant, ...props }: ToastRootProps) => {
   const slots = toastVariants({ variant });
 
@@ -55,9 +43,6 @@ export const ToastRoot = ({ children, className, variant, ...props }: ToastRootP
 
 export type ToastContentProps = React.ComponentProps<typeof BaseToast.Content>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastContent = ({ className, ...props }: ToastContentProps) => {
   const { slots } = useToastContext();
   return <BaseToast.Content className={cn(slots.content(), className)} {...props} />;
@@ -65,9 +50,6 @@ export const ToastContent = ({ className, ...props }: ToastContentProps) => {
 
 export type ToastTitleProps = React.ComponentProps<typeof BaseToast.Title>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastTitle = ({ className, ...props }: ToastTitleProps) => {
   const { slots } = useToastContext();
   return <BaseToast.Title className={cn(slots.title(), className)} {...props} />;
@@ -75,9 +57,6 @@ export const ToastTitle = ({ className, ...props }: ToastTitleProps) => {
 
 export type ToastDescriptionProps = React.ComponentProps<typeof BaseToast.Description>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastDescription = ({ className, ...props }: ToastDescriptionProps) => {
   const { slots } = useToastContext();
   return <BaseToast.Description className={cn(slots.description(), className)} {...props} />;
@@ -85,9 +64,6 @@ export const ToastDescription = ({ className, ...props }: ToastDescriptionProps)
 
 export type ToastActionProps = React.ComponentProps<typeof BaseToast.Action>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastAction = ({ className, ...props }: ToastActionProps) => {
   const { slots } = useToastContext();
   return <BaseToast.Action className={cn(slots.action(), className)} {...props} />;
@@ -95,9 +71,6 @@ export const ToastAction = ({ className, ...props }: ToastActionProps) => {
 
 export type ToastCloseProps = React.ComponentProps<typeof BaseToast.Close>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/toast/content.md
- */
 export const ToastClose = ({ className, children, ...props }: ToastCloseProps) => {
   const { slots } = useToastContext();
   return (

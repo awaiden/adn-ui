@@ -10,9 +10,6 @@ import { checkboxVariants, type CheckboxVariants } from "./checkbox.variants";
 
 export type CheckboxProps = CheckboxVariants & React.ComponentProps<typeof BaseCheckbox.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/checkbox/content.md
- */
 export const CheckboxRoot = ({ children, className, size, variant, ...props }: CheckboxProps) => {
   const slots = checkboxVariants({ size, variant });
 
@@ -27,9 +24,6 @@ export const CheckboxRoot = ({ children, className, size, variant, ...props }: C
 
 export type CheckboxIndicatorProps = React.ComponentProps<typeof BaseCheckbox.Indicator>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/checkbox/content.md
- */
 export const CheckboxIndicator = ({ children, className, ...props }: CheckboxIndicatorProps) => {
   const { slots } = useCheckboxContext();
   return (

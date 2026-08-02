@@ -10,9 +10,6 @@ import { accordionVariants, type AccordionVariants } from "./accordion.variants"
 
 export type AccordionProps = AccordionVariants & React.ComponentProps<typeof BaseAccordion.Root>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
- */
 export const AccordionRoot = ({ children, className, variant, ...props }: AccordionProps) => {
   const slots = accordionVariants({ variant });
 
@@ -27,9 +24,6 @@ export const AccordionRoot = ({ children, className, variant, ...props }: Accord
 
 export type AccordionItemProps = React.ComponentProps<typeof BaseAccordion.Item>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
- */
 export const AccordionItem = ({ className, ...props }: AccordionItemProps) => {
   const { slots } = useAccordionContext();
   return <BaseAccordion.Item className={cn(slots.item(), className)} {...props} />;
@@ -37,9 +31,6 @@ export const AccordionItem = ({ className, ...props }: AccordionItemProps) => {
 
 export type AccordionHeaderProps = React.ComponentProps<typeof BaseAccordion.Header>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
- */
 export const AccordionHeader = ({ className, ...props }: AccordionHeaderProps) => {
   const { slots } = useAccordionContext();
   return <BaseAccordion.Header className={cn(slots.header(), className)} {...props} />;
@@ -49,9 +40,6 @@ export type AccordionTriggerProps = React.ComponentProps<typeof BaseAccordion.Tr
   hideChevron?: boolean;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
- */
 export const AccordionTrigger = ({
   children,
   className,
@@ -81,9 +69,6 @@ export const AccordionTrigger = ({
 
 export type AccordionPanelProps = React.ComponentProps<typeof BaseAccordion.Panel>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/accordion/content.md
- */
 export const AccordionPanel = ({ children, className, ...props }: AccordionPanelProps) => {
   const { slots } = useAccordionContext();
   return (

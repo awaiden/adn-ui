@@ -19,9 +19,6 @@ export type ColumnDef<T> = {
 
 export type DataTableRootProps = DataTableVariants & React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export const DataTableRoot = ({ children, className, size, ...props }: DataTableRootProps) => {
   const slots = dataTableVariants({ size });
 
@@ -36,9 +33,6 @@ export const DataTableRoot = ({ children, className, size, ...props }: DataTable
 
 export type DataTableToolbarProps = React.HTMLAttributes<HTMLDivElement>;
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export const DataTableToolbar = ({ className, ...props }: DataTableToolbarProps) => {
   const { slots } = useDataTableContext();
   return <div className={cn(slots.toolbar(), className)} {...props} />;
@@ -48,9 +42,6 @@ export type DataTableSearchProps = React.InputHTMLAttributes<HTMLInputElement> &
   onSearchChange?: (query: string) => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export const DataTableSearch = ({
   className,
   placeholder = "Filter...",
@@ -87,9 +78,6 @@ export type DataTableColumnHeaderProps = React.ButtonHTMLAttributes<HTMLButtonEl
   onToggleSort?: () => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export const DataTableColumnHeader = ({
   children,
   className,
@@ -140,9 +128,6 @@ export type DataTablePaginationProps = {
   onPageChange: (page: number) => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export const DataTablePagination = ({
   pageIndex,
   pageCount,
@@ -228,9 +213,6 @@ export type DataTableProps<T> = {
   onRowClick?: (row: T) => void;
 };
 
-/**
- * @see https://ui.awaiden.com/llms.mdx/docs/components/data-table/content.md
- */
 export function DataTable<T extends Record<string, any>>({
   data,
   columns,
