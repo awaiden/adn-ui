@@ -1,0 +1,35 @@
+---
+title: Spinner
+subtitle: An animated loading spinner indicator.
+description: A high-quality, styled React spinner component for indicating asynchronous loading states.
+new: true
+---
+
+import { SpinnerDemo } from "@/components/ui/spinner/spinner-demo";
+
+The `Spinner` component renders an accessible SVG loading spinner for indicating asynchronous actions or loading states.
+
+## Usage
+
+```tsx
+import { Spinner } from "@/components/ui/spinner";
+
+export function ExampleSpinner() {
+  return <Spinner size="md" />;
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4 flex justify-center">
+  <SpinnerDemo />
+</div>
+
+## API Reference
+
+### Spinner Props
+
+| Prop      | Type                              | Default     | Description                            |
+| :-------- | :-------------------------------- | :---------- | :------------------------------------- |
+| `size`    | `'sm' \| 'md' \| 'lg' \| 'xl'`   | `'md'`      | Dimension size of the spinner.         |
+| `variant` | `'default' \| 'muted' \| 'primary'` | `'default'` | Visual color variant of the spinner.  |

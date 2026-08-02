@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Displays content within a desired aspect ratio.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "aspect-ratio.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "aspect-ratio.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "aspect-ratio.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "aspect-ratio.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

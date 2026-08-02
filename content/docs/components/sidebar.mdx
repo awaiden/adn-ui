@@ -1,0 +1,85 @@
+---
+title: Sidebar
+subtitle: An accessible, collapsible navigation sidebar layout.
+description: A high-quality, styled React sidebar component for application navigation and layout.
+new: true
+---
+
+import { SidebarDemo } from "@/components/ui/sidebar/sidebar-demo";
+
+The `Sidebar` component provides an accessible, collapsible layout structure for application navigation.
+
+## Usage
+
+```tsx
+import { Sidebar } from "@/components/ui/sidebar";
+
+export function ExampleSidebar() {
+  return (
+    <Sidebar.Provider>
+      <Sidebar.Root>
+        <Sidebar.Header>
+          <span>App Header</span>
+          <Sidebar.Trigger />
+        </Sidebar.Header>
+        <Sidebar.Content>
+          <Sidebar.Group>
+            <Sidebar.GroupLabel>Navigation</Sidebar.GroupLabel>
+            <Sidebar.GroupContent>
+              <Sidebar.Menu>
+                <Sidebar.MenuItem>
+                  <Sidebar.MenuButton isActive>Dashboard</Sidebar.MenuButton>
+                </Sidebar.MenuItem>
+                <Sidebar.MenuItem>
+                  <Sidebar.MenuButton>Settings</Sidebar.MenuButton>
+                </Sidebar.MenuItem>
+              </Sidebar.Menu>
+            </Sidebar.GroupContent>
+          </Sidebar.Group>
+        </Sidebar.Content>
+      </Sidebar.Root>
+    </Sidebar.Provider>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <SidebarDemo />
+</div>
+
+## Anatomy
+
+```tsx
+<Sidebar.Provider>
+  <Sidebar.Root>
+    <Sidebar.Header>
+      <Sidebar.Trigger />
+    </Sidebar.Header>
+    <Sidebar.Content>
+      <Sidebar.Group>
+        <Sidebar.GroupLabel />
+        <Sidebar.GroupContent>
+          <Sidebar.Menu>
+            <Sidebar.MenuItem>
+              <Sidebar.MenuButton />
+            </Sidebar.MenuItem>
+          </Sidebar.Menu>
+        </Sidebar.GroupContent>
+      </Sidebar.Group>
+    </Sidebar.Content>
+    <Sidebar.Footer />
+  </Sidebar.Root>
+</Sidebar.Provider>
+```
+
+## API Reference
+
+### Sidebar.Provider Props
+
+| Prop          | Type                   | Default | Description                            |
+| :------------ | :--------------------- | :------ | :------------------------------------- |
+| `defaultOpen` | `boolean`              | `true`  | Initial uncontrolled open state.       |
+| `open`        | `boolean`              | -       | Controlled open state.                 |
+| `onOpenChange`| `(open: boolean) => void` | -     | Callback fired when open state changes.|

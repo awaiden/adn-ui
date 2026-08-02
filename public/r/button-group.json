@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group",
+  "title": "Button Group",
+  "description": "Groups multiple buttons together into a single cohesive layout.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/button-group/button-group.tsx",
+      "content": "\"use client\";\n\nimport \"./button-group.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { Button, type ButtonProps } from \"../button\";\nimport { ButtonGroupContext, useButtonGroupContext } from \"./button-group.context\";\nimport { buttonGroupVariants, type ButtonGroupVariants } from \"./button-group.variants\";\n\nexport type ButtonGroupProps = {\n  size?: \"sm\" | \"md\" | \"lg\";\n  variant?: \"primary\" | \"secondary\" | \"destructive\" | \"outline\" | \"ghost\";\n} & ButtonGroupVariants & React.ComponentProps<\"div\">;\n\nexport const ButtonGroupRoot = ({\n  children,\n  className,\n  orientation = \"horizontal\",\n  size,\n  variant,\n  ...props\n}: ButtonGroupProps) => {\n  const slots = buttonGroupVariants({ orientation });\n\n  return (\n    <ButtonGroupContext.Provider value={{ slots, size, variant }}>\n      <div\n        role=\"group\"\n        className={cn(slots.root(), className)}\n        {...props}\n      >\n        {children}\n      </div>\n    </ButtonGroupContext.Provider>\n  );\n};\n\nexport const ButtonGroupItem = ({ size, variant, ...props }: ButtonProps) => {\n  const context = useButtonGroupContext();\n  return (\n    <Button\n      size={size ?? context.size}\n      variant={variant ?? context.variant}\n      {...props}\n    />\n  );\n};\n\nexport const ButtonGroup = ButtonGroupRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/button-group/button-group.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const buttonGroupVariants = tv({\n  slots: {\n    root: \"button-group\",\n  },\n  variants: {\n    orientation: {\n      horizontal: {\n        root: \"button-group--horizontal\",\n      },\n      vertical: {\n        root: \"button-group--vertical\",\n      },\n    },\n  },\n  defaultVariants: {\n    orientation: \"horizontal\",\n  },\n});\n\nexport type ButtonGroupVariants = VariantProps<typeof buttonGroupVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/button-group/button-group.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { buttonGroupVariants } from \"./button-group.variants\";\n\nexport type ButtonGroupContext = {\n  slots: ReturnType<typeof buttonGroupVariants>;\n  size?: \"sm\" | \"md\" | \"lg\";\n  variant?: \"primary\" | \"secondary\" | \"destructive\" | \"outline\" | \"ghost\";\n};\n\nexport const ButtonGroupContext = createContext<ButtonGroupContext | null>(null);\n\nexport const useButtonGroupContext = () => {\n  const context = useContext(ButtonGroupContext);\n  return context ?? { slots: buttonGroupVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/button-group/button-group.css",
+      "content": ".button-group {\n  @apply inline-flex items-center select-none;\n}\n\n.button-group--horizontal {\n  @apply flex-row;\n}\n\n.button-group--horizontal > button,\n.button-group--horizontal > .button {\n  @apply focus-visible:z-10 -ml-px rounded-none first:ml-0 first:rounded-l-md last:rounded-r-md;\n}\n\n.button-group--vertical {\n  @apply flex-col items-stretch;\n}\n\n.button-group--vertical > button,\n.button-group--vertical > .button {\n  @apply focus-visible:z-10 -mt-px rounded-none first:mt-0 first:rounded-t-md last:rounded-b-md;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/button-group/index.ts",
+      "content": "import {\n  ButtonGroup,\n  ButtonGroupItem,\n  ButtonGroupRoot,\n} from \"./button-group\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/button-group/content.md\n */\nexport const ButtonGroupContainer = {\n  Item: ButtonGroupItem,\n  Root: ButtonGroupRoot,\n};\n\nexport {\n  ButtonGroup,\n  ButtonGroupItem,\n  ButtonGroupRoot,\n};\n\nexport type {\n  ButtonGroupProps,\n} from \"./button-group\";\nexport { ButtonGroupContext, useButtonGroupContext } from \"./button-group.context\";\nexport { type ButtonGroupVariants, buttonGroupVariants } from \"./button-group.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

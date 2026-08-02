@@ -1,0 +1,21 @@
+.button-group {
+  @apply inline-flex items-center select-none;
+}
+
+.button-group--horizontal {
+  @apply flex-row;
+}
+
+.button-group--horizontal > button,
+.button-group--horizontal > .button {
+  @apply focus-visible:z-10 -ml-px rounded-none first:ml-0 first:rounded-l-md last:rounded-r-md;
+}
+
+.button-group--vertical {
+  @apply flex-col items-stretch;
+}
+
+.button-group--vertical > button,
+.button-group--vertical > .button {
+  @apply focus-visible:z-10 -mt-px rounded-none first:mt-0 first:rounded-t-md last:rounded-b-md;
+}

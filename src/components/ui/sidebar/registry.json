@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "An accessible, collapsible application navigation sidebar.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "sidebar.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "sidebar.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "sidebar.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

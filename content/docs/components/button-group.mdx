@@ -1,0 +1,54 @@
+---
+title: Button Group
+subtitle: Groups multiple buttons together into a single layout.
+description: A high-quality, styled React button group component for grouping related actions.
+new: true
+---
+
+import { ButtonGroupDemo } from "@/components/ui/button-group/button-group-demo";
+
+The `ButtonGroup` component groups related action buttons together into a single connected visual layout.
+
+## Usage
+
+```tsx
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
+
+export function ExampleButtonGroup() {
+  return (
+    <ButtonGroup variant="outline">
+      <ButtonGroupItem>Years</ButtonGroupItem>
+      <ButtonGroupItem>Months</ButtonGroupItem>
+      <ButtonGroupItem>Days</ButtonGroupItem>
+    </ButtonGroup>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4 flex justify-center">
+  <ButtonGroupDemo />
+</div>
+
+## Orientation
+
+Use the `orientation="vertical"` prop to stack buttons vertically:
+
+```tsx
+<ButtonGroup orientation="vertical" variant="outline">
+  <ButtonGroupItem>Top</ButtonGroupItem>
+  <ButtonGroupItem>Middle</ButtonGroupItem>
+  <ButtonGroupItem>Bottom</ButtonGroupItem>
+</ButtonGroup>
+```
+
+## API Reference
+
+### ButtonGroup Props
+
+| Prop          | Type                                                            | Default        | Description                                       |
+| :------------ | :-------------------------------------------------------------- | :------------- | :------------------------------------------------ |
+| `orientation` | `'horizontal' \| 'vertical'`                                    | `'horizontal'` | Layout direction of the button group.             |
+| `size`        | `'sm' \| 'md' \| 'lg'`                                          | `undefined`    | Shared size applied to all child button items.    |
+| `variant`     | `'primary' \| 'secondary' \| 'destructive' \| 'outline' \| 'ghost'` | `undefined` | Shared variant applied to all child button items. |

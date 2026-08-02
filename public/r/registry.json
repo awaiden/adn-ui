@@ -68,6 +68,37 @@
       "type": "registry:ui"
     },
     {
+      "name": "aspect-ratio",
+      "title": "Aspect Ratio",
+      "description": "Displays content within a desired aspect ratio.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/aspect-ratio.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "autocomplete",
       "title": "Autocomplete",
       "description": "An input component that provides suggestions as the user types.",
@@ -153,6 +184,40 @@
         },
         {
           "path": "src/components/ui/button/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "button-group",
+      "title": "Button Group",
+      "description": "Groups multiple buttons together into a single cohesive layout.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group/button-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button-group/button-group.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button-group/button-group.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button-group/button-group.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/button-group/index.ts",
           "type": "registry:ui"
         }
       ],
@@ -861,6 +926,37 @@
       "type": "registry:ui"
     },
     {
+      "name": "sidebar",
+      "title": "Sidebar",
+      "description": "An accessible, collapsible application navigation sidebar.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sidebar/sidebar.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sidebar/sidebar.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sidebar/sidebar.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/sidebar/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "skeleton",
       "title": "Skeleton",
       "description": "Displays placeholder content while data is loading.",
@@ -886,6 +982,37 @@
         },
         {
           "path": "src/components/ui/skeleton/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner",
+      "title": "Spinner",
+      "description": "An animated loading spinner indicator.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/spinner/spinner.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/spinner/spinner.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/spinner/spinner.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/spinner/spinner.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/spinner/index.ts",
           "type": "registry:ui"
         }
       ],

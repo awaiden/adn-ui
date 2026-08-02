@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "description": "Groups multiple buttons together into a single cohesive layout.",
+      "dependencies": ["tailwind-variants"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "button-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button-group.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button-group.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "button-group.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

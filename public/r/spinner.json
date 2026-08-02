@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "An animated loading spinner indicator.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/spinner/spinner.tsx",
+      "content": "\"use client\";\n\nimport \"./spinner.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { SpinnerContext } from \"./spinner.context\";\nimport { spinnerVariants, type SpinnerVariants } from \"./spinner.variants\";\n\nexport type SpinnerProps = SpinnerVariants & React.ComponentProps<\"svg\">;\n\nexport const SpinnerRoot = ({\n  className,\n  size,\n  variant,\n  ...props\n}: SpinnerProps) => {\n  const slots = spinnerVariants({ size, variant });\n\n  return (\n    <SpinnerContext.Provider value={{ slots }}>\n      <svg\n        role=\"status\"\n        aria-label=\"Loading\"\n        className={cn(slots.root(), className)}\n        fill=\"none\"\n        viewBox=\"0 0 24 24\"\n        {...props}\n      >\n        <circle\n          className=\"opacity-25\"\n          cx=\"12\"\n          cy=\"12\"\n          r=\"10\"\n          stroke=\"currentColor\"\n          strokeWidth=\"4\"\n        />\n        <path\n          className=\"opacity-75\"\n          fill=\"currentColor\"\n          d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"\n        />\n      </svg>\n    </SpinnerContext.Provider>\n  );\n};\n\nexport const Spinner = SpinnerRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/spinner/spinner.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const spinnerVariants = tv({\n  slots: {\n    root: \"spinner\",\n  },\n  variants: {\n    size: {\n      sm: { root: \"spinner--sm\" },\n      md: { root: \"spinner--md\" },\n      lg: { root: \"spinner--lg\" },\n      xl: { root: \"spinner--xl\" },\n    },\n    variant: {\n      default: { root: \"\" },\n      muted: { root: \"spinner--muted\" },\n      primary: { root: \"spinner--primary\" },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n    variant: \"default\",\n  },\n});\n\nexport type SpinnerVariants = VariantProps<typeof spinnerVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/spinner/spinner.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { spinnerVariants } from \"./spinner.variants\";\n\nexport type SpinnerContext = {\n  slots: ReturnType<typeof spinnerVariants>;\n};\n\nexport const SpinnerContext = createContext<SpinnerContext | null>(null);\n\nexport const useSpinnerContext = () => {\n  const context = useContext(SpinnerContext);\n  return context ?? { slots: spinnerVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/spinner/spinner.css",
+      "content": ".spinner {\n  @apply inline-block animate-spin text-current shrink-0;\n}\n\n.spinner--sm {\n  @apply h-4 w-4;\n}\n\n.spinner--md {\n  @apply h-6 w-6;\n}\n\n.spinner--lg {\n  @apply h-8 w-8;\n}\n\n.spinner--xl {\n  @apply h-12 w-12;\n}\n\n.spinner--muted {\n  @apply text-muted-foreground;\n}\n\n.spinner--primary {\n  @apply text-primary;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/spinner/index.ts",
+      "content": "import { Spinner, SpinnerRoot } from \"./spinner\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/spinner/content.md\n */\nexport const SpinnerContainer = {\n  Root: SpinnerRoot,\n};\n\nexport { Spinner, SpinnerRoot };\n\nexport type { SpinnerProps } from \"./spinner\";\nexport { SpinnerContext, useSpinnerContext } from \"./spinner.context\";\nexport { type SpinnerVariants, spinnerVariants } from \"./spinner.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

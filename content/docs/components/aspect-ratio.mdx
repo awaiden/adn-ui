@@ -1,0 +1,40 @@
+---
+title: Aspect Ratio
+subtitle: Displays content within a desired aspect ratio.
+description: A high-quality, styled React aspect ratio component for maintaining element proportions.
+new: true
+---
+
+import { AspectRatioDemo } from "@/components/ui/aspect-ratio/aspect-ratio-demo";
+
+The `AspectRatio` component constrains content to a specific width-to-height aspect ratio.
+
+## Usage
+
+```tsx
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+export function ExampleAspectRatio() {
+  return (
+    <div className="w-[400px]">
+      <AspectRatio ratio={16 / 9} className="bg-muted flex items-center justify-center rounded-lg border">
+        <span>16 / 9 Content</span>
+      </AspectRatio>
+    </div>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4 flex justify-center">
+  <AspectRatioDemo />
+</div>
+
+## API Reference
+
+### AspectRatio Props
+
+| Prop    | Type     | Default  | Description                             |
+| :------ | :------- | :------- | :-------------------------------------- |
+| `ratio` | `number` | `16 / 9` | The desired aspect ratio (width/height).|

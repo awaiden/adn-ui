@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Displays content within a desired aspect ratio.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.tsx",
+      "content": "\"use client\";\n\nimport \"./aspect-ratio.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { AspectRatioContext } from \"./aspect-ratio.context\";\nimport { aspectRatioVariants, type AspectRatioVariants } from \"./aspect-ratio.variants\";\n\nexport type AspectRatioProps = {\n  /**\n   * The desired aspect ratio (width / height).\n   * @default 16 / 9\n   */\n  ratio?: number;\n} & AspectRatioVariants & React.ComponentProps<\"div\">;\n\nexport const AspectRatioRoot = ({\n  children,\n  className,\n  ratio = 16 / 9,\n  style,\n  ...props\n}: AspectRatioProps) => {\n  const slots = aspectRatioVariants();\n\n  return (\n    <AspectRatioContext.Provider value={{ slots }}>\n      <div\n        className={cn(slots.root(), className)}\n        style={{ aspectRatio: `${ratio}`, ...style }}\n        {...props}\n      >\n        {children}\n      </div>\n    </AspectRatioContext.Provider>\n  );\n};\n\nexport const AspectRatio = AspectRatioRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const aspectRatioVariants = tv({\n  slots: {\n    root: \"aspect-ratio\",\n  },\n  variants: {},\n  defaultVariants: {},\n});\n\nexport type AspectRatioVariants = VariantProps<typeof aspectRatioVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.context.ts",
+      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { aspectRatioVariants } from \"./aspect-ratio.variants\";\n\nexport type AspectRatioContext = {\n  slots: ReturnType<typeof aspectRatioVariants>;\n};\n\nexport const AspectRatioContext = createContext<AspectRatioContext | null>(null);\n\nexport const useAspectRatioContext = () => {\n  const context = useContext(AspectRatioContext);\n  return context ?? { slots: aspectRatioVariants() };\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/aspect-ratio.css",
+      "content": ".aspect-ratio {\n  @apply relative w-full overflow-hidden rounded-md;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/aspect-ratio/index.ts",
+      "content": "import { AspectRatio, AspectRatioRoot } from \"./aspect-ratio\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/aspect-ratio/content.md\n */\nexport const AspectRatioContainer = {\n  Root: AspectRatioRoot,\n};\n\nexport { AspectRatio, AspectRatioRoot };\n\nexport type { AspectRatioProps } from \"./aspect-ratio\";\nexport { AspectRatioContext, useAspectRatioContext } from \"./aspect-ratio.context\";\nexport { type AspectRatioVariants, aspectRatioVariants } from \"./aspect-ratio.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

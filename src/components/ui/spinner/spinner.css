@@ -1,0 +1,27 @@
+.spinner {
+  @apply inline-block animate-spin text-current shrink-0;
+}
+
+.spinner--sm {
+  @apply h-4 w-4;
+}
+
+.spinner--md {
+  @apply h-6 w-6;
+}
+
+.spinner--lg {
+  @apply h-8 w-8;
+}
+
+.spinner--xl {
+  @apply h-12 w-12;
+}
+
+.spinner--muted {
+  @apply text-muted-foreground;
+}
+
+.spinner--primary {
+  @apply text-primary;
+}
