@@ -39,6 +39,29 @@ export function ExampleTable() {
   <TableDemo />
 </div>
 
+## Custom Styling
+
+Apply custom row hover background colors, border styles, or cell padding via `className`:
+
+```tsx
+<Table.Row className="hover:bg-indigo-500/5 transition-colors border-b border-indigo-500/10">
+  <Table.Cell className="font-semibold text-indigo-600 dark:text-indigo-400">Custom Cell</Table.Cell>
+</Table.Row>
+```
+
+## Styling & Class Names
+
+Target internal table CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.table` | Root table container | Overflow wrapper and HTML table container. |
+| `.table__header` | Table head | Table header section. |
+| `.table__body` | Table body | Table body rows container. |
+| `.table__row` | Table row | Table row wrapper (`tr`). |
+| `.table__head` | Column header cell | Header cell (`th`). |
+| `.table__cell` | Data cell | Data cell (`td`). |
+
 ## Anatomy
 
 ```tsx

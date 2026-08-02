@@ -32,6 +32,22 @@ export function ExampleSeparator() {
   <SeparatorDemo />
 </div>
 
+## Custom Styling
+
+Apply custom gradient colors, height/thickness, or margin offsets via `className`:
+
+```tsx
+<Separator.Root orientation="horizontal" className="bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent my-6 h-[2px]" />
+```
+
+## Styling & Class Names
+
+Target internal separator CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.separator` | Root separator line | Horizontal or vertical divider line. |
+
 ## Anatomy
 
 ```tsx

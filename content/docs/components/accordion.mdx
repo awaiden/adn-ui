@@ -94,6 +94,37 @@ Use the `multiple` prop to allow multiple panels to be open simultaneously.
 </Accordion.Root>
 ```
 
+## Custom Styling
+
+Apply custom borders, background colors, and transition effects using the `className` prop on accordion items or triggers:
+
+```tsx
+<Accordion.Root variant="ghost" className="space-y-2">
+  <Accordion.Item className="border border-indigo-500/20 bg-indigo-500/5 rounded-xl overflow-hidden">
+    <Accordion.Header>
+      <Accordion.Trigger className="text-indigo-600 dark:text-indigo-400 hover:no-underline font-semibold">
+        Custom Indigo Panel
+      </Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Panel className="text-muted-foreground text-sm">
+      This panel features custom indigo highlights via inline class names.
+    </Accordion.Panel>
+  </Accordion.Item>
+</Accordion.Root>
+```
+
+## Styling & Class Names
+
+Target internal accordion CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.accordion` | Root container | Main accordion container layout. |
+| `.accordion__item` | Accordion item | Individual panel item wrapper. |
+| `.accordion__header` | Header wrapper | Header container for trigger buttons. |
+| `.accordion__trigger` | Trigger button | Clickable header trigger element with chevron rotation. |
+| `.accordion__panel` | Expandable panel | Collapsible body content panel. |
+
 ## Structure & Anatomy
 
 ```tsx

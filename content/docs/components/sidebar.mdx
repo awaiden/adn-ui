@@ -49,6 +49,30 @@ export function ExampleSidebar() {
   <SidebarDemo />
 </div>
 
+## Custom Styling
+
+Apply custom background colors, borders, or active state highlights via `className`:
+
+```tsx
+<Sidebar.MenuButton isActive className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 text-indigo-600 dark:text-indigo-400 font-semibold">
+  Dashboard
+</Sidebar.MenuButton>
+```
+
+## Styling & Class Names
+
+Target internal sidebar CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.sidebar` | Root sidebar panel | Main sidebar drawer/panel container. |
+| `.sidebar__header` | Header row | Header area containing brand and trigger button. |
+| `.sidebar__content` | Content wrapper | Main scrollable menu items wrapper. |
+| `.sidebar__group` | Navigation group | Categorized group section wrapper. |
+| `.sidebar__group-label` | Group heading | Small muted uppercase group title label. |
+| `.sidebar__menu` | Menu list | Unordered list for sidebar buttons. |
+| `.sidebar__menu-button` | Interactive button | Clickable item button with active/hover states. |
+
 ## Anatomy
 
 ```tsx

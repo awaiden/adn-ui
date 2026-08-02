@@ -38,6 +38,26 @@ export function ExampleSkeleton() {
   <SkeletonDemo />
 </div>
 
+## Custom Styling
+
+Apply custom gradient shimmers, dark mode backgrounds, or exact dimensions via `className`:
+
+```tsx
+<Skeleton animation="shimmer" className="h-12 w-full bg-slate-800/50 rounded-2xl border border-slate-700/50" />
+```
+
+## Styling & Class Names
+
+Target internal skeleton CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.skeleton` | Root placeholder | Skeleton container element with pulse/shimmer animation. |
+| `skeleton--pulse` | Pulse animation | Standard opacity fading animation. |
+| `skeleton--shimmer` | Shimmer animation | Linear gradient sweep shimmer animation. |
+| `skeleton--circle` | Circle shape | Circular border radius shape. |
+| `skeleton--rounded` | Rounded shape | Rounded corner box shape. |
+
 ## API Reference
 
 ### Skeleton.Root Props

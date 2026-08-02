@@ -39,7 +39,6 @@
     "src/components/ui/**/*.demo.ts",
     "src/components/ui/**/*.stories.tsx",
     "src/components/ui/**/*.stories.ts",
-    "src/components/ui/**/__tests__",
     "src/components/ui/**/stories"
   ]
 }

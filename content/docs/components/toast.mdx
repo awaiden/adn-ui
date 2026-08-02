@@ -91,6 +91,32 @@ function ToastList() {
   <ToastDemo />
 </div>
 
+## Custom Styling
+
+Customize toast card shadows, background colors, and border accents using `className`:
+
+```tsx
+<Toast.Content className="border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shadow-xl rounded-xl">
+  <div>
+    <Toast.Title className="font-semibold">Success!</Toast.Title>
+    <Toast.Description>Profile updated successfully.</Toast.Description>
+  </div>
+</Toast.Content>
+```
+
+## Styling & Class Names
+
+Target internal toast CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.toast` | Root toast item | Animated toast card container. |
+| `.toast__viewport` | Fixed viewport | Fixed positioning container for stacking toasts. |
+| `.toast__content` | Content wrapper | Layout wrapper for title, description, and actions. |
+| `.toast__title` | Title heading | Bold toast title text. |
+| `.toast__description` | Description text | Muted toast body description. |
+| `.toast__close` | Close button | Dismiss button icon. |
+
 ## Anatomy
 
 ```tsx

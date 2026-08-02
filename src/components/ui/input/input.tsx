@@ -8,7 +8,7 @@ import { cn } from "tailwind-variants";
 import { InputContext } from "./input.context";
 import { inputVariants, type InputVariants } from "./input.variants";
 
-export type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, "children">;
+export type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, "children" | "size">;
 
 export const InputRoot = ({
   className,

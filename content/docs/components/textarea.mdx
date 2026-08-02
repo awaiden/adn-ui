@@ -24,6 +24,24 @@ export function ExampleTextarea() {
   <TextareaDemo />
 </div>
 
+## Custom Styling
+
+Apply custom focus glow, border colors, or resize behavior via `className`:
+
+```tsx
+<Textarea.Root placeholder="Write feedback..." className="focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 resize-none min-h-[120px] rounded-xl" />
+```
+
+## Styling & Class Names
+
+Target internal textarea CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.textarea` | Root element | Multi-line textarea element (`textarea`). |
+| `textarea--default` | Default variant | Bordered transparent background. |
+| `textarea--filled` | Filled variant | Muted filled background style. |
+
 ## API Reference
 
 ### Textarea.Root Props

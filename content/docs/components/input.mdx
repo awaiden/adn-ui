@@ -43,6 +43,26 @@ export function ExampleInput() {
 <Input size="lg" placeholder="Large..." />
 ```
 
+## Form Field Integration
+
+Integrate `Input` with `Field` to render labels, helper descriptions, and error states:
+
+```tsx
+import { Field, FieldDescription, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+
+export function FormFieldExample() {
+  return (
+    <Field.Root className="w-full max-w-sm">
+      <FieldLabel>Email Address</FieldLabel>
+      <Input type="email" placeholder="you@example.com" />
+      <FieldDescription>We will never share your email address.</FieldDescription>
+      <FieldError />
+    </Field.Root>
+  );
+}
+```
+
 ## Anatomy
 
 ```tsx

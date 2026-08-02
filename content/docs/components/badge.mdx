@@ -5,6 +5,7 @@ description: A customizable badge component for status indicators, counts, and t
 ---
 
 import { BadgeDemo } from "@/components/ui/badge/badge-demo";
+import { Badge } from "@/components/ui/badge";
 
 The `Badge` component renders small visual indicators for statuses, categories, or notifications.
 
@@ -14,7 +15,7 @@ The `Badge` component renders small visual indicators for statuses, categories, 
 import { Badge } from "@/components/ui/badge";
 
 export function ExampleBadge() {
-  return <Badge.Root variant="secondary">New</Badge.Root>;
+  return <Badge variant="secondary">New</Badge>;
 }
 ```
 
@@ -24,11 +25,57 @@ export function ExampleBadge() {
   <BadgeDemo />
 </div>
 
+## Custom Styling
+
+Extend or override standard badge styles using inline `className` Tailwind utilities:
+
+```tsx
+<div className="flex flex-wrap items-center gap-3">
+  <Badge className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0 shadow-sm">
+    Gradient Accent
+  </Badge>
+  <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+    Online
+  </Badge>
+  <Badge className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+    Pending
+  </Badge>
+</div>
+```
+
+<div className="flex flex-wrap items-center gap-3 p-4 border rounded-xl my-4">
+  <Badge className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white border-0 shadow-sm">
+    Gradient Accent
+  </Badge>
+  <Badge className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+    Online
+  </Badge>
+  <Badge className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+    Pending
+  </Badge>
+</div>
+
+## Styling & Class Names
+
+The `Badge` component generates BEM CSS class names and variant classes:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.badge` | Root container | Base badge flex alignment, padding, and font styles. |
+| `badge--default` | Default variant | Primary color palette. |
+| `badge--secondary` | Secondary variant | Muted secondary background color. |
+| `badge--destructive` | Destructive variant | Highlighting destructive state. |
+| `badge--outline` | Outline variant | Bordered transparent background. |
+| `badge--sm` | Small size | Compact padding and text size. |
+| `badge--md` | Medium size | Standard badge dimensions. |
+| `badge--lg` | Large size | Expanded badge dimensions. |
+
 ## API Reference
 
-### Badge.Root Props
+### Badge Props
 
-| Prop      | Type                                                     | Default     | Description                      |
-| :-------- | :------------------------------------------------------- | :---------- | :------------------------------- |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
 | `variant` | `'default' \| 'secondary' \| 'destructive' \| 'outline'` | `'default'` | Visual color style of the badge. |
-| `size`    | `'sm' \| 'md' \| 'lg'`                                   | `'md'`      | Size variant of the badge.       |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size variant of the badge. |
+| `className` | `string` | `undefined` | Additional inline CSS utility classes. |

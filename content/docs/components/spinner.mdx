@@ -25,6 +25,26 @@ export function ExampleSpinner() {
   <SpinnerDemo />
 </div>
 
+## Custom Styling
+
+Customize spinner stroke color, animation duration, or sizing via `className`:
+
+```tsx
+<Spinner className="text-indigo-500 animate-spin duration-700 h-8 w-8" />
+```
+
+## Styling & Class Names
+
+Target internal spinner CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.spinner` | Root SVG element | SVG spinner element with continuous rotation animation. |
+| `spinner--sm` | Small size | 16px (h-4 w-4) spinner. |
+| `spinner--md` | Medium size | 20px (h-5 w-5) spinner. |
+| `spinner--lg` | Large size | 24px (h-6 w-6) spinner. |
+| `spinner--xl` | Extra large size | 32px (h-8 w-8) spinner. |
+
 ## API Reference
 
 ### Spinner Props

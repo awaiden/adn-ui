@@ -34,6 +34,30 @@ export function ExampleTabs() {
   <TabsDemo />
 </div>
 
+## Custom Styling
+
+Apply custom active tab indicators, background pills, or text colors via `className`:
+
+```tsx
+<Tabs.List className="bg-slate-900 border border-slate-800 p-1 rounded-xl">
+  <Tabs.Tab value="active" className="data-[selected]:bg-indigo-600 data-[selected]:text-white font-medium">
+    Active Tab
+  </Tabs.Tab>
+</Tabs.List>
+```
+
+## Styling & Class Names
+
+Target internal tabs CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.tabs` | Root container | Tabs root wrapper container. |
+| `.tabs__list` | Tab list row | Horizontal or vertical tab list row. |
+| `.tabs__tab` | Tab button | Individual tab trigger element (`data-[selected]`). |
+| `.tabs__indicator` | Sliding indicator | Animated active tab indicator bar or pill background. |
+| `.tabs__panel` | Content panel | Content panel container corresponding to active tab. |
+
 ## Anatomy
 
 ```tsx

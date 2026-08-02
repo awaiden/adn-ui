@@ -31,6 +31,24 @@ export function ExampleAspectRatio() {
   <AspectRatioDemo />
 </div>
 
+## Custom Styling
+
+Apply custom borders, gradient backgrounds, or shadow overlays using `className`:
+
+```tsx
+<AspectRatio ratio={16 / 9} className="bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-2xl border border-indigo-500/30 overflow-hidden shadow-lg">
+  <img src="/demo.jpg" alt="Preview" className="h-full w-full object-cover" />
+</AspectRatio>
+```
+
+## Styling & Class Names
+
+Target internal aspect ratio CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.aspect-ratio` | Root container | Aspect ratio positioning wrapper. |
+
 ## API Reference
 
 ### AspectRatio Props

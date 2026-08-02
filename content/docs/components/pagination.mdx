@@ -50,6 +50,28 @@ export function ExamplePagination() {
   <PaginationDemo />
 </div>
 
+## Custom Styling
+
+Customize pagination link shapes, active indicators, or ring highlights via `className`:
+
+```tsx
+<Pagination.Link href="#" isActive className="bg-indigo-600 text-white shadow-md shadow-indigo-500/25 border-0">
+  1
+</Pagination.Link>
+```
+
+## Styling & Class Names
+
+Target internal pagination CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.pagination` | Root nav | Root navigation element. |
+| `.pagination__content` | Content list | Flex list wrapper for page items. |
+| `.pagination__item` | List item | Individual item list container. |
+| `.pagination__link` | Page button/link | Page button or link element. |
+| `.pagination__ellipsis` | Ellipsis indicator | Spacing dots element. |
+
 ## Anatomy
 
 ```tsx

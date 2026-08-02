@@ -28,6 +28,26 @@ export function ExampleToggle() {
   <ToggleDemo />
 </div>
 
+## Custom Styling
+
+Apply custom active state colors, hover effects, or rounded shapes via `className`:
+
+```tsx
+<Toggle.Root className="data-[pressed]:bg-indigo-600 data-[pressed]:text-white hover:bg-indigo-500/10 rounded-full px-4">
+  Favorite
+</Toggle.Root>
+```
+
+## Styling & Class Names
+
+Target internal toggle CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.toggle` | Root button | Two-state toggle button element (`data-[pressed]`). |
+| `toggle--default` | Default variant | Transparent background style. |
+| `toggle--outline` | Outline variant | Bordered container style. |
+
 ## Anatomy
 
 ```tsx

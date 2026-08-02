@@ -87,6 +87,42 @@ Set `isIconOnly` to `true` for square/icon-only buttons.
 </Button>
 ```
 
+### Loading State
+
+Combine `Button` with `Spinner` for asynchronous action indicators:
+
+```tsx
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
+
+export function LoadingButton() {
+  return (
+    <Button disabled variant="primary">
+      <Spinner size="sm" />
+      <span>Saving...</span>
+    </Button>
+  );
+}
+```
+
+### Button Group
+
+Use `ButtonGroup` to connect multiple related actions together into a single layout:
+
+```tsx
+import { ButtonGroup, ButtonGroupItem } from "@/components/ui/button-group";
+
+export function SegmentedActions() {
+  return (
+    <ButtonGroup variant="outline">
+      <ButtonGroupItem>Years</ButtonGroupItem>
+      <ButtonGroupItem>Months</ButtonGroupItem>
+      <ButtonGroupItem>Days</ButtonGroupItem>
+    </ButtonGroup>
+  );
+}
+```
+
 ## API Reference
 
 | Prop         | Type                                                                | Default     | Description                                       |

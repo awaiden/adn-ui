@@ -48,6 +48,24 @@ export function ExampleOTPField() {
 <OTPField.Root length={6} size="lg">...</OTPField.Root>
 ```
 
+## Custom Styling
+
+Apply custom slot border colors, focus ring accents, or rounded corners via `className`:
+
+```tsx
+<OTPField.Input className="border-2 border-indigo-500/30 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 rounded-xl" />
+```
+
+## Styling & Class Names
+
+Target internal OTP field CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.otp-field` | Root container | Main OTP slot row container. |
+| `.otp-field__input` | Input slot | Individual digit input slot box. |
+| `.otp-field__separator` | Separator symbol | Dash or separator icon between slot groups. |
+
 ## Anatomy
 
 ```tsx

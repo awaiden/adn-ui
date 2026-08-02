@@ -1,2 +1,4 @@
 bun run build:registry
+bun run types:check
+bun run test
 bunx lint-staged

@@ -43,6 +43,28 @@ Use the `orientation="vertical"` prop to stack buttons vertically:
 </ButtonGroup>
 ```
 
+## Custom Styling
+
+Apply custom group borders, shadows, or background rings via `className`:
+
+```tsx
+<ButtonGroup variant="outline" className="shadow-md ring-1 ring-indigo-500/20 rounded-xl overflow-hidden">
+  <ButtonGroupItem className="hover:bg-indigo-500/10">Daily</ButtonGroupItem>
+  <ButtonGroupItem className="hover:bg-indigo-500/10">Weekly</ButtonGroupItem>
+  <ButtonGroupItem className="hover:bg-indigo-500/10">Monthly</ButtonGroupItem>
+</ButtonGroup>
+```
+
+## Styling & Class Names
+
+Target internal button group CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.button-group` | Root container | Connected inline flex container layout. |
+| `.button-group--horizontal` | Horizontal layout | Seamless horizontal border radius clipping. |
+| `.button-group--vertical` | Vertical layout | Seamless vertical border radius clipping. |
+
 ## API Reference
 
 ### ButtonGroup Props

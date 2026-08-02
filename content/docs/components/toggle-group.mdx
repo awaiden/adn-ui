@@ -31,6 +31,24 @@ export function ExampleToggleGroup() {
   <ToggleGroupDemo />
 </div>
 
+## Custom Styling
+
+Apply custom group spacing, borders, or shadow containers via `className`:
+
+```tsx
+<ToggleGroup.Root className="bg-slate-900 border border-slate-800 p-1 rounded-xl gap-1">
+  <Toggle.Root value="left" className="data-[pressed]:bg-indigo-600 data-[pressed]:text-white">Left</Toggle.Root>
+</ToggleGroup.Root>
+```
+
+## Styling & Class Names
+
+Target internal toggle group CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.toggle-group` | Root container | Main toggle group flex row container. |
+
 ## Anatomy
 
 ```tsx

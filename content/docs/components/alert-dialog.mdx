@@ -100,6 +100,35 @@ export function ExampleAlertDialog() {
 </AlertDialog.Root>
 ```
 
+## Custom Styling
+
+Customize the modal backdrop blur, border accent, or action button styles using `className`:
+
+```tsx
+<AlertDialog.Portal>
+  <AlertDialog.Backdrop className="bg-slate-950/80 backdrop-blur-md" />
+  <AlertDialog.Popup className="border border-red-500/20 bg-slate-900 text-white shadow-2xl">
+    <AlertDialog.Title className="text-red-400">Danger Zone Action</AlertDialog.Title>
+    <AlertDialog.Description className="text-slate-400">
+      This process cannot be reverted.
+    </AlertDialog.Description>
+  </AlertDialog.Popup>
+</AlertDialog.Portal>
+```
+
+## Styling & Class Names
+
+Target internal alert dialog CSS slots for custom overrides:
+
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.alert-dialog` | Root dialog wrapper | Main dialog container wrapper. |
+| `.alert-dialog__backdrop` | Backdrop overlay | Semi-transparent modal backdrop. |
+| `.alert-dialog__popup` | Dialog popup box | Centered dialog container box. |
+| `.alert-dialog__title` | Title text | Bold dialog title element. |
+| `.alert-dialog__description` | Description text | Muted description subtitle text. |
+| `.alert-dialog__actions` | Action row | Action button bar container. |
+
 ## Anatomy
 
 ```tsx

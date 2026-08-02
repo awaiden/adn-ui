@@ -1,90 +1,83 @@
 ---
 title: Avatar
-subtitle: An easily stylable avatar component.
-description: A high-quality, styled React avatar component built with @base-ui/react for user profile pictures and fallbacks.
+subtitle: An image element with a fallback for representing a user.
+description: A high-quality, styled React avatar component supporting fallback initials and custom ring styles.
 ---
 
 import { AvatarDemo } from "@/components/ui/avatar/avatar-demo";
+import { AvatarRoot, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-The `Avatar` component displays a user profile picture, initials, or fallback icon.
+The `Avatar` component displays user profile images or fallback initials when an image is unavailable or loading.
 
 ## Usage
 
 ```tsx
-import { Avatar } from "@/components/ui/avatar";
+import { AvatarRoot, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export function ExampleAvatar() {
   return (
-    <Avatar.Root size="md" shape="circle">
-      <Avatar.Image src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=128&h=128&dpr=2&q=80" />
-      <Avatar.Fallback delay={600}>LT</Avatar.Fallback>
-    </Avatar.Root>
+    <AvatarRoot>
+      <AvatarImage src="https://github.com/awaiden.png" alt="Halil Aydın" />
+      <AvatarFallback>HA</AvatarFallback>
+    </AvatarRoot>
   );
 }
 ```
 
 ## Preview
 
-<div className="flex items-center gap-4 p-4 border rounded-xl my-4">
-  <AvatarDemo fallback="LT" size="md" />
-  <AvatarDemo fallback="JD" shape="rounded" size="md" />
-  <AvatarDemo fallback="AB" shape="square" size="md" />
-  <AvatarDemo fallback="FB" src="invalid-url" size="md" />
+<div className="p-4 border rounded-xl my-4">
+  <AvatarDemo />
 </div>
 
-## Sizes
+## Custom Styling
 
-<div className="flex items-end gap-4 p-4 border rounded-xl my-4">
-  <AvatarDemo fallback="SM" size="sm" />
-  <AvatarDemo fallback="MD" size="md" />
-  <AvatarDemo fallback="LG" size="lg" />
-  <AvatarDemo fallback="XL" size="xl" />
-</div>
+Apply custom ring highlights, gradients, or custom border radiuses via inline `className`:
 
 ```tsx
-<Avatar.Root size="sm">...</Avatar.Root>
-<Avatar.Root size="md">...</Avatar.Root>
-<Avatar.Root size="lg">...</Avatar.Root>
-<Avatar.Root size="xl">...</Avatar.Root>
+<div className="flex items-center gap-4">
+  <AvatarRoot className="ring-2 ring-indigo-500 ring-offset-2 ring-offset-background">
+    <AvatarImage src="https://github.com/awaiden.png" alt="User" />
+    <AvatarFallback className="bg-indigo-600 text-white font-semibold">HA</AvatarFallback>
+  </AvatarRoot>
+  <AvatarRoot className="ring-2 ring-emerald-500 ring-offset-2 ring-offset-background">
+    <AvatarFallback className="bg-gradient-to-tr from-emerald-500 to-teal-500 text-white font-bold">
+      JD
+    </AvatarFallback>
+  </AvatarRoot>
+</div>
 ```
-
-## Shapes
 
 <div className="flex items-center gap-4 p-4 border rounded-xl my-4">
-  <AvatarDemo fallback="CR" shape="circle" size="lg" />
-  <AvatarDemo fallback="RN" shape="rounded" size="lg" />
-  <AvatarDemo fallback="SQ" shape="square" size="lg" />
+  <AvatarRoot className="ring-2 ring-indigo-500 ring-offset-2 ring-offset-background">
+    <AvatarImage src="https://github.com/awaiden.png" alt="User" />
+    <AvatarFallback className="bg-indigo-600 text-white font-semibold">HA</AvatarFallback>
+  </AvatarRoot>
+  <AvatarRoot className="ring-2 ring-emerald-500 ring-offset-2 ring-offset-background">
+    <AvatarFallback className="bg-gradient-to-tr from-emerald-500 to-teal-500 text-white font-bold">
+      JD
+    </AvatarFallback>
+  </AvatarRoot>
 </div>
 
-```tsx
-<Avatar.Root shape="circle">...</Avatar.Root>
-<Avatar.Root shape="rounded">...</Avatar.Root>
-<Avatar.Root shape="square">...</Avatar.Root>
-```
+## Styling & Class Names
 
-## Anatomy
+Target internal avatar CSS slots for custom overrides:
 
-```tsx
-import { Avatar } from "@base-ui/react/avatar";
-
-<Avatar.Root>
-  <Avatar.Image src="..." />
-  <Avatar.Fallback>LT</Avatar.Fallback>
-</Avatar.Root>;
-```
+| Class Name | Element / Slot | Description |
+| :--- | :--- | :--- |
+| `.avatar` | Root container | Circular container flex layout. |
+| `.avatar__image` | Image element | Aspect-square image element (`object-cover`). |
+| `.avatar__fallback` | Fallback initials | Fallback container when image is loading/absent. |
+| `avatar--sm` | Small size | Compact 32px (h-8 w-8) avatar. |
+| `avatar--md` | Medium size | Standard 40px (h-10 w-10) avatar. |
+| `avatar--lg` | Large size | Expanded 48px (h-12 w-12) avatar. |
 
 ## API Reference
 
-### Avatar.Root Props
+### Avatar Props
 
-| Prop        | Type                                | Default     | Description             |
-| :---------- | :---------------------------------- | :---------- | :---------------------- |
-| `size`      | `'sm' \| 'md' \| 'lg' \| 'xl'`      | `'md'`      | Avatar dimensions.      |
-| `shape`     | `'circle' \| 'square' \| 'rounded'` | `'circle'`  | Border radius shape.    |
-| `className` | `string`                            | `undefined` | Additional CSS classes. |
-
-### Avatar.Fallback Props
-
-| Prop    | Type     | Default     | Description                            |
-| :------ | :------- | :---------- | :------------------------------------- |
-| `delay` | `number` | `undefined` | Delay in ms before rendering fallback. |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Dimension size of the avatar container. |
+| `className` | `string` | `undefined` | Additional inline CSS utility classes. |
