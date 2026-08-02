@@ -22,6 +22,7 @@
     "src/components/ui/menu/registry.json",
     "src/components/ui/number-field/registry.json",
     "src/components/ui/otp-field/registry.json",
+    "src/components/ui/pagination/registry.json",
     "src/components/ui/popover/registry.json",
     "src/components/ui/preview-card/registry.json",
     "src/components/ui/progress/registry.json",

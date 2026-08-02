@@ -25,6 +25,7 @@
     "menu",
     "number-field",
     "otp-field",
+    "pagination",
     "popover",
     "preview-card",
     "progress",

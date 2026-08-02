@@ -606,6 +606,37 @@
       "type": "registry:ui"
     },
     {
+      "name": "pagination",
+      "title": "Pagination",
+      "description": "Pagination with page navigation links, previous/next controls, and ellipsis.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination/pagination.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/pagination.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/pagination.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/pagination.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/pagination/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
       "name": "popover",
       "title": "Popover",
       "description": "An accessible popup anchored to a trigger button.",

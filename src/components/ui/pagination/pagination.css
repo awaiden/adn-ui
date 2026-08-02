@@ -1,0 +1,35 @@
+.pagination {
+  @apply mx-auto flex w-full justify-center;
+}
+
+.pagination__content {
+  @apply flex flex-row items-center gap-1;
+}
+
+.pagination__item {
+  @apply list-none;
+}
+
+.pagination__link {
+  @apply focus-visible:outline-ring hover:bg-accent hover:text-accent-foreground text-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-sm font-medium transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer;
+}
+
+.pagination__link--active {
+  @apply border-input bg-background shadow-xs hover:bg-accent border;
+}
+
+.pagination__link--sm {
+  @apply h-8 min-w-8 px-2 text-xs;
+}
+
+.pagination__link--md {
+  @apply h-9 min-w-9 px-3 text-sm;
+}
+
+.pagination__link--lg {
+  @apply h-10 min-w-10 px-4 text-base;
+}
+
+.pagination__ellipsis {
+  @apply text-muted-foreground flex h-9 w-9 items-center justify-center;
+}
