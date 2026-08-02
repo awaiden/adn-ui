@@ -8,16 +8,9 @@ import { cn } from "tailwind-variants";
 import { InputContext } from "./input.context";
 import { inputVariants, type InputVariants } from "./input.variants";
 
-export type InputProps = InputVariants & Omit<React.ComponentProps<typeof BaseInput>, "children" | "size">;
+export type InputProps = InputVariants & Omit<React.ComponentPropsWithoutRef<"input">, "size">;
 
-export const InputRoot = ({
-  className,
-  size,
-  variant,
-  children: _children,
-  dangerouslySetInnerHTML: _dangerouslySetInnerHTML,
-  ...props
-}: InputProps & { children?: React.ReactNode; dangerouslySetInnerHTML?: any }) => {
+export const InputRoot = ({ className, size, variant, ...props }: InputProps) => {
   const slots = inputVariants({ size, variant });
 
   return (
