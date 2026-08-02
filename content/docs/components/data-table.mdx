@@ -1,0 +1,57 @@
+---
+title: Data Table
+subtitle: Rich interactive data table with sorting, filtering, selection, and pagination.
+description: A feature-rich data grid built on top of Table primitives supporting sorting, global search filtering, row selection, and pagination out of the box.
+new: true
+---
+
+import { DataTableDemo } from "@/components/ui/data-table/data-table-demo";
+
+The `DataTable` component simplifies rendering dynamic tabular datasets with search filtering, column sorting, pagination controls, and row selection.
+
+## Usage
+
+```tsx
+import { DataTable, type ColumnDef } from "@/components/ui/data-table";
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+const users: User[] = [
+  { id: "1", name: "Alice", email: "alice@example.com" },
+  { id: "2", name: "Bob", email: "bob@example.com" },
+];
+
+const columns: ColumnDef<User>[] = [
+  { id: "name", header: "Name", cell: ({ row }) => row.name, sortable: true, accessorKey: "name" },
+  { id: "email", header: "Email", cell: ({ row }) => row.email, sortable: true, accessorKey: "email" },
+];
+
+export function ExampleDataTable() {
+  return (
+    <DataTable
+      data={users}
+      columns={columns}
+      searchable
+      enableSelection
+      pageSize={10}
+    />
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <DataTableDemo />
+</div>
+
+## Features
+
+- **Global Search**: Instant text filtering across all columns.
+- **Column Sorting**: Toggle ascending / descending sort orders with headers.
+- **Row Selection**: Checkbox selection for individual rows or all items.
+- **Pagination**: Easy multi-page navigation controls with configurable page sizes.

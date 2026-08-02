@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Fast, composable command menu palette for searching and executing actions.",
+      "dependencies": ["@base-ui/react", "tailwind-variants", "lucide-react"],
+      "files": [
+        {
+          "path": "command.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "command.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "command.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "command.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

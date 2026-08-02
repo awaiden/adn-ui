@@ -1,0 +1,71 @@
+---
+title: Command
+subtitle: Fast, composable command menu palette.
+description: A command menu component for searching and executing actions, supporting both inline and modal dialog modes.
+new: true
+---
+
+import { CommandDemo } from "@/components/ui/command/command-demo";
+
+The `Command` component provides a search input, list items, grouped categories, and optional modal dialog capability.
+
+## Usage
+
+```tsx
+import { Command } from "@/components/ui/command";
+
+export function CommandExample() {
+  return (
+    <Command.Root>
+      <Command.Input placeholder="Type a command or search..." />
+      <Command.List>
+        <Command.Empty>No results found.</Command.Empty>
+        <Command.Group heading="Actions">
+          <Command.Item>
+            <span>New File</span>
+            <Command.Shortcut>⌘N</Command.Shortcut>
+          </Command.Item>
+          <Command.Item>
+            <span>Copy Link</span>
+            <Command.Shortcut>⌘C</Command.Shortcut>
+          </Command.Item>
+        </Command.Group>
+      </Command.List>
+    </Command.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <CommandDemo />
+</div>
+
+## Anatomy
+
+```tsx
+<Command.Root>
+  <Command.Input />
+  <Command.List>
+    <Command.Empty />
+    <Command.Group heading="...">
+      <Command.Item>
+        <Command.Shortcut />
+      </Command.Item>
+      <Command.Separator />
+    </Command.Group>
+  </Command.List>
+</Command.Root>
+```
+
+### Modal Dialog Mode
+
+```tsx
+<Command.Dialog open={open} onOpenChange={setOpen}>
+  <Command.Input placeholder="Search..." />
+  <Command.List>
+    <Command.Item>Action</Command.Item>
+  </Command.List>
+</Command.Dialog>
+```

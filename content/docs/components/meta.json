@@ -13,7 +13,9 @@
     "checkbox-group",
     "collapsible",
     "combobox",
+    "command",
     "context-menu",
+    "data-table",
     "dialog",
     "drawer",
     "field",
@@ -37,6 +39,7 @@
     "textarea",
     "toggle",
     "toggle-group",
-    "tooltip"
+    "tooltip",
+    "toast"
   ]
 }

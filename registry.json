@@ -39,6 +39,9 @@
     "src/components/ui/badge/registry.json",
     "src/components/ui/breadcrumb/registry.json",
     "src/components/ui/table/registry.json",
-    "src/components/ui/textarea/registry.json"
+    "src/components/ui/textarea/registry.json",
+    "src/components/ui/command/registry.json",
+    "src/components/ui/data-table/registry.json",
+    "src/components/ui/toast/registry.json"
   ]
 }

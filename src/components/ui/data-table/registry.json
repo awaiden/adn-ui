@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data Table",
+      "description": "Rich interactive data table supporting sorting, filtering, selection, and pagination.",
+      "dependencies": ["tailwind-variants", "lucide-react"],
+      "registryDependencies": ["table", "checkbox", "badge"],
+      "files": [
+        {
+          "path": "data-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "data-table.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "data-table.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "data-table.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

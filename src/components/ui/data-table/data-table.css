@@ -1,0 +1,39 @@
+.data-table {
+  @apply flex flex-col gap-4 w-full;
+}
+
+.data-table__toolbar {
+  @apply flex items-center justify-between gap-4 flex-wrap;
+}
+
+.data-table__search {
+  @apply flex items-center gap-2 border border-border rounded-lg px-3 py-1.5 bg-background text-sm w-full sm:w-64 focus-within:ring-2 focus-within:ring-ring;
+}
+
+.data-table__search input {
+  @apply bg-transparent outline-none w-full placeholder:text-muted-foreground text-foreground;
+}
+
+.data-table__container {
+  @apply rounded-lg border border-border overflow-hidden bg-background shadow-2xs;
+}
+
+.data-table__pagination {
+  @apply flex items-center justify-between gap-4 px-2 py-2 flex-wrap text-sm text-muted-foreground;
+}
+
+.data-table__pagination-info {
+  @apply flex items-center gap-1;
+}
+
+.data-table__pagination-controls {
+  @apply flex items-center gap-2;
+}
+
+.data-table__page-button {
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium border border-border bg-background h-8 w-8 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none transition-colors;
+}
+
+.data-table__column-header {
+  @apply inline-flex items-center gap-1.5 cursor-pointer select-none hover:text-foreground transition-colors font-medium;
+}

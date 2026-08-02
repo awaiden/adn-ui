@@ -1175,6 +1175,108 @@
         }
       ],
       "type": "registry:ui"
+    },
+    {
+      "name": "command",
+      "title": "Command",
+      "description": "Fast, composable command menu palette for searching and executing actions.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command/command.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/command.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/command.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/command.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/command/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "data-table",
+      "title": "Data Table",
+      "description": "Rich interactive data table supporting sorting, filtering, selection, and pagination.",
+      "dependencies": [
+        "tailwind-variants",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "table",
+        "checkbox",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/data-table/data-table.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/data-table/data-table.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/data-table/data-table.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/data-table/data-table.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/data-table/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "toast",
+      "title": "Toast",
+      "description": "Toast notification primitive built with Base UI for generating toast messages.",
+      "dependencies": [
+        "@base-ui/react",
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toast/toast.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toast/toast.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toast/toast.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toast/toast.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/toast/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
     }
   ]
 }

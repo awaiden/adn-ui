@@ -1,0 +1,92 @@
+---
+title: Toast
+subtitle: Generates toast notifications.
+description: A high-quality, unstyled React toast component to generate notifications using Base UI.
+new: true
+---
+
+import { ToastDemo } from "@/components/ui/toast/toast-demo";
+
+The `Toast` component displays temporary, non-disruptive notifications in response to user actions or system events.
+
+## Usage
+
+```tsx
+import { Toast, useToastManager } from "@/components/ui/toast";
+import { Button } from "@/components/ui/button";
+
+export function ExampleToast() {
+  return (
+    <Toast.Provider>
+      <ToastTrigger />
+      <Toast.Portal>
+        <Toast.Viewport>
+          <ToastList />
+        </Toast.Viewport>
+      </Toast.Portal>
+    </Toast.Provider>
+  );
+}
+
+function ToastTrigger() {
+  const toastManager = useToastManager();
+
+  return (
+    <Button
+      onClick={() =>
+        toastManager.add({
+          title: "Event Saved",
+          description: "Your changes have been saved successfully.",
+        })
+      }
+    >
+      Show Notification
+    </Button>
+  );
+}
+
+function ToastList() {
+  const { toasts } = useToastManager();
+
+  return (
+    <>
+      {toasts.map((toast) => (
+        <Toast.Root key={toast.id} toast={toast}>
+          <Toast.Content>
+            <div>
+              <Toast.Title>{toast.title}</Toast.Title>
+              <Toast.Description>{toast.description}</Toast.Description>
+            </div>
+            <Toast.Close />
+          </Toast.Content>
+        </Toast.Root>
+      ))}
+    </>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <ToastDemo />
+</div>
+
+## Anatomy
+
+```tsx
+<Toast.Provider>
+  <Toast.Portal>
+    <Toast.Viewport>
+      <Toast.Root>
+        <Toast.Content>
+          <Toast.Title />
+          <Toast.Description />
+          <Toast.Action />
+          <Toast.Close />
+        </Toast.Content>
+      </Toast.Root>
+    </Toast.Viewport>
+  </Toast.Portal>
+</Toast.Provider>
+```
