@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/button/button.tsx",
-      "content": "\"use client\";\n\nimport \"./button.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { buttonVariants, type ButtonVariants } from \"./button.variants\";\n\nexport interface ButtonProps extends ButtonVariants, React.ComponentProps<\"button\"> {}\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md\n */\nexport const Button = ({\n  children,\n  className,\n  isIconOnly,\n  size,\n  variant,\n  ...props\n}: ButtonProps) => {\n  const styles = cn(buttonVariants({ isIconOnly, size, variant }), className);\n\n  return (\n    <button className={styles} {...props}>\n      {children}\n    </button>\n  );\n};\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md\n */\nexport const ButtonRoot = Button;\n",
+      "content": "\"use client\";\n\nimport \"./button.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { buttonVariants, type ButtonVariants } from \"./button.variants\";\n\nexport interface ButtonProps extends ButtonVariants, React.ComponentProps<\"button\"> {}\n\nexport const Button = ({\n  children,\n  className,\n  isIconOnly,\n  size,\n  variant,\n  ...props\n}: ButtonProps) => {\n  const styles = cn(buttonVariants({ isIconOnly, size, variant }), className);\n\n  return (\n    <button className={styles} {...props}>\n      {children}\n    </button>\n  );\n};\n\nexport const ButtonRoot = Button;\n",
       "type": "registry:ui"
     },
     {
