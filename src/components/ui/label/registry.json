@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Renders an accessible label associated with form controls.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "label.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "label.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "label.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

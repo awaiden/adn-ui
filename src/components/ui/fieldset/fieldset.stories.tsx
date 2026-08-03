@@ -16,9 +16,7 @@ export const Default = () => (
     <FieldsetLegend className="px-2 text-sm font-medium">Personal Information</FieldsetLegend>
     <FieldRoot className="space-y-1">
       <FieldLabel>Full Name</FieldLabel>
-      <FieldControl>
-        <InputRoot placeholder="John Doe" />
-      </FieldControl>
+      <FieldControl render={<InputRoot placeholder="John Doe" />} />
     </FieldRoot>
   </FieldsetRoot>
 );

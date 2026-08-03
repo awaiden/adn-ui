@@ -10,8 +10,8 @@ import { tabsVariants, type TabsVariants } from "./tabs.variants";
 
 export type TabsProps = TabsVariants & React.ComponentProps<typeof BaseTabs.Root>;
 
-export const TabsRoot = ({ children, className, variant, size, ...props }: TabsProps) => {
-  const slots = tabsVariants({ variant, size });
+export const TabsRoot = ({ children, className, variant, size, isFitted, ...props }: TabsProps) => {
+  const slots = tabsVariants({ variant, size, isFitted });
 
   return (
     <TabsContext.Provider value={{ slots }}>

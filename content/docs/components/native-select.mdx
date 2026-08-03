@@ -1,0 +1,52 @@
+---
+title: Native Select
+subtitle: A styled native select component with custom arrow indicator.
+description: A high-quality, styled React native select component that provides lightweight native select functionality with accessible styling and size support.
+---
+
+import { NativeSelectDemo } from "@/components/ui/native-select/native-select-demo";
+
+The `NativeSelect` component wraps the HTML `<select>` element with consistent styling and a custom dropdown indicator.
+
+## Usage
+
+```tsx
+import { NativeSelect } from "@/components/ui/native-select";
+
+export function ExampleNativeSelect() {
+  return (
+    <NativeSelect defaultValue="usd">
+      <NativeSelect.Option value="usd">USD ($)</NativeSelect.Option>
+      <NativeSelect.Option value="eur">EUR (€)</NativeSelect.Option>
+      <NativeSelect.Option value="gbp">GBP (£)</NativeSelect.Option>
+    </NativeSelect>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <NativeSelectDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { NativeSelect } from "@/components/ui/native-select";
+
+<NativeSelect>
+  <NativeSelect.Option />
+  <NativeSelect.OptGroup />
+</NativeSelect>;
+```
+
+## API Reference
+
+### NativeSelect Props
+
+| Prop      | Type                   | Default     | Description                              |
+| :-------- | :--------------------- | :---------- | :--------------------------------------- |
+| `size`    | `'sm' \| 'md' \| 'lg'` | `'md'`      | Size variant for select.                 |
+| `variant` | `'default' \| 'outline'`| `'default'` | Visual style variant.                    |
+| `icon`    | `React.ReactNode`      | `undefined` | Custom icon element for dropdown arrow.  |

@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "badge.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "badge.css",
           "type": "registry:ui"
         },

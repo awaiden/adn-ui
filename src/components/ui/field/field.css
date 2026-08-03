@@ -6,9 +6,112 @@
   @apply text-foreground data-invalid:text-destructive text-sm font-medium select-none data-disabled:opacity-50;
 }
 
+.field__label--sm {
+  @apply text-xs;
+}
+
+.field__label--md {
+  @apply text-sm;
+}
+
+.field__label--lg {
+  @apply text-base;
+}
+
 .field__control {
   @apply border-input bg-background placeholder:text-muted-foreground focus-visible:outline-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive h-9 w-full rounded-md border px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
+
+.field__control--sm {
+  @apply h-8 px-2.5 text-xs;
+}
+
+.field__control--md {
+  @apply h-9 px-3 text-sm;
+}
+
+.field__control--lg {
+  @apply h-10 px-3.5 text-base;
+}
+
+.field__group {
+  @apply border-input bg-background relative flex w-full items-center rounded-md border shadow-xs transition-colors focus-within:outline-2 focus-within:outline-ring data-invalid:border-destructive data-invalid:focus-within:outline-destructive in-[[data-invalid]]:border-destructive in-[[data-invalid]]:focus-within:outline-destructive has-[[data-invalid]]:border-destructive has-[[data-invalid]]:focus-within:outline-destructive disabled:cursor-not-allowed disabled:opacity-50 data-disabled:opacity-50 data-disabled:cursor-not-allowed in-[[data-disabled]]:opacity-50 in-[[data-disabled]]:cursor-not-allowed has-[:disabled]:opacity-50 has-[:disabled]:cursor-not-allowed;
+}
+
+.field__group--sm {
+  @apply h-8 text-xs;
+}
+
+.field__group--md {
+  @apply h-9 text-sm;
+}
+
+.field__group--lg {
+  @apply h-10 text-base;
+}
+
+.field__prefix {
+  @apply text-muted-foreground flex items-center justify-center pl-3 pr-1.5 text-sm select-none shrink-0;
+}
+
+.field__prefix--sm {
+  @apply pl-2.5 pr-1 text-xs;
+}
+
+.field__prefix--md {
+  @apply pl-3 pr-1.5 text-sm;
+}
+
+.field__prefix--lg {
+  @apply pl-3.5 pr-2 text-base;
+}
+
+.field__suffix {
+  @apply text-muted-foreground flex items-center justify-center pl-1.5 pr-3 text-sm select-none shrink-0;
+}
+
+.field__suffix--sm {
+  @apply pl-1 pr-2.5 text-xs;
+}
+
+.field__suffix--md {
+  @apply pl-1.5 pr-3 text-sm;
+}
+
+.field__suffix--lg {
+  @apply pl-2 pr-3.5 text-base;
+}
+
+.field__group input,
+.field__group select,
+.field__group textarea,
+.field__group .field__control,
+.field__group .input,
+.field__group .native-select,
+.field__group .textarea {
+  @apply bg-transparent placeholder:text-muted-foreground h-full w-full flex-1 min-w-0 px-3 py-1 text-sm outline-none border-none shadow-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.field__prefix ~ input,
+.field__prefix ~ select,
+.field__prefix ~ textarea,
+.field__prefix ~ .field__control,
+.field__prefix ~ .input,
+.field__prefix ~ .native-select,
+.field__prefix ~ .textarea {
+  @apply pl-1.5;
+}
+
+input:has(~ .field__suffix),
+select:has(~ .field__suffix),
+textarea:has(~ .field__suffix),
+.field__control:has(~ .field__suffix),
+.input:has(~ .field__suffix),
+.native-select:has(~ .field__suffix),
+.textarea:has(~ .field__suffix) {
+  @apply pr-1.5;
+}
+
 
 .field__error {
   @apply text-destructive text-xs font-medium transition-all duration-150 data-ending-style:opacity-0 data-starting-style:opacity-0;
@@ -21,3 +124,4 @@
 .field__item {
   @apply flex items-center gap-2;
 }
+

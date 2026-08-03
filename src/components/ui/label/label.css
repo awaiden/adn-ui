@@ -1,0 +1,15 @@
+.label {
+  @apply text-foreground flex items-center text-sm font-medium leading-none select-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-disabled:cursor-not-allowed group-data-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:opacity-50;
+}
+
+.label--sm {
+  @apply text-xs;
+}
+
+.label--md {
+  @apply text-sm;
+}
+
+.label--lg {
+  @apply text-base;
+}

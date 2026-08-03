@@ -26,6 +26,16 @@ export const tabsVariants = tv({
         list: "border-b border-border gap-4",
         tab: "pb-2 border-b-2 border-transparent data-active:border-primary data-active:text-primary font-medium",
       },
+      segmented: {
+        list: "bg-muted/80 border border-border/60 p-1 rounded-xl gap-1",
+        tab: "rounded-lg px-3 py-1.5 data-active:bg-background data-active:text-foreground data-active:shadow-xs font-medium",
+        indicator: "bg-background rounded-lg shadow-xs transition-all duration-200",
+      },
+      outline: {
+        list: "border border-border p-1 rounded-lg gap-1 bg-background",
+        tab: "rounded-md px-3 py-1.5 data-active:bg-muted data-active:text-foreground font-medium",
+        indicator: "bg-muted rounded-md transition-all duration-200",
+      },
     },
     size: {
       sm: {
@@ -41,10 +51,18 @@ export const tabsVariants = tv({
         panel: "p-6 text-base",
       },
     },
+    isFitted: {
+      true: {
+        list: "w-full",
+        tab: "flex-1 grow text-center min-w-0",
+      },
+      false: {},
+    },
   },
   defaultVariants: {
     variant: "default",
     size: "md",
+    isFitted: false,
   },
 });
 

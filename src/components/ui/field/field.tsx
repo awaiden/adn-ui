@@ -31,9 +31,15 @@ export const FieldLabel = ({ className, ...props }: FieldLabelProps) => {
 
 export type FieldControlProps = React.ComponentProps<typeof BaseField.Control>;
 
-export const FieldControl = ({ className, ...props }: FieldControlProps) => {
+export const FieldControl = ({ className, render, ...props }: FieldControlProps) => {
   const { slots } = useFieldContext();
-  return <BaseField.Control className={cn(slots.control(), className)} {...props} />;
+  return (
+    <BaseField.Control
+      className={cn(slots.control(), className)}
+      render={render}
+      {...props}
+    />
+  );
 };
 
 export type FieldErrorProps = React.ComponentProps<typeof BaseField.Error>;
@@ -57,8 +63,30 @@ export const FieldItem = ({ className, ...props }: FieldItemProps) => {
   return <BaseField.Item className={cn(slots.item(), className)} {...props} />;
 };
 
+export type FieldGroupProps = React.ComponentProps<"div">;
+
+export const FieldGroup = ({ className, ...props }: FieldGroupProps) => {
+  const { slots } = useFieldContext();
+  return <div role="group" className={cn(slots.group(), className)} {...props} />;
+};
+
+export type FieldPrefixProps = React.ComponentProps<"div">;
+
+export const FieldPrefix = ({ className, ...props }: FieldPrefixProps) => {
+  const { slots } = useFieldContext();
+  return <div className={cn(slots.prefix(), className)} {...props} />;
+};
+
+export type FieldSuffixProps = React.ComponentProps<"div">;
+
+export const FieldSuffix = ({ className, ...props }: FieldSuffixProps) => {
+  const { slots } = useFieldContext();
+  return <div className={cn(slots.suffix(), className)} {...props} />;
+};
+
 export type FieldValidityProps = React.ComponentProps<typeof BaseField.Validity>;
 
 export const FieldValidity = (props: FieldValidityProps) => {
   return <BaseField.Validity {...props} />;
 };
+

@@ -84,10 +84,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/aspect-ratio/aspect-ratio.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "src/components/ui/aspect-ratio/aspect-ratio.css",
           "type": "registry:ui"
         },
@@ -560,10 +556,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/input/input.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "src/components/ui/input/input.css",
           "type": "registry:ui"
         },
@@ -911,10 +903,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/separator/separator.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "src/components/ui/separator/separator.css",
           "type": "registry:ui"
         },
@@ -1001,10 +989,6 @@
         },
         {
           "path": "src/components/ui/spinner/spinner.variants.ts",
-          "type": "registry:ui"
-        },
-        {
-          "path": "src/components/ui/spinner/spinner.context.ts",
           "type": "registry:ui"
         },
         {
@@ -1132,10 +1116,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/toggle/toggle.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "src/components/ui/toggle/toggle.css",
           "type": "registry:ui"
         },
@@ -1259,10 +1239,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/badge/badge.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "src/components/ui/badge/badge.css",
           "type": "registry:ui"
         },
@@ -1349,10 +1325,6 @@
         },
         {
           "path": "src/components/ui/textarea/textarea.variants.ts",
-          "type": "registry:ui"
-        },
-        {
-          "path": "src/components/ui/textarea/textarea.context.ts",
           "type": "registry:ui"
         },
         {
@@ -1463,6 +1435,64 @@
         },
         {
           "path": "src/components/ui/toast/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "native-select",
+      "title": "Native Select",
+      "description": "A styled native select component with custom arrow indicator.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/native-select/native-select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/native-select.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/native-select.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/native-select.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/native-select/index.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "type": "registry:ui"
+    },
+    {
+      "name": "label",
+      "title": "Label",
+      "description": "Renders an accessible label associated with form controls.",
+      "dependencies": [
+        "tailwind-variants"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/label/label.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/label/label.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/label/label.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/label/index.ts",
           "type": "registry:ui"
         }
       ],

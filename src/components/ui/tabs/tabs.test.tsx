@@ -20,4 +20,32 @@ describe("Tabs component", () => {
     expect(screen.getByRole("tab", { name: /account/i })).toBeInTheDocument();
     expect(screen.getByText("Account settings panel")).toBeInTheDocument();
   });
+
+  it("renders segmented and outline tab variants", () => {
+    render(
+      <TabsRoot defaultValue="segmented-tab" variant="segmented">
+        <TabsList>
+          <TabsTab value="segmented-tab">Segmented</TabsTab>
+        </TabsList>
+        <TabsPanel value="segmented-tab">Segmented Content</TabsPanel>
+      </TabsRoot>
+    );
+
+    expect(screen.getByRole("tab", { name: /segmented/i })).toBeInTheDocument();
+    expect(screen.getByText("Segmented Content")).toBeInTheDocument();
+  });
+
+  it("supports isFitted prop to expand tabs across extended area", () => {
+    render(
+      <TabsRoot defaultValue="tab1" isFitted>
+        <TabsList>
+          <TabsTab value="tab1">Tab 1</TabsTab>
+          <TabsTab value="tab2">Tab 2</TabsTab>
+        </TabsList>
+        <TabsPanel value="tab1">Fitted Content</TabsPanel>
+      </TabsRoot>
+    );
+
+    expect(screen.getByRole("tab", { name: /tab 1/i })).toBeInTheDocument();
+  });
 });

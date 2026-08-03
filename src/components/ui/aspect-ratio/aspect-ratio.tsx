@@ -3,8 +3,6 @@
 import "./aspect-ratio.css";
 import type React from "react";
 import { cn } from "tailwind-variants";
-
-import { AspectRatioContext } from "./aspect-ratio.context";
 import { aspectRatioVariants, type AspectRatioVariants } from "./aspect-ratio.variants";
 
 export type AspectRatioProps = {
@@ -25,15 +23,13 @@ export const AspectRatioRoot = ({
   const slots = aspectRatioVariants();
 
   return (
-    <AspectRatioContext.Provider value={{ slots }}>
-      <div
-        className={cn(slots.root(), className)}
-        style={{ aspectRatio: `${ratio}`, ...style }}
-        {...props}
-      >
-        {children}
-      </div>
-    </AspectRatioContext.Provider>
+    <div
+      className={cn(slots.root(), className)}
+      style={{ aspectRatio: `${ratio}`, ...style }}
+      {...props}
+    >
+      {children}
+    </div>
   );
 };
 

@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "separator.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "separator.css",
           "type": "registry:ui"
         },

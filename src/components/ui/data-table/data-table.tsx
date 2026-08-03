@@ -311,7 +311,7 @@ export function DataTable<T extends Record<string, any>>({
         </DataTableToolbar>
       )}
 
-      <div className="border-border bg-background overflow-hidden rounded-lg border shadow-2xs">
+      <div className="data-table__container">
         <TableRoot>
           <TableHeader>
             <TableRow>

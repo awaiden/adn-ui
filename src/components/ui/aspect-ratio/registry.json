@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "aspect-ratio.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "aspect-ratio.css",
           "type": "registry:ui"
         },

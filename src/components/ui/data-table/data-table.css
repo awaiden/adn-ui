@@ -1,9 +1,9 @@
 .data-table {
-  @apply flex flex-col gap-4 w-full;
+  @apply flex flex-col gap-4 w-full max-w-full;
 }
 
 .data-table__toolbar {
-  @apply flex items-center justify-between gap-4 flex-wrap;
+  @apply flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap;
 }
 
 .data-table__search {
@@ -15,25 +15,25 @@
 }
 
 .data-table__container {
-  @apply rounded-lg border border-border overflow-hidden bg-background shadow-2xs;
+  @apply rounded-lg border border-border overflow-x-auto max-w-full bg-background shadow-2xs w-full scrollbar-none;
 }
 
 .data-table__pagination {
-  @apply flex items-center justify-between gap-4 px-2 py-2 flex-wrap text-sm text-muted-foreground;
+  @apply flex items-center justify-between gap-3 px-2 py-2 flex-wrap text-sm text-muted-foreground;
 }
 
 .data-table__pagination-info {
-  @apply flex items-center gap-1;
+  @apply flex items-center gap-1 text-xs sm:text-sm;
 }
 
 .data-table__pagination-controls {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-1 sm:gap-2 flex-wrap;
 }
 
 .data-table__page-button {
-  @apply inline-flex items-center justify-center rounded-md text-sm font-medium border border-border bg-background h-8 w-8 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none transition-colors;
+  @apply inline-flex items-center justify-center rounded-md text-sm font-medium border border-border bg-background h-8 w-8 hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:pointer-events-none transition-colors shrink-0;
 }
 
 .data-table__column-header {
-  @apply inline-flex items-center gap-1.5 cursor-pointer select-none hover:text-foreground transition-colors font-medium;
+  @apply inline-flex items-center gap-1.5 cursor-pointer select-none hover:text-foreground transition-colors font-medium whitespace-nowrap;
 }

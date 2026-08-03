@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "spinner.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "spinner.css",
           "type": "registry:ui"
         },

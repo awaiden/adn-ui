@@ -1,0 +1,48 @@
+---
+title: Label
+subtitle: An accessible label component for form controls.
+description: A high-quality, styled React label component that renders an accessible label element associated with form controls.
+---
+
+import { LabelDemo } from "@/components/ui/label/label-demo";
+
+The `Label` component renders an accessible label for form controls with support for sizes and disabled state styling.
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+
+export function ExampleLabel() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Label htmlFor="email">Email address</Label>
+      <Input id="email" type="email" placeholder="you@example.com" />
+    </div>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <LabelDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { Label } from "@/components/ui/label";
+
+<Label htmlFor="input-id" />;
+```
+
+## API Reference
+
+### Label Props
+
+| Prop      | Type                   | Default | Description              |
+| :-------- | :--------------------- | :------ | :----------------------- |
+| `htmlFor` | `string`               | `undefined` | ID of the form control. |
+| `size`    | `'sm' \| 'md' \| 'lg'` | `'md'`  | Size variant for label.  |

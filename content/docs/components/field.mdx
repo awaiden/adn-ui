@@ -6,7 +6,7 @@ description: A high-quality, styled React field component built with @base-ui/re
 
 import { FieldDemo } from "@/components/ui/field/field-demo";
 
-The `Field` component wraps form controls to handle labels, description messages, and automatic HTML5 validation error matching.
+The `Field` component wraps form controls to handle labels, description messages, and automatic HTML5 validation error matching. It also includes group components for prefix and suffix input attachments.
 
 ## Usage
 
@@ -25,6 +25,33 @@ export function ExampleField() {
 }
 ```
 
+### With Custom Controls (Textarea, NativeSelect, or Render Prop)
+
+```tsx
+import { Field } from "@/components/ui/field";
+import { NativeSelect } from "@/components/ui/native-select";
+
+export function CustomControlsExample() {
+  return (
+    <Field.Root>
+      <Field.Label>Country</Field.Label>
+      <Field.Control
+        render={
+          <NativeSelect defaultValue="us">
+            <NativeSelect.Option value="us">United States</NativeSelect.Option>
+            <NativeSelect.Option value="ca">Canada</NativeSelect.Option>
+          </NativeSelect>
+        }
+      />
+
+      <Field.Label>Bio</Field.Label>
+      <Field.Control render={<textarea placeholder="Write a short bio..." />} />
+    </Field.Root>
+  );
+}
+```
+
+
 ## Preview
 
 <div className="p-4 border rounded-xl my-4">
@@ -34,17 +61,22 @@ export function ExampleField() {
 ## Anatomy
 
 ```tsx
-import { Field } from "@base-ui/react/field";
+import { Field } from "@/components/ui/field";
 
 <Field.Root>
   <Field.Label />
-  <Field.Control />
+  <Field.Group>
+    <Field.Prefix />
+    <Field.Control />
+    <Field.Suffix />
+  </Field.Group>
   <Field.Error />
   <Field.Description />
   <Field.Item />
   <Field.Validity />
 </Field.Root>;
 ```
+
 
 ## API Reference
 
@@ -55,10 +87,36 @@ import { Field } from "@base-ui/react/field";
 | `name`           | `string`                               | `undefined`  | Identifies the field in form submissions. |
 | `disabled`       | `boolean`                              | `false`      | Disables user interaction.                |
 | `invalid`        | `boolean`                              | `undefined`  | Forces invalid state.                     |
+| `size`           | `'sm' \| 'md' \| 'lg'`                 | `'md'`       | Size variant for field and group elements.|
 | `validationMode` | `'onSubmit' \| 'onBlur' \| 'onChange'` | `'onSubmit'` | Determines when field validation is run.  |
+
+### Field.Group Props
+
+Group container for wrapping input with prefix and suffix addons.
+
+| Prop        | Type     | Default     | Description                 |
+| :---------- | :------- | :---------- | :-------------------------- |
+| `className` | `string` | `undefined` | Custom CSS class overrides. |
+
+### Field.Prefix Props
+
+Addon element displayed before the field input.
+
+| Prop        | Type     | Default     | Description                 |
+| :---------- | :------- | :---------- | :-------------------------- |
+| `className` | `string` | `undefined` | Custom CSS class overrides. |
+
+### Field.Suffix Props
+
+Addon element displayed after the field input.
+
+| Prop        | Type     | Default     | Description                 |
+| :---------- | :------- | :---------- | :-------------------------- |
+| `className` | `string` | `undefined` | Custom CSS class overrides. |
 
 ### Field.Error Props
 
 | Prop    | Type                          | Default     | Description                                                |
 | :------ | :---------------------------- | :---------- | :--------------------------------------------------------- |
 | `match` | `ValidityStateKey \| boolean` | `undefined` | Validity state key matching rule to display error message. |
+

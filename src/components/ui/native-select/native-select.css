@@ -1,0 +1,43 @@
+.native-select__root {
+  @apply relative flex w-full items-center;
+}
+
+.native-select {
+  @apply border-input bg-background text-foreground placeholder:text-muted-foreground focus-visible:outline-ring data-invalid:border-destructive data-invalid:focus-visible:outline-destructive appearance-none flex w-full rounded-md border py-1 pl-3 pr-8 text-sm shadow-xs transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer;
+}
+
+.native-select--sm {
+  @apply h-8 pl-2.5 pr-7 text-xs;
+}
+
+.native-select--md {
+  @apply h-9 pl-3 pr-8 text-sm;
+}
+
+.native-select--lg {
+  @apply h-10 pl-3.5 pr-9 text-base;
+}
+
+.native-select__icon {
+  @apply text-muted-foreground pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 shrink-0 transition-transform duration-200;
+}
+
+.native-select__icon--sm {
+  @apply right-2 h-3.5 w-3.5;
+}
+
+.native-select__icon--md {
+  @apply right-2.5 h-4 w-4;
+}
+
+.native-select__icon--lg {
+  @apply right-3 h-5 w-5;
+}
+
+.native-select__option {
+  @apply bg-background text-foreground;
+}
+
+.native-select__optgroup {
+  @apply font-semibold;
+}

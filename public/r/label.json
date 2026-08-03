@@ -1,0 +1,32 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "Renders an accessible label associated with form controls.",
+  "dependencies": [
+    "tailwind-variants"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/label/label.tsx",
+      "content": "\"use client\";\n\nimport \"./label.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { labelVariants, type LabelVariants } from \"./label.variants\";\n\nexport type LabelProps = LabelVariants & React.LabelHTMLAttributes<HTMLLabelElement>;\n\nexport const LabelRoot = ({ className, size, ...props }: LabelProps) => {\n  const slots = labelVariants({ size });\n\n  return <label className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Label = LabelRoot;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/label/label.variants.ts",
+      "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const labelVariants = tv({\n  slots: {\n    root: \"label\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"label--sm\",\n      },\n      md: {\n        root: \"label--md\",\n      },\n      lg: {\n        root: \"label--lg\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n  },\n});\n\nexport type LabelVariants = VariantProps<typeof labelVariants>;\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/label/label.css",
+      "content": ".label {\n  @apply text-foreground flex items-center text-sm font-medium leading-none select-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-disabled:cursor-not-allowed group-data-disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:opacity-50;\n}\n\n.label--sm {\n  @apply text-xs;\n}\n\n.label--md {\n  @apply text-sm;\n}\n\n.label--lg {\n  @apply text-base;\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/components/ui/label/index.ts",
+      "content": "import { Label as LabelRootComponent, LabelRoot } from \"./label\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/label/content.md\n */\nexport const Label = Object.assign(LabelRootComponent, {\n  Root: LabelRoot,\n});\n\nexport { LabelRoot };\nexport type { LabelProps } from \"./label\";\nexport { type LabelVariants, labelVariants } from \"./label.variants\";\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

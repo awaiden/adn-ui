@@ -1,9 +1,9 @@
 .tabs {
-  @apply text-foreground flex w-full flex-col;
+  @apply text-foreground flex w-full max-w-full min-w-0 flex-col;
 }
 
 .tabs__list {
-  @apply relative flex items-center select-none;
+  @apply relative flex items-center select-none overflow-x-auto w-full max-w-full flex-nowrap scrollbar-none min-w-0;
 }
 
 .tabs__tab {
@@ -15,5 +15,5 @@
 }
 
 .tabs__panel {
-  @apply focus-visible:outline-ring mt-2 outline-none focus-visible:outline-2;
+  @apply focus-visible:outline-ring mt-2 outline-none focus-visible:outline-2 w-full max-w-full min-w-0 overflow-x-auto;
 }

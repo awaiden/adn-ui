@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "textarea.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "textarea.css",
           "type": "registry:ui"
         },

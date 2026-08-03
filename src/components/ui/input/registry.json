@@ -17,10 +17,6 @@
           "type": "registry:ui"
         },
         {
-          "path": "input.context.ts",
-          "type": "registry:ui"
-        },
-        {
           "path": "input.css",
           "type": "registry:ui"
         },

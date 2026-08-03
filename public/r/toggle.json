@@ -10,17 +10,12 @@
   "files": [
     {
       "path": "src/components/ui/toggle/toggle.tsx",
-      "content": "\"use client\";\n\nimport \"./toggle.css\";\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { ToggleContext } from \"./toggle.context\";\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <ToggleContext.Provider value={{ slots }}>\n      <BaseToggle className={cn(slots.root(), className)} {...props}>\n        {children}\n      </BaseToggle>\n    </ToggleContext.Provider>\n  );\n};\n",
+      "content": "\"use client\";\n\nimport \"./toggle.css\";\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <BaseToggle className={cn(slots.root(), className)} {...props}>\n      {children}\n    </BaseToggle>\n  );\n};\n\nexport const Toggle = ToggleRoot;\n\n",
       "type": "registry:ui"
     },
     {
       "path": "src/components/ui/toggle/toggle.variants.ts",
       "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const toggleVariants = tv({\n  slots: {\n    root: \"toggle\",\n  },\n  variants: {\n    variant: {\n      default: {\n        root: \"bg-transparent hover:bg-muted hover:text-muted-foreground data-pressed:bg-accent data-pressed:text-accent-foreground\",\n      },\n      outline: {\n        root: \"border border-input bg-transparent hover:bg-accent hover:text-accent-foreground data-pressed:bg-accent data-pressed:text-accent-foreground\",\n      },\n    },\n    size: {\n      sm: {\n        root: \"h-8 px-2 min-w-8 text-xs gap-1.5\",\n      },\n      md: {\n        root: \"h-9 px-2.5 min-w-9 text-sm gap-2\",\n      },\n      lg: {\n        root: \"h-10 px-3 min-w-10 text-base gap-2.5\",\n      },\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"md\",\n  },\n});\n\nexport type ToggleVariants = VariantProps<typeof toggleVariants>;\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/components/ui/toggle/toggle.context.ts",
-      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { toggleVariants } from \"./toggle.variants\";\n\nexport type ToggleContext = {\n  slots: ReturnType<typeof toggleVariants>;\n};\n\nexport const ToggleContext = createContext<ToggleContext | null>(null);\n\nexport const useToggleContext = () => {\n  const context = useContext(ToggleContext);\n  return context ?? { slots: toggleVariants() };\n};\n",
       "type": "registry:ui"
     },
     {
@@ -30,7 +25,7 @@
     },
     {
       "path": "src/components/ui/toggle/index.ts",
-      "content": "import { ToggleRoot } from \"./toggle\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md\n */\nexport const Toggle = {\n  Root: ToggleRoot,\n};\n\nexport { ToggleRoot };\n\nexport type { ToggleProps } from \"./toggle\";\nexport { ToggleContext, useToggleContext } from \"./toggle.context\";\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n",
+      "content": "import { Toggle as ToggleRootComponent, ToggleRoot } from \"./toggle\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/toggle/content.md\n */\nexport const Toggle = Object.assign(ToggleRootComponent, {\n  Root: ToggleRoot,\n});\n\nexport { ToggleRoot };\n\nexport type { ToggleProps } from \"./toggle\";\nexport { type ToggleVariants, toggleVariants } from \"./toggle.variants\";\n\n",
       "type": "registry:ui"
     }
   ],

@@ -24,7 +24,7 @@
     },
     {
       "path": "src/components/ui/table/table.css",
-      "content": ".table-container {\n  @apply relative w-full overflow-auto;\n}\n\n.table {\n  @apply w-full caption-bottom text-sm;\n}\n\n.table__header {\n  @apply border-border border-b;\n}\n\n.table__body {\n  @apply [&_tr:last-child]:border-0;\n}\n\n.table__footer {\n  @apply border-border bg-muted/50 border-t font-medium [&>tr]:last:border-b-0;\n}\n\n.table__row {\n  @apply border-border hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors;\n}\n\n.table__head {\n  @apply text-muted-foreground h-10 px-4 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0;\n}\n\n.table__cell {\n  @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;\n}\n\n.table__caption {\n  @apply text-muted-foreground mt-4 text-sm;\n}\n",
+      "content": ".table-container {\n  @apply relative w-full max-w-full overflow-x-auto scrollbar-none;\n}\n\n.table {\n  @apply w-full min-w-full caption-bottom text-sm border-collapse;\n}\n\n.table__header {\n  @apply border-border border-b;\n}\n\n.table__body {\n  @apply [&_tr:last-child]:border-0;\n}\n\n.table__footer {\n  @apply border-border bg-muted/50 border-t font-medium [&>tr]:last:border-b-0;\n}\n\n.table__row {\n  @apply border-border hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors;\n}\n\n.table__head {\n  @apply text-muted-foreground h-10 px-4 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0;\n}\n\n.table__cell {\n  @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;\n}\n\n.table__caption {\n  @apply text-muted-foreground mt-4 text-sm;\n}\n",
       "type": "registry:ui"
     },
     {

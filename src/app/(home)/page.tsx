@@ -16,6 +16,7 @@ import {
   PanelTop,
   Sliders,
   Maximize2,
+  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -494,6 +495,182 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-border/60 bg-muted/30 relative border-t">
+        <div className="mx-auto max-w-6xl px-4 pt-12 pb-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+            {/* Brand Column */}
+            <div className="md:col-span-2">
+              <div className="mb-3 flex items-center gap-2">
+                <div className="bg-primary text-primary-foreground flex h-7 w-7 items-center justify-center rounded-lg font-extrabold text-xs">
+                  ADN
+                </div>
+                <span className="text-lg font-bold tracking-tight">adn-ui</span>
+                <Badge variant="outline" className="py-0.5 text-[10px]">
+                  v0.1.0
+                </Badge>
+              </div>
+              <p className="text-muted-foreground mb-4 max-w-sm text-xs leading-relaxed">
+                High-quality, styled React UI component library built on Base UI primitives and Tailwind CSS v4. Modular, accessible, and AI-ready.
+              </p>
+              <div className="text-muted-foreground flex items-center gap-3 text-xs">
+                <span>
+                  Crafted by{" "}
+                  <a
+                    href="https://github.com/awaiden"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-foreground hover:underline font-medium"
+                  >
+                    Halil Aydın
+                  </a>
+                </span>
+                <span>•</span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="bg-emerald-500 h-2 w-2 animate-pulse rounded-full" />
+                  MIT License
+                </span>
+              </div>
+            </div>
+
+            {/* Components Column */}
+            <div>
+              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+                Components
+              </h3>
+              <ul className="text-muted-foreground space-y-2 text-xs">
+                <li>
+                  <Link href="/docs/components/button" className="hover:text-foreground transition-colors">
+                    Button & Button Group
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs/components/dialog" className="hover:text-foreground transition-colors">
+                    Dialog Modal
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs/components/drawer" className="hover:text-foreground transition-colors">
+                    Multi-Directional Drawer
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs/components/tabs" className="hover:text-foreground transition-colors">
+                    Tabs (4 Variants)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs/components/table" className="hover:text-foreground transition-colors">
+                    Responsive Table
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Documentation Column */}
+            <div>
+              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+                Resources
+              </h3>
+              <ul className="text-muted-foreground space-y-2 text-xs">
+                <li>
+                  <Link href="/docs" className="hover:text-foreground transition-colors">
+                    Documentation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs/components/accordion" className="hover:text-foreground transition-colors">
+                    Catalog (35+ Components)
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/awaiden/adn-ui"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                  >
+                    Registry CLI <ExternalLink className="h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/awaiden/adn-ui"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                  >
+                    Storybook <ExternalLink className="h-3 w-3" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Ecosystem Column */}
+            <div>
+              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+                Ecosystem
+              </h3>
+              <ul className="text-muted-foreground space-y-2 text-xs">
+                <li>
+                  <a
+                    href="https://github.com/awaiden/adn-ui"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                  >
+                    GitHub <ExternalLink className="h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://base-ui.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                  >
+                    @base-ui/react <ExternalLink className="h-3 w-3" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://tailwindcss.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-foreground inline-flex items-center gap-1 transition-colors"
+                  >
+                    Tailwind CSS v4 <ExternalLink className="h-3 w-3" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-border/60 text-muted-foreground mt-8 flex flex-col items-center justify-between gap-3 border-t pt-6 text-xs sm:flex-row">
+            <p>© {new Date().getFullYear()} adn-ui by Halil Aydın. Built with Base UI & Tailwind CSS v4.</p>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://github.com/awaiden/adn-ui"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                GitHub Repository
+              </a>
+              <span>•</span>
+              <a
+                href="https://github.com/awaiden/adn-ui/blob/main/LICENSE"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                MIT License
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       {/* Reusable Controlled Drawer for Interactive Demo */}
       <DrawerRoot side={activeSide} open={drawerOpen} onOpenChange={setDrawerOpen}>

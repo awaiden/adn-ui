@@ -10,5 +10,4 @@ export const AspectRatioContainer = {
 export { AspectRatio, AspectRatioRoot };
 
 export type { AspectRatioProps } from "./aspect-ratio";
-export { AspectRatioContext, useAspectRatioContext } from "./aspect-ratio.context";
 export { type AspectRatioVariants, aspectRatioVariants } from "./aspect-ratio.variants";

@@ -48,6 +48,10 @@
     "src/components/ui/textarea/registry.json",
     "src/components/ui/command/registry.json",
     "src/components/ui/data-table/registry.json",
-    "src/components/ui/toast/registry.json"
+    "src/components/ui/toast/registry.json",
+    "src/components/ui/native-select/registry.json",
+    "src/components/ui/label/registry.json"
   ]
 }
+
+

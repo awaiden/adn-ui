@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "title": "Native Select",
+      "description": "A styled native select component with custom arrow indicator.",
+      "dependencies": ["tailwind-variants"],
+      "files": [
+        {
+          "path": "native-select.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "native-select.variants.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "native-select.context.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "native-select.css",
+          "type": "registry:ui"
+        },
+        {
+          "path": "index.ts",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}

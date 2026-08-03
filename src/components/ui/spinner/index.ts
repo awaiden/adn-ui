@@ -10,5 +10,4 @@ export const SpinnerContainer = {
 export { Spinner, SpinnerRoot };
 
 export type { SpinnerProps } from "./spinner";
-export { SpinnerContext, useSpinnerContext } from "./spinner.context";
 export { type SpinnerVariants, spinnerVariants } from "./spinner.variants";

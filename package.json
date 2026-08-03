@@ -25,10 +25,12 @@
     "format": "oxfmt",
     "storybook": "BROWSER=none storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky"
+    "prepare": "husky",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
+    "chromatic": "^18.1.0",
     "cnfast": "^0.1.0",
     "fumadocs-core": "16.14.0",
     "fumadocs-mdx": "15.2.1",
@@ -57,12 +59,11 @@
     "oxfmt": "^0.61.0",
     "oxlint": "^1.76.0",
     "postcss": "^8.5.24",
-    "postcss-prepend-imports": "^1.0.1",
+    "postcss-tw-auto-reference": "^0.1.1",
     "storybook": "10.5.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vite": "^8.2.0",
-    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^4.1.10"
   },
   "lint-staged": {

@@ -10,17 +10,12 @@
   "files": [
     {
       "path": "src/components/ui/input/input.tsx",
-      "content": "\"use client\";\n\nimport \"./input.css\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { InputContext } from \"./input.context\";\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentPropsWithoutRef<\"input\">, \"size\">;\n\nexport const InputRoot = ({ className, size, variant, ...props }: InputProps) => {\n  const slots = inputVariants({ size, variant });\n\n  return (\n    <InputContext.Provider value={{ slots }}>\n      <BaseInput className={cn(slots.root(), className)} {...props} />\n    </InputContext.Provider>\n  );\n};\n\nexport const Input = InputRoot;\n",
+      "content": "\"use client\";\n\nimport \"./input.css\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentPropsWithoutRef<\"input\">, \"size\">;\n\nexport const InputRoot = ({ className, size, variant, ...props }: InputProps) => {\n  const slots = inputVariants({ size, variant });\n\n  return <BaseInput className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Input = InputRoot;\n",
       "type": "registry:ui"
     },
     {
       "path": "src/components/ui/input/input.variants.ts",
       "content": "/* eslint-disable perfectionist/sort-objects */\n\nimport { tv, type VariantProps } from \"tailwind-variants\";\n\nexport const inputVariants = tv({\n  slots: {\n    root: \"input\",\n  },\n  variants: {\n    size: {\n      sm: {\n        root: \"input--sm\",\n      },\n      md: {\n        root: \"input--md\",\n      },\n      lg: {\n        root: \"input--lg\",\n      },\n    },\n    variant: {\n      default: {\n        root: \"input--default\",\n      },\n      outline: {\n        root: \"input--outline\",\n      },\n    },\n  },\n  defaultVariants: {\n    size: \"md\",\n    variant: \"default\",\n  },\n});\n\nexport type InputVariants = VariantProps<typeof inputVariants>;\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/components/ui/input/input.context.ts",
-      "content": "\"use client\";\n\nimport { createContext, useContext } from \"react\";\n\nimport { inputVariants } from \"./input.variants\";\n\nexport type InputContext = {\n  slots: ReturnType<typeof inputVariants>;\n};\n\nexport const InputContext = createContext<InputContext | null>(null);\n\nexport const useInputContext = () => {\n  const context = useContext(InputContext);\n  return context ?? { slots: inputVariants() };\n};\n",
       "type": "registry:ui"
     },
     {
@@ -30,7 +25,7 @@
     },
     {
       "path": "src/components/ui/input/index.ts",
-      "content": "import { Input, InputRoot } from \"./input\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/input/content.md\n */\nexport const InputContainer = {\n  Root: InputRoot,\n};\n\nexport { Input, InputRoot };\n\nexport type { InputProps } from \"./input\";\nexport { InputContext, useInputContext } from \"./input.context\";\nexport { type InputVariants, inputVariants } from \"./input.variants\";\n",
+      "content": "import { Input, InputRoot } from \"./input\";\n\n/**\n * @see https://ui.awaiden.com/llms.mdx/docs/components/input/content.md\n */\nexport const InputContainer = {\n  Root: InputRoot,\n};\n\nexport { Input, InputRoot };\n\nexport type { InputProps } from \"./input\";\nexport { type InputVariants, inputVariants } from \"./input.variants\";\n",
       "type": "registry:ui"
     }
   ],
