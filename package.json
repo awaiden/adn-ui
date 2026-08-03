@@ -14,19 +14,19 @@
     "url": "https://github.com/awaiden/adn-ui.git"
   },
   "scripts": {
-    "build:registry": "npx shadcn build",
     "build": "next build",
+    "build-storybook": "storybook build",
+    "build:registry": "npx shadcn build",
+    "chromatic": "chromatic --exit-zero-on-changes",
     "dev": "next dev",
+    "format": "oxfmt",
+    "lint": "oxlint",
+    "prepare": "husky",
     "start": "next start",
-    "types:check": "next typegen && tsc --noEmit",
+    "storybook": "BROWSER=none storybook dev -p 6006",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "oxlint",
-    "format": "oxfmt",
-    "storybook": "BROWSER=none storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "types:check": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

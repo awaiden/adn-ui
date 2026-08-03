@@ -2,6 +2,8 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "ignorePatterns": [],
   "sortImports": true,
-  "sortPackageJson": true,
+  "sortPackageJson": {
+    "sortScripts": true
+  },
   "sortTailwindcss": true
 }
