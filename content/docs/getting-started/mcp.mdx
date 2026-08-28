@@ -29,10 +29,11 @@ http://localhost:3000/api/mcp/sse
 
 ## 🛠️ Available MCP Tools
 
-The MCP server exposes 5 specialized tools for AI assistants:
+The MCP server exposes 6 specialized tools for AI assistants:
 
 | Tool Name | Parameters | Description |
 | :--- | :--- | :--- |
+| `integrate_adn_ui` | `{ framework?: 'nextjs' \| 'vite' \| 'all' }` | Returns complete step-by-step setup instructions, `components.json` registry configuration, and PostCSS/Vite auto-reference setup code to integrate `adn-ui` into a project. |
 | `list_components` | `{}` | Returns a complete list of all available `adn-ui` components along with their internal file structure (`.tsx`, `.css`, `.variants.ts`). |
 | `get_component` | `{ name: string }` | Fetches full source code, Tailwind v4 CSS, variants, and context files for a specific component (e.g. `button`, `switch`, `combobox`). |
 | `search_components` | `{ query: string }` | Searches for components by name or keyword. |

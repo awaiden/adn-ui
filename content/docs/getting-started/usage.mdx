@@ -15,9 +15,9 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 
 ## 🚀 Quick Start
 
-You can install `adn-ui` components in two simple ways:
+You can install `adn-ui` components in three simple ways:
 
-<Tabs items={['Method 1: Namespace (Recommended)', 'Method 2: Direct URL']}>
+<Tabs items={['Method 1: Namespace (Recommended)', 'Method 2: Direct URL', 'Method 3: MCP Server (AI Assistants)']}>
   <Tab value="Method 1: Namespace (Recommended)">
     Configure the `@adn-ui` namespace once in your project, then install any component by name.
 
@@ -66,6 +66,17 @@ You can install `adn-ui` components in two simple ways:
     ```
 
   </Tab>
+
+  <Tab value="Method 3: MCP Server (AI Assistants)">
+    Connect your AI assistant (Cursor, Antigravity, Claude Code, Windsurf, etc.) directly to the `adn-ui` MCP server to let AI automatically inspect, search, and add components to your workspace.
+
+    Set your MCP SSE Endpoint:
+    ```
+    https://ui.awaiden.com/api/mcp/sse
+    ```
+
+    For detailed client configurations and available MCP tools, see the [MCP Server Integration Guide](/docs/getting-started/mcp).
+  </Tab>
 </Tabs>
 
 ---
@@ -91,7 +102,7 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
   setup so PostCSS resolves utility classes automatically:
 </Callout>
 
-<Tabs items={['Next.js', 'Vite']}>
+<Tabs items={['Next.js', 'Vite', 'MCP Tool (AI Setup)']}>
   <Tab value="Next.js">
     Configure `postcss-tw-auto-reference` in your `postcss.config.mjs`:
 
@@ -126,6 +137,31 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
     });
     ```
 
+  </Tab>
+
+  <Tab value="MCP Tool (AI Setup)">
+    Configure the **adn-ui MCP Tool** in your AI editor (Cursor, Antigravity, Claude Code, Windsurf) to allow your AI assistant to automatically discover, inspect, and install Tailwind CSS v4 components.
+
+    Add the MCP SSE Endpoint to your editor's MCP server configuration:
+
+    ```json title="mcp-config.json"
+    {
+      "mcpServers": {
+        "adn-ui": {
+          "url": "https://ui.awaiden.com/api/mcp/sse",
+          "transport": "sse"
+        }
+      }
+    }
+    ```
+
+    Exposed MCP tools for AI assistants:
+    - `integrate_adn_ui`: Get complete project integration guide, `components.json` config, and PostCSS/Vite setup.
+    - `list_components`: List all available components and file structures (`.tsx`, `.variants.ts`, `.css`).
+    - `get_component`: Retrieve component source code, Tailwind v4 CSS, and variant definitions.
+    - `search_components`: Search components by name or keyword.
+    - `get_component_doc`: Fetch MDX documentation and usage guidelines.
+    - `get_registry_item`: Retrieve shadcn-compatible JSON manifest for installation.
   </Tab>
 </Tabs>
 
@@ -173,7 +209,7 @@ export default function ExamplePage() {
 
 ---
 
-## 🤖 AI-Friendly JSDoc & LLM Integration
+## 🤖 AI-Friendly JSDoc & MCP Server Integration
 
 All `adn-ui` components include JSDoc `@see` annotations linking directly to raw markdown documentation URLs (powered by the `/llms.mdx/docs/...` route):
 
@@ -184,7 +220,15 @@ All `adn-ui` components include JSDoc `@see` annotations linking directly to raw
 export const Button = ...
 ```
 
-When using AI coding assistants (such as Antigravity, Cursor, Claude Code, or GitHub Copilot), the AI model reads the JSDoc `@see` link on hover or definition inspection. It can automatically fetch component API specifications, variant options, and usage examples directly from `ui.awaiden.com`.
+When using AI coding assistants (such as Antigravity, Cursor, Claude Code, or GitHub Copilot), the AI model reads the JSDoc `@see` link on hover or definition inspection to fetch component specifications.
+
+### 🔌 Model Context Protocol (MCP) Server
+
+`adn-ui` includes a built-in **Model Context Protocol (MCP)** server endpoint that allows AI tools to query, search, inspect code, and install components automatically.
+
+- **SSE Endpoint**: `https://ui.awaiden.com/api/mcp/sse`
+
+For detailed setup instructions for Cursor, Claude Code, and Antigravity, refer to the [MCP Server Integration Guide](/docs/getting-started/mcp).
 
 ---
 
@@ -193,6 +237,10 @@ When using AI coding assistants (such as Antigravity, Cursor, Claude Code, or Gi
 <Callout type="info" title="Do I need to install an adn-ui npm package?">
   No package installation is required! `adn-ui` components are copy-and-paste primitives installed
   straight into your codebase so you have 100% control over design and implementation.
+</Callout>
+
+<Callout type="info" title="How do I connect AI tools to adn-ui via MCP?">
+  Add `https://ui.awaiden.com/api/mcp/sse` to your editor's MCP server settings (Cursor, Claude Desktop, Antigravity). Check out the [MCP Integration Guide](/docs/getting-started/mcp) for client configs.
 </Callout>
 
 <Callout type="warn" title="What if I get 'Unknown registry @adn-ui'?">

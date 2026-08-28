@@ -215,6 +215,113 @@ const handler = createMcpHandler(
         }
       },
     );
+
+    // Tool 6: integrate_adn_ui
+    server.registerTool(
+      "integrate_adn_ui",
+      {
+        description:
+          "Get complete step-by-step instructions, components.json registry configuration, and Tailwind CSS v4 PostCSS/Vite setup code to integrate adn-ui into a project.",
+        inputSchema: z.object({
+          framework: z
+            .enum(["nextjs", "vite", "all"])
+            .optional()
+            .default("all")
+            .describe(
+              "Target framework for project setup instructions ('nextjs', 'vite', or 'all')",
+            ),
+        }),
+      },
+      async ({ framework }) => {
+        const nextJsSetup = `### Next.js PostCSS Configuration
+Install: \`npm install -D postcss-tw-auto-reference\`
+
+Configure \`postcss.config.mjs\`:
+\`\`\`js
+const config = {
+  plugins: {
+    "postcss-tw-auto-reference": {
+      globalCssPath: "app/globals.css", // or "src/app/globals.css"
+    },
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+\`\`\``;
+
+        const viteSetup = `### Vite Configuration
+Install: \`npm install -D vite-plugin-tw-auto-reference\`
+
+Configure \`vite.config.ts\`:
+\`\`\`ts
+import { defineConfig } from "vite";
+import tailwindAutoReference from "vite-plugin-tw-auto-reference";
+
+export default defineConfig({
+  plugins: [
+    tailwindAutoReference({
+      globalCssPath: "src/index.css",
+    }),
+  ],
+});
+\`\`\``;
+
+        let setupCode = "";
+        if (framework === "nextjs") {
+          setupCode = nextJsSetup;
+        } else if (framework === "vite") {
+          setupCode = viteSetup;
+        } else {
+          setupCode = `${nextJsSetup}\n\n${viteSetup}`;
+        }
+
+        const guide = `# adn-ui Project Integration Guide
+
+## Step 1: Initialize shadcn CLI (if not already done)
+\`\`\`bash
+npx shadcn@latest init
+\`\`\`
+
+## Step 2: Add @adn-ui Namespace Registry
+Add the registry mapping to your project's \`components.json\`:
+\`\`\`json
+{
+  "registries": {
+    "@adn-ui": "https://ui.awaiden.com/r/{name}.json"
+  }
+}
+\`\`\`
+
+## Step 3: Configure Tailwind CSS v4 Component CSS Setup
+${setupCode}
+
+## Step 4: Install adn-ui Components
+Add components using the namespace:
+\`\`\`bash
+npx shadcn@latest add @adn-ui/button @adn-ui/card
+\`\`\`
+Or install directly via registry URL:
+\`\`\`bash
+npx shadcn@latest add https://ui.awaiden.com/r/button.json
+\`\`\`
+
+## Recommended AI Workflow
+1. Call \`list_components\` to discover all available UI components.
+2. Call \`get_component\` or \`get_registry_item\` to inspect source code or manifests.
+3. Install components using \`npx shadcn@latest add @adn-ui/<component-name>\`.
+`;
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: guide,
+            },
+          ],
+        };
+      },
+    );
   },
   {
     serverInfo: {
