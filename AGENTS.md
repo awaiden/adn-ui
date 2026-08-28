@@ -86,11 +86,11 @@ Agents MUST run verification commands after making any codebase changes:
 
 | Action | Command | Purpose |
 | :--- | :--- | :--- |
-| **Run Unit Tests** | `npm test` | Runs all Vitest unit tests in `src/**/*.test.{ts,tsx}`. |
-| **TypeScript Check** | `npm run types:check` | Runs `next typegen && tsc --noEmit` to verify type safety. |
-| **Build Registry** | `npm run build:registry` | Regenerates registry manifests (`npx shadcn build`). |
-| **Linting** | `npm run lint` | Runs `oxlint` for fast static code analysis. |
-| **Formatting** | `npm run format` | Formats code via `oxfmt`. |
+| **Run Unit Tests** | `bun run test` | Runs all Vitest unit tests in `src/**/*.test.{ts,tsx}`. |
+| **TypeScript Check** | `bun run types:check` | Runs `tsc --noEmit` to verify type safety across the codebase. |
+| **Build Registry** | `bun run build:registry` | Regenerates registry manifests (`bun x shadcn build`). |
+| **Linting** | `bun run lint` | Runs `oxlint` for fast static code analysis. |
+| **Formatting** | `bun run format` | Formats code via `oxfmt`. |
 
 ---
 

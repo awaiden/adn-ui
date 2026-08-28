@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+
 import { createMcpHandler } from "mcp-handler";
 import { z } from "zod";
 
@@ -9,7 +9,7 @@ const getDocsDir = () => path.join(process.cwd(), "content", "docs", "components
 const getRegistryDir = () => path.join(process.cwd(), "public", "r");
 
 const handler = createMcpHandler(
-  (server: McpServer) => {
+  (server) => {
     // Tool 1: list_components
     server.registerTool(
       "list_components",
@@ -28,7 +28,7 @@ const handler = createMcpHandler(
               const compDir = path.join(componentsDir, name);
               const files = await fs.readdir(compDir);
               return { name, files };
-            })
+            }),
           );
 
           return {
@@ -50,7 +50,7 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-      }
+      },
     );
 
     // Tool 2: get_component
@@ -84,7 +84,7 @@ const handler = createMcpHandler(
                 text: JSON.stringify(
                   { component: name, filesCount: files.length, files: fileContents },
                   null,
-                  2
+                  2,
                 ),
               },
             ],
@@ -100,7 +100,7 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-      }
+      },
     );
 
     // Tool 3: search_components
@@ -140,19 +140,16 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-      }
+      },
     );
 
     // Tool 4: get_component_doc
     server.registerTool(
       "get_component_doc",
       {
-        description:
-          "Get MDX documentation and usage guidelines for a specific adn-ui component.",
+        description: "Get MDX documentation and usage guidelines for a specific adn-ui component.",
         inputSchema: z.object({
-          name: z
-            .string()
-            .describe("The component name (e.g. 'button', 'switch', 'data-table')"),
+          name: z.string().describe("The component name (e.g. 'button', 'switch', 'data-table')"),
         }),
       },
       async ({ name }) => {
@@ -179,7 +176,7 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-      }
+      },
     );
 
     // Tool 5: get_registry_item
@@ -216,7 +213,7 @@ const handler = createMcpHandler(
             isError: true,
           };
         }
-      }
+      },
     );
   },
   {
@@ -225,9 +222,6 @@ const handler = createMcpHandler(
       version: "0.1.0",
     },
   },
-  {
-    basePath: "/api/mcp",
-  }
 );
 
 export const GET = handler;
