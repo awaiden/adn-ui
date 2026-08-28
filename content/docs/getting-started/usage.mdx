@@ -156,12 +156,23 @@ The `shadcn` registry architecture operates as a decentralized distribution syst
     ```
 
     Exposed MCP tools for AI assistants:
-    - `integrate_adn_ui`: Get complete project integration guide, `components.json` config, and PostCSS/Vite setup.
+    - `init_adn_ui`: Get complete project integration guide, `components.json` config, and PostCSS/Vite setup.
     - `list_components`: List all available components and file structures (`.tsx`, `.variants.ts`, `.css`).
     - `get_component`: Retrieve component source code, Tailwind v4 CSS, and variant definitions.
     - `search_components`: Search components by name or keyword.
-    - `get_component_doc`: Fetch MDX documentation and usage guidelines.
-    - `get_registry_item`: Retrieve shadcn-compatible JSON manifest for installation.
+    - `get_component_doc`: Retrieve component documentation and usage examples.
+    - `get_registry_item`: Fetch the raw shadcn JSON registry manifest.
+    - `add_component`: Get installation commands (`npx shadcn@latest add`), registry URL, and manifest details.
+  </Tab>
+
+  <Tab value="Agent Skills (npx skills)">
+    Equip your AI agent (Antigravity, Cursor, Claude Code, Windsurf) with the complete **adn-ui** design system rules, Base UI primitive state bindings, and component standards:
+
+    ```bash
+    npx skills add awaiden/adn-ui
+    ```
+
+    This command installs `.agents/skills/adn-ui` into your project workspace so AI assistants automatically understand `adn-ui` modular slot patterns, icon rules, and validation workflows.
   </Tab>
 </Tabs>
 

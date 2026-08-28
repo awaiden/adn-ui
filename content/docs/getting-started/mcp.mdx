@@ -33,12 +33,13 @@ The MCP server exposes 6 specialized tools for AI assistants:
 
 | Tool Name | Parameters | Description |
 | :--- | :--- | :--- |
-| `integrate_adn_ui` | `{ framework?: 'nextjs' \| 'vite' \| 'all' }` | Returns complete step-by-step setup instructions, `components.json` registry configuration, and PostCSS/Vite auto-reference setup code to integrate `adn-ui` into a project. |
+| `init_adn_ui` | `{ framework?: 'nextjs' \| 'vite' \| 'all' }` | Returns complete step-by-step setup instructions, `components.json` registry configuration, and PostCSS/Vite auto-reference setup code to integrate `adn-ui` into a project. |
 | `list_components` | `{}` | Returns a complete list of all available `adn-ui` components along with their internal file structure (`.tsx`, `.css`, `.variants.ts`). |
 | `get_component` | `{ name: string }` | Fetches full source code, Tailwind v4 CSS, variants, and context files for a specific component (e.g. `button`, `switch`, `combobox`). |
 | `search_components` | `{ query: string }` | Searches for components by name or keyword. |
 | `get_component_doc` | `{ name: string }` | Retrieves MDX documentation, API specifications, and usage examples for a component. |
 | `get_registry_item` | `{ name: string }` | Retrieves the shadcn-compatible registry JSON manifest for direct installation. |
+| `add_component` | `{ name: string }` | Returns installation commands (`npx shadcn@latest add`), registry URL, import specs, and manifest for adding an `adn-ui` component to a project. |
 
 ---
 

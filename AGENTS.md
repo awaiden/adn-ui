@@ -48,12 +48,13 @@ Corresponding JSON registry manifests are maintained under:
 - **SSE Endpoint**: `https://ui.awaiden.com/api/mcp/sse` (or `http://localhost:3000/api/mcp/sse` in dev)
 
 ### MCP Tools Available
-1. `integrate_adn_ui`: Get project integration guide, `components.json` setup, and PostCSS/Vite configuration.
+1. `init_adn_ui`: Get project initialization guide, `components.json` setup, and PostCSS/Vite configuration.
 2. `list_components`: List all available UI components and their file structures.
 3. `get_component`: Retrieve full source code, CSS, and variants for a specified component.
 4. `search_components`: Search components by name or keyword.
 5. `get_component_doc`: Fetch component MDX documentation.
 6. `get_registry_item`: Fetch the `shadcn` JSON registry manifest.
+7. `add_component`: Get installation commands, registry manifest, and setup instructions to add a component.
 
 ---
 

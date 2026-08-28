@@ -1,0 +1,83 @@
+---
+title: Agent Skills & npx skills
+description: Learn how to equip AI coding assistants with adn-ui component design rules, Base UI primitive state bindings, and validation workflows using npx skills.
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+# Agent Skills & `npx skills` Integration
+
+**adn-ui** includes pre-packaged **Agent Skills** that can be installed directly into any workspace using `npx skills`. This equips autonomous AI coding assistants (such as Antigravity, Cursor, Claude Code, Windsurf, or custom agents) with instant knowledge of `adn-ui` modular slot patterns, Base UI state bindings, icon conventions, and verification workflows.
+
+---
+
+## ⚡ Quick Installation
+
+Install the **adn-ui** skill directly into your project's `.agents/skills/` directory by running:
+
+```bash
+npx skills add awaiden/adn-ui
+```
+
+Or install using the full GitHub repository path:
+
+```bash
+npx skills add https://github.com/awaiden/adn-ui
+```
+
+---
+
+## 📂 What Gets Installed
+
+Running `npx skills add awaiden/adn-ui` populates `.agents/skills/adn-ui/` in your workspace with:
+
+| File / Folder | Purpose |
+| :--- | :--- |
+| `SKILL.md` | Core agent skill specification, coding rules, component creation steps, and verification commands. |
+| `references/component-architecture.md` | Deep-dive guide covering the 7-file slot pattern (`.tsx`, `.variants.ts`, `.css`, `.context.ts`). |
+| `references/mcp-server.md` | Parameter specs and JSON response schemas for all 7 MCP tools. |
+| `references/skills-cli.md` | CLI reference for managing skills with `npx skills`. |
+
+---
+
+## 🛠️ Managing Skills via CLI
+
+<Steps>
+  <Step>
+    ### List Installed Skills
+    View all active agent skills in your project workspace:
+    ```bash
+    npx skills list
+    ```
+  </Step>
+
+  <Step>
+    ### Update Skills
+    Fetch the latest design tokens, Base UI updates, and tool definitions:
+    ```bash
+    npx skills update adn-ui
+    ```
+  </Step>
+
+  <Step>
+    ### Remove Skill
+    Remove the `adn-ui` skill package from your workspace:
+    ```bash
+    npx skills remove adn-ui
+    ```
+  </Step>
+</Steps>
+
+---
+
+## 🤖 How AI Assistants Use Installed Skills
+
+<Callout type="info">
+Modern AI coding tools (Antigravity, Cursor, Claude Code) automatically discover `.agents/skills/` when loading project context.
+</Callout>
+
+1. **Progressive Activation**: The agent reads `SKILL.md` description on startup and dynamically loads reference files when building or editing `adn-ui` components.
+2. **Strict Rule Enforcement**: Ensures icons always use `lucide-react`, styles are handled via CSS selectors in `*.css` files, and compound components follow `@base-ui/react` primitives.
+3. **Verification Integrity**: Automatically runs `bun run test` and `bun run types:check` before completing component tasks.

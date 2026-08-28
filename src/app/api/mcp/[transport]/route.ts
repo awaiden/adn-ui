@@ -216,9 +216,9 @@ const handler = createMcpHandler(
       },
     );
 
-    // Tool 6: integrate_adn_ui
+    // Tool 6: init_adn_ui
     server.registerTool(
-      "integrate_adn_ui",
+      "init_adn_ui",
       {
         description:
           "Get complete step-by-step instructions, components.json registry configuration, and Tailwind CSS v4 PostCSS/Vite setup code to integrate adn-ui into a project.",
@@ -320,6 +320,70 @@ npx shadcn@latest add https://ui.awaiden.com/r/button.json
             },
           ],
         };
+      },
+    );
+
+    // Tool 7: add_component
+    server.registerTool(
+      "add_component",
+      {
+        description:
+          "Get complete installation command, registry manifest, and setup instructions to add an adn-ui component into a project.",
+        inputSchema: z.object({
+          name: z
+            .string()
+            .describe(
+              "The name of the component to add (e.g. 'button', 'switch', 'combobox', 'dialog')",
+            ),
+        }),
+      },
+      async ({ name }) => {
+        try {
+          const compDir = path.join(getComponentsDir(), name);
+          await fs.access(compDir);
+
+          const regPath = path.join(getRegistryDir(), `${name}.json`);
+          let registryManifest = null;
+          try {
+            const manifestContent = await fs.readFile(regPath, "utf-8");
+            registryManifest = JSON.parse(manifestContent);
+          } catch {
+            // Manifest might not exist
+          }
+
+          const response = {
+            component: name,
+            cliCommand: `npx shadcn@latest add @adn-ui/${name}`,
+            directUrlCommand: `npx shadcn@latest add https://ui.awaiden.com/r/${name}.json`,
+            registryUrl: `https://ui.awaiden.com/r/${name}.json`,
+            importPath: `@/components/ui/${name}`,
+            manifest: registryManifest,
+            instructions: [
+              `Run \`npx shadcn@latest add @adn-ui/${name}\` to install the component files into your project.`,
+              `Ensure your project has initialized shadcn CLI and added @adn-ui namespace in components.json.`,
+              `Import components from '@/components/ui/${name}'.`,
+            ],
+          };
+
+          return {
+            content: [
+              {
+                type: "text",
+                text: JSON.stringify(response, null, 2),
+              },
+            ],
+          };
+        } catch (error) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: `Error adding component '${name}': Component '${name}' not found. ${(error as Error).message}`,
+              },
+            ],
+            isError: true,
+          };
+        }
       },
     );
   },
