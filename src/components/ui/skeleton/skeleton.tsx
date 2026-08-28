@@ -2,7 +2,7 @@
 
 import "./skeleton.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { SkeletonContext, useSkeletonContext } from "./skeleton.context";
 import { skeletonVariants, type SkeletonVariants } from "./skeleton.variants";

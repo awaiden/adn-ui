@@ -3,7 +3,7 @@
 import "./separator.css";
 import { Separator as BaseSeparator } from "@base-ui/react/separator";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { separatorVariants, type SeparatorVariants } from "./separator.variants";
 

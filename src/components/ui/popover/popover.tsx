@@ -3,7 +3,7 @@
 import "./popover.css";
 import { Popover as BasePopover } from "@base-ui/react/popover";
 import React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { PopoverContext, usePopoverContext } from "./popover.context";
 import { popoverVariants, type PopoverVariants } from "./popover.variants";

@@ -1,8 +1,9 @@
 "use client";
 
 import "./pagination.css";
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { PaginationContext, usePaginationContext } from "./pagination.context";
 import { paginationVariants, type PaginationVariants } from "./pagination.variants";
@@ -77,9 +78,7 @@ export const PaginationPrevious = ({
   >
     {children ?? (
       <>
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
+        <ChevronLeft className="h-4 w-4" />
         <span>Previous</span>
       </>
     )}
@@ -101,9 +100,7 @@ export const PaginationNext = ({
     {children ?? (
       <>
         <span>Next</span>
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M9 18l6-6-6-6" />
-        </svg>
+        <ChevronRight className="h-4 w-4" />
       </>
     )}
   </PaginationLink>
@@ -123,13 +120,7 @@ export const PaginationEllipsis = ({
       className={cn(slots.ellipsis(), className)}
       {...props}
     >
-      {children ?? (
-        <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="1.5" />
-          <circle cx="6" cy="12" r="1.5" />
-          <circle cx="18" cy="12" r="1.5" />
-        </svg>
-      )}
+      {children ?? <MoreHorizontal className="h-4 w-4" />}
       <span className="sr-only">More pages</span>
     </span>
   );

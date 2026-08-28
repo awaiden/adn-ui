@@ -3,7 +3,7 @@
 import "./tooltip.css";
 import { Tooltip as BaseTooltip } from "@base-ui/react/tooltip";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { TooltipContext, useTooltipContext } from "./tooltip.context";
 import { tooltipVariants, type TooltipVariants } from "./tooltip.variants";

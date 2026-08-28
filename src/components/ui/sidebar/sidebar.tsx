@@ -1,8 +1,9 @@
 "use client";
 
 import "./sidebar.css";
+import { PanelLeft } from "lucide-react";
 import React, { useState } from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { SidebarContext, useSidebar } from "./sidebar.context";
 import { sidebarVariants, type SidebarVariants } from "./sidebar.variants";
@@ -152,11 +153,7 @@ export const SidebarTrigger = ({ className, children, onClick, ...props }: Sideb
       }}
       {...props}
     >
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      )}
+      {children ?? <PanelLeft className="h-4 w-4" />}
     </button>
   );
 };

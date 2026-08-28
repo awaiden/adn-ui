@@ -3,7 +3,7 @@
 import "./form.css";
 import { Form as BaseForm } from "@base-ui/react/form";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { FormContext } from "./form.context";
 import { formVariants, type FormVariants } from "./form.variants";

@@ -3,7 +3,7 @@
 import "./fieldset.css";
 import { Fieldset as BaseFieldset } from "@base-ui/react/fieldset";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { FieldsetContext, useFieldsetContext } from "./fieldset.context";
 import { fieldsetVariants, type FieldsetVariants } from "./fieldset.variants";
@@ -27,4 +27,11 @@ export type FieldsetLegendProps = React.ComponentProps<typeof BaseFieldset.Legen
 export const FieldsetLegend = ({ className, ...props }: FieldsetLegendProps) => {
   const { slots } = useFieldsetContext();
   return <BaseFieldset.Legend className={cn(slots.legend(), className)} {...props} />;
+};
+
+export type FieldsetDescriptionProps = React.ComponentProps<"p">;
+
+export const FieldsetDescription = ({ className, ...props }: FieldsetDescriptionProps) => {
+  const { slots } = useFieldsetContext();
+  return <p className={cn(slots.description(), className)} {...props} />;
 };

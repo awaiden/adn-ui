@@ -3,7 +3,7 @@
 import "./autocomplete.css";
 import { Autocomplete as BaseAutocomplete } from "@base-ui/react/autocomplete";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { AutocompleteContext, useAutocompleteContext } from "./autocomplete.context";
 import { autocompleteVariants, type AutocompleteVariants } from "./autocomplete.variants";

@@ -9,3 +9,7 @@
 .fieldset__legend {
   @apply border-border text-foreground mb-1 border-b pb-1 text-base font-semibold;
 }
+
+.fieldset__description {
+  @apply text-muted-foreground text-xs;
+}

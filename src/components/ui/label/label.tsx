@@ -2,7 +2,7 @@
 
 import "./label.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { labelVariants, type LabelVariants } from "./label.variants";
 

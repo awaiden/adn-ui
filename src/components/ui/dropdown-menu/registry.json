@@ -2,26 +2,26 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "menu",
+      "name": "dropdown-menu",
       "type": "registry:ui",
-      "title": "Menu",
+      "title": "Dropdown Menu",
       "description": "A dropdown menu displaying a list of actions with keyboard navigation.",
       "dependencies": ["@base-ui/react", "tailwind-variants"],
       "files": [
         {
-          "path": "menu.tsx",
+          "path": "dropdown-menu.tsx",
           "type": "registry:ui"
         },
         {
-          "path": "menu.variants.ts",
+          "path": "dropdown-menu.variants.ts",
           "type": "registry:ui"
         },
         {
-          "path": "menu.context.ts",
+          "path": "dropdown-menu.context.ts",
           "type": "registry:ui"
         },
         {
-          "path": "menu.css",
+          "path": "dropdown-menu.css",
           "type": "registry:ui"
         },
         {

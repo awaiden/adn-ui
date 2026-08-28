@@ -3,7 +3,7 @@
 import "./tabs.css";
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { TabsContext, useTabsContext } from "./tabs.context";
 import { tabsVariants, type TabsVariants } from "./tabs.variants";

@@ -3,7 +3,7 @@
 import "./otp-field.css";
 import { OTPField as BaseOTPField } from "@base-ui/react/otp-field";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { OTPFieldContext, useOTPFieldContext } from "./otp-field.context";
 import { otpFieldVariants, type OTPFieldVariants } from "./otp-field.variants";

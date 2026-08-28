@@ -3,7 +3,7 @@
 import "./scroll-area.css";
 import { ScrollArea as BaseScrollArea } from "@base-ui/react/scroll-area";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ScrollAreaContext, useScrollAreaContext } from "./scroll-area.context";
 import { scrollAreaVariants, type ScrollAreaVariants } from "./scroll-area.variants";

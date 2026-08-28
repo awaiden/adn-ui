@@ -3,7 +3,7 @@
 import "./preview-card.css";
 import { PreviewCard as BasePreviewCard } from "@base-ui/react/preview-card";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { PreviewCardContext, usePreviewCardContext } from "./preview-card.context";
 import { previewCardVariants, type PreviewCardVariants } from "./preview-card.variants";

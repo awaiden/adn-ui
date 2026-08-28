@@ -2,8 +2,9 @@
 
 import "./accordion.css";
 import { Accordion as BaseAccordion } from "@base-ui/react/accordion";
+import { ChevronDown } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { AccordionContext, useAccordionContext } from "./accordion.context";
 import { accordionVariants, type AccordionVariants } from "./accordion.variants";
@@ -51,17 +52,7 @@ export const AccordionTrigger = ({
     <BaseAccordion.Trigger className={cn(slots.trigger(), className)} {...props}>
       {children}
       {!hideChevron && (
-        <svg
-          className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-data-panel-open:rotate-180"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="m6 9 6 6 6-6" />
-        </svg>
+        <ChevronDown className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-data-panel-open:rotate-180" />
       )}
     </BaseAccordion.Trigger>
   );

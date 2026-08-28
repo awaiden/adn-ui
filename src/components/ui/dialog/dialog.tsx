@@ -3,7 +3,7 @@
 import "./dialog.css";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 import React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { DialogContext, useDialogContext } from "./dialog.context";
 import { dialogVariants, type DialogVariants } from "./dialog.variants";

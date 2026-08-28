@@ -46,5 +46,3 @@ export const WithGroup = () => (
     <FieldDescription>Enter your website domain.</FieldDescription>
   </FieldRoot>
 );
-
-

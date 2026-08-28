@@ -2,8 +2,9 @@
 
 import "./combobox.css";
 import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
+import { Check, ChevronsUpDown, X } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ComboboxContext, useComboboxContext } from "./combobox.context";
 import { comboboxVariants, type ComboboxVariants } from "./combobox.variants";
@@ -53,11 +54,7 @@ export const ComboboxTrigger = ({ children, className, ...props }: ComboboxTrigg
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.Trigger className={cn(slots.trigger(), className)} {...props}>
-      {children ?? (
-        <svg className="h-4 w-4 fill-current" viewBox="0 0 16 16">
-          <path d="M12 6H4l4 4.5z" />
-        </svg>
-      )}
+      {children ?? <ChevronsUpDown className="h-4 w-4" />}
     </BaseCombobox.Trigger>
   );
 };
@@ -68,11 +65,7 @@ export const ComboboxClear = ({ children, className, ...props }: ComboboxClearPr
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.Clear className={cn(slots.clear(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3.5 w-3.5 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M18 6L6 18M6 6l12 12" />
-        </svg>
-      )}
+      {children ?? <X className="h-3.5 w-3.5" />}
     </BaseCombobox.Clear>
   );
 };
@@ -97,11 +90,7 @@ export const ComboboxChipRemove = ({ children, className, ...props }: ComboboxCh
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.ChipRemove className={cn(slots.chipRemove(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3 w-3 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M18 6L6 18M6 6l12 12" />
-        </svg>
-      )}
+      {children ?? <X className="h-3 w-3" />}
     </BaseCombobox.ChipRemove>
   );
 };
@@ -166,11 +155,7 @@ export const ComboboxItemIndicator = ({
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.ItemIndicator className={cn(slots.itemIndicator(), className)} {...props}>
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      )}
+      {children ?? <Check className="h-4 w-4" />}
     </BaseCombobox.ItemIndicator>
   );
 };

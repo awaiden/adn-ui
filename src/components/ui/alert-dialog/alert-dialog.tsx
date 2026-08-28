@@ -3,7 +3,7 @@
 import "./alert-dialog.css";
 import { AlertDialog as BaseAlertDialog } from "@base-ui/react/alert-dialog";
 import React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { AlertDialogContext, useAlertDialogContext } from "./alert-dialog.context";
 import { alertDialogVariants, type AlertDialogVariants } from "./alert-dialog.variants";

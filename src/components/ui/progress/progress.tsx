@@ -3,7 +3,7 @@
 import "./progress.css";
 import { Progress as BaseProgress } from "@base-ui/react/progress";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ProgressContext, useProgressContext } from "./progress.context";
 import { progressVariants, type ProgressVariants } from "./progress.variants";

@@ -3,7 +3,7 @@
 import "./switch.css";
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { SwitchContext, useSwitchContext } from "./switch.context";
 import { switchVariants, type SwitchVariants } from "./switch.variants";

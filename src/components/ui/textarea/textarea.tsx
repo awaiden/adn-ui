@@ -2,7 +2,7 @@
 
 import "./textarea.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { textareaVariants, type TextareaVariants } from "./textarea.variants";
 

@@ -2,8 +2,9 @@
 
 import "./number-field.css";
 import { NumberField as BaseNumberField } from "@base-ui/react/number-field";
+import { Minus, Plus } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { NumberFieldContext, useNumberFieldContext } from "./number-field.context";
 import { numberFieldVariants, type NumberFieldVariants } from "./number-field.variants";
@@ -52,11 +53,7 @@ export const NumberFieldDecrement = ({
   const { slots } = useNumberFieldContext();
   return (
     <BaseNumberField.Decrement className={cn(slots.decrement(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3.5 w-3.5 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M5 12h14" />
-        </svg>
-      )}
+      {children ?? <Minus className="h-3.5 w-3.5" />}
     </BaseNumberField.Decrement>
   );
 };
@@ -71,11 +68,7 @@ export const NumberFieldIncrement = ({
   const { slots } = useNumberFieldContext();
   return (
     <BaseNumberField.Increment className={cn(slots.increment(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3.5 w-3.5 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-      )}
+      {children ?? <Plus className="h-3.5 w-3.5" />}
     </BaseNumberField.Increment>
   );
 };

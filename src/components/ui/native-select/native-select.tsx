@@ -1,8 +1,9 @@
 "use client";
 
 import "./native-select.css";
+import { ChevronsUpDown } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { NativeSelectContext, useNativeSelectContext } from "./native-select.context";
 import { nativeSelectVariants, type NativeSelectVariants } from "./native-select.variants";
@@ -30,16 +31,7 @@ export const NativeSelectRoot = ({
           {children}
         </select>
         <span className={slots.icon()}>
-          {icon ?? (
-            <svg
-              className="h-full w-full stroke-current"
-              fill="none"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          )}
+          {icon ?? <ChevronsUpDown className="h-4 w-4" />}
         </span>
       </div>
     </NativeSelectContext.Provider>

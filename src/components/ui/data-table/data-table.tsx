@@ -1,8 +1,18 @@
 "use client";
 
 import "./data-table.css";
+import {
+  ArrowDown,
+  ArrowUp,
+  ArrowUpDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+  Search,
+} from "lucide-react";
 import React, { useMemo, useState } from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { Checkbox } from "../checkbox";
 import { TableBody, TableCell, TableHead, TableHeader, TableRoot, TableRow } from "../table";
@@ -58,16 +68,7 @@ export const DataTableSearch = ({
 
   return (
     <div className={cn(slots.search(), className)}>
-      <svg
-        className="text-muted-foreground h-4 w-4 shrink-0"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" />
-      </svg>
+      <Search className="text-muted-foreground h-4 w-4 shrink-0" />
       <input placeholder={placeholder} onChange={handleChange} {...props} />
     </div>
   );
@@ -95,26 +96,9 @@ export const DataTableColumnHeader = ({
       {...props}
     >
       {children}
-      {sortDirection === "asc" && (
-        <svg className="h-3.5 w-3.5 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M12 19V5M5 12l7-7 7 7" />
-        </svg>
-      )}
-      {sortDirection === "desc" && (
-        <svg className="h-3.5 w-3.5 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M12 5v14M5 12l7 7 7-7" />
-        </svg>
-      )}
-      {sortDirection === null && (
-        <svg
-          className="h-3.5 w-3.5 stroke-current opacity-40"
-          fill="none"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="m7 15 5 5 5-5M7 9l5-5 5 5" />
-        </svg>
-      )}
+      {sortDirection === "asc" && <ArrowUp className="h-3.5 w-3.5" />}
+      {sortDirection === "desc" && <ArrowDown className="h-3.5 w-3.5" />}
+      {sortDirection === null && <ArrowUpDown className="h-3.5 w-3.5 opacity-40" />}
     </button>
   );
 };
@@ -164,7 +148,7 @@ export const DataTablePagination = ({
           onClick={() => onPageChange(0)}
           title="First page"
         >
-          «
+          <ChevronsLeft className="h-4 w-4" />
         </button>
         <button
           type="button"
@@ -173,7 +157,7 @@ export const DataTablePagination = ({
           onClick={() => onPageChange(pageIndex - 1)}
           title="Previous page"
         >
-          ‹
+          <ChevronLeft className="h-4 w-4" />
         </button>
         <span className="px-2 text-xs">
           Page {pageIndex + 1} of {Math.max(pageCount, 1)}
@@ -185,7 +169,7 @@ export const DataTablePagination = ({
           onClick={() => onPageChange(pageIndex + 1)}
           title="Next page"
         >
-          ›
+          <ChevronRight className="h-4 w-4" />
         </button>
         <button
           type="button"
@@ -194,7 +178,7 @@ export const DataTablePagination = ({
           onClick={() => onPageChange(pageCount - 1)}
           title="Last page"
         >
-          »
+          <ChevronsRight className="h-4 w-4" />
         </button>
       </div>
     </div>

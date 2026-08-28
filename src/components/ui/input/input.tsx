@@ -3,7 +3,7 @@
 import "./input.css";
 import { Input as BaseInput } from "@base-ui/react/input";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { inputVariants, type InputVariants } from "./input.variants";
 

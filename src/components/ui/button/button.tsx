@@ -2,7 +2,7 @@
 
 import "./button.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { buttonVariants, type ButtonVariants } from "./button.variants";
 

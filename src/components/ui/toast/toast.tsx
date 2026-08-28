@@ -2,8 +2,9 @@
 
 import "./toast.css";
 import { Toast as BaseToast } from "@base-ui/react/toast";
+import { X } from "lucide-react";
 import React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ToastContext, useToastContext } from "./toast.context";
 import { toastVariants, type ToastVariants } from "./toast.variants";
@@ -114,11 +115,7 @@ export const ToastClose = ({ className, children, ...props }: ToastCloseProps) =
   const { slots } = useToastContext();
   return (
     <BaseToast.Close className={cn(slots.close(), className)} {...props}>
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M18 6L6 18M6 6l12 12" />
-        </svg>
-      )}
+      {children ?? <X className="h-4 w-4" />}
     </BaseToast.Close>
   );
 };

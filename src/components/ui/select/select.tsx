@@ -2,8 +2,9 @@
 
 import "./select.css";
 import { Select as BaseSelect } from "@base-ui/react/select";
+import { Check, ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { SelectContext, useSelectContext } from "./select.context";
 import { selectVariants, type SelectVariants } from "./select.variants";
@@ -47,11 +48,7 @@ export const SelectIcon = ({ children, className, ...props }: SelectIconProps) =
   const { slots } = useSelectContext();
   return (
     <BaseSelect.Icon className={cn(slots.icon(), className)} {...props}>
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M7 10l5 5 5-5" />
-        </svg>
-      )}
+      {children ?? <ChevronsUpDown className="h-4 w-4" />}
     </BaseSelect.Icon>
   );
 };
@@ -124,11 +121,7 @@ export const SelectItemIndicator = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ItemIndicator className={cn(slots.itemIndicator(), className)} {...props}>
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      )}
+      {children ?? <Check className="h-4 w-4" />}
     </BaseSelect.ItemIndicator>
   );
 };
@@ -143,11 +136,7 @@ export const SelectScrollUpArrow = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ScrollUpArrow className={cn(slots.scrollUpArrow(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3 w-3 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M18 15l-6-6-6 6" />
-        </svg>
-      )}
+      {children ?? <ChevronUp className="h-3 w-3" />}
     </BaseSelect.ScrollUpArrow>
   );
 };
@@ -162,11 +151,7 @@ export const SelectScrollDownArrow = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ScrollDownArrow className={cn(slots.scrollDownArrow(), className)} {...props}>
-      {children ?? (
-        <svg className="h-3 w-3 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      )}
+      {children ?? <ChevronDown className="h-3 w-3" />}
     </BaseSelect.ScrollDownArrow>
   );
 };

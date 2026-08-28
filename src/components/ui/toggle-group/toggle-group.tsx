@@ -3,7 +3,7 @@
 import "./toggle-group.css";
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ToggleRoot } from "../toggle";
 import { ToggleGroupContext } from "./toggle-group.context";

@@ -4,7 +4,7 @@ import "./radio.css";
 import { Radio as BaseRadio } from "@base-ui/react/radio";
 import { RadioGroup as BaseRadioGroup } from "@base-ui/react/radio-group";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { RadioContext, useRadioContext } from "./radio.context";
 import { radioVariants, type RadioVariants } from "./radio.variants";

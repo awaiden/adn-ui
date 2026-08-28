@@ -25,7 +25,7 @@
     },
     {
       "path": "src/components/ui/switch/switch.css",
-      "content": ".switch {\n  @apply focus-visible:outline-ring data-checked:bg-primary bg-input data-invalid:border-destructive inline-flex cursor-pointer items-center rounded-full border-2 border-transparent p-0.5 transition-colors select-none focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;\n}\n\n.switch--sm {\n  @apply h-4 w-7;\n}\n\n.switch--md {\n  @apply h-6 w-11;\n}\n\n.switch--lg {\n  @apply h-7 w-14;\n}\n\n.switch__thumb {\n  @apply bg-background pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-checked:translate-x-full data-unchecked:translate-x-0;\n}\n\n.switch__thumb--sm {\n  @apply size-3 data-checked:translate-x-3;\n}\n\n.switch__thumb--md {\n  @apply size-5 data-checked:translate-x-5;\n}\n\n.switch__thumb--lg {\n  @apply size-6 data-checked:translate-x-7;\n}\n",
+      "content": ".switch {\n  @apply focus-visible:outline-ring data-checked:bg-primary bg-input data-invalid:border-destructive inline-flex cursor-pointer items-center rounded-full border-2 border-transparent transition-colors select-none focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;\n}\n\n.switch--sm {\n  @apply h-4 w-7;\n}\n\n.switch--md {\n  @apply h-6 w-11;\n}\n\n.switch--lg {\n  @apply h-7 w-14;\n}\n\n.switch__thumb {\n  @apply bg-background pointer-events-none block rounded-full shadow-lg ring-0 transition-transform data-unchecked:translate-x-0;\n}\n\n.switch__thumb--sm {\n  @apply size-3 data-checked:translate-x-3;\n}\n\n.switch__thumb--md {\n  @apply size-5 data-checked:translate-x-5;\n}\n\n.switch__thumb--lg {\n  @apply size-6 data-checked:translate-x-7;\n}\n",
       "type": "registry:ui"
     },
     {

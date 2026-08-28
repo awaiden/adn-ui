@@ -3,7 +3,7 @@
 import "./drawer.css";
 import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
 import React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { DrawerContext, useDrawerContext } from "./drawer.context";
 import { drawerVariants, type DrawerVariants } from "./drawer.variants";

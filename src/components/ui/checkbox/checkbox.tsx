@@ -2,8 +2,9 @@
 
 import "./checkbox.css";
 import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox";
+import { Check } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { CheckboxContext, useCheckboxContext } from "./checkbox.context";
 import { checkboxVariants, type CheckboxVariants } from "./checkbox.variants";
@@ -28,18 +29,7 @@ export const CheckboxIndicator = ({ children, className, ...props }: CheckboxInd
   const { slots } = useCheckboxContext();
   return (
     <BaseCheckbox.Indicator className={cn(slots.indicator(), className)} {...props}>
-      {children ?? (
-        <svg
-          className="h-full w-full stroke-current"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="3"
-          viewBox="0 0 24 24"
-        >
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      )}
+      {children ?? <Check className="h-full w-full stroke-[3]" />}
     </BaseCheckbox.Indicator>
   );
 };

@@ -2,7 +2,7 @@
 
 import "./card.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { CardContext, useCardContext } from "./card.context";
 import { cardVariants, type CardVariants } from "./card.variants";

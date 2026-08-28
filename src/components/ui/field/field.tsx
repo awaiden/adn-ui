@@ -3,20 +3,36 @@
 import "./field.css";
 import { Field as BaseField } from "@base-ui/react/field";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { FieldContext, useFieldContext } from "./field.context";
 import { fieldVariants, type FieldVariants } from "./field.variants";
 
-export type FieldProps = FieldVariants & React.ComponentProps<typeof BaseField.Root>;
+export type FieldProps = FieldVariants &
+  React.ComponentProps<typeof BaseField.Root> & {
+    label?: React.ReactNode;
+    description?: React.ReactNode;
+    error?: React.ReactNode;
+  };
 
-export const FieldRoot = ({ children, className, size, ...props }: FieldProps) => {
+export const FieldRoot = ({
+  children,
+  className,
+  size,
+  label,
+  description,
+  error,
+  ...props
+}: FieldProps) => {
   const slots = fieldVariants({ size });
 
   return (
     <FieldContext.Provider value={{ slots }}>
       <BaseField.Root className={cn(slots.root(), className)} {...props}>
+        {label && <FieldLabel>{label}</FieldLabel>}
         {children}
+        {description && <FieldDescription>{description}</FieldDescription>}
+        {error && <FieldError>{error}</FieldError>}
       </BaseField.Root>
     </FieldContext.Provider>
   );

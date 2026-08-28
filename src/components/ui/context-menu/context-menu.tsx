@@ -2,8 +2,9 @@
 
 import "./context-menu.css";
 import { ContextMenu as BaseContextMenu } from "@base-ui/react/context-menu";
+import { Check, ChevronRight, Circle } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { ContextMenuContext, useContextMenuContext } from "./context-menu.context";
 import { contextMenuVariants, type ContextMenuVariants } from "./context-menu.variants";
@@ -81,15 +82,7 @@ export const ContextMenuSubmenuTrigger = ({
   return (
     <BaseContextMenu.SubmenuTrigger className={cn(slots.submenuTrigger(), className)} {...props}>
       {children}
-      <svg
-        className="text-muted-foreground h-4 w-4 shrink-0"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
+      <ChevronRight className="text-muted-foreground h-4 w-4 shrink-0" />
     </BaseContextMenu.SubmenuTrigger>
   );
 };
@@ -134,11 +127,7 @@ export const ContextMenuCheckboxItemIndicator = ({
       className={cn(slots.checkboxItemIndicator(), className)}
       {...props}
     >
-      {children ?? (
-        <svg className="h-4 w-4 stroke-current" fill="none" strokeWidth="2" viewBox="0 0 24 24">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      )}
+      {children ?? <Check className="h-4 w-4" />}
     </BaseContextMenu.CheckboxItemIndicator>
   );
 };
@@ -172,11 +161,7 @@ export const ContextMenuRadioItemIndicator = ({
       className={cn(slots.radioItemIndicator(), className)}
       {...props}
     >
-      {children ?? (
-        <svg className="h-2 w-2 fill-current" viewBox="0 0 8 8">
-          <circle cx="4" cy="4" r="4" />
-        </svg>
-      )}
+      {children ?? <Circle className="h-2 w-2 fill-current" />}
     </BaseContextMenu.RadioItemIndicator>
   );
 };

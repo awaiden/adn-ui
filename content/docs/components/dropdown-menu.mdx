@@ -1,0 +1,70 @@
+---
+title: Dropdown Menu
+subtitle: A list of actions in a dropdown, enhanced with keyboard navigation.
+description: A high-quality, styled React menu component built with @base-ui/react that displays a list of actions in a dropdown with keyboard navigation.
+---
+
+import { DropdownMenuDemo } from "@/components/ui/dropdown-menu/dropdown-menu-demo";
+
+The `DropdownMenu` component displays a list of interactive options or commands triggered by a button control.
+
+## Usage
+
+```tsx
+import { DropdownMenu } from "@/components/ui/dropdown-menu";
+
+export function ExampleDropdownMenu() {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>Options</DropdownMenu.Trigger>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Positioner sideOffset={4}>
+          <DropdownMenu.Popup>
+            <DropdownMenu.Item>Add to Library</DropdownMenu.Item>
+            <DropdownMenu.Item>Add to Playlist</DropdownMenu.Item>
+            <DropdownMenu.Separator />
+            <DropdownMenu.Item>Favorite</DropdownMenu.Item>
+          </DropdownMenu.Popup>
+        </DropdownMenu.Positioner>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
+  );
+}
+```
+
+## Preview
+
+<div className="p-4 border rounded-xl my-4">
+  <DropdownMenuDemo />
+</div>
+
+## Anatomy
+
+```tsx
+import { DropdownMenu } from "@/components/ui/dropdown-menu";
+
+<DropdownMenu.Root>
+  <DropdownMenu.Trigger />
+  <DropdownMenu.Portal>
+    <DropdownMenu.Positioner>
+      <DropdownMenu.Popup>
+        <DropdownMenu.Item />
+        <DropdownMenu.Separator />
+        <DropdownMenu.SubmenuRoot>
+          <DropdownMenu.SubmenuTrigger />
+        </DropdownMenu.SubmenuRoot>
+      </DropdownMenu.Popup>
+    </DropdownMenu.Positioner>
+  </DropdownMenu.Portal>
+</DropdownMenu.Root>;
+```
+
+## API Reference
+
+### DropdownMenu.Root Props
+
+| Prop           | Type                      | Default     | Description                                   |
+| :------------- | :------------------------ | :---------- | :-------------------------------------------- |
+| `open`         | `boolean`                 | `undefined` | Controlled open state.                        |
+| `defaultOpen`  | `boolean`                 | `false`     | Initial uncontrolled open state.              |
+| `onOpenChange` | `(open: boolean) => void` | `undefined` | Event handler called when menu state changes. |

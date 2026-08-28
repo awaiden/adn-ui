@@ -3,7 +3,7 @@
 import "./toggle.css";
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { toggleVariants, type ToggleVariants } from "./toggle.variants";
 

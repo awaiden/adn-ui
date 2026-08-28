@@ -2,8 +2,9 @@
 
 import "./command.css";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
+import { Search } from "lucide-react";
 import React, { useState } from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { CommandContext, useCommandContext } from "./command.context";
 import { commandVariants, type CommandVariants } from "./command.variants";
@@ -79,16 +80,7 @@ export const CommandInput = ({ className, value, onValueChange, ...props }: Comm
 
   return (
     <div className={slots.inputWrapper()}>
-      <svg
-        className="mr-2.5 h-4 w-4 shrink-0 text-muted-foreground"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-      >
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" />
-      </svg>
+      <Search className="mr-2.5 h-4 w-4 shrink-0 text-muted-foreground" />
       <input
         className={cn(slots.input(), className)}
         value={value ?? search}

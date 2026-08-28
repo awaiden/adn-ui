@@ -2,7 +2,7 @@
 
 import "./breadcrumb.css";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { BreadcrumbContext, useBreadcrumbContext } from "./breadcrumb.context";
 import { breadcrumbVariants, type BreadcrumbVariants } from "./breadcrumb.variants";

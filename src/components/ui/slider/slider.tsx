@@ -3,7 +3,7 @@
 import "./slider.css";
 import { Slider as BaseSlider } from "@base-ui/react/slider";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { SliderContext, useSliderContext } from "./slider.context";
 import { sliderVariants, type SliderVariants } from "./slider.variants";

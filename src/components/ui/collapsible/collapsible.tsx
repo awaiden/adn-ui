@@ -2,8 +2,9 @@
 
 import "./collapsible.css";
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
+import { ChevronRight } from "lucide-react";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { CollapsibleContext, useCollapsibleContext } from "./collapsible.context";
 import { collapsibleVariants, type CollapsibleVariants } from "./collapsible.variants";
@@ -38,17 +39,7 @@ export const CollapsibleTrigger = ({
     <BaseCollapsible.Trigger className={cn(slots.trigger(), className)} {...props}>
       {children}
       {!hideChevron && (
-        <svg
-          className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-150 group-data-panel-open:rotate-90"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg>
+        <ChevronRight className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-150 group-data-panel-open:rotate-90" />
       )}
     </BaseCollapsible.Trigger>
   );

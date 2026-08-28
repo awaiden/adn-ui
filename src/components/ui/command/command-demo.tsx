@@ -1,6 +1,6 @@
 "use client";
 
-import { Calculator, Calendar, CreditCard, Settings, User, Smile } from "lucide-react";
+import { Calculator, Calendar, CreditCard, Search, Settings, User, Smile } from "lucide-react";
 import React, { useState } from "react";
 
 import {
@@ -25,10 +25,7 @@ export function CommandDemo() {
         className="flex items-center justify-between w-full px-4 py-2 text-sm border rounded-lg border-border bg-background text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors shadow-xs"
       >
         <span className="flex items-center gap-2">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.35-4.35" />
-          </svg>
+          <Search className="w-4 h-4" />
           Search commands...
         </span>
         <kbd className="px-1.5 py-0.5 text-xs font-mono rounded bg-muted border border-border">⌘K</kbd>

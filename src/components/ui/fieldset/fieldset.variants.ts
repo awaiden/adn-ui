@@ -6,6 +6,7 @@ export const fieldsetVariants = tv({
   slots: {
     root: "fieldset",
     legend: "fieldset__legend",
+    description: "fieldset__description",
   },
   variants: {
     variant: {

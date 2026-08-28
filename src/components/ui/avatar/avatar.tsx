@@ -3,7 +3,7 @@
 import "./avatar.css";
 import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
 import type React from "react";
-import { cn } from "tailwind-variants";
+import { cn } from "@/lib/cn";
 
 import { AvatarContext, useAvatarContext } from "./avatar.context";
 import { avatarVariants, type AvatarVariants } from "./avatar.variants";
