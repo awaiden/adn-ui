@@ -1,10 +1,10 @@
 # AGENTS.md
 
-> Autonomous AI Agent Guide for **adn-ui** — High-quality React 19 UI component library built with `@base-ui/react` primitives and Tailwind CSS v4.
+> Autonomous AI Agent Guide for **adn-ui** — A shadcn-compatible component registry built with `@base-ui/react` primitives and Tailwind CSS v4.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 **adn-ui** is an open-source, framework-agnostic collection of accessible, copy-and-paste UI components built for **React 19**, styled using **Tailwind CSS v4** and OKLCH color design tokens.
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 🏗️ Architecture & Component Directory Structure
+## Architecture & Component Directory Structure
 
 Every component in `src/components/ui/` follows a strict **Modular Single-File Slots** pattern:
 
@@ -40,7 +40,7 @@ Corresponding JSON registry manifests are maintained under:
 
 ---
 
-## 🤖 Model Context Protocol (MCP) Server
+## Model Context Protocol (MCP) Server
 
 **adn-ui** provides a built-in MCP server at `/api/mcp/[transport]` powered by `@modelcontextprotocol/sdk` and `mcp-handler`.
 
@@ -58,7 +58,7 @@ Corresponding JSON registry manifests are maintained under:
 
 ---
 
-## 📐 Coding & Style Standards for Agents
+## Coding & Style Standards for Agents
 
 ### 1. Icon Rules
 - **ALWAYS** use `lucide-react` icons (e.g., `ChevronDown`, `ChevronsUpDown`, `Check`, `Search`, `X`).
@@ -82,7 +82,7 @@ export const Component = ...
 
 ---
 
-## ⚙️ Development Commands & Verification Workflow
+## Development Commands & Verification Workflow
 
 Agents MUST run verification commands after making any codebase changes:
 
@@ -96,7 +96,7 @@ Agents MUST run verification commands after making any codebase changes:
 
 ---
 
-## 📋 Checklist for AI Agents Before Completing Tasks
+## Checklist for AI Agents Before Completing Tasks
 
 - [ ] Ensure all icon dependencies use `lucide-react` components (no `<svg>`).
 - [ ] Maintain modular file structure (`.tsx`, `.variants.ts`, `.css`, `.context.ts`, `index.ts`).

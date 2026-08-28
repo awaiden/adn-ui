@@ -4,7 +4,7 @@ This guide explains how developers and AI agents can install, update, and use th
 
 ---
 
-## 🚀 Quick Start: Installing `adn-ui` Skill
+## Quick Start: Installing `adn-ui` Skill
 
 To equip your AI assistant (Antigravity, Cursor, Claude Code, Windsurf) with full knowledge of `adn-ui` component architecture, Base UI primitives, Tailwind v4 design tokens, and verification workflows, run:
 
@@ -25,7 +25,7 @@ This command automatically downloads the skill files into your project's `.agent
 
 ---
 
-## 🛠️ `npx skills` CLI Commands
+## `npx skills` CLI Commands
 
 | Command | Description |
 | :--- | :--- |
@@ -36,7 +36,7 @@ This command automatically downloads the skill files into your project's `.agent
 
 ---
 
-## 💡 How AI Coding Assistants Use the Installed Skill
+## How AI Coding Assistants Use the Installed Skill
 
 Once installed via `npx skills add awaiden/adn-ui`:
 

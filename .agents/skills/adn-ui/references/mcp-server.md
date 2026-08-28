@@ -4,7 +4,7 @@ The **adn-ui** Model Context Protocol (MCP) server provides a direct API for AI 
 
 ---
 
-## 🛠️ Detailed MCP Tool Specifications
+## Detailed MCP Tool Specifications
 
 ### 1. `init_adn_ui`
 - **Description**: Returns step-by-step setup instructions, `components.json` namespace registry configuration, and PostCSS/Vite auto-reference setup code.

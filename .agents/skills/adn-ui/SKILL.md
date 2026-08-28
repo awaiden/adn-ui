@@ -1,15 +1,15 @@
 ---
 name: adn-ui
-description: Comprehensive guide, component architecture standards, development workflows, step-by-step component creation procedures, and MCP server reference for adn-ui component library development.
+description: Comprehensive guide, component architecture standards, development workflows, step-by-step component creation procedures, and MCP server reference for adn-ui shadcn registry development.
 ---
 
 # adn-ui Autonomous AI Agent Guide & Skill Specification
 
-**adn-ui** is an open-source, framework-agnostic collection of accessible, copy-and-paste UI components built for **React 19**, styled using **Tailwind CSS v4** and OKLCH color design tokens, powered by **@base-ui/react** W3C ARIA accessible primitives.
+**adn-ui** is a shadcn-compatible component registry built for **React 19**, styled using **Tailwind CSS v4** and OKLCH color design tokens, powered by **@base-ui/react** W3C ARIA accessible primitives.
 
 ---
 
-## 📌 Architecture & File Directory Structure
+## Architecture & File Directory Structure
 
 Every component in `src/components/ui/<component-name>/` follows a strict **Modular Single-File Slots** pattern:
 
@@ -31,14 +31,14 @@ Corresponding JSON registry manifests are maintained under:
 
 ---
 
-## 📐 Strict Coding & Styling Guidelines
+## Strict Coding & Styling Guidelines
 
 ### 1. Icon Rules
 - **ALWAYS** use `lucide-react` icons (e.g., `ChevronDown`, `ChevronsUpDown`, `Check`, `Search`, `X`).
 - **NEVER** write raw inline `<svg>` markup inside component TSX files or demo files.
 - **NO Tailwind utility classes in TSX files for icons/SVGs**:
-  - ❌ Incorrect: `<Check className="h-4 w-4 text-primary" />`
-  - ✅ Correct: `<Check />` rendered inside a slot container, styled in `<component-name>.css`:
+  - Incorrect: `<Check className="h-4 w-4 text-primary" />`
+  - Correct: `<Check />` rendered inside a slot container, styled in `<component-name>.css`:
     ```css
     .select__icon svg,
     .checkbox__indicator svg {
@@ -63,7 +63,7 @@ export const Component = ...
 
 ---
 
-## 🛠️ Step-by-Step Guide: Creating a New Component
+## Step-by-Step Guide: Creating a New Component
 
 When building a new component for `adn-ui`, follow these exact 10 steps:
 
@@ -209,7 +209,7 @@ Create `content/docs/components/<component-name>.mdx` and add entry to `content/
 
 ---
 
-## ⚙️ Development Commands & Verification Workflow
+## Development Commands & Verification Workflow
 
 Agents MUST execute verification commands after modifying codebase files:
 
@@ -223,7 +223,7 @@ Agents MUST execute verification commands after modifying codebase files:
 
 ---
 
-## 🤖 Model Context Protocol (MCP) Server
+## Model Context Protocol (MCP) Server
 
 adn-ui provides a built-in MCP server at `src/app/api/mcp/[transport]/route.ts` offering 7 specialized tools:
 
@@ -237,7 +237,7 @@ adn-ui provides a built-in MCP server at `src/app/api/mcp/[transport]/route.ts` 
 
 ---
 
-## 📋 Checklist for AI Agents Before Completing Tasks
+## Checklist for AI Agents Before Completing Tasks
 
 - [ ] All icons use `lucide-react` components (NO inline `<svg>`).
 - [ ] No inline Tailwind size/color utility classes on icon components in TSX files.
@@ -249,7 +249,7 @@ adn-ui provides a built-in MCP server at `src/app/api/mcp/[transport]/route.ts` 
 
 ---
 
-## 📖 Reference Guides
+## Reference Guides
 
 For deep-dive topics, consult reference files in this skill folder:
 - [Component Architecture Guide](./references/component-architecture.md)

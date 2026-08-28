@@ -503,7 +503,7 @@ export default function HomePage() {
             {/* Brand Column */}
             <div className="md:col-span-2">
               <div className="mb-3 flex items-center gap-2">
-                <div className="bg-primary text-primary-foreground flex h-7 w-7 items-center justify-center rounded-lg font-extrabold text-xs">
+                <div className="bg-primary text-primary-foreground flex h-7 w-7 items-center justify-center rounded-lg text-xs font-extrabold">
                   ADN
                 </div>
                 <span className="text-lg font-bold tracking-tight">adn-ui</span>
@@ -512,7 +512,8 @@ export default function HomePage() {
                 </Badge>
               </div>
               <p className="text-muted-foreground mb-4 max-w-sm text-xs leading-relaxed">
-                High-quality, styled React UI component library built on Base UI primitives and Tailwind CSS v4. Modular, accessible, and AI-ready.
+                A shadcn-compatible component registry built on Base UI primitives and Tailwind CSS
+                v4. Modular, accessible, and AI-ready.
               </p>
               <div className="text-muted-foreground flex items-center gap-3 text-xs">
                 <span>
@@ -521,14 +522,14 @@ export default function HomePage() {
                     href="https://github.com/awaiden"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-foreground hover:underline font-medium"
+                    className="text-foreground font-medium hover:underline"
                   >
                     Halil Aydın
                   </a>
                 </span>
                 <span>•</span>
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="bg-emerald-500 h-2 w-2 animate-pulse rounded-full" />
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
                   MIT License
                 </span>
               </div>
@@ -536,32 +537,47 @@ export default function HomePage() {
 
             {/* Components Column */}
             <div>
-              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+              <h3 className="text-foreground mb-3 text-xs font-semibold tracking-wider uppercase">
                 Components
               </h3>
               <ul className="text-muted-foreground space-y-2 text-xs">
                 <li>
-                  <Link href="/docs/components/button" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/button"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Button & Button Group
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/components/dialog" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/dialog"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Dialog Modal
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/components/drawer" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/drawer"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Multi-Directional Drawer
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/components/tabs" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/tabs"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Tabs (4 Variants)
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/components/table" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/table"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Responsive Table
                   </Link>
                 </li>
@@ -570,7 +586,7 @@ export default function HomePage() {
 
             {/* Documentation Column */}
             <div>
-              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+              <h3 className="text-foreground mb-3 text-xs font-semibold tracking-wider uppercase">
                 Resources
               </h3>
               <ul className="text-muted-foreground space-y-2 text-xs">
@@ -580,7 +596,10 @@ export default function HomePage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/docs/components/accordion" className="hover:text-foreground transition-colors">
+                  <Link
+                    href="/docs/components/accordion"
+                    className="hover:text-foreground transition-colors"
+                  >
                     Catalog (35+ Components)
                   </Link>
                 </li>
@@ -609,7 +628,7 @@ export default function HomePage() {
 
             {/* Ecosystem Column */}
             <div>
-              <h3 className="text-foreground mb-3 text-xs font-semibold uppercase tracking-wider">
+              <h3 className="text-foreground mb-3 text-xs font-semibold tracking-wider uppercase">
                 Ecosystem
               </h3>
               <ul className="text-muted-foreground space-y-2 text-xs">
@@ -648,7 +667,10 @@ export default function HomePage() {
           </div>
 
           <div className="border-border/60 text-muted-foreground mt-8 flex flex-col items-center justify-between gap-3 border-t pt-6 text-xs sm:flex-row">
-            <p>© {new Date().getFullYear()} adn-ui by Halil Aydın. Built with Base UI & Tailwind CSS v4.</p>
+            <p>
+              © {new Date().getFullYear()} adn-ui by Halil Aydın. Built with Base UI & Tailwind CSS
+              v4.
+            </p>
             <div className="flex items-center gap-3">
               <a
                 href="https://github.com/awaiden/adn-ui"

@@ -4,7 +4,7 @@ This reference guide provides an exhaustive architectural breakdown of **adn-ui*
 
 ---
 
-## 🏗️ Detailed 7-File Slot Architecture
+## Detailed 7-File Slot Architecture
 
 ### 1. Context (`<component-name>.context.ts`)
 React Context distributes slot generator functions down compound component trees without prop drilling.

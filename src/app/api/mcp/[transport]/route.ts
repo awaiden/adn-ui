@@ -15,7 +15,7 @@ const handler = createMcpHandler(
       "list_components",
       {
         description:
-          "List all UI components available in the adn-ui component library along with their file structures.",
+          "List all UI components available in the adn-ui shadcn-compatible component registry along with their file structures.",
       },
       async () => {
         try {
