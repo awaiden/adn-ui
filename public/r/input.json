@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/ui/input/input.tsx",
-      "content": "\"use client\";\n\nimport \"./input.css\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentPropsWithoutRef<\"input\">, \"size\">;\n\nexport const InputRoot = ({ className, size, variant, ...props }: InputProps) => {\n  const slots = inputVariants({ size, variant });\n\n  return <BaseInput className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Input = InputRoot;\n",
+      "content": "\"use client\";\n\nimport \"./input.css\";\nimport { Input as BaseInput } from \"@base-ui/react/input\";\nimport type React from \"react\";\nimport { cn } from \"@/lib/cn\";\n\nimport { inputVariants, type InputVariants } from \"./input.variants\";\n\nexport type InputProps = InputVariants & Omit<React.ComponentPropsWithoutRef<\"input\">, \"size\">;\n\nexport const InputRoot = ({ className, size, variant, ...props }: InputProps) => {\n  const slots = inputVariants({ size, variant });\n\n  return <BaseInput className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Input = InputRoot;\n",
       "type": "registry:ui"
     },
     {

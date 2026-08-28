@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/textarea/textarea.tsx",
-      "content": "\"use client\";\n\nimport \"./textarea.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\nexport const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {\n  const slots = textareaVariants({ variant, size });\n\n  return <textarea className={cn(slots.root(), className)} {...props} />;\n};\n",
+      "content": "\"use client\";\n\nimport \"./textarea.css\";\nimport type React from \"react\";\nimport { cn } from \"@/lib/cn\";\n\nimport { textareaVariants, type TextareaVariants } from \"./textarea.variants\";\n\nexport type TextareaProps = TextareaVariants & React.TextareaHTMLAttributes<HTMLTextAreaElement>;\n\nexport const TextareaRoot = ({ className, variant, size, ...props }: TextareaProps) => {\n  const slots = textareaVariants({ variant, size });\n\n  return <textarea className={cn(slots.root(), className)} {...props} />;\n};\n",
       "type": "registry:ui"
     },
     {

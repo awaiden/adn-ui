@@ -567,8 +567,8 @@
       "type": "registry:ui"
     },
     {
-      "name": "menu",
-      "title": "Menu",
+      "name": "dropdown-menu",
+      "title": "Dropdown Menu",
       "description": "A dropdown menu displaying a list of actions with keyboard navigation.",
       "dependencies": [
         "@base-ui/react",
@@ -576,23 +576,23 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/menu/menu.tsx",
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.tsx",
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/menu/menu.variants.ts",
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.variants.ts",
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/menu/menu.context.ts",
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.context.ts",
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/menu/menu.css",
+          "path": "src/components/ui/dropdown-menu/dropdown-menu.css",
           "type": "registry:ui"
         },
         {
-          "path": "src/components/ui/menu/index.ts",
+          "path": "src/components/ui/dropdown-menu/index.ts",
           "type": "registry:ui"
         }
       ],

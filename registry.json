@@ -21,7 +21,7 @@
     "src/components/ui/fieldset/registry.json",
     "src/components/ui/form/registry.json",
     "src/components/ui/input/registry.json",
-    "src/components/ui/menu/registry.json",
+    "src/components/ui/dropdown-menu/registry.json",
     "src/components/ui/number-field/registry.json",
     "src/components/ui/otp-field/registry.json",
     "src/components/ui/pagination/registry.json",

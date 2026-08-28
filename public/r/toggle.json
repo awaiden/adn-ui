@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "src/components/ui/toggle/toggle.tsx",
-      "content": "\"use client\";\n\nimport \"./toggle.css\";\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <BaseToggle className={cn(slots.root(), className)} {...props}>\n      {children}\n    </BaseToggle>\n  );\n};\n\nexport const Toggle = ToggleRoot;\n\n",
+      "content": "\"use client\";\n\nimport \"./toggle.css\";\nimport { Toggle as BaseToggle } from \"@base-ui/react/toggle\";\nimport type React from \"react\";\nimport { cn } from \"@/lib/cn\";\n\nimport { toggleVariants, type ToggleVariants } from \"./toggle.variants\";\n\nexport type ToggleProps = ToggleVariants & React.ComponentProps<typeof BaseToggle>;\n\nexport const ToggleRoot = ({ children, className, variant, size, ...props }: ToggleProps) => {\n  const slots = toggleVariants({ variant, size });\n\n  return (\n    <BaseToggle className={cn(slots.root(), className)} {...props}>\n      {children}\n    </BaseToggle>\n  );\n};\n\nexport const Toggle = ToggleRoot;\n\n",
       "type": "registry:ui"
     },
     {

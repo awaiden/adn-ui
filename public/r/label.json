@@ -9,7 +9,7 @@
   "files": [
     {
       "path": "src/components/ui/label/label.tsx",
-      "content": "\"use client\";\n\nimport \"./label.css\";\nimport type React from \"react\";\nimport { cn } from \"tailwind-variants\";\n\nimport { labelVariants, type LabelVariants } from \"./label.variants\";\n\nexport type LabelProps = LabelVariants & React.LabelHTMLAttributes<HTMLLabelElement>;\n\nexport const LabelRoot = ({ className, size, ...props }: LabelProps) => {\n  const slots = labelVariants({ size });\n\n  return <label className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Label = LabelRoot;\n",
+      "content": "\"use client\";\n\nimport \"./label.css\";\nimport type React from \"react\";\nimport { cn } from \"@/lib/cn\";\n\nimport { labelVariants, type LabelVariants } from \"./label.variants\";\n\nexport type LabelProps = LabelVariants & React.LabelHTMLAttributes<HTMLLabelElement>;\n\nexport const LabelRoot = ({ className, size, ...props }: LabelProps) => {\n  const slots = labelVariants({ size });\n\n  return <label className={cn(slots.root(), className)} {...props} />;\n};\n\nexport const Label = LabelRoot;\n",
       "type": "registry:ui"
     },
     {
