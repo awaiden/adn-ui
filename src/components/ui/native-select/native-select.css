@@ -22,6 +22,10 @@
   @apply text-muted-foreground pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 shrink-0 transition-transform duration-200;
 }
 
+.native-select__icon svg {
+  @apply h-full w-full;
+}
+
 .native-select__icon--sm {
   @apply right-2 h-3.5 w-3.5;
 }

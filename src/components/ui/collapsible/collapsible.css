@@ -6,6 +6,10 @@
   @apply border-input bg-background text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-ring flex h-9 items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
+.collapsible__trigger svg {
+  @apply text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-150 group-data-panel-open:rotate-90;
+}
+
 .collapsible__panel {
   @apply flex h-[var(--collapsible-panel-height)] flex-col justify-end overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;
 }

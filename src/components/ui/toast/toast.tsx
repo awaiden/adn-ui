@@ -115,7 +115,7 @@ export const ToastClose = ({ className, children, ...props }: ToastCloseProps) =
   const { slots } = useToastContext();
   return (
     <BaseToast.Close className={cn(slots.close(), className)} {...props}>
-      {children ?? <X className="h-4 w-4" />}
+      {children ?? <X />}
     </BaseToast.Close>
   );
 };

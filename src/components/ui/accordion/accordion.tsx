@@ -51,9 +51,7 @@ export const AccordionTrigger = ({
   return (
     <BaseAccordion.Trigger className={cn(slots.trigger(), className)} {...props}>
       {children}
-      {!hideChevron && (
-        <ChevronDown className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-data-panel-open:rotate-180" />
-      )}
+      {!hideChevron && <ChevronDown />}
     </BaseAccordion.Trigger>
   );
 };

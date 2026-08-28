@@ -14,6 +14,10 @@
   @apply focus-visible:outline-ring hover:bg-accent hover:text-accent-foreground text-foreground inline-flex items-center justify-center gap-1.5 rounded-md text-sm font-medium transition-colors focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer;
 }
 
+.pagination__link svg {
+  @apply h-4 w-4;
+}
+
 .pagination__link--active {
   @apply border-input bg-background shadow-xs hover:bg-accent border;
 }
@@ -32,4 +36,8 @@
 
 .pagination__ellipsis {
   @apply text-muted-foreground flex h-9 w-9 items-center justify-center;
+}
+
+.pagination__ellipsis svg {
+  @apply h-4 w-4;
 }

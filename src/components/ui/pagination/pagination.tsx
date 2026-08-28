@@ -78,7 +78,7 @@ export const PaginationPrevious = ({
   >
     {children ?? (
       <>
-        <ChevronLeft className="h-4 w-4" />
+        <ChevronLeft />
         <span>Previous</span>
       </>
     )}
@@ -100,7 +100,7 @@ export const PaginationNext = ({
     {children ?? (
       <>
         <span>Next</span>
-        <ChevronRight className="h-4 w-4" />
+        <ChevronRight />
       </>
     )}
   </PaginationLink>
@@ -120,7 +120,7 @@ export const PaginationEllipsis = ({
       className={cn(slots.ellipsis(), className)}
       {...props}
     >
-      {children ?? <MoreHorizontal className="h-4 w-4" />}
+      {children ?? <MoreHorizontal />}
       <span className="sr-only">More pages</span>
     </span>
   );

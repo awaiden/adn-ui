@@ -48,7 +48,7 @@ export const SelectIcon = ({ children, className, ...props }: SelectIconProps) =
   const { slots } = useSelectContext();
   return (
     <BaseSelect.Icon className={cn(slots.icon(), className)} {...props}>
-      {children ?? <ChevronsUpDown className="h-4 w-4" />}
+      {children ?? <ChevronsUpDown />}
     </BaseSelect.Icon>
   );
 };
@@ -121,7 +121,7 @@ export const SelectItemIndicator = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ItemIndicator className={cn(slots.itemIndicator(), className)} {...props}>
-      {children ?? <Check className="h-4 w-4" />}
+      {children ?? <Check />}
     </BaseSelect.ItemIndicator>
   );
 };
@@ -136,7 +136,7 @@ export const SelectScrollUpArrow = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ScrollUpArrow className={cn(slots.scrollUpArrow(), className)} {...props}>
-      {children ?? <ChevronUp className="h-3 w-3" />}
+      {children ?? <ChevronUp />}
     </BaseSelect.ScrollUpArrow>
   );
 };
@@ -151,7 +151,7 @@ export const SelectScrollDownArrow = ({
   const { slots } = useSelectContext();
   return (
     <BaseSelect.ScrollDownArrow className={cn(slots.scrollDownArrow(), className)} {...props}>
-      {children ?? <ChevronDown className="h-3 w-3" />}
+      {children ?? <ChevronDown />}
     </BaseSelect.ScrollDownArrow>
   );
 };

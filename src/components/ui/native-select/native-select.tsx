@@ -31,7 +31,7 @@ export const NativeSelectRoot = ({
           {children}
         </select>
         <span className={slots.icon()}>
-          {icon ?? <ChevronsUpDown className="h-4 w-4" />}
+          {icon ?? <ChevronsUpDown />}
         </span>
       </div>
     </NativeSelectContext.Provider>

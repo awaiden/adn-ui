@@ -82,7 +82,7 @@ export const ContextMenuSubmenuTrigger = ({
   return (
     <BaseContextMenu.SubmenuTrigger className={cn(slots.submenuTrigger(), className)} {...props}>
       {children}
-      <ChevronRight className="text-muted-foreground h-4 w-4 shrink-0" />
+      <ChevronRight />
     </BaseContextMenu.SubmenuTrigger>
   );
 };
@@ -127,7 +127,7 @@ export const ContextMenuCheckboxItemIndicator = ({
       className={cn(slots.checkboxItemIndicator(), className)}
       {...props}
     >
-      {children ?? <Check className="h-4 w-4" />}
+      {children ?? <Check />}
     </BaseContextMenu.CheckboxItemIndicator>
   );
 };
@@ -161,7 +161,7 @@ export const ContextMenuRadioItemIndicator = ({
       className={cn(slots.radioItemIndicator(), className)}
       {...props}
     >
-      {children ?? <Circle className="h-2 w-2 fill-current" />}
+      {children ?? <Circle />}
     </BaseContextMenu.RadioItemIndicator>
   );
 };

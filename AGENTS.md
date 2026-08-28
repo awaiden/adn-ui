@@ -61,7 +61,7 @@ Corresponding JSON registry manifests are maintained under:
 ### 1. Icon Rules
 - **ALWAYS** use `lucide-react` icons (e.g., `ChevronDown`, `ChevronsUpDown`, `Check`, `Search`, `X`).
 - **NEVER** write raw inline `<svg>` markup inside components or demo files.
-- Maintain consistent icon sizing (`h-4 w-4`, `size-4`, etc.) and non-transparent colors (`text-muted-foreground`, `text-foreground`). Avoid arbitrary `opacity-50` wrappers on icons unless explicitly requested.
+- **NO Tailwind utility classes in TSX files for icons/SVGs**: Never pass `className="h-4 w-4 ..."` directly onto icon components inside `.tsx` files. Instead, style icons via CSS selectors in `*.css` files (e.g., `.checkbox__indicator svg`, `.accordion__trigger svg`, `.select__icon svg`).
 
 ### 2. JSDoc `@see` Annotations
 Every component's `index.ts` MUST include a JSDoc `@see` annotation linking to its raw MDX documentation:

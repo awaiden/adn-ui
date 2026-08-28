@@ -15,6 +15,11 @@
   @apply text-muted-foreground hover:text-foreground hover:bg-accent active:bg-muted flex h-full w-8 items-center justify-center border-0 bg-transparent p-0 transition-colors select-none disabled:cursor-not-allowed disabled:opacity-50;
 }
 
+.number-field__decrement svg,
+.number-field__increment svg {
+  @apply h-3.5 w-3.5;
+}
+
 .number-field__decrement {
   @apply border-input rounded-l-md border-r;
 }

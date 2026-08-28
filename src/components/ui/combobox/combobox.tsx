@@ -54,7 +54,7 @@ export const ComboboxTrigger = ({ children, className, ...props }: ComboboxTrigg
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.Trigger className={cn(slots.trigger(), className)} {...props}>
-      {children ?? <ChevronsUpDown className="h-4 w-4" />}
+      {children ?? <ChevronsUpDown />}
     </BaseCombobox.Trigger>
   );
 };
@@ -65,7 +65,7 @@ export const ComboboxClear = ({ children, className, ...props }: ComboboxClearPr
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.Clear className={cn(slots.clear(), className)} {...props}>
-      {children ?? <X className="h-3.5 w-3.5" />}
+      {children ?? <X />}
     </BaseCombobox.Clear>
   );
 };
@@ -90,7 +90,7 @@ export const ComboboxChipRemove = ({ children, className, ...props }: ComboboxCh
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.ChipRemove className={cn(slots.chipRemove(), className)} {...props}>
-      {children ?? <X className="h-3 w-3" />}
+      {children ?? <X />}
     </BaseCombobox.ChipRemove>
   );
 };
@@ -155,7 +155,7 @@ export const ComboboxItemIndicator = ({
   const { slots } = useComboboxContext();
   return (
     <BaseCombobox.ItemIndicator className={cn(slots.itemIndicator(), className)} {...props}>
-      {children ?? <Check className="h-4 w-4" />}
+      {children ?? <Check />}
     </BaseCombobox.ItemIndicator>
   );
 };

@@ -80,7 +80,7 @@ export const CommandInput = ({ className, value, onValueChange, ...props }: Comm
 
   return (
     <div className={slots.inputWrapper()}>
-      <Search className="mr-2.5 h-4 w-4 shrink-0 text-muted-foreground" />
+      <Search />
       <input
         className={cn(slots.input(), className)}
         value={value ?? search}

@@ -21,7 +21,7 @@ export const SpinnerRoot = ({
     <Loader2
       role="status"
       aria-label="Loading"
-      className={cn(slots.root(), "animate-spin", className)}
+      className={cn(slots.root(), className)}
       {...props}
     />
   );

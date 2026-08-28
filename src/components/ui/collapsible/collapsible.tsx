@@ -38,9 +38,7 @@ export const CollapsibleTrigger = ({
   return (
     <BaseCollapsible.Trigger className={cn(slots.trigger(), className)} {...props}>
       {children}
-      {!hideChevron && (
-        <ChevronRight className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-150 group-data-panel-open:rotate-90" />
-      )}
+      {!hideChevron && <ChevronRight />}
     </BaseCollapsible.Trigger>
   );
 };

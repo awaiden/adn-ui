@@ -26,6 +26,10 @@
   @apply text-foreground hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground focus-visible:outline-ring flex w-full items-center justify-between gap-4 bg-transparent px-4 py-3 text-left text-sm font-medium transition-colors select-none focus-visible:relative focus-visible:z-10 focus-visible:outline-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 
+.accordion__trigger svg {
+  @apply text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200 group-data-panel-open:rotate-180;
+}
+
 .accordion__panel {
   @apply h-[var(--accordion-panel-height)] overflow-hidden text-sm transition-[height] duration-150 ease-out data-ending-style:h-0 data-starting-style:h-0;
 }

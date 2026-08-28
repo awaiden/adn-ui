@@ -14,8 +14,16 @@
   @apply text-muted-foreground hover:text-foreground flex size-5 items-center justify-center transition-colors;
 }
 
+.combobox__trigger svg {
+  @apply h-4 w-4;
+}
+
 .combobox__clear {
   @apply text-muted-foreground hover:text-foreground flex size-5 items-center justify-center transition-colors;
+}
+
+.combobox__clear svg {
+  @apply h-3.5 w-3.5;
 }
 
 .combobox__chips {
@@ -28,6 +36,10 @@
 
 .combobox__chip-remove {
   @apply text-muted-foreground hover:bg-muted hover:text-foreground flex size-3.5 items-center justify-center rounded-xs transition-colors;
+}
+
+.combobox__chip-remove svg {
+  @apply h-3 w-3;
 }
 
 .combobox__positioner {
@@ -48,6 +60,10 @@
 
 .combobox__item-indicator {
   @apply flex size-4 shrink-0 items-center justify-center;
+}
+
+.combobox__item-indicator svg {
+  @apply h-4 w-4;
 }
 
 .combobox__empty {

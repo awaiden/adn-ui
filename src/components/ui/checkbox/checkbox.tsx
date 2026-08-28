@@ -29,7 +29,7 @@ export const CheckboxIndicator = ({ children, className, ...props }: CheckboxInd
   const { slots } = useCheckboxContext();
   return (
     <BaseCheckbox.Indicator className={cn(slots.indicator(), className)} {...props}>
-      {children ?? <Check className="h-full w-full stroke-[3]" />}
+      {children ?? <Check />}
     </BaseCheckbox.Indicator>
   );
 };

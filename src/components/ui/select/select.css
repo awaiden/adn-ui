@@ -30,6 +30,10 @@
   @apply text-muted-foreground flex size-4 shrink-0 items-center justify-center;
 }
 
+.select__icon svg {
+  @apply h-4 w-4;
+}
+
 .select__positioner {
   @apply z-50 outline-none select-none;
 }
@@ -54,6 +58,10 @@
   @apply text-foreground flex size-4 shrink-0 items-center justify-center;
 }
 
+.select__item-indicator svg {
+  @apply h-4 w-4;
+}
+
 .select__group-label {
   @apply text-muted-foreground px-2 py-1.5 text-xs font-semibold;
 }
@@ -64,6 +72,10 @@
 
 .select__scroll-arrow {
   @apply bg-popover text-muted-foreground flex h-5 w-full cursor-default items-center justify-center text-xs;
+}
+
+.select__scroll-arrow svg {
+  @apply h-3 w-3;
 }
 
 .select__arrow {

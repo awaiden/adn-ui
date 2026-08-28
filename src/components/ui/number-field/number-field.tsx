@@ -53,7 +53,7 @@ export const NumberFieldDecrement = ({
   const { slots } = useNumberFieldContext();
   return (
     <BaseNumberField.Decrement className={cn(slots.decrement(), className)} {...props}>
-      {children ?? <Minus className="h-3.5 w-3.5" />}
+      {children ?? <Minus />}
     </BaseNumberField.Decrement>
   );
 };
@@ -68,7 +68,7 @@ export const NumberFieldIncrement = ({
   const { slots } = useNumberFieldContext();
   return (
     <BaseNumberField.Increment className={cn(slots.increment(), className)} {...props}>
-      {children ?? <Plus className="h-3.5 w-3.5" />}
+      {children ?? <Plus />}
     </BaseNumberField.Increment>
   );
 };
