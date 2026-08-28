@@ -16,9 +16,9 @@ Created & maintained by **Halil Aydın** ([@awaiden](https://github.com/awaiden)
 - ⚡ **Base UI Primitives**: Full W3C ARIA compliance, focus trapping, and keyboard navigation powered by `@base-ui/react`.
 - 🎨 **Tailwind CSS v4 Native**: Configured with modern `@theme` design tokens and seamless dark mode support.
 - 📱 **Multi-Directional Touch Gestures**: Drawers with swipe-to-dismiss gesture handling for all screen edges (`bottom`, `right`, `left`, `top`).
-- 🤖 **AI-Friendly JSDoc Docs**: Every component includes JSDoc `@see` annotations (e.g. `@see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md`) linking directly to markdown docs for AI coding assistants.
+- 🤖 **AI-Friendly JSDoc & MCP Server**: Every component includes JSDoc `@see` annotations. Built-in Model Context Protocol (MCP) server (`/api/mcp/[transport]`) exposes tools for AI agents (Cursor, Antigravity, Claude Code) to inspect components, search, and fetch code/docs.
 - 🧩 **Zero Lock-In**: Copy, paste, and customize components directly inside your project under `src/components/ui`.
-- 📦 **Registry CLI Integration**: Built-in `shadcn` compatible registry generator (`bun run build:registry`).
+- 📦 **Registry CLI Integration**: Built-in `shadcn` compatible registry generator (`npm run build:registry`).
 
 ---
 
@@ -41,6 +41,22 @@ src/components/ui/card/
 - **Clean Separation of Concerns**: Keeps rendering logic isolated from design tokens and slots.
 - **AI-Friendly & LLM Ready**: JSDoc `@see` annotations point AI coding assistants (Antigravity, Cursor, Copilot) directly to raw component markdown docs.
 - **Maintainable & Scalable**: Swap styles, add theme slots, or extend component logic independently as your application grows.
+
+---
+
+## 🤖 Model Context Protocol (MCP) Server
+
+`adn-ui` includes a built-in MCP server at `/api/mcp/[transport]/route.ts` that enables AI agents to query and interact with the library.
+
+### Endpoint
+`https://ui.awaiden.com/api/mcp/sse` (or `http://localhost:3000/api/mcp/sse` in development)
+
+### MCP Tools Provided
+- `list_components`: Lists all UI components and their file structures.
+- `get_component`: Retrieves full source code, CSS, and variants for a specific component.
+- `search_components`: Searches components by keyword.
+- `get_component_doc`: Fetches component MDX documentation and usage examples.
+- `get_registry_item`: Fetches the `shadcn` JSON registry manifest.
 
 ---
 

@@ -1,0 +1,93 @@
+---
+title: MCP Server Integration
+description: Learn how to connect AI assistants and agentic IDEs to adn-ui using the Model Context Protocol (MCP) server.
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+# Model Context Protocol (MCP) Server
+
+**adn-ui** includes a built-in **Model Context Protocol (MCP)** server endpoint that allows AI coding assistants (such as Antigravity, Cursor, Claude Code, Windsurf, or custom agents) to inspect, search, and retrieve component source code, documentation, and registry manifests directly over SSE or HTTP transport.
+
+---
+
+## 🔌 Endpoint URL
+
+The MCP server endpoint is served at:
+
+```
+https://ui.awaiden.com/api/mcp/sse
+```
+or locally during development at:
+```
+http://localhost:3000/api/mcp/sse
+```
+
+---
+
+## 🛠️ Available MCP Tools
+
+The MCP server exposes 5 specialized tools for AI assistants:
+
+| Tool Name | Parameters | Description |
+| :--- | :--- | :--- |
+| `list_components` | `{}` | Returns a complete list of all available `adn-ui` components along with their internal file structure (`.tsx`, `.css`, `.variants.ts`). |
+| `get_component` | `{ name: string }` | Fetches full source code, Tailwind v4 CSS, variants, and context files for a specific component (e.g. `button`, `switch`, `combobox`). |
+| `search_components` | `{ query: string }` | Searches for components by name or keyword. |
+| `get_component_doc` | `{ name: string }` | Retrieves MDX documentation, API specifications, and usage examples for a component. |
+| `get_registry_item` | `{ name: string }` | Retrieves the shadcn-compatible registry JSON manifest for direct installation. |
+
+---
+
+## ⚙️ Connecting MCP Clients
+
+<Tabs items={['Cursor', 'Claude Code / Desktop', 'Antigravity / Custom Config']}>
+  <Tab value="Cursor">
+    Add the MCP server to Cursor under **Settings > Features > MCP**:
+
+    1. Set **Type**: `sse`
+    2. Set **Name**: `adn-ui`
+    3. Set **Server URL**: `https://ui.awaiden.com/api/mcp/sse`
+  </Tab>
+
+  <Tab value="Claude Code / Desktop">
+    Add `adn-ui` to your `claude_desktop_config.json`:
+
+    ```json title="claude_desktop_config.json"
+    {
+      "mcpServers": {
+        "adn-ui": {
+          "url": "https://ui.awaiden.com/api/mcp/sse",
+          "transport": "sse"
+        }
+      }
+    }
+    ```
+  </Tab>
+
+  <Tab value="Antigravity / Custom Config">
+    Add to your MCP configuration file:
+
+    ```json title="mcp-config.json"
+    {
+      "mcpServers": {
+        "adn-ui": {
+          "url": "https://ui.awaiden.com/api/mcp/sse"
+        }
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+---
+
+## 🤖 Example Agent Prompting
+
+Once connected, your AI assistant can run queries like:
+
+- *"Show me the source code for the adn-ui Combobox component."*
+- *"Search for data table components in adn-ui."*
+- *"Get the registry JSON manifest for @adn-ui/switch."*
