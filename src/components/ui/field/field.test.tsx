@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 import React from "react";
+import { describe, expect, it } from "vitest";
 
 import {
   Field,
@@ -21,7 +21,7 @@ describe("Field component", () => {
         <FieldLabel>Email</FieldLabel>
         <FieldDescription>Enter your work email</FieldDescription>
         <FieldError>Invalid email address</FieldError>
-      </FieldRoot>
+      </FieldRoot>,
     );
 
     expect(screen.getByText("Email")).toBeInTheDocument();
@@ -37,7 +37,7 @@ describe("Field component", () => {
           <FieldControl placeholder="example.com" />
           <FieldSuffix>.com</FieldSuffix>
         </FieldGroup>
-      </FieldRoot>
+      </FieldRoot>,
     );
 
     expect(screen.getByText("Website")).toBeInTheDocument();
@@ -56,7 +56,7 @@ describe("Field component", () => {
           <Field.Control placeholder="0.00" />
           <Field.Suffix>USD</Field.Suffix>
         </Field.Group>
-      </Field.Root>
+      </Field.Root>,
     );
 
     expect(screen.getByText("Amount")).toBeInTheDocument();
@@ -80,15 +80,38 @@ describe("Field component", () => {
             </select>
           }
         />
-      </Field.Root>
+      </Field.Root>,
     );
 
     expect(screen.getByPlaceholderText("Tell us about yourself...")).toBeInTheDocument();
     expect(screen.getByTestId("country-select")).toBeInTheDocument();
     expect(screen.getByText("United States")).toBeInTheDocument();
   });
+
+  it("renders Field with label and description props directly", () => {
+    render(
+      <Field label="Username" description="Choose a unique username">
+        <FieldControl placeholder="johndoe" />
+      </Field>,
+    );
+
+    expect(screen.getByText("Username")).toBeInTheDocument();
+    expect(screen.getByText("Choose a unique username")).toBeInTheDocument();
+  });
+
+  it("renders Field.Description and Field.description subcomponents", () => {
+    render(
+      <>
+        <Field.Root>
+          <Field.Description>Description uppercase</Field.Description>
+        </Field.Root>
+        <Field.Root>
+          <Field.description>Description lowercase</Field.description>
+        </Field.Root>
+      </>,
+    );
+
+    expect(screen.getByText("Description uppercase")).toBeInTheDocument();
+    expect(screen.getByText("Description lowercase")).toBeInTheDocument();
+  });
 });
-
-
-
-

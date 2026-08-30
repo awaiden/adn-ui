@@ -3,6 +3,7 @@
 import "./field.css";
 import { Field as BaseField } from "@base-ui/react/field";
 import type React from "react";
+
 import { cn } from "@/lib/cn";
 
 import { FieldContext, useFieldContext } from "./field.context";
@@ -50,11 +51,7 @@ export type FieldControlProps = React.ComponentProps<typeof BaseField.Control>;
 export const FieldControl = ({ className, render, ...props }: FieldControlProps) => {
   const { slots } = useFieldContext();
   return (
-    <BaseField.Control
-      className={cn(slots.control(), className)}
-      render={render}
-      {...props}
-    />
+    <BaseField.Control className={cn(slots.control(), className)} render={render} {...props} />
   );
 };
 
@@ -106,3 +103,4 @@ export const FieldValidity = (props: FieldValidityProps) => {
   return <BaseField.Validity {...props} />;
 };
 
+export const Field = FieldRoot;

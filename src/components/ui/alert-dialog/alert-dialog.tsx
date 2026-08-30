@@ -3,6 +3,7 @@
 import "./alert-dialog.css";
 import { AlertDialog as BaseAlertDialog } from "@base-ui/react/alert-dialog";
 import React from "react";
+
 import { cn } from "@/lib/cn";
 
 import { AlertDialogContext, useAlertDialogContext } from "./alert-dialog.context";
@@ -108,7 +109,7 @@ export type AlertDialogActionsProps = React.ComponentProps<"div">;
 
 export const AlertDialogActions = ({ className, ...props }: AlertDialogActionsProps) => (
   <div
-    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 mt-4", className)}
+    className={cn("flex flex-col-reverse sm:flex-row sm:justify-end gap-2 mt-4", className)}
     {...props}
   />
 );

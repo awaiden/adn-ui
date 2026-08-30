@@ -1,6 +1,9 @@
-import { Button, type ButtonProps } from "./button";
+import { Button, ButtonRoot, type ButtonProps } from "./button";
 import { type ButtonVariants, buttonVariants } from "./button.variants";
 
-export { Button, buttonVariants };
+/**
+ * @see https://ui.awaiden.com/llms.mdx/docs/components/button/content.md
+ */
+export { Button, ButtonRoot, buttonVariants };
 
 export type { ButtonProps, ButtonVariants };

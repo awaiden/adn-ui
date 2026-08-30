@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, expect, it, vi } from "vitest";
 import React from "react";
+import { describe, expect, it, vi } from "vitest";
 
 import { Button } from "./index";
 
@@ -21,11 +21,17 @@ describe("Button component", () => {
     const { container } = render(
       <Button variant="destructive" size="sm">
         Delete
-      </Button>
+      </Button>,
     );
     const button = container.firstChild as HTMLElement;
     expect(button).toHaveClass("button--destructive");
     expect(button).toHaveClass("button--sm");
+  });
+
+  it("applies icon-only class when isIconOnly is true", () => {
+    const { container } = render(<Button isIconOnly>Icon</Button>);
+    const button = container.firstChild as HTMLElement;
+    expect(button).toHaveClass("button--icon-only");
   });
 
   it("respects disabled attribute", () => {
@@ -33,7 +39,7 @@ describe("Button component", () => {
     render(
       <Button disabled onClick={handleClick}>
         Disabled
-      </Button>
+      </Button>,
     );
     const button = screen.getByRole("button");
     expect(button).toBeDisabled();

@@ -3,19 +3,19 @@
 }
 
 .alert-dialog__popup {
-  @apply border-border bg-card text-card-foreground fixed top-1/2 left-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-xl border p-6 shadow-lg transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-[0.96] data-ending-style:opacity-0 data-starting-style:scale-[0.96] data-starting-style:opacity-0;
+  @apply border-border bg-card text-card-foreground fixed top-1/2 left-1/2 z-50 flex w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] -translate-x-1/2 -translate-y-1/2 flex-col gap-4 overflow-y-auto rounded-xl border p-6 shadow-lg transition-[scale,opacity] duration-150 ease-out data-ending-style:scale-[0.96] data-ending-style:opacity-0 data-starting-style:scale-[0.96] data-starting-style:opacity-0;
 }
 
 .alert-dialog__popup--sm {
-  @apply w-full max-w-xs;
+  @apply sm:w-full sm:max-w-xs;
 }
 
 .alert-dialog__popup--md {
-  @apply w-full max-w-md;
+  @apply sm:w-full sm:max-w-md;
 }
 
 .alert-dialog__popup--lg {
-  @apply w-full max-w-lg;
+  @apply sm:w-full sm:max-w-lg;
 }
 
 .alert-dialog__popup--default {

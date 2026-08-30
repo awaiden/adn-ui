@@ -9,13 +9,18 @@ import {
 /**
  * @see https://ui.awaiden.com/llms.mdx/docs/components/progress/content.md
  */
-export const Progress = {
+export const Progress = Object.assign(ProgressRoot, {
   Indicator: ProgressIndicator,
   Label: ProgressLabel,
   Root: ProgressRoot,
   Track: ProgressTrack,
   Value: ProgressValue,
-};
+  indicator: ProgressIndicator,
+  label: ProgressLabel,
+  root: ProgressRoot,
+  track: ProgressTrack,
+  value: ProgressValue,
+});
 
 export { ProgressIndicator, ProgressLabel, ProgressRoot, ProgressTrack, ProgressValue };
 

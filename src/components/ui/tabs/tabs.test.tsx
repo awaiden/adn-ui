@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
 import React from "react";
+import { describe, expect, it } from "vitest";
 
-import { TabsList, TabsPanel, TabsRoot, TabsTab } from "./index";
+import { Tabs, TabsList, TabsPanel, TabsRoot, TabsTab } from "./index";
 
 describe("Tabs component", () => {
   it("renders tab triggers and active tab panel", () => {
@@ -14,7 +14,7 @@ describe("Tabs component", () => {
         </TabsList>
         <TabsPanel value="account">Account settings panel</TabsPanel>
         <TabsPanel value="password">Password settings panel</TabsPanel>
-      </TabsRoot>
+      </TabsRoot>,
     );
 
     expect(screen.getByRole("tab", { name: /account/i })).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe("Tabs component", () => {
           <TabsTab value="segmented-tab">Segmented</TabsTab>
         </TabsList>
         <TabsPanel value="segmented-tab">Segmented Content</TabsPanel>
-      </TabsRoot>
+      </TabsRoot>,
     );
 
     expect(screen.getByRole("tab", { name: /segmented/i })).toBeInTheDocument();
@@ -43,9 +43,23 @@ describe("Tabs component", () => {
           <TabsTab value="tab2">Tab 2</TabsTab>
         </TabsList>
         <TabsPanel value="tab1">Fitted Content</TabsPanel>
-      </TabsRoot>
+      </TabsRoot>,
     );
 
     expect(screen.getByRole("tab", { name: /tab 1/i })).toBeInTheDocument();
+  });
+
+  it("renders line and pills tab variants", () => {
+    render(
+      <Tabs defaultValue="line-tab" variant="line">
+        <Tabs.List>
+          <Tabs.Tab value="line-tab">Line Tab</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="line-tab">Line Content</Tabs.Panel>
+      </Tabs>,
+    );
+
+    expect(screen.getByRole("tab", { name: /line tab/i })).toBeInTheDocument();
+    expect(screen.getByText("Line Content")).toBeInTheDocument();
   });
 });

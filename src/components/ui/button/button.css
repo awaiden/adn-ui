@@ -1,6 +1,10 @@
 .button {
   @apply inline-flex items-center justify-center gap-2 rounded-md font-medium whitespace-nowrap transition-colors;
 
+  & svg {
+    @apply size-4 shrink-0 pointer-events-none;
+  }
+
   &:focus-visible {
     @apply outline-ring outline-2 outline-offset-2;
   }

@@ -3,20 +3,39 @@
 import "./progress.css";
 import { Progress as BaseProgress } from "@base-ui/react/progress";
 import type React from "react";
+
 import { cn } from "@/lib/cn";
 
 import { ProgressContext, useProgressContext } from "./progress.context";
 import { progressVariants, type ProgressVariants } from "./progress.variants";
 
-export type ProgressProps = ProgressVariants & React.ComponentProps<typeof BaseProgress.Root>;
+export type ProgressProps = ProgressVariants &
+  React.ComponentProps<typeof BaseProgress.Root> & {
+    label?: React.ReactNode;
+    showValue?: boolean;
+  };
 
-export const ProgressRoot = ({ children, className, size, ...props }: ProgressProps) => {
-  const slots = progressVariants({ size });
+export const ProgressRoot = ({
+  children,
+  className,
+  size,
+  variant,
+  label,
+  showValue,
+  ...props
+}: ProgressProps) => {
+  const slots = progressVariants({ size, variant });
 
   return (
     <ProgressContext.Provider value={{ slots }}>
       <BaseProgress.Root className={cn(slots.root(), className)} {...props}>
-        {children}
+        {label && <ProgressLabel>{label}</ProgressLabel>}
+        {showValue && <ProgressValue />}
+        {children ?? (
+          <ProgressTrack>
+            <ProgressIndicator />
+          </ProgressTrack>
+        )}
       </BaseProgress.Root>
     </ProgressContext.Provider>
   );

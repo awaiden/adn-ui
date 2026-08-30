@@ -14,7 +14,7 @@ import {
 /**
  * @see https://ui.awaiden.com/llms.mdx/docs/components/field/content.md
  */
-export const Field = {
+export const Field = Object.assign(FieldRoot, {
   Control: FieldControl,
   Description: FieldDescription,
   Error: FieldError,
@@ -25,7 +25,17 @@ export const Field = {
   Root: FieldRoot,
   Suffix: FieldSuffix,
   Validity: FieldValidity,
-};
+  control: FieldControl,
+  description: FieldDescription,
+  error: FieldError,
+  group: FieldGroup,
+  item: FieldItem,
+  label: FieldLabel,
+  prefix: FieldPrefix,
+  root: FieldRoot,
+  suffix: FieldSuffix,
+  validity: FieldValidity,
+});
 
 export {
   FieldControl,
@@ -54,5 +64,3 @@ export type {
 } from "./field";
 export { FieldContext, useFieldContext } from "./field.context";
 export { type FieldVariants, fieldVariants } from "./field.variants";
-
-

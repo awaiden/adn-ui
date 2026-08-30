@@ -13,48 +13,54 @@ export const tabsVariants = tv({
   variants: {
     variant: {
       default: {
-        list: "border-b border-border gap-1",
-        tab: "data-active:text-foreground pb-2 font-medium",
-        indicator: "bottom-0 h-0.5 bg-primary transition-all duration-200",
+        list: "tabs__list--default",
+        tab: "tabs__tab--default",
+        indicator: "tabs__indicator--default",
       },
       pills: {
-        list: "bg-muted p-1 rounded-lg gap-1",
-        tab: "rounded-md px-3 py-1.5 data-active:bg-background data-active:text-foreground data-active:shadow-xs",
-        indicator: "bg-background rounded-md shadow-xs transition-all duration-200",
+        list: "tabs__list--pills",
+        tab: "tabs__tab--pills",
+        indicator: "tabs__indicator--pills",
       },
       underline: {
-        list: "border-b border-border gap-4",
-        tab: "pb-2 border-b-2 border-transparent data-active:border-primary data-active:text-primary font-medium",
+        list: "tabs__list--underline",
+        tab: "tabs__tab--underline",
+        indicator: "tabs__indicator--underline",
       },
       segmented: {
-        list: "bg-muted/80 border border-border/60 p-1 rounded-xl gap-1",
-        tab: "rounded-lg px-3 py-1.5 data-active:bg-background data-active:text-foreground data-active:shadow-xs font-medium",
-        indicator: "bg-background rounded-lg shadow-xs transition-all duration-200",
+        list: "tabs__list--segmented",
+        tab: "tabs__tab--segmented",
+        indicator: "tabs__indicator--segmented",
       },
       outline: {
-        list: "border border-border p-1 rounded-lg gap-1 bg-background",
-        tab: "rounded-md px-3 py-1.5 data-active:bg-muted data-active:text-foreground font-medium",
-        indicator: "bg-muted rounded-md transition-all duration-200",
+        list: "tabs__list--outline",
+        tab: "tabs__tab--outline",
+        indicator: "tabs__indicator--outline",
+      },
+      line: {
+        list: "tabs__list--line",
+        tab: "tabs__tab--line",
+        indicator: "tabs__indicator--line",
       },
     },
     size: {
       sm: {
-        tab: "text-xs px-2.5 py-1",
-        panel: "p-3 text-xs",
+        tab: "tabs__tab--sm",
+        panel: "tabs__panel--sm",
       },
       md: {
-        tab: "text-sm px-3.5 py-1.5",
-        panel: "p-4 text-sm",
+        tab: "tabs__tab--md",
+        panel: "tabs__panel--md",
       },
       lg: {
-        tab: "text-base px-4 py-2",
-        panel: "p-6 text-base",
+        tab: "tabs__tab--lg",
+        panel: "tabs__panel--lg",
       },
     },
     isFitted: {
       true: {
-        list: "w-full",
-        tab: "flex-1 grow text-center min-w-0",
+        list: "tabs__list--fitted",
+        tab: "tabs__tab--fitted",
       },
       false: {},
     },

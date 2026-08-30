@@ -4,25 +4,26 @@ description: Accessible, framework-agnostic React UI components powered by Base 
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
+import { Star, Palette, FileText, Laptop, Sparkles } from "lucide-react";
 
 ## Features
 
 <Cards>
-  <Card title="Base UI Primitives" icon="star">
+  <Card title="Base UI Primitives" icon={<Star />}>
     Powered by `@base-ui/react` for accessible keyboard navigation, focus management, and ARIA
     attributes.
   </Card>
-  <Card title="Tailwind CSS v4" icon="palette">
+  <Card title="Tailwind CSS v4" icon={<Palette />}>
     Built with modern Tailwind v4 themes and OKLCH color variables for seamless dark mode.
   </Card>
-  <Card title="Compound Slot Pattern" icon="document">
+  <Card title="Compound Slot Pattern" icon={<FileText />}>
     Clean single-file slot structure with `tailwind-variants` (`tv()`) and React Context
     distribution.
   </Card>
-  <Card title="Registry Ready" icon="laptop">
+  <Card title="Registry Ready" icon={<Laptop />}>
     Includes a complete `registry.json` manifest for copy-and-paste component distribution.
   </Card>
-  <Card title="AI-Friendly JSDoc" icon="sparkles">
+  <Card title="AI-Friendly JSDoc" icon={<Sparkles />}>
     Includes `@see` JSDoc annotations on every component linking to raw markdown docs for LLMs.
   </Card>
 </Cards>

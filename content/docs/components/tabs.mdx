@@ -4,6 +4,7 @@ subtitle: A component for toggling between related panels on the same page.
 description: A high-quality, styled React tabs component built with @base-ui/react for switching views.
 ---
 
+import { Tabs } from "@/components/ui/tabs";
 import { TabsDemo } from "@/components/ui/tabs/tabs-demo";
 
 The `Tabs` component manages views organized into tabbed panels with smooth indicator animations and variant styling.
@@ -15,7 +16,7 @@ import { Tabs } from "@/components/ui/tabs";
 
 export function ExampleTabs() {
   return (
-    <Tabs.Root defaultValue="overview" variant="pills">
+    <Tabs defaultValue="overview" variant="pills">
       <Tabs.List>
         <Tabs.Tab value="overview">Overview</Tabs.Tab>
         <Tabs.Tab value="settings">Settings</Tabs.Tab>
@@ -23,7 +24,7 @@ export function ExampleTabs() {
       </Tabs.List>
       <Tabs.Panel value="overview">Overview content goes here.</Tabs.Panel>
       <Tabs.Panel value="settings">Settings content goes here.</Tabs.Panel>
-    </Tabs.Root>
+    </Tabs>
   );
 }
 ```
@@ -34,16 +35,189 @@ export function ExampleTabs() {
   <TabsDemo />
 </div>
 
-## Custom Styling
+## Variants
 
-Apply custom active tab indicators, background pills, or text colors via `className`:
+### Visual Variants
+
+The `variant` prop controls the visual appearance of the tab list, tab triggers, and active indicators.
+
+#### Default
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="default">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">Account</Tabs.Tab>
+      <Tabs.Tab value="tab2">Password</Tabs.Tab>
+      <Tabs.Tab value="tab3">Notifications</Tabs.Tab>
+      <Tabs.Indicator />
+    </Tabs.List>
+    <Tabs.Panel value="tab1">Manage your account details.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Change your password.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Configure notification preferences.</Tabs.Panel>
+  </Tabs>
+</div>
 
 ```tsx
-<Tabs.List className="bg-slate-900 border border-slate-800 p-1 rounded-xl">
-  <Tabs.Tab value="active" className="data-[selected]:bg-indigo-600 data-[selected]:text-white font-medium">
-    Active Tab
-  </Tabs.Tab>
-</Tabs.List>
+<Tabs defaultValue="account" variant="default">
+  <Tabs.List>
+    <Tabs.Tab value="account">Account</Tabs.Tab>
+    <Tabs.Tab value="password">Password</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="account">Account Content</Tabs.Panel>
+</Tabs>
+```
+
+#### Pills
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="pills">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">Overview</Tabs.Tab>
+      <Tabs.Tab value="tab2">Analytics</Tabs.Tab>
+      <Tabs.Tab value="tab3">Reports</Tabs.Tab>
+      <Tabs.Indicator />
+    </Tabs.List>
+    <Tabs.Panel value="tab1">System performance overview.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Traffic and engagement analytics.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Generated monthly reports.</Tabs.Panel>
+  </Tabs>
+</div>
+
+```tsx
+<Tabs defaultValue="overview" variant="pills">
+  <Tabs.List>
+    <Tabs.Tab value="overview">Overview</Tabs.Tab>
+    <Tabs.Tab value="analytics">Analytics</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+</Tabs>
+```
+
+#### Underline
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="underline">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">Projects</Tabs.Tab>
+      <Tabs.Tab value="tab2">Tasks</Tabs.Tab>
+      <Tabs.Tab value="tab3">Team</Tabs.Tab>
+    </Tabs.List>
+    <Tabs.Panel value="tab1">Active organization projects.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Assigned task backlog.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Team members list.</Tabs.Panel>
+  </Tabs>
+</div>
+
+```tsx
+<Tabs defaultValue="projects" variant="underline">
+  <Tabs.List>
+    <Tabs.Tab value="projects">Projects</Tabs.Tab>
+    <Tabs.Tab value="tasks">Tasks</Tabs.Tab>
+  </Tabs.List>
+</Tabs>
+```
+
+#### Segmented
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="segmented">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">Daily</Tabs.Tab>
+      <Tabs.Tab value="tab2">Weekly</Tabs.Tab>
+      <Tabs.Tab value="tab3">Monthly</Tabs.Tab>
+      <Tabs.Indicator />
+    </Tabs.List>
+    <Tabs.Panel value="tab1">Daily metrics snapshot.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Weekly summary metrics.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Monthly trend analysis.</Tabs.Panel>
+  </Tabs>
+</div>
+
+```tsx
+<Tabs defaultValue="daily" variant="segmented">
+  <Tabs.List>
+    <Tabs.Tab value="daily">Daily</Tabs.Tab>
+    <Tabs.Tab value="weekly">Weekly</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+</Tabs>
+```
+
+#### Outline
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="outline">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">General</Tabs.Tab>
+      <Tabs.Tab value="tab2">Security</Tabs.Tab>
+      <Tabs.Tab value="tab3">Integrations</Tabs.Tab>
+      <Tabs.Indicator />
+    </Tabs.List>
+    <Tabs.Panel value="tab1">General application options.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Security and 2FA settings.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Connected third-party apps.</Tabs.Panel>
+  </Tabs>
+</div>
+
+```tsx
+<Tabs defaultValue="general" variant="outline">
+  <Tabs.List>
+    <Tabs.Tab value="general">General</Tabs.Tab>
+    <Tabs.Tab value="security">Security</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+</Tabs>
+```
+
+#### Line
+
+<div className="p-4 border rounded-xl my-4">
+  <Tabs defaultValue="tab1" variant="line">
+    <Tabs.List>
+      <Tabs.Tab value="tab1">Feed</Tabs.Tab>
+      <Tabs.Tab value="tab2">Activity</Tabs.Tab>
+      <Tabs.Tab value="tab3">Saved</Tabs.Tab>
+      <Tabs.Indicator />
+    </Tabs.List>
+    <Tabs.Panel value="tab1">Main activity feed.</Tabs.Panel>
+    <Tabs.Panel value="tab2">Recent notifications and updates.</Tabs.Panel>
+    <Tabs.Panel value="tab3">Saved items and bookmarks.</Tabs.Panel>
+  </Tabs>
+</div>
+
+```tsx
+<Tabs defaultValue="feed" variant="line">
+  <Tabs.List>
+    <Tabs.Tab value="feed">Feed</Tabs.Tab>
+    <Tabs.Tab value="activity">Activity</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+</Tabs>
+```
+
+### Sizes
+
+The `size` prop adjusts padding and font size (`sm`, `md`, `lg`).
+
+```tsx
+<Tabs size="sm" variant="pills">...</Tabs>
+<Tabs size="md" variant="pills">...</Tabs>
+<Tabs size="lg" variant="pills">...</Tabs>
+```
+
+### Fitted Tabs
+
+Set `isFitted` to `true` to expand tab triggers equally across full width.
+
+```tsx
+<Tabs isFitted variant="segmented" defaultValue="1">
+  <Tabs.List>
+    <Tabs.Tab value="1">First</Tabs.Tab>
+    <Tabs.Tab value="2">Second</Tabs.Tab>
+    <Tabs.Tab value="3">Third</Tabs.Tab>
+  </Tabs.List>
+</Tabs>
 ```
 
 ## Styling & Class Names
@@ -54,7 +228,7 @@ Target internal tabs CSS slots for custom overrides:
 | :--- | :--- | :--- |
 | `.tabs` | Root container | Tabs root wrapper container. |
 | `.tabs__list` | Tab list row | Horizontal or vertical tab list row. |
-| `.tabs__tab` | Tab button | Individual tab trigger element (`data-[selected]`). |
+| `.tabs__tab` | Tab button | Individual tab trigger element. |
 | `.tabs__indicator` | Sliding indicator | Animated active tab indicator bar or pill background. |
 | `.tabs__panel` | Content panel | Content panel container corresponding to active tab. |
 
@@ -76,10 +250,10 @@ import { Tabs } from "@base-ui/react/tabs";
 
 ### Tabs.Root Props
 
-| Prop           | Type                                  | Default     | Description                                         |
-| :------------- | :------------------------------------ | :---------- | :-------------------------------------------------- |
-| `value`        | `string`                              | `undefined` | Controlled value of the active tab.                 |
-| `defaultValue` | `string`                              | `undefined` | Initial uncontrolled active tab.                    |
-| `variant`      | `'default' \| 'pills' \| 'underline' \| 'segmented' \| 'outline'` | `'default'` | Visual style of the tab list and active indicators. |
-| `size`         | `'sm' \| 'md' \| 'lg'`                | `'md'`      | Size scale for tabs and padding.                    |
-| `isFitted`     | `boolean`                             | `false`     | Expand tabs equally to fill the extended container area. |
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `value` | `string` | `undefined` | Controlled value of the active tab. |
+| `defaultValue` | `string` | `undefined` | Initial uncontrolled active tab. |
+| `variant` | `'default' \| 'pills' \| 'underline' \| 'segmented' \| 'outline' \| 'line'` | `'default'` | Visual style of the tab list and active indicators. |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size scale for tabs and padding. |
+| `isFitted` | `boolean` | `false` | Expand tabs equally to fill the extended container area. |

@@ -11,7 +11,7 @@ import {
 /**
  * @see https://ui.awaiden.com/llms.mdx/docs/components/slider/content.md
  */
-export const Slider = {
+export const Slider = Object.assign(SliderRoot, {
   Control: SliderControl,
   Indicator: SliderIndicator,
   Label: SliderLabel,
@@ -19,7 +19,14 @@ export const Slider = {
   Thumb: SliderThumb,
   Track: SliderTrack,
   Value: SliderValue,
-};
+  control: SliderControl,
+  indicator: SliderIndicator,
+  label: SliderLabel,
+  root: SliderRoot,
+  thumb: SliderThumb,
+  track: SliderTrack,
+  value: SliderValue,
+});
 
 export {
   SliderControl,

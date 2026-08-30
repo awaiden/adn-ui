@@ -11,6 +11,17 @@ export const progressVariants = tv({
     value: "progress__value",
   },
   variants: {
+    variant: {
+      default: {
+        indicator: "progress__indicator--default",
+      },
+      destructive: {
+        indicator: "progress__indicator--destructive",
+      },
+      success: {
+        indicator: "progress__indicator--success",
+      },
+    },
     size: {
       sm: {
         track: "progress__track--sm",
@@ -24,6 +35,7 @@ export const progressVariants = tv({
     },
   },
   defaultVariants: {
+    variant: "default",
     size: "md",
   },
 });

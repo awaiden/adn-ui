@@ -6,14 +6,118 @@
   @apply relative flex items-center select-none overflow-x-auto w-full max-w-full flex-nowrap scrollbar-none min-w-0;
 }
 
+.tabs__list--default {
+  @apply border-b border-border gap-1;
+}
+
+.tabs__list--pills {
+  @apply bg-muted p-1 rounded-lg gap-1 inline-flex;
+}
+
+.tabs__list--underline {
+  @apply border-b border-border gap-4;
+}
+
+.tabs__list--segmented {
+  @apply bg-muted/80 border border-border/60 p-1 rounded-xl gap-1 inline-flex;
+}
+
+.tabs__list--outline {
+  @apply border border-border p-1 rounded-lg gap-1 bg-background inline-flex;
+}
+
+.tabs__list--line {
+  @apply border-b border-border/40 gap-2;
+}
+
+.tabs__list--fitted {
+  @apply w-full;
+}
+
 .tabs__tab {
-  @apply text-muted-foreground focus-visible:outline-ring inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition-colors outline-none focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50;
+  @apply text-muted-foreground focus-visible:outline-ring inline-flex cursor-pointer items-center justify-center whitespace-nowrap transition-all outline-none focus-visible:outline-2 disabled:pointer-events-none disabled:opacity-50;
+}
+
+.tabs__tab--default {
+  @apply pb-2 font-medium hover:text-foreground data-active:text-foreground relative;
+}
+
+.tabs__tab--pills {
+  @apply rounded-md px-3 py-1.5 font-medium hover:text-foreground data-active:bg-background data-active:text-foreground data-active:shadow-xs;
+}
+
+.tabs__tab--underline {
+  @apply pb-2 border-b-2 border-transparent font-medium hover:text-foreground data-active:border-primary data-active:text-primary;
+}
+
+.tabs__tab--segmented {
+  @apply rounded-lg px-3 py-1.5 font-medium hover:text-foreground data-active:bg-background data-active:text-foreground data-active:shadow-xs;
+}
+
+.tabs__tab--outline {
+  @apply rounded-md px-3 py-1.5 font-medium hover:text-foreground data-active:bg-muted data-active:text-foreground;
+}
+
+.tabs__tab--line {
+  @apply pb-2 font-medium hover:text-foreground data-active:text-primary relative;
+}
+
+.tabs__tab--sm {
+  @apply text-xs px-2.5 py-1;
+}
+
+.tabs__tab--md {
+  @apply text-sm px-3.5 py-1.5;
+}
+
+.tabs__tab--lg {
+  @apply text-base px-4 py-2;
+}
+
+.tabs__tab--fitted {
+  @apply flex-1 grow text-center min-w-0;
 }
 
 .tabs__indicator {
   @apply absolute z-0;
 }
 
+.tabs__indicator--default {
+  @apply bottom-0 h-0.5 bg-primary transition-all duration-200;
+}
+
+.tabs__indicator--pills {
+  @apply bg-background rounded-md shadow-xs transition-all duration-200;
+}
+
+.tabs__indicator--underline {
+  @apply bottom-0 h-0.5 bg-primary transition-all duration-200;
+}
+
+.tabs__indicator--segmented {
+  @apply bg-background rounded-lg shadow-xs transition-all duration-200;
+}
+
+.tabs__indicator--outline {
+  @apply bg-muted rounded-md transition-all duration-200;
+}
+
+.tabs__indicator--line {
+  @apply bottom-0 h-0.5 bg-primary transition-all duration-200;
+}
+
 .tabs__panel {
   @apply focus-visible:outline-ring mt-2 outline-none focus-visible:outline-2 w-full max-w-full min-w-0 overflow-x-auto;
+}
+
+.tabs__panel--sm {
+  @apply py-2 text-xs;
+}
+
+.tabs__panel--md {
+  @apply py-3 text-sm;
+}
+
+.tabs__panel--lg {
+  @apply py-4 text-base;
 }

@@ -143,18 +143,37 @@ const handler = createMcpHandler(
       },
     );
 
+    const resolveDocPath = (input: string) => {
+      let cleaned = input.trim();
+      if (cleaned.includes("/llms.mdx/docs/")) {
+        cleaned = cleaned.split("/llms.mdx/docs/")[1];
+      }
+      cleaned = cleaned.replace(/\/content\.md$/, "").replace(/\.(mdx|md)$/, "");
+      if (cleaned.startsWith("components/")) {
+        cleaned = cleaned.replace(/^components\//, "");
+      } else if (cleaned.startsWith("docs/components/")) {
+        cleaned = cleaned.replace(/^docs\/components\//, "");
+      }
+      return cleaned;
+    };
+
     // Tool 4: get_component_doc
     server.registerTool(
       "get_component_doc",
       {
         description: "Get MDX documentation and usage guidelines for a specific adn-ui component.",
         inputSchema: z.object({
-          name: z.string().describe("The component name (e.g. 'button', 'switch', 'data-table')"),
+          name: z
+            .string()
+            .describe(
+              "The component name or doc URL (e.g. 'button', 'http://localhost:3000/llms.mdx/docs/components/button/content.md')",
+            ),
         }),
       },
       async ({ name }) => {
         try {
-          const docPath = path.join(getDocsDir(), `${name}.mdx`);
+          const compName = resolveDocPath(name);
+          const docPath = path.join(getDocsDir(), `${compName}.mdx`);
           const content = await fs.readFile(docPath, "utf-8");
 
           return {
@@ -379,6 +398,48 @@ npx shadcn@latest add https://ui.awaiden.com/r/button.json
               {
                 type: "text",
                 text: `Error adding component '${name}': Component '${name}' not found. ${(error as Error).message}`,
+              },
+            ],
+            isError: true,
+          };
+        }
+      },
+    );
+
+    // Tool 8: fetch_llm_doc
+    server.registerTool(
+      "fetch_llm_doc",
+      {
+        description:
+          "Fetch raw MDX/markdown component documentation from full LLM doc URL or path (e.g. 'http://localhost:3000/llms.mdx/docs/components/button/content.md' or 'button').",
+        inputSchema: z.object({
+          urlOrPath: z
+            .string()
+            .describe(
+              "Full LLM doc URL, path, or component name (e.g. 'http://localhost:3000/llms.mdx/docs/components/button/content.md', 'components/button/content.md', or 'button')",
+            ),
+        }),
+      },
+      async ({ urlOrPath }) => {
+        try {
+          const compName = resolveDocPath(urlOrPath);
+          const docPath = path.join(getDocsDir(), `${compName}.mdx`);
+          const content = await fs.readFile(docPath, "utf-8");
+
+          return {
+            content: [
+              {
+                type: "text",
+                text: content,
+              },
+            ],
+          };
+        } catch (error) {
+          return {
+            content: [
+              {
+                type: "text",
+                text: `Error fetching documentation for '${urlOrPath}': ${(error as Error).message}`,
               },
             ],
             isError: true,

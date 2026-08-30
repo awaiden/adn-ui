@@ -1,5 +1,6 @@
 "use client";
 
+import { Rocket } from "lucide-react";
 import React from "react";
 
 import { Button } from "./button";
@@ -34,13 +35,13 @@ export const Sizes = () => (
 export const IconOnly = () => (
   <div className="flex flex-wrap items-center gap-4">
     <Button isIconOnly size="sm">
-      🚀
+      <Rocket />
     </Button>
     <Button isIconOnly size="md">
-      🚀
+      <Rocket />
     </Button>
     <Button isIconOnly size="lg">
-      🚀
+      <Rocket />
     </Button>
   </div>
 );

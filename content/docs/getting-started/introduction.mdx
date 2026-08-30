@@ -5,28 +5,29 @@ description: Learn about adn-ui, a shadcn-compatible component registry built on
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
+import { Star, Palette, FileText, Laptop, Sparkles } from "lucide-react";
 
 **adn-ui** is an open-source collection of accessible, styled, copy-and-paste UI components built for **React 19** (framework agnostic), styled using **Tailwind CSS v4** and OKLCH color design tokens.
 
 ## Key Features
 
 <Cards>
-  <Card title="Base UI Powered" icon="star">
+  <Card title="Base UI Powered" icon={<Star />}>
     Built on top of `@base-ui/react`, offering accessible primitives with keyboard
     navigation and focus management.
   </Card>
-  <Card title="Tailwind CSS v4 & OKLCH" icon="palette">
+  <Card title="Tailwind CSS v4 & OKLCH" icon={<Palette />}>
     Leverages Tailwind v4 CSS variables and OKLCH color spaces for dark mode and dynamic theme
     tokens.
   </Card>
-  <Card title="Single-File Slots" icon="document">
+  <Card title="Single-File Slots" icon={<FileText />}>
     Clean multi-file architecture with compound object exports, type safety, and tailwind-variants
     (`tv()`).
   </Card>
-  <Card title="Copy & Paste Registry" icon="laptop">
+  <Card title="Copy & Paste Registry" icon={<Laptop />}>
     Integrates with `registry.json` allowing quick component installation into your own codebase.
   </Card>
-  <Card title="AI-Friendly JSDoc" icon="sparkles">
+  <Card title="AI-Friendly JSDoc" icon={<Sparkles />}>
     Every component includes JSDoc `@see` annotations pointing directly to raw markdown docs
     (`/llms.mdx/docs/...`) for AI context.
   </Card>

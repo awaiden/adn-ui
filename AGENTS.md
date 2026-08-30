@@ -55,6 +55,7 @@ Corresponding JSON registry manifests are maintained under:
 5. `get_component_doc`: Fetch component MDX documentation.
 6. `get_registry_item`: Fetch the `shadcn` JSON registry manifest.
 7. `add_component`: Get installation commands, registry manifest, and setup instructions to add a component.
+8. `fetch_llm_doc`: Fetch raw MDX component documentation using a full LLM doc URL (e.g. `http://localhost:3000/llms.mdx/docs/components/button/content.md`), path, or component name.
 
 ---
 

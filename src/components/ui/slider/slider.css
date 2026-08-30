@@ -1,5 +1,5 @@
 .slider {
-  @apply text-foreground grid w-full max-w-xs grid-cols-2 gap-y-1.5 select-none;
+  @apply text-foreground flex w-full flex-wrap items-center justify-between gap-y-1.5 select-none;
 }
 
 .slider__label {
@@ -7,15 +7,15 @@
 }
 
 .slider__value {
-  @apply text-muted-foreground text-right text-sm;
+  @apply text-muted-foreground ml-auto text-right text-sm font-medium;
 }
 
 .slider__control {
-  @apply col-span-2 flex touch-none items-center py-2 select-none;
+  @apply flex w-full touch-none items-center py-2 select-none;
 }
 
 .slider__track {
-  @apply bg-secondary relative w-full rounded-full select-none;
+  @apply bg-muted border-border/50 relative w-full overflow-hidden rounded-full border select-none;
 }
 
 .slider__track--sm {

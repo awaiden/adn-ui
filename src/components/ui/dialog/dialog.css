@@ -3,19 +3,19 @@
 }
 
 .dialog__popup {
-  @apply border-border bg-background text-foreground fixed top-1/2 left-1/2 z-50 flex w-full max-w-lg -translate-x-1/2 -translate-y-1/2 flex-col gap-4 rounded-lg border p-6 shadow-lg transition-[scale,opacity] duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
+  @apply border-border bg-background text-foreground fixed top-1/2 left-1/2 z-50 flex w-[calc(100vw-2rem)] max-h-[calc(100dvh-2rem)] -translate-x-1/2 -translate-y-1/2 flex-col gap-4 overflow-y-auto rounded-lg border p-6 shadow-lg transition-[scale,opacity] duration-100 ease-out data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0;
 }
 
 .dialog__popup--sm {
-  @apply max-w-sm;
+  @apply sm:w-full sm:max-w-sm;
 }
 
 .dialog__popup--md {
-  @apply max-w-lg;
+  @apply sm:w-full sm:max-w-lg;
 }
 
 .dialog__popup--lg {
-  @apply max-w-2xl;
+  @apply sm:w-full sm:max-w-2xl;
 }
 
 .dialog__title {

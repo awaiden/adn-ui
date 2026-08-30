@@ -4,6 +4,7 @@ description: Interactive button component supporting multiple variants, sizes, a
 ---
 
 import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
 The `Button` component is used to trigger an action or event, such as submitting a form, opening a dialog, or performing an operation.
 
@@ -71,19 +72,21 @@ Set `isIconOnly` to `true` for square/icon-only buttons.
 
 <div className="flex flex-wrap items-center gap-4 p-4 border rounded-xl my-4">
   <Button isIconOnly size="sm">
-    🚀
+    <Plus />
   </Button>
   <Button isIconOnly size="md">
-    🚀
+    <Plus />
   </Button>
   <Button isIconOnly size="lg">
-    🚀
+    <Plus />
   </Button>
 </div>
 
 ```tsx
+import { Plus } from "lucide-react";
+
 <Button isIconOnly size="md">
-  🚀
+  <Plus />
 </Button>
 ```
 
